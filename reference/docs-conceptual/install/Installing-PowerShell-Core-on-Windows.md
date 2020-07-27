@@ -19,7 +19,7 @@ PowerShell の最新リリースは、Windows 7 SP1、Server 2008 R2、および
 
 WSMan を介して PowerShell のリモート処理を有効にするには、次の前提条件を満たす必要があります。
 
-- Windows 10 より前のバージョンの Windows に[ユニバーサル C ランタイム](https://www.microsoft.com/download/details.aspx?id=50410)をインストールします。 これは、直接ダウンロードすることも、Windows Update 経由で入手することもできます。 完全にパッチが適用されたシステムには、既にこのパッケージがインストールされています。
+- Windows 10 より前のバージョンの Windows に [Universal C Runtime](https://www.microsoft.com/download/details.aspx?id=50410) をインストールします。 これは、直接ダウンロードすることも、Windows Update 経由で入手することもできます。 完全にパッチが適用されたシステムには、既にこのパッケージがインストールされています。
 - Windows Management Framework (WMF) 4.0 以降を Windows 7 と Windows Server 2008 R2 にインストールします。 WMF の詳細については、[WMF の概要](/powershell/scripting/wmf/overview)に関する記事を参照してください。
 
 ## <a name="download-the-installer-package"></a>インストーラー パッケージをダウンロードする
