@@ -1,6 +1,6 @@
 ---
-title: プル要求を管理する方法
-description: この記事では、PowerShell-Docs チームがプル要求を管理する方法について説明します。
+title: プルリクエストを管理する方法
+description: この記事では、PowerShell-Docs チームがプルリクエストを管理する方法について説明します。
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: af5280e91aa3744b6172dc3555df6989cb0ce1a2
@@ -10,9 +10,9 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/09/2020
 ms.locfileid: "86158175"
 ---
-# <a name="managing-pull-requests"></a>プル要求の管理
+# <a name="managing-pull-requests"></a>プルリクエストの管理
 
-この記事では、PowerShell-Docs リポジトリでプル要求を管理する方法について説明します。 この記事は、PowerShell-Docs チームのメンバーの作業を支援することを目的としています。 一般の共同作成者に対してプロセスを透明化するために、ここで公開されています。
+この記事では、PowerShell-Docs リポジトリでプルリクエストを管理する方法について説明します。 この記事は、PowerShell-Docs チームのメンバーの作業を支援することを目的としています。 一般の共同作成者に対してプロセスを透明化するために、ここで公開されています。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
