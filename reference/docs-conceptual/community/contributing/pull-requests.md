@@ -1,6 +1,6 @@
 ---
-title: プル要求を送信する方法
-description: この記事では、PowerShell-Docs リポジトリにプル要求を送信する方法について説明します。
+title: プルリクエストを送信する方法
+description: この記事では、PowerShell-Docs リポジトリにプルリクエストを送信する方法について説明します。
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 8b392a36c9469b83cf4f088c1799720a091434b4
@@ -10,17 +10,17 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/05/2020
 ms.locfileid: "87782652"
 ---
-# <a name="how-to-submit-pull-requests"></a>プル要求を送信する方法
+# <a name="how-to-submit-pull-requests"></a>プルリクエストを送信する方法
 
-コンテンツを変更するには、フォークからプル要求 (PR) を送信します。 プル要求をマージするには、レビューが必要です。 最良の結果を得るために、プル要求を送信する前に[編集チェックリスト](editorial-checklist.md)を確認してください。
+コンテンツを変更するには、フォークからプルリクエスト (PR) を送信します。 プルリクエストをマージするには、レビューが必要です。 最良の結果を得るために、プルリクエストを送信する前に[編集チェックリスト](editorial-checklist.md)を確認してください。
 
 ## <a name="target-the-correct-branch"></a>正しいブランチをターゲットにする
 
-すべてのプル要求は、`staging` ブランチをターゲットにする必要があります。 変更を `live` ブランチに送信しないでください。 `staging` ブランチで行われた変更が `live` にマージされ、`live` に対する変更が上書きされます。
+すべてのプルリクエストは、`staging` ブランチをターゲットにする必要があります。 変更を `live` ブランチに送信しないでください。 `staging` ブランチで行われた変更が `live` にマージされ、`live` に対する変更が上書きされます。
 
 PowerShell のリリースされていないバージョンにのみ適用される変更を送信する場合は、そのバージョンの release ブランチがあるかどうかを確認します。 PR は、release ブランチをターゲットにする必要があります。 release ブランチの名前のパターンは、`release-<version>` です。
 
-## <a name="make-the-pull-request-process-work-better-for-everyone"></a>プル要求プロセスをすべてのユーザーに対して効果的に機能させる
+## <a name="make-the-pull-request-process-work-better-for-everyone"></a>プルリクエストプロセスをすべてのユーザーに対して効果的に機能させる
 
 PR をよりシンプルで焦点を絞ったものにすると、レビューとマージに要する時間を短縮できます。
 
@@ -79,4 +79,4 @@ PowerShell-Docs チームのメンバーによって PR がレビューされる
 
 ## <a name="additional-resources"></a>その他のリソース
 
-[プル要求を管理する方法](managing-pull-requests.md)
+[プルリクエストを管理する方法](managing-pull-requests.md)
