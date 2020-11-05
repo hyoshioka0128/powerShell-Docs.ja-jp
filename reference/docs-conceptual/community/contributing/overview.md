@@ -50,7 +50,7 @@ PowerShell のサポートにご協力いただき、ありがとうございま
 
 パブリック リポジトリに含まれているドキュメントとコード例に対する軽微な修正や明確化は、[docs.microsoft.com の使用条件][terms-of-use]の対象になります。
 
-重要な変更を行う場合は、完全な GitHub ワークフローを使用します。 Microsoft の従業員でない場合は、重要な変更によって、オンラインの [Contribution Licensing Agreement (CLA)][cla] を送信するように求めるコメントがプル要求に生成されます。 プル要求が正しく確認され受理されるように、オンライン フォームへのご記入をお願いいたします。
+重要な変更を行う場合は、完全な GitHub ワークフローを使用します。 Microsoft の従業員でない場合は、重要な変更によって、オンラインの [Contribution Licensing Agreement (CLA)][cla] を送信するように求めるコメントがプルリクエストに生成されます。 プルリクエストが正しく確認され受理されるように、オンライン フォームへのご記入をお願いいたします。
 
 ## <a name="code-of-conduct"></a>倫理規定
 
@@ -64,7 +64,7 @@ docs.microsoft.com に公開されるすべてのリポジトリには、「[Mic
 
 - [イシューを報告する方法](file-an-issue.md)
 - [ドキュメントの作成を開始する](get-started-writing.md)
-- [プル要求の送信](pull-requests.md)
+- [プルリクエストの送信](pull-requests.md)
 - [PowerShell ドキュメントのスタイル ガイド](powershell-style-guide.md)
 - [コマンドレット リファレンスの編集](editing-cmdlet-ref.md)
 
@@ -72,7 +72,7 @@ docs.microsoft.com に公開されるすべてのリポジトリには、「[Mic
 
 - [編集のチェックリスト](editorial-checklist.md)
 - [イシューを管理する方法](managing-issues.md)
-- [プル要求を管理する方法](managing-pull-requests.md)
+- [プルリクエストを管理する方法](managing-pull-requests.md)
 
 <!--link refs-->
 [cla]: https://cla.microsoft.com/
