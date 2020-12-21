@@ -515,7 +515,7 @@ foreach($person in $data)
 }
 ```
 
-## <a name="operators"></a>オペレーター
+## <a name="operators"></a>演算子
 
 PowerShell の演算子は、配列でも機能します。 それらの一部の動作は若干異なります。
 
