@@ -1,12 +1,14 @@
 ---
-title: ビュー (Format) のコントロールに対する EntrySelectedBy の SelectionCondition 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1c14b2638249bdbfe25f7a96e917d66ea10ed239
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の Controls の EntrySelectedBy の SelectionCondition 要素 (書式)
+description: View の Controls の EntrySelectedBy の SelectionCondition 要素 (書式)
+ms.openlocfilehash: 16b048e73195b3d6168724714ff223851dc1b20b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787582"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664852"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-controls-for-view-format"></a>View の Controls の EntrySelectedBy の SelectionCondition 要素 (書式)
 
@@ -56,7 +58,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 - 選択条件では、任意の数の .NET 型または選択セットを指定できますが、両方を指定することはできません。
 
-選択条件の使用方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件の使用方法の詳細については、「 [データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/10/2020
-contributor: manikb
-keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: 互換性のある PowerShell エディションが含まれるモジュール
-ms.openlocfilehash: 522493714916e9fd21f67a6e7bc2cfb165041807
-ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
+description: この記事では、PowerShellGet コマンドレットで、PowerShell モジュールの Desktop エディションと Core エディションがどのようにサポートされるかについて説明します。
+ms.openlocfilehash: 530101590cf83a1f43cbb9ce32d07a7e0ec79253
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84671412"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661495"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるモジュール
 
@@ -77,7 +76,7 @@ PowerShell 6 以降では、モジュールが `$env:windir\System32\WindowsPowe
 
 ## <a name="finding-compatible-modules"></a>互換性のあるモジュールの検索
 
-PowerShell ギャラリー ユーザーは、**PSEdition_Desktop** および **PSEdition_Core** のタグを使用して特定の PowerShell エディションでサポートされているモジュールの一覧を表示できます。
+PowerShell ギャラリー ユーザーは、 **PSEdition_Desktop** および **PSEdition_Core** のタグを使用して特定の PowerShell エディションでサポートされているモジュールの一覧を表示できます。
 
 **PSEdition_Desktop** および **PSEdition_Core** のタグがないモジュールは、PowerShell Desktop エディションで正常に動作するものと見なされます。
 
@@ -93,7 +92,7 @@ Find-Module -Tag PSEdition_Core
 
 モジュールの作成者が、PowerShell エディションのどちらかまたは両方を対象とする 1 つのモジュールを発行することができます。
 
-1 つのモジュールが、Desktop と Core の両方のエディションで動作します。そのモジュール内で、作成者は、`$PSEdition` 変数を使用して、RootModule またはモジュール マニフェストで必要なロジックを追加する必要があります。 モジュールでは、**CoreCLR** と **FullCLR** の両方を対象とするコンパイル済み DLL の 2 つのセットを使用できます。 適切な DLL を読み込むためのロジックを含むパッケージ化オプションを次に示します。
+1 つのモジュールが、Desktop と Core の両方のエディションで動作します。そのモジュール内で、作成者は、`$PSEdition` 変数を使用して、RootModule またはモジュール マニフェストで必要なロジックを追加する必要があります。 モジュールでは、 **CoreCLR** と **FullCLR** の両方を対象とするコンパイル済み DLL の 2 つのセットを使用できます。 適切な DLL を読み込むためのロジックを含むパッケージ化オプションを次に示します。
 
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>オプション 1: PowerShell の複数のバージョンおよび複数のエディションを対象としてパッケージ化する
 
@@ -123,13 +122,13 @@ Find-Module -Tag PSEdition_Core
 @{
 
 # Author of this module
-Author = 'Microsoft Corporation'
+Author = 'Microsoft Corporation'
 
 # Script module or binary module file associated with this manifest.
-RootModule = 'PSScriptAnalyzer.psm1'
+RootModule = 'PSScriptAnalyzer.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.6.1'
+ModuleVersion = '1.6.1'
 
 # ---
 }
@@ -143,33 +142,33 @@ ModuleVersion = '1.6.1'
 #
 # Script module for module 'PSScriptAnalyzer'
 #
-Set-StrictMode -Version Latest
+Set-StrictMode -Version Latest
 
 # Set up some helper variables to make it easier to work with the module
-$PSModule = $ExecutionContext.SessionState.Module
-$PSModuleRoot = $PSModule.ModuleBase
+$PSModule = $ExecutionContext.SessionState.Module
+$PSModuleRoot = $PSModule.ModuleBase
 
 # Import the appropriate nested binary module based on the current PowerShell version
-$binaryModuleRoot = $PSModuleRoot
+$binaryModuleRoot = $PSModuleRoot
 
 
-if (($PSVersionTable.Keys -contains "PSEdition") -and ($PSVersionTable.PSEdition -ne 'Desktop')) {
-    $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'coreclr'
+if (($PSVersionTable.Keys -contains "PSEdition") -and ($PSVersionTable.PSEdition -ne 'Desktop')) {
+    $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'coreclr'
 }
 else
 {
-    if ($PSVersionTable.PSVersion -lt [Version]'5.0')
+    if ($PSVersionTable.PSVersion -lt [Version]'5.0')
     {
-        $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
-    }
+        $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
+    }
 }
 
-$binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
-$binaryModule = Import-Module -Name $binaryModulePath -PassThru
+$binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
+$binaryModule = Import-Module -Name $binaryModulePath -PassThru
 
 # When the module is unloaded, remove the nested binary module that was loaded with it
-$PSModule.OnRemove = {
-    Remove-Module -ModuleInfo $binaryModule
+$PSModule.OnRemove = {
+    Remove-Module -ModuleInfo $binaryModule
 }
 ```
 

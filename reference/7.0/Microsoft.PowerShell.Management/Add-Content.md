@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
-ms.openlocfilehash: 86702f16683c6710b498a23c072ea9d862868694
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e31e792a60cd09d35ecc67263f107584857efe7d
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93211155"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693033"
 ---
 # Add-Content
 
@@ -225,7 +224,7 @@ Accept wildcard characters: False
 
 ### -除外
 
-このコマンドレットによって操作で除外される項目を文字列配列として指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Exclude** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+このコマンドレットによって操作で除外される項目を文字列配列として指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Exclude** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -258,7 +257,7 @@ Accept wildcard characters: True
 
 ### -Force
 
-読み取り専用属性をオーバーライドし、読み取り専用ファイルに内容を追加できるようにします。 たとえば、 **Force** を指定すると、読み取り専用属性がオーバーライドされるか、ファイル パスを完成させるためにディレクトリが作成されますが、ファイルのアクセス許可は変更されません。
+読み取り専用属性をオーバーライドし、読み取り専用ファイルに内容を追加できるようにします。 たとえば、**Force** を指定すると、読み取り専用属性がオーバーライドされるか、ファイル パスを完成させるためにディレクトリが作成されますが、ファイルのアクセス許可は変更されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -274,7 +273,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `"*.txt"` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `"*.txt"` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -362,11 +361,14 @@ Accept wildcard characters: True
 
 ### -ストリーム
 
+> [!NOTE]
+> このパラメーターは Windows でのみ使用できます。
+
 コンテンツの代替データストリームを指定します。 ストリームが存在しない場合は、このコマンドレットによって作成されます。 ワイルドカード文字はサポートされていません。
 
 **Stream** は、FileSystem プロバイダーによってに追加される動的パラメーターです `Add-Content` 。 このパラメーターはファイル システム ドライブでのみ機能します。
 
-コマンドレットを使用して、 `Add-Content` ゾーンの内容を変更でき **ます。識別子** 代替データストリーム。 ただし、インターネットからダウンロードされたファイルをブロックするセキュリティチェックを省略する方法としては、この方法をお勧めしません。 ダウンロードしたファイルが安全であることを確認した場合は、コマンドレットを使用し `Unblock-File` ます。
+コマンドレットを使用して、など `Add-Content` の代替データストリームの内容を変更でき `Zone.Identifier` ます。 ただし、インターネットからダウンロードされたファイルをブロックするセキュリティチェックを省略する方法としては、この方法をお勧めしません。 ダウンロードしたファイルが安全であることを確認した場合は、コマンドレットを使用し `Unblock-File` ます。
 
 このパラメーターは、PowerShell 3.0 で導入されました。
 
@@ -435,7 +437,7 @@ Accept wildcard characters: False
 
 ### 共通パラメーター
 
-このコマンドレットは、、、、、、、、、、、およびの共通パラメーターをサポートしてい `-Debug` `-ErrorAction` `-ErrorVariable` `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` `-WarningVariable` ます。 詳細については、「[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)」を参照してください。
+このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
 
 ## 入力
 

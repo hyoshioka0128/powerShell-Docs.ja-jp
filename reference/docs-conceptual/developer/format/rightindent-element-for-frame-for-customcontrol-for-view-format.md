@@ -1,12 +1,14 @@
 ---
-title: ビューの CustomControl のフレームの右インデント要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6c35215673d118da68274ec91c8294e90879372f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の CustomControl の Frame の RightIndent 要素 (書式)
+description: View の CustomControl の Frame の RightIndent 要素 (書式)
+ms.openlocfilehash: 7be87d05dab6de23fc9f66b76655cc4996114818
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780391"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665475"
 ---
 # <a name="rightindent-element-for-frame-for-customcontrol-for-view-format"></a>View の CustomControl の Frame の RightIndent 要素 (書式)
 

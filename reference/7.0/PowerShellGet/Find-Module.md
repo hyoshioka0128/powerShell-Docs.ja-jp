@@ -7,12 +7,12 @@ ms.date: 03/11/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Module
-ms.openlocfilehash: 33b7861f4e776b992d3483b9b0776c32a88599fc
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: c6468d2f8226cb26ec5385c7d5a8a895155ad673
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210120"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892656"
 ---
 # Find-Module
 
@@ -21,7 +21,7 @@ ms.locfileid: "93210120"
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 Find-Module [[-Name] <string[]>] [-MinimumVersion <string>] [-MaximumVersion <string>]
@@ -174,7 +174,7 @@ Version     Name                            Repository    Description
 3.1.0.0     xPowerShellExecutionPolicy      PSGallery     This DSC resource can change the user...
 ```
 
-このコマンドレットでは、repository パラメーターを使用して `Find-Module` リポジトリ **PSGallery** を検索します。 **Repository**
+このコマンドレットでは、repository パラメーターを使用して `Find-Module` リポジトリ **PSGallery** を検索します。 
 **インクルード** パラメーターは **DscResource** を指定します。これは、パラメーターがリポジトリで検索できる機能です。
 
 ### 例 8: フィルターを使用してモジュールを検索する
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 
 ### -AllVersions
 
-すべてのバージョンのモジュールを結果に含めるように指定します。 **AllVersions** パラメーターは、 **MinimumVersion** 、 **MaximumVersion** 、または **RequiredVersion** パラメーターと共に使用することはできません。
+すべてのバージョンのモジュールを結果に含めるように指定します。 **AllVersions** パラメーターは、 **MinimumVersion**、 **MaximumVersion**、または **RequiredVersion** パラメーターと共に使用することはできません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -463,7 +463,7 @@ Accept wildcard characters: False
 
 ### -Tag
 
-タグの配列を指定します。 タグの例としては、 **DesiredStateConfiguration** 、 **DSC** 、 **Dscresourcekit** 、 **psmodule** などがあります。
+タグの配列を指定します。 タグの例としては、 **DesiredStateConfiguration**、 **DSC**、 **Dscresourcekit**、 **psmodule** などがあります。
 
 ```yaml
 Type: System.String[]
@@ -499,7 +499,12 @@ Accept wildcard characters: False
 
 ## 注
 
-このコマンドレットは、powershell 5.0 以降の PowerShell、Windows 7、または windows 2008 R2 以降の Windows のリリースで実行されます。
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
 
 ## 関連リンク
 

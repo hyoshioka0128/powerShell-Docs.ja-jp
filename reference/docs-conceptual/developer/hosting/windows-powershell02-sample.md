@@ -1,18 +1,20 @@
 ---
-title: Windows PowerShell02 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a82366a88addb08e186eede79e621d90d915c50f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell02 サンプル
+description: Windows PowerShell02 サンプル
+ms.openlocfilehash: 61dedd72d93d4000edf9a12f12bbb49fbaeb9f3c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779388"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657363"
 ---
 # <a name="windows-powershell02-sample"></a>Windows PowerShell02 サンプル
 
 このサンプルでは、実行空間プールの実行空間を使用して、コマンドを非同期的に実行する方法を示します。 このサンプルでは、コマンドの一覧を生成し、それらのコマンドを実行します。 Windows PowerShell エンジンは、必要に応じて、プールから実行空間を開きます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 - このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -24,7 +26,7 @@ ms.locfileid: "87779388"
 - コマンドの一覧を作成します。
 - コマンドを非同期に実行します。
 - [Runspacepool. Getavailablerunspaces *](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool.GetAvailableRunspaces)メソッドを呼び出して、解放されている実行空間の数を確認します。
-- コマンドの出力を、system.servicemodel [*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)メソッドを使用してキャプチャします。
+- コマンドの出力を、system.servicemodel [*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) メソッドを使用してキャプチャします。
 
 ## <a name="example"></a>例
 

@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 07f8da5e6101b1d9bb1971b3c77b9747c0080a23
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e848cc8c77e1d0dff6eb1f98d56c8ed37e44a653
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210480"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692807"
 ---
 # Get-Item
 
@@ -157,6 +157,9 @@ drwxr-xr-x  root  admin   12/20/2019 11:46   192   Users
 
 ### -ストリーム
 
+> [!NOTE]
+> このパラメーターは Windows でのみ使用できます。
+
 指定した代替 NTFS ファイル システムをファイルから取得します。 ストリーム名を入力します。 ワイルドカードを利用できます。 すべてのストリームを取得するには、アスタリスク () を使用し `*` ます。 このパラメーターはフォルダーでは無効です。
 
 **Stream** は、 **FileSystem** プロバイダーによってコマンドレットに追加される動的パラメーターです `Get-Item` 。
@@ -194,7 +197,7 @@ Accept wildcard characters: False
 
 ### -除外
 
-このコマンドレットによって操作で除外される項目を文字列配列として指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Exclude** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+このコマンドレットによって操作で除外される項目を文字列配列として指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Exclude** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -243,7 +246,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -315,7 +318,7 @@ Accept wildcard characters: True
 項目の内容を再帰的に取得するには、を使用し `Get-ChildItem` ます。
 
 レジストリ内を移動するには、このコマンドレットを使用してレジストリキーを取得し、を使用して `Get-ItemProperty` レジストリ値とデータを取得します。 レジストリ値はレジストリ キーのプロパティと見なされます。
-  
+
 このコマンドレットは、プロバイダーによって公開されるデータを使用するように設計されています。 セッションで使用可能なプロバイダーの一覧を表示するには、「」と入力 `Get-PsProvider` します。 詳細については、「[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)」を参照してください。
 
 ## 関連リンク

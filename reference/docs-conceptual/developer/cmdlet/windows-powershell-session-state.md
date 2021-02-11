@@ -1,15 +1,14 @@
 ---
-title: Windows PowerShell セッションの状態 |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Cmdlets [PowerShell], session state
-- session state [PowerShell]
-ms.openlocfilehash: 7436e3ebd0e099ead81f9fea01a0a2994b982213
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell セッション状態
+description: Windows PowerShell セッション状態
+ms.openlocfilehash: 51de92f1f392f708cf49c7ccb4a6808fd628076c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783944"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668135"
 ---
 # <a name="windows-powershell-session-state"></a>Windows PowerShell セッション状態
 
@@ -21,7 +20,7 @@ ms.locfileid: "87783944"
 
 モジュールセッション状態は、モジュールまたは入れ子になったモジュールのいずれかがセッションにインポートされるたびに作成されます。 モジュールがコマンドレット、関数、またはスクリプトなどの要素をエクスポートすると、その要素への参照がセッションのグローバルセッション状態に追加されます。 ただし、要素が実行されると、モジュールのセッション状態内で実行されます。
 
-## <a name="session-state-data"></a>セッション状態データ
+## <a name="session-state-data"></a>データの Session-State
 
 セッション状態データは、パブリックまたはプライベートにすることができます。 パブリックデータは、セッション状態の外部からの呼び出しに使用できます。プライベートデータは、セッション状態内からの呼び出しに対してのみ使用できます。 たとえば、モジュールは、モジュールによってのみ呼び出すことができるプライベート関数を持つことができます。または、エクスポートされたパブリック要素によって内部的にのみ呼び出すことができます。 これは、.NET Framework 型のプライベートメンバーとパブリックメンバーに似ています。
 
@@ -37,9 +36,9 @@ ms.locfileid: "87783944"
 
 - セッション状態変数の情報
 
-## <a name="accessing-session-state-data-within-cmdlets"></a>コマンドレット内のセッション状態データへのアクセス
+## <a name="accessing-session-state-data-within-cmdlets"></a>コマンドレット内の Session-State データへのアクセス
 
-コマンドレットは、コマンドレットクラスの[Sessionstate *](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)プロパティを介して、または[Sessionstate](/dotnet/api/System.Management.Automation.SessionState)クラスを直接介して、セッション状態データに間接的にアクセスできます。 [Sessionstate](/dotnet/api/System.Management.Automation.SessionState)クラスには、さまざまな種類のセッション状態データを調査するために使用できるプロパティが用意されています。
+コマンドレットは、コマンドレットクラスの [Sessionstate *](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState) プロパティを介して、または [Sessionstate](/dotnet/api/System.Management.Automation.SessionState) クラスを直接介して、セッション状態データに間接的にアクセスできます。 [Sessionstate](/dotnet/api/System.Management.Automation.SessionState)クラスには、さまざまな種類のセッション状態データを調査するために使用できるプロパティが用意されています。
 
 ## <a name="see-also"></a>参照
 
@@ -49,6 +48,6 @@ ms.locfileid: "87783944"
 
 [Windows PowerShell コマンドレット](./cmdlet-overview.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell シェル SDK](../windows-powershell-reference.md)

@@ -2,18 +2,19 @@
 ms.date: 10/30/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC のトラブルシューティング
-ms.openlocfilehash: 83e59b9f7148b52071d4782522ca7642027d795a
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: この記事では、一般的なエラー のトラブルシューティング方法を示します。
+ms.openlocfilehash: 2ac86689fa2695add247995bfb91c0ea85e22d60
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692312"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656255"
 ---
 # <a name="troubleshooting-dsc"></a>DSC のトラブルシューティング
 
-_適用先:Windows PowerShell 4.0、Windows PowerShell 5.0_
+> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
-このトピックでは、問題が発生した場合の DSC のトラブルシューティング方法について説明します。
+この記事では、一般的なエラー のトラブルシューティング方法を示します。
 
 ## <a name="winrm-dependency"></a>WinRM の依存関係
 
@@ -82,8 +83,8 @@ PSComputerName        :
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>スクリプトが実行されない:DSC ログを使用したスクリプト エラーの診断
 
-すべての Windows ソフトウェアと同じく、DSC は[イベント ビューアー](https://support.microsoft.com/hub/4338813/windows-help)から参照可能な[ログ](/windows/desktop/EventLog/about-event-logging)にエラーとイベントを記録します。
-これらのログを調べることは、特定の操作が失敗した理由や、今後エラーを防止する方法を理解するために役立ちます。 構成スクリプトの記述は複雑になることがあります。そのため、作成しながらエラーをより簡単に追跡できるように、DSC ログ リソースを使用して DSC 分析イベント ログで構成の進行状況を追跡してください。
+すべての Windows ソフトウェアと同じく、DSC は[イベント ビューアー](https://support.microsoft.com/hub/4338813/windows-help)から参照可能な[ログ](/windows/desktop/EventLog/about-event-logging)にエラーとイベントを記録します。 これらのログを調べることは、特定の操作が失敗した理由や、今後エラーを防止する方法を理解するために役立ちます。
+構成スクリプトの記述は複雑になることがあります。そのため、作成しながらエラーをより簡単に追跡できるように、DSC ログ リソースを使用して DSC 分析イベント ログで構成の進行状況を追跡してください。
 
 ## <a name="where-are-dsc-event-logs"></a>DSC イベント ログの場所
 
@@ -101,8 +102,9 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-上に示すように、DSC のプライマリ ログ名は **Microsoft->Windows->DSC** です (簡略化のため、Windows の下にあるその他のログ名は表示していません)。 完全なログ名を作成するには、プライマリ名にチャネル名を追加します。 DSC エンジンは、主に[操作ログ、分析ログ、デバッグ ログ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11))という 3 種類のログに書き込みます。 分析ログとデバッグ ログは既定でオフになっているため、それらをイベント ビューアーで有効にする必要があります。 これを行うには、Windows PowerShell で「Show-EventLog」と入力するか、または、**[スタート]** ボタンをクリックし、**[コントロール パネル]**、**[管理ツール]**、**[イベント ビューアー]** の順にクリックして、イベント ビューアーを開きます。
-イベント ビューアーの **[表示]** メニューで、**[分析およびデバッグ ログの表示]** をクリックします。 分析チャネルのログ名は **Microsoft-Windows-Dsc/Analytic** で、デバッグ チャネルのログ名は **Microsoft-Windows-Dsc/Debug** です。 次の例に示すように、[wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) ユーティリティを使用してログを有効にすることもできます。
+上に示すように、DSC のプライマリ ログ名は **Microsoft->Windows->DSC** です (簡略化のため、Windows の下にあるその他のログ名は表示していません)。 完全なログ名を作成するには、プライマリ名にチャネル名を追加します。 DSC エンジンは、主に[操作ログ、分析ログ、デバッグ ログ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11))という 3 種類のログに書き込みます。
+分析ログとデバッグ ログは既定でオフになっているため、それらをイベント ビューアーで有効にする必要があります。
+これを行うには、Windows PowerShell で「Show-EventLog」と入力するか、または、 **[スタート]** ボタンをクリックし、 **[コントロール パネル]** 、 **[管理ツール]** 、 **[イベント ビューアー]** の順にクリックして、イベント ビューアーを開きます。 イベント ビューアーの **[表示]** メニューで、 **[分析およびデバッグ ログの表示]** をクリックします。 分析チャネルのログ名は **Microsoft-Windows-Dsc/Analytic** で、デバッグ チャネルのログ名は **Microsoft-Windows-Dsc/Debug** です。 次の例に示すように、[wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) ユーティリティを使用してログを有効にすることもできます。
 
 ```powershell
 wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
@@ -254,8 +256,8 @@ PS C:\> $myFailedEvent.Message
 
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 DSC Engine Error :
- Error Message Current configuration does not exist. Execute Start-DscConfiguration command with -Path pa
-rameter to specify a configuration file and create a current configuration first.
+ Error Message Current configuration does not exist. Execute Start-DscConfiguration command with
+ -Path parameter to specify a configuration file and create a current configuration first.
 Error Code : 1
 ```
 
@@ -489,7 +491,7 @@ Get-Process -Id $dscProcessID | Stop-Process
 
 ## <a name="using-debugmode"></a>DebugMode の使用
 
-ホスト プロセスの再起動時に `DebugMode` を使用して常にキャッシュをクリアするように、DSC ローカル構成マネージャー (LCM) を構成できます。 **TRUE** に設定すると、エンジンは常に PowerShell DSC リソースを再読み込みします。 リソースの書き込みが完了した後、**FALSE** に設定し直して、モジュールをキャッシュするようにエンジンの動作を戻すことができます。
+ホスト プロセスの再起動時に `DebugMode` を使用して常にキャッシュをクリアするように、DSC ローカル構成マネージャー (LCM) を構成できます。 **TRUE** に設定すると、エンジンは常に PowerShell DSC リソースを再読み込みします。 リソースの書き込みが完了した後、 **FALSE** に設定し直して、モジュールをキャッシュするようにエンジンの動作を戻すことができます。
 
 次は、`DebugMode` がどのようにキャッシュを自動的に更新できるかを示すデモです。 まず、既定の構成を見てみましょう。
 
@@ -602,7 +604,7 @@ function Test-TargetResource
 "@ | Out-File -FilePath "C:\Program Files\WindowsPowerShell\Modules\MyPowerShellModules\DSCResources\TestProviderDebugMode\TestProviderDebugMode.psm1
 ```
 
-このスクリプトは、乱数を生成し、それに合わせてプロバイダー コードを更新します。 `DebugMode` を false に設定しても、ファイル "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" の内容は変わりません。
+このスクリプトは、乱数を生成し、それに合わせてプロバイダー コードを更新します。 `DebugMode` が false に設定されている場合、ファイル `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` の内容は変更されません。
 
 ここで、ご利用の構成スクリプト内で `DebugMode` を **"ForceModuleImport"** に設定します。
 
@@ -633,16 +635,15 @@ onlyProperty                            PSComputerName
 
 サーバーにメタ構成を適用して、それを Windows プル サーバーのインスタンスに登録すると、次のエラーが発生する可能性があります。
 
-```PowerShell
-Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+```
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server
 https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
     + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
     + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
     + PSComputerName        : <computername>
 ```
 
-トラフィックを暗号化するためにサーバー上で使用される証明書に、URL を解決するためにノードによって使用される DNS 名とは異なる共通名 (CN) が含まれている場合に、これは発生する可能性があります。
-正しい名前の証明書を使用するように Windows プルサーバーのインスタンスを更新します。
+トラフィックを暗号化するためにサーバー上で使用される証明書に、URL を解決するためにノードによって使用される DNS 名とは異なる共通名 (CN) が含まれている場合に、これは発生する可能性があります。 正しい名前の証明書を使用するように Windows プルサーバーのインスタンスを更新します。
 
 ## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>DSC 構成の適用後に Sysprep を実行するとエラーが発生する
 
@@ -652,7 +653,7 @@ DSC 構成を適用した後に Sysprep を実行して Windows Server を一般
 SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
 ```
 
-Windows PowerShell Desired State Configuration を使用して構成された後のサーバーの一般化は、サポートされているシナリオではありません。  代わりに、Windows セットアップの Specialize フェーズが完了した後で、構成を Windows に適用します。
+Windows PowerShell Desired State Configuration を使用して構成された後のサーバーの一般化は、サポートされているシナリオではありません。 代わりに、Windows セットアップの Specialize フェーズが完了した後で、構成を Windows に適用します。
 
 ## <a name="see-also"></a>参照
 

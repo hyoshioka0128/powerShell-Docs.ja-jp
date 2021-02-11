@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Service
-ms.openlocfilehash: 6bffe41f1efd42c686d06f59cf86b374b596d80d
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 77ce507d0eaf476e2c24f41e433bd69fdcb416bb
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93214352"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342571"
 ---
 # Stop-Service
 
@@ -44,8 +44,7 @@ Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <S
 
 ## Description
 
-**Stop Service** コマンドレットは、指定された各サービスについて、Windows サービスコントローラーに停止メッセージを送信します。
-サービスは、サービス名または表示名で指定できます。また、 **InputObject** パラメーターを使用して、停止するサービスを表すサービスオブジェクトを渡すこともできます。
+`Stop-Service`コマンドレットは、指定された各サービスについて、Windows サービスコントローラーに停止メッセージを送信します。 サービスは、サービス名または表示名で指定できます。また、 **InputObject** パラメーターを使用して、停止するサービスを表すサービスオブジェクトを渡すこともできます。
 
 ## 例
 
@@ -63,9 +62,7 @@ PS C:\> Stop-Service -Name "sysmonlog"
 PS C:\> Get-Service -DisplayName "telnet" | Stop-Service
 ```
 
-このコマンドを実行すると、ローカル コンピューター上の Telnet サービスが停止されます。
-このコマンドは、 **Get service** を使用して、Telnet サービスを表すオブジェクトを取得します。
-パイプライン演算子 (|) によって、オブジェクトが **停止サービス** にパイプされ、サービスが停止されます。
+このコマンドを実行すると、ローカル コンピューター上の Telnet サービスが停止されます。 このコマンドは、を使用して、 `Get-Service` Telnet サービスを表すオブジェクトを取得します。 パイプライン演算子 () は、 `|` オブジェクトをにパイプ処理して `Stop-Service` 、サービスを停止します。
 
 ### 例 3: 依存サービスを持つサービスを停止する
 
@@ -74,17 +71,11 @@ PS C:\> Get-Service -Name "iisadmin" | Format-List -Property Name, DependentServ
 PS C:\> Stop-Service -Name "iisadmin" -Force -Confirm
 ```
 
-この例では、ローカルコンピューター上の IISAdmin サービスを停止します。
-また、このサービスを停止すると、IISAdmin サービスに依存するサービスも停止されるため、IISAdmin サービスに依存するサービスを一覧表示するコマンドを使用して、 **サービスを停止** することをお勧めします。
+この例では、ローカルコンピューター上の IISAdmin サービスを停止します。 このサービスを停止すると、IISAdmin サービスに依存するサービスも停止されるため、その前に、 `Stop-Service` iisadmin サービスに依存するサービスを一覧表示するコマンドを使用することをお勧めします。
 
-最初のコマンドを実行すると、IISAdmin に依存するサービスの一覧が表示されます。
-これは、IISAdmin サービスを表すオブジェクトを取得するために、 **サービス** を使用します。
-パイプライン演算子 (|) により、結果が Format-List コマンドレットに渡されます。
-このコマンドは、 **形式リスト** の *Property* パラメーターを使用して、サービスの **Name** プロパティと **dependentservices** プロパティのみを一覧表示します。
+最初のコマンドを実行すると、IISAdmin に依存するサービスの一覧が表示されます。 を使用して、 `Get-Service` IISAdmin サービスを表すオブジェクトを取得します。 パイプライン演算子 () は、 `|` 結果を `Format-List` コマンドレットに渡します。 このコマンドは、の **Property** パラメーターを使用して、 `Format-List` サービスの **Name** プロパティと **dependentservices** プロパティのみを一覧表示します。
 
-2 番目のコマンドを実行すると、IISAdmin サービスが停止します。
-*Force* パラメーターは、依存サービスを持つサービスを停止するために必要です。
-このコマンドでは、 *Confirm* パラメーターを使用して、各サービスを停止する前にユーザーに確認を要求します。
+2 番目のコマンドを実行すると、IISAdmin サービスが停止します。 **Force** パラメーターは、依存サービスを持つサービスを停止するために必要です。 このコマンドでは、 **Confirm** パラメーターを使用して、各サービスを停止する前にユーザーに確認を要求します。
 
 ## PARAMETERS
 
@@ -107,10 +98,7 @@ Accept wildcard characters: True
 
 ### -除外
 
-このコマンドレットで省略されるサービスを指定します。
-このパラメーターの値は、 *Name* パラメーターを修飾します。
-「S *」のように、名前要素またはパターンを入力します。
-ワイルドカード文字を使用できます。
+このコマンドレットで省略されるサービスを指定します。 このパラメーターの値は、 **Name** パラメーターを修飾します。 「S *」のように、名前要素またはパターンを入力します。 ワイルドカード文字を使用できます。
 
 ```yaml
 Type: System.String[]
@@ -142,10 +130,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-このコマンドレットが停止するサービスを指定します。
-このパラメーターの値は、 *Name* パラメーターを修飾します。
-「S *」のように、名前要素またはパターンを入力します。
-ワイルドカード文字を使用できます。
+このコマンドレットが停止するサービスを指定します。 このパラメーターの値は、 **Name** パラメーターを修飾します。 「S *」のように、名前要素またはパターンを入力します。 ワイルドカード文字を使用できます。
 
 ```yaml
 Type: System.String[]
@@ -161,8 +146,7 @@ Accept wildcard characters: True
 
 ### -InputObject
 
-停止するサービスを表す **ServiceController** オブジェクトを指定します。
-オブジェクトが格納されている変数を入力するか、オブジェクトを取得するコマンドまたは式を入力します。
+停止するサービスを表す **ServiceController** オブジェクトを指定します。 オブジェクトが格納されている変数を入力するか、オブジェクトを取得するコマンドまたは式を入力します。
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -178,8 +162,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-停止するサービスのサービス名を指定します。
-ワイルドカード文字を使用できます。
+停止するサービスのサービス名を指定します。 ワイルドカード文字を使用できます。
 
 ```yaml
 Type: System.String[]
@@ -211,8 +194,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-サービスを表すオブジェクトを返します。
-既定では、このコマンドレットによる出力はありません。
+サービスを表すオブジェクトを返します。 既定では、このコマンドレットによる出力はありません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -244,8 +226,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -273,20 +254,15 @@ Accept wildcard characters: False
 
 ### None、ServiceController。
 
-このコマンドレットは、 *PassThru* パラメーターを使用する場合に、サービスを表す **ServiceController** オブジェクトを生成します。
-それ以外の場合、このコマンドレットによる出力はありません。
+このコマンドレットは、 **PassThru** パラメーターを使用する場合に、サービスを表す **ServiceController** オブジェクトを生成します。 それ以外の場合、このコマンドレットによる出力はありません。
 
 ## 注
 
-* また、組み込みのエイリアスである **spsv** を使用して、 **停止サービス** を参照することもできます。 詳細については、「about_Aliases」を参照してください。
+また、 `Stop-Service` 組み込みエイリアスである **spsv** でを参照することもできます。 詳細については、「about_Aliases」を参照してください。
 
-  サービスを **停止** できるのは、現在のユーザーがこの操作を行うためのアクセス許可を持っている場合のみです。
-コマンドが正常に機能しない場合は、必要なアクセス許可が与えられていない可能性があります。
+`Stop-Service` 現在のユーザーがこの操作を行うためのアクセス許可を持っている場合にのみ、サービスを制御できます。 コマンドが正常に機能しない場合は、必要なアクセス許可が与えられていない可能性があります。
 
-  システム上のサービスのサービス名と表示名を確認するには、「」と入力 `Get-Service` します。
-サービス名は [ **名前** ] 列に表示され、表示名は [ **DisplayName** ] 列に表示されます。
-
-*
+システム上のサービスのサービス名と表示名を確認するには、「」と入力 `Get-Service` します。 サービス名は [ **名前** ] 列に表示され、表示名は [ **DisplayName** ] 列に表示されます。
 
 ## 関連リンク
 

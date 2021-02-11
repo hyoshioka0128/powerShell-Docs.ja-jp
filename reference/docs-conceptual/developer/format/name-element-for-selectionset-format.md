@@ -1,12 +1,14 @@
 ---
-title: SelectionSet の Name 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1fc33eeb87a6912ed6793629ab1969cd65b5f0c5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSet の Name 要素 (書式)
+description: SelectionSet の Name 要素 (書式)
+ms.openlocfilehash: 98c13be6ea352055231fbdb3a60f0eb508f661b8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773302"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666462"
 ---
 # <a name="name-element-for-selectionset-format"></a>SelectionSet の Name 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 
 ## <a name="remarks"></a>解説
 
-ここで指定された名前は、要素で使用され `SelectionSetName` ます。 ビューで使用できる選択セット (ビューには複数の定義を含めることができます)、または選択条件を指定する場合に使用できます。 選択セットの詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
+ここで指定された名前は、要素で使用され `SelectionSetName` ます。 ビューで使用できる選択セット (ビューには複数の定義を含めることができます)、または選択条件を指定する場合に使用できます。 選択セットの詳細については、「 [オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
 
 ## <a name="example"></a>例
 

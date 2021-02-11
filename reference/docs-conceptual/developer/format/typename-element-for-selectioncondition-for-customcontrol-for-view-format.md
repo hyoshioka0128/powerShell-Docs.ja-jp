@@ -1,12 +1,14 @@
 ---
-title: View (Format) の CustomControl の SelectionCondition の TypeName 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 28409604b8905440890161f66981264748bc2c33
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の CustomControl の SelectionCondition の TypeName 要素 (書式)
+description: View の CustomControl の SelectionCondition の TypeName 要素 (書式)
+ms.openlocfilehash: ab02c6921985dbe86e5adcbc6565c76f6617399a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785066"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651285"
 ---
 # <a name="typename-element-for-selectioncondition-for-customcontrol-for-view--format"></a>View の CustomControl の SelectionCondition の TypeName 要素 (書式)
 

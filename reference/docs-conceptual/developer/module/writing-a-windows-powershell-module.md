@@ -1,12 +1,14 @@
 ---
-title: Windows PowerShell モジュールの記述 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d2398a8111a9832af2465d045be0bdefc3cf927a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell モジュールを記述する
+description: Windows PowerShell モジュールを記述する
+ms.openlocfilehash: 307241f0fb4d12c1a5cbd651a0ae4d5303098b27
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779150"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659423"
 ---
 # <a name="writing-a-windows-powershell-module"></a>Windows PowerShell モジュールを記述する
 

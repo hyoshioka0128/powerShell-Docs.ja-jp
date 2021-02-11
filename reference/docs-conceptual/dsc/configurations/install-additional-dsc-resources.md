@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,リソース,ギャラリー,セットアップ
 title: 追加の DSC リソースをインストールする
-ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PSDesiredStateConfiguration モジュールに含まれている DSC リソースの一覧を示します。 また、PowerShell ギャラリーからリソースを検索してインストールする方法についても説明します。
+ms.openlocfilehash: e75561ed539e06716c9a103f905b9d1e4f3e71d3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417800"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645131"
 ---
 # <a name="install-additional-dsc-resources"></a>追加の DSC リソースをインストールする
 
@@ -18,20 +19,20 @@ PowerShell には、Desired State Configuration (DSC) 用に複数のそのま�
 > [!NOTE]
 > PowerShell のバージョンごとに OOB リソースの数は増えているため、これは完全な一覧ではありません。
 
-|リソース  |説明  |
-|---------|---------|
-|**[最近使ったファイル]**|ファイルとディレクトリの状態を制御します。 **コピー元**から**コピー先**にファイルをコピーし、日付、チェックサム、およびハッシュを比較することによって**コピー元**が変更されたらファイルを更新します。|
-|**Archive**|アーカイブと指定された場所をアンパックします。 指定された**チェックサム**でアーカイブを検証します。|
-|**Environment**|環境変数を管理します。|
-|**グループ**|ローカル グループを管理し、グループ メンバーシップを制御します。|
-|**Log**|`Microsoft-Windows-Desired State Configuration/Analytic` イベント ログにメッセージを書き込みます。|
-|**Package**|**Arguments**、**LogPath**、 **ReturnCode**、その他の設定を使って、パッケージをインストールまたはアンインストールします。|
-|**レジストリ**|レジストリ キーと値を管理します。|
-|**[スクリプト]**|独自の [get-test-set](../resources/get-test-set.md) スクリプト ブロックを設計できます。|
-|**サービス**|Windows サービスを構成します。|
-|**User** |ローカル ユーザーと属性を管理します。|
-|**WindowsFeature**|ロールと機能を管理します。|
-|**WindowsProcess**|Windows プロセスを構成します。|
+|      リソース      |                                                                                       説明                                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **[最近使ったファイル]**           | ファイルとディレクトリの状態を制御します。 **コピー元** から **コピー先** にファイルをコピーし、日付、チェックサム、およびハッシュを比較することによって **コピー元** が変更されたらファイルを更新します。 |
+| **Archive**        | アーカイブと指定された場所をアンパックします。 指定された **チェックサム** でアーカイブを検証します。                                                                                         |
+| **Environment**    | 環境変数を管理します。                                                                                                                                                           |
+| **グループ**          | ローカル グループを管理し、グループ メンバーシップを制御します。                                                                                                                                      |
+| **Log**            | `Microsoft-Windows-Desired State Configuration/Analytic` イベント ログにメッセージを書き込みます。                                                                                               |
+| **Package**        | **Arguments** 、 **LogPath** 、 **ReturnCode** 、その他の設定を使って、パッケージをインストールまたはアンインストールします。                                                                                        |
+| **レジストリ**       | レジストリ キーと値を管理します。                                                                                                                                                        |
+| **スクリプト**         | 独自の [get-test-set](../resources/get-test-set.md) スクリプト ブロックを設計できます。                                                                                                |
+| **サービス**        | Windows サービスを構成します。                                                                                                                                                             |
+| **User**           | ローカル ユーザーと属性を管理します。                                                                                                                                                      |
+| **WindowsFeature** | ロールと機能を管理します。                                                                                                                                                              |
+| **WindowsProcess** | Windows プロセスを構成します。                                                                                                                                                            |
 
 OOB リソースは、一般的な操作のよい起点になります。 OOB リソースがニーズを満たさない場合は、独自の[カスタム リソース](../resources/authoringResource.md)を作成できます。 問題を解決するためのカスタム リソースを記述する前に、Microsoft と PowerShell コミュニティの両方で既に作成されている膨大な数の DSC リソースを調べる必要があります。
 
@@ -43,7 +44,7 @@ OOB リソースは、一般的な操作のよい起点になります。 OOB �
 
 ## <a name="finding-dsc-resources-using-powershellget"></a>PowerShellGet を使用して DSC リソースを検索する
 
-**PowerShellGet** をシステムにインストールした後は、[PowerShell ギャラリー](https://www.powershellgallery.com/)でホストされている DSC リソースを検索してインストールできます。
+**PowerShellGet** をシステムにインストールした後は、 [PowerShell ギャラリー](https://www.powershellgallery.com/)でホストされている DSC リソースを検索してインストールできます。
 
 最初に、[Find-DSCResource](/powershell/module/powershellget/find-dscresource) コマンドレットを使って DSC リソースを検索します。 `Find-DSCResource` を初めて実行すると、"NuGet プロバイダー" のインストールを求める次のメッセージが表示されます。
 
@@ -51,11 +52,11 @@ OOB リソースは、一般的な操作のよい起点になります。 OOB �
 PS> Find-DSCResource
 
 NuGet provider is required to continue
-PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The
-NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
-'C:\Users\xAdministrator\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider
- by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to
-install and import the NuGet provider now?
+PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based
+repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies'
+or 'C:\Users\xAdministrator\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install
+the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201
+-Force'. Do you want PowerShellGet to install and import the NuGet provider now?
 [Y] Yes  [N] No  [?] Help (default is "Y"):
 ```
 
@@ -104,7 +105,7 @@ TimeZone                            6.0.0.0    ComputerManagementDsc            
 
 ## <a name="installing-dsc-resources-using-powershellget"></a>PowerShellGet を使用して DSC リソースをインストールする
 
-DSC リソースをインストールするには、[Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットを使い、検索結果の **[ModuleName]** の下に表示されるモジュール名を指定します。
+DSC リソースをインストールするには、 [Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットを使い、検索結果の **[ModuleName]** の下に表示されるモジュール名を指定します。
 
 "TimeZone" リソースは "ComputerManagementDSC" モジュールに存在するので、この例ではそのモジュールをインストールします。
 
@@ -115,9 +116,9 @@ DSC リソースをインストールするには、[Install-Module](/powershell
 PS> Install-Module -Name ComputerManagementDSC
 
 Untrusted repository
-You are installing the modules from an untrusted repository. If you trust this repository, change its
-InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from
-'PSGallery'?
+You are installing the modules from an untrusted repository. If you trust this repository, change
+its InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to
+install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 

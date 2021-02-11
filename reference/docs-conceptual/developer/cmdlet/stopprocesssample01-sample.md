@@ -1,12 +1,14 @@
 ---
-title: StopProcessSample01 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6d4737d0526a7d142b4a986986974bcbdc12ec7e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: StopProcessSample01 サンプル
+description: StopProcessSample01 サンプル
+ms.openlocfilehash: 9024f5c66330f3a1748c28b82e91b3915e956207
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786460"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660532"
 ---
 # <a name="stopprocesssample01-sample"></a>StopProcessSample01 サンプル
 
@@ -40,7 +42,7 @@ ms.locfileid: "87786460"
 
     `stop-proc`
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 

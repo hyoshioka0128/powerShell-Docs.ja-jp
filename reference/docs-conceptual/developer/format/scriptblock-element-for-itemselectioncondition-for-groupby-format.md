@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の ItemSelectionCondition の ScriptBlock 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7738b180f328c7360275058cdb9dea01df6ea285
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の ItemSelectionCondition の ScriptBlock 要素 (書式)
+description: GroupBy の ItemSelectionCondition の ScriptBlock 要素 (書式)
+ms.openlocfilehash: fe366fa31b93e8d69409cc49c3fe2c350d4d06d9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787650"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665089"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-groupby-format"></a>GroupBy の ItemSelectionCondition の ScriptBlock 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>解説
 
-この要素が使用されている場合、選択条件を定義するときに[PropertyName](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)要素を指定することはできません。
+この要素が使用されている場合、選択条件を定義するときに [PropertyName](./propertyname-element-for-itemselectioncondition-for-groupby-format.md) 要素を指定することはできません。
 
 ## <a name="see-also"></a>参照
 

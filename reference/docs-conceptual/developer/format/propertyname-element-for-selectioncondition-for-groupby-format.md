@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の SelectionCondition の PropertyName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8ada9a8ca7fbfdba5b2fea1881b2670c56a71d4f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の SelectionCondition の PropertyName 要素 (書式)
+description: GroupBy の SelectionCondition の PropertyName 要素 (書式)
+ms.openlocfilehash: b89fead6185c88ca03956dc265135833696b91d7
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773081"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665670"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-groupby-format"></a>GroupBy の SelectionCondition の PropertyName 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>解説
 
-選択条件には、少なくとも1つのプロパティ名またはスクリプトを指定する必要がありますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「[データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件には、少なくとも1つのプロパティ名またはスクリプトを指定する必要がありますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「 [データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

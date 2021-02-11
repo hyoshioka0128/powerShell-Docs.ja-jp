@@ -1,14 +1,13 @@
 ---
-ms.date: 06/12/2017
-contributor: manikb
-keywords: ギャラリー, PowerShell, コマンドレット, PSGet
+ms.date: 01/25/2021
 title: コマンドレットのトラブルシューティング
-ms.openlocfilehash: d87c680472c2588efbfe8b3c4d6f2dbee6883a0c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PowerShell ギャラリーを使用してエラーのトラブルシューティングを行うための情報と手順を示します
+ms.openlocfilehash: 8139147683b655b5f8532c3068387db6df12a98f
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "72352112"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771813"
 ---
 # <a name="troubleshooting-cmdlets"></a>コマンドレットのトラブルシューティング
 
@@ -22,12 +21,16 @@ Launch new PowerShell Console
 Update-Module Azure -Verbose
 ```
 
-### <a name="required-network-endpoints"></a>必要なネットワーク エンドポイント
+## <a name="required-network-endpoints"></a>必要なネットワーク エンドポイント
 
 Install および Update コマンドレットを使用する場合、PowerShell ギャラリーによって使用されるネットワーク エンドポイントに接続するためのインターネット アクセスが必要です。 お使いのネットワーク アクセス ポリシーで、次のエンドポイントへの接続が許可されていることを確認してください。
 
-- oneget.org
-- go.microsoft.com
-- az818661.vo.msecnd.net
-- www.powershellgallery.com
-- devopsgallerystorage.blob.core.windows.net
+- `psg-prod-eastus.azureedge.net` - CDN ホスト名
+- `az818661.vo.msecnd.net` - CDN ホスト名
+- `devopsgallerystorage.blob.core.windows.net` - ストレージ アカウントのホスト名
+- `*.powershellgallery.com` - Web サイト
+- `go.microsoft.com` - リダイレクト サービス
+- `onegetcdn.azureedge.net` - `PowerShellGet/PackageManagement` の NuGet プロバイダーのブートストラップ
+
+> [!NOTE]
+> PowerShell ギャラリー サービスが停止すると、PowerShell ギャラリーとやりとりするコマンドレットが予期しないエラーで失敗することがあります。 PowerShell ギャラリーの現在の状態を確認するには、GitHub の [PowerShell Gallery Status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) ページを参照してください。

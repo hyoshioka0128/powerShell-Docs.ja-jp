@@ -1,17 +1,16 @@
 ---
 description: 必須の要素を使用せずにスクリプトを実行しないようにします。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 07/01/2019
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Requires
-ms.openlocfilehash: 5c4eb4e272f214ffe906fd1a3f1c127824183d4a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: af7b557e399385589f3ddbbeb6b1f514c0f550f5
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223944"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490494"
 ---
 # <a name="about-requires"></a>要求について
 
@@ -25,7 +24,6 @@ ms.locfileid: "93223944"
 ### <a name="syntax"></a>構文
 
 ```
-#Requires -Assembly { <Path to .dll> | <.NET assembly specification> }
 #Requires -Version <N>[.<n>]
 #Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
@@ -58,9 +56,12 @@ Get-Module AzureRM.Netcore | Remove-Module
 
 #### <a name="-assembly-assembly-path--net-assembly-specification"></a>-Assembly \<Assembly path> |\<.NET assembly specification>
 
+> [!IMPORTANT]
+> `-Assembly`構文は非推奨とされます。 関数は機能しません。 構文は PowerShell 5.1 で追加されましたが、サポートコードが実装されていませんでした。 構文は、旧バージョンとの互換性のために引き続き受け入れられます。
+
 アセンブリ DLL ファイルまたは .NET アセンブリ名へのパスを指定します。 **Assembly** パラメーターは、PowerShell 5.0 で導入されました。 .NET アセンブリの詳細については、「 [アセンブリ名](/dotnet/standard/assembly/names)」を参照してください。
 
-次に例を示します。
+以下に例を示します。
 
 ```
 #Requires -Assembly path\to\foo.dll
@@ -75,7 +76,7 @@ Get-Module AzureRM.Netcore | Remove-Module
 
 スクリプトに必要な PowerShell の最小バージョンを指定します。 メジャーバージョン番号と省略可能なマイナーバージョン番号を入力します。
 
-次に例を示します。
+以下に例を示します。
 
 ```powershell
 #Requires -Version 6.0
@@ -85,7 +86,7 @@ Get-Module AzureRM.Netcore | Remove-Module
 
 スクリプトに必要な PowerShell スナップインを指定します。 スナップイン名とオプションのバージョン番号を入力します。
 
-次に例を示します。
+以下に例を示します。
 
 ```powershell
 #Requires -PSSnapin DiskSnapin -Version 1.2
@@ -111,7 +112,7 @@ Get-Module AzureRM.Netcore | Remove-Module
 > `RequiredVersion` は Windows PowerShell 5.0 で追加されました。
 > `MaximumVersion` は Windows PowerShell 5.1 で追加されました。
 
-次に例を示します。
+以下に例を示します。
 
 `AzureRM.Netcore`(バージョン `0.12.0` 以上) がインストールされている必要があります。
 
@@ -161,7 +162,7 @@ Script     0.12.0  AzureRM.Netcore Core
 
 スクリプトに必要な PowerShell エディションを指定します。 有効な値は、PowerShell Core の **コア** と Windows powershell 用の **デスクトップ** です。
 
-次に例を示します。
+以下に例を示します。
 
 ```powershell
 #Requires -PSEdition Core
@@ -172,7 +173,7 @@ Script     0.12.0  AzureRM.Netcore Core
 スクリプトに必要なシェルを指定します。 シェル ID を入力します。 **ShellId** パラメーターを使用する場合は、 **add-pssnapin** パラメーターも含める必要があります。
 自動変数に対してクエリを実行することで、現在の **ShellId** を見つけることができ `$ShellId` ます。
 
-次に例を示します。
+以下に例を示します。
 
 ```powershell
 #Requires -ShellId MyLocalShell -PSSnapin Microsoft.PowerShell.Core
@@ -212,4 +213,3 @@ Param
 [about_Automatic_Variables](about_Automatic_Variables.md)
 
 [about_Language_Keywords](about_Language_Keywords.md)
-

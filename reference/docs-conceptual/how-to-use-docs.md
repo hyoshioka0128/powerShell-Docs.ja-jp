@@ -1,21 +1,23 @@
 ---
 ms.date: 07/29/2020
 keywords: powershell,コマンドレット
+ms.topic: how-to
 title: PowerShell ドキュメントの使用方法
 description: この記事では、検索のフィルター処理やバージョンの選択など、このサイトの機能を使用する方法について説明します。
-ms.openlocfilehash: 32f0c613e10329cc4830386b744e766eeeab0187
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 4779e6e4b17c461d71e9d613d1184b9ce2e7ab7b
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501118"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216084"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>PowerShell ドキュメントの使用方法
 
 PowerShell のオンライン ドキュメントへようこそ。 このサイトには、次のバージョンの PowerShell のコマンドレット リファレンスが含まれています。
 
-- PowerShell 7
-- PowerShell 6
+- PowerShell 7.2 (プレリリース)
+- PowerShell 7.1 (現在)
+- PowerShell 7.0 (LTS)
 - PowerShell 5.1
 
 ## <a name="finding-articles-and-selecting-a-version"></a>記事の検索とバージョンの選択
@@ -51,5 +53,6 @@ PowerShell の以前のバージョンのドキュメントは、[以前のバ�
 - PowerShell 3.0
 - PowerShell 4.0
 - PowerShell 5.0
+- PowerShell 6
 - PowerShell ワークフロー
 - PowerShell Web Access

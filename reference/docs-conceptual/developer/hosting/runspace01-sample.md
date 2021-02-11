@@ -1,18 +1,20 @@
 ---
-title: Runspace01 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1ac286512f3cb3b97a6b3179c9dd45f1fefe1ecf
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace01 サンプル
+description: Runspace01 サンプル
+ms.openlocfilehash: f47f79dd507db258119016353dc5a72d110d9252
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772197"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657918"
 ---
 # <a name="runspace01-sample"></a>Runspace01 サンプル
 
-このサンプルでは、 [system.servicemodel クラスを](/dotnet/api/system.management.automation.powershell)使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットを同期的に実行する方法を示します。 [Get process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、ローカルコンピューター上で実行されている各プロセスの[system.object オブジェクトを返します。](/dotnet/api/System.Diagnostics.Process) 次に、返されたオブジェクトから抽出され、コンソールウィンドウに表示される、 [Processname *](/dotnet/api/System.Diagnostics.Process.ProcessName) [プロパティと * プロパティ](/dotnet/api/System.Diagnostics.Process.Handlecount)の値を抽出します。
+このサンプルでは、 [system.servicemodel クラスを](/dotnet/api/system.management.automation.powershell) 使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) コマンドレットを同期的に実行する方法を示します。 [Get process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、ローカルコンピューター上で実行されている各プロセスの[system.object オブジェクトを返します。](/dotnet/api/System.Diagnostics.Process) 次に、返されたオブジェクトから抽出され、コンソールウィンドウに表示される、 [Processname *](/dotnet/api/System.Diagnostics.Process.ProcessName) [プロパティと * プロパティ](/dotnet/api/System.Diagnostics.Process.Handlecount) の値を抽出します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
  このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -20,7 +22,7 @@ ms.locfileid: "87772197"
 
 - コマンドを実行するための、 [system.servicemodel オブジェクトの作成。](/dotnet/api/system.management.automation.powershell)
 
-- コマンドを、[システムの管理](/dotnet/api/system.management.automation.powershell)オブジェクトのパイプラインに追加します。
+- コマンドを、 [システムの管理](/dotnet/api/system.management.automation.powershell) オブジェクトのパイプラインに追加します。
 
 - コマンドを同期的に実行します。
 
@@ -28,7 +30,7 @@ ms.locfileid: "87772197"
 
 ## <a name="example"></a>例
 
- このサンプルでは、Windows PowerShell によって提供される既定の実行空間で、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットを同期的に実行します。
+ このサンプルでは、Windows PowerShell によって提供される既定の実行空間で、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) コマンドレットを同期的に実行します。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -85,4 +87,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

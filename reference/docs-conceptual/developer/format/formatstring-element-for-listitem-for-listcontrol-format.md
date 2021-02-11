@@ -1,12 +1,14 @@
 ---
-title: ListControl の ListItem の FormatString 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9ec73aa1c2e8180258722627e30344de4e67bda5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl の ListItem の FormatString 要素 (書式)
+description: ListControl の ListItem の FormatString 要素 (書式)
+ms.openlocfilehash: 1c16da92928ea632241942f4f2c63390c4fea706
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781581"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667914"
 ---
 # <a name="formatstring-element-for-listitem-for-listcontrol--format"></a>ListControl の ListItem の FormatString 要素 (書式)
 
@@ -44,9 +46,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-書式指定文字列は、テーブルビュー、リストビュー、ワイドビュー、またはカスタムビューを作成するときに使用できます。 ビューに表示される値の書式設定の詳細については、「[表示されるデータの書式設定](./formatting-displayed-data.md)」を参照してください。
+書式指定文字列は、テーブルビュー、リストビュー、ワイドビュー、またはカスタムビューを作成するときに使用できます。 ビューに表示される値の書式設定の詳細については、「 [表示されるデータの書式設定](./formatting-displayed-data.md)」を参照してください。
 
-リストビューでの書式指定文字列の使用の詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
+リストビューでの書式指定文字列の使用の詳細については、「 [リストビューの作成](./creating-a-list-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 

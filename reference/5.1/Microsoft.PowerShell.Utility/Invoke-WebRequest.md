@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: 25da6262e93be3e3749aabaf4950e2fbcd91ff5c
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: f3545065d4879830a5051ef687f210c7fbd1251e
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93219227"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860663"
 ---
 # Invoke-WebRequest
 
@@ -122,7 +121,7 @@ $R.StatusDescription
 ```powershell
 try
 {
-    $response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -137,7 +136,7 @@ $StatusCode
 404
 ```
 
-最初のコマンドは、 `Invoke-WebRequest` **Stop** の **erroraction** を使用してを呼び出します。これにより、 `Invoke-WebRequest` は、失敗した要求に対して強制的に終了エラーをスローします。 終了エラーは、 `catch` **例外** オブジェクトから **StatusCode** を取得するブロックによってキャッチされます。
+終了エラーは、 `catch` **例外** オブジェクトから **StatusCode** を取得するブロックによってキャッチされます。
 
 ## PARAMETERS
 
@@ -152,7 +151,7 @@ $StatusCode
 入力が GET 要求で、本文が **IDictionary** (通常はハッシュテーブル) の場合、本文はクエリパラメーターとして URI に追加されます。 他の GET 要求の場合、本文は標準形式の要求本文の値として設定され `name=value` ます。
 
 本文がフォームである場合、または呼び出しの出力である場合 `Invoke-WebRequest` 、PowerShell は要求の内容をフォームフィールドに設定します。
-次に例を示します。
+以下に例を示します。
 
 `$r = Invoke-WebRequest https://website.com/login.aspx`
 `$r.Forms\[0\].Name = "MyName"`
@@ -353,7 +352,7 @@ Accept wildcard characters: False
 このコマンドレットが応答本文を保存する出力ファイルを指定します。 パスとファイル名を入力します。
 パスを省略した場合、既定値は現在のディレクトリです。
 
-既定では、は `Invoke-WebRequest` パイプラインに結果を返します。 結果をファイルとパイプラインに送信するには、 **Passthru** パラメーターを使用します。
+既定では、は `Invoke-WebRequest` パイプラインに結果を返します。 結果をファイルとパイプラインに送信するには、**Passthru** パラメーターを使用します。
 
 ```yaml
 Type: System.String
@@ -447,7 +446,7 @@ Accept wildcard characters: False
 
 リモート セッションとは異なり、Web 要求セッションは永続的な接続ではありません。 Web 要求セッションは、Cookie、資格情報、リダイレクトの最大値、ユーザー エージェント文字列などの、接続と要求に関する情報を含むオブジェクトです。 Web 要求セッションを使用して、Web 要求の間で状態とデータを共有することができます。
 
-後続の Web 要求で Web 要求セッションを使用するには、 **WebSession** パラメーターの値にセッション変数を指定します。 PowerShell は、新しい接続を確立するときに、web 要求セッションオブジェクトのデータを使用します。 Web 要求セッションの値をオーバーライドするには、 **UserAgent** 、 **Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。
+後続の Web 要求で Web 要求セッションを使用するには、**WebSession** パラメーターの値にセッション変数を指定します。 PowerShell は、新しい接続を確立するときに、web 要求セッションオブジェクトのデータを使用します。 Web 要求セッションの値をオーバーライドするには、**UserAgent**、**Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。
 
 **Sessionvariable** と **websession** パラメーターを同じコマンドで使用することはできません。
 
@@ -576,7 +575,7 @@ Accept wildcard characters: False
 
 Web 要求セッションを指定します。 ドル記号 () を含む変数名を入力し `$` ます。
 
-Web 要求セッションの値をオーバーライドするには、 **UserAgent** 、 **Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。
+Web 要求セッションの値をオーバーライドするには、**UserAgent**、**Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。
 
 リモート セッションとは異なり、Web 要求セッションは永続的な接続ではありません。 Web 要求セッションは、Cookie、資格情報、リダイレクトの最大値、ユーザー エージェント文字列などの、接続と要求に関する情報を含むオブジェクトです。 Web 要求セッションを使用して、Web 要求の間で状態とデータを共有することができます。
 

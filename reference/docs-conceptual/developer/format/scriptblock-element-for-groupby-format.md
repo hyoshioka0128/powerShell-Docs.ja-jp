@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の ScriptBlock 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e761e02a7910cd598449d564e827889162da9f25
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の ScriptBlock 要素 (書式)
+description: GroupBy の ScriptBlock 要素 (書式)
+ms.openlocfilehash: 117cbef93889046626741449886a1caaa39815cb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787684"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665245"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>GroupBy の ScriptBlock 要素 (書式)
 
@@ -46,7 +48,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビューの要素
 
 このスクリプトの値が変更されるたびに、PowerShell によって新しいグループが開始されます。
 
-この要素が指定されている場合、 [PropertyName](propertyname-element-for-groupby-format.md)要素を指定して新しいグループを開始することはできません。
+この要素が指定されている場合、 [PropertyName](propertyname-element-for-groupby-format.md) 要素を指定して新しいグループを開始することはできません。
 
 ## <a name="see-also"></a>参照
 

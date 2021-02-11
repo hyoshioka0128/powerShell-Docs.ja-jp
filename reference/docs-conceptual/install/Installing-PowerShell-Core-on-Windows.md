@@ -1,13 +1,13 @@
 ---
 title: Windows への PowerShell のインストール
 description: Windows への PowerShell のインストールに関する情報
-ms.date: 09/14/2020
-ms.openlocfilehash: 8f1b60ef6bfef5c2434b0affabb5e0e7af392b96
-ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
+ms.date: 02/02/2021
+ms.openlocfilehash: befc5ff156cb7c3843d89e394e903778682ba28e
+ms.sourcegitcommit: 40b6d8e9b6d791ac69e2ff85224e900b21552bc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574455"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536492"
 ---
 # <a name="installing-powershell-on-windows"></a>Windows への PowerShell のインストール
 
@@ -24,14 +24,14 @@ WSMan を介して PowerShell のリモート処理を有効にするには、�
 
 ## <a name="download-the-installer-package"></a>インストーラー パッケージをダウンロードする
 
-Windows に PowerShell をインストールするには、GitHub の[リリース][releases] ページからインストール パッケージをダウンロードします。 リリース ページの **[Assets]** セクションまで下にスクロールします。 **[Assets]** セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
+Windows に PowerShell をインストールするには、[最新][]のインストール パッケージを GitHub からダウンロードします。 最新の[プレビュー][] バージョンも確認できます。 リリース ページの **[Assets]** セクションまで下にスクロールします。 **[Assets]** セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />MSI パッケージのインストール
 
 MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようになります。 次に例を示します。
 
-- `PowerShell-7.0.3-win-x64.msi`
-- `PowerShell-7.0.3-win-x86.msi`
+- `PowerShell-7.1.1-win-x64.msi`
+- `PowerShell-7.1.1-win-x86.msi`
 
 ダウンロードしたら、インストーラーをダブルクリックし、プロンプトの指示に従います。
 
@@ -41,26 +41,28 @@ MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようにな�
 - PowerShell は、スタート メニューまたは  `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` から起動できます。
 
 > [!NOTE]
-> PowerShell 7 は新しいディレクトリにインストールされ、Windows PowerShell 5.1 と side-by-side 実行されます。 PowerShell Core 6.x がインストールされている場合、PowerShell 7 にインプレース アップグレードされ、PowerShell Core 6.x は削除されます。
+> PowerShell 7.1 は新しいディレクトリにインストールされ、Windows PowerShell 5.1 と side-by-side 実行されます。
+> PowerShell 7.1 はインプレース アップグレードであり、PowerShell Core 6.x または PowerShell 7.0 が置き換えられます。
 >
-> - PowerShell 7 は `$env:ProgramFiles\PowerShell\7` にインストールされます
+> - PowerShell 7.1 は `$env:ProgramFiles\PowerShell\7` にインストールされます
 > - `$env:ProgramFiles\PowerShell\7` フォルダーは `$env:PATH` に追加されます
 > - `$env:ProgramFiles\PowerShell\6` フォルダーは削除されます
 >
-> PowerShell 6 を PowerShell 7 と side-by-side 実行する必要がある場合は、[ZIP インストール](#zip)方法を使用して PowerShell 6 を再インストールします。
+> PowerShell 7.1 を他のバージョンと side-by-side 実行する場合、[ZIP インストール](#zip)手法を利用し、他のバージョンを別のフォルダーにインストールしてください。
 
 ### <a name="administrative-install-from-the-command-line"></a>コマンド ラインからの管理者インストール
 
 MSI パッケージはコマンド ラインからインストールできるため、管理者はユーザーの介入なしにパッケージを展開できます。 MSI パッケージには、インストールのオプションを制御するための次のプロパティが含まれます。
 
 - **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - このプロパティでは、エクスプローラーのコンテキスト メニューに **[Open PowerShell]\(PowerShell を開く\)** 項目を追加するためのオプションを制御します。
+- **ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL** - このプロパティでは、エクスプローラーのコンテキスト メニューに **[PowerShell を使用しての実行]** 項目を追加するためのオプションを制御します。
 - **ENABLE_PSREMOTING** - このプロパティでは、インストール中に PowerShell リモート処理を有効にするためのオプションを制御します。
 - **REGISTER_MANIFEST** - このプロパティでは、Windows イベント ログのマニフェストを登録するためのオプションを制御します。
 
 すべてのインストール オプションを有効にして PowerShell をサイレント インストールする方法を、次の例に示します。
 
 ```powershell
-msiexec.exe /package PowerShell-7.0.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 `Msiexec.exe` 用のコマンド ライン オプションの完全な一覧については、[コマンド ライン オプション](/windows/desktop/Msi/command-line-options)に関するページをご覧ください。
@@ -78,24 +80,18 @@ PowerShell 7.1 以降では、MSI パッケージによって、インストー�
 
 これは、管理者と開発者が PowerShell へのパスを見つけるために使用できます。 `<GUID>` の値は、すべてのプレビューおよびマイナー バージョンのリリースで同じになります。 `<GUID>` の値はメジャー リリースごとに変更されます。
 
-## <a name="installing-the-msix-package"></a><a id="msix" />MSIX パッケージのインストール
-
-> [!NOTE]
-> 現時点では、MSIX パッケージは公式にサポートされていません。 私たちは引き続き、内部テストのみを目的としてパッケージをビルドします。
-
-Windows 10 クライアントに MSIX パッケージを手動でインストールするには、Microsoft の GitHub [リリース][releases] ページから MSIX パッケージをダウンロードしてください。 インストールしたいリリースの **[Assets]** セクションまでスクロールダウンします。 [Assets] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
-
-MSIX ファイルは、`PowerShell-<version>-win-<os-arch>.msix` のようになります。
-
-パッケージをインストールするには、`Add-AppxPackage` コマンドレットを使用する必要があります。
-
-```powershell
-Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
-```
-
 ## <a name="installing-the-zip-package"></a><a id="zip" />ZIP パッケージのインストール
 
-PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 ZIP アーカイブをインストールしても、MSI パッケージのように前提条件は確認されません。 [リリース][releases] ページから ZIP アーカイブをダウンロードします。 ファイルのダウンロード方法によっては、`Unblock-File` コマンドレットを使用して、ファイルのブロックを解除することが必要になる場合があります。 任意の場所にコンテンツを解凍し、そこから `pwsh.exe` を実行します。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確かめてください。
+PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 [リリース][リリース] ページから、次のいずれかの ZIP アーカイブをダウンロードします。
+
+- PowerShell-7.1.1-win-x64.zip
+- PowerShell-7.1.1-win-x86.zip
+- PowerShell-7.1.1-win-arm64.zip
+- PowerShell-7.1.1-win-arm32.zip
+
+ファイルのダウンロード方法によっては、`Unblock-File` コマンドレットを使用して、ファイルのブロックを解除することが必要になる場合があります。 任意の場所にコンテンツを解凍し、そこから `pwsh.exe` を実行します。 MSI パッケージをインストールする場合とは異なり、ZIP アーカイブをインストールしても、前提条件は確認されません。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確かめてください。
+
+この方法を使用して、Microsoft Surface Pro X のようなコンピューターに ARM ベース バージョンの PowerShell をインストールします。最適な結果を得るには、PowerShell を `$env:ProgramFiles\PowerShell\7` フォルダーにインストールします。
 
 ## <a name="deploying-on-windows-10-iot-enterprise"></a>Windows 10 IoT Enterprise への展開
 
@@ -132,26 +128,25 @@ Windows 10 IoT Enterprise には、PowerShell 7 の展開に使用できる Wind
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
-   # You'll get an error message and will be disconnected from the device because it has to restart WinRM
+   # You'll get an error message and will be disconnected from the device because
+   # it has to restart WinRM
    ```
 
 1. デバイス上の PowerShell 7 エンドポイントに接続します
 
    ```powershell
-   # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
+   # Be sure to use the -Configuration parameter. If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
 ## <a name="deploying-on-windows-10-iot-core"></a>Windows 10 IoT Core への展開
 
-PowerShell 7 の展開に使用できる *IOT_POWERSHELL* 機能を取り込む場合、Windows 10 IoT Core によって Windows PowerShell が追加されます。
-上記で Windows 10 IoT Enterprise に対して定義した手順は、IoT Core にも適用できます。
+PowerShell 7 の展開に使用できる _IOT_POWERSHELL_ 機能を取り込む場合、Windows 10 IoT Core によって Windows PowerShell が追加されます。 上記で Windows 10 IoT Enterprise に対して定義した手順は、IoT Core にも適用できます。
 
-配布イメージに最新の powershell を追加する場合は、[Import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) コマンドを使用して、ワークスペースにパッケージを取り込み、さらに *OPENSRC_POWERSHELL* 機能をご利用のイメージに追加します。
+配布イメージに最新の PowerShell を追加する場合は、[Import-PSCoreRelease][] コマンドを使用して、ワークスペースにパッケージを取り込み、さらに _OPENSRC_POWERSHELL_ 機能をご利用のイメージに追加します。
 
 > [!NOTE]
-> ARM64 アーキテクチャの場合、*IOT_POWERSHELL* を取り込むときに、Windows Powershell は追加されません。 そのため、zip ベースのインストールは機能しません。
-> イメージに追加するには、Import-PSCoreRelease コマンドを使用する必要があります。
+> ARM64 アーキテクチャの場合、_IOT_POWERSHELL_ を取り込むときに、Windows PowerShell は追加されません。 そのため、zip ベースのインストールは機能しません。 イメージに追加するには、`Import-PSCoreRelease` コマンドを使用する必要があります。
 
 ## <a name="deploying-on-nano-server"></a>Nano Server への展開
 
@@ -169,7 +164,7 @@ PowerShell バイナリを展開するには、2 つの方法があります。
 1. お好みの zip ユーティリティを使用して、マウントされた Nano Server イメージ内のディレクトリにパッケージを解凍します。
 1. イメージをマウント解除し、ブートします。
 1. Windows PowerShell の組み込みインスタンスに接続します。
-1. 「[別のインスタンスのテクニック](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)」の、リモート エンドポイントを作成する手順に従います。
+1. 「[別のインスタンスのテクニック][]」の、リモート エンドポイントを作成する手順に従います。
 
 ### <a name="online-deployment-of-powershell"></a>PowerShell のオンラインでの展開
 
@@ -200,7 +195,7 @@ PowerShell バイナリを展開するには、2 つの方法があります。
   Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShell_<version>"
   ```
 
-- WSMan を使用してリモート処理を行う場合、「[別のインスタンスのテクニック](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)」の、リモート エンドポイントを作成する手順に従います。
+- WSMan を使用してリモート処理を行う場合、「[別のインスタンスのテクニック][]」の、リモート エンドポイントを作成する手順に従います。
 
 ## <a name="install-as-a-net-global-tool"></a>.NET グローバル ツールとしてインストールする
 
@@ -214,11 +209,11 @@ dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE
 
 ## <a name="install-powershell-via-winget"></a>Winget を使用して PowerShell をインストールする
 
-開発者は、`winget` コマンド ライン ツールを使用して、Windows 10 コンピューター上のアプリケーションの検出、インストール、アップグレード、削除、および構成を行うことができます。 このツールは、Windows パッケージ マネージャー サービスに対するクライアント インターフェイスです。
+開発者は、`winget` コマンドライン ツールを使用して、Windows 10 コンピューター上のアプリケーションの検出、インストール、アップグレード、削除、および構成を行うことができます。 このツールは、Windows パッケージ マネージャー サービスに対するクライアント インターフェイスです。
 
 > [!NOTE]
 > `winget` ツールは現在プレビュー段階です。 現時点では、計画されたすべての機能を使用できるわけではありません。
-> ツールのオプションと機能は変更される可能性があります。 運用環境の展開シナリオでは、この方法を使用しないでください。 システム要件とインストール手順の一覧については、[winget] に関するドキュメントを参照してください。
+> 運用環境の展開シナリオでは、この方法を使用しないでください。 システム要件とインストール手順の一覧については、[winget] に関するドキュメントを参照してください。
 
 次のコマンドを使用すると、公開済みの `winget` パッケージを使用して PowerShell をインストールできます。
 
@@ -231,8 +226,8 @@ dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.0.3
-   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
+   PowerShell         Microsoft.PowerShell         7.1.1
+   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.1-preview.5
    ```
 
 1. `--exact` パラメーターを使用して、いずれかのバージョンの PowerShell をインストールします
@@ -242,6 +237,39 @@ dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE
    winget install --name PowerShell-Preview --exact
    ```
 
+## <a name="installing-from-the-microsoft-store"></a><a id="msix" />Microsoft Store からインストールする
+
+PowerShell 7.1 が Microsoft Store に公開されています。 PowerShell リリースは [Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) Web サイトまたは Windows の Store アプリケーションで見つけることができます。
+
+Microsoft Store パッケージの利点:
+
+- Windows 10 に直接組み込まれた自動更新
+- Intune や SCCM など、他のソフトウェア配布メカニズムとの統合
+
+制限事項:
+
+MSIX パッケージは、一部のファイルシステムとレジストリの場所へのアクセスを仮想化するアプリケーション サンドボックスで実行されます。
+
+- HKEY_CURRENT_USER の下でのレジストリ変更はすべて、書き込み時、ユーザーごとにアプリ別のプライベートの場所にコピーされます。 そのため、これらの値は他のアプリケーションでは使用できません。
+- `$PSHOME` に格納されているシステムレベルの構成設定は変更できません。 これには WSMAN 構成が含まれます。 これにより、リモート セッションが PowerShell のストアベース インストールに接続できなくなります。 ユーザーレベル構成と SSH リモート処理がサポートされていません。
+
+詳細については、「[Windows でパッケージ化されたデスクトップ アプリが動作するしくみについて](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes)」を参照してください。
+
+### <a name="using-the-msix-package"></a>MSIX パッケージの使用
+
+> [!NOTE]
+> PowerShell のプレビュー ビルドには MSIX パッケージが含まれています。 MSIX パッケージは公式にサポートされていません。 このパッケージは、プレビュー期間中のテスト目的で作られています。
+
+Windows 10 クライアントに MSIX パッケージを手動でインストールするには、Microsoft の GitHub [リリース][リリース] ページから MSIX パッケージをダウンロードしてください。 インストールしたいリリースの **[Assets]** セクションまでスクロールダウンします。 [Assets] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
+
+MSIX ファイルは、`PowerShell-<version>-win-<os-arch>.msix` のようになります。
+
+パッケージをインストールするには、`Add-AppxPackage` コマンドレットを使用する必要があります。
+
+```powershell
+Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
+```
+
 ## <a name="how-to-create-a-remoting-endpoint"></a>リモート エンドポイントの作成方法
 
 PowerShell では、WSMan と SSH の両方について PowerShell Remoting Protocol (PSRP) がサポートされています。 詳細については、次を参照してください。
@@ -249,14 +277,21 @@ PowerShell では、WSMan と SSH の両方について PowerShell Remoting Prot
 - [PowerShell Core での SSH リモート処理][ssh-remoting]
 - [PowerShell Core での WSMan リモート処理][wsman-remoting]
 
+## <a name="upgrading-an-existing-installation"></a>既存のインストールのアップグレード
+
+アップグレード時に最適な結果を得るには、最初に PowerShell をインストールしたときと同じインストール方法を使用してください。 各インストール方法では、PowerShell をそれぞれ異なる場所にインストールします。 PowerShell がインストールされた方法がわからない場合は、この記事のパッケージ情報とインストールされている場所を比較できます。 MSI パッケージを使用してインストールした場合、その情報は **[プログラムと機能]** コントロール パネルに表示されます。
+
 ## <a name="installation-support"></a>インストールのサポート
 
-Microsoft では、このドキュメントのインストール方法をサポートしています。 他のソースから別の方法でインストールできる場合もあります。 そのようなツールと方法は機能しても、Microsoft ではそれらの方法をサポートできません。
+Microsoft は、このドキュメントでインストール方法をサポートしています。 他のソースには、利用可能な別のインストール方法が存在する可能性があります。 そのようなツールや方法が役に立つものであっても、Microsoft は、そのような方法をサポートすることはできません。
 
 <!-- link references -->
 
-[releases]: https://github.com/PowerShell/PowerShell/releases
+[preview]: https://aka.ms/powershell-release?tag=preview
+[latest]: https://aka.ms/powershell-release?tag=stable
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
 [winget]: /windows/package-manager/winget
+「[別のインスタンスのテクニック]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register」
+[Import-PSCoreRelease]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease

@@ -1,12 +1,14 @@
 ---
-title: コマンドレット内のコマンドレットとスクリプトの呼び出し |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3d5f76242c02763c41b81215bbb031e19869066a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレット内でコマンドレットとスクリプトを呼び出す
+description: コマンドレット内でコマンドレットとスクリプトを呼び出す
+ms.openlocfilehash: 246c61661f2d290e7e7ac62a8ad303b05bdc7582
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786579"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652647"
 ---
 # <a name="invoking-cmdlets-and-scripts-within-a-cmdlet"></a>コマンドレット内でコマンドレットとスクリプトを呼び出す
 
@@ -14,9 +16,9 @@ ms.locfileid: "87786579"
 
 ## <a name="the-invoke-method"></a>Invoke メソッド
 
-すべてのコマンドレットで既存のコマンドレットを呼び出すことができます。これは、コマンドレットによってオーバーライドさ[れる、入力](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)処理メソッド (たとえば、) から[、システムの呼び出しメソッドを](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)呼び出すことによって実行できます。 ただし、を呼び出すことが[できるのは、system.servicemodel クラスから](/dotnet/api/System.Management.Automation.Cmdlet)直接派生したコマンドレットだけです。 [PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラスから派生したコマンドレットを呼び出すことはできません。
+すべてのコマンドレットで既存のコマンドレットを呼び出すことができます。これは、コマンドレットによってオーバーライドさ[れる、入力](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)処理メソッド (たとえば、) から[、システムの呼び出しメソッドを](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)呼び出すことによって実行できます。 ただし、を呼び出すことが [できるのは、system.servicemodel クラスから](/dotnet/api/System.Management.Automation.Cmdlet) 直接派生したコマンドレットだけです。 [PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラスから派生したコマンドレットを呼び出すことはできません。
 
-System.servicemodel [*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)メソッドには、次のバリアントがあります。
+System.servicemodel [*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) メソッドには、次のバリアントがあります。
 
 System.string。この variant を[呼び出す](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)と、コマンドレットオブジェクトが呼び出され、"T" 型のオブジェクトのコレクションが返されます。
 

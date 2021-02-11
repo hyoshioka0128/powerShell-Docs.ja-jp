@@ -2,20 +2,20 @@
 description: PSModulePath 環境変数には、モジュールとリソースを検索するために検索されるフォルダーの場所の一覧が含まれています。
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 04/13/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSModulePath
-ms.openlocfilehash: 58aabc4f4821ce41782d3b9837eb67f19f6a07a9
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 580c7a1d61e481448e2f49f62fb7d089922e72b5
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222043"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524792"
 ---
 # <a name="about-psmodulepath"></a>PSModulePath について
 
-環境変数には、 `$env:PSModulePath` モジュールとリソースを検索するために検索されるフォルダーの場所の一覧が含まれています。
+環境変数には、 `$env:PSModulePath` モジュールとリソースを検索するために検索されるフォルダーの場所の一覧が含まれています。 PowerShell は、各フォルダーでモジュール ( `.psd1` または) ファイルを再帰的に検索 `.psm1` します。
 
 既定では、に割り当てられて `$env:PSModulePath` いる有効な場所は次のとおりです。
 
@@ -131,8 +131,22 @@ PowerShell Core 6 は上書きさ `$env:PSModulePath` れます。 変更は行�
 
 Powershell 7 のスタートアップは、PowerShell Core 6 によって追加された継承パスを追加することでそのままの状態で続行されます。 PS7 固有のパスにはプレフィックスが付いているため、機能上の問題はありません。
 
+## <a name="module-search-behavior"></a>モジュールの検索動作
+
+PowerShell は、 **PSModulePath** のモジュール ( `.psd1` または) ファイルの各フォルダーを再帰的に検索し `.psm1` ます。 この検索パターンを使用すると、同じモジュールの複数のバージョンを異なるフォルダーにインストールできます。 次に例を示します。
+
+```Output
+    Directory: C:\Program Files\WindowsPowerShell\Modules\PowerShellGet
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/14/2020  5:56 PM                1.0.0.1
+d----           9/13/2019  3:53 PM                2.1.2
+```
+
+既定では、複数のバージョンが検出されると、PowerShell はモジュールの最大バージョン番号を読み込みます。 特定のバージョンを読み込むには、FullyQualifiedName パラメーターを指定してを使用し `Import-Module` ます。 **FullyQualifiedName** 詳細については、「[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)」を参照してください。
+
 ## <a name="see-also"></a>関連項目
 
 - [about_Modules](about_Modules.md)
 - [環境メソッド](/dotnet/api/system.environment)
-

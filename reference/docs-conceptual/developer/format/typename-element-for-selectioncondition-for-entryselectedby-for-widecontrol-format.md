@@ -1,12 +1,14 @@
 ---
-title: WideControl (Format) の EntrySelectedBy の SelectionCondition の TypeName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5021f665b994581f9ff982e13af922d7940ebf2b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)
+description: WideControl の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)
+ms.openlocfilehash: af6e4782c345b43e16bce59c333bdaaceba0d845
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783315"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645513"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format"></a>WideControl の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)
 
@@ -44,9 +46,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (f
 
 ## <a name="remarks"></a>解説
 
-選択条件では、.NET 型または選択セットを指定できますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件では、.NET 型または選択セットを指定できますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「 [データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
-ワイドビューのその他のコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
+ワイドビューのその他のコンポーネントの詳細については、「 [ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

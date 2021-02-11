@@ -1,18 +1,20 @@
 ---
-title: プロバイダーのヘルプ トピックに動的パラメーターを追加する方法
 ms.date: 09/13/2016
-ms.openlocfilehash: ddf964292ee7bf477767a2ca17c717aef84bad51
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: プロバイダーのヘルプ トピックに動的パラメーターを追加する方法
+description: プロバイダーのヘルプ トピックに動的パラメーターを追加する方法
+ms.openlocfilehash: 9542538cfacf5fb293ca8d1350b80fb250c71ac6
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893460"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649645"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>プロバイダーのヘルプ トピックに動的パラメーターを追加する方法
 
-このセクションでは、プロバイダーヘルプトピックの**動的パラメーター**セクションにデータを設定する方法について説明します。
+このセクションでは、プロバイダーヘルプトピックの **動的パラメーター** セクションにデータを設定する方法について説明します。
 
-*動的パラメーター*とは、指定された条件下でのみ使用可能なコマンドレットまたは関数のパラメーターです。
+*動的パラメーター* とは、指定された条件下でのみ使用可能なコマンドレットまたは関数のパラメーターです。
 
 プロバイダーのヘルプトピックに記載されている動的パラメーターは、プロバイダーのドライブでコマンドレットまたは関数が使用されている場合に、プロバイダーがコマンドレットまたは関数に追加する動的パラメーターです。
 
@@ -68,7 +70,7 @@ ms.locfileid: "86893460"
 
 1. 各 `DynamicParameter` 要素に要素を追加 `Type` します。 要素は、 `Type` `Name` 動的パラメーターの値の .net 型を含む要素のコンテナーです。
 
-   たとえば、次の XML は、動的パラメーターの .NET 型 `Encoding` が[Filesystemcmdletproviderencoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding)列挙体であることを示しています。
+   たとえば、次の XML は、動的パラメーターの .NET 型 `Encoding` が [Filesystemcmdletproviderencoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) 列挙体であることを示しています。
 
     ```xml
     <DynamicParameters/>
@@ -82,7 +84,7 @@ ms.locfileid: "86893460"
     </DynamicParameters>
     ```
 
-1. `Description`要素を追加します。これには、動的パラメーターの簡単な説明が含まれています。 説明を作成する場合は、「[パラメーター情報を追加する方法](./how-to-add-parameter-information.md)」のすべてのコマンドレットパラメーターに指定されているガイドラインを使用します。
+1. `Description`要素を追加します。これには、動的パラメーターの簡単な説明が含まれています。 説明を作成する場合は、「 [パラメーター情報を追加する方法](./how-to-add-parameter-information.md)」のすべてのコマンドレットパラメーターに指定されているガイドラインを使用します。
 
    たとえば、次の XML には、動的パラメーターの説明が含まれてい `Encoding` ます。
 

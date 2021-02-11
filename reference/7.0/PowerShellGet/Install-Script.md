@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/powershellget/install-script?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Script
-ms.openlocfilehash: dd4e8169310f23182697ba6bf4263d916f747b84
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: c8191f8b5bbf6337fdc11dc3d15774991029151b
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93211099"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891194"
 ---
 # Install-Script
 
@@ -42,7 +42,7 @@ Install-Script [-InputObject] <PSObject[]> [-Scope <String>] [-NoPathUpdate] [-P
 
 `Install-Script`コマンドレットは、リポジトリからスクリプトペイロードを取得し、ペイロードが有効な PowerShell スクリプトであることを確認して、スクリプトファイルを指定したインストール場所にコピーします。
 
-に対して動作する既定のリポジトリ `Install-Script` は `Register-PSRepository` 、、、 `Set-PSRepository` 、およびコマンドレットを使用して構成 `Unregister-PSRepository` `Get-PSRepository` できます。 複数のリポジトリに対して操作を実行する場合、では、 `Install-Script` 最初のリポジトリから、指定した検索条件 ( **Name** 、 **MinimumVersion** 、または **MaximumVersion** ) に一致する最初のスクリプトが、エラーなしでインストールされます。
+に対して動作する既定のリポジトリ `Install-Script` は `Register-PSRepository` 、、、 `Set-PSRepository` 、およびコマンドレットを使用して構成 `Unregister-PSRepository` `Get-PSRepository` できます。 複数のリポジトリに対して操作を実行する場合、では、 `Install-Script` 最初のリポジトリから、指定した検索条件 (**Name**、 **MinimumVersion**、または **MaximumVersion**) に一致する最初のスクリプトが、エラーなしでインストールされます。
 
 ## 例
 
@@ -446,7 +446,7 @@ CurrentUser スコープでは、モジュールをにのみインストール�
 **スコープ** が定義されていない場合、既定値は現在のセッションに基づいて設定されます。
 
 - 管理者特権の PowerShell セッションの場合、 **スコープ** の既定値は AllUsers です。
-- [PowerShellGet バージョン 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet)以上の管理者特権以外の PowerShell セッションの場合、 **スコープ** は CurrentUser です。
+- [PowerShellGet バージョン 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet)以上の管理者特権以外の PowerShell セッションの場合、**スコープ** は CurrentUser です。
 - PowerShellGet バージョン1.6.7 以前の管理者以外の PowerShell セッションの場合、 **スコープ** は未定義で `Install-Module` あり、失敗します。
 
 ```yaml
@@ -499,6 +499,13 @@ Accept wildcard characters: False
 ### System.Object
 
 ## 注
+
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
 
 ## 関連リンク
 

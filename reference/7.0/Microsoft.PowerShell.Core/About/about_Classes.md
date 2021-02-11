@@ -1,17 +1,16 @@
 ---
 description: クラスを使用して独自のカスタム型を作成する方法について説明します。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 09/16/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
-ms.openlocfilehash: 27950034806caf53b2cdbe50329709a8ab177aee
-ms.sourcegitcommit: 16d62a98449e3ddaf8d7c65bc1848ede1fd8a3e7
+ms.openlocfilehash: 7974ec49ebf27338da461cd57fb43cc0229b7323
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "93219979"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620049"
 ---
 # <a name="about-classes"></a>クラスの概要
 
@@ -107,7 +106,7 @@ Microsoft Surface Pro 4 5072641000
 
 ### <a name="example-complex-types-in-class-properties"></a>クラスプロパティの複合型の例
 
-この例では、 **デバイス** クラスを使用して空の **ラック** クラスを定義します。 この後の例では、デバイスをラックに追加する方法と、事前に読み込まれたラックから始める方法について説明します。
+この例では、**デバイス** クラスを使用して空の **ラック** クラスを定義します。 この後の例では、デバイスをラックに追加する方法と、事前に読み込まれたラックから始める方法について説明します。
 
 ```powershell
 class Device {
@@ -768,9 +767,19 @@ class MyComparableBar : bar, System.IComparable
 
 `Import-Module` また、ステートメントでは、モジュール `#requires` で定義されているモジュール関数、エイリアス、および変数のみをインポートします。 クラスはインポートされません。 ステートメントは、 `using module` モジュールで定義されているクラスをインポートします。 現在のセッションでモジュールが読み込まれていない場合、 `using` ステートメントは失敗します。 ステートメントの詳細については `using` 、「 [about_Using](about_Using.md)」を参照してください。
 
+ステートメントは、 `using module` `ModuleToProcess` スクリプトモジュールまたはバイナリモジュールのルートモジュール () からクラスをインポートします。 入れ子になったモジュールで定義されているクラスや、ドットソースのスクリプトで定義されているクラスをモジュールに常にインポートすることはできません。 モジュールの外部のユーザーが使用できるようにするクラスは、ルートモジュールで定義する必要があります。
+
+## <a name="loading-newly-changed-code-during-development"></a>開発中に新しく変更されたコードの読み込み
+
+スクリプトモジュールの開発時には、コードに変更を加えた後、Force パラメーターを指定してを使用して新しいバージョンのモジュールを読み込むのが一般的です `Import-Module` 。  これは、ルートモジュールの関数の変更に対してのみ機能します。 `Import-Module` では、入れ子になったモジュールは再読み込みされません。 また、更新されたクラスを読み込む方法はありません。
+
+最新バージョンを実行していることを確認するには、コマンドレットを使用してモジュールをアンロードする必要があり `Remove-Module` ます。 `Remove-Module` ルートモジュール、すべての入れ子になったモジュール、およびモジュールで定義されているすべてのクラスを削除します。 次に、およびステートメントを使用して、モジュールとクラスを再度読み込みます `Import-Module` `using module` 。
+
+もう1つの一般的な開発手法は、コードを別のファイルに分割することです。 別のモジュールで定義されているクラスを使用する関数が1つのファイルにある場合は、ステートメントを使用して、 `using module` 必要なクラス定義が関数に確実に含まれるようにする必要があります。
+
 ## <a name="the-psreference-type-is-not-supported-with-class-members"></a>PSReference 型はクラスメンバーではサポートされていません
 
-`[ref]`クラスメンバーによる型キャストの使用は、暗黙的に失敗します。 パラメーターを使用する Api `[ref]` は、クラスメンバーでは使用できません。 **Psreference** は、COM オブジェクトをサポートするように設計されています。 COM オブジェクトには、参照によっての値を渡す必要があるケースがあります。
+`[ref]`クラスメンバーによる型キャストの使用は、暗黙的に失敗します。 パラメーターを使用する Api `[ref]` は、クラスメンバーでは使用できません。 **Psreference** クラスは、COM オブジェクトをサポートするように設計されています。 COM オブジェクトには、参照によっての値を渡す必要があるケースがあります。
 
 型の詳細については `[ref]` 、「 [Psreference クラス](/dotnet/api/system.management.automation.psreference)」を参照してください。
 

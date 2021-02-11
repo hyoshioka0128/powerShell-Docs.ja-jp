@@ -1,16 +1,18 @@
 ---
-title: GetProc05 のコードサンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 66758028bc964912495d636af90947101dd37923
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc05 コード サンプル
+description: GetProc05 コード サンプル
+ms.openlocfilehash: 1280048aeec35512f1e6061bdf58919d83a461cd
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778716"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92661842"
 ---
 # <a name="getproc05-code-samples"></a>GetProc05 コード サンプル
 
-GetProc05 サンプルコマンドレットのコードサンプルを次に示します。 この `Get-Process` コマンドレットは、「[コマンドレットに終了しないエラー報告を追加](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)する」で説明されているコマンドレットに似ています。
+GetProc05 サンプルコマンドレットのコードサンプルを次に示します。 この `Get-Process` コマンドレットは、「 [コマンドレットに終了しないエラー報告を追加](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)する」で説明されているコマンドレットに似ています。
 
 |言語|トピック|
 |--------------|-----------|

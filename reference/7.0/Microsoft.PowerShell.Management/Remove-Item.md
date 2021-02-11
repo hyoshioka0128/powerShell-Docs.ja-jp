@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/07/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
-ms.openlocfilehash: ddb3f8d1889887e01db8663e21cdb0323e6d4084
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 9b8d81c84a5dab8fa5f5e216c8c4eb5b5f6022b7
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93209803"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692852"
 ---
 # Remove-Item
 
@@ -69,7 +68,7 @@ Remove-Item * -Include *.doc -Exclude *1*
 Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
 ```
 
-**Path** パラメーターを使用してファイルを指定します。 **Force** パラメーターを使用して削除します。 **Force** を使用しない場合、 _読み取り_ 専用または _非表示_ のファイルは削除できません。
+**Path** パラメーターを使用してファイルを指定します。 **Force** パラメーターを使用して削除します。 **Force** を使用しない場合、_読み取り_ 専用または _非表示_ のファイルは削除できません。
 
 ### 例 4: サブフォルダー内のファイルを再帰的に削除する
 
@@ -81,11 +80,11 @@ Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
 Get-ChildItem * -Include *.csv -Recurse | Remove-Item
 ```
 
-コマンドで `Get-ChildItem` は、 **Path** の値が () になっています。この値は、 `*` 現在のフォルダーの内容を表します。 **Include** を使用して CSV ファイルの種類を指定し、 **再帰を使用** して、再帰的な取得を行います。 ファイルの種類としてパス (など) を指定しようとする `-Path *.csv` と、コマンドレットは検索の対象を子項目を持たないファイルと解釈し、 **再帰** は失敗します。
+コマンドで `Get-ChildItem` は、 **Path** の値が () になっています。この値は、 `*` 現在のフォルダーの内容を表します。 **Include** を使用して CSV ファイルの種類を指定し、**再帰を使用** して、再帰的な取得を行います。 ファイルの種類としてパス (など) を指定しようとする `-Path *.csv` と、コマンドレットは検索の対象を子項目を持たないファイルと解釈し、 **再帰** は失敗します。
 
 ### 例 5: サブキーを再帰的に削除する
 
-このコマンドは、"OldApp" レジストリキーとそのすべてのサブキーと値を削除します。 キーを `Remove-Item` 削除するためにを使用します。 パスが指定されていますが、省略可能なパラメーター名 ( **path** ) は省略されています。
+このコマンドは、"OldApp" レジストリキーとそのすべてのサブキーと値を削除します。 キーを `Remove-Item` 削除するためにを使用します。 パスが指定されていますが、省略可能なパラメーター名 (**path**) は省略されています。
 
 **再帰** パラメーターは、"oldapp" キーのすべての内容を再帰的に削除します。 キーにサブキーが含まれていて、 **再帰** パラメーターを省略した場合、キーの内容を削除するかどうかを確認するメッセージが表示されます。
 
@@ -174,7 +173,7 @@ At line:1 char:1
 
 ```
 
-**Stream** パラメーターは、 `Get-Item` ファイルの **ゾーン識別子** ストリームを取得します。 `Copy-Script.ps1` `Remove-Item`**Stream** パラメーターを使用して、ファイルの **ゾーン識別子** ストリームを削除します。 最後に、 `Get-Item` コマンドレットは、 **ゾーン識別子** のストリームが削除されたことを示します。
+**Stream** パラメーターは、 `Get-Item` `Zone.Identifier` ファイルのストリームを取得し `Copy-Script.ps1` ます。 `Remove-Item`**stream** パラメーターを使用して、 `Zone.Identifier` ファイルのストリームを削除します。 最後に、 `Get-Item` ストリームが削除されたことがコマンドレットによって示され `Zone.Identifier` ます。
 
 ## PARAMETERS
 
@@ -198,7 +197,7 @@ Accept wildcard characters: False
 
 ### -除外
 
-このコマンドレットによって操作で除外される項目を文字列配列として指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Exclude** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+このコマンドレットによって操作で除外される項目を文字列配列として指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Exclude** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -214,8 +213,7 @@ Accept wildcard characters: True
 
 ### -Filter
 
-**パス** パラメーターを修飾するフィルターを指定します。 [ファイルシステム](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)プロバイダーは、フィルターの使用をサポートする唯一のインストール済み PowerShell プロバイダーです。 **ファイルシステム** フィルター言語の構文については、 [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md)を参照してください。
-フィルターは他のパラメーターよりも効率的です。これは、取得後にオブジェクトを PowerShell でフィルター処理するのではなく、コマンドレットがオブジェクトを取得するときに、フィルターが適用されるためです。
+**パス** パラメーターを修飾するフィルターを指定します。 [ファイルシステム](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)プロバイダーは、フィルターの使用をサポートする唯一のインストール済み PowerShell プロバイダーです。 **ファイルシステム** フィルター言語の構文については、 [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md)を参照してください。 フィルターは他のパラメーターよりも効率的です。これは、取得後にオブジェクトを PowerShell でフィルター処理するのではなく、コマンドレットがオブジェクトを取得するときに、フィルターが適用されるためです。
 
 ```yaml
 Type: System.String
@@ -248,7 +246,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `"*.txt"` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `"*.txt"` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -317,10 +315,14 @@ Accept wildcard characters: False
 
 ### -ストリーム
 
+> [!NOTE]
+> このパラメーターは Windows でのみ使用できます。
+
 **ストリーム** パラメーターは、FileSystem プロバイダーによってに追加される動的パラメーターです `Remove-Item` 。
 このパラメーターはファイル システム ドライブでのみ機能します。
 
-を使用すると `Remove-Item` 、代替データストリームを削除できます。 ただし、インターネットからダウンロードされるファイルをブロックするセキュリティ チェックをなくす方法としては推奨されません。 ダウンロードしたファイルが安全であることを確認した場合は、コマンドレットを使用し `Unblock-File` ます。
+を使用する `Remove-Item` と、などの代替データストリームを削除でき `Zone.Identifier` ます。
+ただし、インターネットからダウンロードされるファイルをブロックするセキュリティ チェックをなくす方法としては推奨されません。 ダウンロードしたファイルが安全であることを確認した場合は、コマンドレットを使用し `Unblock-File` ます。
 
 このパラメーターは Windows PowerShell 3.0 で導入されました。
 
@@ -338,7 +340,7 @@ Accept wildcard characters: True
 
 ### -Confirm
 
-コマンドレットの実行前に確認を求めるメッセージが表示されます。 詳細については、次の記事を参照してください。
+コマンドレットの実行前に確認を求めるメッセージが表示されます。 詳細については、以下の記事を参照してください。
 
 - [about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
 - [about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
@@ -373,7 +375,8 @@ Accept wildcard characters: False
 
 ### 共通パラメーター
 
-このコマンドレットは、、、、、、、、、、、およびの共通パラメーターをサポートしてい `-Debug` `-ErrorAction` `-ErrorVariable` `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` `-WarningVariable` ます。 詳細については、「[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)」を参照してください。
+このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
+
 
 ## 入力
 

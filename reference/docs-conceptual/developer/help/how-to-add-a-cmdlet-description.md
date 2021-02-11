@@ -1,16 +1,18 @@
 ---
-title: コマンドレットの説明を追加する方法
 ms.date: 09/13/2016
-ms.openlocfilehash: 2b98c4cefc3a55eccfeb7eba5a290e7d93a6088b
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: コマンドレットの説明を追加する方法
+description: コマンドレットの説明を追加する方法
+ms.openlocfilehash: 08d21a281881678423bbe3c382279875ed2868db
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893239"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651226"
 ---
 # <a name="how-to-add-a-cmdlet-description"></a>コマンドレットの説明を追加する方法
 
-このセクションでは、コマンドレットのヘルプの [**説明**] セクションに表示されるコンテンツを追加する方法について説明します。 ヘルプファイルでは、各コマンドレットの**コマンド**ノードにこのコンテンツが追加されます。
+このセクションでは、コマンドレットのヘルプの [ **説明** ] セクションに表示されるコンテンツを追加する方法について説明します。 ヘルプファイルでは、各コマンドレットの **コマンド** ノードにこのコンテンツが追加されます。
 
 > [!NOTE]
 > ヘルプファイルの完全なビューを表示するには、 `dll-Help.xml` PowerShell インストールディレクトリにあるいずれかのファイルを開きます。 たとえば、ファイルには、 `Microsoft.PowerShell.Commands.Management.dll-Help.xml` いくつかの PowerShell コマンドレットのコンテンツが含まれています。

@@ -1,14 +1,16 @@
 ---
-title: Windows PowerShell リファレンス-新機能
 ms.date: 09/13/2016
-ms.openlocfilehash: 4e87fce34f74e0fcbfe25939e1555df308a7f7d0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell リファレンス-新機能
+description: Windows PowerShell リファレンス-新機能
+ms.openlocfilehash: b6fa97eacd476f055dd0c69eed2e547c450b85e1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786698"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647127"
 ---
-# <a name="whats-new"></a>新着記事
+# <a name="whats-new"></a>新機能
 
 Windows PowerShell 2.0 には、コマンドレット、プロバイダー、およびホストアプリケーションを記述するときに使用できる次の新機能が用意されています。
 

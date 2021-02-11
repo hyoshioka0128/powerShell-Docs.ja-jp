@@ -4,10 +4,10 @@ ms.topic: reference
 title: PowerShell モジュールをインストールする
 description: PowerShell モジュールをインストールする
 ms.openlocfilehash: 3c7a4413168934ca4de1912c9615a6ae0fc45788
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92645329"
 ---
 # <a name="installing-a-powershell-module"></a>PowerShell モジュールをインストールする
@@ -20,11 +20,11 @@ PowerShell モジュールを作成した後は、システムにモジュール
 
 ### <a name="install-modules-in-psmodulepath"></a>PSModulePath にモジュールをインストールする
 
-可能な場合は常に、すべてのモジュールを **PSModulePath** 環境変数に記載されているパスにインストールするか、 **PSModulePath** 環境変数の値にモジュールのパスを追加します。
+可能な場合は常に、すべてのモジュールを **PSModulePath** 環境変数に記載されているパスにインストールするか、**PSModulePath** 環境変数の値にモジュールのパスを追加します。
 
 **PSModulePath** 環境変数 ($Env:PSModulePath) には、Windows PowerShell モジュールの場所が含まれています。 コマンドレットでは、この環境変数の値に依存してモジュールが検索されます。
 
-既定では、 **PSModulePath** 環境変数の値には次のシステムおよびユーザー モジュールのディレクトリが含まれていますが、追加したり値を編集したりできます。
+既定では、**PSModulePath** 環境変数の値には次のシステムおよびユーザー モジュールのディレクトリが含まれていますが、追加したり値を編集したりできます。
 
 - `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
 
@@ -42,7 +42,7 @@ PowerShell モジュールを作成した後は、システムにモジュール
   [Environment]::GetEnvironmentVariable("PSModulePath")
   ```
 
-  **PSModulePath** 環境変数の値にモジュール パスを追加するには、次のコマンド形式を使用します。 この形式では、 **System.Environment** クラスの **SetEnvironmentVariable** メソッドを使用して、 **PSModulePath** 環境変数に対してセッションに依存しない変更を加えます。
+  **PSModulePath** 環境変数の値にモジュール パスを追加するには、次のコマンド形式を使用します。 この形式では、**System.Environment** クラスの **SetEnvironmentVariable** メソッドを使用して、**PSModulePath** 環境変数に対してセッションに依存しない変更を加えます。
 
   ```powershell
   #Save the current value in the $p variable.
@@ -159,7 +159,7 @@ C:\Program Files
         Fabrikam.dll (module assembly)
 ```
 
-次に、インストーラーによって、 **PSModulePath** 環境変数の値に Common Files の Modules サブディレクトリのパスが含まれていることが保証されます。
+次に、インストーラーによって、**PSModulePath** 環境変数の値に Common Files の Modules サブディレクトリのパスが含まれていることが保証されます。
 
 ```powershell
 $m = $env:ProgramFiles + '\Common Files\Modules'
@@ -205,7 +205,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-これらの手順が完了すると、 [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) コマンドレットの **ListAvailable** パラメーターによって、両方の Fabrikam モジュールが取得されます。 特定のモジュールをインポートするには、[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) コマンドレットの `MinimumVersion` または `RequiredVersion` パラメーターを使用します。
+これらの手順が完了すると、[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) コマンドレットの **ListAvailable** パラメーターによって、両方の Fabrikam モジュールが取得されます。 特定のモジュールをインポートするには、[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) コマンドレットの `MinimumVersion` または `RequiredVersion` パラメーターを使用します。
 
 両方のモジュールが同じセッションにインポートされ、モジュールに同じ名前のコマンドレットが含まれている場合は、最後にインポートされたコマンドレットがそのセッションで有効になります。
 
@@ -223,7 +223,7 @@ Microsoft.PowerShell.Utility\Get-Date
 
 名前の競合を防ぐために、モジュールの作成者はモジュール マニフェストの **DefaultCommandPrefix** キーを使用して、モジュールからエクスポートされるすべてのコマンドに対する名詞プレフィックスを指定できます。
 
-ユーザーは、`Import-Module` コマンドレットの **Prefix** パラメーターを使用して代替プレフィックスを使用できます。 **Prefix** パラメーターの値は、 **DefaultCommandPrefix** キーの値よりも優先されます。
+ユーザーは、`Import-Module` コマンドレットの **Prefix** パラメーターを使用して代替プレフィックスを使用できます。 **Prefix** パラメーターの値は、**DefaultCommandPrefix** キーの値よりも優先されます。
 
 ## <a name="see-also"></a>参照
 

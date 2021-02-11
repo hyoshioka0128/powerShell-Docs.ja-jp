@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, PowerShell, セットアップ
 title: ソフトウェア インベントリ ログ (SIL)
-ms.openlocfilehash: b12cfc4ae1e505bbc4d47596bed9352ce53a98f2
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.x では、インストールされているソフトウェアの情報を一元的に収集して管理や監査を行いやすくする、ソフトウェア インベントリ ログ機能が追加されています。
+ms.openlocfilehash: 85e261782a3df5fe5561a80529ba699d686a8779
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808468"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646605"
 ---
 # <a name="software-inventory-logging-sil"></a>ソフトウェア インベントリ ログ (SIL)
 

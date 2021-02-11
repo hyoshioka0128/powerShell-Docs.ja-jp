@@ -1,18 +1,20 @@
 ---
-title: Runspace03 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d4fa3bca883fb8d78ca1bc8b0c0f9b70f304be06
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace03 サンプル
+description: Runspace03 サンプル
+ms.openlocfilehash: fff699bf0545bb1419aa45b8c46bbd9c2cf0a99e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772180"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657857"
 ---
 # <a name="runspace03-sample"></a>Runspace03 サンプル
 
-このサンプルでは、 [System. Powershell](/dotnet/api/system.management.automation.powershell)クラスを使用してスクリプトを同期的に実行する方法と、終了しないエラーを処理する方法を示します。 このスクリプトはプロセス名の一覧を受信し、これらのプロセスを取得します。 スクリプトの実行時に生成された終了しないエラーを含む、スクリプトの結果がコンソール ウィンドウに表示されます。
+このサンプルでは、 [System. Powershell](/dotnet/api/system.management.automation.powershell) クラスを使用してスクリプトを同期的に実行する方法と、終了しないエラーを処理する方法を示します。 このスクリプトはプロセス名の一覧を受信し、これらのプロセスを取得します。 スクリプトの実行時に生成された終了しないエラーを含む、スクリプトの結果がコンソール ウィンドウに表示されます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -20,7 +22,7 @@ ms.locfileid: "87772180"
 
 このサンプルでは、次のことを示します。
 
-- スクリプトを実行するための、[システムの管理. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトの作成。
+- スクリプトを実行するための、 [システムの管理. Powershell](/dotnet/api/system.management.automation.powershell) オブジェクトの作成。
 
 - [システムの管理](/dotnet/api/system.management.automation.powershell)オブジェクトのパイプラインにスクリプトを追加します。
 

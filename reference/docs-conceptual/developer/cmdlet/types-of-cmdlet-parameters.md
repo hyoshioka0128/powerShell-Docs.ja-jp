@@ -1,12 +1,14 @@
 ---
-title: コマンドレットパラメーターの種類 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e704aae6e23568be9935e228752f652929863a98
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレット パラメーターの種類
+description: コマンドレット パラメーターの種類
+ms.openlocfilehash: 8daaa3c778396e06a826de3b93e0610c51160fb4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786375"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660476"
 ---
 # <a name="types-of-cmdlet-parameters"></a>コマンドレット パラメーターの種類
 
@@ -16,7 +18,7 @@ ms.locfileid: "87786375"
 
 すべてのコマンドレットパラメーターには、名前付きパラメーターまたは位置指定パラメーターがあります。 名前付きパラメーターを使用するには、コマンドレットを呼び出すときに、パラメーターの名前と引数を入力する必要があります。 位置指定パラメーターでは、引数を相対順序で入力するだけで済みます。 次に、最初の名前のない引数が最初の位置指定パラメーターにマップされます。 2番目の無名の引数が、2番目の無名のパラメーターにマップされます。 既定では、すべてのコマンドレットパラメーターは名前付きパラメーターです。
 
-名前付きパラメーターを定義するには、 `Position` 次のパラメーター宣言に示すように、 **parameter**属性の宣言でキーワードを省略します。
+名前付きパラメーターを定義するには、 `Position` 次のパラメーター宣言に示すように、 **parameter** 属性の宣言でキーワードを省略します。
 
 ```csharp
 [Parameter(ValueFromPipeline=true)]
@@ -45,7 +47,7 @@ private string userName;
 
 位置指定パラメーターと名前付きパラメーターは、単一の引数またはコンマで区切られた複数の引数を受け取ります。 パラメーターが文字列の配列などのコレクションを受け入れる場合にのみ、複数の引数を指定できます。 同じコマンドレットで、位置指定パラメーターと名前付きパラメーターを混在させることができます。 この場合、システムはまず名前付き引数を取得してから、残りの名前なし引数を位置指定パラメーターにマップしようとします。
 
-次のコマンドは、コマンドレットのパラメーターに1つ以上の引数を指定するさまざまな方法を示して `Get-Command` います。 最後の2つのサンプルでは、パラメーターが位置指定パラメーターとして定義されているため、 **-name**を指定する必要はないことに注意して `Name` ください。
+次のコマンドは、コマンドレットのパラメーターに1つ以上の引数を指定するさまざまな方法を示して `Get-Command` います。 最後の2つのサンプルでは、パラメーターが位置指定パラメーターとして定義されているため、 **-name** を指定する必要はないことに注意して `Name` ください。
 
 ```powershell
 Get-Command -Name get-service
@@ -70,7 +72,7 @@ public string UserName
 private string userName;
 ```
 
-省略可能なパラメーターを定義するには、 `Mandatory` 次のパラメーター宣言に示すように、 **parameter**属性の宣言でキーワードを省略します。
+省略可能なパラメーターを定義するには、 `Mandatory` 次のパラメーター宣言に示すように、 **parameter** 属性の宣言でキーワードを省略します。
 
 ```csharp
 [Parameter(Position = 0)]
@@ -88,9 +90,9 @@ Windows PowerShell には、コマンドレットの呼び出し時にパラメ�
 
 次の例について考えてみましょう。 既定では、いくつかの Windows PowerShell コマンドレットは、出力オブジェクトをパイプラインの下位に渡しません。 ただし、これらのコマンドレットには、 `PassThru` 既定の動作をオーバーライドするスイッチパラメーターがあります。 これらの `PassThru` コマンドレットを呼び出すときにパラメーターを指定すると、コマンドレットは出力オブジェクトをパイプラインに返します。
 
-パラメーターが呼び出しで指定されていない場合、パラメーターの既定値をにする必要がある場合は `true` 、パラメーターの意味を逆にすることを検討してください。 サンプルの場合は、パラメーター属性をのブール値に設定する代わりに `true` 、プロパティを System.string[パラメーター](/dotnet/api/System.Management.Automation.SwitchParameter)型として宣言し、パラメーターの既定値をに設定し `false` ます。
+パラメーターが呼び出しで指定されていない場合、パラメーターの既定値をにする必要がある場合は `true` 、パラメーターの意味を逆にすることを検討してください。 サンプルの場合は、パラメーター属性をのブール値に設定する代わりに `true` 、プロパティを System.string [パラメーター](/dotnet/api/System.Management.Automation.SwitchParameter) 型として宣言し、パラメーターの既定値をに設定し `false` ます。
 
-スイッチパラメーターを定義するには、次の例に示すように、プロパティを system.string[パラメーター](/dotnet/api/System.Management.Automation.SwitchParameter)の型として宣言します。
+スイッチパラメーターを定義するには、次の例に示すように、プロパティを system.string [パラメーター](/dotnet/api/System.Management.Automation.SwitchParameter) の型として宣言します。
 
 ```csharp
 [Parameter(Position = 1)]

@@ -1,12 +1,14 @@
 ---
-title: ListControl 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0173b9797bffcca74f1a32903686f771366ebb1b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl 要素 (書式)
+description: ListControl 要素 (書式)
+ms.openlocfilehash: cd5687ac8e94e2245d1ae2de8b2206185e5b8ca4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785729"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666588"
 ---
 # <a name="listcontrol-element-format"></a>ListControl 要素 (書式)
 
@@ -45,11 +47,11 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-リストビューの作成の詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
+リストビューの作成の詳細については、「 [リストビューの作成](./creating-a-list-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-この例では、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトのリストビューを示します。
+この例では、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) オブジェクトのリストビューを示します。
 
 ```
 <View>

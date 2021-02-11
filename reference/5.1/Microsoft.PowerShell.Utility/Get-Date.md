@@ -7,12 +7,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: f550d352ca6e400307feba9ec16cea4632603b62
-ms.sourcegitcommit: ea9270bacee7dd1b9df2519384de277576357ce2
+ms.openlocfilehash: bb7f169e0c01c73bb4e834375f341bf795e37ce7
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93219720"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584666"
 ---
 # Get-Date
 
@@ -59,7 +59,7 @@ Tuesday, June 25, 2019 14:53:32
 
 ### 例 2: 現在の日付と時刻の要素を取得する
 
-この例 `Get-Date` では、を使用して、日付要素または時刻要素を取得する方法を示します。 パラメーターでは、引数 **Date** 、 **Time** 、または **DateTime** を使用します。
+この例 `Get-Date` では、を使用して、日付要素または時刻要素を取得する方法を示します。 パラメーターでは、引数 **Date**、 **Time**、または **DateTime** を使用します。
 
 ```powershell
 Get-Date -DisplayHint Date
@@ -140,7 +140,7 @@ Tuesday 06/25/2019 16:19 -07
 366
 ```
 
-`Get-Date` は、 **年** 、 **月** 、 **日** という3つのパラメーターを使用して日付を指定します。 このコマンドは、結果が **DayofYear** プロパティによって評価されるように、かっこで囲まれています。
+`Get-Date` は、 **年**、 **月**、 **日** という3つのパラメーターを使用して日付を指定します。 このコマンドは、結果が **DayofYear** プロパティによって評価されるように、かっこで囲まれています。
 
 ### 例 6: 夏時間に合わせて日付を調整するかどうかを確認する
 
@@ -246,9 +246,9 @@ Accept wildcard characters: False
 
 許容される値は次のとおりです。
 
-- **日付** : 日付のみを表示します
-- **Time** : 時刻のみを表示します
-- **DateTime** : 日付と時刻を表示します。
+- **日付**: 日付のみを表示します
+- **Time**: 時刻のみを表示します
+- **DateTime**: 日付と時刻を表示します。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.DisplayHintType
@@ -266,22 +266,22 @@ Accept wildcard characters: False
 ### -形式
 
 書式指定子で示される Microsoft .NET Framework 形式で日付と時刻を表示します。
-**Format** パラメーターは、 **文字列** オブジェクトを出力します。
+**Format** パラメーターは、**文字列** オブジェクトを出力します。
 
 使用可能な .NET 書式指定子の一覧については、「 [カスタム日時書式指定文字列](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8)」を参照してください。
 
-**Format** パラメーターを使用する場合は、 `Get-Date` 日付を表示するために必要な **DateTime** オブジェクトのプロパティのみが取得されます。 その結果、 **DateTime** オブジェクトの一部のプロパティとメソッドを利用できなくなる場合があります。
+**Format** パラメーターを使用する場合は、 `Get-Date` 日付を表示するために必要な **DateTime** オブジェクトのプロパティのみが取得されます。 その結果、**DateTime** オブジェクトの一部のプロパティとメソッドを利用できなくなる場合があります。
 
 PowerShell 5.0 以降では、 **Format** パラメーターの値として次の追加形式を使用できます。
 
-- **Filedate** 。 現在の日付を現地時刻で表した、ファイルまたはパスによるわかりやすい表現。 形式は、 `yyyyMMdd` (大文字と小文字を区別します。4桁の年、2桁の月、および2桁の日) を使用します。 次に例を示します。
+- **Filedate**。 現在の日付を現地時刻で表した、ファイルまたはパスによるわかりやすい表現。 形式は、 `yyyyMMdd` (大文字と小文字を区別します。4桁の年、2桁の月、および2桁の日) を使用します。 以下に例を示します。
   20190627.
 
-- **Filedateuniversal** 。 現在の日付を世界協定時刻 (UTC) で表した、ファイルまたはパスのフレンドリ表現。 形式は、 `yyyyMMddZ` (大文字と小文字を区別します。4桁の年、2桁の月、2桁の日、および UTC インジケーターとしての文字を使用し `Z` ます)。 例: 20190627Z。
+- **Filedateuniversal**。 現在の日付を世界協定時刻 (UTC) で表した、ファイルまたはパスのフレンドリ表現。 形式は、 `yyyyMMddZ` (大文字と小文字を区別します。4桁の年、2桁の月、2桁の日、および UTC インジケーターとしての文字を使用し `Z` ます)。 例: 20190627Z。
 
-- **Filedatetime** 。 ローカル時刻の現在の日付と時刻を24時間形式で表した、ファイルまたはパスのフレンドリ表現。 形式は、 `yyyyMMddTHHmmssffff` (大文字と小文字を区別し、4桁の年、2桁の月、2桁の日、時刻の区切り記号、2桁の時間、2桁の分、2桁の秒 `T` 、および4桁のミリ秒) を使用します。 例: 20190627T0840107271。
+- **Filedatetime**。 ローカル時刻の現在の日付と時刻を24時間形式で表した、ファイルまたはパスのフレンドリ表現。 形式は、 `yyyyMMddTHHmmssffff` (大文字と小文字を区別し、4桁の年、2桁の月、2桁の日、時刻の区切り記号、2桁の時間、2桁の分、2桁の秒 `T` 、および4桁のミリ秒) を使用します。 例: 20190627T0840107271。
 
-- **FileDateTimeUniversal** 。 現在の日付と時刻を、世界協定時刻 (UTC) で24時間形式で表現したもの。 形式は、 `yyyyMMddTHHmmssffffZ` (大文字と小文字を区別する、4桁の年、2桁の月、2桁の日、時刻の区切り記号、2桁の時間、2桁の分、2桁の `T` 秒、4桁のミリ秒、および `Z` UTC インジケーターとしての文字) です。 例: 20190627T1540500718Z。
+- **FileDateTimeUniversal**。 現在の日付と時刻を、世界協定時刻 (UTC) で24時間形式で表現したもの。 形式は、 `yyyyMMddTHHmmssffffZ` (大文字と小文字を区別する、4桁の年、2桁の月、2桁の日、時刻の区切り記号、2桁の時間、2桁の分、2桁の `T` 秒、4桁のミリ秒、および `Z` UTC インジケーターとしての文字) です。 例: 20190627T1540500718Z。
 
 ```yaml
 Type: System.String
@@ -383,7 +383,7 @@ UNIX 形式で日付と時刻を表示します。 **Uformat** パラメータ�
 
 **Uformat** 指定子の前には、パーセント記号 () が付きます。たとえば、、、など `%` `%m` `%d` `%Y` です。 [Notes](#notes)セクションには、有効な **uformat 指定子** のテーブルが含まれています。
 
-**Uformat** パラメーターを使用する場合は、 `Get-Date` 日付を表示するために必要な **DateTime** オブジェクトのプロパティのみが取得されます。 その結果、 **DateTime** オブジェクトの一部のプロパティとメソッドを利用できなくなる場合があります。
+**Uformat** パラメーターを使用する場合は、 `Get-Date` 日付を表示するために必要な **DateTime** オブジェクトのプロパティのみが取得されます。 その結果、**DateTime** オブジェクトの一部のプロパティとメソッドを利用できなくなる場合があります。
 
 ```yaml
 Type: System.String
@@ -421,26 +421,29 @@ Accept wildcard characters: False
 
 ### パイプラインの入力
 
-`Get-Date` パイプラインの入力を受け入れます。 たとえば、「 `Get-ChildItem | Get-Date` 」のように入力します。
+`Get-Date` パイプラインの入力を受け入れます。 たとえば、`Get-ChildItem | Get-Date` のようにします。
 
 ## 出力
 
 ### System.string または System.string
 
-`Get-Date`**format** パラメーターと **uformat** パラメーターが使用されている場合を除き、 **DateTime** オブジェクトを返します。 **Format** パラメーターまたは **uformat** パラメーターは、 **文字列** オブジェクトを返します。
+`Get-Date`**format** パラメーターと **uformat** パラメーターが使用されている場合を除き、 **DateTime** オブジェクトを返します。 **Format** パラメーターまたは **uformat** パラメーターは、**文字列** オブジェクトを返します。
 
 **DateTime** オブジェクトが、文字列入力を必要とするなどのコマンドレットに送信されると、 `Add-Content` PowerShell はオブジェクトを **string** オブジェクトに変換します。
 
 メソッドは、 `(Get-Date).ToString()` **DateTime** オブジェクトを **String** オブジェクトに変換します。
 
 オブジェクトのプロパティとメソッドを表示するには、オブジェクトをパイプライン内でに送信し `Get-Member` ます。
-たとえば、「 `Get-Date | Get-Member` 」のように入力します。
+たとえば、`Get-Date | Get-Member` のようにします。
 
 ## 注
 
 **DateTime** オブジェクトは、システムロケールの長い日付形式と長い時刻形式です。
 
 有効な **Uformat 指定子** は、次の表に示されています。
+
+> [!IMPORTANT]
+> 新しいバージョンの PowerShell では、追加の **Uformat** 指定子が追加されています。 たとえば、は `%F` powershell 6.2 で追加されたため、Windows powershell 5.1 以前では使用できません。 複数のバージョンの PowerShell で実行するように設計されたスクリプトで **Uformat** 指定子を使用する場合は、この点に注意してください。
 
 | 書式指定子 |                                 意味                     |         例          |
 | ---- | ----------------------------------------------------------------------- | ------------------------ |
@@ -452,13 +455,13 @@ Accept wildcard characters: False
 | `%c` | 日付と時刻-省略形                                             | Thu 6 月 27 08:44:18 2019 |
 | `%D` | Mm/dd/yy 形式の日付                                                 | 06/27/19                 |
 | `%d` | 月の通算日-2 桁                                             | 05                       |
-| `%e` | 月の前にスペースを付ける曜日                            | \<space\>5/5               |
+| `%e` | 月の通算日-1 桁のみの場合はスペースで始まります。           | \<space\>5/5               |
 | `%G` | ' Y ' と同じ                                                             |                          |
 | `%g` | ' Y ' と同じ                                                             |                          |
 | `%H` | 24時間形式の時間                                                  | 17                       |
 | `%h` | ' B ' と同じ                                                             |                          |
 | `%I` | 12時間形式の時間                                                  | 05                       |
-| `%j` | 年の通算日                                                         | 1-366                    |
+| `%j` | 通算日 ( `0` PowerShell 6 以降では、先行修正は含まれません) | 1-366                    |
 | `%k` | ' H ' と同じ                                                             |                          |
 | `%l` | ' I ' と同じ (大文字の I)                                              | 05                       |
 | `%M` | 分                                                                 | 35                       |

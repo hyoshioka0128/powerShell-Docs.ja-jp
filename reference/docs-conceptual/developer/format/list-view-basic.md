@@ -1,16 +1,18 @@
 ---
-title: リストビュー (基本) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 74ff8f6eee0a9358c123455aa00736a11e7f085d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: リスト ビュー (基本)
+description: リスト ビュー (基本)
+ms.openlocfilehash: d80ac9c6143b976d8bc13e2b184e4f5a2f8a37ab
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783553"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666639"
 ---
 # <a name="list-view-basic"></a>リスト ビュー (基本)
 
-この例では、Servicecontroller を表示する基本的なリストビューを実装する方法を示します。 [Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) [Get Service](/powershell/module/microsoft.powershell.management/get-service)コマンドレットによって返される Fullname オブジェクト。 リストビューのコンポーネントの詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
+この例では、Servicecontroller を表示する基本的なリストビューを実装する方法を示します。 [Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) [Get Service](/powershell/module/microsoft.powershell.management/get-service) コマンドレットによって返される Fullname オブジェクト。 リストビューのコンポーネントの詳細については、「 [リストビューの作成](./creating-a-list-view.md)」を参照してください。
 
 ### <a name="to-load-this-formatting-file"></a>この書式設定ファイルを読み込むには
 
@@ -27,19 +29,19 @@ ms.locfileid: "87783553"
 
 この書式設定ファイルは、次の XML 要素を示しています。
 
-- ビューの[Name](./name-element-for-view-format.md)要素。
+- ビューの [Name](./name-element-for-view-format.md) 要素。
 
-- ビューによって表示されるオブジェクトを定義する[Viewselectedby](./viewselectedby-element-format.md)要素。
+- ビューによって表示されるオブジェクトを定義する [Viewselectedby](./viewselectedby-element-format.md) 要素。
 
-- ビューによって表示されるプロパティを定義する[ListControl](./listcontrol-element-format.md)要素。
+- ビューによって表示されるプロパティを定義する [ListControl](./listcontrol-element-format.md) 要素。
 
-- リストビューの行に表示される内容を定義する[ListItem](./listitem-element-for-listitems-for-listcontrol-format.md)要素。
+- リストビューの行に表示される内容を定義する [ListItem](./listitem-element-for-listitems-for-listcontrol-format.md) 要素。
 
-- 表示されるプロパティを定義する[PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md)要素。
+- 表示されるプロパティを定義する [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md) 要素。
 
 ## <a name="example"></a>例
 
-次の XML は、Servicecontroller の4つのプロパティを表示するリストビューを定義しています。 [Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクト。 各行には、プロパティの名前の後にプロパティの値が表示されます。
+次の XML は、Servicecontroller の4つのプロパティを表示するリストビューを定義しています。 [Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController) オブジェクト。 各行には、プロパティの名前の後にプロパティの値が表示されます。
 
 ```xml
 <Configuration>
@@ -72,7 +74,7 @@ ms.locfileid: "87783553"
 </Configuration>
 ```
 
-次の例は、Windows PowerShell で Servicecontroller を表示する方法を示しています。 [Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトこのフォーマットファイルが読み込まれた後。
+次の例は、Windows PowerShell で Servicecontroller を表示する方法を示しています。 [Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController) オブジェクトこのフォーマットファイルが読み込まれた後。
 
 ```powershell
 Get-Service f*

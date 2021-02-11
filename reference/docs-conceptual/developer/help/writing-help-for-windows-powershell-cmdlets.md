@@ -1,18 +1,20 @@
 ---
-title: PowerShell コマンドレットのヘルプの作成
 ms.date: 09/13/2016
-ms.openlocfilehash: 4e1070e90cf3ed83c1d97a3b620e00f65d09989e
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: PowerShell コマンドレットのヘルプの記述
+description: PowerShell コマンドレットのヘルプの記述
+ms.openlocfilehash: b1deaa5998dbc54add93764db785d57afcc0a779
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893086"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658104"
 ---
-# <a name="writing-help-for-powershell-cmdlets"></a>PowerShell コマンドレットのヘルプの作成
+# <a name="writing-help-for-powershell-cmdlets"></a>PowerShell コマンドレットのヘルプの記述
 
 PowerShell コマンドレットは役に立ちますが、コマンドレットの動作と使用方法をヘルプトピックで明確に説明していない限り、コマンドレットが使用されないか、またはユーザーに不満が生じる可能性があります。 XML ベースのコマンドレットヘルプファイル形式では一貫性が向上しますが、優れたヘルプではさらに多くのことが必要になります。
 
-コマンドレットのヘルプを記述したことがない場合は、次のガイドラインを確認してください。 コマンドレットのヘルプトピックを作成するために必要な XML スキーマについては、次のセクションで説明します。 まず[、コマンドレットのヘルプファイルを作成](./how-to-create-the-cmdlet-help-file.md)します。 このトピックには、最上位レベルの XML ノードの説明が含まれています。
+コマンドレットのヘルプを記述したことがない場合は、次のガイドラインを確認してください。 コマンドレットのヘルプトピックを作成するために必要な XML スキーマについては、次のセクションで説明します。 まず [、コマンドレットのヘルプファイルを作成](./how-to-create-the-cmdlet-help-file.md)します。 このトピックには、最上位レベルの XML ノードの説明が含まれています。
 
 ## <a name="writing-guidelines-for-cmdlet-help"></a>コマンドレットヘルプの記述に関するガイドライン
 
@@ -26,7 +28,7 @@ PowerShell コマンドレットは役に立ちますが、コマンドレット
 
 ### <a name="write-consistently"></a>一貫した書き込み
 
-関連するコマンドレットのヘルプが似ている必要があります (例: get-x と set-x)。 標準パラメーターの標準の説明 ( **Force** 、 **InputObject**など) を使用します。 (コアコマンドレットのヘルプからコピーします)。標準の使用条件を使用します。 たとえば、"argument" ではなく "parameter" を使用し、"command" または "command-let" ではなく "コマンドレット" を使用します。
+関連するコマンドレットのヘルプが似ている必要があります (例: get-x と set-x)。 標準パラメーターの標準の説明 ( **Force** 、 **InputObject** など) を使用します。 (コアコマンドレットのヘルプからコピーします)。標準の使用条件を使用します。 たとえば、"argument" ではなく "parameter" を使用し、"command" または "command-let" ではなく "コマンドレット" を使用します。
 
 ### <a name="start-the-synopsis-with-a-verb"></a>動詞を使用して、概要を開始します。
 
@@ -42,7 +44,7 @@ PowerShell コマンドレットは役に立ちますが、コマンドレット
 
 ### <a name="use-conventional-syntax"></a>従来の構文を使用する
 
-標準のバッカスナウア記法-Backus-naur 形式を使用します。これは、Windows および UNIX のコマンドラインヘルプでよく使用されます。
+標準の Backus-Naur 形式を使用します。これは、Windows および UNIX のコマンドラインヘルプでよく使用されます。
 
 ### <a name="use-microsoft-net-types-for-parameter-values"></a>パラメーター値に Microsoft .NET の型を使用する
 

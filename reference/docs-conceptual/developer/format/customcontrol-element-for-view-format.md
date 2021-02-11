@@ -1,12 +1,14 @@
 ---
-title: View (Format) の CustomControl 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 660e8fd6531862790a2af7ab27a82e073c230693
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の CustomControl 要素 (書式)
+description: View の CustomControl 要素 (書式)
+ms.openlocfilehash: 41352be55f0c03b2eaca0dbe2d7345e7cf804a7c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786052"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655461"
 ---
 # <a name="customcontrol-element-for-view-format"></a>View の CustomControl 要素 (書式)
 

@@ -1,12 +1,14 @@
 ---
-title: 列挙型拡張に対する EntrySelectedBy の SelectionCondition の TypeName 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f47384be10705b913d52b5cc8cb4ecf9ba83f17c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EnumerableExpansion の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)
+description: EnumerableExpansion の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)
+ms.openlocfilehash: 1ed638f9b2194745f9ac9cab9aa3331985924886
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787344"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649715"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)
 

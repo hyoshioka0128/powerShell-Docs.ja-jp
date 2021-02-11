@@ -1,12 +1,14 @@
 ---
-title: ビュー用のコントロールの CustomItem の Frame 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5ade36c183a026cb9001a2abbe91d31638a87108
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の Controls の CustomItem の Frame 要素 (書式)
+description: View の Controls の CustomItem の Frame 要素 (書式)
+ms.openlocfilehash: 6f26e19a6894ac213b924108a56cb80f9ffd1143
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773455"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652213"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-view-format"></a>View の Controls の CustomItem の Frame 要素 (書式)
 
@@ -52,7 +54,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>解説
 
-同じ要素で[Firstlinehanging](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)と[firstlinehanging](./firstlineindent-element-for-frame-for-controls-for-view-format.md)要素を指定することはできません `Frame` 。
+同じ要素で [Firstlinehanging](./firstlinehanging-element-for-frame-for-controls-for-view-format.md) と [firstlinehanging](./firstlineindent-element-for-frame-for-controls-for-view-format.md) 要素を指定することはできません `Frame` 。
 
 ## <a name="see-also"></a>参照
 

@@ -1,18 +1,17 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
-ms.openlocfilehash: efb82cb938f7b044b863a8192f4c66673d47a4e0
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 218a4cb447c85a7362efebe9b50a917703cccc35
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93211280"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564447"
 ---
 # Import-Module
 
@@ -114,13 +113,13 @@ Import-Module [-Global] [-Prefix <String>] [-Function <String[]>] [-Cmdlet <Stri
 
 モジュールは、PowerShell で使用できるメンバーを含むパッケージです。 メンバーには、コマンドレット、プロバイダー、スクリプト、関数、変数、およびその他のツールとファイルが含まれます。 モジュールをインポートすると、モジュールのメンバーをセッションで使用できます。 モジュールの詳細については、「 [about_Modules](About/about_Modules.md)」を参照してください。
 
-既定では、は、モジュールによっ `Import-Module` てエクスポートされるすべてのメンバーをインポートしますが、 **エイリアス** 、 **関数** 、 **コマンドレット** 、および **変数** パラメーターを使用して、インポートするメンバーを制限することができます。 **NoClobber** パラメーターは、 `Import-Module` 現在のセッションのメンバーと同じ名前を持つメンバーをでインポートできないようにします。
+既定では、は、モジュールによっ `Import-Module` てエクスポートされるすべてのメンバーをインポートしますが、 **エイリアス**、 **関数**、 **コマンドレット**、および **変数** パラメーターを使用して、インポートするメンバーを制限することができます。 **NoClobber** パラメーターは、 `Import-Module` 現在のセッションのメンバーと同じ名前を持つメンバーをでインポートできないようにします。
 
 `Import-Module` 現在のセッションにのみモジュールをインポートします。 すべての新しいセッションにモジュールをインポートするには、 `Import-Module` PowerShell プロファイルにコマンドを追加します。 プロファイルの詳細については、「[about_Profiles](About/about_Profiles.md)」を参照してください。
 
-リモートコンピューター上に **PSSession** を作成することによって、PowerShell リモート処理が有効になっているリモート Windows コンピューターを管理できます。 次に、の **PSSession** パラメーター `Import-Module` を使用して、リモートコンピューターにインストールされているモジュールをインポートします。 現在のセッションでインポートしたコマンドを使用できるようになりました。 コマンドは、リモートコンピューター上で暗黙的に実行されます。
+リモートコンピューター上に **PSSession** を作成することによって、PowerShell リモート処理が有効になっているリモート Windows コンピューターを管理できます。 次に、の **PSSession** パラメーター `Import-Module` を使用して、リモートコンピューターにインストールされているモジュールをインポートします。 現在のセッションでインポートされたコマンドを使用すると、コマンドはリモートコンピューター上で暗黙的に実行されます。
 
-Windows PowerShell 3.0 以降では、を使用し `Import-Module` て Common Information Model (CIM) モジュールをインポートできます。このモジュールでは、コマンドレットがコマンドレット定義 XML (CDXML) ファイルで定義されています。 この機能により、C++ で記述されたコードなどの非マネージ コード アセンブリに実装されているコマンドレットを使用することができます。
+Windows PowerShell 3.0 以降では、を使用して `Import-Module` Common Information Model (CIM) モジュールをインポートできます。 CIM モジュールは、コマンドレット定義 XML (CDXML) ファイルのコマンドレットを定義します。 この機能を使用すると、C++ で記述されたものなど、マネージコード以外のアセンブリに実装されているコマンドレットを使用できます。
 
 Windows オペレーティングシステムを実行していないコンピューターを含め、PowerShell リモート処理が有効になっていないリモートコンピューターの場合は、の **CIMSession** パラメーターを使用して、 `Import-Module` リモートコンピューターから CIM モジュールをインポートできます。 インポートされたコマンドは、リモートコンピューター上で暗黙的に実行されます。 **CIMSession** は、リモートコンピューター上の WINDOWS MANAGEMENT INSTRUMENTATION (WMI) に接続します。
 
@@ -172,11 +171,11 @@ VERBOSE: Exporting function 'Get-SpecDetails'.
 ```
 
 **Verbose** パラメーターを使用すると、は、 `Import-Module` モジュールを読み込むときに進行状況を報告します。
-**Verbose** 、 **PassThru** 、または **ascustomobject** 各パラメーターを指定しない `Import-Module` と、モジュールをインポートしても出力は生成されません。
+**Verbose**、 **PassThru**、または **ascustomobject** 各パラメーターを指定しない `Import-Module` と、モジュールをインポートしても出力は生成されません。
 
 ### 例 5: セッションにインポートされたモジュールメンバーを制限する
 
-この例では、セッションにインポートされるモジュールメンバーと、セッションに対するこのコマンドの影響を制限する方法を示します。 **関数** パラメーターは、モジュールからインポートされるメンバーを制限します。 **エイリアス** 、 **変数** 、および **コマンドレット** パラメーターを使用して、モジュールがインポートする他のメンバーを制限することもできます。
+この例では、セッションにインポートされるモジュールメンバーと、セッションに対するこのコマンドの影響を制限する方法を示します。 **関数** パラメーターは、モジュールからインポートされるメンバーを制限します。 **エイリアス**、**変数**、および **コマンドレット** パラメーターを使用して、モジュールがインポートする他のメンバーを制限することもできます。
 
 `Get-Module`コマンドレットは、 **psdiagnostics** モジュールを表すオブジェクトを取得します。 **ExportedCmdlets** プロパティは、すべてがインポートされていない場合でも、モジュールがエクスポートするすべてのコマンドレットを一覧表示します。
 
@@ -250,7 +249,7 @@ Function        Stop-xTrace                            6.1.0.0    PSDiagnostics
 
 ### 例 7: カスタムオブジェクトを取得して使用する
 
-この例では、 **インポートモジュール** によって返されたカスタムオブジェクトを取得して使用する方法を示します。
+この例では、によって返されるカスタムオブジェクトを取得して使用する方法を示し `Import-Module` ます。
 
 カスタム オブジェクトには、インポートされた各モジュール メンバーを表す合成メンバーが含まれます。 たとえば、モジュールのコマンドレットと関数は、カスタム オブジェクトのスクリプト メソッドに変換されます。
 
@@ -292,15 +291,15 @@ Show-Calendar ScriptMethod System.Object Show-Calendar();
 $a."Show-Calendar"()
 ```
 
-**カレンダーの表示** スクリプトモジュールは、 **ascustomobject** 使用してカスタムオブジェクトを要求し、 **PassThru** パラメーターを使用してオブジェクトを返すことによってインポートされます。 生成されたカスタムオブジェクトは変数に保存され `$a` ます。
+`Show-Calendar`スクリプトモジュールは、 **Ascustomobject** ユーザーパラメーターを使用してインポートされ、カスタムオブジェクトを要求し、 **PassThru** パラメーターを使用してオブジェクトを返します。 生成されたカスタムオブジェクトは変数に保存され `$a` ます。
 
-`$a`変数をコマンドレットにパイプ処理して、保存された `Get-Member` オブジェクトのプロパティとメソッドを表示します。 出力には、 **カレンダーの表示** スクリプトメソッドが示されています。
+`$a`変数をコマンドレットにパイプ処理して、保存された `Get-Member` オブジェクトのプロパティとメソッドを表示します。 出力には、 `Show-Calendar` スクリプトメソッドが示されています。
 
-**Calendar** script メソッドを呼び出すには、名前にハイフンが含まれているため、メソッド名を引用符で囲む必要があります。
+スクリプトメソッドを呼び出すには、 `Show-Calendar` 名前にハイフンが含まれているため、メソッド名を引用符で囲む必要があります。
 
 ### 例 8: 同じセッションにモジュールを再インポートする
 
-この例では、 **Force** `Import-Module` モジュールを同じセッションに再インポートときにの Force パラメーターを使用する方法を示します。 **Force** パラメーターは、読み込まれたモジュールを削除し、再度インポートします。
+この例では、  `Import-Module` モジュールを同じセッションに再インポートときにの Force パラメーターを使用する方法を示します。 **Force** パラメーターは、読み込まれたモジュールを削除し、再度インポートします。
 
 ```powershell
 Import-Module PSDiagnostics
@@ -455,9 +454,9 @@ Windows Remote Management (HTTP-In)                      WINRM-HTTP-In-TCP-PUBLI
 Windows Remote Management - Compatibility Mode (HTTP-In) WINRM-HTTP-Compat-In-TCP
 ```
 
-`New-PSSession` Server01 コンピューターへのリモートセッション ( **PSSession** ) を作成します。 **PSSession** は変数に保存され `$s` ます。
+`New-PSSession` Server01 コンピューターへのリモートセッション (**PSSession**) を作成します。 **PSSession** は変数に保存され `$s` ます。
 
-PSSession パラメーターを指定してを実行 `Get-Module` すると、 **netsecurity** モジュールがリモートコンピューターにインストールされ、使用可能であることが示されます。 **PSSession** このコマンドは、コマンドレットを使用して `Invoke-Command` `Get-Module` リモートセッションでコマンドを実行することと同じです。 例: (`Invoke-Command $s {Get-Module -ListAvailable -Name NetSecurity`
+PSSession パラメーターを指定してを実行 `Get-Module` すると、 **netsecurity** モジュールがリモートコンピューターにインストールされ、使用可能であることが示されます。  このコマンドは、コマンドレットを使用して `Invoke-Command` `Get-Module` リモートセッションでコマンドを実行することと同じです。 例: (`Invoke-Command $s {Get-Module -ListAvailable -Name NetSecurity`
 
 `Import-Module` **PSSession** パラメーターを指定してを実行すると、リモートコンピューターから **netsecurity** モジュールが現在のセッションにインポートされます。 コマンド `Get-Command` レットを使用すると、 **netsecurity** モジュールから **get** および include **Firewall** で始まるコマンドを取得できます。 出力によって、モジュールとそのコマンドレットが現在のセッションにインポートされたことが確認されます。
 
@@ -542,7 +541,7 @@ Accept wildcard characters: False
 
 このコマンドレットが、インポートされたモジュールメンバーを表すメンバーを持つカスタムオブジェクトを返すことを示します。 このパラメーターは、スクリプト モジュールに対してのみ有効です。
 
-**Ascustomobject** パラメーターを使用すると、 `Import-Module` モジュールメンバーがセッションにインポートされ、その後、 **PSModuleInfo** オブジェクトではなく **pscustomobject** オブジェクトが返されます。 カスタム オブジェクトを変数に保存し、ドット表記を使用してメンバーを呼び出すことができます。
+**Ascustomobject** パラメーターを使用すると、 `Import-Module` モジュールメンバーがセッションにインポートされ、その後、 オブジェクトではなく **pscustomobject** オブジェクトが返されます。 カスタム オブジェクトを変数に保存し、ドット表記を使用してメンバーを呼び出すことができます。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -781,7 +780,7 @@ Accept wildcard characters: False
 
 最小バージョンを指定します。 このコマンドレットは、指定した値以上のバージョンのモジュールのみをインポートします。 **MinimumVersion** パラメーター名またはそのエイリアスである **Version** を使用します。 バージョンが修飾されていない場合、は `Import-Module` エラーを生成します。
 
-正確なバージョンを指定するには、 **RequiredVersion** パラメーターを使用します。 また、 **#Requires** キーワードの **Module** パラメーターと **Version** パラメーターを使用して、スクリプト内でモジュールの特定のバージョンを要求することもできます。
+正確なバージョンを指定するには、**RequiredVersion** パラメーターを使用します。 また、 **#Requires** キーワードの **Module** パラメーターと **Version** パラメーターを使用して、スクリプト内でモジュールの特定のバージョンを要求することもできます。
 
 このパラメーターは Windows PowerShell 3.0 で導入されました。
 
@@ -821,6 +820,9 @@ Accept wildcard characters: False
 
 可能な限り、モジュール名のみを指定してください。 ファイル名を指定した場合は、そのファイルに実装されているメンバーのみがインポートされます。 モジュールに他のファイルが含まれている場合は、インポートされないため、モジュールの重要なメンバーが不足している可能性があります。
 
+> [!NOTE]
+> スクリプト ( `.ps1` ) ファイルはモジュールとしてインポートできますが、スクリプトファイルは通常、スクリプトモジュールファイル () ファイルのようには構成されていません `.psm1` 。 スクリプトファイルをインポートしても、モジュールとして使用できることは保証されません。 詳細については、「 [about_Modules](about/about_Modules.md)」を参照してください。
+
 ```yaml
 Type: System.String[]
 Parameter Sets: Name, PSSession, CimSession, WinCompat
@@ -837,7 +839,7 @@ Accept wildcard characters: True
 
 現在のセッションの既存のコマンドと同じ名前のコマンドがインポートされないようにします。 既定では、 `Import-Module` エクスポートされたすべてのモジュールコマンドがインポートされます。
 
-同じ名前を持つコマンドは、セッション内のコマンドを非表示にしたり置き換えることができます。 セッションでのコマンド名の競合を回避するには、 **Prefix** パラメーターまたは **NoClobber** パラメーターを使用します。 名前の競合およびコマンドの優先順位の詳細については、[about_Modules](about/about_Modules.md) の「モジュールと名前の競合」および [about_Command_Precedence](about/about_Command_Precedence.md) を参照してください。
+同じ名前を持つコマンドは、セッション内のコマンドを非表示にしたり置き換えることができます。 セッションでのコマンド名の競合を回避するには、**Prefix** パラメーターまたは **NoClobber** パラメーターを使用します。 名前の競合およびコマンドの優先順位の詳細については、[about_Modules](about/about_Modules.md) の「モジュールと名前の競合」および [about_Command_Precedence](about/about_Command_Precedence.md) を参照してください。
 
 このパラメーターは Windows PowerShell 3.0 で導入されました。
 
@@ -893,7 +895,7 @@ Accept wildcard characters: False
 
 ### -PSSession
 
-このコマンドレットが現在のセッションにモジュールをインポートするときに使用する、PowerShell のユーザー管理セッション ( **PSSession** ) を指定します。 **Pssession** を含む変数、またはコマンドなどの **pssession** を取得するコマンドを入力し `Get-PSSession` ます。
+このコマンドレットが現在のセッションにモジュールをインポートするときに使用する、PowerShell のユーザー管理セッション (**PSSession**) を指定します。 **Pssession** を含む変数、またはコマンドなどの **pssession** を取得するコマンドを入力し `Get-PSSession` ます。
 
 別のセッションから現在のセッションにモジュールをインポートする際、ローカル モジュールのコマンドレットを使用するのと同じように、モジュールのコマンドレットを現在のセッションで使用できます。 リモートコマンドレットを使用するコマンドはリモートセッションで実行されますが、リモート処理の詳細は PowerShell によってバックグラウンドで管理されます。
 
@@ -921,7 +923,7 @@ Accept wildcard characters: False
 
 既定では、は `Import-Module` バージョン番号をチェックせずにモジュールをインポートします。
 
-最小バージョンを指定するには、 **MinimumVersion** パラメーターを使用します。 また、 **#Requires** キーワードの **Module** パラメーターと **Version** パラメーターを使用して、スクリプト内でモジュールの特定のバージョンを要求することもできます。
+最小バージョンを指定するには、**MinimumVersion** パラメーターを使用します。 また、 **#Requires** キーワードの **Module** パラメーターと **Version** パラメーターを使用して、スクリプト内でモジュールの特定のバージョンを要求することもできます。
 
 このパラメーターは Windows PowerShell 3.0 で導入されました。
 
@@ -945,14 +947,14 @@ Accept wildcard characters: False
 
 このパラメーターの有効値は、次のとおりです。
 
-- **グローバル** 。 セッション内のすべてのコマンドに使用できます。 **Global** パラメーターと同じ効果が得られます。
-- **ローカル** 。 現在のスコープでのみ使用できます。
+- **グローバル**。 セッション内のすべてのコマンドに使用できます。 **Global** パラメーターと同じ効果が得られます。
+- **ローカル**。 現在のスコープでのみ使用できます。
 
-既定では、 `Import-Module` コマンドプロンプト、スクリプトファイル、または scriptblock からコマンドレットを呼び出すと、すべてのコマンドがグローバルセッション状態にインポートされます。 **-Scope** パラメーターを **Local** の値と共に使用すると、モジュールコンテンツをスクリプトまたは scriptblock スコープにインポートできます。
+既定では、 `Import-Module` コマンドプロンプト、スクリプトファイル、または scriptblock からコマンドレットを呼び出すと、すべてのコマンドがグローバルセッション状態にインポートされます。 パラメーターを使用し `-Scope Local` て、モジュールの内容をスクリプトまたは scriptblock スコープにインポートできます。
 
 別のモジュールから呼び出された場合、コマンドレットは、 `Import-Module` 入れ子になったモジュールのコマンドを含むモジュール内のコマンドを呼び出し元のセッション状態にインポートします。 またはを指定する `-Scope Global` と `-Global` 、このコマンドレットによってモジュールがグローバルセッション状態にインポートされ、セッションのすべてのコマンドで使用できるようになります。
 
-**Global** パラメーターは、global 型の値を持つ **Scope** パラメーターに相当します。
+**Global** パラメーターは、値が **Global** である **Scope** パラメーターと同じ効果が得られます。
 
 このパラメーターは Windows PowerShell 3.0 で導入されました。
 
@@ -1050,25 +1052,23 @@ Accept wildcard characters: False
 
 - モジュールをインポートする前に、モジュールがローカルコンピューターにインストールされている必要があります。 つまり、モジュールディレクトリは、ローカルコンピューターからアクセスできるディレクトリにコピーする必要があります。 詳細については、「 [about_Modules](About/about_Modules.md)」を参照してください。
 
-  また、 **PSSession** パラメーターと **CIMSession** パラメーターを使用すれば、リモート コンピューターにインストールされているモジュールをインポートすることもできます。 ただし、これらのモジュールのコマンドレットを使用するコマンドは、リモートコンピューター上のリモートセッションで実行されます。
+  また、**PSSession** パラメーターと **CIMSession** パラメーターを使用すれば、リモート コンピューターにインストールされているモジュールをインポートすることもできます。 ただし、これらのモジュールのコマンドレットを使用するコマンドは、リモートコンピューター上のリモートセッションで実行されます。
 
 - セッションに同じ名前と同じ種類のメンバーをインポートする場合、PowerShell は、既定で最後にインポートされたメンバーを使用します。 変数と別名は置き換えられ、元の変数にはアクセスできません。 関数、コマンドレット、およびプロバイダーは、新しいメンバーによって単純にシャドウされます。 これらのコマンド名には、スナップイン、モジュール、または関数パスの名前を指定することによってアクセスできます。
 
 - モジュールからインポートされたコマンドの書式設定データを更新するには、 `Update-FormatData` コマンドレットを使用します。 `Update-FormatData` では、モジュールからインポートされたセッションのコマンドの書式設定データも更新されます。 モジュールのフォーマットファイルが変更された場合は、コマンドを実行して、インポートした `Update-FormatData` コマンドの書式設定データを更新できます。 モジュールをもう一度インポートする必要はありません。
 
-- Windows PowerShell 3.0 以降では、PowerShell でインストールされるコアコマンドはモジュールにパッケージ化されています。 Windows PowerShell 2.0、およびそれ以降のバージョンの PowerShell で古いスタイルのセッションを作成するホストプログラムでは、コアコマンドはスナップイン ( **PSSnapins** ) にパッケージ化されます。 例外は、常にスナップインである、 **PowerShell です** 。 また、コマンドレットによって開始されるようなリモートセッション `New-PSSession` は、コアスナップインを含む古いスタイルのセッションです。
+- Windows PowerShell 3.0 以降では、PowerShell でインストールされるコアコマンドはモジュールにパッケージ化されています。 Windows PowerShell 2.0、およびそれ以降のバージョンの PowerShell で古いスタイルのセッションを作成するホストプログラムでは、コアコマンドはスナップイン (**PSSnapins**) にパッケージ化されます。 例外は、常にスナップインである、 **PowerShell です**。 また、コマンドレットによって開始されるようなリモートセッション `New-PSSession` は、コアスナップインを含む古いスタイルのセッションです。
 
   コアモジュールで新しいスタイルのセッションを作成する **CreateDefault2** メソッドの詳細については、 [CreateDefault2 メソッド](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2)を参照してください。
 
-- `Import-Module` 別のセッションから PowerShell コアモジュールをインポートすることはできません。 PowerShell コアモジュールには、で始まる名前が付いてい `Microsoft.PowerShell` ます。
+- Windows PowerShell 2.0 では、モジュールオブジェクトの一部のプロパティ値 ( **ExportedCmdlets** や **nestedmodules** プロパティ値など) は、モジュールがインポートされるまで設定されませんでした。
 
-- Windows PowerShell 2.0 では、モジュールオブジェクトの一部のプロパティ値 ( **ExportedCmdlets** および **nestedmodules** プロパティ値など) は、モジュールがインポートされ、 **PassThru** パラメーターが返すモジュールオブジェクトで使用できなくなるまで、設定されませんでした。 Windows PowerShell 3.0 では、すべてのモジュールプロパティ値が設定されます。
-
-- Windows PowerShell 3.0 と互換性のない混合モードアセンブリを含むモジュールをインポートしようとすると、は `Import-Module` 次のようなエラーメッセージを返します。
+- Windows PowerShell 3.0 + と互換性のない混合モードのアセンブリを含むモジュールをインポートしようとすると、 `Import-Module` 次のようなエラーメッセージが返されます。
 
   > Import-Module: 混合モードのアセンブリは、ランタイムのバージョン ' v v2.0.50727 ' に対してビルドされており、追加の構成情報がないと、4.0 ランタイムに読み込むことができません。
 
-  このエラーは、Windows PowerShell 2.0 用に設計されたモジュールに、少なくとも1つの混合モジュールアセンブリ (C++ や C# などのマネージコードと非マネージコードの両方を含むアセンブリ) が含まれている場合に発生します。
+  このエラーは、Windows PowerShell 2.0 用に設計されたモジュールに、少なくとも1つのモジュールアセンブリが含まれている場合に発生します。 C++ や C# などのマネージコードと非マネージコードの両方を含む、モジュールが混在するアセンブリ。
 
   混合モードアセンブリを含むモジュールをインポートするには、次のコマンドを使用して Windows PowerShell 2.0 を起動し、コマンドを再試行し `Import-Module` ます。
 
@@ -1087,9 +1087,11 @@ Accept wildcard characters: False
   > [!NOTE]
   > `Get-Module` 現在のセッションで読み込まれたすべてのモジュールを表示します。 これには、子孫スコープにローカルに読み込まれたモジュールが含まれます。 `Get-Command -Module modulename`現在のスコープに読み込まれているメンバーを確認するには、を使用します。
 
-  モジュールにクラスと列挙型の定義が含まれている場合は、 `using module` スクリプトの先頭でを使用します。 これにより、クラスや列挙の定義など、スクリプトがインポートされます。 詳細については、「 [about_Using](About/about_Using.md)」を参照してください。
+  `Import-Module` モジュール内のクラス定義と列挙型定義を読み込みません。 `using module`スクリプトの先頭にあるステートメントを使用します。 これにより、クラスと列挙型の定義を含むモジュールがインポートされます。 詳細については、「 [about_Using](About/about_Using.md)」を参照してください。
 
 ## 関連リンク
+
+[about_Modules](about/about_Modules.md)
 
 [Export-ModuleMember](Export-ModuleMember.md)
 

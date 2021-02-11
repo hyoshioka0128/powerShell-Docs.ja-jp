@@ -1,12 +1,14 @@
 ---
-title: ListControl の ListItem の Label 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ad80cc0478e7567b12d264ab661d843248ba48e1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl の ListItem の Label 要素 (書式)
+description: ListControl の ListItem の Label 要素 (書式)
+ms.openlocfilehash: 01ff34c4129abe2c76a0a21794e756b77bff12bf
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783638"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666656"
 ---
 # <a name="label-element-for-listitem-for-listcontrol-format"></a>ListControl の ListItem の Label 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-ラベルが指定されていない場合は、プロパティまたはスクリプトの名前が表示されます。 リストビューでのラベルの使用の詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
+ラベルが指定されていない場合は、プロパティまたはスクリプトの名前が表示されます。 リストビューでのラベルの使用の詳細については、「 [リストビューの作成](./creating-a-list-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 

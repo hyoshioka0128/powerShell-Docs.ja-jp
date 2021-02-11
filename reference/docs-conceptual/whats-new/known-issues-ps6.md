@@ -3,12 +3,12 @@ ms.date: 02/03/2020
 keywords: powershell、core
 title: PowerShell 6.0 の既知の問題
 description: これは、PowerShell 6 での既知の問題または制限事項の概要です。
-ms.openlocfilehash: 528315eff660167513045542227dce335355a7b8
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 288bd664d511ebfd18408ce80ec3481333dbba37
+ms.sourcegitcommit: f9d855dd73b916559a22e337672dea3fbb11c634
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501679"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833779"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 の既知の問題
 
@@ -83,7 +83,7 @@ Linux/macOS での PowerShell では、ジョブ制御はサポートされて�
 
 WSMan ベースのリモート処理に向けた作業は、[psl-omi-provider](https://github.com/PowerShell/psl-omi-provider) リポジトリで行われています。
 
-また、PowerShell Core では、すべてのプラットフォーム (Windows、macOS、Linux) で、SSH 経由の PowerShell リモート処理 (PSRP) もサポートしています。 現在、これは運用環境ではサポートされていませんが、設定の詳細については[こちら](../learn/remoting/SSH-Remoting-in-PowerShell-Core.md)をご覧ください。
+また、PowerShell Core では、すべてのプラットフォーム (Windows、macOS、Linux) で、SSH 経由の PowerShell リモート処理 (PSRP) もサポートしています。 現在、これは運用環境ではサポートされていませんが、設定の詳細については[こちら](/powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core)をご覧ください。
 
 ### <a name="just-enough-administration-jea-support"></a>Just-Enough-Administration (JEA) のサポート
 

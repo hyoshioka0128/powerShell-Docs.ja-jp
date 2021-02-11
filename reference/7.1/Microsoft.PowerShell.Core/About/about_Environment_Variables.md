@@ -6,12 +6,12 @@ ms.date: 09/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
-ms.openlocfilehash: c954ee6e783b7926dbcd05a3e08b6b9b5cf9bc25
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 4b5894822f4436f127ed4789fd8008a0e7f2f2df
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222072"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584649"
 ---
 # <a name="about-environment-variables"></a>環境変数について
 
@@ -68,7 +68,7 @@ $Env:<variable-name> = "<new-value>"
 $Env:Path += ";c:\temp"
 ```
 
-Linux または MacOS では、コマンド内のコロン () は、 `:` 新しいパスをリスト内でその前のパスと分離します。
+Linux または macOS では、コマンド内のコロン () は、 `:` 新しいパスをリスト内でその前のパスと分離します。
 
 ```powershell
 $Env:PATH += ":/usr/local/temp"
@@ -232,15 +232,15 @@ PS Env:\> Get-ChildItem ComputerName
 
 ### <a name="saving-changes-to-environment-variables"></a>環境変数への変更の保存
 
-Windows の環境変数に対して永続的な変更を行うには、[システム] コントロールパネルを使用します。 [ **システムの詳細設定** ] を選択します。 [ **詳細設定** ] タブで、[ **環境変数** ] をクリックします。 **ユーザー** および **システム** (コンピューター) のスコープでは、既存の環境変数を追加または編集できます。 Windows はこれらの値をレジストリに書き込みます。これにより、セッションとシステムの再起動の間で永続化されます。
+Windows の環境変数に対して永続的な変更を行うには、[システム] コントロールパネルを使用します。 [ **システムの詳細設定**] を選択します。 [ **詳細設定** ] タブで、[ **環境変数**] をクリックします。 **ユーザー** および **システム** (コンピューター) のスコープでは、既存の環境変数を追加または編集できます。 Windows はこれらの値をレジストリに書き込みます。これにより、セッションとシステムの再起動の間で永続化されます。
 
 または、PowerShell プロファイルで環境変数を追加または変更することもできます。 この方法は、サポートされている任意のプラットフォーム上の任意のバージョンの PowerShell で使用できます。
 
 ### <a name="using-systemenvironment-methods"></a>System.object メソッドの使用
 
-GetEnvironmentVariable **クラスに** は、変数のスコープを指定できるようにする、 **GetEnvironmentVariable** メソッドと **SetEnvironmentVariable** メソッドが用意されています。
+GetEnvironmentVariable **クラスに** は、変数のスコープを指定できるようにする、 メソッドと **SetEnvironmentVariable** メソッドが用意されています。
 
-次の例では、 **GetEnvironmentVariable** メソッドを使用してコンピューターの設定を取得し、SetEnvironmentVariable メソッドを使用してその `PSModulePath` パスを値に追加して **SetEnvironmentVariable** `C:\Program Files\Fabrikam\Modules` います。
+次の例では、 **GetEnvironmentVariable** メソッドを使用してコンピューターの設定を取得し、SetEnvironmentVariable メソッドを使用してその `PSModulePath` パスを値に追加して `C:\Program Files\Fabrikam\Modules` います。
 
 ```powershell
 $path = [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine')
@@ -248,7 +248,7 @@ $newpath = $path + ';C:\Program Files\Fabrikam\Modules'
 [Environment]::SetEnvironmentVariable("PSModulePath", $newpath, 'Machine')
 ```
 
-System.object クラスのメソッドの詳細については、「 [環境メソッド](/dotnet/api/system.environment)」を参照して **ください。**
+System.object クラスのメソッドの詳細については、「[環境メソッド](/dotnet/api/system.environment)」を参照して **ください。**
 
 ## <a name="see-also"></a>関連項目
 

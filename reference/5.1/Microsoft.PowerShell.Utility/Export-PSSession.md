@@ -7,12 +7,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: 67501a78ba577f63c97e595f4bacd28160fea416
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 11533a9b127dc6d088258392c0e142bfbe5c070c
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93214032"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388027"
 ---
 # Export-PSSession
 
@@ -294,16 +294,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-**Modul特定** のオブジェクトの形式で指定された名前を持つモジュールを指定します。
-「 [Modulの認識コンストラクター (Hashtable)](https://msdn.microsoft.com/library/jj136290)」の「解説」を参照してください。
+**Modul特定** のオブジェクトの形式で指定された名前を持つモジュールを指定します。 「 [Modulの認識コンストラクター (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)」の「解説」を参照してください。
 
 たとえば、 **FullyQualifiedModule** パラメーターは、次のいずれかの形式で指定されたモジュール名を受け入れます。
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**ModuleName** と **ModuleVersion** は必須ですが、 **Guid** は省略可能です。 **モジュール** パラメーターと同じコマンドで **FullyQualifiedModule** パラメーターを指定することはできません。2つのパラメーターは相互に排他的です。
+**ModuleName** と **ModuleVersion** は必須ですが、 **Guid** は省略可能です。 **モジュール** パラメーターと同じコマンドで **FullyQualifiedModule** パラメーターを指定することはできません。 2つのパラメーターは相互に排他的です。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

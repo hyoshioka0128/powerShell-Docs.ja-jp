@@ -7,12 +7,12 @@ ms.date: 09/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Clipboard
-ms.openlocfilehash: da1df360d7c471d925bd2f57f5258ecb2d60e631
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: 5fce0c872871006dd760ee8df2fb692faaa1aab9
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239983"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342367"
 ---
 # Get-Clipboard
 
@@ -30,7 +30,7 @@ Get-Clipboard [-Raw] [<CommonParameters>]
 `Get-Clipboard`コマンドレットは、クリップボードの内容をテキストとして取得します。 に類似した文字列の配列として、複数行のテキストが返され `Get-Content` ます。
 
 > [!NOTE]
-> Linux では、このコマンドレットでは `xclip` ユーティリティをパスに配置する必要があります。
+> Linux では、このコマンドレットでは `xclip` ユーティリティをパスに配置する必要があります。 このコマンドレットは macOS ではサポートされていません。
 
 ## 例
 
@@ -79,4 +79,3 @@ Accept wildcard characters: False
 ## 関連リンク
 
 [Set-Clipboard](Set-Clipboard.md)
-

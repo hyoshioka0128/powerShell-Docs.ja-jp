@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: 5a76f8ec454ad8144f193d8927f913b89a429fec
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 17c3ef3046ba8f0cca9a85cf41aaf683212a58e9
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93214040"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913343"
 ---
 # Export-Csv
 
@@ -67,7 +66,7 @@ BasePriority Id    SessionId WorkingSet
 8            54632 0         9502720
 ```
 
-`Get-Process`コマンドレットでは、 **プロセス** オブジェクトを取得します。 **Name** パラメーターは、WmiPrvSE process オブジェクトのみを含むように出力をフィルター処理します。 プロセスオブジェクトは、パイプラインを介してコマンドレットに送信され `Select-Object` ます。 `Select-Object`**Property** パラメーターを使用して、プロセスオブジェクトのプロパティのサブセットを選択します。 プロセスオブジェクトは、パイプラインを介してコマンドレットに送信され `Export-Csv` ます。 `Export-Csv` プロセスオブジェクトを一連の CSV 文字列に変換します。 **Path** パラメーターは、WmiData.csv ファイルが現在のディレクトリに保存されることを指定します。 **Notypeinformation** パラメーターを指定すると、CSV 出力から **#TYPE** 情報ヘッダーが削除され、PowerShell 6 では不要になります。 この `Import-Csv` コマンドレットは、 **Path** パラメーターを使用して、現在のディレクトリにあるファイルを表示します。
+`Get-Process`コマンドレットでは、**プロセス** オブジェクトを取得します。 **Name** パラメーターは、WmiPrvSE process オブジェクトのみを含むように出力をフィルター処理します。 プロセスオブジェクトは、パイプラインを介してコマンドレットに送信され `Select-Object` ます。 `Select-Object`**Property** パラメーターを使用して、プロセスオブジェクトのプロパティのサブセットを選択します。 プロセスオブジェクトは、パイプラインを介してコマンドレットに送信され `Export-Csv` ます。 `Export-Csv` プロセスオブジェクトを一連の CSV 文字列に変換します。 **Path** パラメーターは、WmiData.csv ファイルが現在のディレクトリに保存されることを指定します。 **Notypeinformation** パラメーターを指定すると、CSV 出力から **#TYPE** 情報ヘッダーが削除され、PowerShell 6 では不要になります。 この `Import-Csv` コマンドレットは、 **Path** パラメーターを使用して、現在のディレクトリにあるファイルを表示します。
 
 ### 例 2: コンマ区切りファイルにプロセスをエクスポートする
 
@@ -375,7 +374,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-CSV 出力ファイルのパスを指定します。 **Path** と異なり、 **LiteralPath** パラメーターの値は入力したとおりに使用されます。 ワイルドカードとして解釈される文字はありません。 パスにエスケープ文字が含まれている場合は、単一引用符を使用します。 単一引用符で囲まれた文字はエスケープシーケンスとして解釈されません。
+CSV 出力ファイルのパスを指定します。 **Path** と異なり、**LiteralPath** パラメーターの値は入力したとおりに使用されます。 ワイルドカードとして解釈される文字はありません。 パスにエスケープ文字が含まれている場合は、単一引用符を使用します。 単一引用符で囲まれた文字はエスケープシーケンスとして解釈されません。
 
 ```yaml
 Type: System.String

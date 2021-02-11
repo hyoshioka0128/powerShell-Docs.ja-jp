@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
-ms.openlocfilehash: 1409522cffc2dde2cc5002049126bcfaa30ce846
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 48f15f9d7018c2e58584bff80f81132fe08fea1e
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210368"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692726"
 ---
 # Get-Content
 
@@ -49,7 +48,7 @@ PowerShell 3.0 以降では、 `Get-Content` 項目の先頭または末尾か�
 
 ### 例 1: テキストファイルの内容を取得する
 
-この例では、現在のディレクトリ内のファイルの内容を取得します。 `LineNumbers.txt`このファイルには100行の形式が含まれています。 **これは行 X** で、いくつかの例で使用されています。
+この例では、現在のディレクトリ内のファイルの内容を取得します。 `LineNumbers.txt`このファイルには100行の形式が含まれています。**これは行 X** で、いくつかの例で使用されています。
 
 ```powershell
 1..100 | ForEach-Object { Add-Content -Path .\LineNumbers.txt -Value "This is line $_." }
@@ -180,7 +179,7 @@ Added a stream named NewStream to Stream.txt
 ```
 
 **Stream** パラメーターは、 [FileSystem プロバイダー](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring)の動的パラメーターです。
-既定で `Get-Content` は、プライマリまたはストリームからのデータのみが取得さ `$DATA` れます。 **ストリーム** は、属性、セキュリティ設定、その他のデータなどの非表示データを格納するために使用できます。
+既定では、既定で `Get-Content` は、またはストリームからのみデータが取得さ `:$DATA` れます。 **ストリーム** は、属性、セキュリティ設定、その他のデータなどの非表示データを格納するために使用できます。 子項目ではなく、ディレクトリに格納することもできます。
 
 ### 例 6: 生のコンテンツを取得する
 
@@ -219,7 +218,7 @@ Get-Member -InputObject $bytearray
 ```
 
 ```Output
-TypeName: System.Byte[]
+   TypeName: System.Byte[]
 
 Name           MemberType            Definition
 ----           ----------            ----------
@@ -289,7 +288,7 @@ Accept wildcard characters: False
 
 ファイルまたはその他の項目の先頭からの行数を指定します。 既定値は -1 (すべての行) です。
 
-**Totalcount** パラメーター名またはそのエイリアス ( **最初** または **先頭** ) を使用できます。
+**Totalcount** パラメーター名またはそのエイリアス (**最初** または **先頭**) を使用できます。
 
 ```yaml
 Type: System.Int64
@@ -338,7 +337,7 @@ Accept wildcard characters: True
 
 ### -Include
 
-文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `"*.txt"` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `"*.txt"` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -355,7 +354,7 @@ Accept wildcard characters: True
 ### -除外
 
 このコマンドレットによって操作で除外される項目を文字列配列として指定します。
-このパラメーターの値は、 **Path** パラメーターを修飾します。
+このパラメーターの値は、**Path** パラメーターを修飾します。
 
 パス要素またはパターン (など) を入力し `*.txt` ます。
 ワイルドカード文字を使用できます。
@@ -433,7 +432,7 @@ Accept wildcard characters: False
 
 ### -Wait
 
-すべての既存の行が出力された後もファイルを開いたままにします。 待機中、は 1 `Get-Content` 秒ごとにファイルをチェックし、存在する場合は新しい行を出力します。 CTRL キーを押し **ながら C** キーを押すと、 **待機** を中断できます。 待機は、ファイルが削除された場合にも終了します。この場合、終了しないエラーが報告されます。
+すべての既存の行が出力された後もファイルを開いたままにします。 待機中、は 1 `Get-Content` 秒ごとにファイルをチェックし、存在する場合は新しい行を出力します。 CTRL キーを押し **ながら C** キーを押すと、**待機** を中断できます。 待機は、ファイルが削除された場合にも終了します。この場合、終了しないエラーが報告されます。
 
 **Wait** は、FileSystem プロバイダーによってコマンドレットに追加される動的パラメーターです `Get-Content` 。 このパラメーターはファイル システム ドライブでのみ機能します。 **Wait** を **Raw** と組み合わせることはできません。
 
@@ -504,6 +503,9 @@ Accept wildcard characters: False
 ```
 
 ### -ストリーム
+
+> [!NOTE]
+> このパラメーターは Windows でのみ使用できます。
 
 指定した代替 NTFS ファイル ストリームの内容をファイルから取得します。 ストリーム名を入力します。
 ワイルドカードはサポートされていません。

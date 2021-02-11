@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resume-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resume-Service
-ms.openlocfilehash: c90c9fcaca3a003d46b41a7ff8b9901079c9f134
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 0902e944f2976bbdbc35fd051926422c5ae6f8c5
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93214464"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342639"
 ---
 # Resume-Service
 
@@ -44,10 +44,7 @@ Resume-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclu
 
 ## Description
 
-**Resume Service** コマンドレットは、指定された各サービスの Windows サービスコントローラーに再開メッセージを送信します。
-サービスが中断されている場合は、再開されます。
-現在実行中の場合、メッセージは無視されます。
-サービスは、サービス名または表示名で指定できます。また、 *InputObject* パラメーターを使用して、再開するサービスを表すサービスオブジェクトを渡すこともできます。
+`Resume-Service`コマンドレットは、指定された各サービスの Windows サービスコントローラーに再開メッセージを送信します。 サービスが中断されている場合は、再開されます。 現在実行中の場合、メッセージは無視されます。 サービスは、サービス名または表示名で指定できます。また、 **InputObject** パラメーターを使用して、再開するサービスを表すサービスオブジェクトを渡すこともできます。
 
 ## 例
 
@@ -57,9 +54,7 @@ Resume-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclu
 PS C:\> Resume-Service "sens"
 ```
 
-このコマンドは、ローカルコンピューター上のシステムイベント通知サービスを再開します。
-サービス名は、コマンドでは、sens によって表されます。
-このコマンドは、 *name* パラメーターを使用してサービスのサービス名を指定しますが、パラメーター名は省略可能であるため、コマンドはパラメーター名を省略します。
+このコマンドは、ローカルコンピューター上のシステムイベント通知サービスを再開します。 サービス名は、コマンドでは、sens によって表されます。 このコマンドは、 **name** パラメーターを使用してサービスのサービス名を指定しますが、パラメーター名は省略可能であるため、コマンドはパラメーター名を省略します。
 
 ### 例 2: すべての中断されたサービスを再開する
 
@@ -67,12 +62,9 @@ PS C:\> Resume-Service "sens"
 PS C:\> Get-Service | Where-Object {$_.Status -eq "Paused"} | Resume-Service
 ```
 
-このコマンドは、コンピューター上のすべての中断されたサービスを再開します。
-Get-Service コマンドレットコマンドは、コンピューター上のすべてのサービスを取得します。
-パイプライン演算子 (|) は、Where-Object コマンドレットに結果を渡します。このコマンドレットは、 **Status** プロパティが一時停止になっているサービスを選択します。
-次のパイプライン演算子は、結果を **再開サービス** に送信します。これにより、一時停止したサービスが再開されます。
+このコマンドは、コンピューター上のすべての中断されたサービスを再開します。 コマンドレットコマンドを実行すると、 `Get-Service` コンピューター上のすべてのサービスが取得されます。 パイプライン演算子 () は、 `|` 結果を `Where-Object` コマンドレットに渡します。このコマンドレットは、 **Status** プロパティが一時停止になっているサービスを選択します。 次のパイプライン演算子は、結果をに送信します `Resume-Service` 。これにより、一時停止したサービスが再開されます。
 
-実際には、 *WhatIf* パラメーターを使用して、コマンドを実行する前にその効果を判断します。
+実際には、 **WhatIf** パラメーターを使用して、コマンドを実行する前にその効果を判断します。
 
 ## PARAMETERS
 
@@ -95,10 +87,7 @@ Accept wildcard characters: True
 
 ### -除外
 
-このコマンドレットで省略されるサービスを指定します。
-このパラメーターの値は、 *Name* パラメーターを修飾します。
-「S *」のように、名前要素またはパターンを入力します。
-ワイルドカード文字を使用できます。
+このコマンドレットで省略されるサービスを指定します。 このパラメーターの値は、 **Name** パラメーターを修飾します。 「S *」のように、名前要素またはパターンを入力します。 ワイルドカード文字を使用できます。
 
 ```yaml
 Type: System.String[]
@@ -114,10 +103,7 @@ Accept wildcard characters: True
 
 ### -Include
 
-再開するサービスを指定します。
-このパラメーターの値は、 *Name* パラメーターを修飾します。
-「S *」のように、名前要素またはパターンを入力します。
-ワイルドカード文字を使用できます。
+再開するサービスを指定します。 このパラメーターの値は、 **Name** パラメーターを修飾します。 「S *」のように、名前要素またはパターンを入力します。 ワイルドカード文字を使用できます。
 
 ```yaml
 Type: System.String[]
@@ -133,8 +119,7 @@ Accept wildcard characters: True
 
 ### -InputObject
 
-再開するサービスを表す **ServiceController** オブジェクトを指定します。
-オブジェクトが格納されている変数を入力するか、オブジェクトを取得するコマンドまたは式を入力します。
+再開するサービスを表す **ServiceController** オブジェクトを指定します。 オブジェクトが格納されている変数を入力するか、オブジェクトを取得するコマンドまたは式を入力します。
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -166,8 +151,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-サービスを表すオブジェクトを返します。
-既定では、このコマンドレットによる出力はありません。
+サービスを表すオブジェクトを返します。 既定では、このコマンドレットによる出力はありません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -199,8 +183,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -228,14 +211,14 @@ Accept wildcard characters: False
 
 ### None、ServiceController。
 
-このコマンドレットは、 *PassThru* パラメーターを指定した場合に、再開されたサービスを表す **ServiceController** オブジェクトを生成します。
-それ以外の場合、このコマンドレットによる出力はありません。
+このコマンドレットは、 **PassThru** パラメーターを指定した場合に、再開されたサービスを表す **ServiceController** オブジェクトを生成します。 それ以外の場合、このコマンドレットによる出力はありません。
 
 ## 注
 
-* 中断されたサービスの状態は一時停止されます。 サービスが再開されると、その状態は [実行中] になります。
-* **Resume-サービス** は、現在のユーザーがこの操作を行うためのアクセス許可を持っている場合にのみサービスを制御できます。 コマンドが正常に機能しない場合は、必要なアクセス許可が与えられていない可能性があります。
-* システム上のサービスのサービス名と表示名を確認するには、「」と入力 `Get-Service` します。 サービス名は [ **名前** ] 列に表示され、表示名は [ **DisplayName** ] 列に表示されます。
+- 中断されたサービスの状態は一時停止されます。 サービスが再開されると、その状態は [実行中] になります。
+- `Resume-Service` 現在のユーザーがこの操作を行うためのアクセス許可を持っている場合にのみ、サービスを制御できます。 コマンドが正常に機能しない場合は、必要なアクセス許可が与えられていない可能性があります。
+- システム上のサービスのサービス名と表示名を確認するには、「」と入力 `Get-Service` します。
+  サービス名は [ **名前** ] 列に表示され、表示名は [ **DisplayName** ] 列に表示されます。
 
 ## 関連リンク
 

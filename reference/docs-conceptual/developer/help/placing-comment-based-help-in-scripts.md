@@ -1,18 +1,20 @@
 ---
-title: スクリプトにコメント ベースのヘルプを配置する
 ms.date: 09/12/2016
-ms.openlocfilehash: a3ade6c3138826b924939056b9d1ffb233006d44
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: スクリプトにコメント ベースのヘルプを配置する
+description: スクリプトにコメント ベースのヘルプを配置する
+ms.openlocfilehash: b0d32b7ab063269085899a643b0c3a17da2073fc
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893188"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645444"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>スクリプトにコメント ベースのヘルプを配置する
 
 このトピックでは、スクリプトにコメントベースのヘルプトピックを配置する方法について説明し `Get-Help` ます。このコマンドレットは、スクリプトに含まれる関数ではなく、スクリプトにコメントベースのヘルプトピックを関連付けます。
 
-## <a name="where-to-place-comment-based-help-for-a-script"></a>スクリプトのコメントベースのヘルプを配置する場所
+## <a name="where-to-place-comment-based-help-for-a-script"></a>スクリプトの Comment-Based ヘルプの配置場所
 
 - スクリプトファイルの先頭にあります。
 

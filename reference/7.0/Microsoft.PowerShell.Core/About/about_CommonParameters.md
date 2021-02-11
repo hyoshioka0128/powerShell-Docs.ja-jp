@@ -2,16 +2,16 @@
 description: 任意のコマンドレットで使用できるパラメーターについて説明します。
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 11/26/2019
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CommonParameters
-ms.openlocfilehash: 949fabca6052a75d2cc4f8cf71e0a88b170a3b36
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 0b303590aab756aaa7dd55683e114a20c2b2a12c
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222320"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860812"
 ---
 # <a name="about-commonparameters"></a>CommonParameters について
 
@@ -48,7 +48,7 @@ ms.locfileid: "93222320"
 **アクション** パラメーターは **actionpreference** 型の値です。
 **Actionpreference** は、次の値を持つ列挙体です。
 
-| Name             | 値 |
+| 名前             | 値 |
 |------------------|-------|
 | [中断]          | 5     |
 | Ignore           | 4     |
@@ -295,6 +295,10 @@ $out
 
 **PipelineVariable** は、現在のパイプライン要素の値を変数として格納します。これは、パイプラインを介してフローする任意の名前付きコマンドに使用します。
 
+>[!NOTE]
+> 高度な関数には、、、およびの3つまでのスクリプトブロックを含めることができ `begin` `process` `end` ます。 高度な関数で **PipelineVariable** パラメーターを使用する場合、関数の実行時に、最初に定義されたスクリプトブロックの値のみが変数に割り当てられます。 詳細については、「 [高度な関数](./about_functions_advanced.md)」を参照してください。
+> PowerShell 7.2 では、この動作を修正します。
+
 ```yaml
 Type: String
 Aliases: pv
@@ -308,11 +312,11 @@ Accept wildcard characters: False
 
 有効な値は文字列で、任意の変数名と同じです。
 
-**PipelineVariable** の動作の例を次に示します。 この例では、 **PipelineVariable** コマンド `Foreach-Object` の結果を変数に格納するために、PipelineVariable パラメーターがコマンドに追加されています。 1 ~ 10 の範囲の数値は最初のコマンドにパイプされ `Foreach-Object` 、その結果は **Left** という名前の変数に格納されます。
+**PipelineVariable** の動作の例を次に示します。 この例では、 コマンド `Foreach-Object` の結果を変数に格納するために、PipelineVariable パラメーターがコマンドに追加されています。 1 ~ 10 の範囲の数値は最初のコマンドにパイプされ `Foreach-Object` 、その結果は **Left** という名前の変数に格納されます。
 
 最初のコマンドの結果は、 `Foreach-Object` 2 番目のコマンドにパイプされ `Foreach-Object` ます。このコマンドは、最初のコマンドによって返されたオブジェクトをフィルター処理し `Foreach-Object` ます。 2番目のコマンドの結果は、 **Right** という名前の変数に格納されます。
 
-3番目のコマンドでは、 `Foreach-Object` 変数によって表される最初の2つのパイプされたコマンドの結果 `Foreach-Object` が、乗算演算子を使用して処理されます。 **Left** **Right** このコマンドは、 **左** と **右** の変数に格納されているオブジェクトに乗算するように指示し、結果を "左辺の範囲メンバー * 右範囲メンバー = 製品" として表示するように指定します。
+3番目のコマンドでは、 `Foreach-Object` 変数によって表される最初の2つのパイプされたコマンドの結果 `Foreach-Object` が、乗算演算子を使用して処理されます。   このコマンドは、 **左** と **右** の変数に格納されているオブジェクトに乗算するように指示し、結果を "左辺の範囲メンバー * 右範囲メンバー = 製品" として表示するように指定します。
 
 ```powershell
 1..10 | Foreach-Object -PipelineVariable Left -Process { $_ } |
@@ -348,7 +352,7 @@ Accept wildcard characters: False
 
 `-Verbose:$true` と同じ効果があります。 `-Verbose`
 
-`-Verbose:$false` 詳細メッセージの表示を抑制します。 の値が SilentlyContinue (既定値) でない場合に、このパラメーターを使用し `$VerbosePreference` ます。 **SilentlyContinue**
+`-Verbose:$false` 詳細メッセージの表示を抑制します。 の値が SilentlyContinue (既定値) でない場合に、このパラメーターを使用し `$VerbosePreference` ます。 
 
 #### <a name="warningaction"></a>WarningAction
 
@@ -438,7 +442,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-**WhatIf** パラメーターは、現在のコマンドの変数の値よりも優先され `$WhatIfPreference` ます。 変数の既定値 `$WhatIfPreference` は 0 (無効) であるため、whatif パラメーターを指定しない **WhatIf** と **whatif** 動作は実行されません。 詳細については、「」を参照してください [about_Preference_Variables](about_Preference_Variables.md)
+**WhatIf** パラメーターは、現在のコマンドの変数の値よりも優先され `$WhatIfPreference` ます。 変数の既定値 `$WhatIfPreference` は 0 (無効) であるため、whatif パラメーターを指定しないと **whatif** 動作は実行されません。 詳細については、「」を参照してください [about_Preference_Variables](about_Preference_Variables.md)
 
 `-WhatIf:$true` と同じ効果があり `-WhatIf` ます。
 
@@ -503,7 +507,7 @@ Confirm response オプションは次のとおりです。
 |中断 (S):   |コマンドを一時停止し、一時的なセッションを作成します。          |
 |ヘルプ (?)       |これらのオプションのヘルプを表示します。                            |
 
-**Suspend** オプションを指定すると、コマンドが保留状態になり、一時的な入れ子になったセッションが作成されます。このセッションでは、[ **確認** ] オプションを選択する準備ができています。 入れ子になったセッションのコマンドプロンプトには、元の親コマンドの子操作であることを示すために、2つの追加のキャレット (>>) があります。 入れ子になったセッションでは、コマンドとスクリプトを実行できます。 入れ子になったセッションを終了し、元のコマンドの Confirm オプションに戻るには、「exit」と入力します。
+**Suspend** オプションを指定すると、コマンドが保留状態になり、一時的な入れ子になったセッションが作成されます。このセッションでは、[**確認**] オプションを選択する準備ができています。 入れ子になったセッションのコマンドプロンプトには、元の親コマンドの子操作であることを示すために、2つの追加のキャレット (>>) があります。 入れ子になったセッションでは、コマンドとスクリプトを実行できます。 入れ子になったセッションを終了し、元のコマンドの Confirm オプションに戻るには、「exit」と入力します。
 
 次の例では、ユーザーがコマンドパラメーターのヘルプを確認している間に、 **Suspend** オプションを使用してコマンドを一時的に停止しています。 ユーザーは必要な情報を取得した後、"exit" を入力して入れ子になったプロンプトを終了し、確認クエリに対して [はい] (y) の応答を選択します。
 
@@ -557,6 +561,6 @@ about_Common_Parameters
 
 [Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)
 
-[書き込み-エラー](xref:Microsoft.PowerShell.Utility.Write-Error)
+[Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
 
 [Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)

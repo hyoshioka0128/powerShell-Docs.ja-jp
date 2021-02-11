@@ -1,12 +1,14 @@
 ---
-title: PowerShell スクリプトモジュールを記述する方法 |Microsoft Docs
 ms.date: 11/21/2019
-ms.openlocfilehash: dc387909a9e55df9f1846b02755e284c408f7dc6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PowerShell スクリプト モジュールを記述する方法
+description: PowerShell スクリプト モジュールを記述する方法
+ms.openlocfilehash: c44b09a915501fb10773ab11cf13136d5035ba69
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784896"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649151"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>PowerShell スクリプト モジュールを記述する方法
 
@@ -43,7 +45,7 @@ ms.locfileid: "87784896"
    }
    ```
 
-2. 特定の関数または変数へのユーザーアクセスを制御するには、スクリプトの最後に[export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember)を呼び出します。
+2. 特定の関数または変数へのユーザーアクセスを制御するには、スクリプトの最後に [export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) を呼び出します。
 
    記事の下部にあるコード例には、既定で公開される関数が1つだけあります。 ただし、次のコードに示すように、公開する関数を明示的に呼び出すことをお勧めします。
 
@@ -53,7 +55,7 @@ ms.locfileid: "87784896"
    Export-ModuleMember -Function Show-Calendar
    ```
 
-   モジュールマニフェストを使用してインポートされたものを制限できます。 詳細については、「 [Powershell モジュールをインポート](./importing-a-powershell-module.md)する」および「 [powershell モジュールマニフェストを記述する方法](./how-to-write-a-powershell-module-manifest.md)」を参照してください。
+   モジュールマニフェストを使用してインポートされたものを制限できます。 詳細については、「 [Powershell モジュールをインポート](./importing-a-powershell-module.md) する」および「 [powershell モジュールマニフェストを記述する方法](./how-to-write-a-powershell-module-manifest.md)」を参照してください。
 
 3. 独自のモジュールで読み込む必要があるモジュールがある場合は `Import-Module` 、モジュールの上部にあるを使用できます。
 
@@ -75,14 +77,14 @@ ms.locfileid: "87784896"
 
    モジュールをインストールできるパスは、グローバル変数に格納されてい `$env:PSModulePath` ます。 たとえば、システムにモジュールを保存するための一般的なパスは、のようになり `%SystemRoot%/users/<user>/Documents/PowerShell/Modules/<moduleName>` ます。 ファイルが1つしかない場合でも、スクリプトモジュールと同じ名前を使用するモジュール用のディレクトリを作成してください `.psm1` 。 これらのパスのいずれかにモジュールを保存していない場合は、モジュールの場所をコマンドで指定する必要があり `Import-Module` ます。 それ以外の場合、PowerShell はモジュールを見つけることができません。
 
-   PowerShell 3.0 以降では、いずれかの PowerShell モジュールパスにモジュールを配置した場合、明示的にインポートする必要はありません。 ユーザーが関数を呼び出したときに、モジュールが自動的に読み込まれます。 モジュールパスの詳細については、「 [PowerShell モジュールをインポートする](./importing-a-powershell-module.md)」および「 [PSModulePath インストールパスを変更](./modifying-the-psmodulepath-installation-path.md)する」を参照してください。
+   PowerShell 3.0 以降では、いずれかの PowerShell モジュールパスにモジュールを配置した場合、明示的にインポートする必要はありません。 ユーザーが関数を呼び出したときに、モジュールが自動的に読み込まれます。 モジュールパスの詳細については、「 [PowerShell モジュールをインポートする](./importing-a-powershell-module.md) 」および「 [PSModulePath インストールパスを変更](./modifying-the-psmodulepath-installation-path.md)する」を参照してください。
 
-7. 現在の PowerShell セッションでアクティブなサービスからモジュールを削除するには、[モジュールの削除](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)を使用します。
+7. 現在の PowerShell セッションでアクティブなサービスからモジュールを削除するには、 [モジュールの削除](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)を使用します。
 
    > [!NOTE]
-   > `Remove-Module`現在の PowerShell セッションからモジュールを削除しますが、モジュールをアンインストールしたり、モジュールのファイルを削除したりすることはありません。
+   > `Remove-Module` 現在の PowerShell セッションからモジュールを削除しますが、モジュールをアンインストールしたり、モジュールのファイルを削除したりすることはありません。
 
-## <a name="show-calendar-code-example"></a>カレンダーのコード例の表示
+## <a name="show-calendar-code-example"></a>Show-Calendar コードの例
 
 次の例は、という名前の単一の関数を含むスクリプトモジュールです `Show-Calendar` 。 この関数は、カレンダーの視覚的な表現を表示します。 このサンプルには、概要、説明、パラメーター値、およびコードの PowerShell ヘルプ文字列が含まれています。 モジュールがインポートされると、 `Export-ModuleMember` コマンドによっ `Show-Calendar` て、関数がモジュールメンバーとしてエクスポートされます。
 

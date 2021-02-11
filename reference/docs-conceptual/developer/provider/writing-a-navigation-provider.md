@@ -1,16 +1,18 @@
 ---
-title: ナビゲーションプロバイダーを作成する |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2fd27314a2b8547a15dd1bb72aa8f970d40b18cc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ナビゲーション プロバイダーを記述する
+description: ナビゲーション プロバイダーを記述する
+ms.openlocfilehash: 3123672d3365c97714557bd0e72a6e444ac228a0
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786783"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355223"
 ---
 # <a name="writing-a-navigation-provider"></a>ナビゲーション プロバイダーを記述する
 
-このトピックでは、入れ子になったコンテナー (複数レベルのデータストア)、項目の移動、および相対パスをサポートする Windows PowerShell プロバイダーのメソッドを実装する方法について説明します。 ナビゲーションプロバイダーは、 [system.servicemodel クラスから](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)派生させる必要があります。
+このトピックでは、入れ子になったコンテナー (複数レベルのデータストア)、項目の移動、および相対パスをサポートする Windows PowerShell プロバイダーのメソッドを実装する方法について説明します。 ナビゲーションプロバイダーは、 [system.servicemodel クラスから](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) 派生させる必要があります。
 
 このトピックの例のプロバイダーでは、データストアとして Access データベースを使用しています。 データベースとの対話に使用されるヘルパーメソッドとクラスはいくつかあります。 ヘルパーメソッドを含む完全なサンプルについては、「 [AccessDBProviderSample05](./accessdbprovidersample05.md)」を参照してください。
 
@@ -18,14 +20,14 @@ Windows PowerShell プロバイダーの詳細については、「 [Windows Pow
 
 ## <a name="implementing-navigation-methods"></a>ナビゲーションメソッドの実装
 
-System.servicemodel[クラスは、入れ子](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)になったコンテナー、相対パス、および項目の移動をサポートするメソッドを実装します。 これらのメソッドの完全な一覧については、「 [navigation[プロバイダーメソッド](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods)]」を参照してください。
+System.servicemodel [クラスは、入れ子](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) になったコンテナー、相対パス、および項目の移動をサポートするメソッドを実装します。 これらのメソッドの完全な一覧については、「 [navigation[プロバイダーメソッド](/dotnet/api/system.management.automation.provider.navigationcmdletprovider#methods)]」を参照してください。
 
 > [!NOTE]
-> このトピックは、「 [Windows PowerShell プロバイダーのクイックスタート](./windows-powershell-provider-quickstart.md)」の情報に基づいています。 このトピックでは、プロバイダープロジェクトを設定する方法の基本については説明しません。また、ドライブを作成または削除する[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスから継承されたメソッドを実装する方法についても説明しません。 また、このトピックでは、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスまたはクラスによって公開されるメソッドを実装する方法につい[ては説明](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)しません。 項目のコマンドレットを実装する方法を示す例については、「[項目プロバイダーを作成](./writing-an-item-provider.md)する」を参照してください。 コンテナーのコマンドレットを実装する方法を示す例については、「[コンテナープロバイダーの作成](./writing-a-container-provider.md)」を参照してください。
+> このトピックは、「 [Windows PowerShell プロバイダーのクイックスタート](./windows-powershell-provider-quickstart.md)」の情報に基づいています。 このトピックでは、プロバイダープロジェクトを設定する方法の基本については説明しません。また、ドライブを作成または削除する [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) クラスから継承されたメソッドを実装する方法についても説明しません。 また、このトピックでは、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスまたはクラスによって公開されるメソッドを実装する方法につい[ては説明](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)しません。 項目のコマンドレットを実装する方法を示す例については、「 [項目プロバイダーを作成](./writing-an-item-provider.md)する」を参照してください。 コンテナーのコマンドレットを実装する方法を示す例については、「 [コンテナープロバイダーの作成](./writing-a-container-provider.md)」を参照してください。
 
 ### <a name="declaring-the-provider-class"></a>プロバイダークラスの宣言
 
-プロバイダーを宣言し[て、system.servicemodel クラスから](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)派生させ、それを system.string[属性](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)で装飾します。このクラスは、このクラスから派生します。
+プロバイダーを宣言し [て、system.servicemodel クラスから](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) 派生させ、それを system.string [属性](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)で装飾します。このクラスは、このクラスから派生します。
 
 ```
 [CmdletProvider("AccessDB", ProviderCapabilities.None)]
@@ -70,7 +72,7 @@ protected override bool IsItemContainer(string path)
 
 ### <a name="implementing-getchildname"></a>GetChildName の実装
 
-このメソッドは、指定されたパスにある子項目の name プロパティを取得します。 [Getchildname *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName)メソッド。 指定したパスにある項目がコンテナーの子でない場合、このメソッドはパスを返す必要があります。
+このメソッドは、指定されたパスにある子項目の name プロパティを取得します。 [Getchildname *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) メソッド。 指定したパスにある項目がコンテナーの子でない場合、このメソッドはパスを返す必要があります。
 
 ```csharp
 protected override string GetChildName(string path)
@@ -125,7 +127,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>MakePath の実装
 
-指定された親パスと指定された子パスを結合してプロバイダー内部パスを作成[します (](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)プロバイダーがサポートできるパスの種類の詳細については、「 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)」を参照してください)。 PowerShell エンジンは、ユーザーが次の[コマンドレットを](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand)呼び出すと、このメソッドを呼び出します。
+指定された親パスと指定された子パスを結合してプロバイダー内部パスを作成 [します (](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) プロバイダーがサポートできるパスの種類の詳細については、「 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)」を参照してください)。 PowerShell エンジンは、ユーザーが次の [コマンドレットを](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) 呼び出すと、このメソッドを呼び出します。
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -214,7 +216,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>MoveItem の実装
 
-この[メソッドは](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)、指定されたパスから指定されたコピー先のパスに項目を移動します。 PowerShell エンジンは、ユーザーが[コマンド](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand)レットを呼び出したときに、このメソッドを呼び出します。
+この [メソッドは](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) 、指定されたパスから指定されたコピー先のパスに項目を移動します。 PowerShell エンジンは、ユーザーが [コマンド](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand) レットを呼び出したときに、このメソッドを呼び出します。
 
 ```csharp
 protected override void MoveItem(string path, string destination)

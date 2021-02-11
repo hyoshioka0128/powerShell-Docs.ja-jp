@@ -3,12 +3,12 @@ title: ShouldProcess について知りたかったことのすべて
 description: ShouldProcess は、見過ごされることがよくある重要な機能です。 WhatIf と Confirm パラメーターを使用すると、関数に簡単に追加できます。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 6bd4dbd5255203f2daf804163aa2a84d992d6697
-ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
+ms.openlocfilehash: 4f11ad84f5c89423fe56cfe438ed3cb1587ce59e
+ms.sourcegitcommit: be1df0bf757d734975a9aa021727608a396059ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86469737"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96616048"
 ---
 # <a name="everything-you-wanted-to-know-about-shouldprocess"></a>ShouldProcess について知りたかったことのすべて
 
@@ -128,7 +128,7 @@ What if: Performing the operation "Remove File" on target "C:\Temp\myfile1.txt".
 function Test-ShouldProcess {
     [CmdletBinding(SupportsShouldProcess)]
     param()
-    Remove-Item .\myfile1.txt -WhatIf:$WhatIf
+    Remove-Item .\myfile1.txt -WhatIf:$WhatIfPreference
 }
 ```
 
@@ -228,7 +228,7 @@ What if: MESSAGE
 
 ### <a name="shouldprocessreason"></a>ShouldProcessReason
 
-他よりも高度な 4 番目のオーバーロードがあります。 これにより、`ShouldProcess` が実行された理由を取得できます。 これは単に網羅するために追加しています。代わりに `$WhatIf` が `$true` かどうかを確認できるためです。
+他よりも高度な 4 番目のオーバーロードがあります。 これにより、`ShouldProcess` が実行された理由を取得できます。 これは単に網羅するために追加しています。代わりに `$WhatIfPreference` が `$true` かどうかを確認できるためです。
 
 ```powershell
 $reason = ''
@@ -428,7 +428,7 @@ Error: Test-ShouldProcess: A parameter cannot be found that matches parameter na
 Test-ShouldProcess -Confirm:$false
 ```
 
-これを行う必要があることに気が付かない人もおり、また `-Confirm:$false` により `ShouldContinue` は抑制されません。
+これを行う必要があることに気が付かない人もおり、また `-Force` により `ShouldContinue` は抑制されません。
 そのため、ユーザーのために `-Force` を実装する必要があります。 次の完全な例を見てみましょう。
 
 ```powershell
@@ -441,7 +441,7 @@ function Test-ShouldProcess {
         [Switch]$Force
     )
 
-    if ($Force -and -not $Confirm){
+    if ($Force){
         $ConfirmPreference = 'None'
     }
 
@@ -451,7 +451,7 @@ function Test-ShouldProcess {
 }
 ```
 
-独自の `-Force` スイッチをパラメーターとして追加し、`CmdletBinding` に `SupportsShouldProcess` を追加するときに使用できる `$Confirm` 自動パラメーターを使用します。
+独自の `-Force` スイッチをパラメーターとして追加します。 `CmdletBinding` で `SupportsShouldProcess` を使用すると、`-Confirm` パラメーターが自動的に追加されます。
 
 ```powershell
 [CmdletBinding(
@@ -466,15 +466,15 @@ param(
 ここでは、`-Force` ロジックに焦点を絞っています。
 
 ```powershell
-if ($Force -and -not $Confirm){
+if ($Force){
     $ConfirmPreference = 'None'
 }
 ```
 
-ユーザーが `-Force` を指定した場合は、`-Confirm` も指定されていない限り、確認プロンプトを抑制します。 これにより、ユーザーは変更を強制することができますが、引き続き変更を確認できます。 次に、ローカル スコープで `$ConfirmPreference` を設定します。これにより、`ShouldProcess` の呼び出しでこれが検出されます。
+ユーザーが `-Force` を指定した場合は、`-Confirm` も指定されていない限り、確認プロンプトを抑制します。 これにより、ユーザーは変更を強制することができますが、引き続き変更を確認できます。 次に、ローカル スコープで `$ConfirmPreference` を設定します。 次に、`-Force` パラメーターを使用することで `$ConfirmPreference` を一時的に "なし" に設定します。確認のプロンプトが無効になります。
 
 ```powershell
-if ($PSCmdlet.ShouldProcess('TARGET')){
+if ($Force -or $PSCmdlet.ShouldProcess('TARGET')){
         Write-Output "Some Action"
     }
 ```

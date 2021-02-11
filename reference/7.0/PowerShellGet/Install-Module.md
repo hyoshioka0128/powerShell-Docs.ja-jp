@@ -7,12 +7,12 @@ ms.date: 08/03/2020
 online version: https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Module
-ms.openlocfilehash: 0e6dfd00da246b5632474c45d3794d796715240c
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: a9172c1462f7812cf15f8d1156585be702866d27
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93219067"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891211"
 ---
 # Install-Module
 
@@ -436,11 +436,18 @@ Accept wildcard characters: False
 
 `Install-Module` は、windows 7 または Windows 2008 R2 以降のリリースの Windows で、PowerShell 5.0 以降のリリースで実行されます。
 
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
+
 セキュリティのベストプラクティスとして、コマンドレットまたは関数を初めて実行する前に、モジュールのコードを評価することをお勧めします。 悪意のあるコードを含むモジュールの実行を防ぐため、インストールされたモジュールはインストール後に自動的にインポートされません。
 
 **Name** パラメーターによって指定されたモジュール名がリポジトリに存在しない場合、は `Install-Module` エラーを返します。
 
-複数のモジュールをインストールするには、 **Name** パラメーターを使用して、コンマで区切られたモジュール名の配列を指定します。 複数のモジュール名を指定する場合は、 **MinimumVersion** 、 **MaximumVersion** 、または **RequiredVersion** を使用することはできません。 `Find-Module` パイプラインの下に送信できる **できる psrepositoryiteminfo** オブジェクトを作成し `Install-Module` ます。 パイプラインは、複数のモジュールを指定して1つのコマンドでインストールするもう1つの方法です。
+複数のモジュールをインストールするには、 **Name** パラメーターを使用して、コンマで区切られたモジュール名の配列を指定します。 複数のモジュール名を指定する場合は、 **MinimumVersion**、 **MaximumVersion**、または **RequiredVersion** を使用することはできません。 `Find-Module` パイプラインの下に送信できる **できる psrepositoryiteminfo** オブジェクトを作成し `Install-Module` ます。 パイプラインは、複数のモジュールを指定して1つのコマンドでインストールするもう1つの方法です。
 
 既定では、 **AllUsers** のスコープのモジュールはにインストールされ `$env:ProgramFiles\PowerShell\Modules` ます。 既定では、PowerShell Desired State Configuration (DSC) リソースをインストールするときに混乱を防ぐことができます。
 

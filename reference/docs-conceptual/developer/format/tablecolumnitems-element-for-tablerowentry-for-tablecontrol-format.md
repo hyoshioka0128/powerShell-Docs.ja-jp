@@ -1,12 +1,14 @@
 ---
-title: TableControl (Format) の TableRowEntry の TableColumnItems 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 661b938e8db0e68e10dc05f552e4f3a14608bc55
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl の TableRowEntry の TableColumnItems 要素 (書式)
+description: TableControl の TableRowEntry の TableColumnItems 要素 (書式)
+ms.openlocfilehash: 4d600a366d2be1c453f05b301bdf575351dd51c1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785151"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667761"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>TableControl の TableRowEntry の TableColumnItems 要素 (書式)
 
@@ -46,11 +48,11 @@ TableColumnItems>
 
 `TableColumnItem`行の各列には要素が必要です。 最初のエントリは最初の列に、2番目の列には2番目のエントリが表示されます。
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、 `TableColumnItems` system.object オブジェクトの3つのプロパティ[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)を定義する要素を示しています。
+次の例は、 `TableColumnItems` system.object オブジェクトの3つのプロパティ[](/dotnet/api/System.Diagnostics.Process)を定義する要素を示しています。
 
 ```xml
 <TableColumnItems>

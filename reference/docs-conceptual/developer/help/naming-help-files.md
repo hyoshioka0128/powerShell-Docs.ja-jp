@@ -1,16 +1,18 @@
 ---
-title: ヘルプ ファイルに名前を付ける
 ms.date: 09/12/2016
-ms.openlocfilehash: ea95e6d6c87e553ed11fe6e3f058fc9a1b3d03f8
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: ヘルプ ファイルに名前を付ける
+description: ヘルプ ファイルに名前を付ける
+ms.openlocfilehash: b77af8f9b9510785a4198fed9da1263184a27b99
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893273"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667591"
 ---
 # <a name="naming-help-files"></a>ヘルプ ファイルに名前を付ける
 
-このトピックでは、 [get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help)コマンドレットで検索できるように、XML ベースのヘルプファイルに名前を指定する方法について説明します。 名前の要件は、コマンドの種類によって異なります。
+このトピックでは、 [get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) コマンドレットで検索できるように、XML ベースのヘルプファイルに名前を指定する方法について説明します。 名前の要件は、コマンドの種類によって異なります。
 
 ## <a name="cmdlet-help-files"></a>コマンドレットのヘルプファイル
 
@@ -22,7 +24,7 @@ C# コマンドレットのヘルプファイルには、コマンドレット�
 
 アセンブリが入れ子になっているモジュールの場合でも、アセンブリ名の形式が必要です。
 
-たとえば、Microsoft.PowerShell.Diagnostics.dll アセンブリでは、 [Get WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)コマンドレットが定義されています。 `Get-Help`コマンドレットは、 `Get-WinEvent` モジュールディレクトリ内のファイルでのみ、コマンドレットのヘルプトピックを検索し `Microsoft.PowerShell.Diagnostics.dll-help.xml` ます。
+たとえば、Microsoft.PowerShell.Diagnostics.dll アセンブリでは、 [Get WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) コマンドレットが定義されています。 `Get-Help`コマンドレットは、 `Get-WinEvent` モジュールディレクトリ内のファイルでのみ、コマンドレットのヘルプトピックを検索し `Microsoft.PowerShell.Diagnostics.dll-help.xml` ます。
 
 ## <a name="provider-help-files"></a>プロバイダーヘルプファイル
 
@@ -36,7 +38,7 @@ PowerShell プロバイダーのヘルプファイルには、プロバイダー
 
 ## <a name="function-help-files"></a>関数のヘルプファイル
 
-関数は、[コメントベースのヘルプ](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)を使用するか、XML ヘルプファイルに記載されているドキュメントに記載されています。 関数が XML ファイルに記述されている場合、関数は `.ExternalHelp` 、xml ファイルに関数を関連付ける comment キーワードを持つ必要があります。 それ以外の場合、 `Get-Help` コマンドレットはヘルプファイルを見つけることができません。
+関数は、 [コメントベースのヘルプ](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) を使用するか、XML ヘルプファイルに記載されているドキュメントに記載されています。 関数が XML ファイルに記述されている場合、関数は `.ExternalHelp` 、xml ファイルに関数を関連付ける comment キーワードを持つ必要があります。 それ以外の場合、 `Get-Help` コマンドレットはヘルプファイルを見つけることができません。
 
 関数のヘルプファイルの名前に関する技術的な要件はありません。 ただし、関数が定義されているスクリプトモジュールのヘルプファイルには、という名前を指定することをお勧めします。 たとえば、次の関数はファイルで定義されてい `MyModule.psm1` ます。
 
@@ -59,6 +61,6 @@ CIM コマンドは、モジュールに入れ子になったモジュールと�
 
 `<ScriptModule>.psm1-help.xml`
 
-スクリプト化された他のコマンドとは異なり、スクリプトワークフローでは、 `.ExternalHelp` コメントキーワードを使用してヘルプファイルに関連付ける必要はありません。 代わりに、PowerShell は、モジュールディレクトリの UI カルチャ固有のサブディレクトリで XML ベースのヘルプファイルを検索し、すべてのファイルでスクリプトワークフローのヘルプを検索します。 `.ExternalHelp`comment キーワードは無視されます。
+スクリプト化された他のコマンドとは異なり、スクリプトワークフローでは、 `.ExternalHelp` コメントキーワードを使用してヘルプファイルに関連付ける必要はありません。 代わりに、PowerShell は、モジュールディレクトリの UI カルチャ固有のサブディレクトリで XML ベースのヘルプファイルを検索し、すべてのファイルでスクリプトワークフローのヘルプを検索します。 `.ExternalHelp` comment キーワードは無視されます。
 
 `.ExternalHelp`Comment キーワードは無視されるため、 `Get-Help` コマンドレットは、モジュールに含まれている場合にのみスクリプトワークフローのヘルプを見つけることができます。

@@ -1,12 +1,14 @@
 ---
-title: WideEntry (Format) の EntrySelectedBy の SelectionCondition の SelectionSetName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 44c88ce75ae485e1c48ceb08bfd12f739a632996
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideEntry の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)
+description: WideEntry の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)
+ms.openlocfilehash: c6466e3ac6e1f194df9172468d26448f9630da6a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787446"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655012"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format"></a>WideEntry の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)
 
@@ -44,11 +46,11 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (f
 
 ## <a name="remarks"></a>解説
 
-選択条件では、選択セットまたは .NET 型を指定できますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件では、選択セットまたは .NET 型を指定できますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「 [データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
-選択セットは、書式設定ファイルによって定義される任意のビューで使用できる .NET オブジェクトの一般的なグループです。 選択セットの作成と参照の詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
+選択セットは、書式設定ファイルによって定義される任意のビューで使用できる .NET オブジェクトの一般的なグループです。 選択セットの作成と参照の詳細については、「 [オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
 
-ワイドビューのその他のコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
+ワイドビューのその他のコンポーネントの詳細については、「 [ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

@@ -1,12 +1,14 @@
 ---
-title: TableRowEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bec8377fb13b8f288196a809e7aa4e7f46c66e31
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableRowEntry の EntrySelectedBy の SelectionCondition の PropertyName 要素 (書式)
+description: TableRowEntry の EntrySelectedBy の SelectionCondition の PropertyName 要素 (書式)
+ms.openlocfilehash: dcb59fc438ae217870566f09204fb16b8f031614
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785542"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665789"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format"></a>TableRowEntry の EntrySelectedBy の SelectionCondition の PropertyName 要素 (書式)
 
@@ -44,9 +46,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-選択条件では、少なくとも1つのプロパティ名またはスクリプトブロックを指定する必要がありますが、両方を指定することはできません。 選択条件を使用する方法の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件では、少なくとも1つのプロパティ名またはスクリプトブロックを指定する必要がありますが、両方を指定することはできません。 選択条件を使用する方法の詳細については、「 [ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

@@ -1,17 +1,17 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,コマンドレット
 title: Windows PowerShell ISE のキーボード ショートカット
-ms.openlocfilehash: 36fa3f983dc2d8440dd3b87aefd92eb49c028dc9
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+description: この記事では、PowerShell ISE で使用されるキーボード ショートカットの一覧を示します。
+ms.openlocfilehash: d4e78c5e8e8e172ef3cdd30b0099d56ce6b6b01e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86092118"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391206"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE のキーボード ショートカット
 
-Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行するには、次のキーボード ショートカットを使用します。 Windows PowerShell ISE は、Windows Server および Windows クライアント オペレーティング システムの一部として提供されていますが、[Windows Management Framework 4.0 のダウンロード パッケージ](https://go.microsoft.com/fwlink/?LinkID=293881)の一部として、前の Windows オペレーティング システムにもインストールできます。
+Windows PowerShell&reg; Integrated Scripting Environment (ISE) の操作を実行するには、次のキーボード ショートカットを使用します。 Windows PowerShell ISE は、Windows Server および Windows クライアント オペレーティング システムの一部として提供されていますが、[Windows Management Framework 4.0 のダウンロード パッケージ](https://go.microsoft.com/fwlink/?LinkID=293881)の一部として、前の Windows オペレーティング システムにもインストールできます。
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>テキストを編集するためのキーボード ショートカット
 
@@ -19,7 +19,7 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 
 |              アクション              |       キーボード ショートカット       |                                                                                                                                                 使用する場所                                                                                                                                                 |
 | -------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Help (ヘルプ)**                         | <kbd>F1</kbd>                  | スクリプト ウィンドウ **重要:** Web 上の TechNet ライブラリとダウンロードしたヘルプのどちらを <kbd>F1</kbd> ヘルプとして表示するかを指定できます (`Update-Help` を参照)。 選ぶには、 **[ツール]** 、 **[オプション]** の順にクリックし、 **[全般設定]** タブで **[オンライン コンテンツの代わりにローカル ヘルプ コンテンツを使用する]** をオンまたはオフにします。 |
+| **Help (ヘルプ)**                         | <kbd>F1</kbd>                  | スクリプト ウィンドウ **重要:** <kbd>F1</kbd> ヘルプとして docs.microsoft.com またはダウンロードしたヘルプを表示するように指定できます (`Update-Help` を参照)。 選ぶには、 **[ツール]** 、 **[オプション]** の順にクリックし、 **[全般設定]** タブで **[オンライン コンテンツの代わりにローカル ヘルプ コンテンツを使用する]** をオンまたはオフにします。 |
 | **Copy** に設定する必要があります                         | <kbd>Ctrl</kbd> + <kbd>C</kbd>   | スクリプト ウィンドウ、コマンド ウィンドウ、出力ウィンドウ                                                                                                                                                                                                                                                                 |
 | **切り取り**                          | <kbd>Ctrl</kbd> + <kbd>X</kbd>   | スクリプト ウィンドウ、コマンド ウィンドウ                                                                                                                                                                                                                                                                              |
 | **アウトラインの展開または折りたたみ** | <kbd>Ctrl</kbd> + <kbd>M</kbd>   | スクリプト ウィンドウ                                                                                                                                                                                                                                                                                            |

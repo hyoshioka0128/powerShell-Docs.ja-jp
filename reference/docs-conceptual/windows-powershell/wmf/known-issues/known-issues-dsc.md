@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, PowerShell, セットアップ
 title: Desired State Configuration (DSC) の既知の問題と制限事項
-ms.openlocfilehash: a76c5bb336804c5b384e6b6ba6a705c6049ef7fb
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell 5.x での DSC の既知の問題と制限事項
+ms.openlocfilehash: 1163ed9e130430f6bbca98405a8993bb054dd1a8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808698"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662046"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) の既知の問題と制限事項
 
@@ -52,13 +52,13 @@ LCM が DebugMode の場合、Ctrl + C キーを押して `Get-DscConfiguration`
 
 LCM が DebugMode の場合、`Get-DscConfiguration` で開始された操作を停止しようとすると、`Stop-DscConfiguration` が応答しない場合があります
 
-**解決策:** `Get-DscConfiguration` で開始された操作のデバッグを「[DSC リソースのデバッグ](/powershell/scripting/dsc/troubleshooting/debugResource)」の説明に従って終了します。
+**解決策:** `Get-DscConfiguration` で開始された操作のデバッグを「 [DSC リソースのデバッグ](/powershell/scripting/dsc/troubleshooting/debugResource)」の説明に従って終了します。
 
 ## <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>DebugMode で詳細なエラー メッセージが表示されない
 
 LCM が **DebugMode** の場合は、DSC リソースから詳細なエラー メッセージが表示されません。
 
-**解決策:** リソースからの詳細なメッセージを表示するには、**DebugMode** を無効にします。
+**解決策:** リソースからの詳細なメッセージを表示するには、 **DebugMode** を無効にします。
 
 ## <a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus コマンドレットで Invoke-DscResource 操作を取得できない
 
@@ -117,7 +117,7 @@ Debug-Runspace -Id 2
 
 ## <a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration -UseExisting が -Credential で機能しない
 
-`Start-DscConfiguration` を **UseExisting** パラメーターと共に使用すると、**Credential** パラメーターが無視されます。 DSC では、既定のプロセス ID を使用して操作を続行します。 これにより、リモート ノードで処理を続行するために別の資格情報が必要になった場合にエラーが発生します。
+`Start-DscConfiguration` を **UseExisting** パラメーターと共に使用すると、 **Credential** パラメーターが無視されます。 DSC では、既定のプロセス ID を使用して操作を続行します。 これにより、リモート ノードで処理を続行するために別の資格情報が必要になった場合にエラーが発生します。
 
 **解決策:** リモート DSC 操作に CIM セッションを使用します。
 
@@ -156,9 +156,9 @@ DSC 構成スクリプトでのノード名としての IPv6 アドレスは、�
 
 ## <a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>Get-DscResource -Syntax で PsDscRunAsCredential correctly が正しく反映されない
 
-リソースで必須とマークされていない場合、またはサポートされていない場合、**Syntax** パラメーターで **PsDscRunAsCredential** が正しく反映されません。
+リソースで必須とマークされていない場合、またはサポートされていない場合、 **Syntax** パラメーターで **PsDscRunAsCredential** が正しく反映されません。
 
-**解決策:** [なし] : ただし、ISE で構成を作成すると、IntelliSense の使用時に、**PsDscRunAsCredential** プロパティに関する正しいメタデータが反映されます。
+**解決策:** [なし] : ただし、ISE で構成を作成すると、IntelliSense の使用時に、 **PsDscRunAsCredential** プロパティに関する正しいメタデータが反映されます。
 
 ## <a name="windowsoptionalfeature-is-not-available-in-windows-7"></a>WindowsOptionalFeature を Windows 7 で使用できない
 
@@ -178,7 +178,7 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-**解決策:** 次のように、**RequiredVersion** キーを指定して **ModuleName** パラメーターに **ModuleSpecification** オブジェクトを定義することで、必要なバージョンをインポートします。
+**解決策:** 次のように、 **RequiredVersion** キーを指定して **ModuleName** パラメーターに **ModuleSpecification** オブジェクトを定義することで、必要なバージョンをインポートします。
 
 ```powershell
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}

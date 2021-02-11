@@ -1,18 +1,20 @@
 ---
-title: Windows PowerShell モジュールについて |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9308ad0fd41aa67ffa8510ae7a3c9cd6a13f4220
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell モジュールを理解する
+description: Windows PowerShell モジュールを理解する
+ms.openlocfilehash: 882e9db59dc1bc8570676d1da7ce84c808d076e8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779235"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651147"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Windows PowerShell モジュールを理解する
 
-*モジュール*は、関連する Windows PowerShell の機能のセットであり、便利な単位としてグループ化されています (通常は1つのディレクトリに保存されます)。 関連するスクリプトファイル、アセンブリ、関連リソースのセットをモジュールとして定義することで、コードの参照、読み込み、永続化、および共有を、それ以外の場合よりもはるかに簡単に行うことができます。
+*モジュール* は、関連する Windows PowerShell の機能のセットであり、便利な単位としてグループ化されています (通常は1つのディレクトリに保存されます)。 関連するスクリプトファイル、アセンブリ、関連リソースのセットをモジュールとして定義することで、コードの参照、読み込み、永続化、および共有を、それ以外の場合よりもはるかに簡単に行うことができます。
 
-モジュールの主な目的は、Windows PowerShell コードのモジュール化 (ie、再利用、および抽象化) を可能にすることです。 たとえば、モジュールを作成する最も基本的な方法は、単純に Windows PowerShell スクリプトを hbase-runner.psm1 ファイルとして保存することです。 これにより、スクリプトに含まれる関数と変数を制御 (ie、public または private) することができます。 スクリプトを hbase-runner.psm1 ファイルとして保存すると、特定の変数のスコープを制御することもできます。 最後に、[インストールモジュール](/powershell/module/PowershellGet/Install-Module)などのコマンドレットを使用して、大規模なソリューションのための構成要素としてスクリプトを整理、インストール、および使用することもできます。
+モジュールの主な目的は、Windows PowerShell コードのモジュール化 (ie、再利用、および抽象化) を可能にすることです。 たとえば、モジュールを作成する最も基本的な方法は、単純に Windows PowerShell スクリプトを hbase-runner.psm1 ファイルとして保存することです。 これにより、スクリプトに含まれる関数と変数を制御 (ie、public または private) することができます。 スクリプトを hbase-runner.psm1 ファイルとして保存すると、特定の変数のスコープを制御することもできます。 最後に、 [インストールモジュール](/powershell/module/PowershellGet/Install-Module) などのコマンドレットを使用して、大規模なソリューションのための構成要素としてスクリプトを整理、インストール、および使用することもできます。
 
 ## <a name="module-components-and-types"></a>モジュールのコンポーネントと型
 
@@ -30,7 +32,7 @@ ms.locfileid: "87779235"
 
 ### <a name="script-modules"></a>スクリプト モジュール
 
-名前が示すように、*スクリプトモジュール*は、有効な Windows PowerShell コードを含むファイル (hbase-runner.psm1) です。 スクリプト開発者および管理者は、この種類のモジュールを使用して、関数、変数などを含むメンバーを持つモジュールを作成できます。 現時点では、スクリプトモジュールは、別の拡張機能を備えた Windows PowerShell スクリプトです。管理者は、これを使用して、インポート、エクスポート、および管理の機能を使用できます。
+名前が示すように、 *スクリプトモジュール* は、有効な Windows PowerShell コードを含むファイル (hbase-runner.psm1) です。 スクリプト開発者および管理者は、この種類のモジュールを使用して、関数、変数などを含むメンバーを持つモジュールを作成できます。 現時点では、スクリプトモジュールは、別の拡張機能を備えた Windows PowerShell スクリプトです。管理者は、これを使用して、インポート、エクスポート、および管理の機能を使用できます。
 
 さらに、マニフェストファイルを使用して、データファイル、その他の依存モジュール、ランタイムスクリプトなどの他のリソースをモジュールに含めることができます。 マニフェストファイルは、オーサリングやバージョン管理情報などのメタデータの追跡にも役立ちます。
 
@@ -38,21 +40,21 @@ ms.locfileid: "87779235"
 
 ### <a name="binary-modules"></a>バイナリモジュール
 
-*バイナリモジュール*は、C# などのコンパイル済みコードを含む .NET Framework アセンブリ (.dll) です。 コマンドレットの開発者は、この種類のモジュールを使用して、コマンドレットやプロバイダーなどを共有できます。 (既存のスナップインは、バイナリモジュールとしても使用できます)。バイナリモジュールを使用すると、スクリプトモジュールと比較して、より高速なコマンドレットを作成したり、Windows PowerShell スクリプトのコードを簡単にすることができない機能 (マルチスレッドなど) を使用したりすることができます。
+*バイナリモジュール* は、C# などのコンパイル済みコードを含む .NET Framework アセンブリ (.dll) です。 コマンドレットの開発者は、この種類のモジュールを使用して、コマンドレットやプロバイダーなどを共有できます。 (既存のスナップインは、バイナリモジュールとしても使用できます)。バイナリモジュールを使用すると、スクリプトモジュールと比較して、より高速なコマンドレットを作成したり、Windows PowerShell スクリプトのコードを簡単にすることができない機能 (マルチスレッドなど) を使用したりすることができます。
 
 スクリプトモジュールと同様に、マニフェストファイルをインクルードして、モジュールで使用される追加のリソースを記述したり、モジュールに関するメタデータを追跡したりすることができます。 同様に、バイナリモジュールを PowerShell モジュールパスのどこかのフォルダーにインストールすることをお勧めします。 詳細については、「 [PowerShell バイナリモジュールを記述する](./how-to-write-a-powershell-binary-module.md)方法」を参照してください。
 
 ### <a name="manifest-modules"></a>マニフェストモジュール
 
-*マニフェストモジュール*は、マニフェストファイルを使用してすべてのコンポーネントを記述するモジュールですが、どのような種類のコアアセンブリまたはスクリプトも含まれていません。 (正式には、マニフェストモジュールは `ModuleToProcess` マニフェストの要素または要素を空のままに `RootModule` します)。ただし、依存アセンブリを読み込んだり、特定の処理前のスクリプトを自動的に実行する機能など、モジュールの他の機能を使用することもできます。 また、入れ子になったモジュール、アセンブリ、型、形式など、他のモジュールが使用するリソースをパッケージ化するための便利な方法として、マニフェストモジュールを使用することもできます。 詳細については、「 [PowerShell モジュールマニフェストを記述する方法](./how-to-write-a-powershell-module-manifest.md)」を参照してください。
+*マニフェストモジュール* は、マニフェストファイルを使用してすべてのコンポーネントを記述するモジュールですが、どのような種類のコアアセンブリまたはスクリプトも含まれていません。 (正式には、マニフェストモジュールは `ModuleToProcess` マニフェストの要素または要素を空のままに `RootModule` します)。ただし、依存アセンブリを読み込んだり、特定の処理前のスクリプトを自動的に実行する機能など、モジュールの他の機能を使用することもできます。 また、入れ子になったモジュール、アセンブリ、型、形式など、他のモジュールが使用するリソースをパッケージ化するための便利な方法として、マニフェストモジュールを使用することもできます。 詳細については、「 [PowerShell モジュールマニフェストを記述する方法](./how-to-write-a-powershell-module-manifest.md)」を参照してください。
 
 ### <a name="dynamic-modules"></a>動的モジュール
 
-*動的モジュール*は、ファイルから読み込まれたり、ファイルに保存されたりしないモジュールです。 代わりに、[新しいモジュール](/powershell/module/Microsoft.PowerShell.Core/New-Module)のコマンドレットを使用して、スクリプトによって動的に作成されます。 この種類のモジュールを使用すると、スクリプトで必要に応じてモジュールを作成し、永続ストレージに読み込んだり保存したりする必要がなくなります。 動的モジュールは、その性質上、有効期間が短いため、コマンドレットからアクセスすることはできません `Get-Module` 。 同様に、通常、モジュールマニフェストは必要ありません。また、関連するアセンブリを格納するために永続的なフォルダーが必要になることもありません。
+*動的モジュール* は、ファイルから読み込まれたり、ファイルに保存されたりしないモジュールです。 代わりに、 [新しいモジュール](/powershell/module/Microsoft.PowerShell.Core/New-Module) のコマンドレットを使用して、スクリプトによって動的に作成されます。 この種類のモジュールを使用すると、スクリプトで必要に応じてモジュールを作成し、永続ストレージに読み込んだり保存したりする必要がなくなります。 動的モジュールは、その性質上、有効期間が短いため、コマンドレットからアクセスすることはできません `Get-Module` 。 同様に、通常、モジュールマニフェストは必要ありません。また、関連するアセンブリを格納するために永続的なフォルダーが必要になることもありません。
 
 ## <a name="module-manifests"></a>モジュール マニフェスト
 
-*モジュールマニフェスト*は、ハッシュテーブルを含む .psd1 ファイルです。 ハッシュテーブル内のキーと値は、次の処理を実行します。
+*モジュールマニフェスト* は、ハッシュテーブルを含む .psd1 ファイルです。 ハッシュテーブル内のキーと値は、次の処理を実行します。
 
 - モジュールの内容と属性について説明します。
 
@@ -80,31 +82,31 @@ ms.locfileid: "87779235"
 
 一般に、変数に格納されているパスのいずれかを使用して、モジュールのインストール先を決定でき `$ENV:PSModulePath` ます。 これらのパスのいずれかを使用すると、ユーザーがコード内でモジュールを呼び出したときに、PowerShell が自動的にモジュールを検出して読み込むことができます。 モジュールを他の場所に格納する場合は、を呼び出すときに、モジュールの場所をパラメーターとして渡すことによって、PowerShell を明示的に認識でき `Install-Module` ます。
 
-に関係なく、フォルダーのパスはモジュールの*ベース*(modulebase) と呼ばれ、スクリプト、バイナリ、またはマニフェストのモジュールファイルの名前はモジュールのフォルダー名と同じである必要があります。ただし、次の例外があります。
+に関係なく、フォルダーのパスはモジュールの *ベース* (modulebase) と呼ばれ、スクリプト、バイナリ、またはマニフェストのモジュールファイルの名前はモジュールのフォルダー名と同じである必要があります。ただし、次の例外があります。
 
 - コマンドレットによって作成される動的モジュールには、 `New-Module` コマンドレットのパラメーターを使用して名前を付けることができ `Name` ます。
 
-- ** `Import-Module` -Assembly**コマンドによってアセンブリオブジェクトからインポートされたモジュールには、という構文に従って名前が付けられます `"dynamic_code_module_" + assembly.GetName()` 。
+- **`Import-Module` -Assembly** コマンドによってアセンブリオブジェクトからインポートされたモジュールには、という構文に従って名前が付けられます `"dynamic_code_module_" + assembly.GetName()` 。
 
-  詳細については、「 [PowerShell モジュールのインストール](./installing-a-powershell-module.md)」および「 [PSModulePath インストールパスの変更](./modifying-the-psmodulepath-installation-path.md)」を参照してください。
+  詳細については、「 [PowerShell モジュールのインストール](./installing-a-powershell-module.md) 」および「 [PSModulePath インストールパスの変更](./modifying-the-psmodulepath-installation-path.md)」を参照してください。
 
 ## <a name="module-cmdlets-and-variables"></a>モジュールのコマンドレットと変数
 
 次のコマンドレットと変数は、モジュールの作成と管理のために Windows PowerShell によって提供されます。
 
-[New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module)コマンドレットこのコマンドレットは、メモリ内にのみ存在する新しい動的モジュールを作成します。 モジュールはスクリプトブロックから作成され、その関数や変数などのエクスポートされたメンバーは、セッションですぐに使用できるようになり、セッションが閉じられるまで使用可能な状態のままになります。
+[New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) コマンドレットこのコマンドレットは、メモリ内にのみ存在する新しい動的モジュールを作成します。 モジュールはスクリプトブロックから作成され、その関数や変数などのエクスポートされたメンバーは、セッションですぐに使用できるようになり、セッションが閉じられるまで使用可能な状態のままになります。
 
-[New-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest)コマンドレットは、新しいモジュールマニフェスト (.psd1) ファイルを作成し、その値を設定して、マニフェストファイルを指定されたパスに保存します。 このコマンドレットを使用して、手動で入力できるモジュールマニフェストテンプレートを作成することもできます。
+[New-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) コマンドレットは、新しいモジュールマニフェスト (.psd1) ファイルを作成し、その値を設定して、マニフェストファイルを指定されたパスに保存します。 このコマンドレットを使用して、手動で入力できるモジュールマニフェストテンプレートを作成することもできます。
 
-[モジュールのインポート:](/powershell/module/Microsoft.PowerShell.Core/Import-Module)このコマンドレットは、現在のセッションに1つ以上のモジュールを追加します。
+[モジュールのインポート:](/powershell/module/Microsoft.PowerShell.Core/Import-Module) このコマンドレットは、現在のセッションに1つ以上のモジュールを追加します。
 
-[Get モジュール](/powershell/module/Microsoft.PowerShell.Core/Get-Module)コマンドレットこのコマンドレットは、現在のセッションにインポートできるまたはインポート可能なモジュールに関する情報を取得します。
+[Get モジュール](/powershell/module/Microsoft.PowerShell.Core/Get-Module) コマンドレットこのコマンドレットは、現在のセッションにインポートできるまたはインポート可能なモジュールに関する情報を取得します。
 
-[Export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember)コマンドレットこのコマンドレットは、スクリプトモジュール (hbase-runner.psm1) ファイルまたはコマンドレットを使用して作成された動的モジュールからエクスポートされるモジュールメンバー (コマンドレット、関数、変数、エイリアスなど) を指定し `New-Module` ます。
+[Export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) コマンドレットこのコマンドレットは、スクリプトモジュール (hbase-runner.psm1) ファイルまたはコマンドレットを使用して作成された動的モジュールからエクスポートされるモジュールメンバー (コマンドレット、関数、変数、エイリアスなど) を指定し `New-Module` ます。
 
-[モジュールの削除](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)コマンドレットは、現在のセッションからモジュールを削除します。
+[モジュールの削除](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) コマンドレットは、現在のセッションからモジュールを削除します。
 
-[New-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest)コマンドレットこのコマンドレットは、モジュールマニフェストファイル (.psd1) に示されているファイルが、指定されたパスに実際に存在することを確認することによって、モジュールのコンポーネントを正確に記述していることを検証します。
+[New-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) コマンドレットこのコマンドレットは、モジュールマニフェストファイル (.psd1) に示されているファイルが、指定されたパスに実際に存在することを確認することによって、モジュールのコンポーネントを正確に記述していることを検証します。
 
 $PSScriptRoot この変数には、スクリプトモジュールの実行元のディレクトリが含まれています。 これにより、スクリプトでモジュールパスを使用して他のリソースにアクセスできるようになります。
 
@@ -112,4 +114,4 @@ $env:P SModulePath この環境変数には、Windows PowerShell モジュール
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell モジュールの作成](./writing-a-windows-powershell-module.md)
+[Windows PowerShell モジュールを記述する](./writing-a-windows-powershell-module.md)

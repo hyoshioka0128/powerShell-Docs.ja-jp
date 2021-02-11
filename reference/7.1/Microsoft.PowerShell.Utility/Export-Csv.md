@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/18/2020
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: ad2b2a2b32fa1dfbf722ff0af25bfafaf57de84a
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: f920130ec8354b61b0bb3617e061520271df0eed
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93219680"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913238"
 ---
 # Export-Csv
 
@@ -68,7 +67,7 @@ BasePriority Id    SessionId WorkingSet
 8            54632 0         9502720
 ```
 
-`Get-Process`コマンドレットでは、 **プロセス** オブジェクトを取得します。 **Name** パラメーターは、WmiPrvSE process オブジェクトのみを含むように出力をフィルター処理します。 プロセスオブジェクトは、パイプラインを介してコマンドレットに送信され `Select-Object` ます。 `Select-Object`**Property** パラメーターを使用して、プロセスオブジェクトのプロパティのサブセットを選択します。 プロセスオブジェクトは、パイプラインを介してコマンドレットに送信され `Export-Csv` ます。 `Export-Csv` プロセスオブジェクトを一連の CSV 文字列に変換します。 **Path** パラメーターは、WmiData.csv ファイルが現在のディレクトリに保存されることを指定します。 **Notypeinformation** パラメーターを指定すると、CSV 出力から **#TYPE** 情報ヘッダーが削除され、PowerShell 6 では不要になります。 この `Import-Csv` コマンドレットは、 **Path** パラメーターを使用して、現在のディレクトリにあるファイルを表示します。
+`Get-Process`コマンドレットでは、**プロセス** オブジェクトを取得します。 **Name** パラメーターは、WmiPrvSE process オブジェクトのみを含むように出力をフィルター処理します。 プロセスオブジェクトは、パイプラインを介してコマンドレットに送信され `Select-Object` ます。 `Select-Object`**Property** パラメーターを使用して、プロセスオブジェクトのプロパティのサブセットを選択します。 プロセスオブジェクトは、パイプラインを介してコマンドレットに送信され `Export-Csv` ます。 `Export-Csv` プロセスオブジェクトを一連の CSV 文字列に変換します。 **Path** パラメーターは、WmiData.csv ファイルが現在のディレクトリに保存されることを指定します。 **Notypeinformation** パラメーターを指定すると、CSV 出力から **#TYPE** 情報ヘッダーが削除され、PowerShell 6 では不要になります。 この `Import-Csv` コマンドレットは、 **Path** パラメーターを使用して、現在のディレクトリにあるファイルを表示します。
 
 ### 例 2: コンマ区切りファイルにプロセスをエクスポートする
 
@@ -360,7 +359,7 @@ Accept wildcard characters: False
 PowerShell 6.2 以降では、 **Encoding** パラメーターを使用して、登録されているコードページの数値 id (など) `-Encoding 1251` や、登録されているコードページの文字列名 (など) を使用することもでき `-Encoding "windows-1251"` ます。 詳細については、 [コードページ](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)の .net ドキュメントを参照してください。
 
 > [!NOTE]
-> **Utf-7** * の使用は推奨されなくなりました。 PowerShell 7.1 では、Encoding パラメーターにを指定すると、警告が書き込まれ `utf7` ます。 **Encoding**
+> **Utf-7** _ の使用は推奨されなくなりました。 PowerShell 7.1 では、 `utf7` _ *Encoding** パラメーターにを指定すると、警告が書き込まれます。
 
 ```yaml
 Type: System.Text.Encoding
@@ -429,7 +428,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-CSV 出力ファイルのパスを指定します。 **Path** と異なり、 **LiteralPath** パラメーターの値は入力したとおりに使用されます。 ワイルドカードとして解釈される文字はありません。 パスにエスケープ文字が含まれている場合は、単一引用符を使用します。 単一引用符で囲まれた文字はエスケープシーケンスとして解釈されません。
+CSV 出力ファイルのパスを指定します。 **Path** と異なり、**LiteralPath** パラメーターの値は入力したとおりに使用されます。 ワイルドカードとして解釈される文字はありません。 パスにエスケープ文字が含まれている場合は、単一引用符を使用します。 単一引用符で囲まれた文字はエスケープシーケンスとして解釈されません。
 
 ```yaml
 Type: System.String
@@ -541,7 +540,7 @@ Accept wildcard characters: False
 
 ### -QuoteFields
 
-引用符で囲む必要がある列の名前を指定します。 このパラメーターを使用する場合は、指定された列だけが引用符で囲まれます。
+引用符で囲む必要がある列の名前を指定します。 このパラメーターを使用する場合は、指定された列だけが引用符で囲まれます。 このパラメーターは、PowerShell 7.0 で追加されました。
 
 ```yaml
 Type: System.String[]
@@ -562,6 +561,8 @@ CSV ファイルで引用符を使用するかどうかを指定します。 次
 - なし-何も引用しない
 - すべてを常に引用符で囲む (既定の動作)
 - AsNeeded-区切り文字を含む quote フィールドのみ
+
+このパラメーターは、PowerShell 7.0 で追加されました。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
@@ -623,4 +624,3 @@ PowerShell 6.0 以降では、の既定の動作で `Export-CSV` は、 **#TYPE*
 [Import-Csv](Import-Csv.md)
 
 [Select-Object](Select-Object.md)
-

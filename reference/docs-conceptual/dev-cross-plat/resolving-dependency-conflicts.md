@@ -3,12 +3,12 @@ title: PowerShell モジュール アセンブリの依存関係の競合の解�
 description: C# でバイナリ PowerShell モジュールを記述する場合、機能を提供するために他のパッケージやライブラリに依存するのは自然なことです。
 ms.date: 06/25/2020
 ms.custom: rjmholt
-ms.openlocfilehash: 536bcfd1ced536faccde0d6c5bc483cdaf31ce68
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 93bb39bdd440c7f97c27aa81e68f68331569b69e
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87775182"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810404"
 ---
 # <a name="resolving-powershell-module-assembly-dependency-conflicts"></a>PowerShell モジュール アセンブリの依存関係の競合の解決
 
@@ -500,7 +500,7 @@ namespace AlcModule.Cmdlets
 
         public AlcModuleAssemblyLoadContext(string dependencyDirPath)
         {
-            _depdendencyDirPath = dependencyDirPath;
+            _dependencyDirPath = dependencyDirPath;
         }
 
         protected override Assembly Load(AssemblyName assemblyName)
@@ -509,7 +509,7 @@ namespace AlcModule.Cmdlets
             // looking for an assembly of the given name
             // in the configured dependency directory
             string assemblyPath = Path.Combine(
-                s_dependencyDirPath,
+                _dependencyDirPath,
                 $"{assemblyName.Name}.dll");
 
             // The ALC must use inherited methods to load assemblies
@@ -819,7 +819,7 @@ LoadFileModule/
 
 この構造を使用すると、**LoadFileModule** を、**CsvHelper** に依存関係が含まれる他のモジュールと共に読み込むことができるようになります。
 
-このハンドラーは、アプリケーション ドメイン全体の**すべての** `AssemblyResolve` イベントに適用されるため、ここでは設計に関していくつか特定の選択を行う必要があります。
+このハンドラーは、アプリケーション ドメイン全体の **すべての** `AssemblyResolve` イベントに適用されるため、ここでは設計に関していくつか特定の選択を行う必要があります。
 
 - このイベントによって他の読み込みが妨げられる可能性のある時間を短くするため、`LoadFileModule.Engine.dll` が読み込まれた後でのみ、一般的な依存関係の読み込みの処理を開始します。
 - PowerShell ではなく `LoadFile()` の呼び出しによって読み込まれるように、`LoadFileModule.Engine.dll` を Dependencies ディレクトリに移動します。 これは、PowerShell で (たとえば) 別の `CsvHelper.dll` が読み込まれている場合でも、独自の依存関係の読み込みによって常に `AssemblyResolve` イベントが発生することを意味します。

@@ -4,10 +4,10 @@ keywords: JEA, PowerShell, セキュリティ
 title: JEA ロール機能
 description: ロール機能は、拡張子が .psrc の PowerShell データ ファイルであり、接続ユーザーが利用できるすべてのコマンドレット、関数、プロバイダー、外部プログラムが列挙されています。
 ms.openlocfilehash: 233d9081f4a8f977f0959addb5573c4566f885d0
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92499996"
 ---
 # <a name="jea-role-capabilities"></a>JEA ロール機能
@@ -93,13 +93,13 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 
 **ValidatePattern** と **ValidateSet** の両方を同じコマンドレットまたは関数に適用することはできません。
 
-適用すると、 **ValidatePattern** によって **ValidateSet** がオーバーライドされます。
+適用すると、**ValidatePattern** によって **ValidateSet** がオーバーライドされます。
 
-**ValidatePattern** の詳細については、 [この「 *Hey, Scripting Guy!* 」投稿](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/)と [PowerShell 正規表現](/powershell/module/microsoft.powershell.core/about/about_regular_expressions)参照コンテンツをご覧ください。
+**ValidatePattern** の詳細については、[この「*Hey, Scripting Guy!* 」投稿](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/)と [PowerShell 正規表現](/powershell/module/microsoft.powershell.core/about/about_regular_expressions)参照コンテンツをご覧ください。
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>外部コマンドと PowerShell スクリプトを許可する
 
-JEA セッションで実行可能ファイルと PowerShell スクリプト (.ps1) を実行することをユーザーに許可するには、 **VisibleExternalCommands** フィールドに各プログラムの完全パスを追加する必要があります。
+JEA セッションで実行可能ファイルと PowerShell スクリプト (.ps1) を実行することをユーザーに許可するには、**VisibleExternalCommands** フィールドに各プログラムの完全パスを追加する必要があります。
 
 ```powershell
 VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Contoso\Scripts\UpdateITSoftware.ps1'
@@ -109,7 +109,7 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 
 実行可能ファイルの多くでは、さまざまなパラメーターを指定することで、現在の状態を読み取ってからそれを変更することができます。
 
-たとえば、システムでホストされているネットワーク共有を管理するファイル サーバー管理者ロールを考えてみてください。 共有の管理方法の 1 つは、`net share` を使用することです。 しかし、 **net.exe** を利用すると、`net group Administrators unprivilegedjeauser /add` の管理者特権が簡単に得られる可能性があるため、このコマンドを許可するのは危険です。 より安全な方法は、[Get-SmbShare](/powershell/module/smbshare/get-smbshare) を許可することです。これで同じ結果が得られますが、範囲がはるかに限られます。
+たとえば、システムでホストされているネットワーク共有を管理するファイル サーバー管理者ロールを考えてみてください。 共有の管理方法の 1 つは、`net share` を使用することです。 しかし、**net.exe** を利用すると、`net group Administrators unprivilegedjeauser /add` の管理者特権が簡単に得られる可能性があるため、このコマンドを許可するのは危険です。 より安全な方法は、[Get-SmbShare](/powershell/module/smbshare/get-smbshare) を許可することです。これで同じ結果が得られますが、範囲がはるかに限られます。
 
 JEA セッションで外部コマンドの利用をユーザーに許可するときは、実行可能ファイルの完全パスを常に指定してください。 これによりシステム上のどこかに置かれている、同じような名前の悪意のあるプログラムが実行されるのを防止します。
 
@@ -145,7 +145,7 @@ FunctionDefinitions = @{
 ```
 
 > [!IMPORTANT]
-> JEA ユーザーが実行できるように、 **VisibleFunctions** フィールドにカスタム関数の名前を必ず追加してください。
+> JEA ユーザーが実行できるように、**VisibleFunctions** フィールドにカスタム関数の名前を必ず追加してください。
 
 カスタム関数の本文 (スクリプト ブロック) はシステムの既定の言語モードで実行され、JEA の言語制約の対象になりません。 つまり、関数はファイル システムとレジストリにアクセスし、ロール機能ファイルに表示されないコマンドを実行できます。 パラメーターを使用するときは、任意のコードを実行しないように注意してください。 `Invoke-Expression` のようなコマンドレットにユーザー入力がパイプ処理されないようにします。
 
@@ -154,9 +154,9 @@ FunctionDefinitions = @{
 
 既定では、`Select-Object` は、オブジェクト上で任意プロパティを選択することができない、すべての JEA セッションの制約付きコマンドレットです。 関数で制約なしの `Select-Object` を使用するには、FQMN を使用して、完全な実装を明示的に要求する必要があります。 JEA セッションの制約付きコマンドレットはすべて、関数から呼び出されるときに同じ制約があります。 詳細については、「[about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence)」(コマンドの優先順位について) を参照してください。
 
-複数のカスタム関数を記述する場合、それらを PowerShell スクリプト モジュールに入れると利便性が高まります。 組み込みやサードパーティのモジュールの場合のように、 **VisibleFunctions** フィールドを利用し、JEA セッションでこれらの関数を表示させることができます。
+複数のカスタム関数を記述する場合、それらを PowerShell スクリプト モジュールに入れると利便性が高まります。 組み込みやサードパーティのモジュールの場合のように、**VisibleFunctions** フィールドを利用し、JEA セッションでこれらの関数を表示させることができます。
 
-JEA セッションでタブ補完が正しく機能するためには、 **VisibleFunctions** リストに組み込み関数 `tabexpansion2` を含める必要があります。
+JEA セッションでタブ補完が正しく機能するためには、**VisibleFunctions** リストに組み込み関数 `tabexpansion2` を含める必要があります。
 
 ## <a name="make-the-role-capabilities-available-to-a-configuration"></a>構成でロール機能を使用できるようにする
 
@@ -182,7 +182,7 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 PowerShell モジュールの詳細については、[PowerShell モジュールの概要](/powershell/scripting/developer/windows-powershell)に関するページを参照してください。
 
-PowerShell 6 以降では、 **RoleDefinitions** プロパティがセッション構成ファイルに追加されました。 このプロパティを使用すると、使用するロールの定義のロール構成ファイルの場所を指定できます。 「[New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile)」に記載されている例を参照してください。
+PowerShell 6 以降では、**RoleDefinitions** プロパティがセッション構成ファイルに追加されました。 このプロパティを使用すると、使用するロールの定義のロール構成ファイルの場所を指定できます。 「[New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile)」に記載されている例を参照してください。
 
 ## <a name="updating-role-capabilities"></a>ロール機能を更新する
 

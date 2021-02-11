@@ -1,18 +1,20 @@
 ---
-title: Runspace06 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c16324c61ee3c7123777294952999f75b2f7aef2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace06 サンプル
+description: Runspace06 サンプル
+ms.openlocfilehash: 39841478f115eda089e4d4b1f822954b6ba7d09b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771993"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657685"
 ---
 # <a name="runspace06-sample"></a>Runspace06 サンプル
 
-このサンプルでは、 [tialsessionstate オブジェクトSystem.Management.Automation.Runspaces.Ini](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)にモジュールを追加して、実行空間を開いたときにモジュールが読み込まれるようにする方法を示します。 このモジュールは、 [GetProcessSample02 サンプル](../cmdlet/getprocesssample02-sample.md)で定義されている Get Proc コマンドレットを提供します。このコマンドレットは、 [System. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトを使用して同期的に実行されます。
+このサンプルでは、 [ tialsessionstate オブジェクトSystem.Management.Automation.Runspaces.Ini](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) にモジュールを追加して、実行空間を開いたときにモジュールが読み込まれるようにする方法を示します。 モジュールには、 [GetProcessSample02 サンプル](../cmdlet/getprocesssample02-sample.md)で定義されている Get-Proc コマンドレットが用意されています。このコマンドレット [は、オブジェクトを](/dotnet/api/system.management.automation.powershell) 使用して同期的に実行されます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -26,17 +28,17 @@ ms.locfileid: "87771993"
 
 - [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを使用する、 [system.string オブジェクトを](/dotnet/api/System.Management.Automation.Runspaces.Runspace)作成します。
 
-- 実行空間[を使用](/dotnet/api/system.management.automation.powershell)する、system.string オブジェクトを作成します。
+- 実行空間 [を使用](/dotnet/api/system.management.automation.powershell) する、system.string オブジェクトを作成します。
 
-- モジュールの get proc コマンドレットを、 [System. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトのパイプラインに追加します。
+- モジュールの get proc コマンドレットを、 [System. Powershell](/dotnet/api/system.management.automation.powershell) オブジェクトのパイプラインに追加します。
 
 - コマンドを同期的に実行します。
 
-- コマンドによって返された、[システムの管理](/dotnet/api/System.Management.Automation.PSObject)オブジェクトからプロパティを抽出しています。
+- コマンドによって返された、 [システムの管理](/dotnet/api/System.Management.Automation.PSObject) オブジェクトからプロパティを抽出しています。
 
 ## <a name="example"></a>例
 
-このサンプルでは、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを使用して、実行空間を開いたときに使用可能な要素を定義する実行空間を作成します。 このサンプルでは、Get Proc コマンドレットを定義するモジュールが、初期セッション状態に追加されます。
+このサンプルでは、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) オブジェクトを使用して、実行空間を開いたときに使用可能な要素を定義する実行空間を作成します。 このサンプルでは、Get-Proc コマンドレットを定義するモジュールが、初期セッション状態に追加されます。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

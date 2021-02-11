@@ -1,12 +1,14 @@
 ---
-title: ListControl の ListItem の ScriptBlock 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 249d3e36b4246b7baa410815122f8e30340f1862
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl の ListItem の ScriptBlock 要素 (書式)
+description: ListControl の ListItem の ScriptBlock 要素 (書式)
+ms.openlocfilehash: 0635ac2622cc203a2dc895873621901d956f87da
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785457"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664968"
 ---
 # <a name="scriptblock-element-for-listitem-for-listcontrol-format"></a>ListControl の ListItem の ScriptBlock 要素 (書式)
 
@@ -44,9 +46,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-この要素が指定されている場合、 [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md)要素を指定することはできません。
+この要素が指定されている場合、 [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md) 要素を指定することはできません。
 
-リストビューでのスクリプトの指定の詳細については、「[リストビュー](./creating-a-list-view.md)」を参照してください。
+リストビューでのスクリプトの指定の詳細については、「 [リストビュー](./creating-a-list-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 

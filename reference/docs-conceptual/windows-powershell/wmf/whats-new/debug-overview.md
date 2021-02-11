@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: PowerShell スクリプト デバッグの強化
-ms.openlocfilehash: f1771a451ba671da2371fcfc95374e6131573ddc
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.0 では、Windows PoowerShell に新しいデバッグ機能が追加されています。
+ms.openlocfilehash: 5703343e1b85024931638e8b04a09f7208ea123c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808948"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646730"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>PowerShell スクリプト デバッグの強化
 
@@ -19,7 +20,7 @@ PowerShell コンソールと PowerShell ISE では、実行中のスクリプ�
 
 コンソールでは、<kbd>Ctrl</kbd>+<kbd>Break</kbd> キーを押します。
 
-ISE では、<kbd>Ctrl</kbd>+<kbd>B</kbd> キーを押すか、 **[デバッグ] -> [すべて中断]** メニュー コマンドを使います。
+ISE では、 <kbd>Ctrl</kbd>+<kbd>B</kbd> キーを押すか、 **[デバッグ] -> [すべて中断]** メニュー コマンドを使います。
 
 ## <a name="remote-debugging-and-remote-file-editing-in-powershell-ise"></a>PowerShell ISE でのリモートによるデバッグとファイル編集
 
@@ -48,7 +49,7 @@ PowerShell ISE では、PSEdit コマンドを実行することにより、リ�
 
 ### <a name="attach-to-process-hosting-powershell"></a>PowerShell をホストしているプロセスにアタッチする
 
-PowerShell が読み込まれているすべてのコンピューター プロセスにアタッチできるようになりました。 それを行うには、ホスト プロセスで対話型セッションに入ります。 詳細については、次を参照してください。
+PowerShell が読み込まれているすべてのコンピューター プロセスにアタッチできるようになりました。 それを行うには、ホスト プロセスで対話型セッションに入ります。 詳細については、次をご覧ください。
 
 - [Enter-PSHostProcess](/powershell/module/Microsoft.PowerShell.Core/Enter-PSHostProcess)
 - [Exit-PSHostProcess](/powershell/module/Microsoft.PowerShell.Core/Exit-PSHostProcess)

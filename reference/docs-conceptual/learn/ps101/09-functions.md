@@ -2,15 +2,14 @@
 title: 関数
 description: PowerShell 関数を使用すると、スクリプトで再利用できるツールを作成することができます。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: ca48f3020fa306f8a24328bd18648d5954c48a94
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
-ms.translationtype: HT
+ms.openlocfilehash: e4734b556a78f67c54152dad93eada536dd1c928
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438203"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99601189"
 ---
 # <a name="chapter-9---functions"></a>第 9 章 - 関数
 
@@ -22,7 +21,7 @@ PowerShell のワンライナーまたはスクリプトを記述していると
 
 ## <a name="naming"></a>名前を付ける
 
-PowerShell で関数に名前を付けるときは、承認されている動詞と単数形の名詞で [Pascal case][] 名を使用します。 また、名詞の前にプレフィックスを付けることをお勧めします。 (例: `<ApprovedVerb>-<Prefix><SingularNoun>`)。
+PowerShell で関数に名前を付けるときは、承認されている動詞と単数形の名詞を含む[パスカル ケース][]名を使用します。 また、名詞の前にプレフィックスを付けることをお勧めします。 (例: `<ApprovedVerb>-<Prefix><SingularNoun>`)。
 
 PowerShell には承認されている動詞の一覧があり、`Get-Verb` を実行して取得できます。
 
@@ -285,6 +284,8 @@ Machine                     0
 ```
 
 また、パラメーター名の大文字と小文字も、既定のコマンドレットに揃えることをお勧めします。 `computername` ではなく、`ComputerName` を使用してください。 これにより、関数の外観が既定のコマンドレットと同じようになります。 既に PowerShell に慣れている方にとっては、使いやすく感じるでしょう。
+
+`param`ステートメントを使用すると、1つ以上のパラメーターを定義できます。 パラメーター定義はコンマ () で区切られ `,` ます。 詳細については、「 [about_Functions_Advanced_Parameters][]」を参照してください。
 
 ## <a name="advanced-functions"></a>高度な関数
 
@@ -577,9 +578,9 @@ Test-MrVerboseOutput -ComputerName Server01, Server02 -Verbose
 
 ## <a name="pipeline-input"></a>パイプライン入力
 
-関数でパイプライン入力を受け入れるには、追加コーディングがいくつか必要です。 本書で前述したように、コマンドが受け入れることができるのは、**値** (型) または**プロパティ名**によるパイプライン入力です。 関数はネイティブ コマンドと同じように記述できるため、これらの入力の種類のいずれか、または両方を受け入れることができます。
+関数でパイプライン入力を受け入れるには、追加コーディングがいくつか必要です。 本書で前述したように、コマンドが受け入れることができるのは、**値** (型) または **プロパティ名** によるパイプライン入力です。 関数はネイティブ コマンドと同じように記述できるため、これらの入力の種類のいずれか、または両方を受け入れることができます。
 
-**値**によるパイプライン入力を受け入れるには、その特定のパラメーターに対して `ValueFromPipeline` パラメーター属性を指定します。 受け入れることができるのは、いずれかのデータ型からの**値**によるパイプライン入力だけであることに注意してください。 たとえば、文字列入力を受け入れるパラメーターが 2 つある場合は、一方だけが**値**によるパイプライン入力を受け入れることができます。これは、両方の文字列パラメーターに対してそれを指定すると、パイプライン入力でバインド先を認識できなくなるためです。 これも、私がこの種類のパイプライン入力を、**値**ではなく "_型_" によるパイプライン入力と呼ぶ理由です。
+**値** によるパイプライン入力を受け入れるには、その特定のパラメーターに対して `ValueFromPipeline` パラメーター属性を指定します。 受け入れることができるのは、いずれかのデータ型からの **値** によるパイプライン入力だけであることに注意してください。 たとえば、文字列入力を受け入れるパラメーターが 2 つある場合は、一方だけが **値** によるパイプライン入力を受け入れることができます。これは、両方の文字列パラメーターに対してそれを指定すると、パイプライン入力でバインド先を認識できなくなるためです。 これも、私がこの種類のパイプライン入力を、**値** ではなく "_型_" によるパイプライン入力と呼ぶ理由です。
 
 `foreach` ループでの項目の処理方法と同じように、パイプライン入力は 1 つずつ行われます。
 少なくとも、配列を入力として受け入れる場合は、`process` ブロックがこれらの各項目を処理する必要があります。 入力として 1 つの値しか受け入れていない場合、`process` ブロックは不要ですが、それでも一貫性を確保するために指定することをお勧めします。
@@ -601,7 +602,7 @@ function Test-MrPipelineInput {
 }
 ```
 
-**プロパティ名**によるパイプライン入力の受け入れも似ていますが、これは `ValueFromPipelineByPropertyName` パラメーター属性で指定され、データ型に関係なく、任意の数のパラメーターに対して指定できる点が異なります。 重要なのは、パイプ入力中のコマンドの出力には、関数のパラメーターまたはパラメーター エイリアスの名前と一致するプロパティ名が必要であることです。
+**プロパティ名** によるパイプライン入力の受け入れも似ていますが、これは `ValueFromPipelineByPropertyName` パラメーター属性で指定され、データ型に関係なく、任意の数のパラメーターに対して指定できる点が異なります。 重要なのは、パイプ入力中のコマンドの出力には、関数のパラメーターまたはパラメーター エイリアスの名前と一致するプロパティ名が必要であることです。
 
 ```powershell
 function Test-MrPipelineInput {
@@ -783,7 +784,7 @@ PowerShell で関数を記述するためのすべての構文に、特に初心
 - [about_Functions_Advanced][]
 - [about_Try_Catch_Finally][]
 - [about_Comment_Based_Help][]
-- [ビデオ:高度な関数とスクリプト モジュールを使用した PowerShell でのツール作成][]
+- [ビデオ: 高度な関数とスクリプト モジュールを使用した PowerShell でのツール作成][]
 
 <!-- link references -->
 [about_Functions]: /powershell/module/microsoft.powershell.core/about/about_functions
@@ -793,4 +794,5 @@ PowerShell で関数を記述するためのすべての構文に、特に初心
 [about_Functions_Advanced]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
 [about_Try_Catch_Finally]: /powershell/module/microsoft.powershell.core/about/about_try_catch_finally
 [about_Comment_Based_Help]: /powershell/module/microsoft.powershell.core/about/about_comment_based_help
-[ビデオ:高度な関数とスクリプト モジュールを使用した PowerShell でのツール作成]: https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/) [Pascal case]: /dotnet/standard/design-guidelines/capitalization-conventionss
+[ビデオ: 高度な関数とスクリプト モジュールを使用した PowerShell でのツール作成]: https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/
+[パスカル ケース]: /dotnet/standard/design-guidelines/capitalization-conventions

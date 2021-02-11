@@ -1,14 +1,14 @@
 ---
 title: PowerShell ドキュメントのイシューを報告する方法
 description: この記事では、PowerShell ドキュメントに関するフィードバックを送る方法について説明します。
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: fa2c74d55cdcd779646c50d58f7705f7a4c33542
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
-ms.translationtype: HT
+ms.openlocfilehash: a044f77d3529817ec063d4a26fc9d10cdfe873aa
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79060297"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "99602587"
 ---
 # <a name="how-to-file-a-powershell-docs-issue"></a>PowerShell ドキュメントのイシューを報告する方法
 
@@ -21,10 +21,11 @@ ms.locfileid: "79060297"
 
 フィードバック コントロールの詳細については、この[機能][feedback]を発表している Docs Team のブログをご覧ください。
 
-`docs.microsoft.com` のほとんどのページの下部に、2 つのフィードバック ボタンがあります。 1 つは製品フィードバック用のリンクで、もう 1 つはドキュメント フィードバック用です。 ドキュメント フィードバックには、GitHub アカウントが必要です。 ボタンをクリックすると、GitHub で認証され、フィードバックを入力するための簡単なフォームが表示されます。 フォームを送信すると、フィードバック コントロールによって新しい GitHub イシューが作成され、現在の記事にリンクされます。
+`docs.microsoft.com` のほとんどのページの下部に、2 つのフィードバック ボタンがあります。 1 つは製品フィードバック用のリンクで、もう 1 つはドキュメント フィードバック用です。 ドキュメント フィードバックには、GitHub アカウントが必要です。 このボタンをクリックすると、GitHub に移動し、事前に作成された問題のテンプレートが表示されます。
+フィードバックを入力し、フォームを送信します。
 
 > [!NOTE]
-> これはサポート チャネルではありません。 ドキュメントについて明確にするための質問をしたり、誤字脱字を報告したりするための方法です。 テクニカル サポートが必要な場合は、[コミュニティ リソース](../community-support.md)に関する記事をご覧ください。
+> これはサポート チャネルではありません。 これは、ドキュメントに関する質問を明確にしたり、エラーやミスを報告したりするための方法です。 テクニカル サポートが必要な場合は、[コミュニティ リソース](../community-support.md)に関する記事をご覧ください。
 
 ## <a name="filing-issues-on-github"></a>GitHub でイシューを報告する
 

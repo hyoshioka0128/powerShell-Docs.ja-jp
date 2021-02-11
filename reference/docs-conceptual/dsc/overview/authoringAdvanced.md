@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: CI/CD パイプラインでの DSC のロールについて
-ms.openlocfilehash: 6df621f45caed3ac8a8b4dd1afa575d413259e0d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: この記事では、CI/CD パイプラインで構成とリソースを結合するために使用できるアプローチの種類について説明します。
+ms.openlocfilehash: 8d06b86724eb25e657687e6518c01bb29d984264
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783111"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647038"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>CI/CD パイプラインでの DSC のロールについて
 

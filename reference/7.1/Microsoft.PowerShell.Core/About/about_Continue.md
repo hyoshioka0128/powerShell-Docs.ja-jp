@@ -5,12 +5,12 @@ ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_continue?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Continue
-ms.openlocfilehash: 5a33451da91fa0d837b51ded6bae51ce66eb07e4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 2b299726b3fe75e5d13e91bbde7564705d3e2112
+ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222128"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614117"
 ---
 # <a name="about-continue"></a>続行について
 
@@ -62,7 +62,7 @@ for ($i = 0; $i -lt 10; $i++)
 
 ラベルが付けられたステートメントは、 `continue` イテレーションの実行を終了し、対象となる対象のイテレーションまたはステートメントのラベルに制御を転送し `switch` ます。
 
-次の例では、が True の場合、最も内側のが終了し、の `for` `$condition` 2 番目のループで反復処理が続行され **True** `for` `labelB` ます。
+次の例では、が True の場合、最も内側のが終了し、の `for` `$condition` 2 番目のループで反復処理が続行され `for` `labelB` ます。
 
 ```powershell
 :labelA for ($i = 1; $i -le 10; $i++) {
@@ -107,7 +107,7 @@ switch (1,2,3) {
 
 これは、それをサポートする外側のコンストラクトの外部でを使用する関数とスクリプトが `continue` 誤って _呼び出し元_ を終了する可能性があることを意味します。
 
-パイプライン内でを使用する `continue` と、 `ForEach-Object` パイプラインが終了するだけでなく、実行空間全体を終了する可能性があります。
+パイプライン内でを使用する `continue` と、 `ForEach-Object` パイプラインが終了するだけでなく、実行空間全体が終了する可能性があります。
 
 ## <a name="see-also"></a>関連項目
 

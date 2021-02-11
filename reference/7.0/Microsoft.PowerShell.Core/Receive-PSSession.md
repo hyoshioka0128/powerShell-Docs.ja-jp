@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: 43f9823f19df9ceec44f1e27d5183cca418647ba
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 5c7783cb6f865aead9aae7ae0df77d9ee2db7b16
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93218488"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391359"
 ---
 # Receive-PSSession
 
@@ -759,6 +759,8 @@ Accept wildcard characters: False
 
 ## 注
 
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
+
 `Receive-PSSession` 切断されたセッションからのみ結果を取得します。 PowerShell 3.0 以降のバージョンを実行しているコンピューターは、接続されている、または終了したセッションのみを切断し、再接続することができます。
 
 切断されたセッションで実行されていたコマンドが結果を生成しなかった場合、または結果が既に別のセッションに戻されている場合、は `Receive-PSSession` 出力を生成しません。
@@ -787,7 +789,7 @@ Pssession に接続するとき **、または** 結果を受信するときに�
 - **State** プロパティの値は、現在のセッションに関連付けられています。 値が Disconnected の場合は、 **PSSession** が現在のセッションに接続されていないことを示します。 ただし、 **PSSession** がすべてのセッションから切断されているわけではありません。 別のセッションに接続されている可能性があるためです。
   セッションに接続または再接続できるかどうかを確認するには、 **Availability** プロパティを使用します。
 - **Availability** の値が None の場合は、セッションに接続できることを示します。 値が Busy の場合は、PSSession が別のセッションに接続されているため、 **PSSession** に接続できないことを示します。
-- セッションの **State** プロパティの値の詳細については、MSDN ライブラリの「 [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate) 」を参照してください。
+- セッションの **State** プロパティの値の詳細については、「 [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate)」を参照してください。
 - セッションの **Availability** プロパティの値の詳細については、「 [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability)」を参照してください。
 
 ## 関連リンク

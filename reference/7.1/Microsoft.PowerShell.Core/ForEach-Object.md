@@ -7,12 +7,12 @@ ms.date: 09/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: e05c9b5e44d26b1e16c82f734ec60ca4cc73ab4d
-ms.sourcegitcommit: e0f9fe6335be1e0f94bedaa0e8baec2acaeaa076
+ms.openlocfilehash: 1b1824db5c5c20698d551a6277890ce6c82c4e11
+ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "93219899"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97725189"
 ---
 # ForEach-Object
 
@@ -42,13 +42,13 @@ ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit
 [-UseNewRunspace] [-TimeoutSeconds <int>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 説明
+## [説明]
 
 `ForEach-Object`コマンドレットは、入力オブジェクトのコレクション内の各項目に対して操作を実行します。 入力オブジェクトは、コマンドレットにパイプすることも、 **InputObject** パラメーターを使用して指定することもできます。
 
 Windows PowerShell 3.0 以降では、コマンドを構築する方法は2つあり `ForEach-Object` ます。
 
-- **スクリプトブロック** 。 スクリプト ブロックを使用して、操作を指定することができます。 スクリプトブロック内で、変数を使用して `$_` 現在のオブジェクトを表します。 スクリプト ブロックは、 **Process** パラメーターの値です。 スクリプトブロックには、任意の PowerShell スクリプトを含めることができます。
+- **スクリプトブロック**。 スクリプト ブロックを使用して、操作を指定することができます。 スクリプトブロック内で、変数を使用して `$_` 現在のオブジェクトを表します。 スクリプト ブロックは、**Process** パラメーターの値です。 スクリプトブロックには、任意の PowerShell スクリプトを含めることができます。
 
   たとえば、次のコマンドでは、コンピューター上の各プロセスの **ProcessName** プロパティの値を取得します
 
@@ -59,7 +59,7 @@ Windows PowerShell 3.0 以降では、コマンドを構築する方法は2つ�
   > [!NOTE]
   > スクリプトブロックは、呼び出し元のスコープで実行されます。 したがって、ブロックはそのスコープ内の変数にアクセスでき、コマンドレットの完了後にそのスコープに保持される新しい変数を作成できます。
 
-- **Operation ステートメント** 。 また、操作ステートメントを記述することもできます。これは自然言語に似ています。 操作のステートメントを使用してプロパティの値を指定することも、メソッドを呼び出すこともできます。 操作のステートメントは、Windows PowerShell 3.0 で導入されました。
+- **Operation ステートメント**。 また、操作ステートメントを記述することもできます。これは自然言語に似ています。 操作のステートメントを使用してプロパティの値を指定することも、メソッドを呼び出すこともできます。 操作のステートメントは、Windows PowerShell 3.0 で導入されました。
 
   たとえば、次のコマンドでは、コンピューター上の各プロセスの **ProcessName** プロパティの値も取得します。
 
@@ -77,7 +77,7 @@ Windows PowerShell 3.0 以降では、コマンドを構築する方法は2つ�
   例外などの終了エラーは、発生した scriptblocks の個々の並列インスタンスを終了します。 1つの scriptblocks で終了エラーが発生しても、コマンドレットが終了しないことがあり `Foreach-Object` ます。 並列で実行されている他の scriptblocks は、終了エラーも発生しない限り実行を継続します。 終了エラーは、の **FullyQualifiedErrorId** を持つ **errorrecord** としてエラーデータストリームに書き込まれ `PSTaskException` ます。
   終了エラーは、PowerShell の try/catch ブロックまたはトラップブロックを使用して、終了しないエラーに変換できます。
 
-## 例
+## 使用例
 
 ### 例 1: 配列の整数を除算する
 
@@ -113,7 +113,7 @@ $Events = Get-EventLog -LogName System -Newest 1000
 $events | ForEach-Object -Begin {Get-Date} -Process {Out-File -FilePath Events.txt -Append -InputObject $_.Message} -End {Get-Date}
 ```
 
-`Get-EventLog` システムイベントログから1000の最新のイベントを取得し、変数に格納し `$Events` ます。 `$Events` 次に、をコマンドレットにパイプ処理し `ForEach-Object` ます。 **Begin** パラメーターは、現在の日付と時刻を示します。 次に、 **Process** パラメーターは、コマンドレットを使用して `Out-File` events.txt という名前のテキストファイルを作成し、そのファイル内の各イベントの message プロパティを格納します。 最後に、 **End** パラメーターは、すべての処理が完了した後の日付と時刻を示すために使用されます。
+`Get-EventLog` システムイベントログから1000の最新のイベントを取得し、変数に格納し `$Events` ます。 `$Events` 次に、をコマンドレットにパイプ処理し `ForEach-Object` ます。 **Begin** パラメーターは、現在の日付と時刻を示します。 次に、 **Process** パラメーターは、コマンドレットを使用して `Out-File` events.txt という名前のテキストファイルを作成し、そのファイル内の各イベントの message プロパティを格納します。 最後に、**End** パラメーターは、すべての処理が完了した後の日付と時刻を示すために使用されます。
 
 ### 例 4: レジストリキーの値を変更する
 
@@ -126,7 +126,7 @@ Get-ItemProperty -Path HKCU:\Network\* |
 
 このフォーマットを使用して、レジストリ エントリ値の形式や内容を変更することができます。
 
-**ネットワーク** キーの各サブキーは、サインオン時に再接続する、マップされたネットワークドライブを表します。 **RemotePath** エントリには、接続されているドライブの UNC パスが含まれます。 たとえば、E: ドライブをにマップすると、 `\\Server\Share` で RemotePath レジストリ値がに設定された **e** サブキーが作成され `HKCU:\Network` **RemotePath** `\\Server\Share` ます。
+**ネットワーク** キーの各サブキーは、サインオン時に再接続する、マップされたネットワークドライブを表します。 **RemotePath** エントリには、接続されているドライブの UNC パスが含まれます。 たとえば、E: ドライブをにマップすると、 `\\Server\Share` で RemotePath レジストリ値がに設定された **e** サブキーが作成され `HKCU:\Network`  `\\Server\Share` ます。
 
 このコマンドは、コマンドレットを使用して `Get-ItemProperty` **ネットワーク** キーのすべてのサブキーを取得し、コマンドレットを使用して `Set-ItemProperty` 各キーの **RemotePath** レジストリエントリの値を変更します。
 コマンドの `Set-ItemProperty` パスは、レジストリキーの **pspath** プロパティの値です。 これは、レジストリエントリではなく、レジストリキーを表す Microsoft .NET Framework オブジェクトのプロパティです。 このコマンドでは、 **RemotePath** 値の **ToUpper ()** メソッドを使用します。これは文字列 (REG_SZ) です。
@@ -186,7 +186,7 @@ Host
 
 最初のコマンドは、スクリプトブロックと現在のオブジェクト演算子を含む従来の構文を使用し `$_` ます。 メソッドの指定にドット構文を使用し、区切り記号の引数を囲むためにかっこを使用します。
 
-2 番目のコマンドは、 **MemberName** パラメーターを使用して **Split** メソッドを指定し、 **ArgumentName** パラメーターを使用してドット (".") を分割の区切り記号として識別します。
+2 番目のコマンドは、**MemberName** パラメーターを使用して **Split** メソッドを指定し、**ArgumentName** パラメーターを使用してドット (".") を分割の区切り記号として識別します。
 
 3番目のコマンドは、コマンドレットの **Foreach** エイリアスを使用 `ForEach-Object` して、 **MemberName** および **ArgumentList** パラメーターの名前を省略します (省略可能)。
 
@@ -206,7 +206,7 @@ process
 
 ### 例 9: 3 つ以上のスクリプトブロックと共に ForEach-Object を使用する
 
-この例では、2つのスクリプトブロック位置を渡します。 すべてのスクリプトブロックが **Process** パラメーターにバインドされます。 ただし、これらは **Begin** 、 **Process** 、および **End** パラメーターに渡されたものとして扱われます。
+この例では、2つのスクリプトブロック位置を渡します。 すべてのスクリプトブロックが **Process** パラメーターにバインドされます。 ただし、これらは **Begin**、 **Process**、および **End** パラメーターに渡されたものとして扱われます。
 
 ```powershell
 1..2 | ForEach-Object { 'begin' } { 'process A' }  { 'process B' }  { 'end' }
@@ -315,7 +315,7 @@ Output: 10
 ```
 
 変数は、 `$job` 出力データを収集し、実行状態を監視するジョブオブジェクトを受け取ります。
-ジョブオブジェクトは、待機スイッチパラメーターを使用してにパイプ処理され `Receive-Job` ます。 **Wait** このストリームは、が AsJob なしで実行された場合と同様に、コンソールに出力 `ForEach-Object -Parallel` されます。 **AsJob**
+ジョブオブジェクトは、待機スイッチパラメーターを使用してにパイプ処理され `Receive-Job` ます。  このストリームは、が AsJob なしで実行された場合と同様に、コンソールに出力 `ForEach-Object -Parallel` されます。 
 
 ### 例 14: スレッドセーフな変数参照を使用する
 
@@ -542,14 +542,14 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 5
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -TimeoutSeconds
 
-すべての入力が並行して処理されるまで待機する秒数を指定します。 指定されたタイムアウト時間が経過すると、実行中のすべてのスクリプトが停止します。 また、処理するその他の入力オブジェクトは無視されます。 の既定値 `0` はタイムアウトを無効にし、 `ForEach-Object -Parallel` 無期限に実行できます。 <kbd>Ctrl</kbd> + コマンドラインで Ctrl<kbd>C</kbd>キーを押すと、実行中のコマンドが停止 `ForEach-Object -Parallel` します。 このパラメーターは、 **AsJob** パラメーターと共に使用することはできません。
+すべての入力が並行して処理されるまで待機する秒数を指定します。 指定されたタイムアウト時間が経過すると、実行中のすべてのスクリプトが停止します。 また、処理するその他の入力オブジェクトは無視されます。 の既定値 `0` はタイムアウトを無効にし、 `ForEach-Object -Parallel` 無期限に実行できます。 <kbd></kbd> + コマンドラインで Ctrl<kbd>C</kbd>キーを押すと、実行中のコマンドが停止 `ForEach-Object -Parallel` します。 このパラメーターは、 **AsJob** パラメーターと共に使用することはできません。
 
 このパラメーターは、PowerShell 7.0 で導入されました。
 
@@ -649,13 +649,13 @@ Accept wildcard characters: False
 
 このコマンドレットは、入力によって決定されたオブジェクトを返します。
 
-## メモ
+## 注
 
 - `ForEach-Object`コマンドレットは **foreach** ステートメントとよく似ていますが、入力を **foreach** ステートメントにパイプすることはできません。 **Foreach** ステートメントの詳細については、「 [about_Foreach](./About/about_Foreach.md)」を参照してください。
 
 - PowerShell 4.0 以降では `Where` 、 `ForEach` コレクションで使用するためのメソッドとメソッドが追加されました。 これらの新しいメソッドの詳細については、こちらを参照してください [about_arrays](./About/about_Arrays.md)
 
-- `ForEach-Object -Parallel`パラメーターセットは、PowerShell の内部 API を使用して各スクリプトブロックを実行します。 これは `ForEach-Object` 、通常のシーケンシャル処理で実行する場合よりも、オーバーヘッドが大幅に増加します。 **並列実行** のオーバーヘッドは、スクリプトブロックで実行される作業と比較して小さくすることが重要です。 次に例を示します。
+- `ForEach-Object -Parallel`パラメーターセットは、PowerShell の内部 API を使用して各スクリプトブロックを実行します。 これは `ForEach-Object` 、通常のシーケンシャル処理で実行する場合よりも、オーバーヘッドが大幅に増加します。 **並列実行** のオーバーヘッドは、スクリプトブロックで実行される作業と比較して小さくすることが重要です。 以下に例を示します。
 
   - マルチコアマシンでの多くのコンピューティング処理を要するスクリプト
   - 結果の待機時間またはファイル操作の実行に時間を費やすスクリプト

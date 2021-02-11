@@ -1,16 +1,16 @@
 ---
-title: about_Character_Encoding
 description: PowerShell が文字列データの入力と出力に文字エンコーディングを使用する方法について説明します。
-ms.date: 10/21/2020
 Locale: en-US
+ms.date: 10/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 0dff2a2cd3915a84c80627abdd0388e9722df806
-ms.sourcegitcommit: df80c558e9a4b89c9798f084bd04012ece15155c
+title: about_Character_Encoding
+ms.openlocfilehash: f383b985baeae059565f61c700df7a76346497d8
+ms.sourcegitcommit: cc72c40315fd2981d3009b335accbfa52d57640c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "93225155"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349850"
 ---
 # <a name="about_character_encoding"></a>about_Character_Encoding
 
@@ -43,7 +43,7 @@ PowerShell では、既定で Unicode 文字セットが使用されます。 �
 
 ## <a name="the-byte-order-mark"></a>バイト順マーク
 
-バイト順マーク (BOM) は、ファイルまたはテキストストリームの最初の数バイトの _unicode 署名_ で、データに使用される unicode エンコーディングを示します。 詳細については、Wikipedia の [バイトオーダーマーク](https://wikipedia.org/wiki/Byte_order_mark) に関する記事を参照してください。
+バイト順マーク (BOM) は、ファイルまたはテキストストリームの最初の数バイトの _unicode 署名_ で、データに使用される unicode エンコーディングを示します。 詳細については、 [バイトオーダーマーク](/globalization/encoding/byte-order-mark) のドキュメントを参照してください。
 
 Windows PowerShell では、以外のすべての Unicode エンコーディングでは、 `UTF7` 常に BOM が作成されます。 PowerShell Core では、 `utf8NoBOM` すべてのテキスト出力で既定値が使用されます。
 

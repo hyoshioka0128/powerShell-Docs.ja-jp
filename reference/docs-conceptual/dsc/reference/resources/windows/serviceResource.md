@@ -1,14 +1,14 @@
 ---
-ms.date: 09/20/2019
+ms.date: 01/06/2021
 ms.topic: reference
 title: DSC Service リソース
 description: DSC Service リソース
-ms.openlocfilehash: 24121688bc46dcef70e3751d243d140fb7fcc7c9
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+ms.openlocfilehash: bb151e11475c6e67f1fcb2d73336ff2e34b749b8
+ms.sourcegitcommit: afefb3636362857036648c2fe80215bc4e81f5ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93142626"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97957038"
 ---
 # <a name="dsc-service-resource"></a>DSC Service リソース
 
@@ -27,7 +27,7 @@ Service [string] #ResourceName
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
-    [ State = [string] { Ignore | Running | Stopped }  ]
+    [ State = [string] { Running | Stopped }  ]
     [ Dependencies = [string[]] ]
     [ Description = [string] ]
     [ DisplayName = [string] ]
@@ -43,10 +43,10 @@ Service [string] #ResourceName
 |プロパティ |説明 |
 |---|---|
 |名前 |サービス名を示します。 これは、表示名とは異なることがあります。 `Get-Service` コマンドレットを使用すると、サービスとその現在の状態の一覧を取得できます。 |
-|BuiltInAccount |サービスに使用するサインイン アカウントを示します。 このプロパティで有効な値は、 **LocalService** 、 **LocalSystem** 、 **NetworkService** です。 |
+|BuiltInAccount |サービスに使用するサインイン アカウントを示します。 このプロパティで有効な値は、**LocalService**、**LocalSystem**、**NetworkService** です。 |
 |資格情報 |サービスを実行するアカウントの資格情報を示します。 このプロパティおよび **BuiltinAccount** プロパティを同時に使用することはできません。 |
-|StartupType |サービスのスタートアップの種類を示します。 このプロパティで有効な値は、 **Automatic** 、 **Disabled** 、 **Manual** です。 |
-|State |サービスに対して保証する状態を示します。 値は次のとおりです。 **Running** または **Stopped** 。 |
+|StartupType |サービスのスタートアップの種類を示します。 このプロパティで有効な値は、**Automatic**、**Disabled**、**Manual** です。 |
+|State |サービスに対して保証する状態を示します。 値は次のとおりです。**Running** または **Stopped**。 |
 |依存関係 | サービスに含まれる依存関係の名前の配列。 |
 |説明 |ターゲット サービスの説明を示します。 |
 |DisplayName |ターゲット サービスの表示名を示します。 |

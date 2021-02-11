@@ -1,12 +1,14 @@
 ---
-title: TableControl (Format) の EntrySelectedBy の SelectionCondition 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4a829f9daef22c4b3fd6b21dfb3af2f8539bdeb3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl の EntrySelectedBy の SelectionCondition 要素 (書式)
+description: TableControl の EntrySelectedBy の SelectionCondition 要素 (書式)
+ms.openlocfilehash: 22f304615c6433ffb67f3b4046b645d0c37be8a4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780289"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645755"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-tablecontrol-format"></a>TableControl の EntrySelectedBy の SelectionCondition 要素 (書式)
 
@@ -58,9 +60,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 - 選択条件では、任意の数の .NET 型または選択セットを指定できますが、両方を指定することはできません。
 
-選択条件の使用方法の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件の使用方法の詳細については、「 [ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

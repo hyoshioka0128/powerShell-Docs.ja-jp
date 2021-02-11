@@ -6,12 +6,12 @@ ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Data_Sections
-ms.openlocfilehash: 8532804c59ebcb7dd8f98eac7dc9e0865b21f2b3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: b24ab9c47697ec62e1799784d4f0a3ae57351f2a
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93220699"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879254"
 ---
 # <a name="about-data-sections"></a>データセクションについて
 
@@ -45,7 +45,7 @@ Data キーワードが必要です。 大文字と小文字は区別されま�
 - `If`、 `Else` 、および `ElseIf` ステートメント
 - 次の自動変数: `$PsCulture` 、 `$PsUICulture` 、 `$True` 、 `$False` 、および `$Null`
 - コメント
-- パイプライン
+- Pipelines
 - セミコロン () で区切られたステートメント `;`
 - リテラル。次に例を示します。
 
@@ -72,7 +72,7 @@ Data キーワードが必要です。 大文字と小文字は区別されま�
 
 の値 `-SupportedCommand` は、1つまたは複数のコマンドレットまたは関数の名前のコンマ区切りのリストです。
 
-たとえば、次の data セクションには、 `Format-XML` データを XML ファイルにフォーマットするユーザー記述のコマンドレットが含まれています。
+たとえば、次の data セクションには、 `Format-Xml` データを XML ファイルにフォーマットするユーザー記述のコマンドレットが含まれています。
 
 ```powershell
 DATA -supportedCommand Format-Xml
@@ -105,7 +105,7 @@ $TextMsgs.Text001
 $TextMsgs.Text002
 ```
 
-また、変数名を Data セクションの定義に含めることもできます。 次に例を示します。
+また、変数名を Data セクションの定義に含めることもできます。 以下に例を示します。
 
 ```powershell
 DATA TextMsgs {
@@ -127,7 +127,7 @@ Text001                        Windows 7
 Text002                        Windows Server 2008 R2
 ```
 
-### <a name="examples"></a>例
+### <a name="examples"></a>使用例
 
 単純なデータ文字列。
 

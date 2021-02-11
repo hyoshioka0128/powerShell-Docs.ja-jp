@@ -1,12 +1,14 @@
 ---
-title: View 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c0c6fa373cfca3a55a62f201e1eabc6a1e308ef7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View 要素 (書式)
+description: View 要素 (書式)
+ms.openlocfilehash: 6fed1304d94339cc90b6ae53e06483c08d937c12
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785032"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649743"
 ---
 # <a name="view-element-format"></a>View 要素 (書式)
 
@@ -70,7 +72,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="example"></a>例
 
-次の例は、 `View` [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトのテーブルビューを定義する要素を示しています。
+次の例は、 `View` [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) オブジェクトのテーブルビューを定義する要素を示しています。
 
 ```xml
 <ViewDefinitions>

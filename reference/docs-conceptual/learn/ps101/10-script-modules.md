@@ -2,15 +2,14 @@
 title: スクリプト モジュール
 description: スクリプト モジュールを使用すると、スクリプトや関数を、再利用可能なツールに容易にパッケージ化できます。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 661ba725764e1f31df628f6c5f2d58d760656e37
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
-ms.translationtype: HT
+ms.openlocfilehash: c557c071bc202a4216a77e7e5ae0bd73b4bc014b
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438283"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99601190"
 ---
 # <a name="chapter-10---script-modules"></a>第 10 章 - スクリプト モジュール
 
@@ -309,7 +308,7 @@ CommandType     Name                        Version    Source
 Function        Get-MrPSVersion             1.0        MyScript...
 ```
 
-モジュール マニフェストをご自身のモジュールに追加した場合は (追加する必要がある場合は)、モジュール マニフェストの**FunctionsToExport**  セクションで、エクスポートする関数を個別に指定することをお勧めします。
+モジュール マニフェストをご自身のモジュールに追加した場合は (追加する必要がある場合は)、モジュール マニフェストの **FunctionsToExport**  セクションで、エクスポートする関数を個別に指定することをお勧めします。
 
 ```powershell
 FunctionsToExport = 'Get-MrPSVersion'

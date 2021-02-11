@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/save-help?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Help
-ms.openlocfilehash: 6ed809f357cf9424008b2207519abbde22fc9280
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 88d36c7e919e11be7b8c1568bd28f6badb789539
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93209891"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391325"
 ---
 # Save-Help
 
@@ -41,34 +41,21 @@ Save-Help -LiteralPath <String[]> [[-Module] <PSModuleInfo[]>]
 
 ## Description
 
-**Get-help** コマンドレットは、PowerShell モジュールの最新のヘルプファイルをダウンロードし、指定したディレクトリに保存します。
-この機能を使用すると、インターネットにアクセスできないコンピューター上のヘルプ ファイルを更新でき、複数のコンピューター上のヘルプ ファイルを更新しやすくなります。
+`Save-Help`コマンドレットは、PowerShell モジュールの最新のヘルプファイルをダウンロードし、指定したディレクトリに保存します。 この機能を使用すると、インターネットにアクセスできないコンピューター上のヘルプ ファイルを更新でき、複数のコンピューター上のヘルプ ファイルを更新しやすくなります。
 
-Windows PowerShell 3.0 では、ローカルコンピューターにインストールされているモジュールに対してのみ、 **保存** 操作が機能していました。
-リモートコンピューターからモジュールをインポートしたり、PowerShell リモート処理を使用してリモートコンピューターから **PSModuleInfo** オブジェクトへの参照を取得したりすることはできましたが、 **Helpinfouri** プロパティは保持されませんでした。この **ヘルプは、** リモートモジュールヘルプでは機能しません。
+Windows PowerShell 3.0 では、 `Save-Help` ローカルコンピューターにインストールされているモジュールに対してのみ動作しました。 リモートコンピューターからモジュールをインポートしたり、PowerShell リモート処理を使用してリモートコンピューターから **PSModuleInfo** オブジェクトへの参照を取得したりすることはできましたが、 **Helpinfouri** プロパティは保持されず、 `Save-Help` リモートモジュールのヘルプでは機能しません。
 
-Windows PowerShell 4.0 では、 **Helpinfouri** プロパティが PowerShell リモート処理によって保持されます。これにより、リモートコンピューターにインストールされているモジュールに対して、 **保存時のヘルプ** を使用できます。
-また、インターネットにアクセスできないコンピューターで Export-Clixml を実行して、 **PSModuleInfo** オブジェクトをディスクまたはリムーバブルメディアに保存することもできます。その場合、インターネットにアクセスできるコンピューターにオブジェクトをインポートし、 **PSModuleInfo** オブジェクトで [ **保存** ] を実行します。
-保存されたヘルプは、USB ドライブなどのリムーバブル記憶域メディアを使用してリモートコンピューターに転送できます。
-ヘルプは **、update-help を実行し** てリモートコンピューターにインストールできます。
-このプロセスを使用すれば、どのようなネットワーク アクセスも実行できないコンピューターにヘルプをインストールできます。
+Windows PowerShell 4.0 では、 **Helpinfouri** プロパティが PowerShell リモート処理によって保持されます。これにより、 `Save-Help` リモートコンピューターにインストールされているモジュールでを使用できるようになります。 また、インターネットにアクセスできないコンピューターでを実行して、 **PSModuleInfo** オブジェクトをディスクまたはリムーバブルメディアに保存することもでき `Export-Clixml` ます。その場合、インターネットにアクセスできるコンピューターにオブジェクトをインポートし、 `Save-Help` **PSModuleInfo** オブジェクトでを実行します。 保存されたヘルプは、USB ドライブなどのリムーバブル記憶域メディアを使用してリモートコンピューターに転送できます。 を実行して、リモートコンピューターにヘルプをインストールでき `Update-Help` ます。 このプロセスを使用すれば、どのようなネットワーク アクセスも実行できないコンピューターにヘルプをインストールできます。
 
-保存されたヘルプファイルをインストールするには、Update-Help コマンドレットを実行します。
-その *SourcePath* パラメーターを追加して、ヘルプファイルを保存したフォルダーを指定します。
+保存されたヘルプファイルをインストールするには、コマンドレットを実行し `Update-Help` ます。 その **SourcePath** パラメーターを追加して、ヘルプファイルを保存したフォルダーを指定します。
 
-パラメーターを指定しなかった場合、 **Save-Help** コマンドは、セッション内のすべてのモジュールと、 **PSModulePath** 環境変数に設定された場所のコンピューターにインストールされているモジュールに対して、最新のヘルプをダウンロードします。
-この操作により、更新可能なヘルプをサポートしていないモジュールは警告なしにスキップされます。
+パラメーターを指定しない場合、コマンドは、 `Save-Help` セッション内のすべてのモジュールの最新のヘルプと、 **PSModulePath** 環境変数に示されている場所にコンピューターにインストールされているモジュールの最新のヘルプをダウンロードします。 この操作により、更新可能なヘルプをサポートしていないモジュールは警告なしにスキップされます。
 
-Get-help コマンドレットは、 **保存** 先フォルダー内のヘルプファイルのバージョンを確認します。
-新しいヘルプファイルが使用可能な場合、このコマンドレットは、インターネットから最新のヘルプファイルをダウンロードし、フォルダーに保存します。
-Get-help **コマンドレットは、** Update-Help コマンドレットと同じように動作しますが、ダウンロードされたキャビネット (.cab) ファイルを保存し、コンピューターにインストールするのではなく、ダウンロードしたキャビネット (.cab) ファイルを保存する点が異なります。
+コマンドレットでは、 `Save-Help` 対象フォルダー内のヘルプファイルのバージョンを確認します。 新しいヘルプファイルが使用可能な場合、このコマンドレットは、インターネットから最新のヘルプファイルをダウンロードし、フォルダーに保存します。 `Save-Help`コマンドレットはコマンドレットと同じように動作し `Update-Help` ますが、ダウンロードされたキャビネット (.cab) ファイルを保存し、コンピューターにインストールするのではなく、ダウンロードしたキャビネット (.cab) ファイルを保存する点が異なります。
 
-保存されたモジュール用ヘルプはそれぞれ、UI カルチャごとに、ヘルプ情報 (HelpInfo XML) ファイル 1 つと、ヘルプ ファイルのキャビネット (.cab) ファイル 1 つで構成されます。
-キャビネットファイルからヘルプファイルを抽出する必要はありません。
-Update-help **コマンドレット** は、ヘルプファイルを抽出し、XML が安全であるかどうかを検証した後、モジュールフォルダーの言語固有のサブフォルダーにヘルプファイルとヘルプ情報ファイルをインストールします。
+保存されたモジュール用ヘルプはそれぞれ、UI カルチャごとに、ヘルプ情報 (HelpInfo XML) ファイル 1 つと、ヘルプ ファイルのキャビネット (.cab) ファイル 1 つで構成されます。 キャビネットファイルからヘルプファイルを抽出する必要はありません。 `Update-Help`コマンドレットは、ヘルプファイルを抽出し、XML の安全性を検証した後、モジュールフォルダーの言語固有のサブフォルダーにヘルプファイルとヘルプ情報ファイルをインストールします。
 
-PowerShell のインストールフォルダー ($pshome \ モジュール) にモジュールのヘルプファイルを保存するには、[管理者として実行] オプションを使用して PowerShell を起動します。
-これらのモジュールのヘルプ ファイルをダウンロードするには、そのコンピューターの Administrators グループのメンバーである必要があります。
+PowerShell のインストールフォルダー () にモジュールのヘルプファイルを保存するに `$pshome\Modules` は、[管理者として実行] オプションを使用して powershell を起動します。 これらのモジュールのヘルプ ファイルをダウンロードするには、そのコンピューターの Administrators グループのメンバーである必要があります。
 
 このコマンドレットは、Windows PowerShell 3.0 で導入されました。
 
@@ -77,27 +64,30 @@ PowerShell のインストールフォルダー ($pshome \ モジュール) に�
 ### 例 1: DhcpServer モジュールのヘルプを保存する
 
 ```powershell
-# Option 1: Run Invoke-Command to get the PSModuleInfo object for the remote DHCP Server module, save the PSModuleInfo object in the variable $m, and then run Save-Help.
+# Option 1: Run Invoke-Command to get the PSModuleInfo object for the remote DHCP Server module,
+# save the PSModuleInfo object in the variable $m, and then run Save-Help.
 
 $m = Invoke-Command -ComputerName RemoteServer -ScriptBlock { Get-Module -Name DhcpServer -ListAvailable }
 Save-Help -Module $m -DestinationPath "C:\SavedHelp"
 
 
-# Option 2: Open a PSSession--targeted at the remote computer that is running the DhcpServer module--to get the PSModuleInfo object for the remote module, and then run Save-Help.
+# Option 2: Open a PSSession--targeted at the remote computer that is running the DhcpServer
+# module--to get the PSModuleInfo object for the remote module, and then run Save-Help.
 
 $s = New-PSSession -ComputerName "RemoteServer"
 $m = Get-Module -PSSession $s -Name "DhcpServer" -ListAvailable
 Save-Help -Module $m -DestinationPath "C:\SavedHelp"
 
 
-# Option 3: Open a CIM session--targeted at the remote computer that is running the DhcpServer module--to get the PSModuleInfo object for the remote module, and then run Save-Help.
+# Option 3: Open a CIM session--targeted at the remote computer that is running the DhcpServer
+# module--to get the PSModuleInfo object for the remote module, and then run Save-Help.
 
 $c = New-CimSession -ComputerName "RemoteServer"
 $m = Get-Module -CimSession $c -Name "DhcpServer" -ListAvailable
 Save-Help -Module $m -DestinationPath "C:\SavedHelp"
 ```
 
-この例では、 **DhcpServer** モジュールまたは DHCP サーバーの役割をローカルコンピューターにインストールせずに、 **DhcpServer** モジュールのヘルプをインターネットに接続されたクライアントコンピューターから保存するために、次の3つの異なる方法 **を使用し** ています。
+この例では、を使用し `Save-Help` て、ローカルコンピューターに **DhcpServer** モジュールまたは DHCP サーバーの役割をインストールせずに、インターネットに接続されたクライアントコンピューターから **DhcpServer** モジュールのヘルプを保存する3つの方法を示します。
 
 ### 例 2: DhcpServer モジュールのヘルプをインストールする
 
@@ -107,12 +97,15 @@ Save-Help -Module $m -DestinationPath "C:\SavedHelp"
 $m = Get-Module -Name "DhcpServer" -ListAvailable
 Export-CliXml -Path "E:\UsbFlashDrive\DhcpModule.xml" -InputObject $m
 
-# Next, transport the removable media to a computer that has Internet access, and then import the PSModuleInfo object with Import-CliXml. Run Save-Help to save the Help for the imported DhcpServer module PSModuleInfo object.
+# Next, transport the removable media to a computer that has Internet access, and then import the
+# PSModuleInfo object with Import-CliXml. Run Save-Help to save the Help for the imported DhcpServer
+# module PSModuleInfo object.
 
 $deserialized_m = Import-CliXml "E:\UsbFlashDrive\DhcpModule.xml"
 Save-Help -Module $deserialized_m -DestinationPath "E:\UsbFlashDrive\SavedHelp"
 
-# Finally, transport the removable media back to the computer that does not have network access, and then install the help by running Update-Help.
+# Finally, transport the removable media back to the computer that does not have network access, and
+# then install the help by running Update-Help.
 
 Update-Help -Module DhcpServer -SourcePath "E:\UsbFlashDrive\SavedHelp"
 ```
@@ -125,8 +118,7 @@ Update-Help -Module DhcpServer -SourcePath "E:\UsbFlashDrive\SavedHelp"
 Save-Help -DestinationPath "\\Server01\FileShare01"
 ```
 
-このコマンドは、ローカル コンピューター上の Windows に設定された UI カルチャに該当するすべてのモジュールの最新のヘルプ ファイルをダウンロードします。
-ヘルプファイルは Server01\Fileshare01 フォルダーに保存され \\ \\ ます。
+このコマンドは、ローカル コンピューター上の Windows に設定された UI カルチャに該当するすべてのモジュールの最新のヘルプ ファイルをダウンロードします。 ヘルプファイルはフォルダーに保存され `\\Server01\Fileshare01` ます。
 
 ### 例 4: コンピューターのモジュールのヘルプを保存する
 
@@ -134,11 +126,11 @@ Save-Help -DestinationPath "\\Server01\FileShare01"
 Save-Help -Module ServerManager -DestinationPath "\\Server01\FileShare01" -Credential Domain01/Admin01
 ```
 
-このコマンドは、 **ServerManager** モジュールの最新のヘルプファイルをダウンロードし、Server01\Fileshare01 フォルダーに保存し \\ \\ ます。
+このコマンドは、 **ServerManager** モジュールの最新のヘルプファイルをダウンロードし、フォルダーに保存し `\\Server01\Fileshare01` ます。
 
-モジュールをコンピューターにインストールする際、モジュールが現在のセッションにインポートされていない場合でも、モジュール名を *Module* パラメーターの値として入力できます。
+モジュールをコンピューターにインストールする際、モジュールが現在のセッションにインポートされていない場合でも、モジュール名を **Module** パラメーターの値として入力できます。
 
-このコマンドは、 *Credential* パラメーターを使用して、ファイル共有への書き込みアクセス許可を持つユーザーの資格情報を指定します。
+このコマンドは、 **Credential** パラメーターを使用して、ファイル共有への書き込みアクセス許可を持つユーザーの資格情報を指定します。
 
 ### 例 5: 別のコンピューターにモジュールのヘルプを保存する
 
@@ -146,11 +138,11 @@ Save-Help -Module ServerManager -DestinationPath "\\Server01\FileShare01" -Crede
 Invoke-Command -ComputerName Server02 {Get-Module -Name CustomSQL -ListAvailable} | Save-Help -DestinationPath \\Server01\FileShare01 -Credential Domain01\Admin01
 ```
 
-これらのコマンドは、 **Customsql** モジュールの最新のヘルプファイルをダウンロードし、Server01\Fileshare01 フォルダーに保存し \\ \\ ます。
+これらのコマンドは、 **Customsql** モジュールの最新のヘルプファイルをダウンロードし、フォルダーに保存し `\\Server01\Fileshare01` ます。
 
-**Customsql** モジュールがコンピューターにインストールされていないため、このシーケンスには、Server02 コンピューターから customsql モジュールのモジュールオブジェクトを取得し、そのモジュールオブジェクトを **コマンドレットに** パイプする Invoke-Command コマンドが含まれています。
+**Customsql** モジュールがコンピューターにインストールされていないため、このシーケンスには、 `Invoke-Command` Server02 コンピューターから customsql モジュールのモジュールオブジェクトを取得し、そのモジュールオブジェクトをコマンドレットにパイプするコマンドが含まれてい `Save-Help` ます。
 
-モジュールがコンピューターにインストールされていない場合、 **Save-Help** は、最新のヘルプ ファイルの場所に関する情報が含まれているモジュール オブジェクトを必要とします。
+コンピューターにモジュールがインストールされていない場合、には `Save-Help` モジュールオブジェクトが必要です。これには、最新のヘルプファイルの場所に関する情報が含まれます。
 
 ### 例 6: モジュールのヘルプを複数の言語で保存する
 
@@ -158,10 +150,9 @@ Invoke-Command -ComputerName Server02 {Get-Module -Name CustomSQL -ListAvailable
 Save-Help -Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -DestinationPath "D:\Help"
 ```
 
-このコマンドは、4つの異なる UI カルチャの PowerShell コアモジュールのヘルプを保存します。
-これらのロケールの言語パックは、コンピューターにインストールされている必要はありません。
+このコマンドは、4つの異なる UI カルチャの PowerShell コアモジュールのヘルプを保存します。 これらのロケールの言語パックは、コンピューターにインストールされている必要はありません。
 
-**保存** したヘルプでは、モジュールの所有者が翻訳されたファイルをインターネットで使用できるようになったときにのみ、さまざまな UI カルチャのモジュールのヘルプファイルをダウンロードできます。
+`Save-Help` では、モジュールの所有者が翻訳されたファイルをインターネットで使用できるようにする場合にのみ、さまざまな UI カルチャのモジュールのヘルプファイルをダウンロードできます。
 
 ### 例 7: 1 日に複数回ヘルプを保存する
 
@@ -169,14 +160,13 @@ Save-Help -Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -D
 Save-Help -Force -DestinationPath "\\Server3\AdminShare\Help"
 ```
 
-このコマンドは、コンピューターにインストールされているすべてのモジュールのヘルプを保存します。
-このコマンドは、 **Save help** コマンドレットが24時間に複数回ダウンロードできないようにするルールを上書きする *Force* パラメーターを指定します。
+このコマンドは、コンピューターにインストールされているすべてのモジュールのヘルプを保存します。 このコマンドは、 **Force** コマンド `Save-Help` レットが24時間ごとに複数回ダウンロードできないようにするルールを上書きする Force パラメーターを指定します。
 
-*Force* パラメーターは、1 GB の制限もオーバーライドし、バージョンのチェックを回避します。
+**Force** パラメーターは、1 GB の制限もオーバーライドし、バージョンのチェックを回避します。
 そのため、対象のフォルダーのバージョンよりも前のバージョンであっても、ファイルをダウンロードできます。
 
-このコマンドは、get-help **コマンドレットを使用して** 、指定されたフォルダーにヘルプファイルをダウンロードして保存します。
-**Save Help** コマンドを1日に複数回実行する必要がある場合は、 *Force* パラメーターが必要です。
+コマンドは、コマンドレットを使用して、 `Save-Help` 指定したフォルダーにヘルプファイルをダウンロードして保存します。
+**Force** パラメーターは、1日に複数回コマンドを実行する必要がある場合に必要です `Save-Help` 。
 
 ## PARAMETERS
 
@@ -207,8 +197,7 @@ Accept wildcard characters: False
 
 ### -DestinationPath
 
-ヘルプファイルを保存するフォルダーのパスを指定します。
-ファイル名やファイル名拡張子を指定しないでください。
+ヘルプファイルを保存するフォルダーのパスを指定します。 ファイル名やファイル名拡張子を指定しないでください。
 
 ```yaml
 Type: System.String[]
@@ -226,11 +215,11 @@ Accept wildcard characters: False
 
 このコマンドレットが1日に1回の制限に従っていないことを示し、バージョンチェックをスキップし、1 GB の制限を超えるファイルをダウンロードします。
 
-このパラメーターを指定しなかった場合、 **Save-Help** コマンドは、モジュールごとに 24 時間に 1 回しか実行できません。また、ダウンロードはモジュールごとに最大 1 GB の圧縮されていないコンテンツに制限されます。モジュールのヘルプ ファイルは、コンピューター上にあるファイルよりも新しい場合にのみ、インストールされます。
+このパラメーターを指定しない場合、各 `Save-Help` モジュールに対して24時間ごとに1つのコマンドのみが許可されます。ダウンロードはモジュールごとに 1 GB の非圧縮コンテンツに制限され、モジュールのヘルプファイルはコンピューター上のファイルよりも新しい場合にのみインストールされます。
 
-1日に1回の制限により、ヘルプファイルをホストするサーバーが保護され、PowerShell プロファイルに **保存時のヘルプ** コマンドを追加できるようになります。
+1日に1回の制限により、ヘルプファイルをホストするサーバーが保護され、PowerShell プロファイルにコマンドを追加できるようになり `Save-Help` ます。
 
-*Force* パラメーターを指定せずに複数の ui カルチャのモジュールのヘルプを保存するには、次のように、すべての ui カルチャを同じコマンドに含めます。`Save-Help -Module PSScheduledJobs -UICulture en-US, fr-FR, pt-BR`
+**Force** パラメーターを指定せずに複数の ui カルチャのモジュールのヘルプを保存するには、次のように、すべての ui カルチャを同じコマンドに含めます。`Save-Help -Module PSScheduledJobs -UICulture en-US, fr-FR, pt-BR`
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -246,12 +235,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-Modul特定のオブジェクトの形式で指定された名前を持つモジュールを指定します。
-これについては、MSDN ライブラリの「 [Modulの注釈のコンストラクター (Hashtable)](https://msdn.microsoft.com/library/jj136290) 」の「解説」で説明されています。
-たとえば、 *FullyQualifiedModule* パラメーターは、@ {ModuleName = "ModuleName"; という形式で指定されたモジュール名を受け入れます。ModuleVersion = "version_number"} または @ {ModuleName = "ModuleName";ModuleVersion = "version_number";Guid = "GUID"}。
-**ModuleName** と **ModuleVersion** は必須ですが、 **Guid** は省略可能です。
+**Modul特定** のオブジェクトの形式で指定された名前を持つモジュールを指定します。 「 [Modulの認識コンストラクター (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)」の「解説」を参照してください。
 
-*モジュール* パラメーターと同じコマンドで *FullyQualifiedModule* パラメーターを指定することはできません。
+たとえば、 **FullyQualifiedModule** パラメーターは、次のいずれかの形式で指定されたモジュール名を受け入れます。
+
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
+
+**ModuleName** と **ModuleVersion** は必須ですが、 **Guid** は省略可能です。 **モジュール** パラメーターと同じコマンドで **FullyQualifiedModule** パラメーターを指定することはできません。 2つのパラメーターは相互に排他的です。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
@@ -267,11 +258,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-コピー先フォルダーのパスを指定します。
-*DestinationPath* パラメーターの値とは異なり、 *LiteralPath* パラメーターの値は、入力されたとおりに使用されます。
-ワイルドカードとして解釈される文字はありません。
-パスにエスケープ文字が含まれている場合は、単一引用符で囲みます。
-単一引用符で囲まれた文字はエスケープシーケンスとして解釈されません。
+コピー先フォルダーのパスを指定します。 **DestinationPath** パラメーターの値とは異なり、 **LiteralPath** パラメーターの値は、入力されたとおりに使用されます。 ワイルドカードとして解釈される文字はありません。 パスにエスケープ文字が含まれている場合は、単一引用符で囲みます。 単一引用符で囲まれた文字はエスケープシーケンスとして解釈されません。
 
 ```yaml
 Type: System.String[]
@@ -287,25 +274,18 @@ Accept wildcard characters: False
 
 ### -モジュール
 
-このコマンドレットがヘルプをダウンロードするモジュールを指定します。
-1つ以上のモジュール名または名前のパターンを、コンマ区切りのリスト、または各行に1つのモジュール名を持つファイルに入力します。
-ワイルドカード文字を使用できます。
-パイプを使用してモジュールオブジェクトを Get-Module コマンドレットから保存して **、ヘルプを保存** することもできます。
+このコマンドレットがヘルプをダウンロードするモジュールを指定します。 1つ以上のモジュール名または名前のパターンを、コンマ区切りのリスト、または各行に1つのモジュール名を持つファイルに入力します。 ワイルドカード文字を使用できます。 パイプを使用して、モジュールオブジェクトをコマンドレットからにパイプすることもでき `Get-Module` `Save-Help` ます。
 
-既定では、 **Save-Help** は、更新可能なヘルプをサポートし、 **PSModulePath** 環境変数に設定された場所のローカル コンピューターにインストールされているすべてのモジュールのヘルプをダウンロードします。
+既定では、は `Save-Help` 更新可能なヘルプをサポートし、 **PSModulePath** 環境変数に示されている場所にローカルコンピューターにインストールされているすべてのモジュールのヘルプをダウンロードします。
 
-コンピューターにインストールされていないモジュールのヘルプを保存するには、リモートコンピューターで **Get モジュール** コマンドを実行します。
-その結果得られたモジュール オブジェクトを、パイプを使用して **Save-Help** コマンドレットに渡すか、 *Module* パラメーターまたは *InputObject* パラメーターの値として送信します。
+コンピューターにインストールされていないモジュールのヘルプを保存するには、 `Get-Module` リモートコンピューターでコマンドを実行します。 次に、結果として得られるモジュールオブジェクトをコマンドレットにパイプするか、モジュール `Save-Help` オブジェクトを **モジュール** または **InputObject** パラメーターの値として送信します。
 
-指定したモジュールがコンピューターにインストールされている場合は、モジュール名またはモジュール オブジェクトを入力できます。
-指定したモジュールがコンピューターにインストールされていない場合は、 **Get-Module** コマンドレットによって返されたモジュール オブジェクトなど、モジュール オブジェクトを入力する必要があります。
+指定したモジュールがコンピューターにインストールされている場合は、モジュール名またはモジュール オブジェクトを入力できます。 モジュールがコンピューターにインストールされていない場合は、コマンドレットによって返されるようなモジュールオブジェクトを入力する必要があり `Get-Module` ます。
 
-**Save Help** コマンドレットの *module* パラメーターは、モジュールファイルまたはモジュールマニフェストファイルの完全パスを受け入れません。
-**PSModulePath** の場所にないモジュールのヘルプを保存するには、[ **保存-ヘルプ** ] コマンドを実行する前に、現在のセッションにモジュールをインポートします。
+コマンドレットの **module** パラメーターは、 `Save-Help` モジュールファイルまたはモジュールマニフェストファイルの完全なパスを受け入れません。 **PSModulePath** の場所にないモジュールのヘルプを保存するには、コマンドを実行する前に、現在のセッションにモジュールをインポートし `Save-Help` ます。
 
 "*" (すべて) の値は、コンピューターにインストールされているすべてのモジュールのヘルプを更新しようとします。
-これには、更新可能なヘルプをサポートしていないモジュールも含まれます。
-この値は、更新可能なヘルプをサポートしていないモジュールがコマンドによって検出された場合にエラーを生成することがあります。
+これには、更新可能なヘルプをサポートしていないモジュールも含まれます。 この値は、更新可能なヘルプをサポートしていないモジュールがコマンドによって検出された場合にエラーを生成することがあります。
 
 ```yaml
 Type: System.Management.Automation.PSModuleInfo[]
@@ -321,14 +301,12 @@ Accept wildcard characters: True
 
 ### -UICulture
 
-このコマンドレットが更新されたヘルプファイルを取得する UI カルチャの値を指定します。
-Es、カルチャオブジェクトを含む変数、または Get-Culture や Get-UICulture コマンドなどのカルチャオブジェクトを取得するコマンドなど、1つまたは複数の言語コードを入力します。
+このコマンドレットが更新されたヘルプファイルを取得する UI カルチャの値を指定します。 1つまたは複数の言語コードを入力し `es-ES` ます。たとえば、カルチャオブジェクトを含む変数や、またはコマンドなどのカルチャオブジェクトを取得するコマンドを入力し `Get-Culture` `Get-UICulture` ます。
 
-ワイルドカード文字は使用できません。
-"De" などの部分言語コードを指定しないでください。
+ワイルドカード文字は使用できません。 "De" などの部分言語コードを指定しないでください。
 
-既定では、[ **ヘルプ** ] は、Windows またはそのフォールバックカルチャに設定されている UI カルチャのヘルプファイルを取得します。
-*UICulture* パラメーターを指定した場合、 **保存時** には、フォールバックカルチャではなく、指定した UI カルチャのヘルプのみが検索されます。
+既定で `Save-Help` は、は、Windows またはそのフォールバックカルチャに設定されている UI カルチャのヘルプファイルを取得します。
+**UICulture** パラメーターを指定すると、は、 `Save-Help` フォールバックカルチャではなく、指定された UI カルチャに対してのみヘルプを検索します。
 
 ```yaml
 Type: System.Globalization.CultureInfo[]
@@ -344,8 +322,7 @@ Accept wildcard characters: False
 
 ### -UseDefaultCredentials
 
-このコマンドレットが、web ダウンロードなどのコマンドを、現在のユーザーの資格情報を使用して実行することを示します。
-既定では、コマンドは明示的な資格情報がない状態で実行されます。
+このコマンドレットが、web ダウンロードなどのコマンドを、現在のユーザーの資格情報を使用して実行することを示します。 既定では、コマンドは明示的な資格情報がない状態で実行されます。
 
 このパラメーターは、Web ダウンロードが、NTLM、Negotiate、または Kerberos ベース認証を使用する場合に限り有効です。
 
@@ -385,7 +362,7 @@ Accept wildcard characters: False
 
 ### PSModuleInfo (システム管理)
 
-パイプを使用して、モジュールオブジェクトを **Get module** コマンドレットから、 **Save-Help** の *module* パラメーターにパイプすることができます。
+パイプを使用して、モジュールオブジェクトを `Get-Module` コマンドレットからの **module** パラメーターに渡し `Save-Help` ます。
 
 ## 出力
 
@@ -395,14 +372,14 @@ Accept wildcard characters: False
 
 ## 注
 
-* モジュールのヘルプを [$pshome] \ [モジュール] フォルダーに保存するには、[管理者として実行] オプションを使用して PowerShell を起動します。 コンピューターの Administrators グループのメンバーだけが、$pshome \ modules フォルダー内のモジュールのヘルプをダウンロードできます。
-* 保存されたモジュール用ヘルプはそれぞれ、UI カルチャごとに、ヘルプ情報 (HelpInfo XML) ファイル 1 つと、ヘルプ ファイルのキャビネット (.cab) ファイル 1 つで構成されます。 キャビネットファイルからヘルプファイルを抽出する必要はありません。 Update-Help コマンドレットは、ヘルプファイルを抽出し、XML を検証した後、モジュールフォルダーの言語固有のサブフォルダーにヘルプファイルとヘルプ情報ファイルをインストールします。
-* **Save-Help** コマンドレットは、コンピューターにインストールされていないモジュールのヘルプを保存できます。 ただし、ヘルプファイルはモジュールフォルダーにインストールされるため、 **update-help コマンドレット** は、コンピューターにインストールされているモジュールに対してのみ、更新されたヘルプファイルをインストールできます。
-* **Save-Help** は、モジュールの更新済みヘルプ ファイルが見つからない場合や、指定された言語の更新済みファイルが見つからない場合、エラー メッセージなどを表示せずに処理を続行します。 コマンドによって保存されたファイルを確認するには、 *Verbose* パラメーターを指定します。
-* モジュールは、更新可能なヘルプの最小単位です。 特定のコマンドレットのヘルプは保存できません。モジュール内のすべてのコマンドレットに対してのみ使用できます。 特定のコマンドレットを含むモジュールを見つけるには、 **ModuleName** プロパティを Get-Command コマンドレットと共に使用します。次に例を示します。 `(Get-Command \<cmdlet-name\>).ModuleName`
-* [ **ヘルプ** ] は、すべてのモジュールと PowerShell Core スナップインをサポートします。その他のスナップインはサポートしていません。
-* Update-help および **get-help コマンド****レットは、** 次のポートを使用してヘルプファイルをダウンロードします: HTTP の場合はポート80、HTTPS の場合はポート443。
-* **Update-Help** および **Save-Help** コマンドレットは、Windows プレインストール環境 (Windows PE) ではサポートされません。
+- モジュールのヘルプを [$pshome] \ [モジュール] フォルダーに保存するには、[管理者として実行] オプションを使用して PowerShell を起動します。 コンピューターの Administrators グループのメンバーだけが、$pshome \ modules フォルダー内のモジュールのヘルプをダウンロードできます。
+- 保存されたモジュール用ヘルプはそれぞれ、UI カルチャごとに、ヘルプ情報 (HelpInfo XML) ファイル 1 つと、ヘルプ ファイルのキャビネット (.cab) ファイル 1 つで構成されます。 キャビネットファイルからヘルプファイルを抽出する必要はありません。 コマンドレットにより、 `Update-Help` ヘルプファイルが抽出され、XML が検証された後、モジュールフォルダーの言語固有のサブフォルダーにヘルプファイルとヘルプ情報ファイルがインストールされます。
+- コマンドレットでは、 `Save-Help` コンピューターにインストールされていないモジュールのヘルプを保存できます。 ただし、ヘルプファイルはモジュールフォルダーにインストールされるため、 `Update-Help` コマンドレットでは、コンピューターにインストールされているモジュールに対してのみ更新されたヘルプファイルをインストールできます。
+- に `Save-Help` よって、モジュールの更新されたヘルプファイルが見つからない場合、または指定された言語で更新されたヘルプファイルが見つからない場合は、エラーメッセージを表示せずに、警告なしで続行されます。 コマンドによって保存されたファイルを確認するには、 **Verbose** パラメーターを指定します。
+- モジュールは、更新可能なヘルプの最小単位です。 特定のコマンドレットのヘルプは保存できません。モジュール内のすべてのコマンドレットに対してのみ使用できます。 特定のコマンドレットを含むモジュールを見つけるには、 **ModuleName** プロパティをコマンドレットと共に使用します。次に例を示します。 `Get-Command``(Get-Command \<cmdlet-name\>).ModuleName`
+- `Save-Help` では、すべてのモジュールと PowerShell Core スナップインがサポートされています。その他のスナップインはサポートしていません。
+- `Update-Help`およびコマンドレットは、次のポートを使用して `Save-Help` ヘルプファイルをダウンロードします。 HTTP の場合はポート80、HTTPS の場合はポート443を使用します。
+- `Update-Help`および `Save-Help` コマンドレットは、Windows プレインストール環境 (Windows PE) ではサポートされていません。
 
 ## 関連リンク
 

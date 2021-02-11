@@ -1,17 +1,17 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,コマンドレット
 title: Windows PowerShell ISE でプロファイルを使用する方法
-ms.openlocfilehash: da7dc2f234ad0c2968fbb213e9e57da875f456e4
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: この記事では、Windows PowerShell ISE でプロファイルを使用する方法について説明します。
+ms.openlocfilehash: e677a4aaa3b2b8b76f289b0797aaa75c80c2b370
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808818"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663746"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Windows PowerShell ISE でプロファイルを使用する方法
 
-このトピックでは、Windows PowerShell® Integrated Scripting Environment (ISE) でプロファイルを使用する方法について説明します。 このセクションのタスクを実行する前に、[about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) を確認するか、またはコンソール ウィンドウに「`Get-Help about_Profiles`」と入力して <kbd>Enter</kbd> キーを押すことをお勧めします。
+この記事では、Windows PowerShell&reg; Integrated Scripting Environment (ISE) でプロファイルを使用する方法について説明します。 このセクションのタスクを実行する前に、[about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) を確認するか、またはコンソール ウィンドウに「`Get-Help about_Profiles`」と入力して <kbd>Enter</kbd> キーを押すことをお勧めします。
 
 プロファイルは、新しいセッションを開始するときに自動的に実行される Windows PowerShell ISE スクリプトです。
 Windows PowerShell ISE 用に 1 つ以上の Windows PowerShell プロファイルを作成すると、Windows PowerShell または Windows PowerShell ISE 環境の構成に、自分の用途に合わせて変数、エイリアス、関数、色やフォントの設定などを追加するために利用できます。 プロファイルは、開始するすべての Windows PowerShell ISE セッションに影響を与えます。
@@ -29,7 +29,7 @@ Windows PowerShell ISE は、現在のユーザーとすべてのユーザーの
 
 - Windows PowerShell を実行するために Windows PowerShell ISE のみを使う場合は、すべての項目を ISE 固有のプロファイルの 1 つに保存します。たとえば、Windows PowerShell ISE 用の **CurrentUserCurrentHost** プロファイルや、Windows PowerShell ISE 用の **AllUsersCurrentHost** プロファイルです。
 
-- Windows PowerShell を実行するために複数のホスト プログラムを使う場合は、関数、エイリアス、変数、コマンドをすべてのホスト プログラムに影響を与えるプロファイルに保存します。たとえば、CurrentUserAllHosts プロファイルや、**AllUsersAllHosts** プロファイルです。また、色やフォントのカスタマイズのような ISE 固有の機能は、Windows PowerShell ISE 用の **CurrentUserCurrentHost** プロファイルか、Windows PowerShell ISE 用の **AllUsersCurrentHost** プロファイルに保存します。
+- Windows PowerShell を実行するために複数のホスト プログラムを使う場合は、関数、エイリアス、変数、コマンドをすべてのホスト プログラムに影響を与えるプロファイルに保存します。たとえば、CurrentUserAllHosts プロファイルや、 **AllUsersAllHosts** プロファイルです。また、色やフォントのカスタマイズのような ISE 固有の機能は、Windows PowerShell ISE 用の **CurrentUserCurrentHost** プロファイルか、Windows PowerShell ISE 用の **AllUsersCurrentHost** プロファイルに保存します。
 
 Windows PowerShell ISE で作成して利用できるプロファイルは次のとおりです。 各プロファイルは、それぞれ特定のパスに保存されます。
 

@@ -1,12 +1,14 @@
 ---
-title: View (Format) の CustomControl の ItemSelectionCondition の ScriptBlock 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 31873e886af04f8eedaf859af1d6bc1d5bcfdbf7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の CustomControl の ItemSelectionCondition の ScriptBlock 要素 (書式)
+description: View の CustomControl の ItemSelectionCondition の ScriptBlock 要素 (書式)
+ms.openlocfilehash: d762f400f5bb52af314093079fe94223c56d3f31
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772877"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665132"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format"></a>View の CustomControl の ItemSelectionCondition の ScriptBlock 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-この要素が使用されている場合、選択条件を定義するときに[PropertyName](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)要素を指定することはできません。
+この要素が使用されている場合、選択条件を定義するときに [PropertyName](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md) 要素を指定することはできません。
 
 ## <a name="see-also"></a>参照
 

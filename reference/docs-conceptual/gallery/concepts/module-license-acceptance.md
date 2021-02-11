@@ -1,14 +1,13 @@
 ---
 ms.date: 06/09/2017
-schema: 2.0.0
-keywords: powershell
 title: ライセンスへの同意が必要なモジュール
-ms.openlocfilehash: a2f7ed72aae8579a6723f65b86dd0993f1a22afd
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PowerShell ギャラリーで公開されているモジュールのうち、エンド ユーザー ライセンスの受け入れを必要とするものの取り扱い方法について説明します。
+ms.openlocfilehash: a9486e10b10569ce8bcde47d5c8acf0796a93851
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80082814"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656123"
 ---
 # <a name="modules-requiring-license-acceptance"></a>ライセンスへの同意が必要なモジュール
 
@@ -28,7 +27,7 @@ ms.locfileid: "80082814"
 ## <a name="impact-on-installsaveupdate-module"></a>Install/Save/Update-Module に対する影響
 
 - Install、Save、Update コマンドレットでは、ユーザーがライセンスを確認した場合と同じ動作をする新しいパラメーター **AcceptLicense** がサポートされています。
-- **RequiredLicenseAcceptance** が True で、**AcceptLicense** が指定されていない場合、ユーザーには `license.txt` が表示され、次のプロンプトが表示されます: `Do you accept these license terms
+- **RequiredLicenseAcceptance** が True で、 **AcceptLicense** が指定されていない場合、ユーザーには `license.txt` が表示され、次のプロンプトが表示されます: `Do you accept these license terms
   (Yes/No/YesToAll/NoToAll)`。
   - ライセンスに同意した場合:
     - **Save-Module:** ユーザーのシステムにモジュールがコピーされます
@@ -36,7 +35,7 @@ ms.locfileid: "80082814"
     - **Update-Module:** モジュールが更新されます。
   - ライセンスを拒否した場合:
     - 操作は取り消されます。
-    - すべてのコマンドレットで、ライセンスへの同意が必要であることを示すメタデータ (**requireLicenseAcceptance** および形式のバージョン) が確認されます
+    - すべてのコマンドレットで、ライセンスへの同意が必要であることを示すメタデータ ( **requireLicenseAcceptance** および形式のバージョン) が確認されます
     - クライアントの形式のバージョンが 2.0 よりも前の場合、操作は失敗し、ユーザーはクライアントを更新するように求められます。
     - 2\.0 よりも前の形式のバージョンを使用してモジュールが発行されている場合、requireLicenseAcceptance フラグは無視されます。
 

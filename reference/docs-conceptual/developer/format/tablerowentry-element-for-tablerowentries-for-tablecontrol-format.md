@@ -1,12 +1,14 @@
 ---
-title: TableControl (Format) の TableRowEntries の TableRowEntry 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 83076ae5b2c48992ce5e621c65fc9937efb68b87
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl の TableRowEntries の TableRowEntry 要素 (書式)
+description: TableControl の TableRowEntries の TableRowEntry 要素 (書式)
+ms.openlocfilehash: 60d64b7c14b40e87825ada36e19f52a66fe8b6cb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787412"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659769"
 ---
 # <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>TableControl の TableRowEntries の TableRowEntry 要素 (書式)
 
@@ -50,11 +52,11 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 1つ `TableColumnItems` の要素と1つの `EntrySelectedBy` 要素を指定する必要があります。
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、system.string `TableRowEntry` オブジェクトの2つのプロパティの値を表示する行を[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)定義する要素を示しています。
+次の例は、system.string `TableRowEntry` オブジェクトの2つのプロパティの値を表示する行を[](/dotnet/api/System.Diagnostics.Process)定義する要素を示しています。
 
 ```xml
 <TableRowEntry>

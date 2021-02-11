@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
-ms.openlocfilehash: 3ae91d03e6882eeaf6743d11cfeed5d0ed1aae0c
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: ef44fefe68ef9674eb14ce494341bf04f477d55a
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93219667"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693011"
 ---
 # Add-Content
 
@@ -212,7 +211,7 @@ Encoding は、FileSystem プロバイダーによってコマンドレットに
 PowerShell 6.2 以降では、 **Encoding** パラメーターを使用して、登録されているコードページの数値 id (など) `-Encoding 1251` や、登録されているコードページの文字列名 (など) を使用することもでき `-Encoding "windows-1251"` ます。 詳細については、 [コードページ](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)の .net ドキュメントを参照してください。
 
 > [!NOTE]
-> **Utf-7** * の使用は推奨されなくなりました。 PowerShell 7.1 では、Encoding パラメーターにを指定すると、警告が書き込まれ `utf7` ます。 **Encoding**
+> **Utf-7** _ の使用は推奨されなくなりました。 PowerShell 7.1 では、 `utf7` _ *Encoding** パラメーターにを指定すると、警告が書き込まれます。
 
 ```yaml
 Type: System.Text.Encoding
@@ -229,7 +228,7 @@ Accept wildcard characters: False
 
 ### -除外
 
-このコマンドレットによって操作で除外される項目を文字列配列として指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Exclude** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+このコマンドレットによって操作で除外される項目を文字列配列として指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Exclude** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -262,7 +261,7 @@ Accept wildcard characters: True
 
 ### -Force
 
-読み取り専用属性をオーバーライドし、読み取り専用ファイルに内容を追加できるようにします。 たとえば、 **Force** を指定すると、読み取り専用属性がオーバーライドされるか、ファイル パスを完成させるためにディレクトリが作成されますが、ファイルのアクセス許可は変更されません。
+読み取り専用属性をオーバーライドし、読み取り専用ファイルに内容を追加できるようにします。 たとえば、**Force** を指定すると、読み取り専用属性がオーバーライドされるか、ファイル パスを完成させるためにディレクトリが作成されますが、ファイルのアクセス許可は変更されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -278,7 +277,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `"*.txt"` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `"*.txt"` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -366,11 +365,14 @@ Accept wildcard characters: True
 
 ### -ストリーム
 
+> [!NOTE]
+> このパラメーターは Windows でのみ使用できます。
+
 コンテンツの代替データストリームを指定します。 ストリームが存在しない場合は、このコマンドレットによって作成されます。 ワイルドカード文字はサポートされていません。
 
 **Stream** は、FileSystem プロバイダーによってに追加される動的パラメーターです `Add-Content` 。 このパラメーターはファイル システム ドライブでのみ機能します。
 
-コマンドレットを使用して、 `Add-Content` ゾーンの内容を変更でき **ます。識別子** 代替データストリーム。 ただし、インターネットからダウンロードされたファイルをブロックするセキュリティチェックを省略する方法としては、この方法をお勧めしません。 ダウンロードしたファイルが安全であることを確認した場合は、コマンドレットを使用し `Unblock-File` ます。
+コマンドレットを使用して、など `Add-Content` の代替データストリームの内容を変更でき `Zone.Identifier` ます。 ただし、インターネットからダウンロードされたファイルをブロックするセキュリティチェックを省略する方法としては、この方法をお勧めしません。 ダウンロードしたファイルが安全であることを確認した場合は、コマンドレットを使用し `Unblock-File` ます。
 
 このパラメーターは、PowerShell 3.0 で導入されました。
 
@@ -438,6 +440,7 @@ Accept wildcard characters: False
 ```
 
 ### 共通パラメーター
+
 このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
 
 ## 入力
@@ -473,4 +476,3 @@ Accept wildcard characters: False
 [New-Item](New-Item.md)
 
 [Set-Content](Set-Content.md)
-

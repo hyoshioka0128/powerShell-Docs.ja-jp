@@ -7,12 +7,12 @@ ms.date: 3/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExecutionPolicy
-ms.openlocfilehash: d33961d9c0b1980d84d35a33c45d965e84231914
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 347ffa733068d4e7f4896eb18358c7a852c88d0a
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93217496"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347280"
 ---
 # Get-ExecutionPolicy
 
@@ -21,7 +21,7 @@ ms.locfileid: "93217496"
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 Get-ExecutionPolicy [[-Scope] <ExecutionPolicyScope>] [-List] [<CommonParameters>]
@@ -205,6 +205,8 @@ Accept wildcard characters: False
 
 ### Microsoft.PowerShell.ExecutionPolicy
 
+コマンドレットは、Linux および macOS プラットフォームでは常に **無制限** を返します。
+
 ## 注
 
 実行ポリシーは、PowerShell のセキュリティ戦略の一部です。 実行ポリシーは、PowerShell プロファイルなどの構成ファイルを読み込むか、スクリプトを実行できるかどうかを決定します。 また、スクリプトを実行する前に、そのスクリプトをデジタル署名する必要があるかどうかを示します。
@@ -220,4 +222,3 @@ Accept wildcard characters: False
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
-

@@ -1,12 +1,14 @@
 ---
-title: TableControl の EntrySelectedBy の TypeName 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c514d3e6155278ddd3a0565c87e9377dc8419356
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl の EntrySelectedBy の TypeName 要素 (書式)
+description: TableControl の EntrySelectedBy の TypeName 要素 (書式)
+ms.openlocfilehash: 5a9f5cda1810d461d19ffb48a1cfa2d41f87ca96
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780204"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651429"
 ---
 # <a name="typename-element-for-entryselectedby-for-tablecontrol-format"></a>TableControl の EntrySelectedBy の TypeName 要素 (書式)
 
@@ -46,7 +48,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 各リストエントリには、少なくとも1つの型名、選択セット、または選択条件が定義されている必要があります。
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

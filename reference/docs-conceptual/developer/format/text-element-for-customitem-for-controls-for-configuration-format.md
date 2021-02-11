@@ -1,12 +1,14 @@
 ---
-title: 構成用のコントロールの CustomItem のテキスト要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d9f9687f9fb47f2085b25899193dda85b8fa068b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Configuration の Controls の CustomItem の Text 要素 (書式)
+description: Configuration の Controls の CustomItem の Text 要素 (書式)
+ms.openlocfilehash: 9ea70ade8e86d8278ee95bd4d93dfa5ba9d8160b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787395"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664718"
 ---
 # <a name="text-element-for-customitem-for-controls-for-configuration-format"></a>Configuration の Controls の CustomItem の Text 要素 (書式)
 

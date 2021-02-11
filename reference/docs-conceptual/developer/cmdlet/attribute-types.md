@@ -1,12 +1,14 @@
 ---
-title: 属性の種類 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 96fdd38ba10eb748ab0762f0c910463dd472494d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 属性の種類
+description: 属性の種類
+ms.openlocfilehash: 65640f2f8449887dedb9fae137eb16b6252f1d57
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782380"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667115"
 ---
 # <a name="attribute-types"></a>属性の種類
 
@@ -19,19 +21,19 @@ ms.locfileid: "87782380"
 
 .NET Framework クラスをコマンドレットとして識別します。
 これは必須の基本属性です。
-詳細については、「[コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
+詳細については、「 [コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
 
 ## <a name="parameter-attributes"></a>パラメーター属性
 
 ### <a name="parameter"></a>パラメーター
 
 コマンドレットパラメーターとしてコマンドレットクラスのパブリックプロパティを識別します。
-詳細については、「[パラメーター属性の宣言](./parameter-attribute-declaration.md)」を参照してください。
+詳細については、「 [パラメーター属性の宣言](./parameter-attribute-declaration.md)」を参照してください。
 
 ### <a name="alias"></a>エイリアス
 
 パラメーターの1つ以上のエイリアスを指定します。
-詳細については、「[エイリアス属性の宣言](./alias-attribute-declaration.md)」を参照してください。
+詳細については、「 [エイリアス属性の宣言](./alias-attribute-declaration.md)」を参照してください。
 
 ## <a name="argument-validation-attributes"></a>引数の検証属性
 

@@ -1,22 +1,24 @@
 ---
-title: Vmhost01 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a2ef53d36697d5637dff3de8a286902984f3c5a1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Host01 サンプル
+description: Host01 サンプル
+ms.openlocfilehash: b4f1a81044a51855ad7decc25e1f5b1215ab0d62
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772253"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355478"
 ---
 # <a name="host01-sample"></a>Host01 サンプル
 
-このサンプルでは、カスタムホストを使用するホストアプリケーションを実装する方法を示します。 このサンプルでは、カスタムホストを使用する実行空間が作成され、その[後、"](/dotnet/api/System.Management.Automation.PowerShell) exit" を呼び出すスクリプトを実行するために使用されます。 ホスト アプリケーションはスクリプトの出力を確認し、結果を印刷します。
+このサンプルでは、カスタムホストを使用するホストアプリケーションを実装する方法を示します。 このサンプルでは、カスタムホストを使用する実行空間が作成され、その [後、"](/dotnet/api/System.Management.Automation.PowerShell) exit" を呼び出すスクリプトを実行するために使用されます。 ホスト アプリケーションはスクリプトの出力を確認し、結果を印刷します。
 
- このサンプルでは、Windows PowerShell によって提供される既定の UI 機能を使用します。 カスタムホストの UI 機能の実装の詳細については、「 [Host02 Sample](./host02-sample.md)」を参照してください。
+このサンプルでは、Windows PowerShell によって提供される既定の UI 機能を使用します。 カスタムホストの UI 機能の実装の詳細については、「 [Host02 Sample](./host02-sample.md)」を参照してください。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
- このサンプルには、Windows PowerShell 2.0 が必要です。
+このサンプルには、Windows PowerShell 2.0 が必要です。
 
 ## <a name="demonstrates"></a>対象
 
@@ -24,13 +26,13 @@ ms.locfileid: "87772253"
 
 - カスタムホストクラスを使用する実行空間を作成する。
 
-- Exit を呼び出すスクリプトを実行する、 [system.string オブジェクトを](/dotnet/api/System.Management.Automation.PowerShell)作成します。
+- Exit を呼び出すスクリプトを実行する、 [system.string オブジェクトを](/dotnet/api/System.Management.Automation.PowerShell) 作成します。
 
 - 終了プロセスで正しい終了コードが使用されたことを確認しています。
 
-## <a name="example"></a>例
+## <a name="example-1"></a>例 1
 
- 次のコードは、単純なカスタムホストインターフェイスを使用するホストアプリケーションの実装を示しています。
+次のコードは、単純なカスタムホストインターフェイスを使用するホストアプリケーションの実装を示しています。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -130,9 +132,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>例
+## <a name="example-2"></a>例 2
 
- 次のコードは、このホストアプリケーションで使用される[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
+次のコードは、このホストアプリケーションで使用される [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -301,4 +303,4 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

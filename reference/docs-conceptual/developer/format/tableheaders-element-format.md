@@ -1,12 +1,14 @@
 ---
-title: TableHeaders 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b3176cbe1316d5b30cb61831d9915a80389709a5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableHeaders 要素 (Format)
+description: TableHeaders 要素 (Format)
+ms.openlocfilehash: 5ac4dccae746c167ebf95add9f3d18030a2b3a99
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787429"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659819"
 ---
 # <a name="tableheaders-element-format"></a>TableHeaders 要素 (Format)
 
@@ -45,7 +47,7 @@ ViewDefinitions 要素 (Format) ビュー要素 (Format) TableControl Element (F
 
 ## <a name="remarks"></a>解説
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 

@@ -1,12 +1,14 @@
 ---
-title: PowerShell バイナリモジュールを記述する方法 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 92395bd6b8be1bd3741888eb3716d62f0253e213
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PowerShell バイナリ モジュールを記述する方法
+description: PowerShell バイナリ モジュールを記述する方法
+ms.openlocfilehash: 1d5cea474ac418f78cc782360b7c23b7614d6669
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779269"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92663076"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>PowerShell バイナリ モジュールを記述する方法
 
@@ -68,11 +70,11 @@ ms.locfileid: "87779269"
 
    `PSModulePath`グローバル環境変数は、PowerShell がモジュールを検索するために使用する既定のパスを記述します。 たとえば、システムにモジュールを保存するための一般的なパスは、のようになり `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>` ます。 既定のパスを使用しない場合は、インストール中にモジュールの場所を明示的に指定する必要があります。 ソリューションの複数のアセンブリとファイルを格納するフォルダーが必要になる場合があるので、モジュールを保存するためのフォルダーを必ず作成してください。
 
-   技術的には、でモジュールをインストールする必要がないことに注意してください `PSModulePath` 。これらは、PowerShell がモジュールを検索する既定の場所です。 ただし、モジュールを他の場所に格納することが適切な理由がない限り、ベストプラクティスと考えてください。 詳細については、「 [Powershell モジュールのインストール](./installing-a-powershell-module.md)」および「 [Powershell モジュールのインストールパスの変更](./modifying-the-psmodulepath-installation-path.md)」を参照してください。
+   技術的には、でモジュールをインストールする必要がないことに注意してください `PSModulePath` 。これらは、PowerShell がモジュールを検索する既定の場所です。 ただし、モジュールを他の場所に格納することが適切な理由がない限り、ベストプラクティスと考えてください。 詳細については、「 [Powershell モジュールのインストール](./installing-a-powershell-module.md) 」および「 [Powershell モジュールのインストールパスの変更](./modifying-the-psmodulepath-installation-path.md)」を参照してください。
 
 4. モジュールを PowerShell にインポートし[、モジュールを呼び出します。](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
 
-   モジュールを[インポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)するためにを呼び出すと、モジュールがアクティブメモリに読み込まれます。 PowerShell 3.0 以降を使用している場合は、コードでモジュールの名前を呼び出すだけでもインポートされます。詳細については、「 [PowerShell モジュールのインポート](./importing-a-powershell-module.md)」を参照してください。
+   モジュールを [インポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module) するためにを呼び出すと、モジュールがアクティブメモリに読み込まれます。 PowerShell 3.0 以降を使用している場合は、コードでモジュールの名前を呼び出すだけでもインポートされます。詳細については、「 [PowerShell モジュールのインポート](./importing-a-powershell-module.md)」を参照してください。
 
 ## <a name="importing-snap-in-assemblies-as-modules"></a>モジュールとしてのスナップインアセンブリのインポート
 
@@ -84,4 +86,4 @@ ms.locfileid: "87779269"
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell モジュールの作成](./writing-a-windows-powershell-module.md)
+[Windows PowerShell モジュールを記述する](./writing-a-windows-powershell-module.md)

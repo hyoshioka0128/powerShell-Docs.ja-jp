@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の CustomControlName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4e3102f12cd37fa72a2de1bf1db5d1f82db31222
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の CustomControlName 要素 (書式)
+description: GroupBy の CustomControlName 要素 (書式)
+ms.openlocfilehash: 03664fe4d5559312e2720a3892493c90c15f7501
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783740"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655420"
 ---
 # <a name="customcontrolname-element-for-groupby-format"></a>GroupBy の CustomControlName 要素 (書式)
 

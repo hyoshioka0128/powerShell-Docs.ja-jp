@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/wait-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Process
-ms.openlocfilehash: 38e225a1973022f82a40694cfad89b94d050509e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6fe942f98183a3b185adf5781699bf41d03db920
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93214328"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343363"
 ---
 # Wait-Process
 
@@ -40,11 +40,10 @@ Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
 ```
 
 ## Description
-**Wait Process** コマンドレットは、実行中の1つ以上のプロセスが、入力を受け入れる前に停止するのを待機します。
-このコマンドレットによって、プロセスが停止するまで Windows PowerShell コンソールにコマンド プロンプトが表示されません。
-プロセスは、プロセス名またはプロセス ID (PID) を使用して指定することも、プロセスオブジェクトを **待機プロセス** にパイプすることもできます。
 
-**待機プロセス** は、ローカルコンピューター上で実行されているプロセスでのみ機能します。
+`Wait-Process`コマンドレットは、実行中の1つ以上のプロセスが、入力を受け入れる前に停止するのを待機します。 PowerShell コンソールでは、このコマンドレットにより、プロセスが停止するまでコマンドプロンプトが表示されなくなります。 プロセスは、プロセス名またはプロセス ID (PID) で指定することも、パイプを使用してに処理することもでき `Wait-Process` ます。
+
+`Wait-Process` ローカルコンピューター上で実行されているプロセスでのみ機能します。
 
 ## 例
 
@@ -58,13 +57,11 @@ PS C:\> Wait-Process -Id $nid
 
 この例では、メモ帳のプロセスを停止し、プロセスが停止するまで待機してから、次のコマンドに進みます。
 
-最初のコマンドは、 **Get process** コマンドレットを使用して、メモ帳のプロセスの ID を取得します。
-ID は $nid 変数に格納されます。
+最初のコマンドは、 `Get-Process` コマンドレットを使用して、メモ帳のプロセスの ID を取得します。 ID は変数に格納され `$nid` ます。
 
-2番目のコマンドは、Stop-Process コマンドレットを使用して、$nid に格納されている ID を使用してプロセスを停止します。
+2番目のコマンドは、コマンドレットを使用して、 `Stop-Process` に格納されている ID を使用してプロセスを停止し `$nid` ます。
 
-3番目のコマンドは、 **待機プロセス** を使用して、Notepad プロセスが停止するまで待機します。
-プロセスを識別するために、 **待機プロセス** の *Id* パラメーターを使用します。
+3番目のコマンドは、を使用して `Wait-Process` 、Notepad プロセスが停止するまで待機します。 の **Id** パラメーターを使用して `Wait-Process` プロセスを識別します。
 
 ### 例 2: プロセスを指定する
 
@@ -75,10 +72,9 @@ PS C:\> Wait-Process -Name "notepad"
 PS C:\> Wait-Process -InputObject $p
 ```
 
-これらのコマンドは、プロセスを **待機** するプロセスを指定する3つの異なる方法を示しています。
-最初のコマンドは、メモ帳のプロセスを取得し、$p 変数に格納します。
+これらのコマンドは、にプロセスを指定する3つの異なる方法を示して `Wait-Process` います。 最初のコマンドは、メモ帳のプロセスを取得し、変数に格納し `$p` ます。
 
-2番目のコマンドは *Id* パラメーターを使用し、3番目のコマンドは *Name* パラメーターを使用し、4番目のコマンドは *InputObject* パラメーターを使用します。
+2番目のコマンドは **Id** パラメーターを使用し、3番目のコマンドは **Name** パラメーターを使用し、4番目のコマンドは **InputObject** パラメーターを使用します。
 
 これらのコマンドの結果はすべて同じであり、置き換えて使用することもできます。
 
@@ -88,14 +84,13 @@ PS C:\> Wait-Process -InputObject $p
 PS C:\> Wait-Process -Name outlook, winword -Timeout 30
 ```
 
-このコマンドは、Outlook と Winword の各プロセスが停止するまで 30 秒間待ちます。
-プロセスがいずれも停止しない場合、コマンドレットによって未終了エラーが表示され、コマンド プロンプトが表示されます。
+このコマンドは、Outlook と Winword の各プロセスが停止するまで 30 秒間待ちます。 プロセスがいずれも停止しない場合、コマンドレットによって未終了エラーが表示され、コマンド プロンプトが表示されます。
 
 ## PARAMETERS
 
 ### -Id
-プロセスのプロセス ID を指定します。
-複数の ID を指定するには、ID をコンマで区切ります。
+
+プロセスのプロセス ID を指定します。 複数の ID を指定するには、ID をコンマで区切ります。
 プロセスの PID を検索するには、「」と入力 `Get-Process` します。
 
 ```yaml
@@ -111,8 +106,8 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-プロセス オブジェクトを送信して、プロセスを指定します。
-プロセスオブジェクトが格納されている変数を入力するか、Get-Process コマンドレットなどのプロセスオブジェクトを取得するコマンドまたは式を入力します。
+
+プロセス オブジェクトを送信して、プロセスを指定します。 プロセスオブジェクトが格納されている変数を入力するか、コマンドレットなどのプロセスオブジェクトを取得するコマンドまたは式を入力し `Get-Process` ます。
 
 ```yaml
 Type: System.Diagnostics.Process[]
@@ -127,9 +122,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-プロセスのプロセス名を指定します。
-複数の名前を指定するには、名前をコンマで区切ります。
-ワイルドカード文字はサポートされていません。
+
+プロセスのプロセス名を指定します。 複数の名前を指定するには、名前をコンマで区切ります。 ワイルドカード文字はサポートされていません。
 
 ```yaml
 Type: System.String[]
@@ -144,9 +138,9 @@ Accept wildcard characters: False
 ```
 
 ### -タイムアウト
+
 このコマンドレットが、指定されたプロセスを停止するまで待機する最大時間を秒単位で指定します。
-この時間が経過すると、まだ実行中のプロセスの一覧を示す未終了エラーが表示され、待機動作が終了します。
-既定では、タイムアウトはありません。
+この時間が経過すると、まだ実行中のプロセスの一覧を示す未終了エラーが表示され、待機動作が終了します。 既定では、タイムアウトはありません。
 
 ```yaml
 Type: System.Int32
@@ -161,23 +155,24 @@ Accept wildcard characters: False
 ```
 
 ### 共通パラメーター
+
 このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
 
 ## 入力
 
 ### System.Diagnostics.Process
+
 パイプを使用してプロセスオブジェクトをこのコマンドレットに渡します。
 
 ## 出力
 
 ### なし
+
 このコマンドレットは出力を生成しません。
 
 ## 注
 
-* このコマンドレットは、system.servicemodel クラスの **Waitforexit** メソッドを使用します。 このメソッドの詳細については、「Microsoft .NET Framework SDK」を参照してください。
-
-*
+このコマンドレットは、 **system.servicemodel クラスの** **waitforexit** メソッドを使用します。
 
 ## 関連リンク
 

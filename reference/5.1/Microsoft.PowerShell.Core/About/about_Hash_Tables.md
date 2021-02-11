@@ -6,17 +6,16 @@ ms.date: 11/28/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Hash_Tables
-ms.openlocfilehash: 1e8845e54b96fc3facf8a5b1a19ff52a5293921c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 3becc982ac49868dca3b0c7ca20707307298547d
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223459"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387075"
 ---
 # <a name="about-hash-tables"></a>ハッシュテーブルについて
 
 ## <a name="short-description"></a>概要
-
 PowerShell でハッシュテーブルを作成、使用、および並べ替える方法について説明します。
 
 ## <a name="long-description"></a>詳細説明
@@ -246,20 +245,20 @@ Remove(Key)
 $hash.Remove("Time")
 ```
 
-PowerShell では、Hashtable オブジェクトのすべてのプロパティとメソッド (Contains、Clear、Clone、CopyTo など) を使用できます。 Hashtable オブジェクトの詳細については、MSDN の「system.string」を参照してください。
+PowerShell では、Hashtable オブジェクトのすべてのプロパティとメソッド (Contains、Clear、Clone、CopyTo など) を使用できます。 Hashtable オブジェクトの詳細については [、「system.string](/dotnet/api/system.collections.hashtable)」を参照してください。
 
 ### <a name="object-types-in-hashtables"></a>ハッシュテーブルのオブジェクトの種類
 
 ハッシュテーブル内のキーと値は任意の .NET オブジェクト型を持つことができ、1つのハッシュテーブルには複数の型のキーと値を含めることができます。
 
-次のステートメントでは、プロセス名の文字列のハッシュテーブルを作成し、オブジェクトの値を処理して、p 変数に保存し \$ ます。
+次のステートメントでは、プロセス名の文字列のハッシュテーブルを作成し、オブジェクトの値を処理して、変数に保存し `$p` ます。
 
 ```powershell
-$p = @{"PowerShell" = (get-process PowerShell);
-"Notepad" = (get-process notepad)}
+$p = @{"PowerShell" = (Get-Process PowerShell);
+"Notepad" = (Get-Process notepad)}
 ```
 
-P でハッシュテーブルを表示し、キー名プロパティを使用して値を表示することができ \$ ます。
+でハッシュテーブルを表示し、キー名プロパティを使用して値を表示することができ `$p` ます。
 
 ```powershell
 C:\PS> $p
@@ -280,7 +279,7 @@ C:\PS> $p.keys | foreach {$p.$_.handles}
 251
 ```
 
-ハッシュテーブル内のキーは、任意の .NET 型にすることもできます。 次のステートメントは、p 変数のハッシュテーブルにキーと値のペアを追加し \$ ます。 キーは、WinRM サービスを表すサービスオブジェクトであり、値はサービスの現在の状態です。
+ハッシュテーブル内のキーは、任意の .NET 型にすることもできます。 次のステートメントは、変数のハッシュテーブルにキーと値のペアを追加し `$p` ます。 キーは、WinRM サービスを表すサービスオブジェクトであり、値はサービスの現在の状態です。
 
 ```powershell
 C:\PS> $p = $p + @{(Get-Service WinRM) = ((Get-Service WinRM).Status)}
@@ -309,7 +308,7 @@ C:\PS> $p.keys | foreach {$_.name}
 winrm
 ```
 
-ハッシュテーブル内のキーと値は、Hashtable オブジェクトにすることもできます。 次のステートメントでは、キー \$ が文字列、Hash2、値が3つのキーと値のペアを持つハッシュテーブルにキーと値のペアを追加します。
+ハッシュテーブル内のキーと値は、Hashtable オブジェクトにすることもできます。 次のステートメントでは、キーが文字列である変数のハッシュテーブルにキーと値のペアを追加し、 `$p` 値は、3つのキーと値のペアを持つハッシュテーブルに Hash2 ます。
 
 ```powershell
 C:\PS> $p = $p + @{"Hash2"= @{a=1; b=2; c=3}}
@@ -345,7 +344,7 @@ C:\PS> $p.Hash2.b
 
 ハッシュテーブルを並べ替えることはできませんが、ハッシュテーブルの GetEnumerator メソッドを使用してキーと値を列挙し、Sort-Object コマンドレットを使用して列挙値を並べ替えて表示することができます。
 
-たとえば、次のコマンドは、p 変数内のハッシュテーブルのキーと値を列挙し、 \$ キーをアルファベット順に並べ替えます。
+たとえば、次のコマンドは、変数内のハッシュテーブル内のキーと値を列挙 `$p` し、キーをアルファベット順に並べ替えます。
 
 ```powershell
 C:\PS> $p.GetEnumerator() | Sort-Object -Property key

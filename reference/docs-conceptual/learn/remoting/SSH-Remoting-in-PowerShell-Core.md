@@ -3,10 +3,10 @@ title: SSH 経由の PowerShell リモート処理
 ms.date: 10/19/2020
 description: PowerShell のリモート処理用に SSH プロトコルを設定する方法について説明します。
 ms.openlocfilehash: c3373ac30fd915d42e8c9fb7f1eae348a2aee7f1
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501339"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH 経由の PowerShell リモート処理
@@ -25,11 +25,11 @@ SSH リモート処理では、Windows コンピューターと Linux コンピ�
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-リモート セッションを作成するには、 **HostName** パラメーターでターゲット コンピューターを指定し、 **UserName** でユーザー名を指定します。 コマンドレットを対話的に実行する場合は、パスワードの入力を求められます。 また、 **KeyFilePath** パラメーターでプライベート キー ファイルを使用して、SSH キー認証を使用することもできます。 SSH 認証用のキーの作成は、プラットフォームによって異なります。
+リモート セッションを作成するには、**HostName** パラメーターでターゲット コンピューターを指定し、**UserName** でユーザー名を指定します。 コマンドレットを対話的に実行する場合は、パスワードの入力を求められます。 また、**KeyFilePath** パラメーターでプライベート キー ファイルを使用して、SSH キー認証を使用することもできます。 SSH 認証用のキーの作成は、プラットフォームによって異なります。
 
 ## <a name="general-setup-information"></a>一般的なセットアップ情報
 
-PowerShell 6 以降と SSH がすべてのコンピューターにインストールされている必要があります。 コンピューター間でリモート処理を行うには、SSH クライアント (`ssh.exe`) とサーバー (`sshd.exe`) の両方をインストールします。 OpenSSH for Windows が Windows 10 ビルド 1809 と Windows Server 2019 で利用できるようになりました。 詳細については、[OpenSSH で Windows を管理する](/windows-server/administration/openssh/openssh_overview)方法に関するページを参照してください。 Linux の場合、お使いのプラットフォームに適した SSH (sshd サーバーを含む) をインストールします。 また、SSH リモート処理の機能を取得するために、GitHub から PowerShell をインストールする必要があります。 SSH サーバーは、リモート コンピューター上で PowerShell プロセスをホストする SSH サブシステムを作成するように構成される必要があります。 また、 **パスワード** や **キーベース** の認証を有効にする必要があります。
+PowerShell 6 以降と SSH がすべてのコンピューターにインストールされている必要があります。 コンピューター間でリモート処理を行うには、SSH クライアント (`ssh.exe`) とサーバー (`sshd.exe`) の両方をインストールします。 OpenSSH for Windows が Windows 10 ビルド 1809 と Windows Server 2019 で利用できるようになりました。 詳細については、[OpenSSH で Windows を管理する](/windows-server/administration/openssh/openssh_overview)方法に関するページを参照してください。 Linux の場合、お使いのプラットフォームに適した SSH (sshd サーバーを含む) をインストールします。 また、SSH リモート処理の機能を取得するために、GitHub から PowerShell をインストールする必要があります。 SSH サーバーは、リモート コンピューター上で PowerShell プロセスをホストする SSH サブシステムを作成するように構成される必要があります。 また、**パスワード** や **キーベース** の認証を有効にする必要があります。
 
 ## <a name="set-up-on-a-windows-computer"></a>Windows コンピューターでの設定
 

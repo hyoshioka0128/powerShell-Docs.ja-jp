@@ -1,23 +1,25 @@
 ---
-title: ErrorRecord オブジェクトの解釈 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 249fff7d14023806d75aeca40f4d9b7231e14311
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ErrorRecord オブジェクトを解釈する
+description: ErrorRecord オブジェクトを解釈する
+ms.openlocfilehash: 5a8556e0ba83e54dd197ed03665a119f0b565f2b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786596"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666877"
 ---
 # <a name="interpreting-errorrecord-objects"></a>ErrorRecord オブジェクトを解釈する
 
-ほとんどの場合、 [System. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトは、コマンドまたはスクリプトによって生成される終了しないエラーを表します。 終了エラーでは、 [Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord)インターフェイスを使用して、errorrecord 内の追加情報を指定することもできます。
+ほとんどの場合、 [System. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) オブジェクトは、コマンドまたはスクリプトによって生成される終了しないエラーを表します。 終了エラーでは、 [Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) インターフェイスを使用して、errorrecord 内の追加情報を指定することもできます。
 
-コマンドまたはスクリプトの実行中に発生した特定のエラーを処理するためのエラーハンドラーをスクリプトまたはホストに記述する場合は、処理するエラーのクラスを表すかどうかを判断するために、[システムの管理](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトを解釈する必要があります。
+コマンドまたはスクリプトの実行中に発生した特定のエラーを処理するためのエラーハンドラーをスクリプトまたはホストに記述する場合は、処理するエラーのクラスを表すかどうかを判断するために、 [システムの管理](/dotnet/api/System.Management.Automation.ErrorRecord) オブジェクトを解釈する必要があります。
 
 コマンドレットで終了または終了しないエラーが発生した場合は、エラー状態を説明するエラーレコードを作成する必要があります。 ホストアプリケーションは、これらのエラーレコードを調査し、エラーを軽減する何らかのアクションを実行する必要があります。 また、ホストアプリケーションは、レコードを処理できなかったが続行できた、終了しないエラーのエラーレコードを調査する必要があります。また、パイプラインの停止の原因となったエラーを終了するために、エラーレコードを調査する必要があります。
 
 > [!NOTE]
-> 終了エラーの場合、コマンドレットは[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッドを呼び出します。 終了しないエラーの場合、コマンドレットは[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドを呼び出します。
+> 終了エラーの場合、コマンドレットは [Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) メソッドを呼び出します。 終了しないエラーの場合、コマンドレットは [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) メソッドを呼び出します。
 
 ## <a name="error-record-design"></a>エラーレコードのデザイン
 
@@ -37,7 +39,7 @@ ms.locfileid: "87786596"
 
 ### <a name="the-error-category"></a>エラーカテゴリ
 
-エラーレコードのエラーカテゴリは、 [Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙型によって提供される定義済み定数の1つです。 この情報は、[システム](/dotnet/api/System.Management.Automation.ErrorRecord)の管理. errorrecord オブジェクトの system.servicemodel [info](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo)プロパティを使用して取得できます ()。
+エラーレコードのエラーカテゴリは、 [Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) 列挙型によって提供される定義済み定数の1つです。 この情報は、[システム](/dotnet/api/System.Management.Automation.ErrorRecord)の管理. errorrecord オブジェクトの system.servicemodel [info](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo)プロパティを使用して取得できます ()。
 
 コマンドレットでは、CloseError、OpenError、InvalidType、ReadError、および WriteError の各カテゴリとその他のエラーカテゴリを指定できます。 ホストアプリケーションはエラーカテゴリを使用して、エラーのグループをキャプチャできます。
 
@@ -53,7 +55,7 @@ ms.locfileid: "87786596"
 
 ### <a name="the-fqid"></a>すべての ID
 
-この ID は、エラーを識別するために使用できる最も具体的な情報です。 これは、コマンドレットで定義された識別子、コマンドレットクラスの名前、およびエラーを報告したソースを含む文字列です。 一般に、エラーレコードは、Windows イベントログのイベントレコードに似ています。 このような ID は、イベントレコードのクラス (*ログ名*、*ソース*、*イベント ID*) を識別する次の組に似ています。
+この ID は、エラーを識別するために使用できる最も具体的な情報です。 これは、コマンドレットで定義された識別子、コマンドレットクラスの名前、およびエラーを報告したソースを含む文字列です。 一般に、エラーレコードは、Windows イベントログのイベントレコードに似ています。 このような ID は、イベントレコードのクラス (*ログ名*、 *ソース*、 *イベント ID*) を識別する次の組に似ています。
 
 使用できる ID は、1つの文字列として検査されるように設計されています。 ただし、エラー識別子がホストアプリケーションによって解析されるように設計されているケースもあります。 次の例は、正しい形式の完全修飾エラー識別子です。
 
@@ -63,7 +65,7 @@ ms.locfileid: "87786596"
 
 ### <a name="other-information"></a>その他の情報
 
-また[、エラー](/dotnet/api/System.Management.Automation.ErrorRecord)が発生した環境を説明する情報を提供することもできます。 この情報には、エラーの詳細、呼び出し情報、エラーが発生したときに処理されていた対象オブジェクトなどが含まれます。 この情報はホストアプリケーションにとって有用な場合がありますが、通常はエラーを識別するために使用されません。 この情報は、次のプロパティを使用して取得できます。
+また [、エラー](/dotnet/api/System.Management.Automation.ErrorRecord) が発生した環境を説明する情報を提供することもできます。 この情報には、エラーの詳細、呼び出し情報、エラーが発生したときに処理されていた対象オブジェクトなどが含まれます。 この情報はホストアプリケーションにとって有用な場合がありますが、通常はエラーを識別するために使用されません。 この情報は、次のプロパティを使用して取得できます。
 
 [システム管理. ErrorRecord. Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
 
@@ -87,4 +89,4 @@ ms.locfileid: "87786596"
 
 [Windows PowerShell エラー レポート](./error-reporting-concepts.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

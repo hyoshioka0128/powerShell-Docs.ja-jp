@@ -1,12 +1,14 @@
 ---
-title: ビューのコントロールの SelectionCondition の SelectionSetName 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0feb23f860487952344680f75ee674e9e0e6dcc6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の Controls の SelectionCondition の SelectionSetName 要素 (書式)
+description: View の Controls の SelectionCondition の SelectionSetName 要素 (書式)
+ms.openlocfilehash: b23ee5310d415cf287bf99c73b1173f70ae15f4c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787531"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651645"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-controls-for-view-format"></a>View の Controls の SelectionCondition の SelectionSetName 要素 (書式)
 
@@ -44,9 +46,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>解説
 
-選択セットは、書式設定ファイルによって定義される任意のビューで使用できる .NET オブジェクトの一般的なグループです。 選択セットの作成と参照の詳細については、「[選択セットの定義](./defining-selection-sets.md)」を参照してください。
+選択セットは、書式設定ファイルによって定義される任意のビューで使用できる .NET オブジェクトの一般的なグループです。 選択セットの作成と参照の詳細については、「 [選択セットの定義](./defining-selection-sets.md)」を参照してください。
 
-選択条件では、選択セットまたは .NET 型を指定できますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「[データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件では、選択セットまたは .NET 型を指定できますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「 [データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

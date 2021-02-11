@@ -2,12 +2,13 @@
 ms.date: 10/16/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成の適用
-ms.openlocfilehash: 1437521471d95fd80dc6a6cec62a0b75df4224ec
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: PowerShell DSC 構成を適用するには、プッシュ モードとプル モードの 2 つの方法があります。
+ms.openlocfilehash: 466eb43cd266ceb4ae81cc997a7b338e041f8a15
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783077"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661732"
 ---
 # <a name="enacting-configurations"></a>構成の適用
 
@@ -24,7 +25,7 @@ PowerShell Desired State Configuration (DSC) 構成を適用するには、プ�
 構成を作成し、コンパイルした後、プッシュ モードで適用するには、[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを呼び出し、コマンドレットの -Path パラメーターを構成 MOF が配置されているパスに設定します。 たとえば、構成 MOF が `C:\DSC\Configurations\localhost.mof` にある場合は、`Start-DscConfiguration -Path 'C:\DSC\Configurations'` というコマンドを使用してローカル コンピューターに適用します。
 
 > [!NOTE]
-> 既定では、DSC はバックグラウンド ジョブとして構成を実行します。 構成を対話的に実行するには、**Wait** パラメーターを指定して [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) を呼び出します。
+> 既定では、DSC はバックグラウンド ジョブとして構成を実行します。 構成を対話的に実行するには、 **Wait** パラメーターを指定して [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) を呼び出します。
 
 ## <a name="pull-mode"></a>プル モード
 
@@ -41,5 +42,5 @@ Windows Server でのプル サービスのセットアップについては、�
 次のトピックでは、プル サービスとクライアントについて説明します。
 
 - [Azure Automation DSC の概要](/azure/automation/automation-dsc-overview)
-- [Setting up an SMB pull server (SMB プル サーバーのセットアップ)](pullServerSMB.md)
+- [SMB プル サーバーのセットアップ](pullServerSMB.md)
 - [Configuring a pull client (プル クライアントの構成)](pullClientConfigID.md)

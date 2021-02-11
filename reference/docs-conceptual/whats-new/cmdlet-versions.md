@@ -3,22 +3,18 @@ ms.date: 02/03/2020
 keywords: powershell、core
 title: モジュールとコマンドレットのリリース履歴
 description: この記事では、PowerShell のさまざまなバージョンに含まれるモジュールとコマンドレットの一覧を示します。
-ms.openlocfilehash: cefd84c5d3785d19670ee649f5af951d5975912c
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: e79735e516c9aaa485c6513fb80de623014f06f5
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501662"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810353"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>モジュールとコマンドレットのリリース履歴
 
 この記事では、PowerShell のさまざまなバージョンに含まれるモジュールとコマンドレットの一覧を示します。 これは、リリース ノートに記載されている情報のまとめです。 詳細については、リリース ノートを参照してください。
 
-- [PowerShell Core 6.2 の新機能](what-s-new-in-powershell-core-62.md)
-- [PowerShell Core 6.1 の新機能](what-s-new-in-powershell-core-61.md)
-- [PowerShell Core 6.0 の新機能](what-s-new-in-powershell-core-60.md)
-- [PowerShell Core 6.0 の破壊的変更](breaking-changes-ps6.md)
-- [PowerShell Core 6.0 の既知の問題](known-issues-ps6.md)
+- [PowerShell 7.0 の新機能](what-s-new-in-powershell-70.md)
 
 この記事は作成中です。 以下の情報を最新の状態に保つためにご協力ください。
 
@@ -44,7 +40,8 @@ ms.locfileid: "92501662"
 | PSDesiredStateConfiguration               | &check; | &check; | &check; | &check; |              |
 | PSDiagnostics                             | &check; | &check; | &check; | &check; | Windows のみ |
 | PSReadline 1.x                            | &check; |         |         |         | Windows のみ |
-| PSReadline 2.x                            |         | &check; | &check; | &check; |              |
+| PSReadline 2.0                            |         | &check; | &check; |         |              |
+| PSReadline 2.1                            |         |         |         | &check; |              |
 | PSScheduledJob                            | &check; |         |         |         | Windows のみ |
 | PSWorkflow                                | &check; |         |         |         | Windows のみ |
 | PSWorkflowUtility                         | &check; |         |         |         | Windows のみ |
@@ -216,7 +213,7 @@ ms.locfileid: "92501662"
 | Enable-ComputerRestore        | &check; |         |         |         | Windows のみ                     |
 | Get-ChildItem                 | &check; | &check; | &check; | &check; |                                  |
 | Get-Clipboard                 | &check; |         | &check; | &check; | macOS ではサポートされていません           |
-| Get-ComputerInfo              | &check; | &check; | &check; | &check; |                                  |
+| Get-ComputerInfo              | &check; | &check; | &check; | &check; | Windows のみ                     |
 | Get-ComputerRestorePoint      | &check; |         |         |         | Windows のみ                     |
 | Get-Content                   | &check; | &check; | &check; | &check; |                                  |
 | Get-ControlPanelItem          | &check; |         |         |         | Windows のみ                     |
@@ -230,7 +227,7 @@ ms.locfileid: "92501662"
 | Get-PSDrive                   | &check; | &check; | &check; | &check; |                                  |
 | Get-PSProvider                | &check; | &check; | &check; | &check; |                                  |
 | Get-Service                   | &check; | &check; | &check; | &check; | Windows のみ                     |
-| Get-TimeZone                  | &check; | &check; | &check; | &check; |                                  |
+| Get-TimeZone                  | &check; | &check; | &check; | &check; | Windows のみ                     |
 | Get-Transaction               | &check; |         |         |         | Windows のみ                     |
 | Get-WmiObject                 | &check; |         |         |         | Windows のみ                     |
 | Invoke-Item                   | &check; | &check; | &check; | &check; |                                  |
@@ -255,7 +252,7 @@ ms.locfileid: "92501662"
 | Remove-PSDrive                | &check; | &check; | &check; | &check; |                                  |
 | Remove-Service                |         | &check; | &check; | &check; | Windows のみ                     |
 | Remove-WmiObject              | &check; |         |         |         | Windows のみ                     |
-| Rename-Computer               | &check; | &check; | &check; | &check; |                                  |
+| Rename-Computer               | &check; | &check; | &check; | &check; | Windows のみ                     |
 | Rename-Item                   | &check; | &check; | &check; | &check; |                                  |
 | Rename-ItemProperty           | &check; | &check; | &check; | &check; |                                  |
 | Reset-ComputerMachinePassword | &check; |         |         |         | Windows のみ                     |
@@ -270,7 +267,7 @@ ms.locfileid: "92501662"
 | Set-ItemProperty              | &check; | &check; | &check; | &check; |                                  |
 | Set-Location                  | &check; | &check; | &check; | &check; |                                  |
 | Set-Service                   | &check; | &check; | &check; | &check; | Windows のみ                     |
-| Set-TimeZone                  | &check; | &check; | &check; | &check; |                                  |
+| Set-TimeZone                  | &check; | &check; | &check; | &check; | Windows のみ                     |
 | Set-WmiInstance               | &check; |         |         |         | Windows のみ                     |
 | Show-ControlPanelItem         | &check; |         |         |         | Windows のみ                     |
 | Show-EventLog                 | &check; |         |         |         | Windows のみ                     |
@@ -334,7 +331,7 @@ ms.locfileid: "92501662"
 | ConvertFrom-Csv           | &check; | &check; | &check; | &check; |                                           |
 | ConvertFrom-Json          | &check; | &check; | &check; | &check; |                                           |
 | ConvertFrom-Markdown      |         |   6.1   | &check; | &check; |                                           |
-| ConvertFrom-SddlString    | &check; | &check; | &check; | &check; |                                           |
+| ConvertFrom-SddlString    | &check; | &check; | &check; | &check; | Windows のみ                              |
 | ConvertFrom-String        | &check; |         |         |         |                                           |
 | ConvertFrom-StringData    | &check; | &check; | &check; | &check; |                                           |
 | Convert-String            | &check; |         |         |         |                                           |
@@ -379,7 +376,7 @@ ms.locfileid: "92501662"
 | Get-Unique                | &check; | &check; | &check; | &check; |                                           |
 | Get-Uptime                |         | &check; | &check; | &check; |                                           |
 | Get-Variable              | &check; | &check; | &check; | &check; |                                           |
-| Get-Verb                  |         | &check; | &check; | &check; |                                           |
+| Get-Verb                  |         | &check; | &check; | &check; | Microsoft.PowerShelll.Core から移動しました     |
 | Group-Object              | &check; | &check; | &check; | &check; |                                           |
 | Import-Alias              | &check; | &check; | &check; | &check; |                                           |
 | Import-Clixml             | &check; | &check; | &check; | &check; |                                           |
@@ -402,7 +399,7 @@ ms.locfileid: "92501662"
 | New-Variable              | &check; | &check; | &check; | &check; |                                           |
 | Out-File                  | &check; | &check; | &check; | &check; |                                           |
 | Out-GridView              | &check; |         | &check; | &check; | Windows のみ                              |
-| Out-Printer               | &check; |         | &check; | &check; |                                           |
+| Out-Printer               | &check; |         | &check; | &check; | Windows のみ                              |
 | Out-String                | &check; | &check; | &check; | &check; |                                           |
 | Read-Host                 | &check; | &check; | &check; | &check; |                                           |
 | Register-EngineEvent      | &check; | &check; | &check; | &check; | Linux/macOS で使用可能なイベント ソースはありません |
@@ -422,7 +419,7 @@ ms.locfileid: "92501662"
 | Set-PSBreakpoint          | &check; | &check; | &check; | &check; |                                           |
 | Set-TraceSource           | &check; | &check; | &check; | &check; |                                           |
 | Set-Variable              | &check; | &check; | &check; | &check; |                                           |
-| Show-Command              | &check; |         | &check; | &check; |                                           |
+| Show-Command              | &check; |         | &check; | &check; | Windows のみ                              |
 | Show-Markdown             |         |   6.1   | &check; | &check; |                                           |
 | Sort-Object               | &check; | &check; | &check; | &check; |                                           |
 | Start-Sleep               | &check; | &check; | &check; | &check; |                                           |

@@ -1,12 +1,14 @@
 ---
-title: リモート実行空間のサンプル
 ms.date: 09/13/2016
-ms.openlocfilehash: 68248f0ba9e816865b6b92dbf6e7686e2d871370
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: リモート実行空間のサンプル
+description: リモート実行空間のサンプル
+ms.openlocfilehash: ba8f89d0369147a96a4f9f518b0784b4ebe7e80e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783230"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658034"
 ---
 # <a name="remote-runspace-samples"></a>リモート実行空間のサンプル
 
@@ -17,6 +19,6 @@ ms.locfileid: "87783230"
 > [!NOTE]
 > リモートコンピューターでコマンドを実行する方法の詳細については、「 [Windows PowerShell リモート処理](/previous-versions/ms714644(v=vs.85))」を参照してください。
 
- [RemoteRunspace01 サンプル](./remoterunspace01-sample.md)このサンプルでは、リモート接続を確立するために使用されるリモート実行空間を作成する方法を示します。
+ [RemoteRunspace01 サンプル](./remoterunspace01-sample.md) このサンプルでは、リモート接続を確立するために使用されるリモート実行空間を作成する方法を示します。
 
- [RemoteRunspacePool01 サンプル](./remoterunspacepool01-sample.md)このサンプルでは、リモートの実行空間プールを作成する方法と、このプールを使用して複数のコマンドを同時に実行する方法を示します。
+ [RemoteRunspacePool01 サンプル](./remoterunspacepool01-sample.md) このサンプルでは、リモートの実行空間プールを作成する方法と、このプールを使用して複数のコマンドを同時に実行する方法を示します。

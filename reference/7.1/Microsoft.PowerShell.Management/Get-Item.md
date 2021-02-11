@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 25d07028430d6ad6719136bd484d39e116d81516
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d034baf42f064149696f54a198dc97d7ee4e8fe7
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93216472"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693078"
 ---
 # Get-Item
 
@@ -130,9 +130,9 @@ PowerShell 6.2 では、リンクの情報を取得するために代替ビュ�
 Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
 ```
 
-### 例 9: 試験的な特徴 PSUnixFileStat の出力
+### 例 9: Windows 以外のオペレーティングシステムの出力
 
-Unix システムの PowerShell 7 では、試験的な機能 **PSUnixFileStat** が unix に似た出力を提供します。
+Unix システムの PowerShell 7.1 では、 `Get-Item` コマンドレットは unix のような出力を提供します。
 
 ```powershell
 PS> Get-Item /Users
@@ -153,9 +153,15 @@ drwxr-xr-x  root  admin   12/20/2019 11:46   192   Users
 - **グループは** グループの所有者です
 - **サイズ** は、Unix システムで表されるファイルまたはディレクトリのサイズです。
 
+> [!NOTE]
+> この機能は、PowerShell 7.1 の試験段階からメインストリームに移行されました。
+
 ## PARAMETERS
 
 ### -ストリーム
+
+> [!NOTE]
+> このパラメーターは Windows でのみ使用できます。
 
 指定した代替 NTFS ファイル システムをファイルから取得します。 ストリーム名を入力します。 ワイルドカードを利用できます。 すべてのストリームを取得するには、アスタリスク () を使用し `*` ます。 このパラメーターはフォルダーでは無効です。
 
@@ -194,7 +200,7 @@ Accept wildcard characters: False
 
 ### -除外
 
-このコマンドレットによって操作で除外される項目を文字列配列として指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Exclude** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+このコマンドレットによって操作で除外される項目を文字列配列として指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Exclude** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -243,7 +249,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -315,7 +321,7 @@ Accept wildcard characters: True
 項目の内容を再帰的に取得するには、を使用し `Get-ChildItem` ます。
 
 レジストリ内を移動するには、このコマンドレットを使用してレジストリキーを取得し、を使用して `Get-ItemProperty` レジストリ値とデータを取得します。 レジストリ値はレジストリ キーのプロパティと見なされます。
-  
+
 このコマンドレットは、プロバイダーによって公開されるデータを使用するように設計されています。 セッションで使用可能なプロバイダーの一覧を表示するには、「」と入力 `Get-PsProvider` します。 詳細については、「[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)」を参照してください。
 
 ## 関連リンク

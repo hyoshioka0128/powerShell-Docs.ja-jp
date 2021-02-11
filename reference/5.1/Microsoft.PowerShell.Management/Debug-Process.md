@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/debug-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Debug-Process
-ms.openlocfilehash: 1cc0b0f51d84f3471bc3f54a91daba10f3528a8a
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 98bd72901339d040748fc0d99b14bc1404ea1465
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93215536"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388316"
 ---
 # Debug-Process
 
@@ -40,11 +40,11 @@ Debug-Process -InputObject <Process[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## Description
-**Debug Process** コマンドレットは、ローカルコンピューター上で実行中の1つ以上のプロセスにデバッガーをアタッチします。
+
+`Debug-Process`コマンドレットは、ローカルコンピューター上で実行中の1つ以上のプロセスにデバッガーをアタッチします。
 プロセスは、プロセス名またはプロセス ID (PID) で指定することも、パイプを使用してこのコマンドレットに処理することもできます。
 
-このコマンドレットは、プロセスに対して現在登録されているデバッガーをアタッチします。
-このコマンドレットを使用する前に、デバッガーがダウンロードされていて適切に設定されていることを確認します。
+このコマンドレットは、プロセスに対して現在登録されているデバッガーをアタッチします。 このコマンドレットを使用する前に、デバッガーがダウンロードされていて適切に設定されていることを確認します。
 
 ## 例
 
@@ -54,7 +54,7 @@ Debug-Process -InputObject <Process[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 PS C:\> Debug-Process -Name "Windows Powershell"
 ```
 
-このコマンドは、コンピューター上の Windows PowerShell プロセスにデバッガーをアタッチします。
+このコマンドは、コンピューターの PowerShell プロセスにデバッガーを結合します。
 
 ### 例 2: 指定した文字列で始まるすべてのプロセスにデバッガーをアタッチする
 
@@ -86,10 +86,9 @@ PS C:\> Debug-Process -Id 1132, 2028
 PS C:\> Get-Process "Windows PowerShell" | Debug-Process
 ```
 
-このコマンドは、コンピューター上の Windows PowerShell プロセスにデバッガーをアタッチします。
-このコマンドレットは、 **Get process** コマンドレットを使用してコンピューター上の Windows PowerShell プロセスを取得し、パイプライン演算子 (|) を使用してプロセスを **デバッグプロセス** コマンドレットに送信します。
+このコマンドは、コンピューターの PowerShell プロセスにデバッガーを結合します。 コマンドレットを使用して `Get-Process` コンピューター上の PowerShell プロセスを取得し、パイプライン演算子 () を使用して `|` プロセスをコマンドレットに送信し `Debug-Process` ます。
 
-特定の PowerShell プロセスを指定するには、 **Get process** の ID パラメーターを使用します。
+特定の PowerShell プロセスを指定するには、の ID パラメーターを使用し `Get-Process` ます。
 
 ### 例 6: ローカルコンピューター上の現在のプロセスにデバッガーをアタッチする
 
@@ -97,12 +96,11 @@ PS C:\> Get-Process "Windows PowerShell" | Debug-Process
 PS C:\> $PID | Debug-Process
 ```
 
-このコマンドは、コンピューター上の現在の Windows PowerShell プロセスにデバッガーをアタッチします。
+このコマンドは、コンピューターの現在の PowerShell プロセスにデバッガーを結合します。
 
-このコマンドは、現在の Windows PowerShell プロセスのプロセス ID を含む $PID 自動変数を使用します。
-次に、パイプライン演算子 (|) を使用してプロセス ID を **デバッグプロセス** のコマンドレットに送信します。
+このコマンドは、 `$PID` 現在の PowerShell プロセスのプロセス ID を含む自動変数を使用します。 次に、パイプライン演算子 () を使用して、 `|` プロセス ID をコマンドレットに送信し `Debug-Process` ます。
 
-$PID 自動変数の詳細については、「about_Automatic_Variables」を参照してください。
+自動変数の詳細については `$PID` 、「about_Automatic_Variables」を参照してください。
 
 ### 例 7: 複数のコンピューター上の指定されたプロセスにデバッガーをアタッチする
 
@@ -112,8 +110,7 @@ PS C:\> Get-Process -ComputerName "Server01", "Server02" -Name "MyApp" | Debug-P
 
 このコマンドは Server01 コンピューターと Server02 コンピューター上の MyApp プロセスにデバッガーを結合します。
 
-このコマンド **は、Server01 コマンドレットを** 使用して、Server02 コンピューターとコンピューター上の MyApp プロセスを取得します。
-パイプライン演算子を使用してプロセスを Debug-Process コマンドレットに送信し、デバッガーを結合します。
+このコマンドは、コマンドレットを使用して、 `Get-Process` Server01 コンピューターと Server02 コンピューター上の MyApp プロセスを取得します。 パイプライン演算子を使用して、デバッガーをアタッチするプロセスをコマンドレットに送信し `Debug-Process` ます。
 
 ### 例 8: InputObject パラメーターを使用するプロセスにデバッガーをアタッチする
 
@@ -122,18 +119,17 @@ PS C:\> $P = Get-Process "Windows PowerShell"
 PS C:\> Debug-Process -InputObject $P
 ```
 
-このコマンドは、ローカルコンピューター上の Windows PowerShell プロセスにデバッガーをアタッチします。
+このコマンドは、ローカル コンピューターの PowerShell プロセスにデバッガーを結合します。
 
-最初のコマンドは、 **Get Process** コマンドレットを使用して、コンピューター上の Windows PowerShell プロセスを取得します。
-これにより、結果として得られるプロセスオブジェクトが $P という名前の変数に保存されます。
+最初のコマンドは、 `Get-Process` コマンドレットを使用して、コンピューター上の PowerShell プロセスを取得します。 結果として得られるプロセスオブジェクトをという名前の変数に保存し `$P` ます。
 
-2番目のコマンドは、 **Debug process** コマンドレットの *InputObject* パラメーターを使用して、$P 変数にプロセスオブジェクトを送信します。
+2番目のコマンドは、コマンドレットの **InputObject** パラメーターを使用して `Debug-Process` 、変数内のプロセスオブジェクトを送信し `$P` ます。
 
 ## PARAMETERS
 
 ### -Id
-デバッグするプロセスのプロセス ID を指定します。
-*Id* パラメーター名は省略可能です。
+
+デバッグするプロセスのプロセス ID を指定します。 **Id** パラメーター名は省略可能です。
 
 プロセスのプロセス ID を検索するには、「」と入力 `Get-Process` します。
 
@@ -150,9 +146,8 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-デバッグするプロセスを表すプロセス オブジェクトを指定します。
-プロセスオブジェクトを含む変数、または Get-Process コマンドレットなどのプロセスオブジェクトを取得するコマンドを入力します。
-パイプを使用してプロセスオブジェクトをこのコマンドレットに送ることもできます。
+
+デバッグするプロセスを表すプロセス オブジェクトを指定します。 プロセスオブジェクトを含む変数、または、コマンドレットなどのプロセスオブジェクトを取得するコマンドを入力し `Get-Process` ます。 パイプを使用してプロセスオブジェクトをこのコマンドレットに送ることもできます。
 
 ```yaml
 Type: System.Diagnostics.Process[]
@@ -167,9 +162,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-デバッグするプロセスの名前を指定します。
-同じ名前のプロセスが複数ある場合、このコマンドレットは、その名前を持つすべてのプロセスにデバッガーをアタッチします。
-*Name* パラメーターは省略可能です。
+
+デバッグするプロセスの名前を指定します。 同じ名前のプロセスが複数ある場合、このコマンドレットは、その名前を持つすべてのプロセスにデバッガーをアタッチします。 **Name** パラメーターは省略可能です。
 
 ```yaml
 Type: System.String[]
@@ -184,6 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 コマンドレットの実行前に確認を求めるメッセージが表示されます。
 
 ```yaml
@@ -199,8 +194,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -215,21 +210,24 @@ Accept wildcard characters: False
 ```
 
 ### 共通パラメーター
+
 このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
 
 ## 入力
 
 ### System.string, System.string, System.string, System.string,
+
 パイプを使用して、プロセス ID (Int32)、プロセスオブジェクト (システム診断プロセス)、またはプロセス名 (文字列) をこのコマンドレットに渡します。
 
 ## 出力
 
 ### なし
+
 このコマンドレットは出力を生成しません。
 
 ## 注
 
-* このコマンドレットは、Windows Management Instrumentation (WMI) Win32_Process クラスの AttachDebugger メソッドを使用します。 このメソッドの詳細については、MSDN ライブラリの「 [Attachdebugger メソッド](https://go.microsoft.com/fwlink/?LinkId=143640) 」を参照してください。
+このコマンドレットは、Windows Management Instrumentation (WMI) Win32_Process クラスの AttachDebugger メソッドを使用します。 このメソッドの詳細については、MSDN ライブラリの「 [Attachdebugger メソッド](https://go.microsoft.com/fwlink/?LinkId=143640) 」を参照してください。
 
 ## 関連リンク
 

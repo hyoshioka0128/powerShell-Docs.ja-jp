@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-sddlstring?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-SddlString
-ms.openlocfilehash: c3968640fba37a392ed8f43bea91b1160d189e1f
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 9c864ec46af9584f36eef3f3ba879cf314e0ca1c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "93219784"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347314"
 ---
 # ConvertFrom-SddlString
 
@@ -21,7 +21,7 @@ SDDL 文字列をカスタムオブジェクトに変換します。
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 ConvertFrom-SddlString [-Sddl] <String> [-Type <AccessRightTypeNames>] [<CommonParameters>]
@@ -145,6 +145,8 @@ SDDL 文字列をにパイプすることができ `ConvertFrom-SddlString` ま�
 ## 出力
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 ## 関連リンク
 

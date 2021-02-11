@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の SelectionCondition の SelectionSetName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6d0263aa335287f20be5b94a8eb65696d06d82a8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の SelectionCondition の SelectionSetName 要素 (書式)
+description: GroupBy の SelectionCondition の SelectionSetName 要素 (書式)
+ms.openlocfilehash: a4f28c1caba3790718b99f63659cb0cbed8def16
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772622"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654990"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-groupby-format"></a>GroupBy の SelectionCondition の SelectionSetName 要素 (書式)
 
@@ -44,9 +46,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>解説
 
-選択セットは、書式設定ファイルによって定義される任意のビューで使用できる .NET オブジェクトの一般的なグループです。 選択セットの作成と参照の詳細については、「[選択セットの定義](./defining-selection-sets.md)」を参照してください。
+選択セットは、書式設定ファイルによって定義される任意のビューで使用できる .NET オブジェクトの一般的なグループです。 選択セットの作成と参照の詳細については、「 [選択セットの定義](./defining-selection-sets.md)」を参照してください。
 
-この要素が指定されている場合、 [TypeName](./typename-element-for-selectioncondition-for-groupby-format.md)要素を指定することはできません。 選択条件の定義の詳細については、「[データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+この要素が指定されている場合、 [TypeName](./typename-element-for-selectioncondition-for-groupby-format.md) 要素を指定することはできません。 選択条件の定義の詳細については、「 [データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

@@ -1,12 +1,14 @@
 ---
-title: コマンドレットのヘルプ トピックに例を追加する方法
 ms.date: 09/12/2016
-ms.openlocfilehash: 33a1726f9d52b5a368d5df7962cc17ba9c45246a
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: コマンドレットのヘルプ トピックに例を追加する方法
+description: コマンドレットのヘルプ トピックに例を追加する方法
+ms.openlocfilehash: 6b72e29c93740b7953d9b68fc8e68c02eb2f4dee
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893443"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654714"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>コマンドレットのヘルプ トピックに例を追加する方法
 
@@ -28,7 +30,7 @@ ms.locfileid: "86893443"
 
 ## <a name="adding-an-examples-node"></a>例ノードの追加
 
-次の XML は、1つの**例**のノードを含む**例**ノードを追加する方法を示しています。 トピックに含める例ごとに、その他の例のノードを追加します。
+次の XML は、1つの **例** のノードを含む **例** ノードを追加する方法を示しています。 トピックに含める例ごとに、その他の例のノードを追加します。
 
 ```xml
 <command:examples>
@@ -39,7 +41,7 @@ ms.locfileid: "86893443"
 
 ## <a name="adding-an-example-title"></a>例のタイトルの追加
 
-次の XML は、この例の**タイトル**を追加する方法を示しています。 **タイトル**は、例を他の例とは別に設定するために使用されます。 PowerShell では、連番のサンプル番号を含む標準ヘッダーが使用されます。
+次の XML は、この例の **タイトル** を追加する方法を示しています。 **タイトル** は、例を他の例とは別に設定するために使用されます。 PowerShell では、連番のサンプル番号を含む標準ヘッダーが使用されます。
 
 ```xml
 <command:examples>

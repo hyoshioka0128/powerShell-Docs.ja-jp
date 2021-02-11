@@ -1,18 +1,20 @@
 ---
-title: Runspace02 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7a2dce436aceb1d8744377c37671a66398614851
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace02 サンプル
+description: Runspace02 サンプル
+ms.openlocfilehash: 0206e1a80f3e5488fd2dd5628985756a5ca343c8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784964"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657892"
 ---
 # <a name="runspace02-sample"></a>Runspace02 サンプル
 
-このサンプル[では、system.servicemodel クラスを](/dotnet/api/system.management.automation.powershell)使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)および[Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)コマンドレットを同期的に実行する方法を示します。 [Get process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、ローカルコンピューター上で実行[されて](/dotnet/api/System.Diagnostics.Process)いる各プロセスの System.Diagnostics.Process.Id オブジェクトを返し、はそれらのオブジェクトをその `Sort-Object` [*](/dotnet/api/System.Diagnostics.Process.Id)プロパティに基づいて並べ替えます。 これらのコマンドの結果[は、system.string コントロールを](/dotnet/api/System.Windows.Forms.DataGridView)使用して表示されます。
+このサンプル [では、system.servicemodel クラスを](/dotnet/api/system.management.automation.powershell) 使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) および [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) コマンドレットを同期的に実行する方法を示します。 [Get process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、ローカルコンピューター上で実行[されて](/dotnet/api/System.Diagnostics.Process)いる各プロセスの System.Diagnostics.Process.Id オブジェクトを返し、はそれらのオブジェクトをその `Sort-Object` [*](/dotnet/api/System.Diagnostics.Process.Id)プロパティに基づいて並べ替えます。 これらのコマンドの結果 [は、system.string コントロールを](/dotnet/api/System.Windows.Forms.DataGridView) 使用して表示されます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -20,17 +22,17 @@ ms.locfileid: "87784964"
 
 このサンプルでは、次のことを示します。
 
-- コマンドを実行するため[の、system.servicemodel](/dotnet/api/system.management.automation.powershell)オブジェクトの作成。
+- コマンドを実行するため [の、system.servicemodel](/dotnet/api/system.management.automation.powershell) オブジェクトの作成。
 
 - System.servicemodel オブジェクトのパイプラインにコマンドを追加してい[ます。](/dotnet/api/system.management.automation.powershell)
 
 - コマンドを同期的に実行します。
 
-- Windows フォームアプリケーションのコマンドの出力を表示する[には、system.string コントロールを](/dotnet/api/System.Windows.Forms.DataGridView)使用します。
+- Windows フォームアプリケーションのコマンドの出力を表示する [には、system.string コントロールを](/dotnet/api/System.Windows.Forms.DataGridView) 使用します。
 
 ## <a name="example"></a>例
 
-このサンプルでは、Windows PowerShell によって提供される既定の実行空間で、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)および[Sort オブジェクト](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)のコマンドレットを同期的に実行します。 出力は、[システム](/dotnet/api/System.Windows.Forms.DataGridView)のコントロールを使用してフォームに表示されます。
+このサンプルでは、Windows PowerShell によって提供される既定の実行空間で、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) および [Sort オブジェクト](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) のコマンドレットを同期的に実行します。 出力は、 [システム](/dotnet/api/System.Windows.Forms.DataGridView) のコントロールを使用してフォームに表示されます。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

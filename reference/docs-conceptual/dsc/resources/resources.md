@@ -2,12 +2,13 @@
 ms.date: 07/23/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC リソース
-ms.openlocfilehash: 6ab831c9d423c6189951b43bfab92f800366ceca
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: DSC リソースには、DSC 構成の構成要素が用意されています。 リソースでは構成可能なプロパティ (スキーマ) が公開され、構成を適用するために LCM によって使用される PowerShell スクリプト関数が含まれています。
+ms.openlocfilehash: 33268c68638bb581e0b2235a53aee9d186dff6be
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777931"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771789"
 ---
 # <a name="dsc-resources"></a>DSC リソース
 
@@ -19,11 +20,10 @@ Desired State Configuration (DSC) リソースは、DSC 構成の構成要素を
 
 リソースでは、ファイルのように汎用的なものをモデル化したり、IIS サーバー設定のように具体的なものをモデル化したりできます。 リソースなどのグループは、DSC モジュールに結合されます。DSC モジュールでは、リソースの使用目的を識別するためのメタデータが含まれている移植可能な構造にすべての必須ファイルが編成されます。
 
-各リソースには、[Configuration](../configurations/configurations.md) でリソースを使用するために必要な構文を決定する*スキーマがあります。
-リソースのスキーマは、次のように定義できます。
+各リソースには、[Configuration](../configurations/configurations.md) でリソースを使用するために必要な構文を決定する*スキーマがあります。 リソースのスキーマは、次のように定義できます。
 
 - `Schema.Mof` ファイル:ほとんどのリソースでは、[マネージド オブジェクト フォーマット](/windows/desktop/wmisdk/managed-object-format--mof-)を使用して、`schema.mof` ファイルに "_スキーマ_" を定義します。
-- `<Resource Name>.schema.psm1` ファイル:[複合リソース](../configurations/compositeConfigs.md)では、[パラメーター ブロック](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters)を使用して、`<ResourceName>.schema.psm1` ファイルに_スキーマ_を定義します。
+- `<Resource Name>.schema.psm1` ファイル:[複合リソース](../configurations/compositeConfigs.md)では、[パラメーター ブロック](/powershell/module/microsoft.powershell.core/about/about_functions#functions-with-parameters)を使用して、`<ResourceName>.schema.psm1` ファイルに _スキーマ_ を定義します。
 - `<Resource Name>.psm1` ファイル:クラス ベースの DSC リソースは、クラス定義で "_スキーマ_" を定義します。 構文の項目は Class プロパティとして表されます。 詳細については、「[about_Remote](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)」を参照してください。
 
 DSC リソースの構文を取得するには、**Syntax** パラメーターを指定して、[Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) コマンドレットを使用します。 この使用法は、**Syntax** パラメーターを指定して、[Get-Command](/powershell/module/microsoft.powershell.core/get-command) を使用して、コマンドレットの構文を取得する場合と似ています。 表示される出力には、指定したリソースのリソース ブロックに使用されているテンプレートが示されます。
@@ -66,11 +66,13 @@ Configuration 内では、スプーラー サービスが実行されている�
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to always directly import resources, even if the resource is a built-in resource.
+    # It is best practice to always directly import resources, even if the
+    # resource is a built-in resource.
     Import-DSCResource -Name Service
     Node localhost
     {
-        # The name of this resource block, can be anything you choose, as long as it is of type [String] as indicated by the schema.
+        # The name of this resource block, can be anything you choose, as l
+        # ong as it is of type [String] as indicated by the schema.
         Service "Spooler:Running"
         {
             Name = "Spooler"
@@ -85,18 +87,21 @@ Configuration には、同じリソースの種類の複数インスタンスを
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to always directly import resources, even if the resource is a built-in resource.
+    # It is best practice to always directly import resources, even if the
+    # resource is a built-in resource.
     Import-DSCResource -Name Service
     Node localhost
     {
-        # The name of this resource block, can be anything you choose, as long as it is of type [String] as indicated by the schema.
+        # The name of this resource block, can be anything you choose, as
+        # long as it is of type [String] as indicated by the schema.
         Service "Spooler:Running"
         {
             Name = "Spooler"
             State = "Running"
         }
 
-        # To configure a second service resource block, add another Service resource block and use a unique name.
+        # To configure a second service resource block, add another Service
+        # resource block and use a unique name.
         Service "DHCP:Running"
         {
             Name = "DHCP"

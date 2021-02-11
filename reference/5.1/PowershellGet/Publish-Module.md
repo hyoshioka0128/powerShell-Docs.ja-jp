@@ -7,12 +7,12 @@ ms.date: 10/03/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Module
-ms.openlocfilehash: 50f873e6691ead7c220b6250458f4fdf8a90af22
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 602d160a4cc7fd4e8a806d2c3d2772ee5053535d
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93215235"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889693"
 ---
 # Publish-Module
 
@@ -46,7 +46,7 @@ Publish-Module -Path <String> [-NuGetApiKey <String>] [-Repository <String>]
 
 モジュールを名前で指定すると、は、を `Publish-Module` 実行して検出される最初のモジュールを発行し `Get-Module -ListAvailable <Name>` ます。 発行するモジュールの最小バージョンを指定すると、は、指定した最小バージョン以上のバージョンを `Publish-Module` 持つ最初のモジュールを発行します。
 
-モジュールを発行するには、モジュールのギャラリー ページに表示されるメタデータが必要です。 必要なメタデータには、モジュールの名前、バージョン、説明、作成者が含まれています。 ほとんどのメタデータはモジュールマニフェストから取得されますが、一部のメタデータは、 `Publish-Module` **Tag** 、 **ReleaseNote** 、 **IconUri** 、 **ProjectUri** 、 **LicenseUri** などのパラメーターで指定する必要があります。これらのパラメーターは、NuGet ベースのギャラリーのフィールドと一致するためです。
+モジュールを発行するには、モジュールのギャラリー ページに表示されるメタデータが必要です。 必要なメタデータには、モジュールの名前、バージョン、説明、作成者が含まれています。 ほとんどのメタデータはモジュールマニフェストから取得されますが、一部のメタデータは、 `Publish-Module` **Tag**、 **ReleaseNote**、 **IconUri**、 **ProjectUri**、 **LicenseUri** などのパラメーターで指定する必要があります。これらのパラメーターは、NuGet ベースのギャラリーのフィールドと一致するためです。
 
 ## 例
 
@@ -378,7 +378,14 @@ Accept wildcard characters: False
 
 `Publish-Module` powershell 3.0 以降の PowerShell で、windows 7 または Windows 2008 R2 以降のリリースの Windows で実行されます。
 
-モジュールを発行するには、モジュールのギャラリー ページに表示されるメタデータが必要です。 必要なメタデータには、モジュールの名前、バージョン、説明、作成者が含まれています。 ほとんどのメタデータはモジュールマニフェストから取得されますが、一部のメタデータは、 `Publish-Module` **Tag** 、 **ReleaseNote** 、 **IconUri** 、 **ProjectUri** 、 **LicenseUri** などのパラメーターで指定できます。 詳細については、「 [POWERSHELL ギャラリー UI に影響するパッケージマニフェスト値](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui)」を参照してください。
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
+
+モジュールを発行するには、モジュールのギャラリー ページに表示されるメタデータが必要です。 必要なメタデータには、モジュールの名前、バージョン、説明、作成者が含まれています。 ほとんどのメタデータはモジュールマニフェストから取得されますが、一部のメタデータは、 `Publish-Module` **Tag**、 **ReleaseNote**、 **IconUri**、 **ProjectUri**、 **LicenseUri** などのパラメーターで指定できます。 詳細については、「 [POWERSHELL ギャラリー UI に影響するパッケージマニフェスト値](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui)」を参照してください。
 
 ## 関連リンク
 

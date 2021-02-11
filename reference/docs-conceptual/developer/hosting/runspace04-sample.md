@@ -1,18 +1,20 @@
 ---
-title: Runspace04 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 73f48c797a4ce9bf4bc78ff34abb5efa41cda121
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace04 サンプル
+description: Runspace04 サンプル
+ms.openlocfilehash: 5a2e1137963e02def419bb924c63b0d651b0fdfa
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779507"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657748"
 ---
 # <a name="runspace04-sample"></a>Runspace04 サンプル
 
-このサンプルでは、 [Powershell](/dotnet/api/system.management.automation.powershell)クラスを使用してコマンドを実行する方法と、コマンドの実行時にスローされる終了エラーをキャッチする方法を示します。 2 つのコマンドが実行され、最後のコマンドには無効なパラメーターの引数が渡されます。 結果として、オブジェクトは返されず、終了するエラーがスローされます。
+このサンプルでは、 [Powershell](/dotnet/api/system.management.automation.powershell) クラスを使用してコマンドを実行する方法と、コマンドの実行時にスローされる終了エラーをキャッチする方法を示します。 2 つのコマンドが実行され、最後のコマンドには無効なパラメーターの引数が渡されます。 結果として、オブジェクトは返されず、終了するエラーがスローされます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -20,9 +22,9 @@ ms.locfileid: "87779507"
 
 このサンプルでは、次のことを示します。
 
-- システムの[管理](/dotnet/api/system.management.automation.powershell).... Powershell オブジェクトを作成します。
+- システムの [管理](/dotnet/api/system.management.automation.powershell) .... Powershell オブジェクトを作成します。
 
-- System.servicemodel オブジェクトのパイプラインにコマンドを追加[してい](/dotnet/api/system.management.automation.powershell)ます。
+- System.servicemodel オブジェクトのパイプラインにコマンドを追加 [してい](/dotnet/api/system.management.automation.powershell) ます。
 
 - パイプラインにパラメーター引数を追加しています。
 

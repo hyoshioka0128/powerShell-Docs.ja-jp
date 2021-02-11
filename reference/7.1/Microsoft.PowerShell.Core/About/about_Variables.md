@@ -2,16 +2,16 @@
 description: PowerShell で使用できる値を変数に格納する方法について説明します。
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 03/19/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Variables
-ms.openlocfilehash: 0865afe69f5f1774e90d2d2dc5827d628cab0f6a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 858015f42ff58baf653d8d0f1502df0f7ed4a63f
+ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93220819"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94483106"
 ---
 # <a name="about-variables"></a>変数について
 

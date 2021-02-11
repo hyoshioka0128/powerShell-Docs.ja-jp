@@ -1,16 +1,18 @@
 ---
-title: RunSpace04 (VB.NET) コードサンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 853e3d223843fb39b2e6a08a21d041a5e696ce2c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: RunSpace04 (VB.NET) コード サンプル
+description: RunSpace04 (VB.NET) コード サンプル
+ms.openlocfilehash: 16d46eb4b4f2c1bc6d32b35c29a5d638beba6e24
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784760"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92656998"
 ---
 # <a name="runspace04--vbnet-code-sample"></a>RunSpace04 (VB.NET) コード サンプル
 
-Runspace04 サンプルの VB.NET ソースコードを次に示します。 このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、終了エラーを生成するスクリプトを実行します。 ホストアプリケーションは、エラーをキャッチし、エラーレコードを解釈します。
+Runspace04 サンプルの VB.NET ソースコードを次に示します。 このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) クラスを使用して、終了エラーを生成するスクリプトを実行します。 ホストアプリケーションは、エラーをキャッチし、エラーレコードを解釈します。
 
 > [!NOTE]
 > このサンプルの VB.NET ソースファイル (runspace02) をダウンロードするには、windows Vista 用 Windows ソフトウェア開発キットおよび Microsoft .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。

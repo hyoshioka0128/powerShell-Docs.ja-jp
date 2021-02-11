@@ -1,15 +1,14 @@
 ---
-title: カスタム Windows PowerShell スナップインを作成する |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- snap-ins [PowerShell SDK], custom PSSnapin example
-- cmdlets [PowerShell SDK], specified in snap-ins
-ms.openlocfilehash: 3672dcc2e962b6795888ab5be3d461380e379315
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: カスタム Windows PowerShell スナップインを記述する
+description: カスタム Windows PowerShell スナップインを記述する
+ms.openlocfilehash: e79c0c3db583fa0add9287745e97958a71360592
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779218"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659529"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>カスタム Windows PowerShell スナップインを記述する
 
@@ -24,7 +23,7 @@ ms.locfileid: "87779218"
 
    この例では、クラス名は "CustomPSSnapinTest" です。
 
-3. スナップインの名前のパブリックプロパティを追加します (必須)。 スナップインに名前を付ける場合、 `#` 、、 `.` `,` 、、 `(` 、 `)` `{` `}` `[` `]` `&` `-` `/` `\` `$` `;` `:` `"` `'` `<` `>` `|` `?` `@` 、、、 `` ` `` 、、、、、、、、、、、、、、、、、、、、、、、、`*`
+3. スナップインの名前のパブリックプロパティを追加します (必須)。 スナップインに名前を付ける場合、 `#` 、、 `.` `,` 、、 `(` 、 `)` `{` `}` `[` `]` `&` `-` `/` `\` `$` `;` `:` `"` `'` `<` `>` `|` `?` `@` 、、、 `` ` `` 、、、、、、、、、、、、、、、、、、、、、、、、 `*`
 
    この例では、スナップインの名前は "CustomPSSnapInTest" です。
 
@@ -44,11 +43,11 @@ ms.locfileid: "87779218"
 
    この例では、ベンダリソースは次のようになります。
 
-   > CustomPSSnapInTest は、このカスタム Windows PowerShell スナップインです。これには、テスト HelloWorld とテスト用の CustomSnapinTest コマンドレットが含まれています。
+   > CustomPSSnapInTest は、Test-HelloWorld と Test-CustomSnapinTest のコマンドレットを含むカスタムの Windows PowerShell スナップインです。
 
-8. カスタムスナップインに属するコマンドレットを指定します (省略可能[)。このクラスを](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)使用してください。 ここで追加される情報には、コマンドレットの名前、.NET の種類、コマンドレットのヘルプファイル名 (コマンドレットヘルプファイル名の形式) が含まれてい `name.dll-help.xml` ます。
+8. カスタムスナップインに属するコマンドレットを指定します (省略可能 [)。このクラスを](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) 使用してください。 ここで追加される情報には、コマンドレットの名前、.NET の種類、コマンドレットのヘルプファイル名 (コマンドレットヘルプファイル名の形式) が含まれてい `name.dll-help.xml` ます。
 
-   この例では、テスト HelloWorld と TestCustomSnapinTest コマンドレットを追加します。
+   この例では、Test-HelloWorld と TestCustomSnapinTest コマンドレットを追加します。
 
 9. カスタムスナップインに属するプロバイダーを指定します (省略可能)。
 
@@ -213,4 +212,4 @@ public class CustomPSSnapinTest : CustomPSSnapIn
 
 [コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions/ms714644(v=vs.85))
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell シェル SDK](../windows-powershell-reference.md)

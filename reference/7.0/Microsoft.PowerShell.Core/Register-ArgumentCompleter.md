@@ -7,12 +7,12 @@ ms.date: 5/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ArgumentCompleter
-ms.openlocfilehash: 0e0b5fcd99372d699bd6250383adc85b3a5f8847
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: c81c50152209a922c486005b5919ac4a1e7295a2
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210560"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490317"
 ---
 # Register-ArgumentCompleter
 
@@ -61,7 +61,7 @@ Register-ArgumentCompleter -CommandName Set-TimeZone -ParameterName Id -ScriptBl
 
 最初のコマンドは、ユーザーが <kbd>Tab キー</kbd>を押したときに渡される必須パラメーターを受け取るスクリプトブロックを作成します。詳細については、 **ScriptBlock** パラメーターの説明を参照してください。
 
-スクリプトブロック内では、 **Id** に使用できる値はコマンドレットを使用して取得され `Get-TimeZone` ます。 各タイムゾーンの **Id** プロパティは、パイプを使用してコマンドレットに渡され `Where-Object` ます。 `Where-Object`コマンドレットは、によって指定された値で始まらない id をフィルターで除外します `$wordToComplete` 。これは、 <kbd>Tab キー</kbd>を押す前にユーザーが入力したテキストを表します。フィルター選択された id は、 `For-EachObject` 値にスペースが含まれている場合に、各値が引用符で囲まれたコマンドレットにパイプされます。
+スクリプトブロック内では、 **Id** に使用できる値はコマンドレットを使用して取得され `Get-TimeZone` ます。 各タイムゾーンの **Id** プロパティは、パイプを使用してコマンドレットに渡され `Where-Object` ます。 `Where-Object`コマンドレットは、によって指定された値で始まらない id をフィルターで除外します `$wordToComplete` 。これは、 <kbd>Tab キー</kbd>を押す前にユーザーが入力したテキストを表します。フィルター選択された id は、 `ForEach-Object` 値にスペースが含まれている場合に、各値が引用符で囲まれたコマンドレットにパイプされます。
 
 2番目のコマンドは、scriptblock、 **ParameterName** **Id** 、および **CommandName** を渡して、引数 completer を登録し `Set-TimeZone` ます。
 
@@ -89,11 +89,11 @@ Register-ArgumentCompleter -CommandName Stop-Service -ParameterName Name -Script
 
 入力 **可能オブジェクトを使用すると、** 返される各値に追加の詳細を指定できます。
 
-- 入力候補 **テキスト** (String)-オートコンプリートの結果として使用されるテキスト。 これは、コマンドに送信される値です。
+- 入力候補 **テキスト**(String)-オートコンプリートの結果として使用されるテキスト。 これは、コマンドに送信される値です。
 - **listitemtext** (String)-ユーザーが <kbd>Ctrl</kbd> + <kbd>Space</kbd>キーを押したときなど、一覧に表示されるテキスト。 これは表示のみに使用され、選択された場合はコマンドに渡されません。
-- **resultType** ( [入力](/dotnet/api/system.management.automation.completionresulttype)候補)-完了結果の型。
+- **resultType** ([入力](/dotnet/api/system.management.automation.completionresulttype)候補)-完了結果の型。
 - **tooltip** (String)-オブジェクトについての詳細情報が表示されたツールヒントのテキスト。
-  これは、ユーザーが<kbd>Ctrl</kbd>Space キーを押した後に項目を選択したときに表示され + <kbd>Space</kbd>ます。
+  これは、ユーザーが<kbd>Ctrl</kbd>Space キーを押した後に項目を選択したときに表示され + <kbd></kbd>ます。
 
 最後のコマンドは、停止したサービスをコマンドレットに手動で渡すことができることを示して `Stop-Service` います。 影響を受けるのは、タブ補完だけです。
 
@@ -117,7 +117,7 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock $scriptblock
 最初のコマンドは、ユーザーが <kbd>Tab キー</kbd>を押したときに渡される必須パラメーターを受け取るスクリプトブロックを作成します。詳細については、 **ScriptBlock** パラメーターの説明を参照してください。
 
 スクリプトブロック内では、 `dotnet complete` タブ補完を実行するためにコマンドが使用されます。
-結果はパイプを使用してコマンドレットに渡されます。この `ForEach-Object` コマンドレット [は、](/dotnet/api/system.management.automation.completionresult)値ごとに新しい " **補完結果** " オブジェクトを作成するために、このクラスの **新しい** 静的メソッドを使用します。
+結果はパイプを使用してコマンドレットに渡されます。この `ForEach-Object` コマンドレット [は、](/dotnet/api/system.management.automation.completionresult)値ごとに新しい "**補完結果**" オブジェクトを作成するために、このクラスの **新しい** 静的メソッドを使用します。
 
 ## PARAMETERS
 

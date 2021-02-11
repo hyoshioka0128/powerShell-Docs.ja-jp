@@ -1,12 +1,14 @@
 ---
-title: ListControl の ListItems の ListItem 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e72a887e8bd1f93bacb663e3079eeaec34bdfa51
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl の ListItems の ListItem 要素 (書式)
+description: ListControl の ListItems の ListItem 要素 (書式)
+ms.openlocfilehash: 999491b7851aa4fa21667ad376d7e9853500ca08
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785678"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666554"
 ---
 # <a name="listitem-element-for-listitems-for-listcontrol-format"></a>ListControl の ListItems の ListItem 要素 (書式)
 
@@ -52,7 +54,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-リストビューのコンポーネントの詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
+リストビューのコンポーネントの詳細については、「 [リストビューの作成](./creating-a-list-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 

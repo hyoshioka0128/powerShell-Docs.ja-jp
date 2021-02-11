@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: Azure Automation にデプロイする
-ms.openlocfilehash: 5d09a0777c59b642400d683c8cb6f881319fb881
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PowerShell ギャラリーを使用して Azure Automation にパッケージをデプロイする方法について説明します。
+ms.openlocfilehash: e9de079ee6cc950c8a268423b9eabd515959b718
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278743"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662365"
 ---
 # <a name="deploy-to-azure-automation"></a>Azure Automation にデプロイする
 
@@ -16,13 +15,12 @@ ms.locfileid: "78278743"
 
 ![[Azure Automation にデプロイする] ボタン](media/deploy-to-azure-automation/DeployToAzureAutomationButton.png)
 
-クリックすると Azure 管理ポータルにリダイレクトされるため、そこで Azure アカウント資格情報を使用してサインインします。
-パッケージに依存関係がある場合、すべての依存関係も Azure Automation にデプロイされます。
+クリックすると Azure 管理ポータルにリダイレクトされるため、そこで Azure アカウント資格情報を使用してサインインします。 パッケージに依存関係がある場合、すべての依存関係も Azure Automation にデプロイされます。
 
 > [!WARNING]
 > お使いの Automation アカウントに既に同じパッケージとバージョンがある場合、PowerShell ギャラリーからこれを再度デプロイすると、Automation アカウントのパッケージが上書きされます。
 
-モジュールをデプロイする場合は、[Azure Automation] の [モジュール] セクションに表示されます。  スクリプトをデプロイする場合は、[Azure Automation] の [Runbooks] セクションに表示されます。
+モジュールをデプロイする場合は、[Azure Automation] の [モジュール] セクションに表示されます。 スクリプトをデプロイする場合は、[Azure Automation] の [Runbooks] セクションに表示されます。
 
 [Azure Automation にデプロイする] ボタンは、AzureAutomationNotSupported タグをパッケージのメタデータに追加すると無効にできます。
 

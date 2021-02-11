@@ -6,12 +6,12 @@ ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_desiredstateconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_DesiredStateConfiguration
-ms.openlocfilehash: 2f043104c67078b98355b3e54171a8993e534837
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 5d088934ffc953ad19be401bce72f6287f0fde07
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93224888"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387024"
 ---
 # <a name="about_desiredstateconfiguration"></a>about_DesiredStateConfiguration
 
@@ -27,12 +27,12 @@ DSC には、ソフトウェア環境の状態をどのように構成するか�
 
 DSC は、PowerShell 4.0 で導入されました。
 
-DSC の詳細については、TechNet ライブラリの「 [PowerShell Desired State Configuration の概要](/powershell/scripting/dsc/overview/overview) 」を参照してください。
+DSC の詳細については、「 [PowerShell Desired State Configuration の概要](/powershell/scripting/dsc/overview/overview)」を参照してください。
 
 ## <a name="developing-dsc-resources-with-classes"></a>クラスを使用した DSC リソースの開発
 
 PowerShell 5.0 以降では、クラスを使用して DSC リソースを開発できます。
-詳細については、Microsoft TechNet の「 [about_Classes](about_Classes.md)」および「 [PowerShell クラスを使用したカスタム DSC リソースの作成](/previous-versions//dn948461(v=technet.10)) 」を参照してください。
+詳細については、「 [about_Classes](about_Classes.md)」と「 [PowerShell クラスを使用したカスタム DSC リソースの作成](/powershell/scripting/dsc/resources/authoringresourceclass)」を参照してください。
 
 ## <a name="using-dsc"></a>DSC の使用
 
@@ -102,7 +102,7 @@ Test-DscConfiguration -CimSession $session
 
 構成スクリプトには、次の組み込みリソースを使用できます。
 
-|名前                  |Properties                                         |
+|名前                  |プロパティ                                         |
 |----------------------|---------------------------------------------------|
 |ファイル                  |{DestinationPath, 属性, チェックサム, コンテンツ...}|
 |アーカイブ               |{Destination、Path、Checksum、Credential...}       |
@@ -113,7 +113,7 @@ Test-DscConfiguration -CimSession $session
 |レジストリ              |{Key, ValueName, DependsOn, 確認...}             |
 |スクリプト                |{GetScript、SetScript、TestScript、Credential...}  |
 |サービス               |{Name, BuiltInAccount, Credential, Dependencies...}|
-|ユーザー                  |{UserName, DependsOn, Description, Disabled...}    |
+|User                  |{UserName, DependsOn, Description, Disabled...}    |
 |WaitForAll            |{NodeName, DependsOn, PsDscRunAsC...}|
 |WaitForAny            |{NodeName, DependsOn, PsDscRunAsC...}|
 |WaitForSome           |{NodeCount, NodeName,, DependsOn...}  |

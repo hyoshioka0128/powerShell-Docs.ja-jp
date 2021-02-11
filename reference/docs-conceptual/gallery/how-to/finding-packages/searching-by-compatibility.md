@@ -1,14 +1,13 @@
 ---
 ms.date: 12/11/2018
-contributor: JKeithB, SydneyhSmith
-keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: 互換性のある PowerShell エディションまたはオペレーティング システムが含まれるパッケージ
-ms.openlocfilehash: fce1383fa604a555a40b050ce92c5cc45ca7054c
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: この記事では、特定のプラットフォームやエディションとの互換性を条件にして PowerShell ギャラリーを検索する方法について説明します。
+ms.openlocfilehash: 9806c09c85febfd74bb69adf3d294fb4f559ff23
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691452"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661247"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>互換性のある PowerShell エディションまたはオペレーティング システムが含まれるパッケージ
 
@@ -32,18 +31,17 @@ PowerShell を使用して互換性のあるパッケージを検索すること
 
 Tags:"PSEdition_Desktop" と Tags:"PSEdition_Core" を使用して PowerShell ギャラリー上のパッケージをフィルター処理します。
 
-### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>Tags:"PSEdition_Core" を使用して PowerShell Core エディションと互換性のある項目を検索します。
+### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>Tags:"PSEdition_Core" を使用して PowerShell Core エディションと互換性のある項目を検索します
 
 ![Core PSEdition と互換性のある項目の検索](media/searching-by-compatibility/searchresultswithpseditions.PNG)
 
-### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>Tags:"PSEdition_Desktop" を使用して PowerShell Desktop エディションと互換性のある項目を検索します。
+### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>Tags:"PSEdition_Desktop" を使用して PowerShell Desktop エディションと互換性のある項目を検索します
 
 ![Desktop PSEdition と互換性のある項目の検索](media/searching-by-compatibility/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>PowerShell を使用し、パッケージの中から互換性のあるエディションを見つける
-PowerShell エディションと OS のタグを指定してフィルタリングできます。
-`Find-Package` コマンドレットを指定します。`-Tag` パラメーターを指定し、対象のエディション (と OS) を指定します。
-例:
+
+PowerShell エディションと OS のタグを指定してフィルタリングできます。 `Find-Package` コマンドレットを指定します。`-Tag` パラメーターを指定し、対象のエディション (と OS) を指定します。 例:
 
 ```powershell
 # Find modules compatible with PowerShell Core:

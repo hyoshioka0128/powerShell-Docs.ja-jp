@@ -1,12 +1,14 @@
 ---
-title: ビュー (Format) のコントロールに対する CustomEntry の EntrySelectedBy 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5c82e02d23b1694d05f7a32578ccc5d33686f13f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の Controls の CustomEntry の EntrySelectedBy 要素 (書式)
+description: View の Controls の CustomEntry の EntrySelectedBy 要素 (書式)
+ms.openlocfilehash: 29b0574a95d81962fb3f72a526f89273baeea647
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774254"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660265"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-view-format"></a>View の Controls の CustomEntry の EntrySelectedBy 要素 (書式)
 
@@ -48,7 +50,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>解説
 
-選択条件は、オブジェクトが特定のプロパティを持っている場合や、特定のプロパティ値またはスクリプトがに評価された場合など、使用する定義のために存在する必要がある条件を定義するために使用され `true` ます。 選択条件の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件は、オブジェクトが特定のプロパティを持っている場合や、特定のプロパティ値またはスクリプトがに評価された場合など、使用する定義のために存在する必要がある条件を定義するために使用され `true` ます。 選択条件の詳細については、「 [ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

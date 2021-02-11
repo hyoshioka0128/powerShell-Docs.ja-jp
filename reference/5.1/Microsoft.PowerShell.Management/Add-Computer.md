@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Computer
-ms.openlocfilehash: c1527c04d795206b8de968daf62456837627a098
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: e3d1c5c071a334bddbfbc547ef2cc07e9e5c90aa
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93215619"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388350"
 ---
 # Add-Computer
 
@@ -40,8 +40,7 @@ Add-Computer [-ComputerName <String[]>] [-LocalCredential <PSCredential>] [-Cred
 
 ## Description
 
-この `Add-Computer` コマンドレットは、ローカルコンピューターまたはリモートコンピューターをドメインまたはワークグループに追加するか、ドメイン間で移動します。
-また、アカウントなしでドメインに追加されたコンピューターのドメイン アカウントも作成します。
+この `Add-Computer` コマンドレットは、ローカルコンピューターまたはリモートコンピューターをドメインまたはワークグループに追加するか、ドメイン間で移動します。 また、アカウントなしでドメインに追加されたコンピューターのドメイン アカウントも作成します。
 
 このコマンドレットのパラメーターを使用して、組織単位 (OU) およびドメイン コントローラーを指定したり、セキュリティで保護されていない参加を実行したりすることができます。
 
@@ -90,10 +89,7 @@ OUPath パラメーターを使用して、新しいアカウントの組織単�
 Add-Computer -ComputerName Server01 -LocalCredential Server01\Admin01 -DomainName Domain02 -Credential Domain02\Admin02 -Restart -Force
 ```
 
-このコマンドは、Server01 コンピューターを Domain02 ドメインに追加します。
-**LocalCredential** パラメーターを使用して、Server01 コンピューターに接続するアクセス許可を持つユーザー アカウントを指定します。
-**Credential** パラメーターを使用して、コンピューターをドメインに追加するアクセス許可を持つユーザー アカウントを指定します。
-**Restart** パラメーターを使用して、参加操作の完了後にコンピューターを再起動し、 **Force** パラメーターを使用して、ユーザーへの確認メッセージが表示されないようにします。
+このコマンドは、Server01 コンピューターを Domain02 ドメインに追加します。 **LocalCredential** パラメーターを使用して、Server01 コンピューターに接続するアクセス許可を持つユーザー アカウントを指定します。 **Credential** パラメーターを使用して、コンピューターをドメインに追加するアクセス許可を持つユーザー アカウントを指定します。 **Restart** パラメーターを使用して、参加操作の完了後にコンピューターを再起動し、 **Force** パラメーターを使用して、ユーザーへの確認メッセージが表示されないようにします。
 
 ### 例 6: コンピューターのグループを新しいドメインに移動する
 
@@ -103,9 +99,7 @@ Add-Computer -ComputerName Server01, Server02, localhost -DomainName Domain02 -L
 
 このコマンドは、Server01、Server02、およびローカル コンピューターを Domain01 から Domain02 に移動します。
 
-**LocalCredential** パラメーターを使用して、関連する 3 つのコンピューターに接続するアクセス許可を持つユーザー アカウントを指定します。
-**UnjoinDomainCredential** パラメーターを使用して、Domain01 ドメインからコンピューターを削除するアクセス許可を持つユーザー アカウントを指定し、 **Credential** パラメーターを使用して、Domain02 ドメインにコンピューターを追加するアクセス許可を持つユーザー アカウントを指定します。
-**Restart** パラメーターを使用して、移動の完了後、3 つのすべてのコンピューターを再起動します。
+**LocalCredential** パラメーターを使用して、関連する 3 つのコンピューターに接続するアクセス許可を持つユーザー アカウントを指定します。 **UnjoinDomainCredential** パラメーターを使用して、Domain01 ドメインからコンピューターを削除するアクセス許可を持つユーザー アカウントを指定し、 **Credential** パラメーターを使用して、Domain02 ドメインにコンピューターを追加するアクセス許可を持つユーザー アカウントを指定します。 **Restart** パラメーターを使用して、移動の完了後、3 つのすべてのコンピューターを再起動します。
 
 ### 例 7: コンピューターを新しいドメインに移動し、コンピューターの名前を変更する
 
@@ -115,8 +109,7 @@ Add-Computer -ComputerName Server01 -DomainName Domain02 -NewName Server044 -Cre
 
 このコマンドは、Server01 コンピューターを Domain02 に移動し、コンピューター名を Server044 に変更します。
 
-Server01 コンピューターへの接続には現在のユーザーの資格情報を使用し、このコンピューターを現在のドメインから削除します。
-**Credential** パラメーターを使用して、コンピューターを Domain02 ドメインに追加するアクセス許可を持つユーザー アカウントを指定します。
+Server01 コンピューターへの接続には現在のユーザーの資格情報を使用し、このコンピューターを現在のドメインから削除します。 **Credential** パラメーターを使用して、コンピューターを Domain02 ドメインに参加させるアクセス許可を持つユーザーアカウントを指定します。
 
 ### 例 8: ファイルに一覧表示されているコンピューターを新しいドメインに追加する
 
@@ -124,9 +117,7 @@ Server01 コンピューターへの接続には現在のユーザーの資格�
 Add-Computer -ComputerName (Get-Content Servers.txt) -DomainName Domain02 -Credential Domain02\Admin02 -Options Win9xUpgrade  -Restart
 ```
 
-このコマンドは、Servers.txt ファイルに記載されているコンピューターを Domain02 ドメインに追加します。
-**Options** パラメーターを使用して、 **Win9xUpgrade** オプションを指定します。
-**Restart** パラメーターは、参加操作の完了後に、新たに追加されたすべてのコンピューターを再起動します。
+このコマンドは、Servers.txt ファイルに記載されているコンピューターを Domain02 ドメインに追加します。 **Options** パラメーターを使用して、 **Win9xUpgrade** オプションを指定します。 **Restart** パラメーターは、参加操作の完了後に、新たに追加されたすべてのコンピューターを再起動します。
 
 ### 例 9: 定義済みのコンピューター資格情報を使用してコンピューターをドメインに追加する
 
@@ -144,8 +135,7 @@ $joinCred = New-Object pscredential -ArgumentList ([pscustomobject]@{
 Add-Computer -Domain "Domain03" -Options UnsecuredJoin,PasswordPass -Credential $joinCred
 ```
 
-このコマンドの組み合わせにより、ドメインに参加している既存のコンピューターを使用して、ドメイン内に事前定義された名前と一時的な参加パスワードを持つ新しいコンピューターアカウントを作成します。
-次に、定義済みの名前を持つコンピューターは、コンピューター名と一時的な参加パスワードのみを使用してドメインに参加します。
+このコマンドの組み合わせにより、ドメインに参加している既存のコンピューターを使用して、ドメイン内に事前定義された名前と一時的な参加パスワードを持つ新しいコンピューターアカウントを作成します。 次に、定義済みの名前を持つコンピューターは、コンピューター名と一時的な参加パスワードのみを使用してドメインに参加します。
 定義済みのパスワードは、結合操作をサポートするためにのみ使用され、コンピューターが結合を完了した後で、通常のコンピューターアカウントの手順の一部として置き換えられます。
 
 ## PARAMETERS
@@ -155,11 +145,9 @@ Add-Computer -Domain "Domain03" -Options UnsecuredJoin,PasswordPass -Credential 
 ドメインまたはワークグループに追加するコンピューターを指定します。
 既定値はローカル コンピューターです。
 
-各リモート コンピューターの NetBIOS 名、インターネット プロトコル (IP) アドレス、または完全修飾ドメイン名を入力します。
-ローカル コンピューターを指定するには、コンピューター名、ドット (.)、または「localhost」を入力します。
+各リモートコンピューターの NetBIOS 名、インターネットプロトコル (IP) アドレス、または完全修飾ドメイン名を入力します。 ローカルコンピューターを指定するには、コンピューター名、ドット ( `.` )、または "localhost" を入力します。
 
-このパラメーターは、Windows PowerShell リモート処理に依存しません。
-**ComputerName** `Add-Computer` コンピューターがリモートコマンドを実行するように構成されていない場合でも、の ComputerName パラメーターを使用できます。
+このパラメーターは、Windows PowerShell リモート処理に依存しません。 **ComputerName** `Add-Computer` コンピューターがリモートコマンドを実行するように構成されていない場合でも、の ComputerName パラメーターを使用できます。
 
 このパラメーターは、Windows PowerShell 3.0 で導入されました。
 
@@ -180,11 +168,9 @@ Accept wildcard characters: False
 新しいドメインにコンピューターを追加するアクセス許可を持つユーザー アカウントを指定します。
 既定値は現在のユーザーです。
 
-「User01」や「Domain01\User01」のようなユーザー名を入力するか、  コマンドレットで生成されるような `Get-Credential` オブジェクトを入力します。
-ユーザー名を入力すると、パスワードの入力を促すメッセージが表示されます。
+「User01」や「Domain01\User01」のようなユーザー名を入力するか、 コマンドレットで生成されるような `Get-Credential` オブジェクトを入力します。 ユーザー名を入力すると、パスワードの入力を促すメッセージが表示されます。
 
-コンピューターを現在のドメインから削除するアクセス許可を持つユーザー アカウントを指定するには、 **UnjoinDomainCredential** パラメーターを使用します。
-リモート コンピューターに接続するアクセス許可を持つユーザー アカウントを指定するには、 **LocalCredential** パラメーターを使用します。
+コンピューターを現在のドメインから削除するアクセス許可を持つユーザー アカウントを指定するには、 **UnjoinDomainCredential** パラメーターを使用します。 リモート コンピューターに接続するアクセス許可を持つユーザー アカウントを指定するには、 **LocalCredential** パラメーターを使用します。
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -200,8 +186,7 @@ Accept wildcard characters: False
 
 ### -DomainName
 
-コンピューターが追加されるドメインを指定します。
-このパラメーターは、コンピューターをドメインに追加する場合に必要です。
+コンピューターが追加されるドメインを指定します。 このパラメーターは、コンピューターをドメインに追加する場合に必要です。
 
 ```yaml
 Type: System.String
@@ -217,8 +202,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-ユーザーへの確認メッセージを表示しないようにします。
-このパラメーターを指定しない場合、では、 `Add-Computer` 各コンピューターの追加を確認する必要があります。
+ユーザーへの確認メッセージを表示しないようにします。 このパラメーターを指定しない場合、では、 `Add-Computer` 各コンピューターの追加を確認する必要があります。
 
 このパラメーターは、Windows PowerShell 3.0 で導入されました。
 
@@ -236,14 +220,11 @@ Accept wildcard characters: False
 
 ### -LocalCredential
 
-**ComputerName** パラメーターで指定されたコンピューターに接続するアクセス許可を持つユーザー アカウントを指定します。
-既定値は現在のユーザーです。
+**ComputerName** パラメーターで指定されたコンピューターに接続するアクセス許可を持つユーザー アカウントを指定します。 既定値は現在のユーザーです。
 
-「User01」や「Domain01\User01」のようなユーザー名を入力するか、  コマンドレットで生成されるような `Get-Credential` オブジェクトを入力します。
-ユーザー名を入力すると、パスワードの入力を促すメッセージが表示されます。
+「User01」や「Domain01\User01」のようなユーザー名を入力するか、 コマンドレットで生成されるような `Get-Credential` オブジェクトを入力します。 ユーザー名を入力すると、パスワードの入力を促すメッセージが表示されます。
 
-新しいドメインにコンピューターを追加するアクセス許可を持つユーザー アカウントを指定するには、 **Credential** パラメーターを使用します。
-コンピューターを現在のドメインから削除するアクセス許可を持つユーザー アカウントを指定するには、 **UnjoinDomainCredential** パラメーターを使用します。
+新しいドメインにコンピューターを追加するアクセス許可を持つユーザー アカウントを指定するには、 **Credential** パラメーターを使用します。 コンピューターを現在のドメインから削除するアクセス許可を持つユーザー アカウントを指定するには、 **UnjoinDomainCredential** パラメーターを使用します。
 
 このパラメーターは、Windows PowerShell 3.0 で導入されました。
 
@@ -261,8 +242,7 @@ Accept wildcard characters: False
 
 ### -NewName
 
-新しいドメインでのコンピューターの新しい名前を指定します。
-このパラメーターは、1 つのコンピューターが追加または移動されている場合にのみ有効です。
+新しいドメインでのコンピューターの新しい名前を指定します。 このパラメーターは、1 つのコンピューターが追加または移動されている場合にのみ有効です。
 
 このパラメーターは、Windows PowerShell 3.0 で導入されました。
 
@@ -280,8 +260,7 @@ Accept wildcard characters: False
 
 ### -オプション
 
-**コンピューターの追加** 参加操作の詳細オプションを指定します。
-1 つ以上の値をコンマ区切りの文字列として入力します。
+**コンピューターの追加** 参加操作の詳細オプションを指定します。 1 つ以上の値をコンマ区切りの文字列として入力します。
 
 このパラメーターの有効値は、次のとおりです。
 
@@ -297,7 +276,8 @@ Accept wildcard characters: False
 
 - **Joinreadonly** : 既存のコンピューターアカウントを使用して、コンピューターを読み取り専用ドメインコントローラーに参加させます。 コンピューターアカウントは、パスワードレプリケーションポリシーの許可リストに追加する必要があります。また、アカウントのパスワードは、参加操作の前に読み取り専用ドメインコントローラーにレプリケートする必要があります。
 
-- **InstallInvoke** : **Joindomainorworkgroup** メソッドの **fjoinoptions** パラメーターの作成 (0x2) フラグと削除 (0x4) フラグを設定します。 **Joindomainorworkgroup** メソッドの詳細については、MSDN ライブラリの「 [Win32_ComputerSystem クラスの Joindomainorworkgroup メソッド](https://msdn.microsoft.com/library/aa392154)」を参照してください。 これらのオプションの詳細については、MSDN ライブラリの「 [Netjoindomain 関数](https://msdn.microsoft.com/library/aa370433) 」を参照してください。
+- **InstallInvoke** : **Joindomainorworkgroup** メソッドの **fjoinoptions** パラメーターの作成 (0x2) フラグと削除 (0x4) フラグを設定します。 **Joindomainorworkgroup** メソッドの詳細については、 [Win32_ComputerSystem クラスの Joindomainorworkgroup メソッド](/windows/win32/cimwin32prov/joindomainorworkgroup-method-in-class-win32-computersystem)に関する説明を参照してください。
+  これらのオプションの詳細については、「 [Netjoindomain 関数](/windows/win32/api/lmjoin/nf-lmjoin-netjoindomain)」を参照してください。
 
 このパラメーターは Windows PowerShell 3.0 で導入されました。
 
@@ -316,9 +296,7 @@ Accept wildcard characters: False
 
 ### -OUPath
 
-ドメイン アカウントの組織単位 (OU) を指定します。
-OU の完全識別名を引用符で囲んで入力します。
-既定値は、ドメイン内で使用されるコンピューター オブジェクトの既定の OU です。
+ドメイン アカウントの組織単位 (OU) を指定します。 OU の完全識別名を引用符で囲んで入力します。 既定値は、ドメイン内で使用されるコンピューター オブジェクトの既定の OU です。
 
 ```yaml
 Type: System.String
@@ -334,8 +312,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-作業中の項目を表すオブジェクトを返します。
-既定では、このコマンドレットによる出力はありません。
+作業中の項目を表すオブジェクトを返します。 既定では、このコマンドレットによる出力はありません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -351,8 +328,7 @@ Accept wildcard characters: False
 
 ### -Restart
 
-ドメインまたはワークグループに追加されたコンピューターを再起動します。
-多くの場合、変更を有効にするには再起動が必要です。
+ドメインまたはワークグループに追加されたコンピューターを再起動します。 多くの場合、変更を有効にするには再起動が必要です。
 
 このパラメーターは、Windows PowerShell 3.0 で導入されました。
 
@@ -370,9 +346,7 @@ Accept wildcard characters: False
 
 ### -Server
 
-ドメインにコンピューターを追加するドメイン コントローラーの名前を指定します。
-ドメイン名\コンピューター名の形式で入力します。
-既定では、ドメイン コントローラーは指定されません。
+ドメインにコンピューターを追加するドメイン コントローラーの名前を指定します。 ドメイン名\コンピューター名の形式で入力します。 既定では、ドメイン コントローラーは指定されません。
 
 ```yaml
 Type: System.String
@@ -388,15 +362,11 @@ Accept wildcard characters: False
 
 ### -UnjoinDomainCredential
 
-コンピューターを現在のドメインから削除するアクセス許可を持つユーザー アカウントを指定します。
-既定値は現在のユーザーです。
+コンピューターを現在のドメインから削除するアクセス許可を持つユーザー アカウントを指定します。 既定値は現在のユーザーです。
 
-「User01」や「Domain01\User01」のようなユーザー名を入力するか、  コマンドレットで生成されるような `Get-Credential` オブジェクトを入力します。
-ユーザー名を入力すると、パスワードの入力を促すメッセージが表示されます。
+「User01」や「Domain01\User01」のようなユーザー名を入力するか、 コマンドレットで生成されるような `Get-Credential` オブジェクトを入力します。 ユーザー名を入力すると、パスワードの入力を促すメッセージが表示されます。
 
-このパラメーターは、コンピューターを別のドメインに移動するときに使用します。
-新しいドメインに参加するアクセス許可を持つユーザー アカウントを指定するには、 **Credential** パラメーターを使用します。
-リモート コンピューターに接続するアクセス許可を持つユーザー アカウントを指定するには、 **LocalCredential** パラメーターを使用します。
+このパラメーターは、コンピューターを別のドメインに移動するときに使用します。 新しいドメインに参加するアクセス許可を持つユーザー アカウントを指定するには、 **Credential** パラメーターを使用します。 リモート コンピューターに接続するアクセス許可を持つユーザー アカウントを指定するには、 **LocalCredential** パラメーターを使用します。
 
 このパラメーターは、Windows PowerShell 3.0 で導入されました。
 
@@ -430,8 +400,7 @@ Accept wildcard characters: False
 
 ### -ワークスペース
 
-コンピューターを追加するワークグループの名前を指定します。
-既定値は "WORKGROUP" です。
+コンピューターを追加するワークグループの名前を指定します。 既定値は "WORKGROUP" です。
 
 ```yaml
 Type: System.String

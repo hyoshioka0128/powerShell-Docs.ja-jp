@@ -53,4 +53,4 @@ ms.locfileid: "92499894"
 | Verb                        | PowerShell コマンドレット名でハイフンの前に使用される単語。 動詞はコマンドレットが実行するアクションを説明します。 |
 | Windows PowerShell ISE      | Integrated Scripting Environment - Windows PowerShell ホスト アプリケーション。わかりやすくて、構文がカラーで表記された、ユニコード準拠の環境で、コマンドを実行し、スクリプトを書き、テストし、デバッグすることができます。 |
 | Windows PowerShell スナップイン  | Windows PowerShell 環境に追加できるコマンドレット、プロバイダー、および Microsoft .NET Framework の型のセットを定義するリソース。 |
-| Windows PowerShell ワークフロー | A workflow is a sequence of programmed, connected steps that perform long-running tasks or require the coordination of multiple steps across multiple devices or managed nodes. Windows PowerShell ワークフローを使用することで、IT 担当者や開発者は、マルチデバイス管理アクティビティのシーケンス (ワークフロー内の 1 つのタスク) をワークフローとして作成できます。 Windows PowerShell ワークフローを使用すると、PowerShell スクリプトと XAML ファイルの両方をワークフローとして適応し実行できます。 |
+| Windows PowerShell ワークフロー | ワークフローとは、時間のかかるタスクを実行する手順や、複数のデバイスや管理対象ノード間で複数の手順の調整を必要とする手順をプログラミングで連結した手順のシーケンスです。 Windows PowerShell ワークフローを使用することで、IT 担当者や開発者は、マルチデバイス管理アクティビティのシーケンス (ワークフロー内の 1 つのタスク) をワークフローとして作成できます。 Windows PowerShell ワークフローを使用すると、PowerShell スクリプトと XAML ファイルの両方をワークフローとして適応し実行できます。 |

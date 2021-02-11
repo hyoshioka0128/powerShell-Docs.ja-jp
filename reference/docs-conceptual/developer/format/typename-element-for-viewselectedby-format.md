@@ -1,12 +1,14 @@
 ---
-title: ViewSelectedBy (Format) の TypeName 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e9a391565c3e66041dd9a340455dccfce9ce929b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ViewSelectedBy の TypeName 要素 (書式)
+description: ViewSelectedBy の TypeName 要素 (書式)
+ms.openlocfilehash: 62edc2fe4b4c1c5f1b17dd2f8b0943f28ff5dfb7
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780034"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667727"
 ---
 # <a name="typename-element-for-viewselectedby-format"></a>ViewSelectedBy の TypeName 要素 (書式)
 
@@ -44,11 +46,11 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>解説
 
-この要素をさまざまなビューで使用する方法の詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」、「[リストビュー](./creating-a-list-view.md)の作成」、「[ワイドビューの作成](./creating-a-wide-view.md)」、および「[カスタムビューコンポーネント](./creating-custom-controls.md)」を参照してください。
+この要素をさまざまなビューで使用する方法の詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」、「 [リストビュー](./creating-a-list-view.md)の作成」、「 [ワイドビューの作成](./creating-a-wide-view.md)」、および「 [カスタムビューコンポーネント](./creating-custom-controls.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-リストビューの[Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトを指定する方法を次の例に示します。 テーブル、ワイド、およびカスタムビューでも同じスキーマが使用されます。
+リストビューの [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) オブジェクトを指定する方法を次の例に示します。 テーブル、ワイド、およびカスタムビューでも同じスキーマが使用されます。
 
 ```xml
 <View>

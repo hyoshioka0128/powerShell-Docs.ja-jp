@@ -2,17 +2,17 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Import-DSCResource の使用
-ms.openlocfilehash: 0fa11755558510b986ac24df120579ea15a43689
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Import-DSCResource は動的なキーワードであり、Configuration スクリプト ブロックの内部でのみ使用できます。 これは、Configuration に必要なリソース モジュールをインポートするために使用されます。
+ms.openlocfilehash: f6dcad2c56848ec25eb79332c96fe6b0d438fe95
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786715"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658520"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource の使用
 
-`Import-DScResource` は動的なキーワードであり、Configuration スクリプト ブロックの内部でのみ使用できます。 `Import-DSCResource` キーワードは、ご自身の Configuration で必要なリソースをインポートするために使います。
-`$pshome` の下にあるリソースは自動的にインポートされますが、ご自身の [Configuration](Configurations.md) 内で使用されるすべてのリソースを明示的にインポートするのがやはりベスト プラクティスと考えられます。
+`Import-DSCResource` は動的キーワードです。これは、Configuration で必要となるすべてのリソースをインポートするために、Configuration のスクリプト ブロック内でのみ使用できます。 `$PSHOME` の下にあるリソースは自動的にインポートされますが、ご自身の [Configuration](Configurations.md) 内で使用されるすべてのリソースを明示的にインポートするのがやはりベスト プラクティスと考えられます。
 
 `Import-DSCResource` の構文は次に示すとおりです。 モジュールを名前で指定するときは、1 行に 1 つずつ列記する必要があります。
 
@@ -132,7 +132,7 @@ IntelliSence とスキーマ検証により、解析とコンパイル時の間�
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
 >
-> このリソースを Configuration で使用するときは、**MSFT_ServiceResource** または **Service** を指定できます。
+> このリソースを Configuration で使用するときは、 **MSFT_ServiceResource** または **Service** を指定できます。
 
 ## <a name="powershell-v4-and-v5-differences"></a>PowerShell の v4 と v5 の違い
 

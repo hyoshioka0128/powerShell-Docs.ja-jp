@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Service
-ms.openlocfilehash: b5af4f55166993e54048dd76bb8345550718c170
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 491940351042843af60fe85f8f1b39d41688675f
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93214480"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342843"
 ---
 # Restart-Service
 
@@ -44,9 +44,7 @@ Restart-Service [-Force] [-PassThru] -DisplayName <String[]> [-Include <String[]
 
 ## Description
 
-**Restart service** コマンドレットは、指定されたサービスの Windows サービスコントローラーに停止メッセージを送信した後、開始メッセージを送信します。
-サービスが既に停止している場合は、エラーを通知せずに起動されます。
-サービスは、サービス名または表示名で指定できます。また、 *InputObject* パラメーターを使用して、再起動する各サービスを表すオブジェクトを渡すこともできます。
+`Restart-Service`コマンドレットは、指定されたサービスの Windows サービスコントローラーに停止メッセージを送信した後、開始メッセージを送信します。 サービスが既に停止している場合は、エラーを通知せずに起動されます。 サービスは、サービス名または表示名で指定できます。また、 **InputObject** パラメーターを使用して、再起動する各サービスを表すオブジェクトを渡すこともできます。
 
 ## 例
 
@@ -74,18 +72,15 @@ PS C:\> Get-Service -Name "net*" | Where-Object {$_.Status -eq "Stopped"} | Rest
 
 このコマンドを実行すると、コンピューター上で停止しているネットワーク サービスがすべて開始されます。
 
-このコマンドは、Get-Service コマンドレットを使用して、サービス名が net で始まるサービスを表すオブジェクトを取得します。
-パイプライン演算子 (|) により、サービスオブジェクトが Where-Object コマンドレットに送信されます。このコマンドレットは、status が stopped のサービスだけを選択します。
-もう1つのパイプライン演算子は、選択したサービスを **再起動サービス** に送信します。
+このコマンドは、 `Get-Service` コマンドレットを使用して、サービス名が net で始まるサービスを表すオブジェクトを取得します。 パイプライン演算子 () は、 `|` サービスオブジェクトをコマンドレットに送信し `Where-Object` ます。これにより、status が stopped のサービスだけが選択されます。 もう1つのパイプライン演算子は、選択したサービスをに送信し `Restart-Service` ます。
 
-実際には、 *WhatIf* パラメーターを使用して、コマンドを実行する前にその効果を判断します。
+実際には、 **WhatIf** パラメーターを使用して、コマンドを実行する前にその効果を判断します。
 
 ## PARAMETERS
 
 ### -DisplayName
 
-再起動するサービスの表示名を指定します。
-ワイルドカード文字を使用できます。
+再起動するサービスの表示名を指定します。 ワイルドカード文字を使用できます。
 
 ```yaml
 Type: System.String[]
@@ -101,10 +96,7 @@ Accept wildcard characters: True
 
 ### -除外
 
-このコマンドレットで省略されるサービスを指定します。
-このパラメーターの値は、 *Name* パラメーターを修飾します。
-「S *」のように、名前要素またはパターンを入力します。
-ワイルドカード文字を使用できます。
+このコマンドレットで省略されるサービスを指定します。 このパラメーターの値は、 **Name** パラメーターを修飾します。 「S *」のように、名前要素またはパターンを入力します。 ワイルドカード文字を使用できます。
 
 ```yaml
 Type: System.String[]
@@ -136,10 +128,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-このコマンドレットによって再起動されるサービスを指定します。
-このパラメーターの値は、 *Name* パラメーターを修飾します。
-「S *」のように、名前要素またはパターンを入力します。
-ワイルドカード文字を使用できます。
+このコマンドレットによって再起動されるサービスを指定します。 このパラメーターの値は、 **Name** パラメーターを修飾します。 「S *」のように、名前要素またはパターンを入力します。 ワイルドカード文字を使用できます。
 
 ```yaml
 Type: System.String[]
@@ -155,8 +144,7 @@ Accept wildcard characters: True
 
 ### -InputObject
 
-再起動するサービスを表す **ServiceController** オブジェクトを指定します。
-オブジェクトが格納されている変数を入力するか、オブジェクトを取得するコマンドまたは式を入力します。
+再起動するサービスを表す **ServiceController** オブジェクトを指定します。 オブジェクトが格納されている変数を入力するか、オブジェクトを取得するコマンドまたは式を入力します。
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -188,8 +176,7 @@ Accept wildcard characters: True
 
 ### -PassThru
 
-サービスを表すオブジェクトを返します。
-既定では、このコマンドレットによる出力はありません。
+サービスを表すオブジェクトを返します。 既定では、このコマンドレットによる出力はありません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -221,8 +208,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -250,13 +236,14 @@ Accept wildcard characters: False
 
 ### None、ServiceController。
 
-このコマンドレットは、 *PassThru* パラメーターを指定した場合に、再起動されたサービスを表す **ServiceController** オブジェクトを生成します。
-それ以外の場合、このコマンドレットによる出力はありません。
+このコマンドレットは、 **PassThru** パラメーターを指定した場合に、再起動されたサービスを表す **ServiceController** オブジェクトを生成します。 それ以外の場合、このコマンドレットによる出力はありません。
 
 ## 注
 
-* **サービスの再起動で** は、現在のユーザーがこの操作を行うためのアクセス許可を持っている場合にのみサービスを制御できます。 コマンドが正常に機能しない場合は、必要なアクセス許可が与えられていない可能性があります。
-* システム上のサービスのサービス名と表示名を確認するには、「 **Get service** 」と入力します。 サービス名は [ **名前** ] 列に表示され、表示名は [ **DisplayName** ] 列に表示されます。
+
+- `Restart-Service` 現在のユーザーがこの操作を行うためのアクセス許可を持っている場合にのみ、サービスを制御できます。 コマンドが正常に機能しない場合は、必要なアクセス許可が与えられていない可能性があります。
+- システム上のサービスのサービス名と表示名を確認するには、 `Get-Service` 「」と入力します。
+  サービス名は [ **名前** ] 列に表示され、表示名は [ **DisplayName** ] 列に表示されます。
 
 ## 関連リンク
 

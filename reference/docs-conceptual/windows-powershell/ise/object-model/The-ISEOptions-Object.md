@@ -2,12 +2,12 @@
 ms.date: 12/31/2019
 title: ISEOptions オブジェクト
 description: ISEOptions オブジェクトは、Windows PowerShell ISE のさまざまな設定を表します。
-ms.openlocfilehash: 4f790550796f40c7a2d4882cc0444fa7a55eeee9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 9823a4a0ea32420d830735a0a61a6c03a6458fb7
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661021"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391512"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions オブジェクト
 
@@ -492,7 +492,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $true
 
 Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
-カーソルをキーワードに置いた状態で <kbd>F1</kbd> キーを押したときに、ローカルにインストールされたヘルプまたはオンラインの TechNet ライブラリのヘルプを表示するかどうかを指定します。 `$true` に設定すると、ローカルにインストールされたヘルプ コンテンツがポップアップ ウィンドウに表示されます。 `Update-Help` コマンドを実行すると、ヘルプ ファイルをインストールすることができます。 `$false` に設定すると、ブラウザーが開き、TechNet ライブラリ内のページに移動します。
+カーソルをキーワードに置いた状態で <kbd>F1</kbd> キーを押したときに、ローカルにインストールされたヘルプまたはオンラインのヘルプを表示するかどうかを指定します。 `$true` に設定すると、ローカルにインストールされたヘルプ コンテンツがポップアップ ウィンドウに表示されます。 `Update-Help` コマンドを実行すると、ヘルプ ファイルをインストールすることができます。 `$false` に設定すると、ブラウザーが開き、docs.microsoft.com のページに移動します。
 
 ```powershell
 # Sets the option for the online help to be displayed.

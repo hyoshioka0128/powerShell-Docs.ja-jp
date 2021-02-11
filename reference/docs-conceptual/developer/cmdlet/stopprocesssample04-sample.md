@@ -1,12 +1,14 @@
 ---
-title: StopProcessSample04 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a256d29b9e0be878d805a82ddf5a538461d283d6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: StopProcessSample04 サンプル
+description: StopProcessSample04 サンプル
+ms.openlocfilehash: 65588b4d60034d1e6a1e17441a4a640caaacdce8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786426"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92650132"
 ---
 # <a name="stopprocesssample04-sample"></a>StopProcessSample04 サンプル
 
@@ -40,7 +42,7 @@ ms.locfileid: "87786426"
 
     `stop-proc`
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -60,7 +62,7 @@ ms.locfileid: "87786426"
 
 ## <a name="example"></a>例
 
-次のコードは、パラメーターセットを宣言し、既定のパラメーターセットを指定し、入力オブジェクトを受け入れることができる、Stop Proc コマンドレットの実装を示しています。
+次のコードは、パラメーターセットを宣言し、既定のパラメーターセットを指定し、入力オブジェクトを受け入れることができる Stop-Proc コマンドレットの実装を示しています。
 
 このサンプルでは、入力オブジェクト、パラメーターセットを宣言する方法、および使用する既定のパラメーターセットを指定する方法を示します。
 

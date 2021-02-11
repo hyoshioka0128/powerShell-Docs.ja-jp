@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の ItemSelectionCondition の PropertyName 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f6d671035bfd2ef6323b638fdd951bb020bd6548
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の ItemSelectionCondition の PropertyName 要素 (書式)
+description: GroupBy の ItemSelectionCondition の PropertyName 要素 (書式)
+ms.openlocfilehash: 9667a389ded33d0744f0f7f8d739635a8b21d98b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780884"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666112"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-groupby-format"></a>GroupBy の ItemSelectionCondition の PropertyName 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>解説
 
-この要素が使用されている場合、選択条件を定義するときに[ScriptBlock](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md)要素を指定することはできません。
+この要素が使用されている場合、選択条件を定義するときに [ScriptBlock](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md) 要素を指定することはできません。
 
 ## <a name="see-also"></a>参照
 

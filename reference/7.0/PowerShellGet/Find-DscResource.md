@@ -7,12 +7,12 @@ ms.date: 06/04/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-dscresource?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-DscResource
-ms.openlocfilehash: 170be8eb8e5f9f158b69c5505505e587e10c7e78
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 4312ac522bf0b04a9a95414774bad9624737ce45
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210128"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892673"
 ---
 # Find-DscResource
 
@@ -21,7 +21,7 @@ Desired State Configuration (DSC) リソースを検索します。
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 Find-DscResource [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <String>]
@@ -158,7 +158,7 @@ dmAwsTagInstance        1.0.1      domainAwsDSCResources      PSGallery
 結果にプレリリースとしてマークされたリソースが含まれます。
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 
 ### -AllVersions
 
-**AllVersions** パラメーターには、DSC リソースの使用可能なバージョンがそれぞれ表示されます。 **AllVersions** パラメーターは、 **MinimumVersion** 、 **MaximumVersion** 、または **RequiredVersion** パラメーターと共に使用することはできません。
+**AllVersions** パラメーターには、DSC リソースの使用可能なバージョンがそれぞれ表示されます。 **AllVersions** パラメーターは、 **MinimumVersion**、 **MaximumVersion**、または **RequiredVersion** パラメーターと共に使用することはできません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -359,6 +359,13 @@ Accept wildcard characters: False
 
 ## 注
 
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
+
 ## 関連リンク
 
 [Get-InstalledModule](Get-InstalledModule.md)
@@ -369,4 +376,4 @@ Accept wildcard characters: False
 
 [Select-Object](../Microsoft.PowerShell.Utility/Select-Object.md)
 
-[Uninstall-Module](Uninstall-Module.md)
+[アンインストール-モジュール](Uninstall-Module.md)

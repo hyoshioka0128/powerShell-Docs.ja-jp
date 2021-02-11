@@ -2,18 +2,19 @@
 ms.date: 12/06/2019
 keywords: powershell,コマンドレット
 title: Windows PowerShell のシステム要件
-ms.openlocfilehash: 883da2f91c4a0b46e4bccbacd9933a52f8f476f6
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: この記事では、Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0、Windows PowerShell 5.1 のシステム要件を列挙します。
+ms.openlocfilehash: a82c0b1d6bf53e4a97db8414050a122ae5b7745d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236086"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663831"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell のシステム要件
 
 この記事では、Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0、Windows PowerShell 5.1 のシステム要件を列挙します。 また、Windows PowerShell Integrated Scripting Environment (ISE)、Common Information Model (CIM) コマンド、ワークフローなど、特別な機能を紹介します。
 
-Windows® 8.1 および Windows Server® 2012 R2 には、必要なプログラムがすべて付属しています。 この記事は、以前のリリースの Windows のユーザー向けです。
+Windows&reg; 8.1 および Windows Server&reg; 2012 R2 には、必要なプログラムがすべて付属しています。 この記事は、以前のリリースの Windows のユーザー向けです。
 
 ## <a name="operating-system-requirements"></a>オペレーティング システムの要件
 
@@ -57,8 +58,8 @@ Windows PowerShell 4.0 は、次のバージョンの Windows で実行できま
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8.1                                 | 既定でインストールされています                                                                                       |
 | Windows Server 2012 R2                      | 既定でインストールされています                                                                                       |
-| Windows® 7 Service Pack 1              | [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) をインストールする |
-| Windows Server® 2008 R2 Service Pack 1 | [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) をインストールする |
+| Windows&reg; 7 Service Pack 1              | [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) をインストールする |
+| Windows Server&reg; 2008 R2 Service Pack 1 | [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) をインストールする |
 
 ### <a name="windows-powershell-30"></a>Windows PowerShell 3.0
 
@@ -68,8 +69,8 @@ Windows PowerShell 3.0 は、次のバージョンの Windows で実行できま
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8                                   | 既定でインストールされています                                                                                       |
 | Windows Server 2012                         | 既定でインストールされています                                                                                       |
-| Windows® 7 Service Pack 1              | [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) をインストールする |
-| Windows Server® 2008 R2 Service Pack 1 | [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) をインストールする |
+| Windows&reg; 7 Service Pack 1              | [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) をインストールする |
+| Windows Server&reg; 2008 R2 Service Pack 1 | [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) をインストールする |
 | Windows Server 2008 Service Pack 2     | [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) をインストールする |
 
 ## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework の要件
@@ -137,7 +138,7 @@ Windows PowerShell 2.0 エンジンの追加とインストールや、必要な
 
 Windows PowerShell 2.0、Windows PowerShell 3.0、および Windows PowerShell 4.0 は、Windows プレインストール環境 (Windows PE) で実行できます。 ただし、次のコマンドレットはサポートされていません。
 
-- バックグラウンド インテリジェント転送サービス (BITS) のコマンドレット 詳細については、「[BitsTransfer](/powershell/module/bitstransfer/?view=win10-ps)」を参照してください。
+- バックグラウンド インテリジェント転送サービス (BITS) のコマンドレット 詳細については、「[BitsTransfer](/powershell/module/bitstransfer/)」を参照してください。
 - [Get-EventLog](/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 - [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 - [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)

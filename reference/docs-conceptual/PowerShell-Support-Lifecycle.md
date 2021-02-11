@@ -1,13 +1,13 @@
 ---
 title: PowerShell Core のサポート ライフサイクル
 description: PowerShell のサポートを管理するポリシーの詳細を説明します
-ms.date: 03/09/2020
-ms.openlocfilehash: 1681df188d03a1115b13518fb88c21ebf79701d4
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.date: 11/11/2020
+ms.openlocfilehash: 0803dda070c66b4c1d803171ecdb7029a096517b
+ms.sourcegitcommit: 4879b9cdfa3f03b04a07b84442dc1ca9ae0f6b46
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501747"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98105181"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell のサポート ライフサイクル
 
@@ -29,24 +29,6 @@ PowerShell 7 のリリースでは、PowerShell は [Microsoft モダン ライ�
 > [!IMPORTANT]
 > サポートを受けるには、最新の更新パッチがインストールされている必要があります。 たとえば、PowerShell 7.0 を実行していて、7.0.1 がリリースされている場合、サポートを受けるには、7.0.1 に更新する必要があります。
 
-## <a name="lifecycle-of-powershell-core-6x"></a>PowerShell Core 6.x のライフサイクル
-
-PowerShell Core では、[Microsoft モダン ライフサイクル ポリシー][modern]を使用しました。 このサポート ライフサイクルでは、最新バージョンで最新の機能を常に提供します。
-
-PowerShell Core のバージョン 6.x ブランチは約半年に一回更新されました (例: 6.0、6.1、6.2 など)。 ただし、PowerShell 7 のリリースに伴い、6.x のマイナー バージョン リリースはなくなります。 PowerShell 6.2.x は、サポートされている間、サービス更新プログラムが引き続き受信されます。
-
-> [!IMPORTANT]
-> 引き続きサポートを受けるには、新しいマイナー バージョンの公開後、6 か月以内に更新する必要があります。
-
-たとえば、PowerShell Core 6.1 が 2018 年 7 月 1 日に公開された場合、サポートを維持するには、2019 年 1 月 1 日までに PowerShell Core 6.1 に更新する必要があります。
-
-> [!IMPORTANT]
-> サポートを受け続けるには、それぞれの新しいパッチ バージョンのリリース後 30 日以内に更新する必要があります。
-
-たとえば、PowerShell Core 6.1 を実行していて 2019 年 2 月 19 日に 6.1.3 がリリースされた場合、サポートを維持するには、リリースの 30 日後である 2019 年 3 月 21 日までに PowerShell Core 6.1.3 に更新する必要があります。 必要な修正プログラムが見つかった場合、その修正プログラムは次の累積的な更新プログラムでリリースされます。
-
-Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポートを終了する 12 か月前にお客様に通知することを Microsoft の義務としています。
-
 ## <a name="supported-platforms"></a>サポートされているプラットフォーム
 
 お使いのプラットフォームと PowerShell Core のバージョンが正式にサポートされているかどうかを確認するには、次の表を参照してください。
@@ -55,55 +37,58 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 
 `Experimental` としてリストされているプラットフォームは、正式にはサポートされていませんが、実験とフィードバックのために使用することができます。
 
-| プラットフォーム                                          |      6.2      |    7.0    |
-| ------------------------------------------------- | :-----------: | :-------: |
-| Windows 8.1、10                               |   サポートされています   | サポートされています |
-| Windows Server 2012 R2、2016                      |   サポートされています   | サポートされています |
-| [Windows Server 半期チャネル][semi-annual] |   サポートされています   | サポートされています |
-| Ubuntu 16.04 および 18.04                            |   サポートされています   | サポートされています |
-| Ubuntu 19.10 (スナップ パッケージを使用)                   |   コミュニティ   | コミュニティ |
-| Ubuntu 20.04 (スナップ パッケージを使用)                   |   コミュニティ   | コミュニティ |
-| Debian 9                                          |   サポートされています   | サポートされています |
-| Debian 10                                         | サポートされていません | サポートされています |
-| CentOS 7                                          |   サポートされています   | サポートされています |
-| CentOS 8                                          | サポートされていません | サポートされています |
-| Red Hat Enterprise Linux 7                        |   サポートされています   | サポートされています |
-| Red Hat Enterprise Linux 8                        | サポートされていません | サポートされています |
-| Fedora 30                                         | サポートされていません | サポートされています |
-| Alpine 3.8                                        |   注を参照    | 注を参照  |
-| Alpine 3.9 および 3.10                               | サポートされていません | 注を参照  |
-| macOS 10.12 以降                                      |   サポートされています   | サポートされています |
-| Arch                                              |   コミュニティ   | コミュニティ |
-| Raspbian                                          |   コミュニティ   | コミュニティ |
-| Kali                                              |   コミュニティ   | コミュニティ |
-| AppImage (複数の Linux プラットフォームで機能)      |   コミュニティ   | コミュニティ |
-| [Snap パッケージ](https://snapcraft.io/powershell)   |   注を参照    | 注を参照  |
+<!-- TODO: update OS list -->
+
+|                     プラットフォーム                      |      7.0      |      7.1      |
+| ------------------------------------------------- | :-----------: | :-----------: |
+| Windows 8.1、10                               |   サポートされています   |   サポート   |
+| Windows Server 2012 R2、2016、2019                |   サポート   |   サポートされています   |
+| [Windows Server 半期チャネル][semi-annual] |   サポートされています   |   サポート   |
+| Ubuntu 16.04、18.04                               |   サポート   |   サポート   |
+| Ubuntu 20.04                                      | サポートされていません |   サポートされています   |
+| Ubuntu 19.10、20.10 (スナップ パッケージを使用)            |   コミュニティ   |   サポートされています   |
+| Debian 9                                          |   サポートされています   |   サポートされています   |
+| Debian 10                                         |   サポートされています   |   サポートされています   |
+| CentOS 7                                          |   サポートされています   |   サポートされています   |
+| CentOS 8                                          |   サポート   |   サポートされています   |
+| Red Hat Enterprise Linux 7                        |   サポートされています   |   サポートされています   |
+| Red Hat Enterprise Linux 8                        |   サポート   |   サポートされています   |
+| Fedora 31 以降                                        |   サポートされています   | サポートされていません |
+| Alpine 3.10                                       |   注 1 を参照  | サポートされていません |
+| Alpine 3.11 以降                                      |   注 1 を参照  |   注 1 を参照  |
+| macOS 10.13 以降                                      |   サポート   |   サポートされています   |
+| Arch                                              |   コミュニティ   |   コミュニティ   |
+| Raspbian                                          |   コミュニティ   |   コミュニティ   |
+| Kali                                              |   コミュニティ   |   コミュニティ   |
+| AppImage (複数の Linux プラットフォームで機能)      |   コミュニティ   |   コミュニティ   |
+| [Snap パッケージ](https://snapcraft.io/powershell)   |   注 2 を参照  |   注を参照    |
 
 > [!NOTE]
-> パッケージを実行しているディストリビューションと同様に、Snap パッケージがサポートされます。
-
-> [!NOTE]
-> Alpine では、CIM、PowerShell リモート処理、および DSC はサポートされていません。
+> - 1 - Alpine では、CIM、PowerShell リモート処理、および DSC はサポートされていません。
+> - 2 - パッケージを実行しているディストリビューションと同様に、Snap パッケージがサポートされます。
 
 ## <a name="powershell-releases-end-of-life"></a>PowerShell リリースのサポート終了
 
 [PowerShell のライフサイクル](#lifecycle-of-powershell-7)に基づき、さまざまなリリースがサポートされなくなる日付を次の表に示します。
 
-| Version |    サポート終了     |
-| :-----: | ------------------ |
-|   7.0   | 2022 年 12 月 3 日   |
-|   6.2   | 2020 年 9 月 4 日  |
-|   6.1   | 2019 年 9 月 28 日 |
-|   6.0   | 2019 年 2 月 13 日  |
+| Version |          サポート終了           |
+| :-----: | ------------------------------ |
+|   7.1   | 2022 年 2 月中旬 (予定) |
+|   7.0   | 2022 年 12 月 3 日               |
+|   6.2   | 2020 年 9 月 4 日              |
+|   6.1   | 2019 年 9 月 28 日             |
+|   6.0   | 2019 年 2 月 13 日              |
 
 > [!NOTE]
-> このドキュメントでは、PowerShell Core 6 と PowerShell 7 のサポートについて説明します。 Windows PowerShell (1.0 から 5.1) は、Windows OS のコンポーネントです。 コンポーネントは、親製品または親プラットフォームと同様のサポートを受けます。 詳細については、「[製品およびサービスのライフサイクル情報の検索](/lifecycle/products/)」を参照してください。
+> このドキュメントでは、PowerShell Core のサポートについて説明します。 Windows PowerShell (1.0 から 5.1) は、Windows OS のコンポーネントです。 コンポーネントは、親製品または親プラットフォームと同様のサポートを受けます。 詳細については、「[製品およびサービスのライフサイクル情報の検索](/lifecycle/products/)」を参照してください。
 
 ## <a name="unsupported-platforms"></a>サポートされないプラットフォーム
 
 プラットフォームのバージョンが、プラットフォームの所有者によって定義された有効期限を迎えると、PowerShell Core でもそのプラットフォームのバージョンがサポートされなくなります。 アクセスする必要があるユーザーは引き続き以前にリリースされたパッケージを利用できますが、公式のサポートと更新プログラムはどんな種類のものも提供されなくなります。
 
 そのため、ディストリビューションの所有者によって次のバージョンのサポートは終了され、サポートされていません。
+
+<!-- TODO: Update this table Jason-->
 
 |    プラットフォーム    | Version |                                                         有効期限切れ                                                          |
 | -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -156,16 +141,19 @@ PowerShell は、「[Windows での Microsoft セキュリティ サービス提
 
 PowerShell のメジャー リリースのタイムラインを、次の表に示します。 この表は、履歴の参照用に掲載されています。 サポート ライフサイクルの決定に使用するためのものではありません。
 
-|       Version        | リリース日 |                                                                     Note                                                                      |
-| -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| PowerShell 7.0 (LTS) |   2020 年 3 月   | .NET Core 3.1 (LTS) 上に構築されています                                                                                                                  |
-| PowerShell 6.0       |   2018 年 1 月   | 最初のリリースは .NET Core 2.1 上に構築されています。 Windows、Linux、macOS にインストールできます。                                                              |
-| PowerShell 5.1       |   2016 年 8 月   | Windows 10 Anniversary Update および Windows Server 2016 でリリースされました                                                                             |
-| PowerShell 5.0       |   2016 年 2 月   | Windows Management Framework (WMF) 5.0 でリリースされました                                                                                            |
-| PowerShell 4.0       |   2013 年 10 月   | Windows 8.1 および Windows Server 2012 R2 に統合されています。 Windows 7 SP1、Windows Server 2008 R2 SP1、Windows Server 2012 にインストールできます。 |
-| PowerShell 3.0       |   2012 年 10 月   | Windows 8 および Windows Server 2012 に統合されています。 Windows 7 SP1、Windows Server 2008 SP1、Windows Server 2008 R2 SP1 にインストールできます。  |
-| PowerShell 2.0       |   2009 年 7 月   | Windows 7 および Windows Server 2008 R2 に統合されています。 Windows XP SP3、Windows Server 2003 SP2、Windows Vista SP1 にインストールできます。            |
-| PowerShell 1.0       |   2006 年 11 月   | Windows XP SP2、Windows Server 2003 SP1、Windows Vista にインストールできます。 Windows Server 2008 のオプションのコンポーネントです。                          |
+|         Version          | リリース日 |                                                                     Note                                                                      |
+| ------------------------ | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| PowerShell 7.1 (現在) |   2020 年 11 月   | .NET Core 5.0 (最新) 上に構築されています。                                                                                                             |
+| PowerShell 7.0 (LTS)     |   2020 年 3 月   | .NET Core 3.1 (LTS) 上に構築されています。                                                                                                                 |
+| PowerShell 6.2           |   2019 年 3 月   |                                                                                                                                               |
+| PowerShell 6.1           |   2018 年 9 月   | .NET Core 2.1 上に構築されています。                                                                                                                       |
+| PowerShell 6.0           |   2018 年 1 月   | 最初のリリースは .NET Core 2.0 上に構築されています。 Windows、Linux、macOS にインストールできます。                                                              |
+| PowerShell 5.1           |   2016 年 8 月   | Windows 10 Anniversary Update および Windows Server 2016 でリリースされました。                                                                            |
+| PowerShell 5.0           |   2016 年 2 月   | Windows Management Framework (WMF) 5.0 でリリースされました。                                                                                           |
+| PowerShell 4.0           |   2013 年 10 月   | Windows 8.1 および Windows Server 2012 R2 に統合されています。 Windows 7 SP1、Windows Server 2008 R2 SP1、Windows Server 2012 にインストールできます。 |
+| PowerShell 3.0           |   2012 年 10 月   | Windows 8 および Windows Server 2012 に統合されています。 Windows 7 SP1、Windows Server 2008 SP1、Windows Server 2008 R2 SP1 にインストールできます。  |
+| PowerShell 2.0           |   2009 年 7 月   | Windows 7 および Windows Server 2008 R2 に統合されています。 Windows XP SP3、Windows Server 2003 SP2、Windows Vista SP1 にインストールできます。            |
+| PowerShell 1.0           |   2006 年 11 月   | Windows XP SP2、Windows Server 2003 SP1、Windows Vista にインストールできます。 Windows Server 2008 のオプションのコンポーネントです。                          |
 
 <!-- hyperlink references -->
 [有料サポート]: https://support.microsoft.com/hub/4343728/support-for-business

@@ -1,12 +1,14 @@
 ---
-title: TableControl (Format) の TableColumnItems の TableColumnItem 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: beadf771f02519394d799a03db374050e3302321
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl の TableColumnItems の TableColumnItem 要素 (書式)
+description: TableControl の TableColumnItems の TableColumnItem 要素 (書式)
+ms.openlocfilehash: 8ef5158c9bb9f074d5c58190d4d3b20c10c83744
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785168"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659856"
 ---
 # <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a>TableControl の TableColumnItems の TableColumnItem 要素 (書式)
 
@@ -52,11 +54,11 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 行の各列に、オブジェクトまたはスクリプトのプロパティを指定できます。 子要素が指定されていない場合、項目はプレースホルダーであり、データは表示されません。
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-この例は、 `TableColumnItem` `Status` system.object オブジェクトのプロパティの値を表示する要素[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)を示しています。
+この例は、 `TableColumnItem` `Status` system.object オブジェクトのプロパティの値を表示する要素[](/dotnet/api/System.Diagnostics.Process)を示しています。
 
 ```xml
 <TableColumnItem>

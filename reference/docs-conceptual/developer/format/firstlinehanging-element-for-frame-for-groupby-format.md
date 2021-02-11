@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の Frame の FirstLineHanging 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3def56e918810d9e201d7a9ae73776d90646d8b3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の Frame の FirstLineHanging 要素 (書式)
+description: GroupBy の Frame の FirstLineHanging 要素 (書式)
+ms.openlocfilehash: 6a4ded9cced484440636aee694cd8381b2889ba8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773608"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652270"
 ---
 # <a name="firstlinehanging-element-for-frame-for-groupby-format"></a>GroupBy の Frame の FirstLineHanging 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>解説
 
-この要素が指定されている場合、 [Firstlineindent](./firstlineindent-element-for-frame-for-groupby-format.md)要素を指定することはできません。
+この要素が指定されている場合、 [Firstlineindent](./firstlineindent-element-for-frame-for-groupby-format.md) 要素を指定することはできません。
 
 ## <a name="see-also"></a>参照
 

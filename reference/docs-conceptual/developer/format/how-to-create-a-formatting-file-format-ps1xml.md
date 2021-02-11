@@ -1,12 +1,14 @@
 ---
-title: 書式設定ファイルを作成する方法 (.format.ps1xml) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: abdbd4e15b0c4cb1dafcde087d24ed5792c86c3d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 書式設定ファイルを作成する方法 (.format.ps1xml)
+description: 書式設定ファイルを作成する方法 (.format.ps1xml)
+ms.openlocfilehash: 5bbc1ba40bfccf13636abc0f0751938aa724b761
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781258"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651993"
 ---
 # <a name="how-to-create-a-formatting-file-formatps1xml"></a>書式設定ファイルを作成する方法 (.format.ps1xml)
 
@@ -33,7 +35,7 @@ ms.locfileid: "87781258"
 
    - タグによっ `<ViewDefinitions></ViewDefinitions>` てノードが定義され `ViewDefinitions` ます。 すべてのビューは、このノード内で定義されます。
 
-3. Windows PowerShell のインストールフォルダー、モジュールフォルダー、またはモジュールフォルダーのサブフォルダーにファイルを保存します。 ファイルを保存するときは、次の名前形式を `MyFile.format.ps1xml` 使用します。 フォーマットファイルでは、拡張機能を使用する必要があり `.format.ps1xml` ます。
+3. Windows PowerShell のインストールフォルダー、モジュールフォルダー、またはモジュールフォルダーのサブフォルダーにファイルを保存します。 ファイルを保存するときは、次の名前形式を  `MyFile.format.ps1xml` 使用します。 フォーマットファイルでは、拡張機能を使用する必要があり `.format.ps1xml` ます。
 
    これで、書式設定ファイルにビューを追加する準備ができました。 書式設定ファイルで定義できるビューの数に制限はありません。 オブジェクトごとに1つのビュー、同じオブジェクトに対して複数のビュー、または複数のオブジェクトで使用される1つのビューを追加できます。
 

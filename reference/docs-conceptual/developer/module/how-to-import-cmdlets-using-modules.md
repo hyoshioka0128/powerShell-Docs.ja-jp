@@ -1,12 +1,14 @@
 ---
-title: モジュールを使用してコマンドレットをインポートする方法 |Microsoft Docs
 ms.date: 08/28/2019
-ms.openlocfilehash: fa8d629c14b06e3f9e9d6151cf09aa6b4acce358
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: モジュールを使用してコマンドレットをインポートする方法
+description: モジュールを使用してコマンドレットをインポートする方法
+ms.openlocfilehash: 485a4be4d2accaf050a6536e7f92a0673f62a30b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779371"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657280"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>モジュールを使用してコマンドレットをインポートする方法
 
@@ -45,4 +47,4 @@ ms.locfileid: "87779371"
 
 [PSModulePath インストール パスを変更する](../module/modifying-the-psmodulepath-installation-path.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](../cmdlet/cmdlet-overview.md)
+[Windows PowerShell コマンドレットの記述](../cmdlet/cmdlet-overview.md)

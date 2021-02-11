@@ -1,21 +1,21 @@
 ---
-title: 引数パターンを検証する方法 |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidatePattern attribute, example
-ms.openlocfilehash: 35104e786d4b809a711d97fea52ae0e348dd5ca3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 引数パターンを検証する方法
+description: 引数パターンを検証する方法
+ms.openlocfilehash: ab5777c918a53c0a3900f87c52e7f14f9cb9b726
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782091"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666911"
 ---
 # <a name="how-to-validate-an-argument-pattern"></a>引数パターンを検証する方法
 
 この例では、コマンドレットを実行する前に、Windows PowerShell ランタイムがパラメーター引数の文字パターンを確認するために使用できる検証規則を指定する方法を示します。 この検証規則を設定するには、ValidatePattern 属性を宣言します。
 
 > [!NOTE]
-> この属性を定義するクラスの詳細については、「system.servicemodel[属性](/dotnet/api/System.Management.Automation.ValidatePatternAttribute)」を参照してください。
+> この属性を定義するクラスの詳細については、「system.servicemodel [属性](/dotnet/api/System.Management.Automation.ValidatePatternAttribute)」を参照してください。
 
 ## <a name="to-validate-an-argument-pattern"></a>引数パターンを検証するには
 
@@ -39,4 +39,4 @@ ms.locfileid: "87782091"
 
 [ValidatePattern 属性の宣言](./validatepattern-attribute-declaration.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

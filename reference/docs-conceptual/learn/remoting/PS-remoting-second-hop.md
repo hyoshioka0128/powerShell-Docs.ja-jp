@@ -4,10 +4,10 @@ keywords: powershell,コマンドレット
 title: PowerShell リモート処理での次ホップの実行
 description: この記事では、セキュリティへの影響や推奨事項など、PowerShell のリモート処理のために次ホップ認証を構成するさまざまな方法について説明します。
 ms.openlocfilehash: 905b27b4e6c612249c945a741bbe0d2ba9ae28aa
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501373"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>PowerShell リモート処理での次ホップの実行
@@ -16,8 +16,8 @@ ms.locfileid: "92501373"
 
 1. _ServerA_ にログインしています。
 2. _ServerA_ からリモート PowerShell セッションを開始して _ServerB_ に接続します。
-3. PowerShell リモート処理セッションを介して _ServerB_ で実行するコマンドは、 _ServerC_ 上のリソースにアクセスを試みます。
-4. PowerShell リモート処理セッションの作成に使った資格情報は _ServerB_ から _ServerC_ に渡されないため、 _ServerC_ 上のリソースへのアクセスは拒否されます。
+3. PowerShell リモート処理セッションを介して _ServerB_ で実行するコマンドは、_ServerC_ 上のリソースにアクセスを試みます。
+4. PowerShell リモート処理セッションの作成に使った資格情報は _ServerB_ から _ServerC_ に渡されないため、_ServerC_ 上のリソースへのアクセスは拒否されます。
 
 この問題に対処する方法はいくつかあります。 次の表に、優先順位順に方法の一覧を示します。
 
@@ -34,7 +34,7 @@ ms.locfileid: "92501373"
 ## <a name="credssp"></a>CredSSP
 
 認証に[資格情報のセキュリティ サポート プロバイダー (CredSSP)][credssp] を使用できます。
-CredSSP はリモート サーバー ( _ServerB_ ) に資格情報をキャッシュするため、これを使用すると資格情報の盗難攻撃にさらされます。 リモート コンピューターが侵害されると、攻撃者はユーザーの資格情報にアクセスできます。 CredSSP は、既定では、クライアント コンピューターとサーバー コンピューターの両方で無効になっています。 CredSSP は、最も信頼性の高い環境でのみ有効にしてください。 たとえば、ドメイン コントローラーは信頼性が高いため、ドメイン コントローラーに接続しているドメイン管理者が有効にすることをお勧めします。
+CredSSP はリモート サーバー (_ServerB_) に資格情報をキャッシュするため、これを使用すると資格情報の盗難攻撃にさらされます。 リモート コンピューターが侵害されると、攻撃者はユーザーの資格情報にアクセスできます。 CredSSP は、既定では、クライアント コンピューターとサーバー コンピューターの両方で無効になっています。 CredSSP は、最も信頼性の高い環境でのみ有効にしてください。 たとえば、ドメイン コントローラーは信頼性が高いため、ドメイン コントローラーに接続しているドメイン管理者が有効にすることをお勧めします。
 
 PowerShell リモート処理で CredSSP を使用する場合のセキュリティに関する注意事項の詳細については、「[Accidental Sabotage: Beware of CredSSP (予想外の妨害行為: CredSSP に関する注意事項)][beware]」を参照してください。
 
@@ -65,7 +65,7 @@ PowerShell リモート処理用に CredSSP を有効にして使用する方法
 
 - WinRM の次ホップはサポートされません。
 - 構成には、ドメイン管理者のアクセス権が必要です。
-- リモート サーバー ( _ServerB_ ) の Active Directory オブジェクトで構成する必要があります。
+- リモート サーバー (_ServerB_) の Active Directory オブジェクトで構成する必要があります。
 - 1 つのドメインに制限されます。 複数のドメインまたはフォレストにまたがることはできません。
 - オブジェクトとサービス プリンシパル名 (SPN) を更新する権限が必要です。
 - _ServerB_ は、ユーザーの介入なしに、ユーザーに代わって _ServerC_ への Kerberos チケットを取得できます。
@@ -75,7 +75,7 @@ PowerShell リモート処理用に CredSSP を有効にして使用する方法
 
 ## <a name="resource-based-kerberos-constrained-delegation"></a>リソースに基づく Kerberos の制約付き委任
 
-リソースに基づく Kerberos の制約付き委任 (Windows Server 2012 で導入) を使って、リソースが存在するサーバー オブジェクトでの資格情報の委任を構成します。 上で説明した次ホップのシナリオでは、 _ServerC_ を構成して、どこから委任された資格情報の受け入れるかを指定します。
+リソースに基づく Kerberos の制約付き委任 (Windows Server 2012 で導入) を使って、リソースが存在するサーバー オブジェクトでの資格情報の委任を構成します。 上で説明した次ホップのシナリオでは、_ServerC_ を構成して、どこから委任された資格情報の受け入れるかを指定します。
 
 **長所**
 
@@ -105,7 +105,7 @@ Import-Module ActiveDirectory
 Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
 ```
 
-使用できる複数のコマンドレットに、 **PrincipalsAllowedToDelegateToAccount** パラメーターが追加されています。
+使用できる複数のコマンドレットに、**PrincipalsAllowedToDelegateToAccount** パラメーターが追加されています。
 
 ```Output
 CommandType Name                 ModuleName
@@ -118,7 +118,7 @@ Cmdlet      Set-ADServiceAccount ActiveDirectory
 Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
-**PrincipalsAllowedToDelegateToAccount** パラメーターは、Active Directory オブジェクトの **msDS-AllowedToActOnBehalfOfOtherIdentity** 属性を設定します。この属性には、関連付けられたアカウント (この例では、 _Server_ のコンピューター アカウント) に資格情報を委任する権限を持つアカウントを指定するアクセス制御リスト (ACL) が含まれます。
+**PrincipalsAllowedToDelegateToAccount** パラメーターは、Active Directory オブジェクトの **msDS-AllowedToActOnBehalfOfOtherIdentity** 属性を設定します。この属性には、関連付けられたアカウント (この例では、_Server_ のコンピューター アカウント) に資格情報を委任する権限を持つアカウントを指定するアクセス制御リスト (ACL) が含まれます。
 
 サーバーを表すために使用する変数を設定します。
 
@@ -141,7 +141,7 @@ StartName
 NT AUTHORITY\NetworkService
 ```
 
-_ServerC_ で _ServerB_ の PowerShell リモート処理セッションからの委任を許可するため、 _ServerC_ の **PrincipalsAllowedToDelegateToAccount** パラメーターを _ServerB_ のコンピューター オブジェクトに設定する必要があります。
+_ServerC_ で _ServerB_ の PowerShell リモート処理セッションからの委任を許可するため、_ServerC_ の **PrincipalsAllowedToDelegateToAccount** パラメーターを _ServerB_ のコンピューター オブジェクトに設定する必要があります。
 
 ```powershell
 # Grant resource-based Kerberos constrained delegation
@@ -165,7 +165,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 
 キャッシュを消去するには、コンピューターを再起動するか、15 分以上待つのでもかまいません。
 
-キャッシュをクリアした後は、 _ServerA_ から _ServerB_ を経由して _ServerC_ にコードを正常に実行できます。
+キャッシュをクリアした後は、_ServerA_ から _ServerB_ を経由して _ServerC_ にコードを正常に実行できます。
 
 ```powershell
 # Capture a credential
@@ -179,10 +179,10 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-この例では、 _ServerB_ が `$ServerC` 変数を認識できるようにするため、`$using` 変数を使用しています。
+この例では、_ServerB_ が `$ServerC` 変数を認識できるようにするため、`$using` 変数を使用しています。
 `$using` 変数については、「[About Remote Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Remote_Variables)」 (リモート変数について) を参照してください。
 
-複数のサーバーが _ServerC_ に資格情報を委任できるようにするには、 _ServerC_ で **PrincipalsAllowedToDelegateToAccount** パラメーターの値に配列を設定します。
+複数のサーバーが _ServerC_ に資格情報を委任できるようにするには、_ServerC_ で **PrincipalsAllowedToDelegateToAccount** パラメーターの値に配列を設定します。
 
 ```powershell
 # Set up variables for each server
@@ -196,7 +196,7 @@ Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
 
-ドメインをまたいで次ホップを実行する場合は、 _ServerB_ が属するドメインのドメイン コントローラーの完全修飾ドメイン名 (FQDN) を追加します。
+ドメインをまたいで次ホップを実行する場合は、_ServerB_ が属するドメインのドメイン コントローラーの完全修飾ドメイン名 (FQDN) を追加します。
 
 ```powershell
 # For ServerC in Contoso domain and ServerB in other domain
@@ -205,7 +205,7 @@ $ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
-ServerC に資格情報を委任する機能を削除するには、 _ServerC_ の **PrincipalsAllowedToDelegateToAccount** パラメーターの値に `$null` を設定します。
+ServerC に資格情報を委任する機能を削除するには、_ServerC_ の **PrincipalsAllowedToDelegateToAccount** パラメーターの値に `$null` を設定します。
 
 ```powershell
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
@@ -241,13 +241,13 @@ JEA については、「[Just Enough Administration](/powershell/scripting/lear
 **短所**
 
 - WMF 5.0 以降が必要です。
-- すべての中間サーバー ( _ServerB_ ) の構成が必要です。
+- すべての中間サーバー (_ServerB_) の構成が必要です。
 
 ## <a name="pssessionconfiguration-using-runas"></a>RunAs を使用する PSSessionConfiguration
 
 _ServerB_ にセッション構成を作成し、その **RunAsCredential** パラメーターを設定できます。
 
-**PSSessionConfiguration** と **RunAs** を使って次ホップの問題を解決する方法については、 [PowerShell をリモートから使用する場合のマルチホップの別の解決策][pssessionconfig]に関するページをご覧ください。
+**PSSessionConfiguration** と **RunAs** を使って次ホップの問題を解決する方法については、[PowerShell をリモートから使用する場合のマルチホップの別の解決策][pssessionconfig]に関するページをご覧ください。
 
 **長所**
 
@@ -255,7 +255,7 @@ _ServerB_ にセッション構成を作成し、その **RunAsCredential** パ�
 
 **短所**
 
-- すべての中間サーバー ( _ServerB_ ) で **PSSessionConfiguration** と **RunAs** を構成する必要があります。
+- すべての中間サーバー (_ServerB_) で **PSSessionConfiguration** と **RunAs** を構成する必要があります。
 - ドメインの **RunAs** アカウントを使うときは、パスワードの管理が必要です。
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Invoke-Command スクリプト ブロックの内部で資格情報を渡す

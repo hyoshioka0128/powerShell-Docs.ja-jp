@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/find-packageprovider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-PackageProvider
-ms.openlocfilehash: 664e6064580f9212c25632a1146d1ac67f2308bf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 1a31fa29d9baa17f5bc1c2f48b9179c2ce071310
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93212920"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890183"
 ---
 # Find-PackageProvider
 
@@ -275,9 +275,16 @@ Accept wildcard characters: False
 ### Microsoft. パッケージ Id
 
 このコマンドレットは、 **ソフトウェア id** オブジェクトを返します。
-**ソフトウェア id** オブジェクトを **インストール-packageprovider** にパイプして、 **検索** 結果をインストールすることができます。
+**ソフトウェア id** オブジェクトを **インストール-packageprovider** にパイプして、**検索** 結果をインストールすることができます。
 
 ## 注
+
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
 
 ## 関連リンク
 
@@ -290,4 +297,3 @@ Accept wildcard characters: False
 [Register-PackageSource](Register-PackageSource.md)
 
 [Install-PackageProvider](Install-PackageProvider.md)
-

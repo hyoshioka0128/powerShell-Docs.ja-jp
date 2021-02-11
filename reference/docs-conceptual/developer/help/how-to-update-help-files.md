@@ -1,12 +1,14 @@
 ---
-title: ヘルプ ファイルを更新する方法
 ms.date: 09/12/2016
-ms.openlocfilehash: 80f7c8865729515de98648765fa36ce540e00162
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: ヘルプ ファイルを更新する方法
+description: ヘルプ ファイルを更新する方法
+ms.openlocfilehash: 19bf501cf91b1eb5dabb334c2179953590b40232
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892950"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649580"
 ---
 # <a name="how-to-update-help-files"></a>ヘルプ ファイルを更新する方法
 
@@ -24,5 +26,5 @@ ms.locfileid: "86892950"
 1. XML スキーマに対してファイルを検証します。
 1. 各 UI カルチャの CAB ファイルをリビルドします。
 1. HelpInfo XML ファイルで、各 UI カルチャの CAB ファイルのバージョン番号をインクリメントします。
-1. HelpInfo XML ファイルの**Helpcontenturi**要素の値によって指定された場所に新しい CAB ファイルをアップロードします。 古い CAB ファイルを新しい CAB ファイルに置き換えます。
-1. 更新された HelpInfo XML ファイルを、モジュールマニフェストの**Helpinfouri**キーによって指定された場所にアップロードします。 古い HelpInfo XML ファイルを新しいファイルに置き換えます。
+1. HelpInfo XML ファイルの **Helpcontenturi** 要素の値によって指定された場所に新しい CAB ファイルをアップロードします。 古い CAB ファイルを新しい CAB ファイルに置き換えます。
+1. 更新された HelpInfo XML ファイルを、モジュールマニフェストの **Helpinfouri** キーによって指定された場所にアップロードします。 古い HelpInfo XML ファイルを新しいファイルに置き換えます。

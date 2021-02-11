@@ -1,12 +1,14 @@
 ---
-title: 構成用のコントロールの式のバインドの ItemSelectionCondition 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3bfd3efe916b4d88c024de8f959482cab515f777
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Configuration の Controls の ExpressionBinding の ItemSelectionCondition 要素 (書式)
+description: Configuration の Controls の ExpressionBinding の ItemSelectionCondition 要素 (書式)
+ms.openlocfilehash: 6bd3d386ba64b33a1744fcc9e602cf13404765a0
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781224"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648097"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format"></a>Configuration の Controls の ExpressionBinding の ItemSelectionCondition 要素 (書式)
 

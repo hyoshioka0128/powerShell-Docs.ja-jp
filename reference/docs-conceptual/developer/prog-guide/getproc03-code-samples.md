@@ -1,19 +1,21 @@
 ---
-title: GetProc03 のコードサンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a31b17968c3a6066d2304f3029853c8d4e35e3f3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc03 コード サンプル
+description: GetProc03 コード サンプル
+ms.openlocfilehash: 2866f3652072e1d89780c818543dbfc72a0606f0
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787140"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659269"
 ---
 # <a name="getproc03-code-samples"></a>GetProc03 コード サンプル
 
-GetProc03 サンプルコマンドレットのコードサンプルを次に示します。 これは、 `Get-Process` 「[パイプライン入力を処理するパラメーターの追加](../cmdlet/adding-parameters-that-process-pipeline-input.md)」で説明されているコマンドレットのサンプルです。 この `Get-Process` コマンドレットは、 `Name` パイプラインオブジェクトからの入力を受け入れ、指定された名前に基づいてローカルコンピューターからプロセス情報を取得し、コマンドラインでプロセスに関する情報を表示するパラメーターを使用します。
+GetProc03 サンプルコマンドレットのコードサンプルを次に示します。 これは、 `Get-Process` 「 [パイプライン入力を処理するパラメーターの追加](../cmdlet/adding-parameters-that-process-pipeline-input.md)」で説明されているコマンドレットのサンプルです。 この `Get-Process` コマンドレットは、 `Name` パイプラインオブジェクトからの入力を受け入れ、指定された名前に基づいてローカルコンピューターからプロセス情報を取得し、コマンドラインでプロセスに関する情報を表示するパラメーターを使用します。
 
 > [!NOTE]
-> この getprov03.cs コマンドレットの C# ソースファイル () をダウンロードするには、Microsoft Windows Software Development Kit for Windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
+> この Get-Proc コマンドレットの C# ソースファイル (getprov03.cs) をダウンロードするには、Microsoft Windows Software Development Kit for Windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
 >
 > ダウンロードしたソースファイルは、ディレクトリにあり **\<PowerShell Samples>** ます。
 

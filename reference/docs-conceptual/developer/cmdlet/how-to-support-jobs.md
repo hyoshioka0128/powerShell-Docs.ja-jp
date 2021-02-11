@@ -1,16 +1,18 @@
 ---
-title: ジョブをサポートする方法 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7ae4e6c118965c73ba6b3d4d38b1bd3171d2b3da
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ジョブをサポートする方法
+description: ジョブをサポートする方法
+ms.openlocfilehash: d755093e941aa660032f8d283cb43ba5eeec8c4b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786630"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666979"
 ---
 # <a name="how-to-support-jobs"></a>ジョブをサポートする方法
 
-この例では、コマンドレットを記述するときにジョブをサポートする方法を示します。 ユーザーがコマンドレットをバックグラウンドジョブとして実行するようにするには、次の手順で説明されているコードを含める必要があります。 バックグラウンドジョブの詳細については、「[バックグラウンドジョブ](./background-jobs.md)」を参照してください。
+この例では、コマンドレットを記述するときにジョブをサポートする方法を示します。 ユーザーがコマンドレットをバックグラウンドジョブとして実行するようにするには、次の手順で説明されているコードを含める必要があります。 バックグラウンドジョブの詳細については、「 [バックグラウンドジョブ](./background-jobs.md)」を参照してください。
 
 ## <a name="to-support-jobs"></a>ジョブをサポートするには
 
@@ -30,7 +32,7 @@ ms.locfileid: "87786630"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06AsJobParam](msh_samplesGetProc06#GetProc06AsJobParam)]  -->
 
-2. System.object[クラスから派生した](/dotnet/api/System.Management.Automation.Job)オブジェクトを作成します。 このオブジェクトには、カスタムジョブオブジェクト、または Windows PowerShell によって提供される[Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob)オブジェクトのいずれかを指定できます。
+2. System.object [クラスから派生した](/dotnet/api/System.Management.Automation.Job) オブジェクトを作成します。 このオブジェクトには、カスタムジョブオブジェクト、または Windows PowerShell によって提供される [Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) オブジェクトのいずれかを指定できます。
 
     次の例は、カスタムジョブオブジェクトを示しています。
 
@@ -40,7 +42,7 @@ ms.locfileid: "87786630"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. レコード処理メソッドで、ステートメントを追加し `if` て、コマンドレットをジョブとして実行する必要があるかどうかを検出します。 次のコードでは、[このメソッドを使用してい](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)ます。
+3. レコード処理メソッドで、ステートメントを追加し `if` て、コマンドレットをジョブとして実行する必要があるかどうかを検出します。 次のコードでは、 [このメソッドを使用してい](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ます。
 
     ```csharp
     protected override void ProcessRecord()
@@ -124,7 +126,7 @@ ms.locfileid: "87786630"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. コマンドレットで処理を実行する場合は、 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッドを呼び出して、プロセスオブジェクトをパイプラインに返します。 作業がジョブとして実行されている場合は、子ジョブをジョブに追加します。
+5. コマンドレットで処理を実行する場合は、 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) メソッドを呼び出して、プロセスオブジェクトをパイプラインに返します。 作業がジョブとして実行されている場合は、子ジョブをジョブに追加します。
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -149,7 +151,7 @@ ms.locfileid: "87786630"
 
 ## <a name="example"></a>例
 
-次のサンプルコードは、内部で、またはバックグラウンドジョブを使用してプロセスを取得できる、 **Get Proc**コマンドレットのコードを示しています。
+次のサンプルコードは、内部で、またはバックグラウンドジョブを使用してプロセスを取得できる、 **Get Proc** コマンドレットのコードを示しています。
 
 ```csharp
 using System;

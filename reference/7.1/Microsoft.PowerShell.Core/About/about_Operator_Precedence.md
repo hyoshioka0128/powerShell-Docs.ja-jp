@@ -2,16 +2,16 @@
 description: PowerShell 演算子を優先順位順に一覧表示します。
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 10/08/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operator_Precedence
-ms.openlocfilehash: d8b0b3f339739186825b5cb041adba5e06e5d702
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 6de44dd24d0b1b1826c94d838cca11f0cef6b7f2
+ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222939"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94483215"
 ---
 # <a name="about-operator-precedence"></a>演算子の優先順位について
 
@@ -32,7 +32,7 @@ PowerShell の演算子を使用すると、単純な式を作成できます。
 
 |         OPERATOR         |           リファレンス            |
 | ------------------------ | ------------------------------ |
-| `$() @() ()`             | [about_Operators][]            |
+| `$() @() () @{}`         | [about_Operators][]            |
 | `. ?.` (メンバーアクセス)   | [about_Operators][]            |
 | `::` 雑音            | [about_Operators][]            |
 | `[0] ?[0]` (インデックス演算子) | [about_Operators][]         |

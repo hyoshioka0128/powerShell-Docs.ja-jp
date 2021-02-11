@@ -1,12 +1,14 @@
 ---
-title: TableControl (Format) の TableRowEntry の EntrySelectedBy 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 047a10fb6b38dfa8f78a7741fd50b781d4a14b6d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl の TableRowEntry の EntrySelectedBy 要素 (書式)
+description: TableControl の TableRowEntry の EntrySelectedBy 要素 (書式)
+ms.openlocfilehash: 1b7fc60b6fa9864b66e9edfebb3e4a86e287f3f8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787701"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645894"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>TableControl の TableRowEntry の EntrySelectedBy 要素 (書式)
 
@@ -50,13 +52,13 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 テーブルビュー定義には、少なくとも1つの種類、選択セット、または選択条件を指定する必要があります。 使用できる子要素の数に上限はありません。
 
-選択条件は、オブジェクトが特定のプロパティを持っている場合や、特定のプロパティ値またはスクリプトがに評価される場合など、使用する定義のために存在する必要がある条件を定義するために使用され `true` ます。 選択条件の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件は、オブジェクトが特定のプロパティを持っている場合や、特定のプロパティ値またはスクリプトがに評価される場合など、使用する定義のために存在する必要がある条件を定義するために使用され `true` ます。 選択条件の詳細については、「 [ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、 `TableRowEntry` system.object オブジェクトのプロパティを表示するために使用[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)される要素を示しています。
+次の例は、 `TableRowEntry` system.object オブジェクトのプロパティを表示するために使用[](/dotnet/api/System.Diagnostics.Process)される要素を示しています。
 
 ```xml
 <TableRowEntry>

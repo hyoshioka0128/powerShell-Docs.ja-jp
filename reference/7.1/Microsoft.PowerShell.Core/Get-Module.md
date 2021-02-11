@@ -1,23 +1,22 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 5/15/2019
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Module
-ms.openlocfilehash: c850dede193906492520a5c277519f29589fcfdf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 1f06d1e7114a84ea89097167b188ded605f81aa0
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93217696"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564539"
 ---
 # Get-Module
 
 ## 概要
-現在のセッションにインポート済みの、またはインポート可能なモジュールを取得します。
+現在のセッションでインポートされたモジュール、または PSModulePath からインポートできるモジュールを一覧表示します。
 
 ## SYNTAX
 
@@ -27,7 +26,7 @@ ms.locfileid: "93217696"
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All] [<CommonParameters>]
 ```
 
-### 使用可能
+### 利用可能
 
 ```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All] [-ListAvailable]
@@ -51,38 +50,23 @@ Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-
 
 ## Description
 
-この `Get-Module` コマンドレットは、powershell セッションにインポートされた、またはインポートできる powershell モジュールを取得します。
-を返すモジュールオブジェクトに `Get-Module` は、モジュールに関する重要な情報が含まれています。
-また、 `Import-Module` コマンドレットやコマンドレットなど、他のコマンドレットにモジュールオブジェクトをパイプ処理することもでき `Remove-Module` ます。
+`Get-Module`コマンドレットにより、インポートされた、またはインポート可能な powershell モジュールが powershell セッションに一覧表示されます。 パラメーターを指定しない場合、 `Get-Module` 現在のセッションにインポートされているモジュールを取得します。 **ListAvailable** パラメーターは、PSModulePath 環境変数 () で指定されたパスからインポートできるモジュールを一覧表示するために使用され `$env:PSModulePath` ます。
 
-パラメーターを指定しない場合、 `Get-Module` 現在のセッションにインポートされているモジュールを取得します。
-インストールされているモジュールをすべて取得するには、 **ListAvailable** パラメーターを指定します。
+を返すモジュールオブジェクトに `Get-Module` は、モジュールに関する重要な情報が含まれています。 また、 `Import-Module` コマンドレットやコマンドレットなど、他のコマンドレットにモジュールオブジェクトをパイプ処理することもでき `Remove-Module` ます。
 
-`Get-Module` モジュールを取得しますが、インポートしません。
-Windows PowerShell 3.0 以降では、モジュールのコマンドを使用すると、モジュールは自動的にインポートされますが、 `Get-Module` コマンドによって自動インポートがトリガーされることはありません。
-コマンドレットを使用して、モジュールをセッションにインポートすることもでき `Import-Module` ます。
+`Get-Module` モジュールを一覧表示しますが、インポートしません。 Windows PowerShell 3.0 以降では、モジュールのコマンドを使用すると、モジュールは自動的にインポートされますが、 `Get-Module` コマンドによって自動インポートがトリガーされることはありません。 コマンドレットを使用して、モジュールをセッションにインポートすることもでき `Import-Module` ます。
 
-Windows PowerShell 3.0 以降では、リモートセッションからローカルセッションにモジュールを取得してインポートできます。
-この方法では、PowerShell の暗黙的なリモート処理機能を使用します。これは、コマンドレットを使用することと同じです `Import-PSSession` 。
-別のセッションからインポートされたモジュールでコマンドを使用すると、リモートセッションでコマンドが暗黙的に実行されます。 この機能を使用すると、ローカルセッションからリモートコンピューターを管理できます。
+Windows PowerShell 3.0 以降では、リモートセッションからローカルセッションにモジュールを取得してインポートできます。 この方法では、PowerShell の暗黙的なリモート処理機能を使用します。これは、コマンドレットを使用することと同じです `Import-PSSession` 。 別のセッションからインポートされたモジュールでコマンドを使用すると、リモートセッションでコマンドが暗黙的に実行されます。 この機能を使用すると、ローカルセッションからリモートコンピューターを管理できます。
 
-また、Windows PowerShell 3.0 以降では、およびを使用して `Get-Module` `Import-Module` COMMON INFORMATION MODEL (CIM) モジュールを取得およびインポートできます。このモジュールでは、コマンドレットがコマンドレット定義 XML (CDXML) ファイルで定義されています。
-この機能を使用すると、C++ で記述されたものなど、マネージコード以外のアセンブリに実装されているコマンドレットを使用できます。
+また、Windows PowerShell 3.0 以降では、およびを使用して `Get-Module` `Import-Module` COMMON INFORMATION MODEL (CIM) モジュールを取得およびインポートできます。 CIM モジュールは、コマンドレット定義 XML (CDXML) ファイルのコマンドレットを定義します。 この機能を使用すると、C++ で記述されたものなど、マネージコード以外のアセンブリに実装されているコマンドレットを使用できます。
 
-これらの新機能により、 `Get-Module` との `Import-Module` コマンドレットは、Windows オペレーティングシステムを実行するコンピューターと他のオペレーティングシステムを実行するコンピューターを含む異種企業を管理するための主要なツールになります。
-
-PowerShell と PowerShell リモート処理が有効になっている Windows オペレーティングシステムを実行しているリモートコンピューターを管理するには、リモートコンピューター上に **pssession** を作成し、の **pssession** パラメーターを使用して、 `Get-Module` **pssession** 内の PowerShell モジュールを取得します。
-モジュールをインポートした後、現在のセッションでインポートしたコマンドを使用すると、コマンドはリモートコンピューター上の **PSSession** で暗黙的に実行されます。
-この戦略を使用して、リモート コンピューターを管理できます。
+暗黙的なリモート処理を使用すると、PowerShell リモート処理が有効になっているリモートコンピューターを管理できます。
+リモートコンピューター上に **pssession** を作成し、の **pssession** パラメーターを使用して、 `Get-Module` リモートセッションの PowerShell モジュールを取得します。 リモートセッションからモジュールをインポートすると、インポートしたコマンドはリモートコンピューター上のセッションで実行されます。
 
 同様の戦略を使用して、PowerShell リモート処理が有効になっていないコンピューターを管理できます。
 これには、Windows オペレーティングシステムを実行していないコンピューターや、powershell を搭載していても PowerShell リモート処理が有効になっていないコンピューターが含まれます。
 
-まず、リモートコンピューターに CIM セッションを作成します。
-CIM セッションは、リモートコンピューター上の Windows Management Instrumentation (WMI) に接続します。
-次に、の **CIMSession** パラメーターを使用して `Get-Module` 、CIM セッションから cim モジュールを取得します。
-コマンドレットを使用して CIM モジュールをインポートし、インポートされたコマンドを実行すると、 `Import-Module` コマンドはリモートコンピューター上で暗黙的に実行されます。
-この WMI と CIM の戦略を使用して、リモート コンピューターを管理できます。
+まず、リモートコンピューターに CIM セッションを作成します。 CIM セッションは、リモートコンピューター上の Windows Management Instrumentation (WMI) に接続します。 次に、の **CIMSession** パラメーターを使用して `Get-Module` 、CIM セッションから cim モジュールを取得します。 コマンドレットを使用して CIM モジュールをインポートし、インポートされたコマンドを実行すると、 `Import-Module` コマンドはリモートコンピューター上で暗黙的に実行されます。 この WMI と CIM の戦略を使用して、リモート コンピューターを管理できます。
 
 ## 例
 
@@ -102,8 +86,7 @@ Get-Module -ListAvailable
 
 このコマンドは、コンピューターにインストールされていて現在のセッションにインポートできるモジュールを取得します。
 
-`Get-Module`**$env:P SModulePath** 環境変数で指定されたパスで使用可能なモジュールを検索します。
-**PSModulePath** の詳細については、「 [about_Modules](About/about_Modules.md)」および「 [about_Environment_Variables](About/about_Environment_Variables.md)」を参照してください。
+`Get-Module`**$env:P SModulePath** 環境変数で指定されたパスで使用可能なモジュールを検索します。 **PSModulePath** の詳細については、「[about_Modules](About/about_Modules.md)」および「[about_Environment_Variables](About/about_Environment_Variables.md)」を参照してください。
 
 ### 例 3: エクスポートされたすべてのファイルを取得する
 
@@ -117,7 +100,7 @@ Get-Module -ListAvailable -All
 
 ```powershell
 $FullyQualifedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"}
-  Get-Module -FullyQualifiedName $FullyQualifedName | Format-Table -Property Name,Version
+Get-Module -FullyQualifiedName $FullyQualifedName | Format-Table -Property Name,Version
 ```
 
 ```Output
@@ -126,8 +109,7 @@ Name                             Version
 Microsoft.PowerShell.Management  3.1.0.0
 ```
 
-このコマンドは、 **FullyQualifiedName** パラメーターを使用してモジュールの完全修飾名を指定することによって、 **管理** モジュールを取得します。
-次に、結果をコマンドレットにパイプして、 `Format-Table` 結果を列見出しとして **名前** と **バージョン** を含むテーブルとして書式設定します。
+このコマンドは、 **FullyQualifiedName** パラメーターを使用してモジュールの完全修飾名を指定することによって、**管理** モジュールを取得します。 次に、結果をコマンドレットにパイプして、 `Format-Table` 結果を列見出しとして **名前** と **バージョン** を含むテーブルとして書式設定します。
 
 ### 例 5: モジュールのプロパティを取得する
 
@@ -178,11 +160,9 @@ SessionState
 Version
 ```
 
-このコマンドは、を返す **PSModuleInfo** オブジェクトのプロパティを取得し `Get-Module` ます。
-モジュール ファイルごとに 1 つのオブジェクトがあります。
+このコマンドは、を返す **PSModuleInfo** オブジェクトのプロパティを取得し `Get-Module` ます。 モジュール ファイルごとに 1 つのオブジェクトがあります。
 
-プロパティを使用して、モジュール オブジェクトを書式設定したり、フィルター処理したりできます。
-プロパティの詳細については、「 [PSModuleInfo properties](/dotnet/api/system.management.automation.psmoduleinfo)」を参照してください。
+プロパティを使用して、モジュール オブジェクトを書式設定したり、フィルター処理したりできます。 プロパティの詳細については、「 [PSModuleInfo properties](/dotnet/api/system.management.automation.psmoduleinfo)」を参照してください。
 
 出力には、Windows PowerShell 3.0 で導入された **作成者** や **CompanyName** などの新しいプロパティが含まれています。
 
@@ -227,11 +207,9 @@ BitsTransfer   Manifest C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitsT
 
 ### 例 7: モジュールマニフェストの内容を表示する
 
-これらのコマンドは、PowerShell **BitsTransfer** モジュールのモジュールマニフェストの内容を表示します。
+これらのコマンドは、Windows PowerShell **BitsTransfer** モジュールのモジュールマニフェストの内容を表示します。
 
-モジュールにマニフェストファイルを含める必要はありません。
-マニフェストファイルがある場合、マニフェストファイルはバージョン番号を含めるためにのみ必要です。
-ただし、マニフェスト ファイルは、多くの場合、モジュール、その要件、およびその内容に関する有用な情報を提供します。
+モジュールにマニフェストファイルを含める必要はありません。 マニフェストファイルがある場合、マニフェストファイルはバージョン番号を含めるためにのみ必要です。 ただし、マニフェスト ファイルは、多くの場合、モジュール、その要件、およびその内容に関する有用な情報を提供します。
 
 ```powershell
 # First command
@@ -277,9 +255,7 @@ d----        12/16/2008  12:36 PM            en-US
 -a---        12/16/2008  12:20 AM     108544 Microsoft.BackgroundIntelligentTransfer.Management.Interop.dll
 ```
 
-このコマンドは、モジュールのディレクトリ内のファイルを一覧表示します。
-これは、インポートの前にモジュールの内容を確認するためのもう 1 つの方法です。
-モジュールによっては、ヘルプ ファイルやモジュールについて記述した ReadMe ファイルが含まれている場合があります。
+このコマンドは、モジュールのディレクトリ内のファイルを一覧表示します。 これは、インポートの前にモジュールの内容を確認するためのもう 1 つの方法です。 モジュールによっては、ヘルプ ファイルやモジュールについて記述した ReadMe ファイルが含まれている場合があります。
 
 ### 例 9: コンピューターにインストールされているモジュールを取得する
 
@@ -293,12 +269,9 @@ Get-Module -PSSession $s -ListAvailable
 
 最初のコマンドは、コマンドレットを使用して、 `New-PSSession` Server01 コンピューター上に **PSSession** を作成します。 このコマンドは、 **PSSession** を $s 変数に保存します。
 
-2番目のコマンドは、の **pssession** パラメーターと **ListAvailable** パラメーターを使用して、 `Get-Module` $s 変数内の **pssession** のモジュールを取得します。
+2番目のコマンドは、の **pssession** パラメーターと **ListAvailable** パラメーターを使用して、 `Get-Module` 変数内の **pssession** のモジュールを取得し `$s` ます。
 
-モジュールを他のセッションからコマンドレットにパイプする場合 `Import-Module` 、は `Import-Module` 暗黙的なリモート処理機能を使用して、モジュールを現在のセッションにインポートします。
-これは、コマンドレットを使用することと同じです `Import-PSSession` 。
-現在のセッションに含まれるモジュールのコマンドレットを使用することができますが、これらのコマンドレットを使用するコマンドは、実際にはリモート セッションで実行されます。
-詳細については、[`Import-Module`](Import-Module.md) および [`Import-PSSession`](../Microsoft.PowerShell.Utility/Import-PSSession.md) を参照してください。
+モジュールを他のセッションからコマンドレットにパイプする場合 `Import-Module` 、は `Import-Module` 暗黙的なリモート処理機能を使用して、モジュールを現在のセッションにインポートします。 これは、コマンドレットを使用することと同じです `Import-PSSession` 。 現在のセッションに含まれるモジュールのコマンドレットを使用することができますが、これらのコマンドレットを使用するコマンドは、実際にはリモート セッションで実行されます。 詳細については、[`Import-Module`](Import-Module.md) および [`Import-PSSession`](../Microsoft.PowerShell.Utility/Import-PSSession.md) を参照してください。
 
 ### 例 10: Windows オペレーティングシステムを実行していないコンピューターを管理する
 
@@ -340,8 +313,7 @@ CIM モジュールをローカルセッションにインポートすると、P
 
 ### -All
 
-このコマンドレットが各モジュールフォルダー内のすべてのモジュールを取得することを示します。これには、入れ子になったモジュール、マニフェスト (.psd1) ファイル、スクリプトモジュール (hbase-runner.psm1) ファイル、およびバイナリモジュール (.dll) ファイルが含まれます。
-このパラメーターを指定しない場合、 `Get-Module` 各モジュールフォルダー内の既定のモジュールのみを取得します。
+このコマンドレットが各モジュールフォルダー内のすべてのモジュールを取得することを示します。これには、入れ子になったモジュール、マニフェスト (.psd1) ファイル、スクリプトモジュール (hbase-runner.psm1) ファイル、およびバイナリモジュール (.dll) ファイルが含まれます。 このパラメーターを指定しない場合、 `Get-Module` 各モジュールフォルダー内の既定のモジュールのみを取得します。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -357,8 +329,7 @@ Accept wildcard characters: False
 
 ### -CimNamespace
 
-CIM モジュールを公開する代替 CIM プロバイダーの名前空間を指定します。
-既定値は、モジュール検出用の WMI プロバイダーの名前空間です。
+CIM モジュールを公開する代替 CIM プロバイダーの名前空間を指定します。 既定値は、モジュール検出用の WMI プロバイダーの名前空間です。
 
 Windows オペレーティングシステムを実行していないコンピューターやデバイスから CIM モジュールを取得するには、このパラメーターを使用します。
 
@@ -378,8 +349,7 @@ Accept wildcard characters: False
 
 ### -CimResourceUri
 
-CIM モジュールの代替の場所を指定します。
-既定値は、リモートコンピューター上のモジュール検出 WMI プロバイダーのリソース URI です。
+CIM モジュールの代替の場所を指定します。 既定値は、リモートコンピューター上のモジュール検出 WMI プロバイダーのリソース URI です。
 
 Windows オペレーティングシステムを実行していないコンピューターやデバイスから CIM モジュールを取得するには、このパラメーターを使用します。
 
@@ -399,16 +369,13 @@ Accept wildcard characters: False
 
 ### -CimSession
 
-リモート コンピューター上の CIM セッションを指定します。
-CIM セッションを含む変数、または [CimSession](/powershell/module/cimcmdlets/get-cimsession) コマンドなどの cim セッションを取得するコマンドを入力します。
+リモート コンピューター上の CIM セッションを指定します。 CIM セッションを含む変数、または [CimSession](/powershell/module/cimcmdlets/get-cimsession) コマンドなどの cim セッションを取得するコマンドを入力します。
 
-`Get-Module` は、CIM セッション接続を使用して、リモートコンピューターからモジュールを取得します。
-コマンドレットを使用してモジュールをインポート `Import-Module` し、現在のセッションでインポートされたモジュールのコマンドを使用すると、コマンドは実際にはリモートコンピューター上で実行されます。
+`Get-Module` は、CIM セッション接続を使用して、リモートコンピューターからモジュールを取得します。 コマンドレットを使用してモジュールをインポート `Import-Module` し、現在のセッションでインポートされたモジュールのコマンドを使用すると、コマンドは実際にはリモートコンピューター上で実行されます。
 
 このパラメーターを使用すると、Windows オペレーティングシステムを実行していないコンピューターやデバイス、PowerShell を搭載しているが PowerShell リモート処理が有効になっていないコンピューターからモジュールを取得できます。
 
-**CimSession** パラメーターは、 **CIMSession** 内のすべてのモジュールを取得します。
-ただし、インポートできるのは、CIM ベースのモジュールとコマンドレット定義 XML (CDXML) ベースのモジュールのみです。
+**CimSession** パラメーターは、**CIMSession** 内のすべてのモジュールを取得します。 ただし、インポートできるのは、CIM ベースのモジュールとコマンドレット定義 XML (CDXML) ベースのモジュールのみです。
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimSession
@@ -424,16 +391,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedName
 
-モジュールの名前を **modulの** 指定オブジェクトの形式で指定します。
-これらのオブジェクトについては、MSDN ライブラリの「 [modulの注意事項コンストラクター (Hashtable)](https://msdn.microsoft.com/library/jj136290) 」の「解説」で説明されています。
-たとえば、 **FullyQualifiedName** パラメーターは、次の形式で指定されたモジュール名を受け入れます。
+**Modul特定** のオブジェクトの形式で指定された名前を持つモジュールを指定します。 「 [Modulの認識コンストラクター (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)」の「解説」を参照してください。
 
-- @ {ModuleName = "ModuleName";ModuleVersion = "version_number"}
-- @ {ModuleName = "ModuleName";ModuleVersion = "version_number";Guid = "GUID"}
+たとえば、 **FullyQualifiedModule** パラメーターは、次のいずれかの形式で指定されたモジュール名を受け入れます。
 
-**ModuleName** と **ModuleVersion** は必須ですが、 **Guid** は省略可能です。
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-**Name** パラメーターと同じコマンドで **FullyQualifiedName** パラメーターを指定することはできません。
+**ModuleName** と **ModuleVersion** は必須ですが、**Guid** は省略可能です。 **モジュール** パラメーターと同じコマンドで **FullyQualifiedModule** パラメーターを指定することはできません。 2つのパラメーターは相互に排他的です。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
@@ -449,10 +414,7 @@ Accept wildcard characters: False
 
 ### -ListAvailable
 
-このコマンドレットがインストールされているすべてのモジュールを取得することを示します。
-`Get-Module`**PSModulePath** 環境変数に示されているパス内のモジュールを取得します。
-このパラメーターを指定しない場合、 `Get-Module` **PSModulePath** 環境変数に一覧表示されているモジュールと、現在のセッションに読み込まれているモジュールのみが取得されます。
-**ListAvailable** は、 **PSModulePath** 環境変数に含まれていないモジュールが現在のセッションに読み込まれている場合でも、これらのモジュールに関する情報を返しません。
+このコマンドレットがインストールされているすべてのモジュールを取得することを示します。 `Get-Module`**PSModulePath** 環境変数に示されているパス内のモジュールを取得します。 このパラメーターを指定しない場合、 `Get-Module` **PSModulePath** 環境変数に一覧表示されているモジュールと、現在のセッションに読み込まれているモジュールのみが取得されます。 **ListAvailable** は、**PSModulePath** 環境変数に含まれていないモジュールが現在のセッションに読み込まれている場合でも、これらのモジュールに関する情報を返しません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -468,10 +430,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-このコマンドレットが取得するモジュールの名前または名前パターンを指定します。
-ワイルドカード文字を使用できます。
-パイプを使用して名前をにパイプすることもでき `Get-Module` ます。
-**Name** パラメーターと同じコマンドで **FullyQualifiedName** パラメーターを指定することはできません。
+このコマンドレットが取得するモジュールの名前または名前パターンを指定します。 ワイルドカード文字を使用できます。 パイプを使用して名前をにパイプすることもでき `Get-Module` ます。 **Name** パラメーターと同じコマンドで **FullyQualifiedName** パラメーターを指定することはできません。
 
 **名前** には、モジュール GUID を値として使用できません。
 GUID を指定してモジュールを返すには、代わりに **FullyQualifiedName** を使用します。
@@ -488,10 +447,37 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
 ```
 
+### -PSEdition
+
+指定された PowerShell のエディションをサポートするモジュールを取得します。
+
+このパラメーターの有効値は、次のとおりです。
+
+- デスクトップ
+- コア
+
+Get-Module コマンドレットは、指定された値の **PSModuleInfo** オブジェクトの **CompatiblePSEditions** プロパティを確認し、その値が設定されているモジュールだけを返します。
+
+> [!NOTE]
+>
+> - **Desktop Edition:** .NET Framework 上に構築され、Windows の完全フットプリント エディション (Server Core、Windows Desktop など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。
+> - **コア エディション:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
+
+```yaml
+Type: System.String
+Parameter Sets: PsSession, Available
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PSSession
 
-指定されたユーザー管理の PowerShell セッション ( **PSSession** ) 内のモジュールを取得します。
-セッションを含む変数、コマンドなどのセッションを取得するコマンド、またはコマンドなどのセッションを作成するコマンドを入力し `Get-PSSession` `New-PSSession` ます。
+指定されたユーザー管理の PowerShell セッション (**PSSession**) 内のモジュールを取得します。 セッションを含む変数、コマンドなどのセッションを取得するコマンド、またはコマンドなどのセッションを作成するコマンドを入力し `Get-PSSession` `New-PSSession` ます。
 
 セッションがリモートコンピューターに接続されている場合は、 **ListAvailable** パラメーターを指定する必要があります。
 
@@ -513,9 +499,7 @@ Accept wildcard characters: False
 
 ### -更新
 
-このコマンドレットがインストールされているコマンドのキャッシュを更新することを示します。
-コマンドのキャッシュは、セッションの開始時に作成されます。
-この `Get-Command` コマンドレットを使用すると、セッションにインポートされていないモジュールからコマンドを取得できます。
+このコマンドレットがインストールされているコマンドのキャッシュを更新することを示します。 コマンドのキャッシュは、セッションの開始時に作成されます。 この `Get-Command` コマンドレットを使用すると、セッションにインポートされていないモジュールからコマンドを取得できます。
 
 このパラメーターは、セッションが開始された時点からモジュールの内容が変化する開発およびテスト シナリオ用に用意されています。
 
@@ -535,40 +519,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PSEdition
-
-指定された PowerShell のエディションをサポートするモジュールを取得します。
-
-このパラメーターの有効値は、次のとおりです。
-
-- デスクトップ
-- コア
-
-Get-Module コマンドレットは、指定された値の **PSModuleInfo** オブジェクトの **CompatiblePSEditions** プロパティを確認し、その値が設定されているモジュールだけを返します。
-
-> [!NOTE]
->
-> - **デスクトップのエディション:** .NET Framework 上に構築されたは、windows PowerShell 5.1 以降のほとんどのエディションに適用されます。
-> - **コアエディション:** .NET Core 上に構築されたは、PowerShell Core 6.0 以降、および windows IoT と Windows Nanoserver 用に構築された Windows PowerShell 5.1 の一部のエディションに適用されます。 >、現在の PowerShell セッションのエディションは、変数と共に見つかり `$PSEdition` ます。
-
-```yaml
-Type: System.String
-Parameter Sets: Available, PsSession
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SkipEditionCheck
 
 フィールドのチェックをスキップし `CompatiblePSEditions` ます。
 
-既定では、Get-Module は、 `%windir%\System32\WindowsPowerShell\v1.0\Modules` フィールドにを指定していないディレクトリ内のモジュールを省略 `Core` `CompatiblePSEditions` します。
-このスイッチが設定されている場合、 `Core` Powershell Core と互換性のない Windows powershell モジュールパスにあるモジュールが返されるように、を指定せずにモジュールが含まれるようになります。
+既定では、Get-Module は、 `%windir%\System32\WindowsPowerShell\v1.0\Modules` フィールドにを指定していないディレクトリ内のモジュールを省略 `Core` `CompatiblePSEditions` します。 このスイッチが設定されている場合、 `Core` Powershell Core と互換性のない Windows powershell モジュールパスにあるモジュールが返されるように、を指定せずにモジュールが含まれるようになります。
 
 MacOS と Linux では、このパラメーターは何も行いません。
 
@@ -605,24 +560,25 @@ Accept wildcard characters: False
 
 ## 注
 
-- Windows PowerShell 3.0 以降では、PowerShell に含まれるコアコマンドはモジュールにパッケージ化されています。 この例外は、スナップイン ( **add-pssnapin** ) である、 **PowerShell のコア** です。 既定では、 **Microsoft.PowerShell.Core** スナップインのみがセッションに追加されます。
-モジュールは初回使用時に自動的にインポートされ、コマンドレットを使用して `Import-Module` インポートできます。
-- Windows PowerShell 3.0 以降では、PowerShell でインストールされるコアコマンドはモジュールにパッケージ化されています。 Windows PowerShell 2.0、およびそれ以降のバージョンの PowerShell で古いスタイルのセッションを作成するホストプログラムでは、コアコマンドはスナップイン ( **PSSnapins** ) にパッケージ化されます。 例外は、常にスナップインである、 **PowerShell です** 。 また、コマンドレットによって開始されるようなリモートセッション `New-PSSession` は、コアスナップインを含む古いスタイルのセッションです。
+- Windows PowerShell 3.0 以降では、PowerShell に含まれるコアコマンドはモジュールにパッケージ化されています。 この例外は、スナップイン (**add-pssnapin**) である、 **PowerShell のコア** です。 既定では、**Microsoft.PowerShell.Core** スナップインのみがセッションに追加されます。 モジュールは初回使用時に自動的にインポートされ、コマンドレットを使用して `Import-Module` インポートできます。
 
-  コアモジュールで新しいスタイルのセッションを作成する **CreateDefault2** メソッドの詳細については、MSDN ライブラリの「 [CreateDefault2 メソッド](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2) 」を参照してください。
+- Windows PowerShell 2.0、およびそれ以降のバージョンの PowerShell で古いスタイルのセッションを作成するホストプログラムでは、コアコマンドはスナップイン (**PSSnapins**) にパッケージ化されます。 例外は、常にスナップインである、 **PowerShell です**。 また、コマンドレットによって開始されるようなリモートセッション `New-PSSession` は、コアスナップインを含む古いスタイルのセッションです。
 
-- `Get-Module`**PSModulePath** 環境変数の値 ($Env:P SModulePath) に格納されている場所のモジュールのみを取得します。 コマンドレットの **Path** パラメーターを使用して `Import-Module` 、他の場所にあるモジュールをインポートできますが、コマンドレットを使用してそれらを取得することはできません `Get-Module` 。
-- また、PowerShell 3.0 以降では、を返すオブジェクトに新しいプロパティが追加されました `Get-Module` 。これにより、モジュールをインポートする前でも簡単に学習できるようになります。 インポートする前に、すべてのプロパティが設定されます。 これには、モジュールによってエクスポートされるコマンドを一覧表示する **ExportedCommands** 、 **ExportedCmdlets** 、 **ExportedFunctions** の各プロパティが含まれます。
+  コアモジュールで新しいスタイルのセッションを作成する **CreateDefault2** メソッドの詳細については、「 [CreateDefault2 メソッド](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2)」を参照してください。
+
+- `Get-Module`**PSModulePath** 環境変数の値 ($Env:P SModulePath) に格納されている場所のモジュールのみを取得します。 コマンドレットでは、 `Import-Module` 他の場所にモジュールをインポートできますが、コマンドレットを使用してモジュールを取得することはできません `Get-Module` 。
+
+- また、PowerShell 3.0 以降では、を返すオブジェクトに新しいプロパティが追加されました `Get-Module` 。これにより、モジュールをインポートする前でも簡単に学習できるようになります。 インポートする前に、すべてのプロパティが設定されます。 これには、モジュールによってエクスポートされるコマンドを一覧表示する **ExportedCommands**、 **ExportedCmdlets** 、 **ExportedFunctions** の各プロパティが含まれます。
+
 - **ListAvailable** パラメーターは、適切な形式のモジュールのみを取得します。つまり、基本名がモジュールフォルダーの名前と同じファイルを少なくとも1つ含むフォルダーです。 基本名は、ファイル名拡張子のない名前です。 異なる名前を持つファイルを含むフォルダーは、コンテナーと見なされますが、モジュールではありません。
 
-  .Dll ファイルとして実装されていてもモジュールフォルダーには含まれていないモジュールを取得するには、 **ListAvailable** と **All** の両方のパラメーターを指定します。
+  DLL ファイルとして実装されていてもモジュールフォルダーには含まれていないモジュールを取得するには、 **ListAvailable** と **All** の両方のパラメーターを指定します。
 
 - CIM セッション機能を使用するには、リモート コンピューターにおいて、WS-Management リモート処理と Common Information Model (CIM) 標準の Microsoft 実装である Windows Management Instrumentation (WMI) が必要です。 さらに、モジュール検出用の WMI プロバイダーまたは同じ基本機能を備えた代替 WMI プロバイダーもコンピューターに必要です。
 
   CIM セッション機能は、Windows オペレーティングシステムを実行していないコンピューターと PowerShell を搭載している Windows コンピューターで使用できますが、PowerShell リモート処理は有効になっていません。
 
-  また、CIM パラメーターを使用して、PowerShell リモート処理が有効になっているコンピューターから CIM モジュールを取得することもできます。 これには、ローカルコンピューターが含まれます。
-ローカルコンピューターに CIM セッションを作成すると、PowerShell は WMI ではなく DCOM を使用してセッションを作成します。
+  また、CIM パラメーターを使用して、PowerShell リモート処理が有効になっているコンピューターから CIM モジュールを取得することもできます。 これには、ローカルコンピューターが含まれます。 ローカルコンピューターに CIM セッションを作成すると、PowerShell は WMI ではなく DCOM を使用してセッションを作成します。
 
 ## 関連リンク
 
@@ -643,4 +599,3 @@ Accept wildcard characters: False
 [Remove-Module](Remove-Module.md)
 
 [about_PowerShell_Editions](About/about_PowerShell_Editions.md)
-

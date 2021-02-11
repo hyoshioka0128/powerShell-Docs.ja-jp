@@ -1,12 +1,14 @@
 ---
-title: CustomControl の CustomEntries 要素のビュー (形式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c89eb25f6922a92e2c18298d0128c4c2ca93df3d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の CustomControl の CustomEntries 要素 (書式)
+description: View の CustomControl の CustomEntries 要素 (書式)
+ms.openlocfilehash: 6e757bccdface2503667f8786462a2b43134a07d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785967"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649981"
 ---
 # <a name="customentries-element-for-customcontrol-for-view-format"></a>View の CustomControl の CustomEntries 要素 (書式)
 

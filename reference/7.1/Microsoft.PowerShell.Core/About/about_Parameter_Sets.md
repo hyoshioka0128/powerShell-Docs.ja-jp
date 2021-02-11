@@ -1,13 +1,13 @@
 ---
 description: 高度な関数でパラメーターセットを定義して使用する方法について説明します。
 title: about_Parameter_Sets
-ms.date: 02/11/2020
-ms.openlocfilehash: e6f7d006551bdeee11b68951f96f3fa2251e73e3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.date: 01/05/2021
+ms.openlocfilehash: 876f6336dd344412b514ea22d413a97a98c9cd02
+ms.sourcegitcommit: eb7ad1850550032880f5529b4e4281514cba1673
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223976"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97917825"
 ---
 # <a name="about-parameter-sets"></a>パラメーターセットについて
 
@@ -22,7 +22,7 @@ PowerShell では、パラメーターセットを使用して、さまざまな
 
 すべてのパラメーターセットには、次の要件が適用されます。
 
-- 各パラメーターセットには、少なくとも1つの一意のパラメーターが必要です。 可能であれば、このパラメーターを必須パラメーターにします。
+- 各パラメーターセットには、パラメーターの一意の組み合わせが必要です。 可能な場合は、一意のパラメーターの少なくとも1つが必須パラメーターである必要があります。
 
 - 複数の位置指定パラメーターを含むパラメーターセットでは、パラメーターごとに一意の位置を定義する必要があります。 2つの位置指定パラメーターで同じ位置を指定することはできません。
 
@@ -35,7 +35,7 @@ PowerShell では、パラメーターセットを使用して、さまざまな
 
 ## <a name="default-parameter-sets"></a>既定のパラメーターセット
 
-複数のパラメーターセットが定義されている場合は、この `DefaultParameterSetName` 属性のキーワードによって既定のパラメーターセットが指定され **CmdletBinding** ます。
+複数のパラメーターセットが定義されている場合は、この `DefaultParameterSetName` 属性のキーワードによって既定のパラメーターセットが指定されます。
 PowerShell では、コマンドに指定された情報に基づいて、使用するパラメーターセットを特定できないときに、既定のパラメーターセットが使用されます。 参照 **バインド** 属性の詳細については、「 [about_functions_cmdletbindingattribute](about_functions_cmdletbindingattribute.md)」を参照してください。
 
 ## <a name="declaring-parameter-sets"></a>パラメーターセットの宣言
@@ -50,7 +50,7 @@ PowerShell では、コマンドに指定された情報に基づいて、使用
 
 次の関数の例では、テキストファイル内の行数、文字、および単語数をカウントします。 パラメーターを使用すると、どの値を取得し、どのファイルを測定するかを指定できます。 次の4つのパラメーターセットが定義されています。
 
-- Path
+- パス
 - PathAll
 - LiteralPath
 - LiteralPathAll

@@ -1,12 +1,14 @@
 ---
-title: 構成用のコントロール (Format) の ItemSeclectionCondition の PropertyName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0e304af1dbe816753d6dcd1dd8149f950f2a0941
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Configuration の Controls の ItemSeclectionCondition の PropertyName 要素 (書式)
+description: Configuration の Controls の ItemSeclectionCondition の PropertyName 要素 (書式)
+ms.openlocfilehash: 860683eb54b2a3579767640c1d3f0937897b8f8e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785593"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655127"
 ---
 # <a name="propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format"></a>Configuration の Controls の ItemSeclectionCondition の PropertyName 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) コントロールの構成 (形式) の CustomCon
 
 ## <a name="remarks"></a>解説
 
-この要素が使用されている場合、選択条件を定義するときに[ScriptBlock](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)要素を指定することはできません。
+この要素が使用されている場合、選択条件を定義するときに [ScriptBlock](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) 要素を指定することはできません。
 
 ## <a name="see-also"></a>参照
 

@@ -1,26 +1,28 @@
 ---
-title: コマンドレット Alias |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: fed4055f09e01c5f3fa87584d48551918606f4eb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレット エイリアス
+description: コマンドレット エイリアス
+ms.openlocfilehash: 734553a9911aef256df563afa6abcdb23d7a62e6
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784539"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660792"
 ---
 # <a name="cmdlet-aliases"></a>コマンドレット エイリアス
 
 コマンドレットのエイリアスを使用して、コマンドレットのユーザーエクスペリエンスを向上させることができます。 頻繁に使用するコマンドレットにエイリアスを追加して、入力を減らし、タスクをすばやく完了できるようにすることができます。 組み込みのエイリアスをコマンドレットに含めることも、ユーザーが独自のカスタムエイリアスを定義することもできます。
 
-たとえば、 [Get コマンド](/powershell/module/microsoft.powershell.core/get-command)レットには、組み込みのエイリアスがあり `gcm` ます。 エイリアスを使用して、他の言語のコマンド名を追加して、ユーザーが新しいコマンドを習得する必要がないようにすることもできます。
+たとえば、 [Get コマンド](/powershell/module/microsoft.powershell.core/get-command) レットには、組み込みのエイリアスがあり `gcm` ます。 エイリアスを使用して、他の言語のコマンド名を追加して、ユーザーが新しいコマンドを習得する必要がないようにすることもできます。
 
 ## <a name="alias-guidelines"></a>エイリアスのガイドライン
 
 コマンドレットの組み込みエイリアスを作成するときは、次のガイドラインに従ってください。
 
-- エイリアスを割り当てる前に、Windows PowerShell を起動してから、 [Get Alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias)コマンドレットを実行して、既に使用されているエイリアスを確認します。
+- エイリアスを割り当てる前に、Windows PowerShell を起動してから、 [Get Alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias) コマンドレットを実行して、既に使用されているエイリアスを確認します。
 
-- コマンドレット名の動詞を参照するエイリアスプレフィックスと、コマンドレット名の名詞を参照するエイリアスサフィックスを含めます。 たとえば、 `Import-Module` コマンドレットのエイリアスは "ipmo" です。 すべての動詞とそのエイリアスの一覧については、「[コマンドレットの動詞](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
+- コマンドレット名の動詞を参照するエイリアスプレフィックスと、コマンドレット名の名詞を参照するエイリアスサフィックスを含めます。 たとえば、 `Import-Module` コマンドレットのエイリアスは "ipmo" です。 すべての動詞とそのエイリアスの一覧については、「 [コマンドレットの動詞](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
 
 - 同じ動詞を持つコマンドレットの場合は、同じエイリアスプレフィックスを含めます。 たとえば、名前に "Get" という動詞があるすべての Windows PowerShell コマンドレットのエイリアスは、"g" プレフィックスを使用します。
 

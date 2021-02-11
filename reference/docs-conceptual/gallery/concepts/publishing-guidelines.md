@@ -1,15 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB, SydneyhSmith
-keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
-description: パブリッシャー向けのガイドライン
+description: この記事では、PowerShell ギャラリーに公開されたパッケージが広く使用され、ユーザーに高い価値を提供していることを確認するための、推奨の手順について説明します。
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: c58b23b0021e0745ee690a78f7e42c821d59cdb0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 97af3761fad1efb849b7197761a3855c9f1b05a4
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777857"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391172"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -85,10 +83,9 @@ Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="
 
 パッケージ所有者としてフィードバックに適切に対応すると、コミュニティでの評価が高くなります。 建設的なフィードバックをしてくれるユーザーは、パッケージに高い関心を持っており改善の手助けをしてくれるので、そのようなユーザーには対応することが重要です。
 
-PowerShell ギャラリーでフィードバックを行う方法は 2 つあります。
+PowerShell ギャラリーでフィードバックを行う方法は 1 つあります。
 
 - 所有者への連絡:この方法では、ユーザーはパッケージの所有者にメールを送信できます。 パッケージの所有者は、PowerShell ギャラリー パッケージで使用されているメール アドレスをチェックし、寄せられた問題に対応することが重要です。 この方法の 1 つのデメリットは、問い合わせをしたユーザーと所有者しか会話を見られないため、所有者は同じ質問に何度も答えなければならない可能性があることです。
-- コメント: パッケージのページの最下部には、**コメント** フィールドがあります。 この方法のメリットは、他のユーザーもコメントと回答を確認できるため、同一の質問に答えなければならない回数を少なくできることです。 パッケージの所有者は、各パッケージに寄せられたコメントをフォローすることが強く推奨されます。 フォロー方法の詳細については、「[Providing Feedback via Social Media or Comments (ソーシャル メディアやコメントを使用したフィードバックの提供)](../how-to/working-with-packages/social-media-feedback.md)」をご覧ください。
 
 フィードバックに建設的に対応すると、コミュニティで高い評価を得られます。 この報告の機会を利用して、詳細情報を求めましょう。 必要に応じて解決方法を提示するか、更新プログラムで問題を解決できるか確認します。
 
@@ -191,11 +188,11 @@ PowerShell は SemVer の公開前に作成されたため、SemVer の大半の
 PowerShell ギャラリーは、公開プロセスのテストの対象としては設計されていません。 PowerShell ギャラリーへのエンドツーエンドの公開プロセスをテストする最良の方法は、独自のローカル リポジトリを設定して使用することです。 これは、次のいくつかの方法で行うことができます。
 
 - GitHub で [PS プライベート ギャラリー プロジェクト](https://github.com/PowerShell/PSPrivateGallery)を使用して、PowerShell ギャラリーのローカル インスタンスを設定します。 このプレビュー プロジェクトでは、制御可能でありテスト対象である PowerShell ギャラリーのインスタンスを容易に設定することができます。
-- [Nuget 内部リポジトリ](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/)を設定します。
+- [Nuget 内部リポジトリ](https://devblogs.microsoft.com/powershell/setting-up-an-internal-powershellget-repository/)を設定します。
   これには追加の設定作業が必要です。ただし、利点として、API キーの使用を検証したり、公開時にターゲット内に依存関係が存在するかどうかを検証したりするなど、追加の要件をいくつか検証することができます。
-- ファイル共有をテスト **リポジトリ**として設定します。 この設定は簡単ですが、ファイル共有であるため、上記の検証は行われません。 この場合の潜在的な利点の 1 つは、ファイル共有で (必須の) API キーが確認されないため、PowerShell ギャラリーに公開するのと同じキーを使用できるということです。
+- ファイル共有をテスト **リポジトリ** として設定します。 この設定は簡単ですが、ファイル共有であるため、上記の検証は行われません。 この場合の潜在的な利点の 1 つは、ファイル共有で (必須の) API キーが確認されないため、PowerShell ギャラリーに公開するのと同じキーを使用できるということです。
 
-これらのいずれのソリューションでも、`Register-PSRepository` を使用して、新しい**リポジトリ**を定義します。これは、`Publish-Module` の `-Repository` パラメーターで使用します。
+これらのいずれのソリューションでも、`Register-PSRepository` を使用して、新しい **リポジトリ** を定義します。これは、`Publish-Module` の `-Repository` パラメーターで使用します。
 
 テスト公開に関する追加のポイント: PowerShell ギャラリーに公開したパッケージは、オペレーション チームの支援がなければ削除できません。オペレーション チームでは、公開するパッケージに何も依存していないことが確認されます。 そのため、弊社では PowerShell ギャラリーをテスト対象としてはサポートしておらず、それを行った発行元には問い合わせを行います。
 
@@ -204,7 +201,7 @@ PowerShell ギャラリーは、公開プロセスのテストの対象として
 発行元は、PowerShell ギャラリーを使用するときは `Publish-Module` と `Publish-Script` コマンドレットを使用することを強くお勧めします。 **PowerShellGet** は、PowerShell ギャラリーからインストールをしたり、PowerShell ギャラリーに公開したりする場合の重要な詳細情報を覚えておかなくても済むように作成されました。 時折、発行元は、**PowerShellGet** をスキップして、`Publish-Module` の代わりに **NuGet** クライアントを使用したり、**PackageManagement** コマンドレットを使用したりすることがあります。 簡単に見落としてしまう詳細な設定がいくつもあり、その結果さまざまなサポート要求が発生します。
 
 `Publish-Module` または `Publish-Script` を使用できない理由がある場合には、弊社にお知らせください。
-**PowerShellGet** の GitHub リポジトリにイシューを登録し、**NuGet** または **PackageManagement**を選択することになった理由を詳細にご記入ください。
+**PowerShellGet** の GitHub リポジトリにイシューを登録し、**NuGet** または **PackageManagement** を選択することになった理由を詳細にご記入ください。
 
 ## <a name="recommended-workflow"></a>推奨されるワークフロー
 

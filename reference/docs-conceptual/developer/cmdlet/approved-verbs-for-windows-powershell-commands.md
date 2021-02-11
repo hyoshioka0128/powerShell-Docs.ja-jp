@@ -3,12 +3,12 @@ ms.date: 09/07/2018
 ms.topic: reference
 title: PowerShell コマンドに承認されている動詞
 description: PowerShell コマンドに承認されている動詞
-ms.openlocfilehash: 237355ba9729cfe16c335b39f19ab20e40999457
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
-ms.translationtype: HT
+ms.openlocfilehash: fc1ff989ae86862e0f9cc24d8bcba2ff02ef68cc
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92655826"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355104"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell コマンドに承認されている動詞
 
@@ -16,15 +16,9 @@ PowerShell の場合、コマンドレットの名前を表すため、および
 名前の動詞の部分は、コマンドレットで実行されるアクションを識別します。 名前の名詞の部分は、アクションが実行される対象であるエンティティを識別します。 たとえば、`Get-Command` は、PowerShell に登録されているすべてのコマンドを取得するコマンドレットです。
 
 > [!NOTE]
-> PowerShell の場合、" _動詞_ " という用語は、アクションを意味する単語 (その単語が英語の標準的な動詞でない場合でも) を記述するために使用されます。 たとえば、 _New_ という用語は英語の動詞ではありませんが、アクションを意味しているため、有効な PowerShell 動詞の名前です。
+> PowerShell の場合、"_動詞_" という用語は、アクションを意味する単語 (その単語が英語の標準的な動詞でない場合でも) を記述するために使用されます。 たとえば、_New_ という用語は英語の動詞ではありませんが、アクションを意味しているため、有効な PowerShell 動詞の名前です。
 
-<!--
-01234567890123456789012345678901234567890123456789012345678901234567890123456789
--->
-
-承認された各動詞には、対応する " _エイリアスのプレフィックス_ " が定義されています。
-このエイリアスのプレフィックスは、その動詞を使用するコマンドのエイリアスで使用します。
-たとえば、`Import` のエイリアスのプレフィックスは `ip` であり、したがって `Import-Module` のエイリアスは `ipmo` です。  これは推奨事項ですが、規則ではありません。特に、他の環境の既知のコマンドを模倣しているコマンド エイリアスの場合は、従う必要はありません。
+承認された各動詞には、対応する "_エイリアスのプレフィックス_" が定義されています。 このエイリアスのプレフィックスは、その動詞を使用するコマンドのエイリアスで使用します。 たとえば、`Import` のエイリアスのプレフィックスは `ip` であり、したがって `Import-Module` のエイリアスは `ipmo` です。 これは推奨事項ですが、規則ではありません。特に、他の環境の既知のコマンドを模倣しているコマンド エイリアスの場合は、従う必要はありません。
 
 ## <a name="verb-naming-recommendations"></a>動詞の名前付けに関する推奨事項
 
@@ -35,13 +29,13 @@ PowerShell の場合、コマンドレットの名前を表すため、および
 - 承認された動詞のシノニムは使用しないでください。 たとえば、常に `Remove` を使用し、`Delete` や `Eliminate` は使用しません。
 - このトピックに記載されている各動詞の形式のみを使用します。 たとえば、`Get` は使用しますが、`Getting` または `Gets` は使用しません。
 - 次の予約された動詞またはエイリアスは使用しないでください。 これらの動詞は、PowerShell 言語またはそのまれないくつかのコマンドレットによって、例外的な状況で使用されます。
-    - ForEach (foreach)
-    - [Format](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f): 指定された形式またはレイアウトでオブジェクトを整列します
-    - [Group](/dotnet/api/System.Management.Automation.VerbsData.Group) (gp): 1 つ以上のリソースを配置するか関連付けます
-    - [Ping](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Ping) (pi)
-    - Sort (sr)
-    - Tee (te)
-    - Where (wh)
+  - ForEach (foreach)
+  - [Format](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f): 指定された形式またはレイアウトでオブジェクトを整列します
+  - [Group](/dotnet/api/System.Management.Automation.VerbsData.Group) (gp): 1 つ以上のリソースを配置するか関連付けます
+  - [Ping](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Ping) (pi)
+  - Sort (sr)
+  - Tee (te)
+  - Where (wh)
 
 `Get-Verb` コマンドレットを使用して、動詞の完全な一覧を取得できます。
 
@@ -174,7 +168,7 @@ PowerShell には、リソースのライフサイクルに適用されるアク
 |[Approve](/dotnet/api/System.Management.Automation.VerbsLifecycle.Approve) (ap)|リソースまたはプロセスの状態を確認するか、それに同意します。||
 |[Assert](/dotnet/api/System.Management.Automation.VerbsLifecycle.Assert) (as)|リソースの状態を表明します。|Certify|
 |[Build](/dotnet/api/System.Management.Automation.VerbsLifecycle.Build) (bd)|何らかの入力ファイル セット (通常はソース コードまたは宣言ドキュメント) から成果物 (通常はバイナリまたはドキュメント) を作成します。この動詞は、PowerShell 6 で追加されました。||
-|[Complete](/dotnet/api/system.management.automation.host.buffercelltype?view=powershellsdk-1.1.0) (cp)|操作を終了します。||
+|[Complete](/dotnet/api/system.management.automation.host.buffercelltype) (cp)|操作を終了します。||
 |[Confirm](/dotnet/api/System.Management.Automation.VerbsLifecycle.Confirm) (cn)|リソースまたはプロセスの状態を承認、検証、または確認します。|Acknowledge、Agree、Certify、Validate、Verify|
 |[Deny](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deny) (dn)|リソースまたはプロセスの状態を拒否、反対、ブロック、または禁止します。|Block、Object、Refuse、Reject|
 |[Deploy](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deploy) (dp)|アプリケーション、Web サイト、またはソリューションをリモート ターゲットに送信して、そのソリューションのコンシューマーが展開の完了後にアクセスできるようにします。 この動詞は、PowerShell 6 で追加されました。||

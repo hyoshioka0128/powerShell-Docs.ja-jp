@@ -1,12 +1,14 @@
 ---
-title: コマンドレットのパラメーターを宣言する方法 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 97e86a1eb715f149a8383a1a4529c00da4f0eba8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレット パラメーターを宣言する方法
+description: コマンドレット パラメーターを宣言する方法
+ms.openlocfilehash: ed53f9788c9afb142b137e08966dff33551b9d0f
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774390"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667098"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>コマンドレット パラメーターを宣言する方法
 
@@ -76,7 +78,7 @@ Parameter 属性の詳細については、「 [Parameter 属性の宣言](./par
 
 ## <a name="how-to-declare-a-switch-parameter"></a>スイッチパラメーターを宣言する方法
 
-- パブリックプロパティを型 system.string として定義[し、パラメーター](/dotnet/api/System.Management.Automation.SwitchParameter)属性を宣言します。
+- パブリックプロパティを型 system.string として定義 [し、パラメーター](/dotnet/api/System.Management.Automation.SwitchParameter)属性を宣言します。
 
     ```csharp
     [Parameter(Position = 1)]
@@ -115,4 +117,4 @@ Alias 属性の詳細については、「 [Alias 属性の宣言](./alias-attri
 
 [エイリアス属性の宣言](./alias-attribute-declaration.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

@@ -1,16 +1,18 @@
 ---
-title: GetProcessSample05 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2332d260c6f470d435234c847a59e59fe56f809a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProcessSample05 サンプル
+description: GetProcessSample05 サンプル
+ms.openlocfilehash: d4bfaf52b00bb68cf11d8bbebf72487472d73f6e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784199"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646515"
 ---
 # <a name="getprocesssample05-sample"></a>GetProcessSample05 サンプル
 
-このサンプルでは、Get Proc コマンドレットの完全なバージョンを示します。
+このサンプルでは、Get-Proc コマンドレットの完全なバージョンを示します。
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする方法。
 
@@ -42,7 +44,7 @@ ms.locfileid: "87784199"
 
    `get-proc`
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 

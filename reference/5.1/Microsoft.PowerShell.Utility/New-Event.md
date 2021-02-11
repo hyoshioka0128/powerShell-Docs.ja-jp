@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-event?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Event
-ms.openlocfilehash: 9ab8ff192b150811b3cef7035c60f509e1fb5570
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: c822711b7fda94dd6a2a391560100758ee41d233
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93213819"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344645"
 ---
 # New-Event
 
@@ -27,16 +27,14 @@ New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>] [[-EventArguments]
 ```
 
 ## Description
-**新しいイベント** レットは、新しいカスタムイベントを作成します。
+
+コマンドレットにより、 `New-Event` 新しいカスタムイベントが作成されます。
 
 カスタム イベントを使用して、プログラム内の状態の変更やプログラムが検出した変更 (ハードウェアまたはシステムの状態、アプリケーションの状態、ディスクの状態、ネットワークの状態、バック グラウンド ジョブの完了など) についてユーザーに通知することができます。
 
-カスタム イベントは、セッションで発生するたびにイベント キューに自動的に追加されます。それらをサブスクライブする必要はありません。
-ただし、ローカルのセッションにイベントを転送するか、イベントに応答するアクションを指定する場合は、Register-EngineEvent コマンドレットを使用してカスタム イベントにサブスクライブします。
+カスタム イベントは、セッションで発生するたびにイベント キューに自動的に追加されます。それらをサブスクライブする必要はありません。 ただし、イベントをローカルセッションに転送したり、イベントに応答するアクションを指定したりする場合は、コマンドレットを使用して `Register-EngineEvent` カスタムイベントをサブスクライブします。
 
-カスタム イベントをサブスクライブすると、イベント サブスクライバーがセッションに追加されます。
-Unregister-Event コマンドレットを使用してイベント サブスクリプションを取り消すと、イベント サブスクライバーおよびカスタム イベントはセッションから削除されます。
-カスタム イベントをサブスクライブしない場合に、イベントを削除するには、プログラムの条件を変更するか、Windows PowerShell セッションを閉じる必要があります。
+カスタム イベントをサブスクライブすると、イベント サブスクライバーがセッションに追加されます。 コマンドレットを使用してイベントサブスクリプションをキャンセルすると、 `Unregister-Event` イベントサブスクライバーとカスタムイベントがセッションから削除されます。 カスタムイベントをサブスクライブしていない場合は、イベントを削除するために、プログラムの状態を変更するか、PowerShell セッションを閉じる必要があります。
 
 ## 例
 
@@ -46,8 +44,7 @@ Unregister-Event コマンドレットを使用してイベント サブスク�
 PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
 ```
 
-このコマンドは、Windows PowerShell イベント キューに新しいイベントを作成します。
-このメソッドは、 **Windows の Timer** オブジェクトを使用してイベントを送信します。
+このコマンドは、PowerShell イベントキューに新しいイベントを作成します。 このメソッドは、 **Windows の Timer** オブジェクトを使用してイベントを送信します。
 
 ### 例 2: 別のイベントに応答してイベントを発生させる
 
@@ -64,15 +61,14 @@ PS C:\> function Enable-ProcessCreationEvent
 }
 ```
 
-このサンプル関数では、 **新しい** イベントレットを使用して、別のイベントに応答してイベントを発生させます。
-このコマンドは、Register-ObjectEvent コマンドレットを使用して、新しいプロセスの作成時に発生する Windows Management Instrumentation (WMI) イベントをサブスクライブします。
-このコマンドは、コマンドレットの *Action* パラメーターを使用して、新しいイベントを作成する **、新しいイベントレットを** 呼び出します。
+このサンプル関数では、コマンドレットを使用して、 `New-Event` 別のイベントに応答してイベントを発生させます。 このコマンドは、コマンドレットを使用して、 `Register-ObjectEvent` 新しいプロセスが作成されたときに発生する Windows Management Instrumentation (WMI) イベントをサブスクライブします。 このコマンドは、コマンドレットの **Action** パラメーターを使用して、新しいイベントを作成するコマンドレットを呼び出し `New-Event` ます。
 
-**新しいイベント** が発生するイベントは自動的に Windows PowerShellevent キューに追加されるため、そのイベントに登録する必要はありません。
+が発生するイベント `New-Event` は PowerShell イベントキューに自動的に追加されるため、そのイベントに登録する必要はありません。
 
 ## PARAMETERS
 
 ### -EventArguments
+
 イベントのオプションを格納しているオブジェクトを指定します。
 
 ```yaml
@@ -88,8 +84,8 @@ Accept wildcard characters: False
 ```
 
 ### -MessageData
-イベントに関連付けられている追加のデータを指定します。
-このパラメーターの値は、イベント オブジェクトの **MessageData** プロパティに表示されます。
+
+イベントに関連付けられている追加のデータを指定します。 このパラメーターの値は、イベント オブジェクトの **MessageData** プロパティに表示されます。
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -104,8 +100,8 @@ Accept wildcard characters: False
 ```
 
 ### -送信者
-イベントを発生させるオブジェクトを指定します。
-既定では、Windows PowerShell エンジンです。
+
+イベントを発生させるオブジェクトを指定します。 既定値は PowerShell エンジンです。
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -120,8 +116,8 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
-新しいイベントの名前を指定します。
-このパラメーターは必須であり、セッション内で一意である必要があります。
+
+新しいイベントの名前を指定します。 このパラメーターは必須であり、セッション内で一意である必要があります。
 
 このパラメーターの値は、イベントの **SourceIdentifier** プロパティに表示されます。
 
@@ -138,11 +134,13 @@ Accept wildcard characters: False
 ```
 
 ### 共通パラメーター
+
 このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
 
 ## 入力
 
 ### なし
+
 パイプを使用してこのコマンドレットに入力を渡すことはできません。
 
 ## 出力
@@ -151,7 +149,8 @@ Accept wildcard characters: False
 
 ## 注
 
-新しいカスタム イベント、イベント サブスクリプション、およびイベント キューは、現在のセッションにのみ存在します。 現在のセッションを閉じた場合、イベント キューが破棄され、イベント サブスクリプションが取り消されます。
+新しいカスタム イベント、イベント サブスクリプション、およびイベント キューは、現在のセッションにのみ存在します。
+現在のセッションを閉じた場合、イベント キューが破棄され、イベント サブスクリプションが取り消されます。
 
 ## 関連リンク
 

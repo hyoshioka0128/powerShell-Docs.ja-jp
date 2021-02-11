@@ -1,18 +1,14 @@
 ---
-title: コマンドレットエラー報告 |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- error records [PowerShell], terminating
-- non-terminating errors [PowerShell]
-- error records [PowerShell]
-- terminating errors [PowerShell]
-- error records [PowerShell], non-terminating
-ms.openlocfilehash: 30b19914253db5f517f5ab76623b54aced0c0598
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレット エラー レポート
+description: コマンドレット エラー レポート
+ms.openlocfilehash: f06cf98183d56249080623895bd1f5a3e070cefd
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784471"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653413"
 ---
 # <a name="cmdlet-error-reporting"></a>コマンドレットのエラー報告
 
@@ -36,17 +32,17 @@ ms.locfileid: "87784471"
 
 ## <a name="reporting-nonterminating-errors"></a>終了しないエラーの報告
 
-終了しないエラーの報告は、常に、コマンドレットによって実行されるようにする必要があり[ます。この](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッドの実装には、または、システムの[管理、.](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ........................... [...](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) ... この種のエラーは、 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドを呼び出してエラーストリームにエラーレコードを送信することによって報告されます。
+終了しないエラーの報告は、常に、コマンドレットによって実行されるようにする必要があり [ます。この](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) メソッドの実装には、または、システムの [管理、.](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ........................... [...](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) ... この種のエラーは、 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) メソッドを呼び出してエラーストリームにエラーレコードを送信することによって報告されます。
 
 ## <a name="reporting-terminating-errors"></a>終了エラーの報告
 
-終了エラーは、例外をスローするか、 [ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッドを呼び出すことによって報告されます。 コマンドレットでは、 **OutOfMemory**などの例外をキャッチして再スローすることもできますが、PowerShell ランタイムでも例外がキャッチされるため、例外を再スローする必要はありません。
+終了エラーは、例外をスローするか、 [ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) メソッドを呼び出すことによって報告されます。 コマンドレットでは、 **OutOfMemory** などの例外をキャッチして再スローすることもできますが、PowerShell ランタイムでも例外がキャッチされるため、例外を再スローする必要はありません。
 
 また、状況に固有の問題に対して独自の例外を定義したり、エラーレコードを使用して既存の例外に追加情報を追加したりすることもできます。
 
 ## <a name="error-records"></a>エラーレコード
 
-PowerShell では、[システム管理](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトを使用した終了しないエラー状態について説明します。 各オブジェクトは、エラーカテゴリ情報、オプションのターゲットオブジェクト、およびエラー状態に関する詳細を提供します。
+PowerShell では、 [システム管理](/dotnet/api/System.Management.Automation.ErrorRecord) オブジェクトを使用した終了しないエラー状態について説明します。 各オブジェクトは、エラーカテゴリ情報、オプションのターゲットオブジェクト、およびエラー状態に関する詳細を提供します。
 
 ### <a name="error-identifiers"></a>エラー識別子
 
@@ -73,9 +69,9 @@ PowerShell では、この識別子をコマンドレット識別子と組み合
 
 エラーカテゴリは、ユーザーのエラーをグループ化するために使用されます。 PowerShell では、これらのカテゴリとコマンドレットを定義します。 PowerShell プロバイダーは、エラーレコードを生成するときにこれらのカテゴリを選択する必要があります。
 
-使用可能なエラーカテゴリの説明については、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙体を参照してください。 一般に、可能な限り**Noerror**、 **Undefinederror**、 **genericerror**の使用は避けてください。
+使用可能なエラーカテゴリの説明については、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) 列挙体を参照してください。 一般に、可能な限り **Noerror**、 **Undefinederror**、 **genericerror** の使用は避けてください。
 
-ユーザーは、カテゴリビューに設定されたときに、カテゴリに基づいてエラーを表示でき `$ErrorView` ます。 **CategoryView**
+ユーザーは、カテゴリビューに設定されたときに、カテゴリに基づいてエラーを表示でき `$ErrorView` ます。 
 
 ## <a name="see-also"></a>関連項目
 

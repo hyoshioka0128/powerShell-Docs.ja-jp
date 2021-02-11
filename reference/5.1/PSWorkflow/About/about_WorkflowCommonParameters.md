@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_workflowcommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_WorkflowCommonParameters
-ms.openlocfilehash: 386200475c1dab9735921edd60abbde20ee354c4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: c371666d4f58386848e7ef715b7c804dc1e8f28e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93221856"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387789"
 ---
 # <a name="about-workflowcommonparameters"></a>WorkflowCommonParameters について
 
@@ -79,7 +79,7 @@ WinRM サービスは、アプリケーション名を使用して、接続要�
 
 既定値は **Default** です。
 
-このパラメーターの値の詳細については、MSDN の列挙の説明を参照してください `System.Management.Automation.Runspaces.AuthenticationMechanism` 。
+このパラメーターの値の詳細については、PowerShell SDK の列挙体の説明を参照してください `System.Management.Automation.Runspaces.AuthenticationMechanism` 。
 
 > [!WARNING]
 > ユーザーの資格情報が認証対象のリモート コンピューターに渡される Credential Security Service Provider (CredSSP) 認証は、リモート ネットワーク共有にアクセスする場合など、複数のリソースの認証を必要とするコマンドを対象としています。 このメカニズムを使用すると、リモート操作のセキュリティ リスクが高まります。 リモート コンピューターのセキュリティが低下している場合は、そのリモート コンピューターに渡される資格情報を使用してネットワーク セッションが制御される場合があります。
@@ -91,7 +91,7 @@ WinRM サービスは、アプリケーション名を使用して、接続要�
 
 有効な値は次のとおりです。
 
-|名前 |説明 |
+|名前 |[説明] |
 |---------|---------|
 |**Unchanged** | 認証レベルは前のコマンドと同じです。 |
 |**[Default]** | [Windows 認証]。 |

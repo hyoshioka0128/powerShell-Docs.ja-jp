@@ -1,12 +1,14 @@
 ---
-title: 構成用のコントロール (Format) の EntrySelectedBy の SelectionSetName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 72072d8d13e6ca22afdb9bca2e0237d29ba0594f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Configuration の Controls の EntrySelectedBy の SelectionSetName 要素 (書式)
+description: Configuration の Controls の EntrySelectedBy の SelectionSetName 要素 (書式)
+ms.openlocfilehash: b775aa8a3184aa3ebcbda17a8e3191c69d67a700
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787565"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645730"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format"></a>Configuration の Controls の EntrySelectedBy の SelectionSetName 要素 (書式)
 
@@ -47,7 +49,7 @@ Configuration 要素 (Format) コントロールの configuration (format) Custo
 
 各コントロール定義には、少なくとも1つの型名、選択セット、または選択条件が定義されている必要があります。
 
-選択セットは、通常、複数のビューで使用されるオブジェクトのグループを定義する場合に使用します。 選択セットの定義の詳細については、「[選択セットの定義](./defining-selection-sets.md)」を参照してください。
+選択セットは、通常、複数のビューで使用されるオブジェクトのグループを定義する場合に使用します。 選択セットの定義の詳細については、「 [選択セットの定義](./defining-selection-sets.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

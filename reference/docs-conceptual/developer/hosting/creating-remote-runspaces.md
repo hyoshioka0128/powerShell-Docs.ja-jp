@@ -1,20 +1,22 @@
 ---
-title: リモート実行空間を作成する |Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 2b3c76eeae70de9ef116851313953bba1a1d890f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: リモート実行空間を作成する
+description: リモート実行空間を作成する
+ms.openlocfilehash: 4a2af4094ff2503fc12ee460d49565f035f0e4fe
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779592"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649358"
 ---
 # <a name="creating-remote-runspaces"></a>リモート実行空間を作成する
 
-**ComputerName**パラメーターを受け取る powershell コマンドは、powershell を実行する任意のコンピューターで実行できます。 **ComputerName**パラメーターを受け取らないコマンドを実行するには、ws-management を使用して、指定したコンピューターに接続し、そのコンピューターでコマンドを実行する実行空間を構成します。
+**ComputerName** パラメーターを受け取る powershell コマンドは、powershell を実行する任意のコンピューターで実行できます。 **ComputerName** パラメーターを受け取らないコマンドを実行するには、WS-Management を使用して、指定したコンピューターに接続する実行空間を構成し、そのコンピューターでコマンドを実行します。
 
 ## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>WSManConnection を使用してリモートの実行空間を作成する
 
- リモートコンピューターに接続する実行空間を作成するには、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成します。 接続のターゲットエンドポイントは、オブジェクトの[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)プロパティを設定することによって指定してください。 次に、 [RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)メソッドを呼び出して、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトをパラメーターとして指定して、実行空間を作成してから、このメソッドを呼び出します。 `connectionInfo`
+ リモートコンピューターに接続する実行空間を作成するには、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) オブジェクトを作成します。 接続のターゲットエンドポイントは、オブジェクトの [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) プロパティを設定することによって指定してください。 次に、 [RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)メソッドを呼び出して、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトをパラメーターとして指定して、実行空間を作成してから、このメソッドを呼び出します。 `connectionInfo`
 
  次の例は、リモートコンピューターに接続する実行空間を作成する方法を示しています。 この例で `RemoteComputerUri` は、はリモートコンピューターの実際の URI のプレースホルダーとして使用されます。
 

@@ -7,12 +7,12 @@ ms.date: 10/29/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Show-Command
-ms.openlocfilehash: 86253a8a0bd02a60980cc3655af7bb961acf88ac
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: b5758fdb9fc3e8f604b24fb9c64cad3f95047ec3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93211763"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347773"
 ---
 # Show-Command
 
@@ -40,7 +40,7 @@ Show-Command [[-Name] <String>] [-Height <Double>] [-Width <Double>] [-NoCommonP
 
 PowerShell Integrated Scripting Environment (ISE) では、ウィンドウのバリエーション `Show-Command` が既定で表示されます。 このコマンドウィンドウの使用方法の詳細については、PowerShell ISE のヘルプトピックを参照してください。
 
-このコマンドレットは、PowerShell 7 で再導入されました。 
+このコマンドレットは、PowerShell 7 で再導入されました。
 
 このコマンドレットはユーザーインターフェイスを必要とするため、Windows Server Core または Windows Nano Server では機能しません。 このコマンドレットは、Windows デスクトップをサポートする Windows システムでのみ使用できます。
 
@@ -272,7 +272,8 @@ Accept wildcard characters: False
 
 ## 注
 
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
+
 `Show-Command` リモートセッションでは機能しません。
 
 ## 関連リンク
-

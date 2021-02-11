@@ -7,12 +7,12 @@ ms.date: 02/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
-ms.openlocfilehash: 2adcbcc9e3c933e5c28521f26ec3ae2db03e50f7
-ms.sourcegitcommit: f58e4a04240e3419772f9eaa031b626800b615d7
+ms.openlocfilehash: 968cea73cd31bb5bf7b0341e5dbf40e297bb5edd
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "93219040"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347688"
 ---
 # Register-EngineEvent
 
@@ -259,6 +259,8 @@ Accept wildcard characters: False
 
 ## 注
 
+Linux または macOS プラットフォームで使用できるイベントソースがありません。
+
 イベント、イベント サブスクリプション、およびイベント キューは、現在のセッションにのみ存在します。 現在のセッションを閉じた場合、イベント キューが破棄され、イベント サブスクリプションが取り消されます。
 
 ## 関連リンク
@@ -274,4 +276,3 @@ Accept wildcard characters: False
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

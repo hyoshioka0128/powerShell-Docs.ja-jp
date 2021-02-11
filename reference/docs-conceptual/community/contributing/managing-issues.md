@@ -1,18 +1,18 @@
 ---
 title: イシューを管理する方法
-description: この記事では、PowerShell-Docs チームがプル要求を管理する方法について説明します。
-ms.date: 03/05/2020
+description: この記事では、PowerShell-Docs チームがイシューを管理する方法について説明します。
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 018200f1a9384f1ea956c9b27a7605db21f2da9e
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
-ms.translationtype: HT
+ms.openlocfilehash: 72267137a2657f51e5f616113adf92d80647acad
+ms.sourcegitcommit: 61765d08321623743dc5db5367160f6982fe7857
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692535"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "99602165"
 ---
 # <a name="how-we-manage-issues"></a>イシューを管理する方法
 
-この記事では、PowerShell-Docs リポジトリでイシューを管理する方法について説明します。 この記事は、PowerShell-Docs チームのメンバーの作業を支援することを目的としています。 一般の共同作成者に対してプロセスを透明化するために、ここで公開されています。
+この記事では、PowerShell-Docs リポジトリでイシューを管理する方法について説明します。 この記事は、PowerShell-Docs チームのメンバーの作業を支援することを目的としています。 ここで公開されているので、パブリックコントリビューターのプロセスの透明性を提供します。
 
 ## <a name="sources-of-issues"></a>イシューのソース
 
@@ -23,51 +23,54 @@ ms.locfileid: "83692535"
 
 ## <a name="response-time-targets"></a>目標対応時間
 
-- トリアージ - 5 営業日
-- 修正または変更 - 具体的な目標なし - ベスト エフォートのみ
+新しい問題の80% は、3営業日以内に終了します。
+
+- トリアージ済み-1 営業日以内
+- 10営業日以内の修正または変更
 
 ### <a name="labeling--milestones"></a>ラベル付けとマイルストーン
 
 #### <a name="label-types"></a>ラベルの種類
 
-|Prefix  | 説明                                                         |
-|------- | --------------------------------------------------------------------|
-|領域    | イシューを議論する、PowerShell またはドキュメントの部分を示すために使用します。<br>機能の所有者が機能に関するイシューを見つけるのに役立ちます。|
-|Pri     | イシューの優先度を示すために使用します。 値の範囲は 0 から 4 です。        |
-|問題   | イシューのフィードバックの種類を分類するために使用します。                     |
-|確認  | チームがさらにレビューする必要があるイシューに使用します。              |
-|Status  | 作業項目の状態を示すために使用します。                        |
-|待機中 | チームが何かを待機していることを示すために使用します。                   |
+|   Type   | 説明                                                         |
+| -------- | ------------------------------------------------------------------- |
+| 領域     | イシューを議論する、PowerShell またはドキュメントの部分を示すために使用します。<br>機能の所有者が機能に関するイシューを見つけるのに役立ちます。 |
+| 問題    | 問題の種類を示します。                                         |
+| 優先度 | 問題の優先度を示します。 値の範囲 0 (高)-4 (低)  |
+| Status   | 作業項目の状態または作業項目が閉じられた理由を示します。          |
+| タグ      | 追加の分類のためにに使用されるラベル                        |
+| 待機中  | 他のイベントまたは他のイベントで待機していることを示します。         |
 
 #### <a name="milestones"></a>Milestones
 
-イシューと PR は、適切なマイルストーンでタグ付けする必要があります。 イシューが特定のバージョンを対象としていない場合、マイルストーンは使用されません。 PowerShell コード ベースにまだマージされていない変更に関するドキュメント PR のイシューは、**Future** マイルストーンに割り当てる必要があります。 コードの変更がマージされたら、マイルストーンを適切なバージョンに変更します。
+イシューと PR は、適切なマイルストーンでタグ付けする必要があります。 問題が特定のバージョンに適用されない場合、マイルストーンは使用されません。 PowerShell コードベースにまだマージされていない変更に関する Pr および関連する問題は、 **今後** のマイルストーンに割り当てる必要があります。 コードの変更がマージされたら、マイルストーンを適切なバージョンに変更します。
 
 |    マイルストーン     |                    説明                     |
 | ---------------- | -------------------------------------------------- |
-| 6.x              | PowerShell 6.0 から 6.2.x に関連する作業項目 |
 | 7.0.0            | PowerShell 7.0 に関連する作業項目               |
 | 7.1.0            | PowerShell 7.1 に関連する作業項目               |
+| 7.2.0            | PowerShell 7.2 に関連する作業項目               |
 | 予定           | 将来のバージョンの PowerShell の作業項目          |
-| PSReadline-vNext | 将来のバージョンの PSReadline の作業項目          |
 
 ## <a name="triage-process"></a>トリアージ プロセス
 
-PowerShell ドキュメント チームは、週に 1 回集まって、前回の会議以降に追加されたイシューについて話し合います。 ラベルが割り当てられたとき、または所有者が割り当てられたときに、イシューはトリアージされたと見なされます。 PowerShell ドキュメント チームのメンバーには、イシューを毎日レビューし、新たに報告されたイシューをトリアージすることが推奨されます。 必要に応じて、週 1 回のトリアージ会議を利用して、新しいイシューについてさらに詳しく話し合うこともできます。
+PowerShell docs チームメンバーは、問題を毎日確認し、新しい問題が発生したときにトリアージします。 チームは週に1回、トリアージが必要な問題、または未解決のままの問題について話し合います。
 
 ### <a name="misplaced-product-feedback"></a>間違って送られた製品フィードバック
 
-- その顧客に対して、製品フィードバックであることを示すコメントを入力し、適切なフィードバック チャネルへのリンクを提供します。
+- 顧客を正しいフィードバックチャネルにリダイレクトするコメントを入力します。
 - 省略可能:イシューを適切な製品フィードバックの場所にコピーし、コピーした項目へのリンクを追加して、イシューを閉じます。 イシューを UserVoice にコピーしないでください。
 
-  | ドキュメント セット    | 製品フィードバックの URL                                           |
-  | --------- | -------------------------------------------------------------- |
-  | developer | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
-  | dsc       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
-  | ギャラリー   | `https://github.com/powershell/powershellgallery/issues/new`   |
-  | jea       | `https://github.com/powershell/jea/issues/new`                 |
-  | reference | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
-  | wmf       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
+  PowerShell の問題の既定の場所は [https://github.com/PowerShell/PowerShell/issues/new/choose](https://github.com/PowerShell/PowerShell/issues/new/choose) です。
+
+  次のサブジェクト領域には、さまざまな問題があります。
+
+  | 件名 |                                                     製品フィードバックの URL                                                     |
+  | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+  | dsc      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
+  | ギャラリー  | [https://github.com/powershell/powershellgallery/issues/new](https://github.com/powershell/powershellgallery/issues/new)     |
+  | jea      | [https://github.com/powershell/jea/issues/new](https://github.com/powershell/jea/issues/new)                                 |
+  | wmf      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
 
 ### <a name="support-requests"></a>サポート要求
 
@@ -84,4 +87,4 @@ PowerShell ドキュメント チームは、週に 1 回集まって、前回�
 
 - 必要に応じて、イシューを編集し、不快感を与えるコンテンツを削除します。
 - そのイシューがスパムであることを示すコメントを入力し、イシューを閉じ、それ以上コメントできないようにロックします。
-- これが発生するたびに、毎週のトリアージで話し合って、さらなる措置 (GitHub または Microsoft 法務部への報告) の必要性を判断する必要があります。
+- 各違反については、週次のトリアージで説明し、さらにアクションを実行する必要があるかどうかを判断する必要があります (GitHub または Microsoft 法務への報告)。

@@ -2,21 +2,21 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成内での条件付きステートメントとループ
-ms.openlocfilehash: 86f75be4a3d1c1760dd6269335431e8ab9fd8d09
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、条件ステートメントとループを使って Configuration をより動的にする方法を説明します。 条件ステートメントとループをパラメーターおよび構成データと組み合わせることで、Configuration をコンパイルするときの柔軟性と制御が増します。
+ms.openlocfilehash: 7af8a360c17a0842fa2b95d1d1fb288323c327ef
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736898"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658465"
 ---
 # <a name="conditional-statements-and-loops-in-a-configuration"></a>Configuration 内での条件付きステートメントとループ
 
 PowerShell のフロー制御キーワードを使って、[Configuration](configurations.md) をより動的にすることができます。 この記事では、条件ステートメントとループを使って `Configuration` をより動的にする方法を説明します。 条件ステートメントとループを[パラメーター](add-parameters-to-a-configuration.md)および[構成データ](configData.md)と組み合わせることで、`Configuration` をコンパイルするときの柔軟性と制御が増します。
 
-関数またはスクリプト ブロックと同じように、`Configuration` 内で任意の PowerShell 言語の機能を使用できます。
-使用するステートメントは、`.mof` ファイルをコンパイルするために `Configuration` を呼び出すときにのみ評価されます。 次の例では、シナリオを使って概念を説明します。 条件ステートメントとループは、パラメーターや構成データと共に使われることがよくあります。
+関数またはスクリプト ブロックと同じように、`Configuration` 内で任意の PowerShell 言語の機能を使用できます。 使用するステートメントは、`.mof` ファイルをコンパイルするために `Configuration` を呼び出すときにのみ評価されます。 次の例では、シナリオを使って概念を説明します。 条件ステートメントとループは、パラメーターや構成データと共に使われることがよくあります。
 
-この例では、**Service** リソース ブロックでコンパイル時にサービスの現在の状態を取得し、現在の状態を保持する `.mof` ファイルを生成します。
+この例では、 **Service** リソース ブロックでコンパイル時にサービスの現在の状態を取得し、現在の状態を保持する `.mof` ファイルを生成します。
 
 > [!NOTE]
 > 動的な Resource ブロックを使うと、IntelliSense の有効性は失われます。 PowerShell のパーサーでは、`Configuration` がコンパイルされるまで、指定された値が許容されるかどうかを判断できません。
@@ -108,7 +108,7 @@ Mention Get-DSCConfigurationFromSystem
 
 `Configuration` で定義されているすべての PowerShell コードはコンパイル時に評価されますが、`Configuration` を含むスクリプトにコードを配置することもできます。 `Configuration` ブロックの外部にあるすべてのコードは、`Configuration` をインポートするときに実行されます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [構成にパラメーターを追加する](add-parameters-to-a-configuration.md)
 - [構成から構成データを分離する](configData.md)

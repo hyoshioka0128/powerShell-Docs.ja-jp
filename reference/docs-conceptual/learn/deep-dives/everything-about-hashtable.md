@@ -3,12 +3,12 @@ title: ハッシュテーブルについて知りたかったことのすべて
 description: ハッシュテーブルは PowerShell で非常に重要であるため、十分に理解しておくことをお勧めします。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: c67f00911b6c9d05fa9b5b5a700bbae795cf9244
-ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
+ms.openlocfilehash: e386e2aa2f7b85bee4bf622fd9251ef7642cf16a
+ms.sourcegitcommit: 57e577097085dc621bd797ef4a7e2854ea7d4e29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85353823"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "97980503"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>ハッシュテーブルについて知りたかったことのすべて
 
@@ -19,11 +19,11 @@ ms.locfileid: "85353823"
 
 ## <a name="hashtable-as-a-collection-of-things"></a>もののコレクションとしてのハッシュテーブル
 
-まず、ハッシュテーブルの従来の定義どおり、**ハッシュテーブル**をコレクションとして見てください。 この定義により、後でより高度なことに使用する場合の動作に関する基本的な理解が得られます。 この理解をスキップすることは、多くの場合、混乱の原因になります。
+まず、ハッシュテーブルの従来の定義どおり、**ハッシュテーブル** をコレクションとして見てください。 この定義により、後でより高度なことに使用する場合の動作に関する基本的な理解が得られます。 この理解をスキップすることは、多くの場合、混乱の原因になります。
 
 ## <a name="what-is-an-array"></a>配列とは
 
-**ハッシュテーブル**とは何かを説明する前に、まず[配列][]について説明する必要があります。 このディスカッションでは、配列は値またはオブジェクトのリストまたはコレクションです。
+**ハッシュテーブル** とは何かを説明する前に、まず [配列][]について説明する必要があります。 このディスカッションでは、配列は値またはオブジェクトのリストまたはコレクションです。
 
 ```powershell
 $array = @(1,2,3,5,7,11)
@@ -925,8 +925,7 @@ Orig: [copy]
 
 ### <a name="deep-copies"></a>ディープ コピー
 
-この記事の執筆時点で、ハッシュテーブルのディープ コピーを作成する (そしてハッシュテーブルとして保持する) ための巧妙な方法を私は知りません。 これについてはだれかが執筆する必要があります。
-これを行う簡単な方法を次に示します。
+ハッシュテーブルのディープ コピーを作成するには、いくつかの方法があります (ハッシュテーブルは保持されます)。 次に示す関数では、PowerShell を使用してディープ コピーが再帰的に作成されます。
 
 ```powershell
 function Get-DeepClone
@@ -953,6 +952,21 @@ function Get-DeepClone
 
 他の参照型または配列は処理されませんが、出発点として適しています。
 
+もう 1 つは、.Net を使用して、この関数のように **CliXml** を使用して逆シリアル化する方法です。
+
+```powershell
+function Get-DeepClone
+{
+    param(
+        $InputObject
+    )
+    $TempCliXmlString = [System.Management.Automation.PSSerializer]::Serialize($obj, [int32]::MaxValue)
+    return [System.Management.Automation.PSSerializer]::Deserialize($TempCliXmlString)
+}
+```
+
+非常に大きなハッシュテーブルの場合、逆シリアル化関数の方がスケールアウトされるため高速になります。ただし、この方法を使用する際、考慮すべき点がいくつかあります。 **Clixml** が使用されることで、メモリが集中的に使用されるため、大きなハッシュテーブルを複製する場合に問題になる可能性があります。 **Clixml** には、深さの制限が 48 という制限もあります。 つまり、ハッシュテーブルに 48 層のハッシュテーブルが入れ子にされている場合、複製は失敗し、ハッシュテーブルはまったく出力されません。
+
 ## <a name="anything-else"></a>その他
 
 この記事では、多岐にわたって手早く説明しました。 この記事を読むたびに、新しいことを学んだり、理解を深めたりしていただければ幸いです。 この機能の全範囲について説明したので、すぐにはご自身に該当しない側面もあるでしょう。 それはまったく問題ではなく、どの程度 PowerShell を使用するかに応じて予想されることです。
@@ -966,7 +980,7 @@ function Get-DeepClone
 [パフォーマンスが重要ならテストせよ]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [スプラッティング]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
-[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8
+[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8&preserve-view=true
 [PSBoundParameters]: https://tommymaynard.com/the-psboundparameters-automatic-variable-2016/
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
 [自動既定値]: https://www.simple-talk.com/sysadmin/PowerShell/PowerShell-time-saver-automatic-defaults/

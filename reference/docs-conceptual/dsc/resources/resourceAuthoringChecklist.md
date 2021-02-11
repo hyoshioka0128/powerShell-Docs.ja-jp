@@ -2,12 +2,13 @@
 ms.date: 07/08/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソース作成のチェックリスト
-ms.openlocfilehash: f21e2e8563880e0c10cf50b044e9c56ca09fe0fa
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: この記事には、新しい DSC リソースの作成時に使用する必要がある、ベスト プラクティスのチェックリストが含まれています。
+ms.openlocfilehash: 5b618511f730c80104620c84e693c13ae4f536ac
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217646"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656330"
 ---
 # <a name="resource-authoring-checklist"></a>リソース作成のチェックリスト
 

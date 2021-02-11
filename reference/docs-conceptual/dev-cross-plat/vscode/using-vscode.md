@@ -2,12 +2,12 @@
 title: PowerShell 開発のための Visual Studio Code の使用
 description: PowerShell 開発のための Visual Studio Code の使用
 ms.date: 11/07/2019
-ms.openlocfilehash: 181746e7d3df2880223d1f15a0c8b99b324f5b98
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 8a4ceb3da669716915449af2d211aaf2ae61bb4f
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782533"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390304"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell 開発のための Visual Studio Code の使用
 
@@ -87,7 +87,7 @@ Windows PowerShell と PowerShell Core がインストールされている場�
 
 バージョンは次の手順で選択します。
 
-1. Windows または Linux の場合、<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> を使用して**コマンド パレット**を開きます。 macOS の場合、<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> を使用します。
+1. Windows または Linux の場合、<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> を使用して **コマンド パレット** を開きます。 macOS の場合、<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> を使用します。
 1. "**セッション**" を検索します。
 1. **[PowerShell: Show Session Menu]\(PowerShell: セッション メニューを表示\)** をクリックします。
 1. 一覧から、"**PowerShell Core**" など、使用する PowerShell のバージョンを選択します。
@@ -174,7 +174,7 @@ PowerShell の既定のバージョンを設定するには、セッション �
 }
 ```
 
-この設定を構成したら、Visual Studio Code を再起動します。または、**コマンド パレット**から現在の Visual Studio Code ウィンドウを再度読み込むには、「**Developer: Reload Window**」と入力します。
+この設定を構成したら、Visual Studio Code を再起動します。または、**コマンド パレット** から現在の Visual Studio Code ウィンドウを再度読み込むには、「**Developer: Reload Window**」と入力します。
 
 これでセッション メニューを開くと、追加した PowerShell バージョンが表示されます。
 
@@ -224,7 +224,7 @@ Visual Studio Code バージョン 1.9 (以降) では、PowerShell スクリプ
 デバッグ用の構成ファイルを作成するには、次の手順に従います。
 
 1. Windows または Linux の場合、<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> を押し、 **[デバッグ]** ビューを開きます。 macOS の場合、<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> を押します。
-1. **launch.json ファイルの作成**リンクをクリックします。
+1. **launch.json ファイルの作成** リンクをクリックします。
 1. **[環境を選択]** プロンプトで、 **[PowerShell]** を選択します。
 1. 使用するデバッグの種類を選択します。
 
@@ -317,7 +317,7 @@ PowerShell の拡張機能のソース コードは、[GitHub][psext-src] にあ
 [getting-started]:        https://devblogs.microsoft.com/scripting/get-started-with-powershell-development-in-visual-studio-code/
 [psdbgblog]:              https://johnpapa.net/debugging-with-visual-studio-code/
 [psdbg-gh]:               https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[pscdn]:                  https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
+[pscdn]:                  https://docs.microsoft.com/archive/blogs/cdndevs/visual-studio-code-powershell-extension
 
 <!-- issues -->
 [GitHub の問題]:          https://github.com/PowerShell/vscode-powershell/issues

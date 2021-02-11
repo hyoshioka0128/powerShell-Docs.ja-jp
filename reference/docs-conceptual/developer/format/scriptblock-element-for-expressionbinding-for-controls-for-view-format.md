@@ -1,12 +1,14 @@
 ---
-title: ビュー (Format) のコントロールの式のバインドの ScriptBlock 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 42946ed9f3241912366192b2ab2fdfb8f8582d83
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の Controls の ExpressionBinding の ScriptBlock 要素 (書式)
+description: View の Controls の ExpressionBinding の ScriptBlock 要素 (書式)
+ms.openlocfilehash: a68d6ecd4a9e1ff1d614d32325e99831be88e516
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785491"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665301"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-controls-for-view-format"></a>View の Controls の ExpressionBinding の ScriptBlock 要素 (書式)
 

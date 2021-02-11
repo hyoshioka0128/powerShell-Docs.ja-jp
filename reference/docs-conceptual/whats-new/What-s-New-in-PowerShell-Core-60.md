@@ -2,12 +2,12 @@
 title: PowerShell Core 6.0 の新機能
 description: PowerShell Core 6.0 でリリースされた新機能と変更
 ms.date: 08/06/2018
-ms.openlocfilehash: 68060356b2ec79a81a822a256db8e50812f9d738
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 18650733117d81e3b8d714960b95b4921122ed32
+ms.sourcegitcommit: f9d855dd73b916559a22e337672dea3fbb11c634
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158209"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833827"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 の新機能
 
@@ -117,7 +117,7 @@ PowerShell Core では [.NET Standard][] 2.0 を使用して、既存の .NET �
 
 PowerShell 言語と "組み込み" モジュール (`Microsoft.PowerShell.Management`、`Microsoft.PowerShell.Utility` など) が Windows PowerShell の場合と同じように機能するように最善を尽くしました。 多くの場合、コミュニティの助力とともに、これらのコマンドレットに新しい機能とバグの修正が追加されています。 場合によっては、基になる .NET レイヤーとの依存関係がないため、機能が削除されているか、使用できなくなっています。
 
-Windows の一部として出荷されるモジュールのほとんど (`DnsClient`、`Hyper-V`、`NetTCPIP`、`Storage` など) と、Azure と Office を含むその他の Microsoft 製品はまだ .NET Core には*明示的に*移植されていません。 PowerShell チームはこれらの製品グループとチームと協力して既存のモジュールを検証し、PowerShell Core に移植しています。 .NET Standard と [CDXML][] を使用すると、これらの従来の Windows PowerShell モジュールの多くが PowerShell Core で機能するようですが、正式には検証されておらず、また、正式にサポートされていません。
+Windows の一部として出荷されるモジュールのほとんど (`DnsClient`、`Hyper-V`、`NetTCPIP`、`Storage` など) と、Azure と Office を含むその他の Microsoft 製品はまだ .NET Core には *明示的に* 移植されていません。 PowerShell チームはこれらの製品グループとチームと協力して既存のモジュールを検証し、PowerShell Core に移植しています。 .NET Standard と [CDXML][] を使用すると、これらの従来の Windows PowerShell モジュールの多くが PowerShell Core で機能するようですが、正式には検証されておらず、また、正式にサポートされていません。
 
 [`WindowsPSModulePath`][windowspsmodulepath] モジュールをインストールして、Windows PowerShell `PSModulePath` をご利用の PowerShell Core `PSModulePath` に追加することで、Windows PowerShell モジュールを使用できます。
 
@@ -330,7 +330,7 @@ PowerShell Core 6.0 には多くの破壊的変更が導入されています。
 
 ## <a name="bug-fixes-and-performance-improvements"></a>バグの修正とパフォーマンスの改善
 
-起動時刻、さまざまな組み込みコマンドレット、ネイティブ バイナリの操作など、PowerShell 全体のパフォーマンスについて*多く*の改善を行いました。
+起動時刻、さまざまな組み込みコマンドレット、ネイティブ バイナリの操作など、PowerShell 全体のパフォーマンスについて *多く* の改善を行いました。
 
 PowerShell Core 内の多くのバグの修正も行いました。 修正と変更の完全なリストについては、GitHub の[変更ログ][]に関するページを確認してください。
 
@@ -342,7 +342,7 @@ PowerShell Core 内の多くのバグの修正も行いました。 修正と変
 
 このテレメトリをオプトアウトする場合は、単に `POWERSHELL_TELEMETRY_OPTOUT` 環境変数を作成して値を `true`、`1`、または `yes` のいずれかに設定します。 この変数を作成すると、PowerShell を初めて実行する前であっても、すべてのテレメトリがバイパスされます。 [コミュニティ ダッシュボード][community-dashboard]のテレメトリから収集される、このテレメトリ データと分析情報を公開することも予定しています。 このデータの使用方法の詳細については、こちらの[ブログの投稿][telemetry-blog]を参照してください。
 
-[.NET ブログ]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
+[.NET ブログ]: https://devblogs.microsoft.com/dotnet/introducing-net-standard/
 [.NET Core 2.0]: /dotnet/core/
 [.NET Standard]: /dotnet/standard/net-standard
 [breaking-changes]: breaking-changes-ps6.md
@@ -355,7 +355,7 @@ PowerShell Core 内の多くのバグの修正も行いました。 修正と変
 [github]: https://github.com/PowerShell/PowerShell
 [os_log]: https://developer.apple.com/documentation/os/logging
 [semi-annual]: /windows-server/get-started/semi-annual-channel-overview
-[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[ssh-remoting]: /powershell/scripting/learn/remoting/SSH-Remoting-in-PowerShell-Core
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [telemetry-blog]: https://devblogs.microsoft.com/powershell/powershell-open-source-community-dashboard/
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/

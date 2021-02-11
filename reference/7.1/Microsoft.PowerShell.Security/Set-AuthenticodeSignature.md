@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-AuthenticodeSignature
-ms.openlocfilehash: d4bddfb506a86cb36e61f94cabf6e24fadaed527
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 78589c8dba23c1e27dc6ebcc384ab113bcbf67ee
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93212320"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346464"
 ---
 # Set-AuthenticodeSignature
 
@@ -304,6 +304,8 @@ Accept wildcard characters: False
 
 ## 注
 
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
+
 ## 関連リンク
 
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
@@ -317,4 +319,3 @@ Accept wildcard characters: False
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

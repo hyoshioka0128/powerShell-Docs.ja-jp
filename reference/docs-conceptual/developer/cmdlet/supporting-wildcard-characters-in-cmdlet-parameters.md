@@ -1,19 +1,21 @@
 ---
-title: コマンドレット パラメーターでワイルドカード文字をサポートする
 ms.date: 08/26/2019
-ms.openlocfilehash: 062e3d50dddd0bc84e57f5254a93289acbabe38b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレット パラメーターでワイルドカード文字をサポートする
+description: コマンドレット パラメーターでワイルドカード文字をサポートする
+ms.openlocfilehash: 06693c62cd2613050bdeb9d6b12ad6e9597a9894
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786409"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646398"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>コマンドレット パラメーターでワイルドカード文字をサポートする
 
 多くの場合、1つのリソースに対してではなく、リソースのグループに対して実行するようにコマンドレットを設計する必要があります。 たとえば、コマンドレットでは、同じ名前または拡張子を持つデータストア内のすべてのファイルを検索することが必要になる場合があります。 リソースグループに対して実行されるコマンドレットを設計するときは、ワイルドカード文字のサポートを提供する必要があります。
 
 > [!NOTE]
-> ワイルドカード文字の使用は、*グロビング*と呼ばれることもあります。
+> ワイルドカード文字の使用は、 *グロビング* と呼ばれることもあります。
 
 ## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>ワイルドカードを使用する Windows PowerShell コマンドレット
 
@@ -36,7 +38,7 @@ Windows PowerShell では、次のワイルドカード文字がサポートさ�
 
 `Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-前のコマンドでは、範囲のワイルドカードを使用して、 `[a-l]` ファイル名の先頭文字が "a" ~ "l" であることを指定します。また、 `*` ワイルドカード文字を、ファイル名の最初の文字と **.txt**拡張子の間にある任意の文字のプレースホルダーとして使用します。
+前のコマンドでは、範囲のワイルドカードを使用して、 `[a-l]` ファイル名の先頭文字が "a" ~ "l" であることを指定します。また、 `*` ワイルドカード文字を、ファイル名の最初の文字と **.txt** 拡張子の間にある任意の文字のプレースホルダーとして使用します。
 
 次の例では、文字 "d" を除くが、"a" ~ "f" の他のすべての文字を含む、範囲のワイルドカードパターンを使用します。
 

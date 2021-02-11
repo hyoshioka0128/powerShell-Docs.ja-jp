@@ -1,16 +1,18 @@
 ---
-title: Wide ビュー (GroupBy) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e53714f0b4240b5fe7f62cccda83af1e5badd33c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ワイド ビュー (グループ別)
+description: ワイド ビュー (グループ別)
+ms.openlocfilehash: 807bea2a5d44c38e2c9977f792bea2fb9bca0fc3
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784998"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667676"
 ---
 # <a name="wide-view-groupby"></a>ワイド ビュー (グループ別)
 
-この例では、Servicecontroller のグループを表示するワイドビューを実装する方法を示します。 [Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController)コマンドレットによって返される Fullname オブジェクト `Get-Service` 。 ワイドビューのコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
+この例では、Servicecontroller のグループを表示するワイドビューを実装する方法を示します。 [Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) コマンドレットによって返される Fullname オブジェクト `Get-Service` 。 ワイドビューのコンポーネントの詳細については、「 [ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
 ### <a name="to-load-this-formatting-file"></a>この書式設定ファイルを読み込むには
 
@@ -27,17 +29,17 @@ ms.locfileid: "87784998"
 
 この書式設定ファイルは、次の XML 要素を示しています。
 
-- ビューの[Name](./name-element-for-view-format.md)要素。
+- ビューの [Name](./name-element-for-view-format.md) 要素。
 
-- ビューによって表示されるオブジェクトを定義する[Viewselectedby](./viewselectedby-element-format.md)要素。
+- ビューによって表示されるオブジェクトを定義する [Viewselectedby](./viewselectedby-element-format.md) 要素。
 
-- 新しいグループが表示されるタイミングを定義する[GroupBy](./groupby-element-for-view-format.md)要素。
+- 新しいグループが表示されるタイミングを定義する [GroupBy](./groupby-element-for-view-format.md) 要素。
 
-- ビューによって表示されるプロパティを定義する[WideItem](./wideitem-element-for-widecontrol-format.md)要素。
+- ビューによって表示されるプロパティを定義する [WideItem](./wideitem-element-for-widecontrol-format.md) 要素。
 
 ## <a name="example"></a>例
 
-次の XML は、オブジェクトのグループを表示するワイドビューを定義します。 新しい各グループは、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController.ServiceType)プロパティの値が変更されると開始されます。
+次の XML は、オブジェクトのグループを表示するワイドビューを定義します。 新しい各グループは、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController.ServiceType) プロパティの値が変更されると開始されます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -67,7 +69,7 @@ ms.locfileid: "87784998"
 </Configuration>
 ```
 
-次の例は、Windows PowerShell で Servicecontroller を表示する方法を示しています。 [Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトこのフォーマットファイルが読み込まれた後。
+次の例は、Windows PowerShell で Servicecontroller を表示する方法を示しています。 [Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController) オブジェクトこのフォーマットファイルが読み込まれた後。
 
 ```powershell
 Get-Service f*

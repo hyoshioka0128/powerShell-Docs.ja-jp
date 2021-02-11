@@ -2,15 +2,14 @@
 title: ヘルプ システム
 description: ヘルプ システムを使いこなすことは、PowerShell を使って成功するための鍵です。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 8325a32ad8ec137781300e9d46cab52705f0805a
-ms.sourcegitcommit: eaac7af89171379df2e20464ebee9fc7e7d7674a
-ms.translationtype: HT
+ms.openlocfilehash: cfb12f57b7bb6c514f4e19a93dfe9c77245bd977
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89493659"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99604927"
 ---
 # <a name="chapter-2---the-help-system"></a>第 2 章 - ヘルプ システム
 
@@ -94,7 +93,7 @@ PowerShell に限ったことではりませんが、パラメーターは、コ
 - パラメーター
 - ShowWindow
 
-構文セクションに示されている、角かっこや山かっこなどのわかりにくい構文すべてに意味がありますが、これについては、本書の付録 A で説明します。 重要ではありますが、PowerShell を初めて使うユーザーや、毎日使っているわけではないユーザーにとって、わかりにくい構文が何であるかを把握するのが難しいことは少なくありません。
+構文セクションに示されている、角かっこや山かっこなどのわかりにくい構文すべてに意味がありますが、これについては、本書の付録 A で説明します。 重要ではありますが、PowerShell を初めて使うユーザーや、毎日使っているわけではないユーザーにとって、わかりにくい構文を把握するのが難しいことは少なくありません。
 
 わかりにくい構文の詳細については、[付録 A:][] を参照してください。
 
@@ -485,10 +484,8 @@ Update-Help
 
 ```Output
 Update-Help : Failed to update Help for the module(s) 'BitsTransfer' with UI culture(s)
-{en-US} : The value of the HelpInfoUri key in the module manifest must resolve to a
-container or root URL on a website where the help files are stored. The HelpInfoUri
-'https://technet.microsoft.com/en-us/library/dd819413.aspx' does not resolve to a
-container.
+{en-US} : Unable to retrieve the HelpInfo XML file for UI culture en-US. Make sure the HelpInfoUri
+property in the module manifest is valid or check your network connection and then try the command again.
 At line:1 char:1
 + Update-Help
 +

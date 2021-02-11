@@ -1,12 +1,14 @@
 ---
-title: 選択セットの定義 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 58c812b69f92c33304bf7fc7b2891cc2a0227918
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 選択セットを定義する
+description: 選択セットを定義する
+ms.openlocfilehash: d709a368a45623d56fdbf4e98a11a5e5f8a193fa
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774305"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648260"
 ---
 # <a name="defining-selection-sets"></a>選択セットを定義する
 
@@ -32,7 +34,7 @@ ms.locfileid: "87774305"
 
 - ビューまたはコントロールの各定義では、 `EntrySelectedBy` 要素によって、その定義を使用して表示されるオブジェクトが定義されます。 通常、ビューまたはコントロールには定義が1つしかないため、オブジェクトは要素によって定義され `ViewSelectedBy` ます。 `EntrySelectedBy`定義の要素には、 `SelectionSetName` 選択セットを指定する子要素があります。 定義の選択セットを指定する場合、要素の他の子要素を指定することはできません `EntrySelectedBy` 。
 
-- ビューまたはコントロールの各定義では、要素を使用して、 `SelectionCondition` 定義を使用するときの条件を指定できます。 `SelectionCondition`要素には、 `SelectionSetName` 条件をトリガーする選択セットを指定する子要素があります。 この条件は、選択セットで定義されたオブジェクトのいずれかが表示されたときにトリガーされます。 これらの条件を設定する方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+- ビューまたはコントロールの各定義では、要素を使用して、 `SelectionCondition` 定義を使用するときの条件を指定できます。 `SelectionCondition`要素には、 `SelectionSetName` 条件をトリガーする選択セットを指定する子要素があります。 この条件は、選択セットで定義されたオブジェクトのいずれかが表示されたときにトリガーされます。 これらの条件を設定する方法の詳細については、「 [データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="selection-set-example"></a>選択セットの例
 
@@ -131,7 +133,7 @@ ms.locfileid: "87774305"
 
 [SelectionSet](./selectionset-element-format.md)
 
-[Name](./name-element-for-selectionset-format.md)
+[名前](./name-element-for-selectionset-format.md)
 
 [型](./types-element-for-selectionset-format.md)
 

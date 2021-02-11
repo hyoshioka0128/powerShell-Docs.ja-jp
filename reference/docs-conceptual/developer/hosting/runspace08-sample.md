@@ -1,18 +1,20 @@
 ---
-title: Runspace08 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4fcf58eceb415f9f02391c22d2719e9140c77ea9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace08 サンプル
+description: Runspace08 サンプル
+ms.openlocfilehash: ce60e85919a78143f26ff695a9c9104c86cd4f6a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783162"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657647"
 ---
 # <a name="runspace08-sample"></a>Runspace08 サンプル
 
-このサンプルでは、コマンドと引数を、[システムの管理](/dotnet/api/system.management.automation.powershell)オブジェクトのパイプラインに追加する方法と、コマンドを同期的に実行する方法を示します。
+このサンプルでは、コマンドと引数を、 [システムの管理](/dotnet/api/system.management.automation.powershell) オブジェクトのパイプラインに追加する方法と、コマンドを同期的に実行する方法を示します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -22,13 +24,13 @@ ms.locfileid: "87783162"
 
 - [Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory)クラスを使用して、[システムの管理](/dotnet/api/System.Management.Automation.Runspaces.Runspace)... 実行空間オブジェクトを作成します。
 
-- 実行空間[を使用](/dotnet/api/system.management.automation.powershell)する、system.string オブジェクトを作成します。
+- 実行空間 [を使用](/dotnet/api/system.management.automation.powershell) する、system.string オブジェクトを作成します。
 
-- コマンドレットを、 [System. Automation. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトのパイプラインに追加します。
+- コマンドレットを、 [System. Automation. Powershell](/dotnet/api/system.management.automation.powershell) オブジェクトのパイプラインに追加します。
 
 - コマンドレットを同期的に実行します。
 
-- コマンドによって返された、[システムの管理](/dotnet/api/System.Management.Automation.PSObject)オブジェクトからプロパティを抽出しています。
+- コマンドによって返された、 [システムの管理](/dotnet/api/System.Management.Automation.PSObject) オブジェクトからプロパティを抽出しています。
 
 ## <a name="example"></a>例
 

@@ -55,24 +55,26 @@
       items:
         - name: 概要
           href: learn/deep-dives/overview.md
-        - name: 配列について知りたいことのすべて
-          href: learn/deep-dives/everything-about-arrays.md
-        - name: ハッシュテーブルについて知りたいことのすべて
-          href: learn/deep-dives/everything-about-hashtable.md
-        - name: PSCustomObject について知りたいことのすべて
-          href: learn/deep-dives/everything-about-pscustomobject.md
-        - name: 文字列の置換について知りたいことのすべて
-          href: learn/deep-dives/everything-about-string-substitutions.md
-        - name: if/then/else について知りたいことのすべて
-          href: learn/deep-dives/everything-about-if.md
-        - name: スイッチについて知りたいことのすべて
-          href: learn/deep-dives/everything-about-switch.md
-        - name: 例外について知りたかったことのすべて
-          href: learn/deep-dives/everything-about-exceptions.md
-        - name: $null について知りたいことのすべて
-          href: learn/deep-dives/everything-about-null.md
-        - name: ShouldProcess について知りたいことのすべて
-          href: learn/deep-dives/everything-about-shouldprocess.md
+        - name: ...について知りたいことのすべて
+          items:
+            - name: 配列について知りたいことのすべて
+              href: learn/deep-dives/everything-about-arrays.md
+            - name: ハッシュテーブルについて知りたいことのすべて
+              href: learn/deep-dives/everything-about-hashtable.md
+            - name: PSCustomObject について知りたいことのすべて
+              href: learn/deep-dives/everything-about-pscustomobject.md
+            - name: 文字列の置換について知りたいことのすべて
+              href: learn/deep-dives/everything-about-string-substitutions.md
+            - name: if/then/else について知りたいことのすべて
+              href: learn/deep-dives/everything-about-if.md
+            - name: スイッチについて知りたいことのすべて
+              href: learn/deep-dives/everything-about-switch.md
+            - name: 例外について知りたかったことのすべて
+              href: learn/deep-dives/everything-about-exceptions.md
+            - name: $null について知りたいことのすべて
+              href: learn/deep-dives/everything-about-null.md
+            - name: ShouldProcess について知りたいことのすべて
+              href: learn/deep-dives/everything-about-shouldprocess.md
         - name: マルチスレッドでの Write-Progress
           href: learn/deep-dives/write-progress-across-multiple-threads.md
         - name: PowerShell 関数への資格情報サポートの追加
@@ -120,9 +122,11 @@
   items:
     - name: PowerShell 7.x の新機能
       items:
+        - name: PowerShell 7.1 の新機能
+          href: whats-new/what-s-new-in-powershell-71.md
         - name: PowerShell 7.0 の新機能
           href: whats-new/what-s-new-in-powershell-70.md
-    - name: PowerShell Core 6.x の新機能
+    - name: PowerShell Core 6.x リリースノート
       items:
         - name: PowerShell Core 6.2 の新機能
           href: whats-new/what-s-new-in-powershell-core-62.md
@@ -566,14 +570,10 @@
       href: community/hall-of-fame.md
     - name: Docs の新機能
       items:
-        - name: 2020-Q4
-          href: community/2020-Q4.md
-        - name: 2020-Q3
-          href: community/2020-Q3.md
-        - name: 2020 年第 2 四半期
-          href: community/2020-Q2.md
-        - name: 2020 年第 1 四半期
-          href: community/2020-Q1.md
+        - name: 2021 年の更新
+          href: community/2021-updates.md
+        - name: 2020 年の更新
+          href: community/2020-updates.md
     - name: 共同作成者ガイド
       items:
         - name: 概要
@@ -586,8 +586,6 @@
           href: community/contributing/pull-requests.md
         - name: PowerShell ドキュメントのスタイル ガイド
           href: community/contributing/powershell-style-guide.md
-        - name: コマンドレット リファレンスの編集
-          href: community/contributing/editing-cmdlet-ref.md
         - name: その他のリソース
           items:
             - name: 編集のチェックリスト
@@ -773,7 +771,7 @@
         - name: GDPR コンプライアンス
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: ギャラリーに関してよく寄せられる質問
-      href: gallery/faqs.md
+      href: gallery/faqs.yml
 - name: スクリプト作成と開発
   items:
     - name: Visual Studio Code

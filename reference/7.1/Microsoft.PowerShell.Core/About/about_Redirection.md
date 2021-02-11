@@ -1,17 +1,16 @@
 ---
 description: PowerShell からテキストファイルに出力をリダイレクトする方法について説明します。
-keywords: PowerShell, コマンドレット
 Locale: en-US
 ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
-ms.openlocfilehash: 1a532aeacf6347023c95905c82aa1f221835a729
-ms.sourcegitcommit: 16883bb67e34b3915798070f60f974bf85160bd3
+ms.openlocfilehash: 85b719b7af11cce2396e7d62fcc638007b55c834
+ms.sourcegitcommit: b9826dcf402db8a2b6d3eab37edb82c6af113343
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93224475"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040900"
 ---
 # <a name="about-redirection"></a>リダイレクトについて
 
@@ -37,7 +36,7 @@ PowerShell からテキストファイルに出力をリダイレクトする方
 
 PowerShell では、次の出力ストリームのリダイレクトがサポートされています。
 
-| 一連# |      説明       | で導入  |    Write コマンドレット     |
+| 一連# |      [説明]       | で導入  |    Write コマンドレット     |
 | -------- | ---------------------- | -------------- | ------------------- |
 | 1        | **成功** 一連     | PowerShell 2.0 | `Write-Output`      |
 | 2        | **エラー** 一連       | PowerShell 2.0 | `Write-Error`       |
@@ -63,7 +62,7 @@ PowerShell リダイレクト演算子は次のようになります。ここで
 > [!NOTE]
 > 一部の Unix シェルとは異なり、他のストリームは **成功** ストリームにのみリダイレクトできます。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 ### <a name="example-1-redirect-errors-and-output-to-a-file"></a>例 1: エラーと出力をファイルにリダイレクトする
 
@@ -92,12 +91,12 @@ dir 'C:\', 'fakepath' 2>&1 > .\dir.log
    Write-Warning "hello"
    Write-Error "hello"
    Write-Output "hi"
-} 3>&1 2>&1 > P:\Temp\redirection.log
+} 3>&1 2>&1 > C:\Temp\redirection.log
 ```
 
 - `3>&1`**警告** ストリームを **成功** ストリームにリダイレクトします。
 - `2>&1`**エラー** ストリームを **成功** ストリームにリダイレクトします (これには、すべての **警告** ストリームデータも含まれます)。
-- `>`**成功** ストリーム ( **警告** ストリームと **エラー** ストリームの両方が含まれています) をという名前のファイルにリダイレクトします `C:\temp\redirection.log` 。
+- `>`**成功** ストリーム (**警告** ストリームと **エラー** ストリームの両方が含まれています) をという名前のファイルにリダイレクトします `C:\temp\redirection.log` 。
 
 ### <a name="example-4-redirect-all-streams-to-a-file"></a>例 4: すべてのストリームをファイルにリダイレクトする
 
@@ -109,7 +108,7 @@ dir 'C:\', 'fakepath' 2>&1 > .\dir.log
 
 ### <a name="example-5-suppress-all-write-host-and-information-stream-data"></a>例 5: すべての Write-Host と情報ストリームデータを非表示にする
 
-この例では、すべての情報ストリームデータを抑制します。 **情報** ストリームのコマンドレットの詳細については、「 [書き込みホスト](xref:Microsoft.PowerShell.Utility.Write-Host)と [書き込み情報](xref:Microsoft.PowerShell.Utility.Write-Information)」を参照してください。
+この例では、すべての情報ストリームデータを抑制します。 **情報** ストリームのコマンドレットの詳細については、「[書き込みホスト](xref:Microsoft.PowerShell.Utility.Write-Host)と [書き込み情報](xref:Microsoft.PowerShell.Utility.Write-Information)」を参照してください。
 
 ```powershell
 &{
@@ -184,7 +183,7 @@ Ignore
 Inquire
 ```
 
-## <a name="notes"></a>メモ
+## <a name="notes"></a>注
 
 データを追加しないリダイレクト演算子 ( `>` および) は、 `n>` 指定されたファイルの現在の内容を警告なしで上書きします。
 
@@ -196,7 +195,7 @@ Inquire
 
 ### <a name="potential-confusion-with-comparison-operators"></a>比較演算子との混同の可能性
 
-演算子は、 `>` [大なり](about_Comparison_Operators.md#-gt) 比較演算子と混同しないでください (多くの場合、 `>` 他のプログラミング言語でとして示されています)。
+演算子は、 `>` [大なり](about_Comparison_Operators.md#-gt--ge--lt-and--le) 比較演算子と混同しないでください (多くの場合、 `>` 他のプログラミング言語でとして示されています)。
 
 比較対象のオブジェクトによっては、を使用した出力が `>` 正しく表示されることがあります (36 は42を超えないため)。
 
@@ -222,22 +221,21 @@ PS> cat 42
 
 ```powershell
 PS> if (36 < 42) { "true" } else { "false" }
-At line:1 char:8
-+ if (36 < 42) { "true" } else { "false" }
-+        ~
-The '<' operator is reserved for future use.
-+ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-+ FullyQualifiedErrorId : RedirectionNotSupported
+ParserError:
+Line |
+   1 |  if (36 < 42) { "true" } else { "false" }
+     |         ~
+     | The '<' operator is reserved for future use.
 ```
 
-数値比較が必要な操作である場合は、 `-lt` を `-gt` 使用する必要があります。 参照: [ `-gt` 比較演算子](about_Comparison_Operators.md#-gt)
+数値比較が必要な操作である場合は、 `-lt` を `-gt` 使用する必要があります。 詳細については、 `-gt` [about_Comparison_Operators](about_Comparison_Operators.md#-gt--ge--lt-and--le)の演算子を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
 - [Out-File](xref:Microsoft.PowerShell.Utility.Out-File)
 - [Tee-Object](xref:Microsoft.PowerShell.Utility.Tee-Object)
 - [Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
-- [書き込み-エラー](xref:Microsoft.PowerShell.Utility.Write-Error)
+- [Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
 - [Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host)
 - [Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
 - [Write-Output](xref:Microsoft.PowerShell.Utility.Write-Output)

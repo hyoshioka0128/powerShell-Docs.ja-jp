@@ -6,12 +6,12 @@ ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Windows_PowerShell_ISE
-ms.openlocfilehash: ec99dec9ea5012b41c10a56a688b23a6fa2c9dd8
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: ff543024d7c62c70217eeaf3ded192a5a24c4757
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223168"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388843"
 ---
 # <a name="about-windows-powershell-ise"></a>Windows PowerShell ISE について
 
@@ -121,7 +121,7 @@ Windows PowerShell ISE は、Windows のクライアントバージョンとサ�
 Windows PowerShell ISE にはユーザーインターフェイスが必要なため、Windows Server の Server Core インストールでは機能しません。 ただし、Windows PowerShell ISE 機能を追加すると、インストールは自動的に GUI を使用してサーバーに変換されます。
 
 Windows PowerShell ISE は、Windows Presentation Foundation (WPF) に基づいて構築されています。
-Windows PowerShell ISE のグラフィカル要素がシステム上で正しくレンダリングされない場合は、システム上で "WPF ハードウェアアクセラレータを無効にする" グラフィックスレンダリング設定を追加または調整することによって、問題を解決することができます。 詳細については、MSDN ライブラリの「 [グラフィックスレンダリングのレジストリ設定](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings) 」を参照してください。
+Windows PowerShell ISE のグラフィカル要素がシステム上で正しくレンダリングされない場合は、システム上で "WPF ハードウェアアクセラレータを無効にする" グラフィックスレンダリング設定を追加または調整することによって、問題を解決することができます。 詳細については、「[グラフィックス レンダリングのレジストリ設定](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

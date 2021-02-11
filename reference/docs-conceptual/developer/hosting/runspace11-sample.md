@@ -1,18 +1,20 @@
 ---
-title: Runspace11 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6e8a4080bb4fb33f7e0d428e24483b5cfac5c70e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace11 サンプル
+description: Runspace11 サンプル
+ms.openlocfilehash: bb2fac179d6d3b939ed145fe98c208c202a97623
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784930"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657556"
 ---
 # <a name="runspace11-sample"></a>Runspace11 サンプル
 
-このサンプルでは、 [System. proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand)クラスを使用して、既存のコマンドレットを呼び出すが、使用可能なパラメーターのセットを制限するプロキシコマンドを作成する方法を示します。 このプロキシ コマンドは、制約付き実行空間の作成に使用される最初のセッション状態に追加されます。 つまり、ユーザーはプロキシ コマンドを使用しないとコマンドレットの機能にアクセスできません。
+このサンプルでは、 [System. proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) クラスを使用して、既存のコマンドレットを呼び出すが、使用可能なパラメーターのセットを制限するプロキシコマンドを作成する方法を示します。 このプロキシ コマンドは、制約付き実行空間の作成に使用される最初のセッション状態に追加されます。 つまり、ユーザーはプロキシ コマンドを使用しないとコマンドレットの機能にアクセスできません。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -20,21 +22,21 @@ ms.locfileid: "87784930"
 
 このサンプルでは、次のことを示します。
 
-- 既存のコマンドレットのメタデータを記述する、system.servicemodel[メタデータ](/dotnet/api/System.Management.Automation.CommandMetadata)オブジェクトを作成します。
+- 既存のコマンドレットのメタデータを記述する、system.servicemodel [メタデータ](/dotnet/api/System.Management.Automation.CommandMetadata) オブジェクトを作成します。
 
 - [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを作成しています。
 
 - コマンドレットのパラメーターを削除するようにコマンドレットのメタデータを変更します。
 
-- コマンドレットを[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトに追加し、コマンドレットをプライベートにします。
+- コマンドレットを [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) オブジェクトに追加し、コマンドレットをプライベートにします。
 
 - 既存のコマンドレットを呼び出すプロキシ関数を作成しますが、は制限されたパラメーターのセットのみを公開します。
 
 - 初期セッション状態にプロキシ関数を追加しています。
 
-- System.object オブジェクトを使用する、[システムの管理](/dotnet/api/system.management.automation.powershell)........... [...](/dotnet/api/System.Management.Automation.Runspaces.Runspace) .................
+- System.object オブジェクトを使用する、 [システムの管理](/dotnet/api/system.management.automation.powershell) ........... [...](/dotnet/api/System.Management.Automation.Runspaces.Runspace) .................
 
-- 制限付き実行空間のデモンストレーションを行うために[、プライベート](/dotnet/api/system.management.automation.powershell)コマンドレットとプロキシ関数を呼び出します。
+- 制限付き実行空間のデモンストレーションを行うために [、プライベート](/dotnet/api/system.management.automation.powershell) コマンドレットとプロキシ関数を呼び出します。
 
 ## <a name="example"></a>例
 

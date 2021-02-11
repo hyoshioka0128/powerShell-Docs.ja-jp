@@ -1,20 +1,22 @@
 ---
-title: 制約付き実行空間を作成する |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 30ecb80dbd96278ee9aa5a609d27bfc4eaa423e9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 制約付き実行空間を作成する
+description: 制約付き実行空間を作成する
+ms.openlocfilehash: 53fee3cc7d8625425bc6a73196aee9eee7f17ed6
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779813"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651172"
 ---
 # <a name="creating-a-constrained-runspace"></a>制約付き実行空間を作成する
 
-パフォーマンスまたはセキュリティ上の理由により、ホストアプリケーションで使用できる Windows PowerShell コマンドを制限する必要がある場合があります。 これを行うには、System.Management.Automation.Runspaces.Initialsessionstate を呼び出して、空の[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)を作成し[ます。*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)メソッドを作成し、使用可能なコマンドのみを追加します。
+パフォーマンスまたはセキュリティ上の理由により、ホストアプリケーションで使用できる Windows PowerShell コマンドを制限する必要がある場合があります。 これを行うには、System.Management.Automation.Runspaces.Initialsessionstate を呼び出して、空の [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) を作成し [ ます。*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) メソッドを作成し、使用可能なコマンドのみを追加します。
 
  指定したコマンドのみを読み込む実行空間を使用すると、パフォーマンスが大幅に向上します。
 
- 最初のセッション状態のコマンドレットを定義するには、system.servicemodel. [Sessionstatecmd・ entry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry)クラスのメソッドを使用します。
+ 最初のセッション状態のコマンドレットを定義するには、system.servicemodel. [Sessionstatecmd・ entry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) クラスのメソッドを使用します。
 
  コマンドをプライベートにすることもできます。 プライベートコマンドはホストアプリケーションで使用できますが、アプリケーションのユーザーは使用できません。
 
@@ -102,7 +104,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="making-commands-private"></a>コマンドをプライベートにする
 
- また、コマンド**をプライベートに**設定することも[できます。](/dotnet/api/System.Management.Automation.CommandInfo.Visibility)これを行うには、SessionStateEntryVisibility プロパティを[system](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility)に設定します。 ホストアプリケーションやその他のコマンドは、そのコマンドを呼び出すことができますが、アプリケーションのユーザーは呼び出せません。 次の例では、 [get-childitem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem)コマンドはプライベートです。
+ また、コマンド **をプライベートに** 設定することも [できます。](/dotnet/api/System.Management.Automation.CommandInfo.Visibility)これを行うには、SessionStateEntryVisibility プロパティを [system](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility)に設定します。 ホストアプリケーションやその他のコマンドは、そのコマンドを呼び出すことができますが、アプリケーションのユーザーは呼び出せません。 次の例では、 [get-childitem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) コマンドはプライベートです。
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();

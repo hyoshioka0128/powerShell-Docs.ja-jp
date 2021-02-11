@@ -1,12 +1,14 @@
 ---
-title: 更新可能なヘルプ CAB ファイルを準備する方法
 ms.date: 09/03/2012
-ms.openlocfilehash: 7f3ed2fcf03585a41e571eb2a5ebb4d850d64e01
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: 更新可能なヘルプ CAB ファイルを準備する方法
+description: 更新可能なヘルプ CAB ファイルを準備する方法
+ms.openlocfilehash: df403bd025601fd88f8384efed9452c139f85a82
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893324"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658901"
 ---
 # <a name="how-to-prepare-updatable-help-cab-files"></a>更新可能なヘルプ CAB ファイルを準備する方法
 

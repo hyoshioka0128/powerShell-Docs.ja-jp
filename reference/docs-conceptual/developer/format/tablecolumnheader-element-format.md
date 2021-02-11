@@ -1,12 +1,14 @@
 ---
-title: TableColumnHeader 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6296aea5c567663b1c3c0a2cf0a57b21aa5394de
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableColumnHeader 要素 (書式)
+description: TableColumnHeader 要素 (書式)
+ms.openlocfilehash: 30368512875b7c5c4cf3c686f3d09540dea1bd26
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785185"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651520"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader 要素 (書式)
 
@@ -52,7 +54,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 テーブルには、要素と同じ数の要素が含まれている必要があり `TableColumnHeader` `TableRowEntry` ます。 列ヘッダーは、テーブルの上部のテキストの表示方法を定義します。 行のエントリによって、テーブルの行に表示されるデータが定義されます。
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビュー](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビュー](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 

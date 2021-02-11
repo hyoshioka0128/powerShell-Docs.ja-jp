@@ -1,12 +1,14 @@
 ---
-title: ViewSelectedBy 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c8704c1504c6e24c9cac6bc8bc25e92a0d9110cc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ViewSelectedBy 要素 (書式)
+description: ViewSelectedBy 要素 (書式)
+ms.openlocfilehash: ac3c7de299b3009a067a476a024c6a6fcb5dce02
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785015"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667710"
 ---
 # <a name="viewselectedby-element-format"></a>ViewSelectedBy 要素 (書式)
 
@@ -46,13 +48,13 @@ ViewDefinitions 要素 (Format) ビュー要素 (形式) ViewSelectedBy 要素 (
 
 ## <a name="remarks"></a>解説
 
-この要素をさまざまなビューで使用する方法の詳細については、「[テーブルビューコンポーネント](./creating-a-table-view.md)」、「[リストビュー](./creating-a-list-view.md)コンポーネント」、「[ワイドビューコンポーネント](./creating-a-wide-view.md)」、および「[カスタムコントロールコンポーネント](./creating-custom-controls.md)」を参照してください。
+この要素をさまざまなビューで使用する方法の詳細については、「 [テーブルビューコンポーネント](./creating-a-table-view.md)」、「 [リストビュー](./creating-a-list-view.md)コンポーネント」、「 [ワイドビューコンポーネント](./creating-a-wide-view.md)」、および「 [カスタムコントロールコンポーネント](./creating-custom-controls.md)」を参照してください。
 
-要素は、 `SelectionSetName` 書式設定ファイルが複数のビューによって表示されるオブジェクトのセットを定義する場合に使用されます。 選択セットを定義および参照する方法の詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
+要素は、 `SelectionSetName` 書式設定ファイルが複数のビューによって表示されるオブジェクトのセットを定義する場合に使用されます。 選択セットを定義および参照する方法の詳細については、「 [オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-リストビューの[Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトを指定する方法を次の例に示します。 テーブル、ワイド、およびカスタムビューでも同じスキーマが使用されます。
+リストビューの [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) オブジェクトを指定する方法を次の例に示します。 テーブル、ワイド、およびカスタムビューでも同じスキーマが使用されます。
 
 ```xml
 <View>

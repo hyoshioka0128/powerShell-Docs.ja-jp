@@ -1,12 +1,14 @@
 ---
-title: CustomControl (Format) の EntrySelectedBy の SelectionCondition 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 52858dba5c7a5222b5410835f3374546ce8b88a2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomControl の EntrySelectedBy の SelectionCondition 要素 (書式)
+description: CustomControl の EntrySelectedBy の SelectionCondition 要素 (書式)
+ms.openlocfilehash: 6d4cc5a2d5fef0445d586e320b3729d3a7044063
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785355"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649774"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-customcontrol-format"></a>CustomControl の EntrySelectedBy の SelectionCondition 要素 (書式)
 
@@ -56,7 +58,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビューの Custo
 
 - 選択条件では、任意の数の .NET 型または選択セットを指定できますが、両方を指定することはできません。
 
-選択条件の使用方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件の使用方法の詳細については、「 [データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

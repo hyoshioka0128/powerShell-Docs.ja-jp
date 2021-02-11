@@ -4,10 +4,10 @@ keywords: JEA, PowerShell, セキュリティ
 title: JEA の監査とレポート
 description: 監査は、JEA エンドポイントに適切なユーザーがアクセスしていること、ロールの割り当てが適切であることを評価するのに役立ちます。
 ms.openlocfilehash: 2140d6b756ae38d82e4943c373e8a75beea30e28
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92500013"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>JEA の監査とレポート
@@ -84,11 +84,11 @@ Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\A
 
 ## <a name="powershell-event-logs"></a>PowerShell イベント ログ
 
-システムでモジュールやスクリプト ブロックのログ記録を有効にしている場合、ユーザーが JEA セッションで実行したコマンドごとに、Windows イベント ログでイベントを確認できます。 これらのイベントを検索するには、 **Microsoft-Windows-PowerShell/Operational** イベント ログを開き、イベント ID が **4104** のイベントを探します。
+システムでモジュールやスクリプト ブロックのログ記録を有効にしている場合、ユーザーが JEA セッションで実行したコマンドごとに、Windows イベント ログでイベントを確認できます。 これらのイベントを検索するには、**Microsoft-Windows-PowerShell/Operational** イベント ログを開き、イベント ID が **4104** のイベントを探します。
 
 各イベント ログ エントリに、コマンドを実行したセッションに関する情報が含まれます。 JEA セッションの場合、イベントには **ConnectedUser** と **RunAsUser** に関する情報が含まれます。 **ConnectedUser** は JEA セッションを作成した実際のユーザーです。 **RunAsUser** は JEA でコマンドを実行するために使用されたアカウントです。
 
-アプリケーション イベント ログには、 **RunAsUser** により行われた変更が表示されます。 そのため、特定のコマンドの呼び出しを **ConnectedUser** にさかのぼって追跡するには、モジュールおよびスクリプトのログ記録を有効にしておく必要があります。
+アプリケーション イベント ログには、**RunAsUser** により行われた変更が表示されます。 そのため、特定のコマンドの呼び出しを **ConnectedUser** にさかのぼって追跡するには、モジュールおよびスクリプトのログ記録を有効にしておく必要があります。
 
 ## <a name="application-event-logs"></a>アプリケーション イベント ログ
 
@@ -132,7 +132,7 @@ PS>CommandInvocation(Get-Service): "Get-Service"
 Running  Dns                DNS Server
 ```
 
-ユーザーが実行するコマンドごとに、 **CommandInvocation** 行が書き込まれます。 **ParameterBindings** はコマンドと共に指定された各パラメーターとその値を記録します。 前の例では、`Get-Service` コマンドレットでパラメーター **Name** に値 **Dns** が指定されていることを確認できます。
+ユーザーが実行するコマンドごとに、**CommandInvocation** 行が書き込まれます。 **ParameterBindings** はコマンドと共に指定された各パラメーターとその値を記録します。 前の例では、`Get-Service` コマンドレットでパラメーター **Name** に値 **Dns** が指定されていることを確認できます。
 
 各コマンドの出力も **CommandInvocation** をトリガーします (通常は `Out-Default` に)。 `Out-Default` の **InputObject** は、コマンドから返される PowerShell オブジェクトです。 そのオブジェクトの詳細が数行下に出力されています。ユーザーに表示される内容と同様のものが表示されます。
 

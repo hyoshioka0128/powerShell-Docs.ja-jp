@@ -7,12 +7,12 @@ ms.date: 04/03/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/find-package?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Package
-ms.openlocfilehash: 71266e097524847502e9ce2e4e59c4908352c859
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 79a57cdbfda4287ced131e230e88423757617b12
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93213352"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890748"
 ---
 # Find-Package
 
@@ -85,7 +85,7 @@ Name         Version   Source    Summary
 NuGet.Core   2.14.0    MyNuGet   NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package`**name** パラメーターを使用して、パッケージ名として「 **NuGet. Core** 」を指定します。 **Source** パラメーターは、 **MyNuGet** でパッケージを検索するように指定します。
+`Find-Package`**name** パラメーターを使用して、パッケージ名として「 **NuGet. Core**」を指定します。 **Source** パラメーターは、 **MyNuGet** でパッケージを検索するように指定します。
 
 ### 例 3: パッケージのすべてのバージョンを検索する
 
@@ -122,7 +122,7 @@ Name          Version          Source       Summary
 NuGet.Core    2.9.0            MyNuGet      NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package`**name** パラメーターを使用して、パッケージ名として「 **NuGet. Core** 」を指定します。 **ProviderName** パラメーターは、 **NuGet** でパッケージを検索するように指定します。 **RequiredVersion** バージョン **2.9.0** のみが返されることを指定します。
+`Find-Package`**name** パラメーターを使用して、パッケージ名として「 **NuGet. Core**」を指定します。 **ProviderName** パラメーターは、 **NuGet** でパッケージを検索するように指定します。 **RequiredVersion** バージョン **2.9.0** のみが返されることを指定します。
 
 ### 例 5: バージョンの範囲内でパッケージを検索する
 
@@ -141,7 +141,7 @@ NuGet.Core    2.8.0            MyNuGet      NuGet.Core is the core framework ass
 NuGet.Core    2.7.0            MyNuGet      NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package`**name** パラメーターを使用して、パッケージ名として「 **NuGet. Core** 」を指定します。 **ProviderName** パラメーターは、 **NuGet** でパッケージを検索するように指定します。 **MinimumVersion** **2.7.0** の最小バージョンを指定します。 **MaximumVersion** 最大バージョン **2.9.0** を指定します。
+`Find-Package`**name** パラメーターを使用して、パッケージ名として「 **NuGet. Core**」を指定します。 **ProviderName** パラメーターは、 **NuGet** でパッケージを検索するように指定します。 **MinimumVersion** **2.7.0** の最小バージョンを指定します。 **MaximumVersion** 最大バージョン **2.9.0** を指定します。
 **AllVersions** は、最小値と最大値によって指定された範囲が返されることを決定します。
 
 ### 例 6: ファイルシステムからパッケージを検索する
@@ -687,6 +687,13 @@ Accept wildcard characters: False
 `Find-Package`**ソフトウェア id** オブジェクトを出力します。
 
 ## 注
+
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
 
 ## 関連リンク
 

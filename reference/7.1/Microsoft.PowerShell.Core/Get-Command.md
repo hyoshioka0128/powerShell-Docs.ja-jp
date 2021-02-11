@@ -7,12 +7,12 @@ ms.date: 05/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
-ms.openlocfilehash: 60b6d2e380685650a86f74056a992afb4051ddc1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5f2752f53fb5f74b6436548c3bd4fa731d2b02d5
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93217728"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879237"
 ---
 # Get-Command
 
@@ -42,7 +42,7 @@ Get-Command [[-Name] <String[]>] [-Module <String[]>]
 
 ## Description
 
-コマンドレットは、コマンド `Get-Command` レット、エイリアス、関数、フィルター、スクリプト、アプリケーションなど、コンピューターにインストールされているすべてのコマンドを取得します。 `Get-Command` 他のセッションからインポートされた PowerShell モジュールとコマンドからコマンドを取得します。 現在のセッションにインポートされているコマンドのみを取得するには、 **ListImported** パラメーターを使用します。
+コマンドレットは、コマンド `Get-Command` レット、エイリアス、関数、フィルター、スクリプト、アプリケーションなど、コンピューターにインストールされているすべてのコマンドを取得します。 `Get-Command` 他のセッションからインポートされた PowerShell モジュールとコマンドからコマンドを取得します。 現在のセッションにインポートされているコマンドのみを取得するには、**ListImported** パラメーターを使用します。
 
 パラメーターを指定しない場合、 `Get-Command` コンピューターにインストールされているすべてのコマンドレット、関数、およびエイリアスを取得します。 `Get-Command *` Path 環境変数 () 内のすべての非 PowerShell ファイルを含むすべての種類のコマンドを取得し `$env:Path` ます。この変数は、アプリケーションコマンドの種類で一覧表示されます。
 
@@ -64,7 +64,7 @@ Get-Command
 
 ### 例 2: 現在のセッションでコマンドを取得する
 
-このコマンドは、 **ListImported** パラメーターを使用して、現在のセッション内のコマンドのみを取得します。
+このコマンドは、**ListImported** パラメーターを使用して、現在のセッション内のコマンドのみを取得します。
 
 ```powershell
 Get-Command -ListImported
@@ -88,7 +88,7 @@ Get-Command -Module Microsoft.PowerShell.Security, Microsoft.PowerShell.Utility
 
 ### 例 5: コマンドレットに関する情報を取得する
 
-このコマンドは、コマンドレットに関する情報を取得し `Get-AppLockerPolicy` ます。 また、 **AppLocker** モジュールをインポートして、 **AppLocker** モジュール内のすべてのコマンドを現在のセッションに追加します。
+このコマンドは、コマンドレットに関する情報を取得し `Get-AppLockerPolicy` ます。 また、**AppLocker** モジュールをインポートして、**AppLocker** モジュール内のすべてのコマンドを現在のセッションに追加します。
 
 ```powershell
 Get-Command Get-AppLockerPolicy
@@ -105,7 +105,7 @@ Get-Command Get-AppLockerPolicy
 Get-Command  -Name Get-Childitem -Args Cert: -Syntax
 ```
 
-出力に表示される構文と、 **Args** ( **ArgumentList** ) パラメーターを省略したときに表示される構文を比較すると、 **証明書プロバイダー** によって動的パラメーター **codesigningcert** がコマンドレットに追加されることがわかります `Get-ChildItem` 。
+出力に表示される構文と、 **Args** (**ArgumentList**) パラメーターを省略したときに表示される構文を比較すると、 **証明書プロバイダー** によって動的パラメーター **codesigningcert** がコマンドレットに追加されることがわかります `Get-ChildItem` 。
 
 証明書プロバイダーの詳細については、「 [about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md)」を参照してください。
 
@@ -138,7 +138,7 @@ CodeSigningCert
 Get-Command *
 ```
 
-このコマンドは、 **FileInfo** オブジェクト (System.IO.FileInfo) ではなく、各ファイルの **ApplicationInfo** オブジェクト (System.Management.Automation.ApplicationInfo) を返します。
+このコマンドは、**FileInfo** オブジェクト (System.IO.FileInfo) ではなく、各ファイルの **ApplicationInfo** オブジェクト (System.Management.Automation.ApplicationInfo) を返します。
 
 ### 例 9: パラメーター名と型を使用してコマンドレットを取得する
 
@@ -150,14 +150,14 @@ Get-Command -ParameterName *Auth* -ParameterType AuthenticationMechanism
 
 ユーザーの認証に使用されるメソッドを指定するためのコマンドレットを検索するために、次のようなコマンドを使用できます。
 
-**ParameterType** パラメーターは、パラメーターが同じ名前の場合でも、 **AuthenticationMechanism** 値を受け取るパラメーターと、 **AuthenticationLevel** パラメーターを受け取るパラメーターを区別します。
+**ParameterType** パラメーターは、パラメーターが同じ名前の場合でも、**AuthenticationMechanism** 値を受け取るパラメーターと、**AuthenticationLevel** パラメーターを受け取るパラメーターを区別します。
 
 ### 例 10: エイリアスを取得する
 
 この例では、 `Get-Command` コマンドレットをエイリアスと共に使用する方法を示します。
 
 ```powershell
-Get-Command Name dir
+Get-Command -Name dir
 ```
 
 ```Output
@@ -300,7 +300,7 @@ Accept wildcard characters: False
 
 ### -ArgumentList
 
-引数の配列を指定します。 このコマンドレットは、指定されたパラメーター ("arguments") と共に使用された場合に、コマンドレットまたは関数に関する情報を取得します。 **ArgumentList** のエイリアスは、 **Args** です。
+引数の配列を指定します。 このコマンドレットは、指定されたパラメーター ("arguments") と共に使用された場合に、コマンドレットまたは関数に関する情報を取得します。 **ArgumentList** のエイリアスは、**Args** です。
 
 特定の他のパラメーターが使用されている場合にのみ使用可能な動的パラメーターを検出するには、 **ArgumentList** の値を動的パラメーターをトリガーするパラメーターに設定します。
 
@@ -347,13 +347,13 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-**Modulの** 特定の [コンストラクター (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)の **「解説** 」で説明されている、名前付きモジュールを指定します。
+**Modulの** 特定の [コンストラクター (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)の **「解説**」で説明されている、名前付きモジュールを指定します。
 たとえば、 **FullyQualifiedModule** パラメーターは、次のいずれかの形式で指定されたモジュール名を受け入れます。
 
 - `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
 - `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-**ModuleName** と **ModuleVersion** は必須ですが、 **Guid** は省略可能です。
+**ModuleName** と **ModuleVersion** は必須ですが、**Guid** は省略可能です。
 
 **モジュール** パラメーターと同じコマンドで **FullyQualifiedModule** パラメーターを指定することはできません。 2つのパラメーターは相互に排他的です。
 
@@ -412,7 +412,7 @@ Accept wildcard characters: True
 
 名前の配列を指定します。 このコマンドレットは、指定された名前のコマンドのみを取得します。 名前または名前パターンを入力します。 ワイルドカード文字を使用できます。
 
-同じ名前のコマンドを取得するには、 **All** パラメーターを使用します。 2つのコマンドの名前が同じ場合、既定では、 `Get-Command` コマンド名を入力したときに実行されるコマンドを取得します。
+同じ名前のコマンドを取得するには、**All** パラメーターを使用します。 2つのコマンドの名前が同じ場合、既定では、 `Get-Command` コマンド名を入力したときに実行されるコマンドを取得します。
 
 ```yaml
 Type: System.String[]
@@ -446,7 +446,7 @@ Accept wildcard characters: True
 
 パラメーター名の配列を指定します。 このコマンドレットは、指定されたパラメーターを持つセッション内のコマンドを取得します。 パラメーター名またはパラメーターの別名を入力します。 ワイルドカード文字がサポートされています。
 
-**ParameterName** および **ParameterType** 　パラメーターは、現在のセッションのコマンドのみを検索します。
+**ParameterName** および **ParameterType**　パラメーターは、現在のセッションのコマンドのみを検索します。
 
 このパラメーターは Windows PowerShell 3.0 で導入されました。
 
@@ -466,7 +466,7 @@ Accept wildcard characters: True
 
 パラメーター名の配列を指定します。 このコマンドレットは、指定された型のパラメーターを持つ、セッション内のコマンドを取得します。 パラメーターの型のフルネームまたは部分的な名前を入力します。 ワイルドカード文字がサポートされています。
 
-**ParameterName** および **ParameterType** 　パラメーターは、現在のセッションのコマンドのみを検索します。
+**ParameterName** および **ParameterType**　パラメーターは、現在のセッションのコマンドのみを検索します。
 
 このパラメーターは Windows PowerShell 3.0 で導入されました。
 

@@ -1,632 +1,564 @@
 ---
 description: PowerShell の値を比較する演算子について説明します。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 01/16/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: b6076e20ad3ecbe9f2def157bb20bdb3bee5b7ad
-ms.sourcegitcommit: c9e56ec489522c706b8d6b8733f3f015d6d7e893
+ms.openlocfilehash: 9c868b376bdd2e4fda3950f68a09e6569d44853d
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93224531"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98619926"
 ---
 # <a name="about-comparison-operators"></a>比較演算子について
 
 ## <a name="short-description"></a>簡単な説明
-PowerShell の値を比較する演算子について説明します。
+
+PowerShell の比較演算子は、2つの値を比較するか、コレクションの要素を入力値に対してフィルター処理することができます。
 
 ## <a name="long-description"></a>長い説明
 
-比較演算子を使用すると、値を比較し、指定したパターンに一致する値を検索するための条件を指定できます。 比較演算子を使用するには、比較する値を、これらの値を区切る演算子と組み合わせて指定します。
+比較演算子を使用すると、値を比較したり、指定したパターンに一致する値を検索したりできます。 PowerShell には、次の比較演算子が含まれています。
 
-PowerShell には、次の比較演算子が含まれています。
+|    型     |   演算子   |              比較テスト              |
+| ----------- | ------------ | ----------------------------------------- |
+| 等価比較    | -eq          | equals                                    |
+|             | -ne          | 等しくない                                |
+|             | -gt          | より大きい                              |
+|             | -ge          | 以上                     |
+|             | -lt          | 次の値未満                                 |
+|             | -le          | 以下                        |
+| Matching    | -like        | ワイルドカードパターンに一致する文字列           |
+|             | -notlike     | 文字列がワイルドカードパターンと一致しません    |
+|             | -match       | 文字列が regex パターンと一致します              |
+|             | -notmatch    | 文字列が regex パターンと一致しません       |
+| Replacement | -replace     | 正規表現パターンに一致する文字列を置換します |
+| Containment | -contains    | コレクションに値が含まれています               |
+|             | -notcontains | コレクションに値が含まれていません       |
+|             | -in          | 値がコレクション内にあります                  |
+|             | -notin       | 値がコレクション内にありません              |
+| Type        | -が          | 両方のオブジェクトが同じ型です。            |
+|             | -isnot       | オブジェクトが同じ型ではありません         |
 
-| Type        | 演算子    | 説明                                 |
-| ----------- | ------------ | --------------------------------------------|
-| 等式    | -eq          | 次の値に等しい                                      |
-|             | -ne          | 等しくない                                  |
-|             | -gt          | より大きい                                |
-|             | -ge          | 以上                       |
-|             | -lt          | 次の値未満                                   |
-|             | -le          | 以下                          |
-|             |              |                                             |
-| Matching    | -like        | 文字列がワイルドカードに一致する場合に true を返します   |
-|             |              | pattern                                     |
-|             | -notlike     | 文字列が一致しない場合に true を返します     |
-|             |              | ワイルドカードパターン                            |
-|             | -match       | 文字列が regex と一致する場合に true を返します      |
-|             |              | 種類$matches に一致する文字列が含まれています |
-|             | -notmatch    | 文字列が一致しない場合に true を返します     |
-|             |              | regex パターン;一致する $matches が含まれています   |
-|             |              | 文字列                                     |
-|             |              |                                             |
-| Containment | -contains    | 参照値が含まれている場合に true を返します |
-|             |              | コレクション内                             |
-|             | -notcontains | 参照値が指定されていない場合に true を返します       |
-|             |              | コレクションに含まれる                   |
-|             | -in          | テスト値がに含まれている場合に true を返します |
-|             |              | collection                                  |
-|             | -notin       | テスト値が含まれていない場合に true を返します  |
-|             |              | コレクション内                             |
-|             |              |                                             |
-| Replacement | -replace     | 文字列パターンを置換します。                   |
-|             |              |                                             |
-| Type        | -が          | 両方のオブジェクトが同じ場合に true を返します。    |
-|             |              | type                                        |
-|             | -isnot       | オブジェクトが同じでない場合に true を返します。|
-|             |              | type                                        |
+## <a name="common-features"></a>共通機能
 
-既定では、すべての比較演算子で大文字と小文字が区別されます。 大文字と小文字を区別する比較演算子を作成するには、演算子名の前にを付け `c` ます。 たとえば、の大文字と小文字を区別するバージョン `-eq` はです `-ceq` 。 大文字小文字を区別しないようにするには、演算子の前にを付け `i` ます。 たとえば、の明示的な大文字と小文字を区別しないバージョン `-eq` はです `-ieq` 。
+既定では、すべての比較演算子で大文字と小文字が区別されます。 大文字と小文字を区別する比較演算子を作成するには、の後にを追加し `c` `-` ます。 たとえば、 `-ceq` は、の大文字と小文字を区別するバージョンです `-eq` 。 大文字と小文字を区別しないようにするには、の前にを追加し `i` `-` ます。 たとえば、 `-ieq` は、の大文字と小文字を区別しない明示的なバージョンです `-eq` 。
 
-演算子への入力がスカラー値の場合、比較演算子はブール値を返します。 入力が値のコレクションである場合、比較演算子は一致する値を返します。 コレクションに一致するものがない場合、比較演算子は空の配列を返します。
+演算子の入力がスカラー値の場合、演算子は **ブール** 値を返します。 入力がコレクションの場合、演算子は、式の右辺の値に一致するコレクションの要素を返します。
+コレクション内に一致するものがない場合、比較演算子は空の配列を返します。 以下に例を示します。
 
 ```powershell
-PS> (1, 2 -eq 3).GetType().FullName
-System.Object[]
+$a = (1, 2 -eq 3)
+$a.GetType().Name
+$a.Count
 ```
 
-例外は、包含演算子、In 演算子、および型演算子で、常に **ブール** 値を返します。
+```output
+Object[]
+0
+```
 
-> [!NOTE]
-> 値をと比較する必要がある場合は、 `$null` `$null` 比較の左側に配置する必要があります。 `$null`**オブジェクト []** と比較すると、比較オブジェクトが配列であるため、結果は **False** になります。 配列をと比較すると `$null` 、比較によって `$null` 配列に格納されているすべての値が除外されます。 次に例を示します。
->
-> ```powershell
-> PS> $null -ne $null, "hello"
-> True
-> PS> $null, "hello" -ne $null
-> hello
-> ```
+次のようにいくつかの例外があります。
 
-### <a name="equality-operators"></a>等値演算子
+- 含有演算子と型演算子は、常に **ブール** 値を返します。
+- 演算子は、 `-replace` 置換結果を返します。
+- `-match`And `-notmatch` 演算子も `$Matches` 自動変数を設定します。
 
-等値演算子 ( `-eq` 、 `-ne` ) は、1つ以上の入力値が指定されたパターンと同じ場合に TRUE または一致する値を返します。 パターン全体が値全体と一致している必要があります。
+## <a name="equality-operators"></a>等値演算子
 
-例:
+### <a name="-eq-and--ne"></a>-eq と -ne
 
-#### <a name="-eq"></a>-eq
-
-説明: と等しい。 には、同じ値が含まれます。
+左辺がスカラーの場合、 `-eq` 右辺が完全に一致する場合は **True** を返し、それ以外の場合は False を返し `-eq` ます。  `-ne` は逆になります。両辺が一致する場合は **False** を返します。それ以外の場合は `-ne` True を返します。
 
 例:
 
 ```powershell
-PS> 2 -eq 2
-True
+2 -eq 2                 # Output: True
+2 -eq 3                 # Output: False
+"abc" -eq "abc"         # Output: True
+"abc" -eq "abc", "def"  # Output: False
+"abc" -ne "def"         # Output: True
+"abc" -ne "abc"         # Output: False
+"abc" -ne "abc", "def"  # Output: True
+```
 
-PS> 2 -eq 3
+左側がコレクションの場合は、 `-eq` 右側に一致するメンバーを返し、 `-ne` フィルターで除外します。
+
+例:
+
+```powershell
+1,2,3 -eq 2             # Output: 2
+"abc", "def" -eq "abc"  # Output: abc
+"abc", "def" -ne "abc"  # Output: def
+```
+
+これらの演算子は、コレクションのすべての要素を処理します。 例:
+
+```powershell
+"zzz", "def", "zzz" -eq "zzz"
+```
+
+```output
+zzz
+zzz
+```
+
+等値演算子は、スカラーまたはコレクションだけでなく、任意の2つのオブジェクトを受け入れます。
+ただし、比較結果はエンドユーザーにとって意味があるとは限りません。
+次の例は、この問題を示しています。
+
+```powershell
+class MyFileInfoSet {
+    [String]$File
+    [Int64]$Size
+}
+$a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$a -eq $b
+```
+
+```Output
 False
+```
 
-PS> 1,2,3 -eq 2
+この例では、同一のプロパティを持つ2つのオブジェクトを作成しました。 ただし、等価テストの結果は、異なるオブジェクトであるため **False** になります。 同等のクラスを作成するには、クラスに[IEquatable \<T> ][2]を実装する必要があります。 次の例は、 [IEquatable \<T>][2]を実装し、**ファイル** と **サイズ** の2つのプロパティを持つ、 **myfileinfoset** クラスの部分実装を示しています。 `Equals()`2 つの **Myfileinfoset** オブジェクトの File プロパティと Size プロパティが同じである場合、メソッドは True を返します。
+
+```powershell
+class MyFileInfoSet : System.IEquatable[Object] {
+    [String]$File
+    [Int64]$Size
+
+    [bool] Equals([Object] $obj) {
+        return ($this.File -eq $obj.File) -and ($this.Size -eq $obj.Size)
+    }
+}
+$a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$a -eq $b
+```
+
+```Output
+True
+```
+
+任意のオブジェクトを比較するための例として、null かどうかを確認することがあります。 ただし、変数がであるかどうかを判断する必要がある場合は `$null` 、 `$null` 等値演算子の左側に配置する必要があります。 これを右側に配置しても、期待どおりの処理は行われません。
+
+たとえば、次の `$a` ように null 要素を含む配列を使用します。
+
+```powershell
+$a = 1, 2, $null, 4, $null, 6
+```
+
+次のテストは `$a` null ではありません。
+
+```powershell
+$null -ne $a
+```
+
+```output
+False
+```
+
+ただし、次の例では、からすべての null 要素を除外してい `$a` ます。
+
+```powershell
+$a -ne $null # Output: 1, 2, 4, 6
+```
+
+```output
+1
 2
-PS> "abc" -eq "abc"
-True
-
-PS> "abc" -eq "abc", "def"
-False
-
-PS> "abc", "def" -eq "abc"
-abc
+4
+6
 ```
 
-#### <a name="-ne"></a>-ne
+### <a name="-gt--ge--lt-and--le"></a>-gt、-ge、-lt、および-le
 
-説明: 等しくない。 に別の値が含まれています。
+`-gt`、 `-ge` 、 `-lt` 、およびは `-le` 同様に動作します。 両方の側がスカラーの場合は、2つの辺の比較に応じて、 **True** または **False** を返します。
 
-例:
+| 演算子 | True を返します。                   |
+| -------- | -------------------------------------- |
+| -gt      | 左側が大きくなっています          |
+| -ge      | 左辺が大きいか等しいです。 |
+| -lt      | 左側が小さくなっています          |
+| -le      | 左側が小さいか等しい |
 
-```powershell
-PS> "abc" -ne "def"
-True
-
-PS> "abc" -ne "abc"
-False
-
-PS> "abc" -ne "abc", "def"
-True
-
-PS> "abc", "def" -ne "abc"
-def
-```
-
-#### <a name="-gt"></a>-gt
-
-説明: より大きい。
-
-例:
+次の例では、すべてのステートメントが True を返します。
 
 ```powershell
-PS> 8 -gt 6
-True
-
-PS> 7, 8, 9 -gt 8
-9
+8 -gt 6  # Output: True
+8 -ge 8  # Output: True
+6 -lt 8  # Output: True
+8 -le 8  # Output: True
 ```
 
 > [!NOTE]
-> `>`他の多くのプログラミング言語では、大なり演算子と混同しないようにしてください。 PowerShell で `>` は、はリダイレクトに使用されます。 詳細については、「 [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators)」を参照してください。
+> ほとんどのプログラミング言語では、大なり演算子は `>` です。 PowerShell では、この文字がリダイレクトに使用されます。 詳細については、「 [about_Redirection][3]」を参照してください。
 
-#### <a name="-ge"></a>-ge
-
-説明: より大きいか等しい。
+左側がコレクションの場合、これらの演算子は、コレクションの各メンバーを右側と比較します。 ロジックに応じて、メンバーを保持するか破棄します。
 
 例:
 
 ```powershell
-PS> 8 -ge 8
-True
+$a=5, 6, 7, 8, 9
 
-PS> 7, 8, 9 -ge 8
+Write-Output "Test collection:"
+$a
+
+Write-Output "`nMembers greater than 7"
+$a -gt 7
+
+Write-Output "`nMembers greater than or equal to 7"
+$a -ge 7
+
+Write-Output "`nMembers smaller than 7"
+$a -lt 7
+
+Write-Output "`nMembers smaller than or equal to 7"
+$a -le 7
+```
+
+```output
+Test collection:
+5
+6
+7
 8
 9
-```
 
-#### <a name="-lt"></a>-lt
+Members greater than 7
+8
+9
 
-説明: より小さい。
-
-例:
-
-```powershell
-
-PS> 8 -lt 6
-False
-
-PS> 7, 8, 9 -lt 8
-7
-```
-
-#### <a name="-le"></a>-le
-
-説明: 次の値より小さいか等しい。
-
-例:
-
-```powershell
-PS> 6 -le 8
-True
-
-PS> 7, 8, 9 -le 8
+Members greater than or equal to 7
 7
 8
+9
+
+Members smaller than 7
+5
+6
+
+Members smaller than or equal to 7
+5
+6
+7
 ```
 
-### <a name="matching-operators"></a>照合演算子
+これらの演算子は、 [system.icomparable][1]を実装するすべてのクラスで機能します。
 
-Like 演算子 ( `-like` および) は、 `-notlike` ワイルドカード式を使用して、指定したパターンに一致するか一致しない要素を検索します。
+例 :
+
+```powershell
+# Date comparison
+[DateTime]'2001-11-12' -lt [DateTime]'2020-08-01' # True
+
+# Sorting order comparison
+'a' -lt 'z'           # True; 'a' comes before 'z'
+'macOS' -ilt 'MacOS'  # False
+'MacOS' -ilt 'macOS'  # False
+'macOS' -clt 'MacOS'  # True; 'm' comes before 'M'
+```
+
+次の例は、"a" の後に並べ替えられる、アメリカ QWERTY キーボードにシンボルがないことを示しています。 このようなすべての記号を含むセットを演算子にフィードして、 `-gt` ' a ' と比較します。 出力は空の配列です。
+
+```powershell
+$a=' ','`','~','!','@','#','$','%','^','&','*','(',')','_','+','-','=',
+   '{','}','[',']',':',';','"','''','\','|','/','?','.','>',',','<'
+$a -gt 'a'
+# Output: Nothing
+```
+
+演算子の両側が適度に比較できない場合、これらの演算子は終了しないエラーを発生させます。
+
+## <a name="matching-operators"></a>照合演算子
+
+一致する演算子 ( `-like` 、 `-notlike` 、 `-match` 、および `-notmatch` ) は、指定したパターンに一致するか一致しない要素を検索します。 とのパターン `-like` `-notlike` は、ワイルドカード式 (、、およびを含む `*` ) であり、とは `?` `[ ]` `-match` `-notmatch` 正規表現 (Regex) を受け入れます。
 
 の構文は次のとおりです。
 
-```powershell
-<string[]> -like <wildcard-expression>
+```
+<string[]> -like    <wildcard-expression>
 <string[]> -notlike <wildcard-expression>
-```
-
-一致演算子 ( `-match` および) は、 `-notmatch` 正規表現を使用して、指定したパターンに一致するか一致しない要素を検索します。
-
-一致演算子は、 `$Matches` 演算子への入力 (左側の引数) が単一のスカラーオブジェクトである場合に、自動変数を設定します。 入力がスカラーの場合、 `-match` および `-notmatch` 演算子はブール値を返し、 `$Matches` 自動変数の値を引数の一致するコンポーネントに設定します。
-
-の構文は次のとおりです。
-
-```powershell
-<string[]> -match <regular-expression>
+<string[]> -match    <regular-expression>
 <string[]> -notmatch <regular-expression>
 ```
 
-#### <a name="-like"></a>-like
+これらの演算子の入力がスカラー値の場合は、 **ブール** 値が返されます。 入力が値のコレクションである場合、演算子は一致するメンバーを返します。 コレクション内に一致するものがない場合、これらの演算子は空の配列を返します。
 
-説明: ワイルドカード文字 () を使用して一致し \* ます。
+### <a name="-like-and--notlike"></a>-like および-notlike
 
-例:
-
-```powershell
-PS> "PowerShell" -like "*shell"
-True
-
-PS> "PowerShell", "Server" -like "*shell"
-PowerShell
-```
-
-#### <a name="-notlike"></a>-notlike
-
-説明: は、ワイルドカード文字 () を使用して一致しません \* 。
+`-like` およびは `-notlike` と同様に動作し `-eq` ますが、右側には `-ne` [ワイルドカード](about_Wildcards.md)を含む文字列を指定できます。
 
 例:
 
 ```powershell
-PS> "PowerShell" -notlike "*shell"
-False
+"PowerShell" -like    "*shell"           # Output: True
+"PowerShell" -notlike "*shell"           # Output: False
+"PowerShell" -like    "Power?hell"       # Output: True
+"PowerShell" -notlike "Power?hell"       # Output: False
+"PowerShell" -like    "Power[p-w]hell"   # Output: True
+"PowerShell" -notlike "Power[p-w]hell"   # Output: False
 
-PS> "PowerShell", "Server" -notlike "*shell"
-Server
+"PowerShell", "Server" -like "*shell"    # Output: PowerShell
+"PowerShell", "Server" -notlike "*shell" # Output: Server
 ```
 
-### <a name="-match"></a>-match
+### <a name="-match-and--notmatch"></a>-match と-notmatch
 
-説明: 正規表現を使用して文字列に一致します。 入力がスカラーの場合は、自動変数が設定され `$Matches` ます。
+`-match` と `-notmatch` は、正規表現を使用して、左側の値のパターンを検索します。 正規表現は、電子メールアドレス、UNC パス、書式設定された電話番号などの複雑なパターンに一致する場合があります。 右側の文字列は [正規表現](about_Regular_Expressions.md) の規則に従う必要があります。
 
-入力がコレクションの場合、演算子 `-match` と演算子は、 `-notmatch` そのコレクションの一致するメンバーを返しますが、演算子は変数に値を設定しません `$Matches` 。
-
-たとえば、次のコマンドは、文字列のコレクションを演算子に送信し `-match` ます。 演算子は、 `-match` 一致するコレクション内の項目を返します。 自動変数は設定されません `$Matches` 。
+スカラーの例:
 
 ```powershell
-PS> "Sunday", "Monday", "Tuesday" -match "sun"
-Sunday
+# Partial match test, showing how differently -match and -like behave
+"PowerShell" -match 'shell'        # Output: True
+"PowerShell" -like  'shell'        # Output: False
 
-PS> $Matches
-PS>
+# Regex syntax test
+"PowerShell" -match    '^Power\w+' # Output: True
+'bag'        -notmatch 'b[iou]g'   # Output: True
 ```
 
-これに対して、次のコマンドは、1つの文字列を演算子に送信し `-match` ます。 `-match`演算子はブール値を返し、自動変数を設定し `$Matches` ます。 `$Matches`自動変数は **ハッシュテーブル** です。 グループ化またはキャプチャが使用されていない場合は、1つのキーだけが設定されます。
-キーは、 `0` 一致したすべてのテキストを表します。 正規表現を使用したグループ化とキャプチャの詳細については、「 [about_Regular_Expressions](about_Regular_Expressions.md)」を参照してください。
+入力がコレクションの場合、演算子はそのコレクションの一致するメンバーを返します。
+
+コレクションの例:
 
 ```powershell
-PS> "Sunday" -match "sun"
+"PowerShell", "Super PowerShell", "Power's hell" -match '^Power\w+'
+# Output: PowerShell
+
+"Rhell", "Chell", "Mel", "Smell", "Shell" -match "hell"
+# Output: Rhell, Chell, Shell
+
+"Bag", "Beg", "Big", "Bog", "Bug"  -match 'b[iou]g'
+#Output: Big, Bog, Bug
+
+"Bag", "Beg", "Big", "Bog", "Bug"  -notmatch 'b[iou]g'
+#Output: Bag, Beg
+```
+
+`-match` およびでは、 `-notmatch` regex キャプチャグループがサポートされています。 実行するたびに、自動変数が上書きさ `$Matches` れます。 `<input>`がコレクションの場合、 `$Matches` 変数は `$null` です。 `$Matches` は、常に ' 0 ' という名前のキーを持つ **ハッシュテーブル** であり、一致した文字列全体が格納されます。 正規表現にキャプチャグループが含まれている場合、には、 `$Matches` 各グループの追加のキーが含まれます。
+
+例:
+
+```powershell
+$string = 'The last logged on user was CONTOSO\jsmith'
+$string -match 'was (?<domain>.+)\\(?<user>.+)'
+
+$Matches
+
+Write-Output "`nDomain name:"
+$Matches.domain
+
+Write-Output "`nUser name:"
+$Matches.user
+```
+
+```output
 True
-
-PS> $Matches
 
 Name                           Value
 ----                           -----
-0                              Sun
+domain                         CONTOSO
+user                           jsmith
+0                              was CONTOSO\jsmith
+
+Domain name:
+CONTOSO
+
+User name:
+jsmith
 ```
 
-ハッシュテーブルには、一致するパターンが最初に出現するだけが含まれていることに注意して `$Matches` ください。
+詳細については、「 [about_Regular_Expressions](about_Regular_Expressions.md)」を参照してください。
 
-```powershell
-PS> "Banana" -match "na"
-True
+## <a name="replacement-operator"></a>置換演算子
 
-PS> $Matches
+### <a name="replacement-with-regular-expressions"></a>正規表現での置換
 
-Name                           Value
-----                           -----
-0                              na
-```
-
-> [!IMPORTANT]
-> `0`キーは **整数** です。 任意の **ハッシュテーブル** メソッドを使用して、格納されている値にアクセスできます。
->
-> ```powershell
-> PS> "Good Dog" -match "Dog"
-> True
->
-> PS> $Matches[0]
-> Dog
->
-> PS> $Matches.Item(0)
-> Dog
->
-> PS> $Matches.0
-> Dog
-> ```
-
-演算子は、 `-notmatch` `$Matches` 入力がスカラーのときに自動変数を設定し、結果が False であること、つまり一致が検出されたときにその変数を設定します。
-
-```powershell
-PS> "Sunday" -notmatch "rain"
-True
-
-PS> $matches
-PS>
-
-PS> "Sunday" -notmatch "day"
-False
-
-PS> $matches
-
-Name                           Value
-----                           -----
-0                              day
-```
-
-#### <a name="-notmatch"></a>-notmatch
-
-説明: が文字列と一致しません。 正規表現を使用します。 入力がスカラーの場合は、自動変数が設定され `$Matches` ます。
-
-例:
-
-```powershell
-PS> "Sunday" -notmatch "sun"
-False
-
-PS> $matches
-Name Value
----- -----
-0    sun
-
-PS> "Sunday", "Monday" -notmatch "sun"
-Monday
-```
-
-### <a name="containment-operators"></a>含有演算子
-
-含有演算子 ( `-contains` と `-notcontains` ) は、等値演算子に似ています。 ただし、入力がコレクションの場合でも、コンテインメント演算子は常にブール値を返します。
-
-また、等値演算子とは異なり、コンテインメント演算子は、最初の一致を検出するとすぐに値を返します。 等値演算子は、すべての入力を評価し、コレクション内のすべての一致を返します。
-
-#### <a name="-contains"></a>-contains
-
-説明: コンテインメント演算子。 参照値のコレクションに1つのテスト値が含まれているかどうかを示します。 常にブール値を返します。 テスト値が参照値の少なくとも1つと完全に一致する場合にのみ TRUE を返します。
-
-テスト値がコレクションの場合、Contains 演算子は参照の等価性を使用します。 参照値の1つがテスト値オブジェクトの同じインスタンスである場合にのみ、TRUE を返します。
-
-非常に大きなコレクションでは、 `-contains` 演算子は equal to 演算子よりも結果を迅速に返します。
+と同様に `-match` 、 `-replace` 演算子は正規表現を使用して、指定されたパターンを検索します。 ただし、とは異なり、 `-match` 一致を別の指定された値に置き換えます。
 
 構文:
 
-`<Reference-values> -contains <Test-value>`
-
-例:
-
-```powershell
-PS> "abc", "def" -contains "def"
-True
-
-PS> "Windows", "PowerShell" -contains "Shell"
-False  #Not an exact match
-
-# Does the list of computers in $DomainServers include $ThisComputer?
-PS> $DomainServers -contains $thisComputer
-True
-
-PS> "abc", "def", "ghi" -contains "abc", "def"
-False
-
-PS> $a = "abc", "def"
-PS> "abc", "def", "ghi" -contains $a
-False
-PS> $a, "ghi" -contains $a
-True
+```
+<input> -replace <regular-expression>, <substitute>
 ```
 
-#### <a name="-notcontains"></a>-notcontains
-
-説明: コンテインメント演算子。 参照値のコレクションに1つのテスト値が含まれているかどうかを示します。 常にブール値を返します。 テスト値が参照値の少なくとも1つと完全に一致しない場合に TRUE を返します。
-
-テスト値がコレクションの場合、NotContains 演算子は参照の等価性を使用します。
-
-構文:
-
-`<Reference-values> -notcontains <Test-value>`
-
-例:
-
-```powershell
-PS> "Windows", "PowerShell" -notcontains "Shell"
-True  #Not an exact match
-
-# Get cmdlet parameters, but exclude common parameters
-function get-parms ($cmdlet)
-{
-    $Common = "Verbose", "Debug", "WarningAction", "WarningVariable",
-      "ErrorAction", "ErrorVariable", "OutVariable", "OutBuffer"
-
-    $allparms = (Get-Command $Cmdlet).parametersets |
-      foreach {$_.Parameters} |
-        foreach {$_.Name} | Sort-Object | Get-Unique
-
-    $allparms | where {$Common -notcontains $_ }
-}
-
-# Find unapproved verbs in the functions in my module
-PS> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
-PS> $myVerbs = Get-Command -Module MyModule | foreach {$_.verb}
-PS> $myVerbs | where {$ApprovedVerbs -notcontains $_}
-ForEach
-Sort
-Tee
-Where
-```
-
-#### <a name="-in"></a>-in
-
-説明: In 演算子。 テスト値が参照値のコレクションに表示されるかどうかを示します。 常にブール値として返されます。 テスト値が参照値の少なくとも1つと完全に一致する場合にのみ TRUE を返します。
-
-テスト値がコレクションの場合、In 演算子は参照の等価性を使用します。
-参照値の1つがテスト値オブジェクトの同じインスタンスである場合にのみ、TRUE を返します。
-
-演算子は、 `-in` PowerShell 3.0 で導入されました。
-
-構文:
-
-`<Test-value> -in <Reference-values>`
-
-例:
-
-```powershell
-PS> "def" -in "abc", "def"
-True
-
-PS> "Shell" -in "Windows", "PowerShell"
-False  #Not an exact match
-
-PS> "Windows" -in "Windows", "PowerShell"
-True  #An exact match
-
-PS> "Windows", "PowerShell" -in "Windows", "PowerShell", "ServerManager"
-False  #Using reference equality
-
-PS> $a = "Windows", "PowerShell"
-PS> $a -in $a, "ServerManager"
-True  #Using reference equality
-
-# Does the list of computers in $DomainServers include $ThisComputer?
-PS> $thisComputer -in  $domainServers
-True
-```
-
-#### <a name="-notin"></a>-notin
-
-Description: テスト値が参照値のコレクションに表示されるかどうかを示します。 常にブール値を返します。 テスト値が参照値の少なくとも1つと完全に一致しない場合に TRUE を返します。
-
-テスト値がコレクションの場合、In 演算子は参照の等価性を使用します。
-参照値の1つがテスト値オブジェクトの同じインスタンスである場合にのみ、TRUE を返します。
-
-演算子は、 `-notin` PowerShell 3.0 で導入されました。
-
-構文:
-
-`<Test-value> -notin <Reference-values>`
-
-例:
-
-```powershell
-PS> "def" -notin "abc", "def"
-False
-
-PS> "ghi" -notin "abc", "def"
-True
-
-PS> "Shell" -notin "Windows", "PowerShell"
-True  #Not an exact match
-
-PS> "Windows" -notin "Windows", "PowerShell"
-False  #An exact match
-
-# Find unapproved verbs in the functions in my module
-PS> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
-PS> $MyVerbs = Get-Command -Module MyModule | foreach {$_.verb}
-
-PS> $MyVerbs | where {$_ -notin $ApprovedVerbs}
-ForEach
-Sort
-Tee
-Where
-```
-
-### <a name="replacement-operator"></a>置換演算子
-
-演算子は、 `-replace` 値のすべてまたは一部を、正規表現を使用して、指定された値に置き換えます。 `-replace`演算子は、ファイル名の変更など、多くの管理タスクに使用できます。 たとえば、次のコマンドは、すべての .txt ファイルのファイル名拡張子を .log に変更します。
+演算子は、値のすべてまたは一部を、正規表現を使用して、指定された値に置き換えます。 演算子は、ファイル名の変更など、多くの管理タスクに使用できます。 たとえば、次のコマンドは、すべてのファイルのファイル名拡張子 `.txt` をに変更し `.log` ます。
 
 ```powershell
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 ```
 
-演算子の構文は次のようになります。プレースホルダーは、置換する `-replace` 文字を表し、プレースホルダーはそれらを `<original>` `<substitute>` 置き換える文字を表します。
-
-`<input> <operator> <original>, <substitute>`
-
 既定では、 `-replace` 演算子は大文字と小文字を区別しません。 大文字と小文字を区別するには、を使用 `-creplace` します。 大文字と小文字を区別しないようにするには、を使用 `-ireplace` します。
 
-次の例を考慮してください。
+例 :
 
 ```powershell
-PS> "book" -replace "B", "C"
+"book" -ireplace "B", "C" # Case insensitive
+"book" -creplace "B", "C" # Case-sensitive; hence, nothing to replace
 ```
 
 ```Output
 Cook
-```
-
-```powershell
-"book" -ireplace "B", "C"
-```
-
-```Output
-Cook
-```
-
-```powershell
-"book" -creplace "B", "C"
-```
-
-```Output
 book
 ```
 
-また、正規表現を使用して、キャプチャグループと置換を使用してテキストを動的に置換することもできます。 詳細については、「 [about_Regular_Expressions](about_Regular_Expressions.md)」を参照してください。
+### <a name="regular-expressions-substitutions"></a>正規表現の置換
 
-#### <a name="substitutions-in-regular-expressions"></a>正規表現での置換
+また、正規表現を使用して、キャプチャグループと置換を使用してテキストを動的に置換することもできます。 キャプチャグループは、 `<substitute>` `$` グループ識別子の前にドル記号 () を使用して、文字列内で参照できます。
 
-さらに、キャプチャグループは文字列で参照でき \<substitute\> ます。
-これを行うには、 `$` グループ識別子の前にある文字を使用します。
+次の例では、 `-replace` 演算子は、の形式でユーザー名を受け取り、 `DomainName\Username` 形式に変換し `Username@DomainName` ます。
 
-キャプチャグループを参照する2つの方法は、数値と **名前** で **指定** します。
+```powershell
+$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$ReplaceExp = '${Username}@${DomainName}'
 
-- **数値** による -
-   キャプチャグループには、左から右に番号が付けられます。
+'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
+```
 
-  ```powershell
-  "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
-  ```
-
-  ```Output
-  John.D.Smith@contoso.com
-  ```
-
-- 名前 **によって** -
-   キャプチャグループを名前で参照することもできます。
-
-  ```powershell
-  "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
-  ```
-
-  ```Output
-  FABRIKOM\Administrator
-  ```
+```output
+John.Doe@Contoso.local
+```
 
 > [!WARNING]
-> 文字は `$` 文字列の展開で使用されるため、置換でリテラル文字列を使用するか、文字をエスケープする必要があり `$` ます。
+> この `$` 文字には、PowerShell と正規表現の両方で syntatic ロールがあります。
 >
-> ```powershell
-> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
-> ```
->
-> ```Output
-> Hello Universe
-> ```
->
-> また、 `$` 文字が置換で使用されるため、文字列内のすべてのインスタンスをエスケープする必要があります。
->
-> ```powershell
-> '5.72' -replace '(.+)', '$$$1'
-> ```
->
-> ```Output
-> $5.72
-> ```
+> - PowerShell では、2つの二重引用符の間に変数を指定し、部分式演算子として機能します。
+> - 正規表現の検索文字列では、行の終わりを示します。
+> - Regex の置換文字列では、キャプチャされたグループを表します。したがって、単一引用符の間に正規表現を配置するか、バックティック () 文字を挿入するようにしてください `` ` `` 。
 
-詳細については、「[正規表現での](/dotnet/standard/base-types/substitutions-in-regular-expressions) [about_Regular_Expressions](about_Regular_Expressions.md)と置換」を参照してください。
+以下に例を示します。
 
-### <a name="type-comparison"></a>型の比較
+```powershell
+$1 = 'Goodbye'
+
+'Hello World' -replace '(\w+) \w+', "$1 Universe"
+# Output: Goodbye Universe
+
+'Hello World' -replace '(\w+) \w+', '$1 Universe'
+# Output: Hello Universe
+```
+
+`$$` Regex のはリテラルを表し `$` ます。 置換 `$$` 文字列内のこの値によって、置換後のリテラルが含まれ `$` ます。 以下に例を示します。
+
+```powershell
+'5.72' -replace '(.+)', '$ $1' # Output: $ 5.72
+'5.72' -replace '(.+)', '$$$1' # Output: $5.72
+'5.72' -replace '(.+)', '$$1'  # Output: $1
+```
+
+詳細については、「[正規表現での][4] [about_Regular_Expressions](about_Regular_Expressions.md)と置換」を参照してください。
+
+### <a name="substituting-in-a-collection"></a>コレクション内での置換
+
+`<input>`演算子へのが `-replace` コレクションである場合、PowerShell はコレクションのすべての値に置換を適用します。 以下に例を示します。
+
+```powershell
+"B1","B2","B3","B4","B5" -replace "B", 'a'
+a1
+a2
+a3
+a4
+a5
+```
+
+## <a name="containment-operators"></a>含有演算子
+
+含有演算子 ( `-contains` 、、 `-notcontains` `-in` 、および `-notin` ) は、等値演算子に似ていますが、入力がコレクションの場合でも、常に **ブール** 値を返す点が異なります。 これらの演算子は、最初の一致を検出するとすぐに比較を停止します。一方、等値演算子はすべての入力メンバーを評価します。 非常に大きなコレクションでは、これらの演算子は等値演算子よりも高速に戻ります。
+
+構文:
+
+```
+<Collection> -contains <Test-object>
+<Collection> -notcontains <Test-object>
+<Test-object> -in <Collection>
+<Test-object> -notin <Collection>
+```
+
+### <a name="-contains-and--notcontains"></a>-contains と-notcontains
+
+これらの演算子は、セットに特定の要素が含まれているかどうかを判断します。 `-contains` 右側 (テストオブジェクト) がセット内のいずれかの要素と一致する場合に True を返します。 `-notcontains` 代わりに False を返します。 テストオブジェクトがコレクションの場合、これらの演算子は参照の等価性を使用します。つまり、セットの要素の1つがテストオブジェクトの同じインスタンスであるかどうかを確認します。
+
+例 :
+
+```powershell
+"abc", "def" -contains "def"                  # Output: True
+"abc", "def" -notcontains "def"               # Output: False
+"Windows", "PowerShell" -contains "Shell"     # Output: False
+"Windows", "PowerShell" -notcontains "Shell"  # Output: True
+"abc", "def", "ghi" -contains "abc", "def"    # Output: False
+"abc", "def", "ghi" -notcontains "abc", "def" # Output: True
+```
+
+より複雑な例:
+
+```powershell
+$DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
+                 "ContosoDHCP","ContosoWSUS"
+$thisComputer  = "ContosoDC2"
+
+$DomainServers -contains $thisComputer
+# Output: True
+
+$a = "abc", "def"
+"abc", "def", "ghi" -contains $a # Output: False
+$a, "ghi" -contains $a           # Output: True
+```
+
+### <a name="-in-and--notin"></a>-in および-notin
+
+And 演算子は、 `-in` `notin` と演算子の構文の逆に、PowerShell 3 で導入されました `contains` `-notcontain` 。 `-in`左辺が `<test-object>` set 内のいずれかの要素と一致する場合に True を返します。 `-notin` 代わりに **False** を返します。 テストオブジェクトがセットの場合、これらの演算子は参照の等価性を使用して、セットの要素の1つがテストオブジェクトの同じインスタンスであるかどうかを確認します。
+
+次の例では、との例と同じことを行い `-contain` `-notcontain` ますが、代わりにとを使用して記述されてい `-in` `-notin` ます。
+
+```powershell
+"def" -in "abc", "def"                  # Output: True
+"def" -notin "abc", "def"               # Output: False
+"Shell" -in "Windows", "PowerShell"     # Output: False
+"Shell" -notin "Windows", "PowerShell"  # Output: True
+"abc", "def" -in "abc", "def", "ghi"    # Output: False
+"abc", "def" -notin "abc", "def", "ghi" # Output: True
+```
+
+より複雑な例:
+
+```powershell
+$DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
+                 "ContosoDHCP","ContosoWSUS"
+$thisComputer  = "ContosoDC2"
+
+$thisComputer -in $DomainServers
+# Output: True
+
+$a = "abc", "def"
+$a -in "abc", "def", "ghi" # Output: False
+$a -in $a, "ghi"           # Output: True
+```
+
+## <a name="type-comparison"></a>型の比較
 
 型の比較演算子 ( `-is` と `-isnot` ) は、オブジェクトが特定の型であるかどうかを判断するために使用されます。
 
-#### <a name="-is"></a>-が
-
 構文:
 
-`<object> -is <type reference>`
-
-例:
-
 ```powershell
-PS> $a = 1
-PS> $b = "1"
-PS> $a -is [int]
-True
-PS> $a -is $b.GetType()
-False
+<object> -is <type-reference>
+<object> -isnot <type-reference>
 ```
 
-#### <a name="-isnot"></a>-isnot
-
-構文:
-
-`<object> -isnot <type reference>`
-
 例:
 
 ```powershell
-PS> $a = 1
-PS> $b = "1"
-PS> $a -isnot $b.GetType()
-True
-PS> $b -isnot [int]
-True
+$a = 1
+$b = "1"
+$a -is [int]           # Output: True
+$a -is $b.GetType()    # Output: False
+$b -isnot [int]        # Output: True
+$a -isnot $b.GetType() # Output: True
 ```
 
 ## <a name="see-also"></a>関連項目
@@ -637,3 +569,9 @@ True
 - [Compare-Object](xref:Microsoft.PowerShell.Utility.Compare-Object)
 - [Foreach-オブジェクト](xref:Microsoft.PowerShell.Core.ForEach-Object)
 - [Where-Object](xref:Microsoft.PowerShell.Core.Where-Object)
+
+[1]: /dotnet/api/system.icomparable
+[2]: /dotnet/api/system.iequatable-1
+[3]: /dotnet/api/system.text.regularexpressions.match
+[4]: about_Redirection.md#potential-confusion-with-comparison-operators
+[5]: /dotnet/standard/base-types/substitutions-in-regular-expressions

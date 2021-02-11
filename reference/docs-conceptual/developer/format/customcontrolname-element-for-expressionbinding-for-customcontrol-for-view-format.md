@@ -1,12 +1,14 @@
 ---
-title: View (Format) の CustomControl の式のバインドの CustomControlName 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6f1ffca045b7efcecb4dce4e788a8c508fa6ef08
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の CustomControl の ExpressionBinding の CustomControlName 要素 (書式)
+description: View の CustomControl の ExpressionBinding の CustomControlName 要素 (書式)
+ms.openlocfilehash: 24b27428c07d7178f0069f6d0e5b7ffc555efe34
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783757"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666809"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format"></a>View の CustomControl の ExpressionBinding の CustomControlName 要素 (書式)
 

@@ -1,12 +1,14 @@
 ---
-ms.openlocfilehash: f46b14e44c32ce31b4da1a14580fe03564bf9946
-ms.sourcegitcommit: 0e18be0a2869beaa711ba3eca7a8a15514e5e962
+ms.openlocfilehash: 61a70db9ae7a38d6731f1cefb011072c12d1e39a
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91899267"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514917"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft オープン ソース倫理規定
+
+> 更新:2020/11/02
 
 このプロジェクトは、「[Microsoft のオープン ソースの倫理規定](https://opensource.microsoft.com/codeofconduct/)」を採用しています。 詳細については[論理規定についてのよくある質問](https://opensource.microsoft.com/codeofconduct/faq/)をご覧ください。また、追加の質問やコメントがある場合は[opencode@microsoft.com](mailto:opencode@microsoft.com)にお問い合わせください。
 
@@ -32,9 +34,9 @@ ms.locfileid: "91899267"
 - `assets` - ドキュメントにリンクされているダウンロード可能なファイルが含まれています
 - `reference` - [docs.microsoft.com]([https://docs.microsoft.com/powershell/scripting/) に発行されたドキュメントが含まれています。 これには、リファレンスと概念のコンテンツの両方が含まれます。
   - `5.1` - コマンドレット リファレンスと PowerShell 5.1 に関するトピックが含まれています
-  - `6` - コマンドレット リファレンスと PowerShell 6 に関するトピックが含まれています
   - `7.0` - コマンドレット リファレンスと PowerShell 7.0 に関するトピックが含まれています
   - `7.1` - コマンドレット リファレンスと PowerShell 7.1 に関するトピックが含まれています
+  - `7.2` - コマンドレット リファレンスと PowerShell 7.2 (プレビュー) に関するトピックが含まれています
   - `bread` - 階層リンク ナビゲーションに使用される TOC が含まれています
   - `docs-conceptual` - ドキュメント サイトに公開されている概念説明の記事が含まれています。 一般に、フォルダー構造は目次 (TOC) を反映しています。
   - `mapping` - ビルド システムで使用されるバージョン マッピング構成が含まれています

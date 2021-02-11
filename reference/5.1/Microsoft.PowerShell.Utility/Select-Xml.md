@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-xml?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Xml
-ms.openlocfilehash: eb5684ed281b3ba05629528bb12b44577f8c050a
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 7e3d02dedb9f7809a8f8e1c657987fef8ec38fa9
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93218152"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387993"
 ---
 # Select-Xml
 
@@ -27,7 +27,7 @@ XML 文字列または XML ドキュメント内のテキストを検索しま�
 Select-Xml [-Xml] <XmlNode[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
-### Path
+### パス
 
 ```
 Select-Xml [-Path] <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
@@ -327,7 +327,7 @@ Accept wildcard characters: False
 
 ## 注
 
-* XPath は、XML ドキュメントの一部分を特定するために設計された標準言語です。 XPath 言語の詳細については、MSDN ライブラリの[イベント選択](https://msdn.microsoft.com/library/aa385231)の「 [xpath リファレンス](https://msdn.microsoft.com/library/ms256115)」と「選択フィルター」セクションを参照してください。
+XPath は、XML ドキュメントの一部分を特定するために設計された標準言語です。 XPath 言語の詳細については、「 [Xpath リファレンス](/dotnet/standard/data/xml/select-nodes-using-xpath-navigation) 」および「イベントの [選択](/previous-versions//aa385231(v=vs.85))」の選択フィルターに関するセクションを参照してください。
 
 ## 関連リンク
 

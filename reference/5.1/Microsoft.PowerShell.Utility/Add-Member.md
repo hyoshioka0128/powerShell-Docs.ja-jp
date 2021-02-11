@@ -7,12 +7,12 @@ ms.date: 4/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
-ms.openlocfilehash: e3484b89658e682e0bbf72d9eb9cb7c9deb079ba
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4d251a558d1623e2e0573812921f0e1f273356cf
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93214192"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388146"
 ---
 # Add-Member
 
@@ -244,7 +244,7 @@ Accept wildcard characters: False
 - ScriptMethod
 - CodeMethod
 
-これらの値の詳細については、MSDN ライブラリの「 [PSMemberTypes 列挙体](/dotnet/api/system.management.automation.psmembertypes) 」を参照してください。
+これらの値の詳細については、「 [PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes) In THE PowerShell SDK」を参照してください。
 
 すべてのオブジェクトにすべての型のメンバーがあるわけではありません。
 オブジェクトに含まれていないメンバーの種類を指定すると、PowerShell はエラーを返します。

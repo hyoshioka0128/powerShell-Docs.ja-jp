@@ -2,15 +2,14 @@
 title: WMI の操作
 description: PowerShell には、WMI を操作するためのコマンドレットが最初から備わっています。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 243685efa1f976ddb46a0d0efc4ed0635844606d
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
-ms.translationtype: HT
+ms.openlocfilehash: 119bb3381ee55c70340da89d1c0690d84b3e70d2
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438293"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99599282"
 ---
 # <a name="chapter-7---working-with-wmi"></a>第 7 章 - WMI の操作
 

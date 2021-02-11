@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,コマンドレット
 title: Windows PowerShell ISE でスクリプトをデバッグする方法
-ms.openlocfilehash: 6fbe340cbff832b5d0e2a5515ef432cec574a3c1
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: この記事では、Windows PowerShell ISE のビジュアル デバッグ機能を使ってローカル コンピューター上でスクリプトをデバッグする方法について説明します。
+ms.openlocfilehash: c2e45e3b165e16c9dcd6852550d13fc2426986fa
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809348"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663805"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトをデバッグする方法
 
@@ -20,7 +20,7 @@ ms.locfileid: "83809348"
 
 Windows PowerShell のデバッグ環境では、次の 3 種類のブレークポイントを設定できます。
 
-1. **行のブレークポイント**。 スクリプトの操作中に指定した行に達すると、スクリプトは一時停止します。
+1. **行のブレークポイント** 。 スクリプトの操作中に指定した行に達すると、スクリプトは一時停止します。
 
 1. **変数のブレークポイント。** 指定した変数の値が変更されるたびに、スクリプトは一時停止します。
 
@@ -30,7 +30,7 @@ Windows PowerShell のデバッグ環境では、次の 3 種類のブレーク�
 
 ### <a name="to-set-a-breakpoint"></a>ブレークポイントを設定するには
 
-ブレークポイントをスクリプトに設定するには、まずブレークポイントを保存する必要があります。 行のブレークポイントを設定する行を右クリックしてから、 **[ブレークポイントの設定/解除]** をクリックします。 または、行のブレークポイントを設定する行をクリックしてから、<kbd>F9</kbd> キーを押すか、 **[デバッグ]** メニューの **[ブレークポイントの設定/解除]** をクリックします。
+ブレークポイントをスクリプトに設定するには、まずブレークポイントを保存する必要があります。 行のブレークポイントを設定する行を右クリックしてから、 **[ブレークポイントの設定/解除]** をクリックします。 または、行のブレークポイントを設定する行をクリックしてから、 <kbd>F9</kbd> キーを押すか、 **[デバッグ]** メニューの **[ブレークポイントの設定/解除]** をクリックします。
 
 次のスクリプトは、コンソール ウィンドウから [Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint) コマンドレットを使って変数のブレークポイントを設定する方法の例を示しています。
 
@@ -75,7 +75,7 @@ Get-PSBreakpoint | Remove-PSBreakpoint
 
 ### <a name="disable-a-breakpoint"></a>ブレークポイントの無効化
 
-ブレークポイントを無効にしても、そのブレークポイントは削除されず、再び有効にするまでの間オフになります。 特定の行のブレークポイントを無効にするには、ブレークポイントを無効にする行を右クリックし、 **[ブレークポイントの無効化]** をクリックします。 または、ブレークポイントを無効にする行をクリックしてから、<kbd>F9</kbd> キーを押すか、 **[デバッグ]** メニューの **[ブレークポイントの無効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Disable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Disable-PSBreakpoint) コマンドレットを使って、指定した ID のブレークポイントを無効にする方法の例を示しています。
+ブレークポイントを無効にしても、そのブレークポイントは削除されず、再び有効にするまでの間オフになります。 特定の行のブレークポイントを無効にするには、ブレークポイントを無効にする行を右クリックし、 **[ブレークポイントの無効化]** をクリックします。 または、ブレークポイントを無効にする行をクリックしてから、 <kbd>F9</kbd> キーを押すか、 **[デバッグ]** メニューの **[ブレークポイントの無効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Disable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Disable-PSBreakpoint) コマンドレットを使って、指定した ID のブレークポイントを無効にする方法の例を示しています。
 
 ```powershell
 # This command disables the breakpoint with breakpoint ID 0.
@@ -94,7 +94,7 @@ Get-PSBreakpoint | Disable-PSBreakpoint
 
 ### <a name="enable-a-breakpoint"></a>ブレークポイントの有効化
 
-特定の行のブレークポイントを有効にするには、ブレークポイントを有効にする行を右クリックし、 **[ブレークポイントの有効化]** をクリックします。 または、ブレークポイントを有効にする行をクリックしてから、<kbd>F9</kbd> キーを押すか、 **[デバッグ]** メニューの **[ブレークポイントの有効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint) コマンドレットを使って特定のブレークポイントを有効にする方法の例を示しています。
+特定の行のブレークポイントを有効にするには、ブレークポイントを有効にする行を右クリックし、 **[ブレークポイントの有効化]** をクリックします。 または、ブレークポイントを有効にする行をクリックしてから、 <kbd>F9</kbd> キーを押すか、 **[デバッグ]** メニューの **[ブレークポイントの有効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint) コマンドレットを使って特定のブレークポイントを有効にする方法の例を示しています。
 
 ```powershell
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
@@ -128,7 +128,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 
 呼び出し履歴には、スクリプト内で現在実行中の位置が表示されます。 スクリプトが別の関数によって呼び出された関数で実行されている場合、そのことは画面の出力に行が追加されることによって示されます。 一番下の行には、元のスクリプトと、関数が呼び出された行が表示されます。 その上の行には、別の関数が呼び出された場合に、その関数と、関数が呼び出された行が表示されます。 一番上の行には、ブレークポイントが設定されている、現在の行の現在のコンテキストが表示されます。
 
-一時停止中に現在の呼び出し履歴を表示するには、<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd> キーを押すか、 **[デバッグ]** メニューの **[呼び出し履歴の表示]** をクリックするか、コンソール ウィンドウで `K` と入力してから <kbd>Enter</kbd> キーを押します。
+一時停止中に現在の呼び出し履歴を表示するには、 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd> キーを押すか、 **[デバッグ]** メニューの **[呼び出し履歴の表示]** をクリックするか、コンソール ウィンドウで `K` と入力してから <kbd>Enter</kbd> キーを押します。
 
 ### <a name="to-stop-debugging"></a>デバッグを停止するには
 

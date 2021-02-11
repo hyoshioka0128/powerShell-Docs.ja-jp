@@ -1,18 +1,17 @@
 ---
 ms.date: 06/12/2017
-contributor: Farehar
-keywords: ギャラリー, PowerShell, PSGallery
 title: ライセンス同意リクエスト
-ms.openlocfilehash: 4b293ea693062cf9717fa4ca913c3eb9abaf7014
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: アイテム詳細ページでパッケージ ライセンスを表示する方法
+ms.openlocfilehash: 0d8a9ed671f7993726bc3fa41d11159b366e5a28
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278656"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662298"
 ---
 # <a name="require-license-acceptance"></a>ライセンス同意リクエスト
 
-ライセンス同意リクエストのテキストは、ライセンスへの同意が必要なモジュールのアイテム詳細ページに表示されます。 [License.txt を表示] リンクをクリックすると、モジュールのライセンスを確認できます。
+ライセンス同意リクエストのテキストは、ライセンスへの同意が必要なモジュールのアイテム詳細ページに表示されます。 **[License.txt を表示]** リンクをクリックすると、モジュールのライセンスを確認できます。
 
 ![ライセンス同意リクエスト](media/packages-that-require-license-acceptance/RequireLicenseAcceptance.png)
 

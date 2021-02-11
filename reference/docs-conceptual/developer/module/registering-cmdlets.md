@@ -1,12 +1,14 @@
 ---
-title: コマンドレットの登録 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 75853a818b119fbd3335e2fe3889f8ab006cc355
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレットを登録する
+description: コマンドレットを登録する
+ms.openlocfilehash: 4b48aae4bdd358ec39f482f4a1bd29ed0295cbde
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779252"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664527"
 ---
 # <a name="registering-cmdlets"></a>コマンドレットを登録する
 
@@ -14,11 +16,11 @@ ms.locfileid: "87779252"
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[モジュールとスナップ](./modules-and-snap-ins.md)インモジュールとスナップインを使用したコマンドレットの登録の違いについて説明します。
+[モジュールとスナップ](./modules-and-snap-ins.md) インモジュールとスナップインを使用したコマンドレットの登録の違いについて説明します。
 
-[モジュールを使用してコマンドレットを登録する方法](./how-to-import-cmdlets-using-modules.md)モジュールを使用してコマンドレットを登録する方法について説明します。
+[モジュールを使用してコマンドレットを登録する方法](./how-to-import-cmdlets-using-modules.md) モジュールを使用してコマンドレットを登録する方法について説明します。
 
-[Windows PowerShell スナップインを作成する方法](./how-to-create-a-windows-powershell-snap-in.md)スナップインを使用してコマンドレットを登録する方法について説明します。
+[Windows PowerShell スナップインを作成する方法](./how-to-create-a-windows-powershell-snap-in.md) スナップインを使用してコマンドレットを登録する方法について説明します。
 
 ## <a name="see-also"></a>参照
 

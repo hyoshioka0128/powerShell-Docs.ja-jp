@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: b81074e14461b0bf481232553b614e06c23b90b6
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: 07c10f33b0cffd56d84ddf6aab3553a0b71e4017
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93219419"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860713"
 ---
 # Invoke-WebRequest
 
@@ -227,7 +226,7 @@ $Result = Invoke-WebRequest -Uri $Uri -Method Post -Form $Form
 ```powershell
 try
 {
-    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -242,7 +241,7 @@ $StatusCode
 404
 ```
 
-コマンドは `Invoke-WebRequest` **Stop** という **erroraction** を使用してを呼び出します。これにより、は、 `Invoke-WebRequest` 失敗した要求に対して強制的に終了エラーをスローします。 終了エラーは、 `catch` **例外** オブジェクトから **StatusCode** を取得するブロックによってキャッチされます。
+終了エラーは、 `catch` **例外** オブジェクトから **StatusCode** を取得するブロックによってキャッチされます。
 
 ## PARAMETERS
 
@@ -274,12 +273,12 @@ Accept wildcard characters: False
 
 使用可能な認証オプション:
 
-- **None** : **認証** が指定されていない場合の既定のオプションです。明示的な認証は使用されません。
-- **基本** : **資格情報** が必要です。 資格情報は、RFC 7617 の基本認証ヘッダーでという形式で送信され `base64(user:password)` ます。
-- **ベアラー** : **トークン** が必要です。 指定された `Authorization: Bearer` トークンを使用して RFC 6750 ヘッダーを送信します。 これは **OAuth** のエイリアスです
-- **OAuth** : **トークン** が必要です。 指定された `Authorization: Bearer` トークンを使用して RFC 6750 ヘッダーを送信します。 これは **ベアラー** のエイリアスです
+- **None**: **認証** が指定されていない場合の既定のオプションです。明示的な認証は使用されません。
+- **基本**: **資格情報** が必要です。 資格情報は、RFC 7617 の基本認証ヘッダーでという形式で送信され `base64(user:password)` ます。
+- **ベアラー**: **トークン** が必要です。 指定された `Authorization: Bearer` トークンを使用して RFC 6750 ヘッダーを送信します。 これは **OAuth** のエイリアスです
+- **OAuth**: **トークン** が必要です。 指定された `Authorization: Bearer` トークンを使用して RFC 6750 ヘッダーを送信します。 これは **ベアラー** のエイリアスです
 
-**認証** `Authorization` を指定すると、 **ヘッダー** に指定されたヘッダーまたは **web セッション** に含まれるヘッダーが上書きされます。
+**認証** `Authorization` を指定すると、**ヘッダー** に指定されたヘッダーまたは **web セッション** に含まれるヘッダーが上書きされます。
 
 この機能は、PowerShell 6.0.0 で追加されました。
 
@@ -305,7 +304,7 @@ Accept wildcard characters: False
 
 入力が GET 要求で、本文が `IDictionary` (通常はハッシュテーブル) の場合、本文はクエリパラメーターとして URI に追加されます。 他の要求の種類 (POST など) の場合、本文は標準形式の要求本文の値として設定され `name=value` ます。
 
-**Body** パラメーターは、オブジェクトを受け取ることもでき `System.Net.Http.MultipartFormDataContent` ます。 これにより、要求が容易に `multipart/form-data` なります。 **MultipartFormDataContent** オブジェクトが **Body** に指定されている場合、 **ContentType** 、 **headers** 、または **websession** パラメーターに指定されたコンテンツに関連するヘッダーは、 **MultipartFormDataContent** オブジェクトのコンテンツヘッダーによってオーバーライドされます。 この機能は、PowerShell 6.0.0 で追加されました。
+**Body** パラメーターは、オブジェクトを受け取ることもでき `System.Net.Http.MultipartFormDataContent` ます。 これにより、要求が容易に `multipart/form-data` なります。 **MultipartFormDataContent** オブジェクトが **Body** に指定されている場合、 **ContentType**、 **headers**、または **websession** パラメーターに指定されたコンテンツに関連するヘッダーは、 **MultipartFormDataContent** オブジェクトのコンテンツヘッダーによってオーバーライドされます。 この機能は、PowerShell 6.0.0 で追加されました。
 
 ```yaml
 Type: System.Object
@@ -488,7 +487,7 @@ Accept wildcard characters: False
 
 Web 要求のヘッダーを指定します。 ハッシュ テーブルまたは辞書を入力します。
 
-UserAgent ヘッダーを設定するには、 **UserAgent** パラメーターを使用します。 このパラメーターを使用して **、ユーザーエージェント** または cookie のヘッダーを指定することはできません。
+UserAgent ヘッダーを設定するには、**UserAgent** パラメーターを使用します。 このパラメーターを使用して **、ユーザーエージェント** または cookie のヘッダーを指定することはできません。
 
 などのコンテンツ関連ヘッダー `Content-Type` は、 **MultipartFormDataContent** オブジェクトが **本文** に指定されたときにオーバーライドされます。
 
@@ -603,7 +602,7 @@ Accept wildcard characters: False
 このコマンドレットが応答本文を保存する出力ファイルを指定します。 パスとファイル名を入力します。
 パスを省略した場合、既定値は現在のディレクトリです。
 
-既定では、は `Invoke-WebRequest` パイプラインに結果を返します。 結果をファイルとパイプラインに送信するには、 **Passthru** パラメーターを使用します。
+既定では、は `Invoke-WebRequest` パイプラインに結果を返します。 結果をファイルとパイプラインに送信するには、**Passthru** パラメーターを使用します。
 
 ```yaml
 Type: System.String
@@ -763,7 +762,7 @@ Accept wildcard characters: False
 
 リモート セッションとは異なり、Web 要求セッションは永続的な接続ではありません。 これは、cookie、資格情報、リダイレクトの最大値、ユーザーエージェント文字列など、接続と要求に関する情報を含むオブジェクトです。 Web 要求セッションを使用して、Web 要求の間で状態とデータを共有することができます。
 
-後続の Web 要求で Web 要求セッションを使用するには、 **WebSession** パラメーターの値にセッション変数を指定します。 PowerShell は、新しい接続を確立するときに、web 要求セッションオブジェクトのデータを使用します。 Web 要求セッションの値をオーバーライドするには、 **UserAgent** 、 **Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。
+後続の Web 要求で Web 要求セッションを使用するには、**WebSession** パラメーターの値にセッション変数を指定します。 PowerShell は、新しい接続を確立するときに、web 要求セッションオブジェクトのデータを使用します。 Web 要求セッションの値をオーバーライドするには、**UserAgent**、**Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。
 
 **Sessionvariable** と **websession** パラメーターを同じコマンドで使用することはできません。
 
@@ -807,7 +806,7 @@ Accept wildcard characters: False
 標準に準拠していないヘッダー値が必要なサイトには、このスイッチを使用する必要があります。
 このスイッチを指定すると、値をオフにするための検証が無効になります。 指定した場合、すべてのヘッダーが検証なしで追加されます。
 
-このスイッチは、 **ContentType** 、 **Headers** 、および **UserAgent** パラメーターに渡される値の検証を無効にします。
+このスイッチは、 **ContentType**、 **Headers** 、および **UserAgent** パラメーターに渡される値の検証を無効にします。
 
 この機能は、PowerShell 6.0.0 で追加されました。
 
@@ -849,7 +848,7 @@ Web 要求に対して許可されている SSL/TLS プロトコルを設定し�
 **Sslprotocol** では **websslprotocol** フラグ列挙型が使用されます。 フラグ表記を使用して複数のプロトコルを指定したり、複数の **Websslprotocol** オプションを **bor** と組み合わせたりすることはできますが、複数のプロトコルを指定することは、すべてのプラットフォームでサポートされているわけではありません。
 
 > [!NOTE]
-> Windows 以外のプラットフォームでは、を `'Tls, Tls12'` オプションとして指定することはできません。
+> Windows 以外のプラットフォームで `Tls` は、 `Tls12` オプションとしてまたはを指定することはできません。
 
 この機能は、PowerShell 6.0.0 で追加されました。
 
@@ -1009,7 +1008,7 @@ Accept wildcard characters: False
 
 Web 要求セッションを指定します。 ドル記号 () を含む変数名を入力し `$` ます。
 
-Web 要求セッションの値をオーバーライドするには、 **UserAgent** 、 **Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。 `Content-Type`**本文** に **MultipartFormDataContent** オブジェクトが指定されている場合、などのコンテンツ関連ヘッダーもオーバーライドされます。
+Web 要求セッションの値をオーバーライドするには、**UserAgent**、**Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。 `Content-Type`**本文** に **MultipartFormDataContent** オブジェクトが指定されている場合、などのコンテンツ関連ヘッダーもオーバーライドされます。
 
 リモートセッションとは異なり、web 要求セッションは永続的な接続ではありません。 これは、cookie、資格情報、リダイレクトの最大値、ユーザーエージェント文字列など、接続と要求に関する情報を含むオブジェクトです。 Web 要求セッションを使用して、Web 要求の間で状態とデータを共有することができます。
 
@@ -1053,9 +1052,9 @@ PowerShell 6.0.0 以降で `Invoke-WebRequest` は、基本的な解析のみが
 
 このプロパティの値は、プラットフォームによって決まります。
 
-- **Windows の場合** : 環境変数からプロキシ構成を読み取ります。 これらの変数が定義されていない場合、プロパティはユーザーのプロキシ設定から派生します。
-- **MacOS の場合** : 環境変数からプロキシ構成を読み取ります。 これらの変数が定義されていない場合、プロパティはシステムのプロキシ設定から派生します。
-- **Linux の場合** : 環境変数からプロキシ構成を読み取ります。 これらの変数が定義されていない場合、プロパティは、すべてのアドレスをバイパスするように構成されていないインスタンスを初期化します。
+- **Windows の場合**: 環境変数からプロキシ構成を読み取ります。 これらの変数が定義されていない場合、プロパティはユーザーのプロキシ設定から派生します。
+- **MacOS の場合**: 環境変数からプロキシ構成を読み取ります。 これらの変数が定義されていない場合、プロパティはシステムのプロキシ設定から派生します。
+- **Linux の場合**: 環境変数からプロキシ構成を読み取ります。 これらの変数が定義されていない場合、プロパティは、すべてのアドレスをバイパスするように構成されていないインスタンスを初期化します。
 
 Windows および Unix ベースのプラットフォームでの初期化に使用される環境変数 `DefaultProxy` は次のとおりです。
 

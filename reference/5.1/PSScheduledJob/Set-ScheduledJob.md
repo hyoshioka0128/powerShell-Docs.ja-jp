@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/set-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ScheduledJob
-ms.openlocfilehash: 99dbdc84430c0a8b5cf505a22b139cd07236e160
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6144d9f19b86727bc09d07e94f4bcf158e3b7071
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93213368"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387908"
 ---
 # Set-ScheduledJob
 
@@ -149,8 +149,7 @@ Accept wildcard characters: False
 - ネゴシエート
 - NegotiateWithImplicitCredential
 
-既定値は Default です。
-このパラメーターの値の詳細については、MSDN ライブラリの「 [Authenticationmechanism 列挙型](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) 」を参照してください。
+既定値は Default です。 このパラメーターの値の詳細については、PowerShell SDK の [Authenticationmechanism 列挙](/dotnet/api/system.management.automation.runspaces.authenticationmechanism) に関する説明を参照してください。
 
 注意: ユーザーの資格情報が認証対象のリモートコンピューターに渡される Credential Security Support Provider (CredSSP) 認証は、リモートネットワーク共有へのアクセスなど、複数のリソースでの認証を必要とするコマンド向けに設計されています。
 このメカニズムを使用すると、リモート操作のセキュリティ リスクが高まります。

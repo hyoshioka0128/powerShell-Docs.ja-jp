@@ -1,14 +1,14 @@
 ---
-title: 引数セットを検証する方法 |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateSet attribute, example
-ms.openlocfilehash: 6173f1380583f5b27e2b188990a5ea041f447c57
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 引数セットを検証する方法
+description: 引数セットを検証する方法
+ms.openlocfilehash: 50ec0a48277893584d896e14ad6aa843682a28cc
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782006"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92650370"
 ---
 # <a name="how-to-validate-an-argument-set"></a>引数セットを検証する方法
 
@@ -41,4 +41,4 @@ ms.locfileid: "87782006"
 
 [ValidateSet 属性の宣言](./validateset-attribute-declaration.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

@@ -1,12 +1,14 @@
 ---
-title: 列挙 Able展開の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 71fd969fd3e5c0a4e39762c9a026982a8ca2a9d1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EnumerableExpansion の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)
+description: EnumerableExpansion の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)
+ms.openlocfilehash: bd72a9bc914ea6543d8dab768b5e20e9a580ada7
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785372"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664912"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) の列挙 able膨�
 
 ## <a name="remarks"></a>解説
 
-選択条件では、評価するスクリプトまたはプロパティ名を少なくとも1つ指定する必要がありますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件では、評価するスクリプトまたはプロパティ名を少なくとも1つ指定する必要がありますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「 [データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

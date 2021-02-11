@@ -1,34 +1,36 @@
 ---
-title: Host02 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ed95cdcdcf20de6687f463b9d560a69510638c79
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Host02 サンプル
+description: Host02 サンプル
+ms.openlocfilehash: 7bb07dec3fd6b7ac5844d247a7a06cbda67c619e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772264"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355461"
 ---
 # <a name="host02-sample"></a>Host02 サンプル
 
 このサンプルでは、Windows PowerShell ランタイムをカスタムホスト実装と共に使用するホストアプリケーションを記述する方法を示します。 ホスト アプリケーションはホストのカルチャをドイツ語に設定し、[Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) コマンドレットを実行して、pwrsh.exe を使用して確認できるものと同じ結果を表示し、最新のデータと時刻をドイツ語で印刷します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
- このサンプルには、Windows PowerShell 2.0 が必要です。
+このサンプルには、Windows PowerShell 2.0 が必要です。
 
 ## <a name="demonstrates"></a>対象
 
-- [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラス、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、および Pshostrawuserinterface クラスから派生したクラスを持つカスタムホストを作成しています。このホストには、 [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスが含まれています。
+- [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラス、 [PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、および PSHostRawUserInterface クラスから派生したクラスを持つカスタムホストを作成しています。このホストには、 [](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスが含まれています。
 
 - カスタムホストを使用する実行空間を作成する。
 
 - ホストカルチャをドイツ語に設定します。
 
-- スクリプトを実行してプロセスを取得および並べ替え、次にドイツ語で表示されている現在の日付を取得する、[システムの管理. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトを作成します。
+- スクリプトを実行してプロセスを取得および並べ替え、次にドイツ語で表示されている現在の日付を取得する、 [システムの管理. Powershell](/dotnet/api/system.management.automation.powershell) オブジェクトを作成します。
 
-## <a name="example"></a>例
+## <a name="example-1"></a>例 1
 
- 次のコードは、カスタムホストを使用するホストアプリケーションの実装を示しています。
+次のコードは、カスタムホストを使用するホストアプリケーションの実装を示しています。
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -125,9 +127,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>例
+## <a name="example-2"></a>例 2
 
- 次のコードは、このホストアプリケーションで使用される[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
+次のコードは、このホストアプリケーションで使用される [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -307,9 +309,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>例
+## <a name="example-3"></a>例 3
 
- 次のコードは、このホストアプリケーションで使用される[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラスを実装したものです。
+次のコードは、このホストアプリケーションで使用される [PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) クラスを実装したものです。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -558,9 +560,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>例
+## <a name="example-4"></a>例 4
 
- 次のコードは、このホストアプリケーションで使用される[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
+次のコードは、このホストアプリケーションで使用される [PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

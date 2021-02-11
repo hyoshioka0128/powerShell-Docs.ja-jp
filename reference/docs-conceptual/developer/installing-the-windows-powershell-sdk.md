@@ -1,12 +1,14 @@
 ---
-title: Windows PowerShell SDK のインストール
 ms.date: 03/30/2020
-ms.openlocfilehash: 91cf57510bb7f44799cfdaf7cadcc7bcd505c977
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell SDK のインストール
+description: Windows PowerShell SDK のインストール
+ms.openlocfilehash: 07108ede640b8c6c02bea6d9e2b63116b5b8f969
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771976"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657306"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Windows PowerShell SDK のインストール
 
@@ -17,7 +19,7 @@ ms.locfileid: "87771976"
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Windows 8 と Windows Server 2012 での Windows PowerShell 3.0 SDK のインストール
 
 Windows PowerShell 3.0 は Windows 8 と Windows Server 2012 で自動的にインストールされます。 さらに、Windows 8 SDK の一部としての Windows PowerShell 3.0 の参照アセンブリもダウンロードおよびインストールできます。 これらのアセンブリでは、Windows PowerShell 3.0 のコマンドレット、プロバイダー、およびホスト プログラムを記述できます。 Windows 8 用 Windows SDK をインストールすると、Windows PowerShell アセンブリが自動的に参照アセンブリ フォルダー (`\Program Files
-(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`) にインストールされます。 詳細については、Windows 8 SDK ダウンロード サイトを参照してください。 Windows PowerShell のコードサンプルは、 [powershell sdk のサンプル](https://github.com/MicrosoftDocs/powershell-sdk-samples/tree/master/SDK-3.0)リポジトリでも入手できます。
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`) にインストールされます。 詳細については、Windows 8 SDK ダウンロード サイトを参照してください。 Windows PowerShell のコードサンプルは、 [powershell sdk のサンプル](https://github.com/MicrosoftDocs/powershell-sdk-samples/tree/master/SDK-3.0) リポジトリでも入手できます。
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Windows 7 と Windows Server 2008 R2 での Windows PowerShell 3.0 SDK のインストール
 
@@ -74,8 +76,8 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` にインストールさ�
 - Runspace02-PowerShell クラスを使用し `Get-Process` て、 `Sort-Object` コマンドレットとコマンドレットを同期的に実行する方法を示します。 `Get-Process`コマンドレットは、ローカルコンピューター上で実行されている各プロセスのプロセスオブジェクトを返し、は `Sort-Object` Id プロパティに基づいてオブジェクトを並べ替えます。 これらのコマンドの結果は、DataGridView コントロールを利用して表示されます。
 - Runspace03-PowerShell クラスを使用してスクリプトを同期的に実行する方法と、終了しないエラーを処理する方法を示します。 このスクリプトはプロセス名の一覧を受信し、これらのプロセスを取得します。 スクリプトの実行時に生成された終了しないエラーを含む、スクリプトの結果がコンソール ウィンドウに表示されます。
 - Runspace04-PowerShell クラスを使用してコマンドを実行する方法と、コマンドの実行時にスローされる終了エラーをキャッチする方法を示します。 2 つのコマンドが実行され、最後のコマンドには無効なパラメーターの引数が渡されます。 結果として、オブジェクトは返されず、終了するエラーがスローされます。
-- Runspace05-InitialSessionState オブジェクトにスナップインを追加して、実行空間を開いたときにスナップインのコマンドレットを使用できるようにする方法を示します。 スナップインには、PowerShell オブジェクトを使用して同期的に実行される Get Proc コマンドレット (GetProcessSample01 サンプルで定義) が用意されています。
-- Runspace06-実行空間が開かれたときにモジュールが読み込まれるように、InitialSessionState オブジェクトにモジュールを追加する方法を示します。 モジュールには、PowerShell オブジェクトを使用して同期的に実行される GetProcessSample02 コマンドレット (サンプルで定義) が用意されています。
+- Runspace05-InitialSessionState オブジェクトにスナップインを追加して、実行空間を開いたときにスナップインのコマンドレットを使用できるようにする方法を示します。 スナップインには、PowerShell オブジェクトを使用して同期的に実行される Get-Proc コマンドレット (GetProcessSample01 サンプルで定義) が用意されています。
+- Runspace06-実行空間が開かれたときにモジュールが読み込まれるように、InitialSessionState オブジェクトにモジュールを追加する方法を示します。 モジュールには、PowerShell オブジェクトを使用して同期的に実行される Get-Proc コマンドレット (GetProcessSample02 サンプルで定義) が用意されています。
 - Runspace07-実行空間を作成し、その実行空間を使用して、PowerShell オブジェクトを使用して2つのコマンドレットを同期的に実行する方法を示します。
 - Runspace08-PowerShell オブジェクトのパイプラインにコマンドと引数を追加する方法と、コマンドを同期的に実行する方法を示します。
 - Runspace09-PowerShell オブジェクトのパイプラインにスクリプトを追加する方法と、スクリプトを非同期で実行する方法を示します。 イベントはスクリプトの出力を処理するために使用されます。

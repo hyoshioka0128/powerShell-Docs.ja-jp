@@ -1,18 +1,20 @@
 ---
-title: コマンドレットのヘルプ トピックに戻り値を追加する方法
 ms.date: 09/12/2016
-ms.openlocfilehash: c164556cd06b332d04857987360c98f740a150b5
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: コマンドレットのヘルプ トピックに戻り値を追加する方法
+description: コマンドレットのヘルプ トピックに戻り値を追加する方法
+ms.openlocfilehash: 8c556821a257451a320916231cb20fc82e75ebb4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893358"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "94389744"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>コマンドレットのヘルプ トピックに戻り値を追加する方法
 
-このセクションでは、出力セクションを PowerShell コマンドレットのヘルプトピックに追加する方法について説明します。 **OUTPUTS**セクションには、コマンドレットが返す、またはパイプラインを渡すオブジェクトの .net クラスが一覧表示されます。
+このセクションでは、出力セクションを PowerShell コマンドレットのヘルプトピックに追加する方法について説明します。 **OUTPUTS** セクションには、コマンドレットが返す、またはパイプラインを渡すオブジェクトの .net クラスが一覧表示されます。
 
-**OUTPUTS**セクションに追加できるクラスの数に制限はありません。 コマンドレットの戻り値の型はノードで囲み `<command:returnValues>` 、各クラスは要素で囲まれてい `<command:returnValue>` ます。
+**OUTPUTS** セクションに追加できるクラスの数に制限はありません。 コマンドレットの戻り値の型はノードで囲み `<command:returnValues>` 、各クラスは要素で囲まれてい `<command:returnValue>` ます。
 
 コマンドレットで出力が生成されない場合は、出力がないことを示すためにこのセクションを使用します。 たとえば、クラス名の代わりに、 **「None** 」と記述し、簡単な説明を入力します。 コマンドレットによって出力が条件付きで生成される場合は、このノードを使用して条件を説明し、条件付き出力を記述します。
 
@@ -47,7 +49,7 @@ PowerShell 3.0 以降では、 `Get-Help` コマンドレットによって要�
   <command:returnValue>
     <dev:type>
       <maml:name> System.DateTime </maml:name>
-      <maml:uri>  https://msdn.microsoft.com/library/system.datetime.aspx </maml:uri>
+      <maml:uri>  https://docs.microsoft.com/dotnet/api/system.datetime </maml:uri>
       <maml:description/>
     </dev:type>
     <maml:description>

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: リスト ボックスから項目を選択する
 description: この記事では、Windows PowerShell で .NET Framework のフォーム作成機能を使用して、リスト ボックス コントロールを作成する方法を示します。
-ms.openlocfilehash: cfd6110a9cfcc3cea891d68d8ce7be5b332a949a
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: d6f881f0b92f294da105ae7df5e25e8c20ce5094
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501050"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391240"
 ---
 # <a name="selecting-items-from-a-list-box"></a>リスト ボックスから項目を選択する
 
@@ -84,11 +84,11 @@ Add-Type -AssemblyName System.Drawing
 
 フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。
 
-- **Text** 。 ウィンドウのタイトルになります。
+- **Text**。 ウィンドウのタイトルになります。
 
-- **Size** 。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
+- **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
 
-- **StartingPosition** 。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。
+- **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。
   このプロパティを追加しない場合は、Windows によりフォームが開かれる場所が選択されます。 **StartingPosition** を **CenterScreen** に設定すると、フォームは読み込まれるたびに画面中央に自動的に表示されます。
 
 ```powershell
@@ -131,7 +131,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-ラベルのテキストに記述されている情報をユーザーが提供できるコントロール (この場合はリスト ボックス) を追加します。 リスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、MSDN の「[System.Windows.Forms 名前空間](/dotnet/api/system.windows.forms)」を参照してください。
+ラベルのテキストに記述されている情報をユーザーが提供できるコントロール (この場合はリスト ボックス) を追加します。 リスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、「[System.Windows.Forms 名前空間](/dotnet/api/system.windows.forms)」を参照してください。
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -168,7 +168,7 @@ $form.Topmost = $true
 $result = $form.ShowDialog()
 ```
 
-最後に、 **If** ブロック内のコードは、ユーザーがリスト ボックスからオプションを選択した後のフォームの操作を Windows に指示します。その後、 **[OK]** ボタンをクリックするか、 **Enter** キーを押します。
+最後に、**If** ブロック内のコードは、ユーザーがリスト ボックスからオプションを選択した後のフォームの操作を Windows に指示します。その後、**[OK]** ボタンをクリックするか、**Enter** キーを押します。
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -181,4 +181,4 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ## <a name="see-also"></a>参照
 
 - [GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [今週の Windows PowerShell ヒント: リスト ボックスからアイテムを選択する](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))
+- [Windows PowerShell Tip of the Week:リスト ボックスから項目を選択する](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))

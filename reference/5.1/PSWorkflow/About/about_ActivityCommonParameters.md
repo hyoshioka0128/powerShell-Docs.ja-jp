@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_activitycommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_ActivityCommonParameters
-ms.openlocfilehash: b745bf17e4ae26156042ecdc25211830177bc692
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 93fdcdb9c5afe0b73e843baf2474ec7d3f96a6cf
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93221915"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387806"
 ---
 # <a name="about-activitycommonparameters"></a>ActivityCommonParameters について
 
@@ -150,7 +150,7 @@ WinRM サービスは、アプリケーション名を使用して、接続要�
 
 対象のコンピュータに接続するときに、ユーザーの資格情報を認証するために使用されるメカニズムを指定します。 有効な値は、Default、Basic、Credssp、Digest、Kerberos、Negotiate、および NegotiateWithImplicitCredential です。 既定値は Default です。 このアクティビティ共通パラメーターは、ワークフロー共通パラメーターでもあります。
 
-このパラメーターの値の詳細については、MSDN の **System.Management.Automation.Runspaces.AuthenticationMechanism** 列挙体の説明を参照してください。
+このパラメーターの値の詳細については、PowerShell SDK の「 **システムの管理** 」列挙型の説明を参照してください。
 
 > [!WARNING]
 > ユーザーの資格情報が認証対象のリモート コンピューターに渡される Credential Security Service Provider (CredSSP) 認証は、リモート ネットワーク共有にアクセスする場合など、複数のリソースの認証を必要とするコマンドを対象としています。 このメカニズムを使用すると、リモート操作のセキュリティ リスクが高まります。 リモート コンピューターのセキュリティが低下している場合は、そのリモート コンピューターに渡される資格情報を使用してネットワーク セッションが制御される場合があります。

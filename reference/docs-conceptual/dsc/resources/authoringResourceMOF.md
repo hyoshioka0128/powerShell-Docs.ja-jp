@@ -2,18 +2,20 @@
 ms.date: 07/08/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MOF を使用したカスタム DSC リソースの記述
-ms.openlocfilehash: ba857fa504bfd84accfd7f260b1fff1228db40ba
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: この記事では、MOF ファイルで DSC カスタム リソースのスキーマを定義し、そのリソースを PowerShell スクリプト ファイルで実装します。
+ms.openlocfilehash: e79a37699c468b2c55c307c96f1c193a2c1595b3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217527"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667183"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>MOF を使用したカスタム DSC リソースの記述
 
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
-このトピックでは、MOF ファイルで Windows PowerShell Desired State Configuration (DSC) カスタム リソースのスキーマを定義し、Windows PowerShell スクリプト ファイルでリソースを実装します。 このカスタム リソースは、Web サイトを作成および保守するためのものです。
+この記事では、MOF ファイルで Windows PowerShell Desired State Configuration (DSC) カスタム リソースのスキーマを定義し、そのリソースを Windows PowerShell スクリプト ファイルで実装します。
+このカスタム リソースは、Web サイトを作成および保守するためのものです。
 
 ## <a name="creating-the-mof-schema"></a>MOF スキーマの作成
 
@@ -68,8 +70,7 @@ class Demo_IISWebsite : OMI_BaseResource
 
 ### <a name="writing-the-resource-script"></a>リソース スクリプトの作成
 
-リソース スクリプトでは、リソースのロジックを実装します。 このモジュールでは、`Get-TargetResource`、`Set-TargetResource`、および `Test-TargetResource` という 3 つの関数を含める必要があります。 3 つのすべての関数は、リソース用に作成した MOF スキーマで定義されている一連のプロパティと同じパラメーター セットを受け取る必要があります。 このドキュメントでは、この一連のプロパティを "リソース プロパティ" と呼びます。 これらの 3 つの関数は `<ResourceName>.psm1`というファイルに格納します。
-次の例では、関数は `Demo_IISWebsite.psm1` というファイルに格納されます。
+リソース スクリプトでは、リソースのロジックを実装します。 このモジュールでは、`Get-TargetResource`、`Set-TargetResource`、および `Test-TargetResource` という 3 つの関数を含める必要があります。 3 つのすべての関数は、リソース用に作成した MOF スキーマで定義されている一連のプロパティと同じパラメーター セットを受け取る必要があります。 このドキュメントでは、この一連のプロパティを "リソース プロパティ" と呼びます。 これらの 3 つの関数は `<ResourceName>.psm1`というファイルに格納します。 次の例では、関数は `Demo_IISWebsite.psm1` というファイルに格納されます。
 
 > [!NOTE]
 > リソースに対して同じ構成スクリプトを複数回実行する場合、エラーが発生せずに、スクリプトを 1 回実行したときと同じ状態にリソースが保たれる必要があります。 これを実現するには、`Get-TargetResource` と `Test-TargetResource` 関数によってリソースが変更されないようにし、シーケンス内で同じパラメーター値を使用して `Set-TargetResource` 関数を複数回呼び出した場合に、1 回呼び出した場合と常に同じ結果になるようにします。
@@ -77,7 +78,8 @@ class Demo_IISWebsite : OMI_BaseResource
 `Get-TargetResource` 関数の実装では、パラメーターとして指定されたキー リソース プロパティ値を使用して、指定されたリソース インスタンスの状態を確認します。 この関数は、キーとしてすべてのリソース プロパティを、対応する値としてこれらのプロパティの実際の値を一覧表示するハッシュ テーブルを返す必要があります。 コードの例は次のとおりです。
 
 ```powershell
-# DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
+# DSC uses the Get-TargetResource function to fetch the status of the resource instance
+# specified in the parameters for the target machine
 function Get-TargetResource
 {
     param
@@ -105,8 +107,11 @@ function Get-TargetResource
 
         $getTargetResourceResult = $null;
 
-        <# Insert logic that uses the mandatory parameter values to get the website and assign it to a variable called $Website #>
-        <# Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise #>
+        <#
+          Insert logic that uses the mandatory parameter values to get the website and
+          assign it to a variable called $Website
+          Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise
+        #>
 
         # Add all Website properties to the hash table
         # This simple example assumes that $Website is not null
@@ -161,10 +166,14 @@ function Set-TargetResource
         [string[]]$Protocol
     )
 
-    <# If Ensure is set to "Present" and the website specified in the mandatory input parameters does not exist, then create it using the specified parameter values #>
-    <# Else, if Ensure is set to "Present" and the website does exist, then update its properties to match the values provided in the non-mandatory parameter values #>
-    <# Else, if Ensure is set to "Absent" and the website does not exist, then do nothing #>
-    <# Else, if Ensure is set to "Absent" and the website does exist, then delete the website #>
+    <#
+        If Ensure is set to "Present" and the website specified in the mandatory input parameters
+          does not exist, then create it using the specified parameter values
+        Else, if Ensure is set to "Present" and the website does exist, then update its properties
+          to match the values provided in the non-mandatory parameter values
+        Else, if Ensure is set to "Absent" and the website does not exist, then do nothing
+        Else, if Ensure is set to "Absent" and the website does exist, then delete the website
+    #>
 }
 ```
 
@@ -208,18 +217,19 @@ function Test-TargetResource
     # Get the current state
     $currentState = Get-TargetResource -Ensure $Ensure -Name $Name -PhysicalPath $PhysicalPath -State $State -ApplicationPool $ApplicationPool -BindingInfo $BindingInfo -Protocol $Protocol
 
-    #Write-Verbose "Use this cmdlet to deliver information about command processing."
+    # Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-    #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+    # Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
-    #Include logic to
+    # Include logic to
     $result = [System.Boolean]
-    #Add logic to test whether the website is present and its status matches the supplied parameter values. If it does, return true. If it does not, return false.
+    # Add logic to test whether the website is present and its status matches the supplied
+    # parameter values. If it does, return true. If it does not, return false.
     $result
 }
 ```
 
-> [!Note]
+> [!NOTE]
 > 簡単にデバッグするには、前の 3 つの関数の実装で `Write-Verbose` コマンドレットを使用します。 このコマンドレットは、テキストを詳細メッセージ ストリームに書き込みます。 既定では、詳細メッセージ ストリームは表示されません。表示するには、 **$VerbosePreference** 変数の値を変更するか、DSC コマンドレットで **Verbose** パラメーターを使用します。
 
 ### <a name="creating-the-module-manifest"></a>モジュール マニフェストの作成
@@ -306,5 +316,5 @@ if (PsDscContext.RunAsUser) {
 $global:DSCMachineStatus = 1
 ```
 
-LCM で Node を再起動するには、**RebootNodeIfNeeded** フラグを `$true` に設定する必要があります。
-また、**ActionAfterReboot** 設定を既定である **ContinueConfiguration** に設定してください。 LCM の構成方法については、「[ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)」または「[ローカル構成マネージャーの構成 (v4)](../managing-nodes/metaConfig4.md)」を参照してください。
+LCM で Node を再起動するには、 **RebootNodeIfNeeded** フラグを `$true` に設定する必要があります。
+また、 **ActionAfterReboot** 設定を既定である **ContinueConfiguration** に設定してください。 LCM の構成方法については、「[ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)」または「[ローカル構成マネージャーの構成 (v4)](../managing-nodes/metaConfig4.md)」を参照してください。

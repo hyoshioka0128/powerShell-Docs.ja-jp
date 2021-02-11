@@ -1,16 +1,18 @@
 ---
-title: AccessDBProviderSample04 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 097591528fd12cdf9f134a0fd8a0bd278f216fab
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: AccessDBProviderSample04
+description: AccessDBProviderSample04
+ms.openlocfilehash: 962d0ab673ff797a60b56ccae7a16a810cc43c58
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786868"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649048"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
-このサンプルでは、、、、およびの各コマンドレットの呼び出しをサポートするために、コンテナーメソッドを上書きする方法を示し `Copy-Item` `Get-ChildItem` `New-Item` `Remove-Item` ます。 これらのメソッドは、データ ストアにコンテナーであるアイテムが含まれる場合に実装する必要があります。 コンテナーは、共通の親項目の子項目のグループです。 このサンプルのプロバイダークラスは、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスから派生しています。
+このサンプルでは、、、、およびの各コマンドレットの呼び出しをサポートするために、コンテナーメソッドを上書きする方法を示し `Copy-Item` `Get-ChildItem` `New-Item` `Remove-Item` ます。 これらのメソッドは、データ ストアにコンテナーであるアイテムが含まれる場合に実装する必要があります。 コンテナーは、共通の親項目の子項目のグループです。 このサンプルのプロバイダークラスは、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) クラスから派生しています。
 
 ## <a name="demonstrates"></a>対象
 
@@ -22,8 +24,8 @@ ms.locfileid: "87786868"
 - 属性を宣言 `CmdletProvider` しています。
 - [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスから派生したプロバイダークラスを定義しています。
 - [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを上書きして、コマンドレットの動作を変更します `Copy-Item` 。これにより、ユーザーは、ある場所から別の場所に項目をコピーできます。 (このサンプルでは、コマンドレットに動的パラメーターを追加する方法については説明しません `Copy-Item` )。
-- [Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドを上書きして、ChildItems コマンドレットの動作を変更します。これにより、ユーザーは親項目の子項目を取得できるようになります。 (このサンプルでは、ChildItems コマンドレットに動的パラメーターを追加する方法については説明しません)。
-- [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)メソッドを上書きして、 `Name` コマンドレットのパラメーターが指定されている場合に、ChildItems コマンドレットの動作を変更します。
+- Containercmdletprovider コマンドレット Get-ChildItems の動作を変更するには、 [Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) メソッドを上書きします。これにより、ユーザーは親項目の子項目を取得できるようになります。 (このサンプルでは、Get-ChildItems コマンドレットに動的パラメーターを追加する方法については説明しません)。
+- コマンドレットのパラメーターが指定されている場合に Get-ChildItems コマンドレットの動作を変更するには、 [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)メソッドを上書きします。 `Name`
 - [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドを上書きしてコマンドレットの動作を変更し、 `New-Item` ユーザーがデータストアに項目を追加できるようにします。 (このサンプルでは、コマンドレットに動的パラメーターを追加する方法については説明しません `New-Item` )。
 - [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)メソッドを上書きして、コマンドレットの動作を変更してい `Remove-Item` ます。 (このサンプルでは、コマンドレットに動的パラメーターを追加する方法については説明しません `Remove-Item` )。
 

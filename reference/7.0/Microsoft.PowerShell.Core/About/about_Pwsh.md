@@ -1,16 +1,15 @@
 ---
 description: コマンドラインインターフェイスの使用方法について説明 `pwsh` します。 コマンドラインパラメーターを表示し、構文について説明します。
-keywords: powershell,コマンドレット
 ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
-ms.openlocfilehash: 2aa1c4ec033b8e7294c269b53c4fe20205a47d7f
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 25ccb20a4c19a9519bf9d2a518ef6187c2327323
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223080"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692701"
 ---
 # <a name="about-pwsh"></a>Pwsh の概要
 
@@ -67,13 +66,13 @@ pwsh[.exe] -h | -Help | -? | /?
 
 スクリプトに渡されるパラメーターは、(現在のシェルによる解釈の後で) リテラル文字列として渡されます。 たとえば、で環境変数の値を渡す場合は、 `cmd.exe` 次の構文を使用し `cmd.exe` ます。 `pwsh -File .\test.ps1 -TestParam %windir%`
 
-これに対し、でを実行すると、 `pwsh -File .\test.ps1 -TestParam $env:windir` `cmd.exe` 現在の `$env:windir` シェルに特別な意味を持たないため、スクリプトがリテラル文字列を受け取ることになり `cmd.exe` ます。 `$env:windir`環境変数参照のスタイルは、PowerShell コードとして解釈されるため、 **コマンド** パラメーター内で使用 _でき_ ます。
+これに対し、でを実行すると、 `pwsh -File .\test.ps1 -TestParam $env:windir` `cmd.exe` 現在の `$env:windir` シェルに特別な意味を持たないため、スクリプトがリテラル文字列を受け取ることになり `cmd.exe` ます。 `$env:windir`環境変数参照のスタイルは、PowerShell コードとして解釈されるため、**コマンド** パラメーター内で使用 _でき_ ます。
 
 同様に、 _バッチスクリプト_ から同じコマンドを実行する場合 `%~dp0` は、またはの代わりにを使用し `.\` `$PSScriptRoot` て、現在の実行ディレクトリを表し `pwsh -File %~dp0test.ps1 -TestParam %windir%` ます。 代わりにを使用すると `.\test.ps1` 、PowerShell はリテラルパスを見つけることができないため、エラーをスローします。 `.\test.ps1`
 
 スクリプトファイルがコマンドで終了すると、 `exit` プロセスの終了コードは、コマンドで使用される数値引数に設定され `exit` ます。 通常の終了では、終了コードは常に `0` です。
 
-と同様に、 `-Command` スクリプトを終了するエラーが発生すると、終了コードはに設定され `1` ます。 ただし、とは異なり、 `-Command` <kbd>Ctrl</kbd>C を使用して実行が中断されると、 - <kbd>C</kbd>終了コードはに `0` なります。
+と同様に、 `-Command` スクリプトを終了するエラーが発生すると、終了コードはに設定され `1` ます。 ただし、とは異なり、 `-Command` <kbd>Ctrl</kbd>C を使用して実行が中断されると、 - <kbd></kbd>終了コードはに `0` なります。
 
 ### <a name="-command---c"></a>-Command |-c
 
@@ -81,7 +80,7 @@ pwsh[.exe] -h | -Help | -? | /?
 
 **Command** の値には `-` 、、スクリプトブロック、または文字列を指定できます。 **Command** の値がの場合 `-` 、コマンドテキストは標準入力から読み取られます。
 
-**コマンド** パラメーターでは、 **コマンド** に **ScriptBlock** 型として渡された値を認識できる場合に限り、スクリプトブロックを実行できます。 これは _only_ `pwsh` 、別の PowerShell ホストから実行する場合にのみ可能です。 **ScriptBlock** 型は、に渡される前に、既存の変数に格納されるか、式から返されるか、または PowerShell ホストによって、中かっこ () で囲まれたリテラルスクリプトブロックとして解析されることがあり `{}` `pwsh` ます。
+**コマンド** パラメーターでは、**コマンド** に **ScriptBlock** 型として渡された値を認識できる場合に限り、スクリプトブロックを実行できます。 これは `pwsh` 、別の PowerShell ホストから実行する場合にのみ可能です。 **ScriptBlock** 型は、に渡される前に、既存の変数に格納されるか、式から返されるか、または PowerShell ホストによって、中かっこ () で囲まれたリテラルスクリプトブロックとして解析されることがあり `{}` `pwsh` ます。
 
 ```powershell
 pwsh -Command {Get-WinEvent -LogName security}
@@ -99,7 +98,7 @@ pwsh -Command "& {Get-WinEvent -LogName security}"
 
 既存の PowerShell セッション内から呼び出された場合、結果は、ライブオブジェクトではなく、逆シリアル化された XML オブジェクトとして親シェルに返されます。 他のシェルの場合、結果は文字列として返されます。
 
-**Command** の値がの場合 `-` 、コマンドテキストは標準入力から読み取られます。 標準入力で **Command** パラメーターを使用する場合は、標準入力をリダイレクトする必要があります。 次に例を示します。
+**Command** の値がの場合 `-` 、コマンドテキストは標準入力から読み取られます。 標準入力で **Command** パラメーターを使用する場合は、標準入力をリダイレクトする必要があります。 以下に例を示します。
 
 ```powershell
 @'
@@ -122,7 +121,7 @@ out
 
 プロセス終了コードは、スクリプトブロック内の最後の (実行された) コマンドの状態によって決定されます。 がの場合、 `0` `$?` または `$true` `1` `$?` がの場合 `$false` 、終了コードはです。 最後のコマンドが、または以外の終了コードを明示的に設定する外部プログラムまたは PowerShell スクリプトの場合 `0` `1` 、終了コードは `1` プロセス終了コード用にに変換されます。 特定の終了コードを保持するに `exit $LASTEXITCODE` は、をコマンド文字列またはスクリプトブロックに追加します。
 
-同様に、やなどのスクリプト終了 (実行空間終了) エラーが発生したとき、または `throw` `-ErrorAction Stop` <kbd>Ctrl C キーを押し</kbd>て実行が中断されたときに、値1が返され - <kbd>C</kbd>ます。
+同様に、やなどのスクリプト終了 (実行空間終了) エラーが発生したとき、または `throw` `-ErrorAction Stop` <kbd>Ctrl C キーを押し</kbd>て実行が中断されたときに、値1が返され - <kbd></kbd>ます。
 
 ### <a name="-configurationname---config"></a>-ConfigurationName |-config
 
@@ -136,7 +135,7 @@ PowerShell を実行する構成エンドポイントを指定します。 こ�
 
 このパラメーターは、PowerShell 6.2 で導入されました。
 
-次に例を示します。
+以下に例を示します。
 
 ```powershell
 # PowerShell instance 1
@@ -147,9 +146,9 @@ Enter-PSHostProcess -CustomPipeName mydebugpipe
 
 ### <a name="-encodedcommand---e---ec"></a>-EncodedCommand |-e |-ec
 
-Base64 でエンコードされた文字列バージョンのコマンドを受け入れます。 このパラメーターを使用して、入れ子になった複雑な引用符を必要とするコマンドを PowerShell に送信します。 Base64 表現は、UTF-16 でエンコードされた文字列である必要があります。
+Base64 でエンコードされた文字列バージョンのコマンドを受け入れます。 このパラメーターを使用して、入れ子になった複雑な引用符を必要とするコマンドを PowerShell に送信します。 Base64 表現は、16LE でエンコードされた文字列である必要があります。
 
-次に例を示します。
+以下に例を示します。
 
 ```powershell
 $command = 'dir "c:\program files" '

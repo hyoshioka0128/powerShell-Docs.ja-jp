@@ -3,12 +3,12 @@ ms.date: 02/03/2020
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
 description: この記事では、Windows PowerShell 5.1 と PowerShell 6.0 の違いについてまとめます。
-ms.openlocfilehash: 7ed6e811b9136cb1c35422a9d682ba2bfaa136a0
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: b53365ee72e6a6e85faa56125a8aa7961d3ecc7f
+ms.sourcegitcommit: f9d855dd73b916559a22e337672dea3fbb11c634
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501696"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833778"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>PowerShell 6.x の破壊的変更
 
@@ -134,7 +134,7 @@ WMI ベースの 2 つのモジュール セットをサポートすることは
 
 ### <a name="-eventlog-cmdlets"></a>`*-EventLog` コマンドレット
 
-サポートされていない API を使用しているため、より優れたソリューションが提供されるまで、PowerShell Core から `*-EventLog` コマンドレットを削除しています 。 `Get-WinEvent` と `Create-WinEvent` を使用すると、Windows でイベントを取得および作成することができます。
+サポートされていない API を使用しているため、より優れたソリューションが提供されるまで、PowerShell Core から `*-EventLog` コマンドレットを削除しています 。 `Get-WinEvent` と `New-WinEvent` を使用すると、Windows でイベントを取得および作成することができます。
 
 ### <a name="cmdlets-that-use-wpf-removed"></a>WPF を使用するコマンドレットの削除
 
@@ -280,7 +280,7 @@ API がサポートされていないため、改善されたソリューショ�
 
 ### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036"></a>ブール値のパラメーターを使用する PowerShell スクリプトが正しく動作しない [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-以前は、 **powershell.exe** (現在は **pwsh.exe** ) で `-File` を使用して PowerShell スクリプトを実行する場合、`$true`/`$false` をパラメーター値として渡すことができませんでした。 解析された値としての `$true`/`$false` パラメーターのサポートが追加されました。 現在、ドキュメントに記載されている構文が機能しないため、スイッチの値もサポートされます。
+以前は、**powershell.exe** (現在は **pwsh.exe**) で `-File` を使用して PowerShell スクリプトを実行する場合、`$true`/`$false` をパラメーター値として渡すことができませんでした。 解析された値としての `$true`/`$false` パラメーターのサポートが追加されました。 現在、ドキュメントに記載されている構文が機能しないため、スイッチの値もサポートされます。
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027"></a> から `ClrVersion` プロパティを削除 `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 

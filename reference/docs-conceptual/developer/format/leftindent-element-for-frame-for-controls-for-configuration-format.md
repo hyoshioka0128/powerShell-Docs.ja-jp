@@ -1,12 +1,14 @@
 ---
-title: 構成用のコントロールのフレームの左インデント要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8de21173780047cb8af6bb76ea51c092b38d30a9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Configuration の Controls の Frame の LeftIndent 要素 (書式)
+description: Configuration の Controls の Frame の LeftIndent 要素 (書式)
+ms.openlocfilehash: 9a6b2832b8c06d4217e743a2a13958b883959b57
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783587"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667778"
 ---
 # <a name="leftindent-element-for-frame-for-controls-for-configuration-format"></a>Configuration の Controls の Frame の LeftIndent 要素 (書式)
 

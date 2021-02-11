@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
-title: ギャラリーの FileList 機能
-ms.openlocfilehash: 5f372c943c73fa8e1014657394e40eaedef5d045
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: ギャラリーの FileList 機能の使用方法
+description: ギャラリーの FileList 機能の使用方法
+ms.openlocfilehash: 45e39cb3f2620228be9ad16c2bb697f23642195d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328243"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662276"
 ---
 # <a name="filelist-feature-in-the-gallery"></a>ギャラリーの FileList 機能
 
@@ -18,6 +17,7 @@ ms.locfileid: "71328243"
 
 ## <a name="where-to-find-filelist"></a>FileList の見つけ方
 
-個々のパッケージのページに、FileList セクションと **[表示]** リンクがあります。 [表示] をクリックすると、パッケージに含まれているパッケージの完全リストが表示されます。
+個々のパッケージのページに、FileList セクションと **[表示]** リンクがあります。
+[表示] をクリックすると、パッケージに含まれているパッケージの完全リストが表示されます。
 
 サポートされているファイルの種類はハイパーリンクとして表示されます。ハイパーリンクをクリックすると、新しいページが開き、ファイル コンテンツが表示されます。PowerShell 構文が強調表示されます。 画面の上部にあるパッケージのタイトルまたはバージョンをクリックすると、パッケージ詳細ページに戻ります。

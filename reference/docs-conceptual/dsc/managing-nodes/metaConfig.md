@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ローカル構成マネージャーの構成
-ms.openlocfilehash: b4766157bca72a7c2bb385ab2255c9780846830a
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+description: ローカル構成マネージャー (LCM) は、ノードに送信された構成の解析と適用を担当する、DSC のエンジンです。
+ms.openlocfilehash: 73711536d419cd0305d541e3be23195ae6b91782
+ms.sourcegitcommit: 61765d08321623743dc5db5367160f6982fe7857
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837564"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97352690"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>ローカル構成マネージャーの構成
 
@@ -70,7 +71,7 @@ LCM 構成には、限定されたリソースのセットに対するブロッ�
 | DebugMode| string| 指定できる値は __None__、__ForceModuleImport__、および __All__ です。 <ul><li>キャッシュされたリソースを使用する場合は、__None__ に設定します。 これが既定値であり、運用シナリオではこの値を使う必要があります。</li><li>__ForceModuleImport__ に設定すると、以前に読み込まれ、キャッシュされた DSC リソース モジュールも LCM によって再読み込みされます。 これは、使用時に各モジュールが再読み込みされるため、DSC 操作のパフォーマンスに影響します。 通常、リソースのデバッグ中には、この値を使用します</li><li>このリリースでは、__All__ は、__ForceModuleImport__ と同じです。</li></ul> |
 | RebootNodeIfNeeded| [bool]| これを `$true` に設定して、リソースにより `$global:DSCMachineStatus` フラグを使用したノードが再起動されるようにします。 設定しない場合は、再起動が必要な構成のノードを手動で再起動する必要があります。 既定値は `$false` です。 DSC 以外 (Windows インストーラーなど) で再起動の条件が有効化されている場合にこの設定を使用するには、この設定を [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc) モジュールの __PendingReboot__ リソースと併用します。|
 | RefreshMode| string| LCM が構成を取得する方法を指定します。 指定できる値は、 __"Disabled"__ 、 __"Push"__ 、 __"Pull"__ です。 <ul><li>__Disabled__: このノードの DSC 構成が無効になります。</li><li> __Push__: [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを呼び出すことによって構成を開始します。 構成は、ノードにすぐに適用されます。 これが既定値です。</li><li>__Pull:__ プル サービスまたは SMB パスで構成を定期的にチェックするようにノードを構成します。 このプロパティを __Pull__ に設定する場合、__ConfigurationRepositoryWeb__ ブロックまたは __ConfigurationRepositoryShare__ ブロックで HTTP (サービス) または SMB (共有) パスを指定する必要があります。</li></ul>|
-| RefreshFrequencyMins| Uint32| LCM がプル サービスをチェックして最新の構成を取得する時間間隔 (分)。 この値は、LCM がプル モードで構成されていない場合は無視されます。 既定値は 30 です。|
+| RefreshFrequencyMins| Uint32| LCM がプル サービスをチェックして最新の構成を取得し、ドリフトがないかローカル構成を確認する時間間隔 (分)。 この構成は、更新プログラムがダウンロードされたかどうかに関係なく、適用されます。 この値は、LCM がプル モードで構成されていない場合は無視されます。 既定値は 30 です。|
 | ReportManagers| CimInstance[]| 互換性のために残されています。 プル サービスへデータをレポートするエンドポイントを定義するには、__ReportServerWeb__ ブロックを使用します。|
 | ResourceModuleManagers| CimInstance[]| 互換性のために残されています。 プル サービスの HTTP エンドポイントまたは SMB パスを定義するには、__ResourceRepositoryWeb__ ブロックまたは __ResourceRepositoryShare__ ブロックをそれぞれ使用します。|
 | PartialConfigurations| CimInstance| 実装されていません。 使用しないでください。|
@@ -83,6 +84,8 @@ LCM 構成には、限定されたリソースのセットに対するブロッ�
 > - コンピューターの再起動
 >
 > タイマー プロセスでクラッシュが発生するすべての状況で、それが 30 秒以内に検出され、サイクルが再開されます。 同時実行操作によって、サイクルの開始が遅延する可能性があり、この操作の期間が構成済みのサイクル頻度を超えた場合、次のタイマーは開始されません。 たとえば、メタ構成が 15 分のプル頻度で構成されており、プルが T1 で発生するとします。 ノードにより 16 分間で作業が完了されません。 最初の 15 分のサイクルは無視され、次のプルが T1 + 15 + 15 で発生します。
+>
+> プル シナリオの本来の意図は、`RefreshFrequencyMins` を `ConfigurationModeFrequencyMins` より長い時間に設定することでした。 構成のドリフトを回避するため、ローカル構成は主に `ConfigurationModeFrequencyMins` によって管理され、管理者が行う実際の構成変更を追跡記録する目的で `RefreshFrequencyMins` が使用されます。
 
 ## <a name="pull-service"></a>プル サービス
 

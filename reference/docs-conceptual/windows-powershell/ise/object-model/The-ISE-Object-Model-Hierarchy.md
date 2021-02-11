@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,コマンドレット
 title: ISE オブジェクト モデルの階層
-ms.openlocfilehash: 1ec5810fc5e7b765c2a08af83bce0415dd61a54b
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: この記事では、Windows PowerShell ISE の一部であるオブジェクトの階層について説明します。
+ms.openlocfilehash: 00980cda72f05bc6ccb398079b129de13a98f783
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809738"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658311"
 ---
 # <a name="the-ise-object-model-hierarchy"></a>ISE オブジェクト モデルの階層
 
-このトピックでは、Windows PowerShell Integrated Scripting Environment (ISE) の一部であるオブジェクトの階層について説明します。 Windows PowerShell ISE は、Windows PowerShell 3.0、4.0、5.1 に付属しています。 オブジェクトをクリックすると、そのオブジェクトを定義するクラスのリファレンス ドキュメントに移動します。
+この記事では、Windows PowerShell Integrated Scripting Environment (ISE) の一部であるオブジェクトの階層について説明します。 Windows PowerShell ISE は、Windows PowerShell 3.0、4.0、5.1 に付属しています。 オブジェクトをクリックすると、そのオブジェクトを定義するクラスのリファレンス ドキュメントに移動します。
 
 ## <a name="psise-object"></a>$psISE オブジェクト
 

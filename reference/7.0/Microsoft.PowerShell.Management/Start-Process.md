@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/03/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
-ms.openlocfilehash: 713a25bd09b7abc63a0f4974eb905a88c1d4c0e1
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: 8967f68e23a7b5447ce32f698bfe0cf1c44b9c9e
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93219064"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524708"
 ---
 # Start-Process
 
@@ -117,6 +117,19 @@ runasuser
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
+
+### 例 8: デタッチされたプロセスを Linux で作成する
+
+Windows では、は、 `Start-Process` 起動中のシェルとは無関係に実行される独立したプロセスを作成します。 Windows 以外のプラットフォームでは、新しく起動されたプロセスは、を起動したシェルにアタッチされます。 起動中のシェルを閉じると、子プロセスは終了します。
+
+Unix のようなプラットフォームで子プロセスを終了しないようにするには、とを組み合わせることができ `Start-Process` `nohup` ます。 次の例では、起動中のセッションを閉じた後でも、Linux で PowerShell のバックグラウンドインスタンスを起動して、そのままにします。 コマンドは、 `nohup` 現在のディレクトリ内のファイルの出力を収集し `nohup.out` ます。
+
+```powershell
+# Runs for 2 minutes and appends output to ./nohup.out
+Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
+```
+
+この例で `Start-Process` は、は、デタッチされ `nohup` `pwsh` たプロセスとして起動する Linux コマンドを実行しています。 詳細については、 [nohup](https://linux.die.net/man/1/nohup)の man ページを参照してください。
 
 ## PARAMETERS
 
@@ -367,7 +380,7 @@ Accept wildcard characters: False
 
 ### -WorkingDirectory
 
-新しいプロセスを開始する場所を指定します。 既定値は、開始する実行可能ファイルまたはドキュメントの場所です。 指定されたパスは、リテラルパスとして扱われます。 ワイルドカードはサポートされていません。 パス `'` 名にワイルドカードとして解釈される文字が含まれている場合は、パスを単一引用符 () で囲む必要があります。
+新しいプロセスを開始する場所を指定します。 既定値は、開始する実行可能ファイルまたはドキュメントの場所です。 ワイルドカードはサポートされていません。 パス名には、ワイルドカードとして解釈される文字を含めることはできません。
 
 ```yaml
 Type: System.String

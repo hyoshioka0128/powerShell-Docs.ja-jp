@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-script?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Script
-ms.openlocfilehash: dcbe4efc6c351ff404405ee469c91769f86fd0e6
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 443795160fcf5b11ffdc2d7d4e6f5d265b160002
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93215707"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892421"
 ---
 # Find-Script
 
@@ -453,6 +453,13 @@ Accept wildcard characters: False
 
 ## 注
 
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
+
 ## 関連リンク
 
 [Install-Script](Install-Script.md)
@@ -464,4 +471,3 @@ Accept wildcard characters: False
 [Uninstall-Script](Uninstall-Script.md)
 
 [Update-Script](Update-Script.md)
-

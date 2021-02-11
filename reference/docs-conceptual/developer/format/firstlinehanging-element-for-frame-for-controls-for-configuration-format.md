@@ -1,12 +1,14 @@
 ---
-title: 構成用のコントロールのフレームの FirstLineHanging 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6c0429a5caa5d20370acff72fa5707ed8cf7ad01
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Configuration の Controls の Frame の FirstLineHanging 要素 (書式)
+description: Configuration の Controls の Frame の FirstLineHanging 要素 (書式)
+ms.openlocfilehash: 94d59ef7b54e036f76e38a3b06b769700443b9fb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773744"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655236"
 ---
 # <a name="firstlinehanging-element-for-frame-for-controls-for-configuration-format"></a>Configuration の Controls の Frame の FirstLineHanging 要素 (書式)
 

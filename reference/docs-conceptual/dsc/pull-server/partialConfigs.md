@@ -2,16 +2,17 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell Desired State Configuration の部分構成
-ms.openlocfilehash: 842acad221d468ca5e4c9e660f0205c567bcc220
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC によって、複数のソースからフラグメントで構成を配信できます。 ターゲット ノード上の LCM によって、フラグメントがまとめられ、1 つの構成として適用されます。
+ms.openlocfilehash: 3afe5d684cabec9c8ab528347610b6dd00c5d4e9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500767"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661607"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration の部分構成
 
-_適用対象: Windows PowerShell 5.0 以降_
+> 適用先: Windows PowerShell 5.0 以降。
 
 PowerShell 5.0 では、Desired State Configuration (DSC) によって、複数のソースからフラグメントで構成を配信できます。 ターゲット ノード上のローカル構成マネージャー (LCM) によって、フラグメントがまとめられ、1 つの構成として適用されます。 この機能により、チームまたは個人間で構成の制御を共有できます。 たとえば、2 つ以上開発者のチームがサービスで共同作業を行っている場合、それぞれがサービスの自身の一部を管理する構成を作成する可能性があります。 これらの構成は、それぞれ異なるプル サーバーからプルされ、開発の異なる段階で追加される可能性があります。 部分構成では、1 つの構成ドキュメントの編集を調整することなく、さまざまな個人またはチームが構成ノードのさまざまな側面を制御することもできます。 たとえば、1 つのチームが VM とオペレーティング システムの展開を担当し、別のチームがその VM に別のアプリケーションとサービスを展開する場合があります。 部分構成を使用すると、各チームが、不必要に複雑になることなく、独自の構成を作成できます。
 
@@ -107,9 +108,9 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 
 ### <a name="configuring-the-lcm-for-pull-node-configurations"></a>プル ノード構成用の LCM の構成
 
-プル サーバーから部分構成をプルする LCM を構成するには、**ConfigurationRepositoryWeb** (HTTP プル サーバーの場合) または **ConfigurationRepositoryShare** (SMB プル サーバーの場合) ブロックのいずれかでプル サーバーを定義します。 その後、**ConfigurationSource** プロパティを使用して、プル サーバーを参照する **PartialConfiguration** ブロックを作成します。 また、LCM がプル モードを使用することを指定する **Settings** ブロックを作成し、プル サーバーとターゲット ノードで構成の識別に使用される **ConfigurationNames** または **ConfigurationID** を指定する必要もあります。 次のメタ構成では、CONTOSO-PullSrv という HTTP プル サーバーとこのプル サーバーを使用する 2 つの部分構成が定義されています。
+プル サーバーから部分構成をプルする LCM を構成するには、 **ConfigurationRepositoryWeb** (HTTP プル サーバーの場合) ブロックまたは **ConfigurationRepositoryShare** (SMB プル サーバーの場合) ブロックのいずれかでプル サーバーを定義します。 その後、 **ConfigurationSource** プロパティを使用して、プル サーバーを参照する **PartialConfiguration** ブロックを作成します。 また、LCM がプル モードを使用することを指定する **Settings** ブロックを作成し、プル サーバーとターゲット ノードで構成の識別に使用される **ConfigurationNames** または **ConfigurationID** を指定する必要もあります。 次のメタ構成では、CONTOSO-PullSrv という HTTP プル サーバーとこのプル サーバーを使用する 2 つの部分構成が定義されています。
 
-**ConfigurationNames** を使用した LCM の構成については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」をご覧ください。 **ConfigurationID** を使用した LCM の構成については、「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)」をご覧ください。
+**ConfigurationNames** を使用した LCM の構成については、「 [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」をご覧ください。 **ConfigurationID** を使用した LCM の構成については、「 [構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)」をご覧ください。
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>構成名を使用したプル モードの構成用の LCM の構成
 
@@ -189,20 +190,20 @@ PartialConfigDemo
 
 複数のプル サーバーから部分構成をプルすることができます。このためには、各プル サーバーを定義し、各 **PartialConfiguration** ブロックで適切なプル サーバーを参照することのみが必要となります。
 
-メタ構成を作成したら、実行して、構成ドキュメント (MOF ファイル) を作成し、[Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) を呼び出して LCM を構成する必要があります。
+メタ構成を作成したら、それを実行して構成ドキュメント (MOF ファイル) を作成し、[Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) を呼び出して LCM を構成する必要があります。
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>プル サーバーでの構成ドキュメントの名前付けおよび配置 (ConfigurationNames)
 
-部分構成ドキュメントは、プル サーバーの ** ファイルで **ConfigurationPath`web.config` として指定されたフォルダーに配置する必要があります (通常 `C:\Program
+部分構成ドキュメントは、プル サーバーの `web.config` ファイルで **ConfigurationPath** として指定されたフォルダーに配置する必要があります (通常 `C:\Program
 Files\WindowsPowerShell\DscService\Configuration`)。
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>PowerShell 5.1 のプル サーバーでの構成ドキュメントの名前付け
 
-個々のプル サーバーから部分構成を 1 つだけプルする場合、構成ドキュメントに任意の名前を付けることができます。 プル サーバーから複数の部分構成をプルする場合、構成ドキュメントの名前は `<ConfigurationName>.mof` (*ConfigurationName* は部分構成の名前)、または `<ConfigurationName>.<NodeName>.mof` (*ConfigurationName* は部分構成の名前、*NodeName* はターゲット ノードの名前) のどちらかにすることができます。 これにより、Azure Automation DSC プル サーバーから構成をプルすることができます。
+個々のプル サーバーから部分構成を 1 つだけプルする場合、構成ドキュメントに任意の名前を付けることができます。 プル サーバーから複数の部分構成をプルする場合、構成ドキュメントの名前は `<ConfigurationName>.mof` ( *ConfigurationName* は部分構成の名前)、または `<ConfigurationName>.<NodeName>.mof` ( *ConfigurationName* は部分構成の名前、 *NodeName* はターゲット ノードの名前) のどちらかにすることができます。 これにより、Azure Automation DSC プル サーバーから構成をプルすることができます。
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>PowerShell 5.0 のプル サーバーでの構成ドキュメントの名前付け
 
-構成ドキュメントは次のように名前を付ける必要があります。*ConfigurationName* が部分構成の名前である場合、`ConfigurationName.mof` です。 この例では、構成ドキュメントの名前は次のようになります。
+構成ドキュメントは次のように名前を付ける必要があります。 *ConfigurationName* が部分構成の名前である場合、`ConfigurationName.mof` です。 この例では、構成ドキュメントの名前は次のようになります。
 
 ```
 ServiceAccountConfig.mof
@@ -213,7 +214,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>プル サーバーでの構成ドキュメントの名前付けおよび配置 (ConfigurationID)
 
-部分構成ドキュメントは、プル サーバーの `web.config` ファイルで **ConfigurationPath** として指定されたフォルダーに配置する必要があります (通常 `C:\Program Files\WindowsPowerShell\DscService\Configuration`)。 構成ドキュメントの名前は `<ConfigurationName>.<ConfigurationID>.mof` のようになっている必要があります。_ConfigurationName_ は部分構成の名前であり、_ConfigurationID_ はターゲット ノードの LCM で定義されている構成 ID です。 この例では、構成ドキュメントの名前は次のようになります。
+部分構成ドキュメントは、プル サーバーの `web.config` ファイルで **ConfigurationPath** として指定されたフォルダーに配置する必要があります (通常 `C:\Program Files\WindowsPowerShell\DscService\Configuration`)。 構成ドキュメントの名前は `<ConfigurationName>.<ConfigurationID>.mof` のようになっている必要があります。 _ConfigurationName_ は部分構成の名前であり、 _ConfigurationID_ はターゲット ノードの LCM で定義されている構成 ID です。 この例では、構成ドキュメントの名前は次のようになります。
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof

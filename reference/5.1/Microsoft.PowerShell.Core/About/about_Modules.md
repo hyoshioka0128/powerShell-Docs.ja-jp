@@ -1,17 +1,16 @@
 ---
 description: PowerShell モジュールをインストール、インポート、および使用する方法について説明します。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 07/30/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Modules
-ms.openlocfilehash: 2668c722bfc7bb49517054767491a17a716a0720
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 30af4ed84e2332aecd60838f3bcd7741965c2ba1
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223440"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564341"
 ---
 # <a name="about-modules"></a>モジュールについて
 
@@ -20,7 +19,7 @@ PowerShell モジュールをインストール、インポート、および使
 
 ## <a name="long-description"></a>長い説明
 
-モジュールは、コマンドレット、プロバイダー、関数、ワークフロー、変数、エイリアスなどの PowerShell コマンドを含むパッケージです。
+モジュールは、コマンドレット、プロバイダー、関数、ワークフロー、変数、エイリアスなどの PowerShell メンバーを含むパッケージです。
 
 コマンドを記述するとき、モジュールを利用してコマンドを整理したり、他者と共有したりできます。 モジュールを受け取るユーザーは、モジュール内のコマンドを PowerShell セッションに追加し、組み込みコマンドと同じように使用できます。
 
@@ -28,13 +27,13 @@ PowerShell モジュールをインストール、インポート、および使
 
 ## <a name="what-is-a-module"></a>モジュールとは
 
-モジュールとはコマンドのパッケージです。 セッション内のすべてのコマンドレットとプロバイダーは、モジュールまたはスナップインによって追加されます。
+モジュールは、コマンドレット、プロバイダー、関数、ワークフロー、変数、エイリアスなどの PowerShell メンバーを含むパッケージです。 このパッケージのメンバーは、PowerShell スクリプト、コンパイルされた DLL、またはその両方の組み合わせで実装できます。 これらのファイルは通常、1つのディレクトリにまとめられます。 詳細については、SDK ドキュメントの「 [Windows PowerShell モジュールについ](/powershell/scripting/developer/module/understanding-a-windows-powershell-module) て」を参照してください。
 
 ## <a name="module-auto-loading"></a>モジュールの自動読み込み
 
 PowerShell 3.0 以降では、インストールされているモジュールで任意のコマンドを初めて実行したときに、PowerShell は自動的にモジュールをインポートします。 今後は設定やプロファイル構成なしでモジュールのコマンドを使用できます。そのため、コンピューターにモジュールをインストールした後はモジュールを管理する必要がありません。
 
-また、モジュールのコマンドが見つけやすくなりました。 コマンド `Get-Command` レットは、インストールされているすべてのモジュールのすべてのコマンドを取得するようになりました。まだセッションに含まれていない場合でも、コマンドを見つけて、インポートせずに使用することができます。
+また、モジュールのコマンドが見つけやすくなりました。 `Get-Command`コマンドレットは、インストールされているすべてのモジュールのすべてのコマンドを取得するようになりました。セッションにまだ含まれていない場合でも同様です。 最初にモジュールをインポートしなくても、コマンドを見つけて使用することができます。
 
 次の各例では、を含む CimCmdlets モジュールが `Get-CimInstance` セッションにインポートされます。
 
@@ -238,7 +237,7 @@ Remove-Module BitsTransfer
   > [!NOTE]
   > 次のコマンドを使用して、 **ドキュメント** フォルダーの場所を確認でき `[Environment]::GetFolderPath('MyDocuments')` ます。
 
-- **AllUsers** の場所は `$env:PROGRAMFILES\WindowsPowerShell\Modules` Windows 上にあります。
+- **AllUsers** の場所は `$env:PROGRAMFILES\PowerShell\Modules` Windows 上にあります。 Linux または Mac では、モジュールはに格納され `/usr/local/share/powershell/Modules` ます。
 
 > [!NOTE]
 > ディレクトリ内のファイルを追加または変更するには、 `$env:Windir\System32` [ **管理者として実行** ] オプションを使用して PowerShell を起動します。
@@ -269,7 +268,7 @@ $Env:PSModulePath + ";C:\ps-test\Modules"
 
 設定した値は現在のセッションのみに影響します。 変更を永続化するには、PowerShell プロファイルにコマンドを追加するか、コントロールパネルの [システム] を使用して、レジストリの **PSModulePath** 環境変数の値を変更します。
 
-また、変更を永続化するために、SetEnvironmentVariable クラスの **SetEnvironmentVariable** メソッドを使用して、 **PSModulePath** 環境変数にパスを追加することもでき **ます。**
+また、変更を永続化するために、SetEnvironmentVariable クラスのメソッドを使用して、 **PSModulePath** 環境変数にパスを追加することもでき **ます。**
 
 **PSModulePath** 変数の詳細については、「 [about_Environment_Variables](about_Environment_Variables.md)」を参照してください。
 
@@ -293,7 +292,7 @@ $Env:PSModulePath + ";C:\ps-test\Modules"
 
 名前の競合を回避するには、コマンドレットの **NoClobber** パラメーターまたは **Prefix** パラメーターを使用し `Import-Module` ます。 **Prefix** パラメーターは、インポートされたコマンドの名前にプレフィックスを追加して、セッション内で一意になるようにします。 **NoClobber** パラメーターでは、セッションの既存のコマンドを非表示にしたり、置き換えたりするコマンドはインポートされません。
 
-また、の **Alias** 、 **コマンドレット** 、 **関数** 、および **Variable** パラメーターを使用して、 `Import-Module` インポートするコマンドだけを選択したり、セッションで名前の競合を引き起こすコマンドを除外したりすることもできます。
+また、の **Alias**、 **コマンドレット**、 **関数**、および **Variable** パラメーターを使用して、 `Import-Module` インポートするコマンドだけを選択したり、セッションで名前の競合を引き起こすコマンドを除外したりすることもできます。
 
 モジュールの作成者は、モジュールマニフェストの **Defaultcommandprefix** プロパティを使用して、すべてのコマンド名に既定のプレフィックスを追加することで、名前の競合を防ぐことができます。
 **Prefix** パラメーターの値は、 **defaultcommandprefix** の値よりも優先されます。

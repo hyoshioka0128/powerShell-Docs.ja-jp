@@ -1,12 +1,14 @@
 ---
-title: WideControl の WideItem の PropertyName 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7728f960a67faa99eaafb4a4934674e119b8af27
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl の WideItem の PropertyName 要素 (書式)
+description: WideControl の WideItem の PropertyName 要素 (書式)
+ms.openlocfilehash: 1d4d5eaf7708dfbd7997122fac156a36487538ea
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780476"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665619"
 ---
 # <a name="propertyname-element-for-wideitem-for-widecontrol-format"></a>WideControl の WideItem の PropertyName 要素 (書式)
 
@@ -44,11 +46,11 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-ワイドビューのコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
+ワイドビューのコンポーネントの詳細については、「 [ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-この例[は、ProcessName オブジェクトの](/dotnet/api/System.Diagnostics.Process)プロパティの値を表示するワイドビューを示しています。
+この例 [は、ProcessName オブジェクトの](/dotnet/api/System.Diagnostics.Process) プロパティの値を表示するワイドビューを示しています。
 
 ```xml
 View>

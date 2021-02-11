@@ -1,12 +1,14 @@
 ---
-title: Expand 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: deee832254bb8a774ee2c1f5bd451d3ced1bd47a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Expand 要素 (書式)
+description: Expand 要素 (書式)
+ms.openlocfilehash: 518e132e3e74b921d4e51966fc60088a22ef63f1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783655"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667948"
 ---
 # <a name="expand-element-format"></a>Expand 要素 (書式)
 
@@ -50,7 +52,7 @@ Configuration 要素 (Format) DefaultSettings 要素 (Format) 列挙 Ableexpand 
 
 ## <a name="remarks"></a>解説
 
-この要素は、コレクションオブジェクトとコレクション内のオブジェクトをどのように表示するかを定義するために使用されます。 この場合、コレクションオブジェクト**は、system.string インターフェイスを**サポートする任意のオブジェクトを参照します。
+この要素は、コレクションオブジェクトとコレクション内のオブジェクトをどのように表示するかを定義するために使用されます。 この場合、コレクションオブジェクト  **は、system.string インターフェイスを** サポートする任意のオブジェクトを参照します。
 
 既定の動作では、コレクション内のオブジェクトのプロパティのみが表示されます。
 

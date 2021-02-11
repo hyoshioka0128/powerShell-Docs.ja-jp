@@ -1,12 +1,14 @@
 ---
-title: WideControl の WideItem 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6b2f7c97978c20350caeec894589c5995ae7ccc4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl の WideItem 要素 (書式)
+description: WideControl の WideItem 要素 (書式)
+ms.openlocfilehash: b9c416bbe3befcd689b8a2c0b72a8ff1301b9659
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779898"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647807"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>WideControl の WideItem 要素 (書式)
 

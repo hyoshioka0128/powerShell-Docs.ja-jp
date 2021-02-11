@@ -1,12 +1,14 @@
 ---
-title: GetProcessSample03 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 09df93792ab611e167279bc35755d8d6c28e7cf3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProcessSample03 サンプル
+description: GetProcessSample03 サンプル
+ms.openlocfilehash: 7827247238f3dad2018b55e396b73d1fa434eb97
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784216"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660714"
 ---
 # <a name="getprocesssample03-sample"></a>GetProcessSample03 サンプル
 
@@ -40,7 +42,7 @@ ms.locfileid: "87784216"
 
     `get-proc`
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -60,7 +62,7 @@ ms.locfileid: "87784216"
 
 ## <a name="example"></a>例
 
-このサンプルでは、パイプラインからの入力を受け入れるパラメーターを含む、Get Proc コマンドレットの実装を示し `Name` ます。
+このサンプルでは、パイプラインからの入力を受け付けるパラメーターを含む Get-Proc コマンドレットの実装を示し `Name` ます。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

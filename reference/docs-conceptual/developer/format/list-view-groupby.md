@@ -1,16 +1,18 @@
 ---
-title: リストビュー (GroupBy) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7956d13e196454a3f6da185e9be74f9d3cb8ef63
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: リスト ビュー (グループ別)
+description: リスト ビュー (グループ別)
+ms.openlocfilehash: e039c38d1e4e93f65a508fe60aaaf35c64ebe2ed
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773404"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666622"
 ---
 # <a name="list-view-groupby"></a>リスト ビュー (グループ別)
 
-この例では、リストの行をグループに分割するリストビューを実装する方法を示します。 このリストビューには、Servicecontroller のプロパティが表示されます。 [Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) [Get Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service)コマンドレットによって返される Fullname オブジェクト。 リストビューのコンポーネントの詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
+この例では、リストの行をグループに分割するリストビューを実装する方法を示します。 このリストビューには、Servicecontroller のプロパティが表示されます。 [Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) [Get Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) コマンドレットによって返される Fullname オブジェクト。 リストビューのコンポーネントの詳細については、「 [リストビューの作成](./creating-a-list-view.md)」を参照してください。
 
 ### <a name="to-load-this-formatting-file"></a>この書式設定ファイルを読み込むには
 
@@ -27,21 +29,21 @@ ms.locfileid: "87773404"
 
 この書式設定ファイルは、次の XML 要素を示しています。
 
-- ビューの[Name](./name-element-for-view-format.md)要素。
+- ビューの [Name](./name-element-for-view-format.md) 要素。
 
-- ビューによって表示されるオブジェクトを定義する[Viewselectedby](./viewselectedby-element-format.md)要素。
+- ビューによって表示されるオブジェクトを定義する [Viewselectedby](./viewselectedby-element-format.md) 要素。
 
-- オブジェクトの新しいグループをどのように表示するかを定義する[GroupBy](./viewselectedby-element-format.md)要素。
+- オブジェクトの新しいグループをどのように表示するかを定義する [GroupBy](./viewselectedby-element-format.md) 要素。
 
-- ビューによって表示されるプロパティを定義する[ListControl](./listcontrol-element-format.md)要素。
+- ビューによって表示されるプロパティを定義する [ListControl](./listcontrol-element-format.md) 要素。
 
-- リストビューの行に表示される内容を定義する[ListItem](./listitem-element-for-listitems-for-listcontrol-format.md)要素。
+- リストビューの行に表示される内容を定義する [ListItem](./listitem-element-for-listitems-for-listcontrol-format.md) 要素。
 
-- 表示されるプロパティを定義する[PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md)要素。
+- 表示されるプロパティを定義する [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md) 要素。
 
 ## <a name="example"></a>例
 
-次の XML は、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController.Status)プロパティの値が変更されるたびに新しいグループを開始するリストビューを定義します。 各グループが開始されると、プロパティの新しい値を含むカスタムラベルが表示されます。
+次の XML は、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController.Status) プロパティの値が変更されるたびに新しいグループを開始するリストビューを定義します。 各グループが開始されると、プロパティの新しい値を含むカスタムラベルが表示されます。
 
 ```xml
 <Configuration>
@@ -77,7 +79,7 @@ ms.locfileid: "87773404"
 </Configuration>
 ```
 
-次の例は、Windows PowerShell で Servicecontroller を表示する方法を示しています。 [Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトこのフォーマットファイルが読み込まれた後。 グループラベルの前後に追加された空白行は、Windows PowerShell によって自動的に追加されます。
+次の例は、Windows PowerShell で Servicecontroller を表示する方法を示しています。 [Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController) オブジェクトこのフォーマットファイルが読み込まれた後。 グループラベルの前後に追加された空白行は、Windows PowerShell によって自動的に追加されます。
 
 ```powershell
 Get-Service f*

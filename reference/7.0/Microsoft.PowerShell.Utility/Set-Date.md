@@ -7,12 +7,12 @@ ms.date: 4/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-date?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Date
-ms.openlocfilehash: 5999dfbba27a8eedbc054edee3ca2b1061dd2adc
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: a1d15dfcbafba2d3f4853b6bcc59e787a022a3ed
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93209915"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390152"
 ---
 # Set-Date
 
@@ -131,12 +131,9 @@ Accept wildcard characters: False
 
 日付と時刻の要素を表示するかどうかを指定します。このパラメーターに指定できる値は次のとおりです。
 
-- 日付
-  日付のみを表示します。
-- 時間。
-  時刻のみを表示します。
-- [DateTime]。
-  日付と時刻が表示されます。
+- **日付** -日付のみを表示します。
+- **時間** -時刻のみを表示します。
+- **DateTime** -日付と時刻を表示します。
 
 このパラメーターは、表示のみに影響します。
 を取得する **DateTime** オブジェクトには影響しません `Get-Date` 。
@@ -208,10 +205,10 @@ Accept wildcard characters: False
 - コンピューターの日付と時刻を変更する場合は、このコマンドレットを使用します。 変更によって、コンピューターが、日付または時刻に基づいてトリガーされるシステム全体のイベントと更新を受信できなくなる可能性があります。 エラーを回避するには、 **WhatIf** パラメーターと **Confirm** パラメーターを使用します。
 - **DateTime** **TimeSpan** `Set-Date` **AddDays** 、 **addmonths** 、 **Fromfiletime** など、で使用される DateTime および TimeSpan オブジェクトと共に、標準の .net メソッドを使用できます。 詳細については、「 [DateTime メソッド](/dotnet/api/system.datetime) 」と「」を参照してください。
 
-  MSDN ライブラリの[TimeSpan メソッド](/dotnet/api/system.timespan)。
+  .NET SDK の[TimeSpan メソッド](/dotnet/api/system.timespan)。
 
 ## 関連リンク
 
-[Get-Date](Get-Date.md)
+[取得-日付](Get-Date.md)
 
 [New-TimeSpan](New-TimeSpan.md)

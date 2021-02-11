@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-HotFix
-ms.openlocfilehash: e73382da05268af278b280d69cbea0687304fb5e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 15aca668be08324f17a2a737214ede309370adf1
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93217888"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342129"
 ---
 # Get-HotFix
 
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 
 ## 入力
 
-### String
+### 文字列型
 
 パイプを使用して1つまたは複数のコンピューター名を修正することができます。
 
@@ -183,6 +183,8 @@ Accept wildcard characters: False
 `Get-HotFix` コンピューター上の修正プログラムを表すオブジェクトを返します。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 **Win32_QuickFixEngineering** [WMI クラス](/windows/desktop/WmiSdk/retrieving-a-class)は、現在のオペレーティングシステムに適用される、通常はクイック修正エンジニアリング (QFE) の更新と呼ばれる、システム全体の小さな更新プログラムを表します。 このクラスは、コンポーネントベースのサービス (CBS) によって提供される更新プログラムのみを返します。 これらの更新プログラムは、レジストリには記載されていません。 Microsoft Windows インストーラー (MSI) または [Windows Update](https://update.microsoft.com) サイトによって提供される更新プログラムは **Win32_QuickFixEngineering** によって返されません。 詳細については、「 [Win32_QuickFixEngineering クラス](/windows/desktop/CIMWin32Prov/win32-quickfixengineering)」を参照してください。
 

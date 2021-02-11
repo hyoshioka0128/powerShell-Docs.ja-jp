@@ -5,12 +5,12 @@ ms.date: 04/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: 数値リテラルについて
-ms.openlocfilehash: 8e26e8c67b1acadc75a67cd51bd6adb07fb7daf3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f9d23a37c06c8285c23328ea8ddcebf8d6caae9e
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93220984"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354730"
 ---
 # <a name="about-numeric-literals"></a>数値リテラルについて
 
@@ -23,7 +23,7 @@ ms.locfileid: "93220984"
 
 整数リテラルには、型サフィックスと乗数サフィックスを含めることができます。
 
-| サフィックス |            説明             |          注意           |
+| サフィックス |            意味             |          メモ           |
 | ------ | ------------------------------ | ----------------------- |
 | ○      | 符号付きバイトデータ型          | PowerShell 6.2 で追加 |
 | uy     | unsigned byte データ型        | PowerShell 6.2 で追加 |
@@ -63,7 +63,7 @@ ms.locfileid: "93220984"
 
 実際のリテラルは、型サフィックスと乗数サフィックスを持つことができます。
 
-| サフィックス |       説明       |
+| サフィックス |       意味       |
 | ------ | ------------------- |
 | d      | decimal データ型   |
 | kb     | キロバイト乗数 |
@@ -112,7 +112,7 @@ PS> 0x12Lpb
 
 PowerShell では、次の種類のアクセラレータがサポートされています。
 
-| アクセラレータ |         注意         |           説明            |
+| アクセラレータ |         メモ         |           [説明]            |
 | ----------- | -------------------- | -------------------------------- |
 | `[byte]`    |                      | バイト (符号なし)                  |
 | `[sbyte]`   |                      | バイト (符号付き)                    |
@@ -141,11 +141,11 @@ PowerShell では、次の種類のアクセラレータがサポートされて
 
 次の表は、数値リテラルの例をいくつか示し、その型と値を示しています。
 
-|   Number     |  種類      |    値     |
+|   Number     |  Type      |    値     |
 | -----------: | ---------- | -----------: |
 |         100  | Int32      |          100 |
 |        100u  | UInt32     |          100 |
-|        100D  | Decimal (10 進数型)    |          100 |
+|        100D  | Decimal    |          100 |
 |        100l  | Int64      |          100 |
 |       100uL  | UInt64     |          100 |
 |       100us  | UInt16     |          100 |
@@ -156,7 +156,7 @@ PowerShell では、次の種類のアクセラレータがサポートされて
 |       0x1e2  | Int32      |          482 |
 |      0x1e2L  | Int64      |          482 |
 |      0x1e2D  | Int32      |         7725 |
-|        482D  | Decimal (10 進数型)    |          482 |
+|        482D  | Decimal    |          482 |
 |       48 gb  | Int64      | 517543559168 |
 |       482ngb | BigInteger | 517543559168 |
 |    0x1e2lgb  | Int64      | 517543559168 |
@@ -175,7 +175,7 @@ PowerShell では、次の種類のアクセラレータがサポートされて
 バイナリリテラルと16進数リテラルに符号なしサフィックスを指定すると、符号ビットが無視されます。 たとえば、はを `0xFFFFFFFF` 返し `-1` ますが、は `0xFFFFFFFFu` 4294967295 のを返し `[uint]::MaxValue` ます。
 
 リテラルにプレフィックスとしてを指定する `0` と、これは無視され、符号なしとして扱われます。
-(例: `0b011111111`)。 これは、 `[bigint]` `u` とのサフィックスを組み合わせることができないため、範囲内のリテラルを使用する場合に必要になることがあり `n` ます。
+例: `0b011111111`。 これは、 `[bigint]` `u` とのサフィックスを組み合わせることができないため、範囲内のリテラルを使用する場合に必要になることがあり `n` ます。
 
 プレフィックスを使用して、バイナリリテラルと16進リテラルを否定することもでき `-` ます。 符号ビットが許可されるため、これにより正の数値が返される場合があります。
 
@@ -291,4 +291,4 @@ PS> 111111111111111111111111111111111111111111111111111111n
 また、との間の値は、 `[ulong]::MaxValue` `[decimal]::MaxValue` `D` 精度を維持するために、小数点のサフィックスを使用して指定する必要があります。 サフィックスがない場合、これらの値は `[Double]` 実際の解析モードを使用して解析されます。
 
 <!-- reference links -->
-[bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
+[bigint]: /dotnet/api/system.numerics.biginteger

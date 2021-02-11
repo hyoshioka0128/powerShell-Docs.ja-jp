@@ -6,22 +6,22 @@ ms.date: 02/10/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: PSReadLine について
-ms.openlocfilehash: 890f8e92172f2d492b6b817b558d4f25c70e8949
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f5ae99a7c8bdae82372423a3e4d8261d95ab83d5
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93220547"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94692209"
 ---
 # <a name="psreadline"></a>PSReadLine
 
 ## <a name="about_psreadline"></a>about_PSReadLine
 
-## <a name="short-description"></a>概要
+## <a name="short-description"></a>簡単な説明
 
 PSReadLine では、PowerShell コンソールでのコマンドライン編集エクスペリエンスが向上しています。
 
-## <a name="long-description"></a>詳細説明
+## <a name="long-description"></a>長い説明
 
 PSReadLine 2.0 では、PowerShell コンソールの強力なコマンドライン編集エクスペリエンスが提供されます。 次の機能を提供します。
 
@@ -35,10 +35,10 @@ PSReadLine 2.0 では、PowerShell コンソールの強力なコマンドライ
 - Emacs yank/kill-リング
 - PowerShell トークンベースの "word" の移動と強制終了
 
-クラス **[PSConsoleReadLine]** では、次の関数を使用できます。
-
 > [!NOTE]
 > PowerShell 7.0 以降では、スクリーンリーダープログラムが検出されると、PowerShell は Windows で PSReadLine の自動読み込みをスキップします。 現在、PSReadLine は、スクリーンリーダーではうまく機能しません。 Windows での PowerShell 7.0 の既定の表示と書式設定は正常に機能します。 必要に応じて、モジュールを手動で読み込むことができます。
+
+クラス **[PSConsoleReadLine]** では、次の関数を使用できます。
 
 ## <a name="basic-editing-functions"></a>基本的な編集関数
 
@@ -129,7 +129,7 @@ Like BackwardKillLine-行の先頭から先頭までのテキストを削除し�
 - コマンド: `<Ctrl+c>`
 - .Emacs `<Ctrl+c>`
 
-### <a name="cut"></a>切り取り
+### <a name="cut"></a>［切り取り］
 
 削除されたテキストをシステムクリップボードに配置した、選択した領域を削除します。
 
@@ -1287,11 +1287,7 @@ bool TryGetArgAsInt(System.Object arg, [ref] int numericArg,
   [ref]$numericArg, 1)
 ```
 
-## <a name="note"></a>注
-
-### <a name="powershell-compatibility"></a>POWERSHELL の互換性
-
-PSReadLine には、PowerShell 3.0 以降とコンソールホストが必要です。 PowerShell ISE では機能しません。 これは Visual Studio Code のコンソールで機能します。
+## <a name="note"></a>注意
 
 ### <a name="command-history"></a>コマンド履歴
 
@@ -1303,6 +1299,6 @@ PSReadLine は、コマンドラインから入力したすべてのコマンド
 
 プル要求を送信したり、GitHub ページでフィードバックを送信したりしてもかまいません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 PSReadLine は、GNU [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) ライブラリの影響を強く受けます。

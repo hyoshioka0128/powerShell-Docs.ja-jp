@@ -1,12 +1,14 @@
 ---
-title: WideControl の WideEntry 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 13dd1f6ad7ac1e9d8d0524f0a0f18fe80ffaf8e2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl の WideEntry 要素 (書式)
+description: WideControl の WideEntry 要素 (書式)
+ms.openlocfilehash: 3faaf767d11914792effd6765beed956a502c642
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780017"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664555"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>WideControl の WideEntry 要素 (書式)
 
@@ -46,7 +48,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-ワイドビューは、オブジェクトごとに1つのプロパティ値またはスクリプト値を表示するリスト形式です。 他の種類のビューとは異なり、各ビュー定義に指定できる項目要素は1つだけです。 ワイドビューのその他のコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
+ワイドビューは、オブジェクトごとに1つのプロパティ値またはスクリプト値を表示するリスト形式です。 他の種類のビューとは異なり、各ビュー定義に指定できる項目要素は1つだけです。 ワイドビューのその他のコンポーネントの詳細については、「 [ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 

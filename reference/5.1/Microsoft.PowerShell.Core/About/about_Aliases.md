@@ -6,17 +6,16 @@ ms.date: 11/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Aliases
-ms.openlocfilehash: 41f39535b9b9dda91042847c1b5b8332ada27697
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 827fceb9169882bf082c46e25c690f8a56eb5cba
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223016"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386990"
 ---
 # <a name="about-aliases"></a>エイリアスについて
 
 ## <a name="short-description"></a>概要
-
 PowerShell のコマンドレットとコマンドに代替名を使用する方法について説明します。
 
 ## <a name="long-description"></a>詳細説明
@@ -172,7 +171,7 @@ Get-Help about_Functions
 
 ## <a name="alias-objects"></a>エイリアスオブジェクト
 
-PowerShell エイリアスは、system.string クラスのインスタンスであるオブジェクトによって表されます。 この種類のオブジェクトの詳細については、Microsoft Developer Network (MSDN) ライブラリの「 [エイリアス情報クラス][aliasinfo] 」を参照してください。
+PowerShell エイリアスは、system.string クラスのインスタンスであるオブジェクトによって表されます。 この種類のオブジェクトの詳細については、PowerShell SDK の「 [エイリアス情報クラス][aliasinfo] 」を参照してください。
 
 エイリアスオブジェクトのプロパティとメソッドを表示するには、エイリアスを取得します。
 次に、パイプを Get-Member コマンドレットに渡します。 次に例を示します。

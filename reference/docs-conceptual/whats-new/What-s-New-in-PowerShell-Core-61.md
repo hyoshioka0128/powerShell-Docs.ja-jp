@@ -2,41 +2,41 @@
 title: PowerShell Core 6.1 の新機能
 description: PowerShell Core 6.1 でリリースされた新機能と変更
 ms.date: 09/13/2018
-ms.openlocfilehash: 16159059285f89c2ddd85b506b0920f0aa8748ae
-ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
+ms.openlocfilehash: 4ff70be239197c7a4f64019d2aab42433f82f36c
+ms.sourcegitcommit: f9d855dd73b916559a22e337672dea3fbb11c634
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846917"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833822"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 の新機能
 
 以下では、PowerShell Core 6.1 で導入された主要な新機能と変更点からいくつか選んで説明します。
 
-PowerShell をさらに速く安定したものにする**数多くの** "細かな新機能と変更" (それに多数のバグ修正) が他にもあります。 すべての変更点のリストについては、[GitHub の変更ログ](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)に関するページを確認してください。
+PowerShell をさらに速く安定したものにする **数多くの** "細かな新機能と変更" (それに多数のバグ修正) が他にもあります。 すべての変更点のリストについては、[GitHub の変更ログ](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)に関するページを確認してください。
 
 以下では何人かの名前を挙げていますが、このリリースを可能にしてくれた[コミュニティのすべての共同作成者](https://github.com/PowerShell/PowerShell/graphs/contributors)に感謝します。
 
 ## <a name="net-core-21"></a>.NET Core 2.1
 
-PowerShell Core 6.1 は [5 月のリリース](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/)後に .NET Core 2.1 に移行し、次のようないくつかの機能強化が行われました。
+PowerShell Core 6.1 は [5 月のリリース](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-1/)後に .NET Core 2.1 に移行し、次のようないくつかの機能強化が行われました。
 
 - パフォーマンスの向上 ([後述](#performance-improvements)を参照)
 - Alpine Linux のサポート (プレビュー)
 - [.NET グローバル ツールのサポート](/dotnet/core/tools/global-tools) - PowerShell では近日対応
-- [`Span<T>`](/dotnet/api/system.span-1?view=netcore-2.1)
+- [`Span<T>`](/dotnet/api/system.span-1)
 
 ## <a name="windows-compatibility-pack-for-net-core"></a>.NET Core 用の Windows 互換機能パック
 
-Windows の .NET チームが [.NET Core 用の Windows 互換機能パック](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/)を出荷しました。これは、削除された API を Windows の .NET Core に追加して戻すアセンブリのセットです。
+Windows の .NET チームが [.NET Core 用の Windows 互換機能パック](https://devblogs.microsoft.com/dotnet/announcing-the-windows-compatibility-pack-for-net-core/)を出荷しました。これは、削除された API を Windows の .NET Core に追加して戻すアセンブリのセットです。
 
 この Windows 互換機能パックを PowerShell Core 6.1 リリースに追加し、これらの API を使用するモジュールまたはスクリプトがそれらに依存できるようにしました。
 
-Windows 互換機能パックにより、PowerShell Core では **Windows 10 October 2018 Update および Windows Server 2019 に付属する 1900 を超えるコマンドレット**を使用できます。
+Windows 互換機能パックにより、PowerShell Core では **Windows 10 October 2018 Update および Windows Server 2019 に付属する 1900 を超えるコマンドレット** を使用できます。
 
 ## <a name="support-for-application-allow-lists"></a>アプリケーション許可リストのサポート
 
-PowerShell Core 6.1 では、Windows PowerShell 5.1 と同じように、[AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) および [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) のアプリケーション許可リストがサポートされています。 アプリケーション許可リストを使用すると、PowerShell の[制約付き言語モード](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)で実行できるバイナリを細かく制御できます。
+PowerShell Core 6.1 では、Windows PowerShell 5.1 と同じように、[AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) および [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) のアプリケーション許可リストがサポートされています。 アプリケーション許可リストを使用すると、PowerShell の[制約付き言語モード](https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/)で実行できるバイナリを細かく制御できます。
 
 ## <a name="performance-improvements"></a>パフォーマンスの向上
 

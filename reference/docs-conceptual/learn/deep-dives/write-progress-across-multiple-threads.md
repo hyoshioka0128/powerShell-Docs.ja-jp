@@ -3,10 +3,10 @@ title: マルチスレッド処理中の進行状況の表示
 description: Foreach-Object -Parallel を用いて複数のスレッド間で Write-Progress を使用する方法
 ms.date: 08/02/2020
 ms.openlocfilehash: 909fc1bbdeded8845b1955e3384fb55db7173030
-ms.sourcegitcommit: 640646992955116def23d16dd12c221857d37b68
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "89410844"
 ---
 # <a name="writing-progress-across-multiple-threads-with-foreach-parallel"></a>Foreach Parallel を使用した複数のスレッド間での進行状況の書き込み
@@ -127,7 +127,7 @@ while($job.State -eq 'Running')
 }
 ```
 
-`$job` 変数には親**ジョブ**が含まれており、モック プロセスごとに子**ジョブ**が存在します。 子ジョブがまだ実行されている間、親ジョブの **State** は "Running" のままになります。 これにより、すべてのプロセスが完了するまで、`while` ループを使用してすべてのプロセスの進行状況を継続的に更新できます。
+`$job` 変数には親 **ジョブ** が含まれており、モック プロセスごとに子 **ジョブ** が存在します。 子ジョブがまだ実行されている間、親ジョブの **State** は "Running" のままになります。 これにより、すべてのプロセスが完了するまで、`while` ループを使用してすべてのプロセスの進行状況を継続的に更新できます。
 
 while ループ内で、`$sync` 変数内の各キーをループ処理します。 これは同期されたハッシュテーブルであるため、常に更新されますが、依然としてエラーがスローされることなくアクセスすることができます。
 

@@ -7,12 +7,12 @@ ms.date: 04/03/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/save-package?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Package
-ms.openlocfilehash: c8d6015edebdc649b80e7a48080aa8b96d97fd8d
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 1b780ad8c28c6c7095012fd75ed4dfa31d761b08
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93213275"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889996"
 ---
 # Save-Package
 
@@ -321,7 +321,7 @@ Accept wildcard characters: False
 
 ### -ForceBootstrap
 
-が、 `Save-Package` 指定 **PackageManagement** されたパッケージのパッケージプロバイダーを自動的にインストールすることを指定します。
+が、 `Save-Package` 指定されたパッケージのパッケージプロバイダーを自動的にインストールすることを指定します。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -719,6 +719,13 @@ Accept wildcard characters: False
 ### このコマンドレットは出力を生成しません。
 
 ## 注
+
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
 
 ## 関連リンク
 

@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/29/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
-ms.openlocfilehash: 16dc25e3468eaf3126b3286cfd71bfea9627c015
-ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
+ms.openlocfilehash: 09995397e33bf3fa1facc4137f4517390d69b78e
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "93220128"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620175"
 ---
 # Out-String
 
-## 概要
+## 構文
 入力オブジェクトを文字列として出力します。
 
-## SYNTAX
+## 構文
 
 ### None Wline書式設定 (既定)
 
@@ -33,11 +33,11 @@ Out-String [-Width <Int32>] [-NoNewline] [-InputObject <PSObject>] [<CommonParam
 Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
 `Out-String`コマンドレットは、入力オブジェクトを文字列に変換します。 既定では、は `Out-String` 文字列を累積して1つの文字列として返しますが、 **Stream** パラメーターを使用して `Out-String` 、一度に1行を返すように指示したり、文字列の配列を作成したりすることができます。 オブジェクトを簡単に操作できないときに、このコマンドレットを使用すると、従来のシェルで行う場合と同じように文字列出力を検索して操作することができます。
 
-## 例
+## 使用例
 
 ### 例 1: 現在のカルチャを取得し、データを文字列に変換する
 
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ### -ストリーム
 
-コマンドレットが入力オブジェクトの各行に対して個別の文字列を送信することを示します。 既定では、各オブジェクトのための文字列が蓄積されて 1 つの文字列として送信されます。
+既定では、は、 `Out-String` 空のヘッダーや末尾の改行を含めて、コンソールに表示されるように書式設定された1つの文字列を出力します。 **Stream** パラメーターを使用すると、で各行を1つずつ `Out-String` 出力できます。 唯一の例外は複数行文字列です。 その場合で `Out-String` も、は文字列を単一の複数行文字列として出力します。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -221,4 +221,3 @@ Accept wildcard characters: False
 [Out-GridView](Out-GridView.md)
 
 [Out-Printer](Out-Printer.md)
-

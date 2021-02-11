@@ -1,12 +1,14 @@
 ---
-title: WideEntry (Format) の EntrySelectedBy の TypeName 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9af443067467f590df824b28636f57b807a4fc94
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideEntry の EntrySelectedBy の TypeName 要素 (書式)
+description: WideEntry の EntrySelectedBy の TypeName 要素 (書式)
+ms.openlocfilehash: 2e0facd6ff7c6fec96dabf488449a8502429bcff
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780187"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654795"
 ---
 # <a name="typename-element-for-entryselectedby-for-wideentry-format"></a>WideEntry の EntrySelectedBy の TypeName 要素 (書式)
 
@@ -46,7 +48,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 各ワイドエントリでは、1つまたは複数の .NET 型、選択セット、または定義を使用するために存在する必要がある選択条件を指定する必要があります。
 
-ワイドビューのその他のコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
+ワイドビューのその他のコンポーネントの詳細については、「 [ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

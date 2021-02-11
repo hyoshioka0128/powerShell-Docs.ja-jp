@@ -2,20 +2,21 @@
 description: FileSystem (ファイル システム)
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 06/18/2019
+ms.date: 11/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem プロバイダー
-ms.openlocfilehash: 50ce68e97937326e9dd7030145ffd417be15ed6b
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 085d714fce8475dd3eeee656d1cd17db02e772a6
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223835"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661394"
 ---
 # <a name="filesystem-provider"></a>FileSystem プロバイダー
 
 ## <a name="provider-name"></a>プロバイダー名
+
 FileSystem (ファイル システム)
 
 ## <a name="drives"></a>ドライブ
@@ -34,12 +35,12 @@ FileSystem (ファイル システム)
 
 PowerShell **FileSystem** プロバイダーを使用すると、powershell でファイルとディレクトリを取得、追加、変更、消去、削除できます。
 
-**ファイルシステム** ドライブは、コンピューター上のディレクトリとファイルを含む階層型の名前空間です。 **ファイルシステム** ドライブには、論理的または phのドライブ、ディレクトリ、またはマップされたネットワーク共有を指定できます。
+**ファイルシステム** ドライブは、コンピューター上のディレクトリとファイルを含む階層型の名前空間です。 **ファイルシステム** ドライブには、論理ドライブまたは物理ドライブ、ディレクトリ、またはマップされたネットワーク共有を指定できます。
 
 という名前のドライブが `TEMP:` ユーザーの一時ディレクトリパスにマップされます。
 
 >[!NOTE]
-> TEMP: ドライブの内容は、PowerShell によって自動的に削除されることはなく、管理するユーザーまたはオペレーティングシステムによって行われます。
+> TEMP: ドライブの内容は、PowerShell によって自動的に削除されることはなく、管理するユーザーまたはオペレーティングシステムによって行われます。 この機能は、PowerShell バージョン7.0 の試験的な機能から移行されました。
 
 **FileSystem** プロバイダーは、この記事で説明されている次のコマンドレットをサポートしています。
 
@@ -64,11 +65,11 @@ PowerShell **FileSystem** プロバイダーを使用すると、powershell で�
 
 ## <a name="types-exposed-by-this-provider"></a>このプロバイダーによって公開される型
 
-ファイルは、 [system.servicemodel クラスのインスタンスです。](/dotnet/api/system.io.fileinfo)  ディレクトリは、 [DirectoryInfo](/dotnet/api/system.io.directoryinfo) クラスのインスタンスです。
+ファイルは、 [system.servicemodel クラスのインスタンスです。](/dotnet/api/system.io.fileinfo) ディレクトリは、 [DirectoryInfo](/dotnet/api/system.io.directoryinfo) クラスのインスタンスです。
 
 ## <a name="navigating-the-filesystem-drives"></a>ファイルシステムドライブの移動
 
-**FileSystem** プロバイダーは、コンピューター上のすべての論理ドライブを PowerShell ドライブとしてマップすることによって、そのデータストアを公開します。 **ファイルシステム** ドライブを操作するには、ドライブ名の後にコロン () を uing ドライブに場所を移動し `:` ます。
+**FileSystem** プロバイダーは、コンピューター上のすべての論理ドライブを PowerShell ドライブとしてマップすることによって、そのデータストアを公開します。 **ファイルシステム** ドライブを操作するには、ドライブ名の後にコロン () を使用して、場所をドライブに変更し `:` ます。
 
 ```powershell
 Set-Location C:
@@ -210,7 +211,7 @@ $e[0]
 Get-Acl -Path test.txt | Format-List -Property *
 ```
 
-このオブジェクトの詳細については、コマンドを [Get Member](xref:Microsoft.PowerShell.Utility.Get-Member) コマンドレットにパイプ処理してください。 または、MSDN (Microsoft Developer Network) ライブラリの「[System.security.accesscontrol.filesecurity](/dotnet/api/system.security.accesscontrol.filesecurity) クラス」を参照してください。
+このオブジェクトの詳細については、コマンドを [Get Member](xref:Microsoft.PowerShell.Utility.Get-Member) コマンドレットにパイプ処理してください。 または、「 [System.security.accesscontrol.filesecurity](/dotnet/api/system.security.accesscontrol.filesecurity) クラス」を参照してください。
 
 ### <a name="modify-the-acl-for-a-file"></a>ファイルの ACL を変更する
 
@@ -339,18 +340,18 @@ Get-ChildItem -Attributes Compressed,Encrypted
 
 ファイル エンコードを指定します。 既定値は ASCII です。
 
-- **Ascii** : ascii (7 ビット) 文字セットのエンコーディングを使用します。
-- **BigEndianUnicode** : ビッグエンディアンのバイト順を使用して utf-16 形式でエンコードします。
-- **String** : 文字列のエンコーディングの種類を使用します。
-- **Unicode** : リトルエンディアンのバイト順を使用して utf-16 形式でエンコードします。
-- **UTF7** : utf-7 形式でエンコードします。
-- **UTF8** : utf-8 形式でエンコードします。
-- **UTF8BOM** : バイト順マーク (BOM) を使用して utf-8 形式でエンコードします。
-- **UF8NOBOM** : バイト順マーク (BOM) を使用せずに utf-8 形式でエンコードします。
-- **UTF32** :32 utf-8 形式でエンコードします。
+- **Ascii**: ascii (7 ビット) 文字セットのエンコーディングを使用します。
+- **BigEndianUnicode**: ビッグエンディアンのバイト順を使用して utf-16 形式でエンコードします。
+- **String**: 文字列のエンコーディングの種類を使用します。
+- **Unicode**: リトルエンディアンのバイト順を使用して utf-16 形式でエンコードします。
+- **UTF7**: utf-7 形式でエンコードします。
+- **UTF8**: utf-8 形式でエンコードします。
+- **UTF8BOM**: バイト順マーク (BOM) を使用して utf-8 形式でエンコードします。
+- **UF8NOBOM**: バイト順マーク (BOM) を使用せずに utf-8 形式でエンコードします。
+- **UTF32**:32 utf-8 形式でエンコードします。
 - **既定** 値は、インストールされている既定のコードページでエンコードされます。
-- **OEM** : MS-DOS およびコンソールプログラムの既定のエンコードを使用します。
-- **不明** : エンコードの種類が不明または無効です。 データはバイナリとして処理できます。
+- **OEM**: MS-DOS およびコンソールプログラムの既定のエンコードを使用します。
+- **不明**: エンコードの種類が不明または無効です。 データはバイナリとして処理できます。
 
 #### <a name="cmdlets-supported"></a>サポートされているコマンドレット
 
@@ -404,7 +405,7 @@ Get-ChildItem -Attributes Compressed,Encrypted
 - **[非表示]**
 - **標準**
 - **NotContentIndexed**
-- **なっ**
+- **オフライン**
 - **ReadOnly**
 - **ReparsePoint**
 - **Sparc ファイル**
@@ -487,7 +488,7 @@ Get-ChildItem -Attributes Compressed,Encrypted
 
 ### <a name="newerthan-systemdatetime"></a>NewerThan \<System.DateTime\>
 
-`$True` `LastWriteTime` ファイルの値が指定した日付よりも大きい場合に、を返します。 それ以外の場合は、 `$False`を返します。
+`$True` `LastWriteTime` ファイルの値が指定した日付よりも大きい場合に、を返します。 それ以外の場合は `$False`を返します。
 
 [Datetime](/dotnet/api/system.datetime)オブジェクトを入力します。たとえば、 [Get Date](xref:Microsoft.PowerShell.Utility.Get-Date)コマンドレットが返す値や、 [datetime](/dotnet/api/system.datetime)オブジェクトに変換できる文字列 (など) を入力し `"August 10, 2011 2:00 PM"` ます。
 
@@ -497,7 +498,7 @@ Get-ChildItem -Attributes Compressed,Encrypted
 
 ### <a name="olderthan-systemdatetime"></a>OlderThan \<System.DateTime\>
 
-`$True` `LastWriteTime` ファイルの値が指定した日付よりも小さい場合に、を返します。 それ以外の場合は、 `$False`を返します。
+`$True` `LastWriteTime` ファイルの値が指定した日付よりも小さい場合に、を返します。 それ以外の場合は `$False`を返します。
 
 [Datetime](/dotnet/api/system.datetime)オブジェクトを入力します。たとえば、 [Get Date](xref:Microsoft.PowerShell.Utility.Get-Date)コマンドレットが返す値や、 [datetime](/dotnet/api/system.datetime)オブジェクトに変換できる文字列 (など) を入力し `"August 10, 2011 2:00 PM"` ます。
 

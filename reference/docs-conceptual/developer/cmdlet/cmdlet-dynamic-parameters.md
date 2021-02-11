@@ -1,12 +1,14 @@
 ---
-title: コマンドレット動的パラメーター |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f44f71326d4711242c754c332a151dd997721595
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレットの動的パラメーター
+description: コマンドレットの動的パラメーター
+ms.openlocfilehash: b44dda2354e8b689e419c7bf4deefadfc4edcb07
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782363"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653432"
 ---
 # <a name="cmdlet-dynamic-parameters"></a>コマンドレット動的パラメーター
 
@@ -17,9 +19,9 @@ ms.locfileid: "87782363"
 
 ## <a name="dynamic-parameters-in-powershell-cmdlets"></a>PowerShell コマンドレットの動的パラメーター
 
-PowerShell では、プロバイダーコマンドレットのいくつかで動的パラメーターが使用されます。 たとえば、 `Get-Item` `Get-ChildItem` コマンドレットとコマンドレットは、 **Path**パラメーターで**証明書**プロバイダーのパスを指定した場合に、実行時に**codesigningcert**パラメーターを追加します。 **Path**パラメーターに別のプロバイダーのパスが指定されている場合、 **Codesigningcert**パラメーターは使用できません。
+PowerShell では、プロバイダーコマンドレットのいくつかで動的パラメーターが使用されます。 たとえば、 `Get-Item` `Get-ChildItem` コマンドレットとコマンドレットは、 **Path** パラメーターで **証明書** プロバイダーのパスを指定した場合に、実行時に **codesigningcert** パラメーターを追加します。 **Path** パラメーターに別のプロバイダーのパスが指定されている場合、 **Codesigningcert** パラメーターは使用できません。
 
-次の例は、を実行したときに、実行時に**Codesigningcert**パラメーターがどのように追加されるかを示してい `Get-Item` ます。
+次の例は、を実行したときに、実行時に **Codesigningcert** パラメーターがどのように追加されるかを示してい `Get-Item` ます。
 
 この例では、PowerShell ランタイムによってパラメーターが追加され、コマンドレットが正常に実行されました。
 
@@ -32,7 +34,7 @@ Location   : CurrentUser
 StoreNames : {SmartCardRoot, UserDS, AuthRoot, CA...}
 ```
 
-この例では、**ファイルシステム**ドライブが指定され、エラーが返されます。 エラーメッセージは、 **Codesigningcert**パラメーターが見つからないことを示しています。
+この例では、 **ファイルシステム** ドライブが指定され、エラーが返されます。 エラーメッセージは、 **Codesigningcert** パラメーターが見つからないことを示しています。
 
 ```powershell
 Get-Item -Path C:\ -CodeSigningCert
@@ -60,7 +62,7 @@ At line:1 char:37
 
 `public class SendGreetingCommand : Cmdlet, IDynamicParameters`
 
-### <a name="method"></a>メソッド
+### <a name="method"></a>Method
 
 [IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)のようにしてください。
 このメソッドは、動的パラメーター定義を含むオブジェクトを取得します。
@@ -82,7 +84,7 @@ private SendGreetingCommandDynamicParameters context;
 
 ### <a name="class"></a>クラス
 
-追加する動的パラメーターを定義するクラス。 このクラスには、各パラメーターの**パラメーター**属性と、コマンドレットで必要とされるオプションの**エイリアス**および**検証**属性が含まれている必要があります。
+追加する動的パラメーターを定義するクラス。 このクラスには、各パラメーターの **パラメーター** 属性と、コマンドレットで必要とされるオプションの **エイリアス** および **検証** 属性が含まれている必要があります。
 
 次に例を示します。
 
@@ -100,7 +102,7 @@ public class SendGreetingCommandDynamicParameters
 }
 ```
 
-動的パラメーターをサポートするコマンドレットの完全な例については、「[動的パラメーターを宣言する方法](./how-to-declare-dynamic-parameters.md)」を参照してください。
+動的パラメーターをサポートするコマンドレットの完全な例については、「 [動的パラメーターを宣言する方法](./how-to-declare-dynamic-parameters.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
@@ -110,4 +112,4 @@ public class SendGreetingCommandDynamicParameters
 
 [動的パラメーターを宣言する方法](./how-to-declare-dynamic-parameters.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

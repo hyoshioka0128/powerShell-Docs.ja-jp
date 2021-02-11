@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-computer?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Computer
-ms.openlocfilehash: 4791f447fbada43830c8e2d41d7f0f2364aecff9
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 9ba056a7c85b62ac02137959a5586fdd87d9ceb4
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93218403"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346311"
 ---
 # Stop-Computer
 
@@ -21,7 +21,7 @@ ms.locfileid: "93218403"
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 Stop-Computer [-WsmanAuthentication <String>] [[-ComputerName] <String[]>]
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 
 このパラメーターの有効値は、次のとおりです。
 
-- Basic
+- 基本
 - CredSSP
 - Default
 - ダイジェスト
@@ -237,6 +237,8 @@ Accept wildcard characters: False
 ### なし
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 このコマンドレットは、Windows でのみ機能し、 **Win32_OperatingSystem** WMI クラスの **Win32Shutdown** メソッドを使用します。 この方法では、コンピューターの再起動に使用するユーザーアカウントに対して、 **Seshutdownprivilege** 特権を有効にする必要があります。
 

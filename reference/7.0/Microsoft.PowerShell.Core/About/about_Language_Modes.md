@@ -6,12 +6,12 @@ ms.date: 09/09/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Language_Modes
-ms.openlocfilehash: c560101dd70c94c131e3ca9d8e9958d3a278de40
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 2cf232fd170ee9175f40693579cca60f69ccbcdd
+ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222211"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94625739"
 ---
 # <a name="about-language-modes"></a>言語モードについて
 
@@ -136,7 +136,7 @@ ConstrainedLanguage モードでは、次の型を使用できます。 ユー�
 - float
 - Guid
 - Hashtable
-- int
+- INT
 - Int16
 - long
 - ManagementClass
@@ -199,13 +199,6 @@ RestrictedLanguage セッションでコマンドを実行すると、 `$Executi
 `$ExecutionContext.SessionState.LanguageMode`NoLanguage セッションでコマンドを実行すると、PowerShell によって、スクリプトで許可されているエラーメッセージが返されます。
 
 - スクリプト Notallowed: 構文は、この実行空間ではサポートされていません。 これは、言語なしモードであることが原因である可能性があります。
-
-## <a name="keywords"></a>KEYWORDS
-
-- about_ConstrainedLanguage
-- about_FullLanguage
-- about_NoLanguage
-- about_RestrictedLanguage
 
 ## <a name="see-also"></a>関連項目
 

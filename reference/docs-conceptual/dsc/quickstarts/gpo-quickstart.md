@@ -2,12 +2,13 @@
 ms.date: 07/09/2019
 keywords: DSC, GPO, PowerShell, 構成, セットアップ
 title: クイック スタート - グループ ポリシーを DSC に変換する
-ms.openlocfilehash: 852710f261ea1d57228c05d4093c1d78584e0ca5
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: このクイック スタートでは、Windows グループ ポリシーを DSC 構成に変換するための必要な手順について説明します。
+ms.openlocfilehash: b67f6dd2cf6c91d90fa6ac5b6367f9efc7f40ee0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236239"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644711"
 ---
 # <a name="quickstart-convert-group-policy-into-dsc"></a>クイック スタート:グループ ポリシーを DSC に変換する
 
@@ -16,7 +17,7 @@ ms.locfileid: "89236239"
 グループ ポリシーまたは Azure Security Center ベースラインから DSC 構成を生成できます。 [BaselineManagement](https://www.powershellgallery.com/packages/BaselineManagement) モジュールには、このタスクを達成するために、次のコマンドが含まれます。
 
 - `ConvertFrom-GPO` - グループ ポリシーを変換します。ファイルとして保存されます。 1 つの構成に結合される複数のポリシーを含むディレクトリを指定することもできます。
-  - ご利用の環境でグループ ポリシーをエクスポートするには、[Backup-GPO](/powershell/module/grouppolicy/backup-gpo?view=win10-ps) コマンドレットを使用するか、「[Export a GPO to a File](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file)」 (GPO をファイルエクスポートする) の手順に従います。
+  - ご利用の環境でグループ ポリシーをエクスポートするには、[Backup-GPO](/powershell/module/grouppolicy/backup-gpo) コマンドレットを使用するか、「[Export a GPO to a File](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file)」 (GPO をファイルエクスポートする) の手順に従います。
 - `ConvertFrom-SCM` - セキュリティ コンプライアンス マネージャー ベースラインを変換します。`.xml` ファイルとして保存されます。
 - `ConvertFrom-ASC` - Azure Security Center ベースラインを変換します。`.json` ファイルとして保存されます。
 - `Merge-GPOs` - ターゲット コンピューターに適用されたグループ ポリシーを変換します。

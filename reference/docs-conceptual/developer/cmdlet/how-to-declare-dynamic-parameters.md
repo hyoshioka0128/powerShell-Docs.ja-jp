@@ -1,20 +1,22 @@
 ---
-title: 動的パラメーターを宣言する方法 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c8839aa8841bf94a9b7f8f930ca315fe0ccedb30
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 動的パラメーターを宣言する方法
+description: 動的パラメーターを宣言する方法
+ms.openlocfilehash: 0f5a8f249b414663aa9702a908ea5c8ca24755ff
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784182"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667081"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>動的パラメーターを宣言する方法
 
-この例では、実行時にコマンドレットに追加される動的パラメーターを定義する方法を示します。 この例では、 `Department` ユーザーがスイッチパラメーターを指定するたびに、パラメーターがコマンドレットに追加され `Employee` ます。 動的パラメーターの詳細については、「[コマンドレット動的パラメーター](./cmdlet-dynamic-parameters.md)」を参照してください。
+この例では、実行時にコマンドレットに追加される動的パラメーターを定義する方法を示します。 この例では、 `Department` ユーザーがスイッチパラメーターを指定するたびに、パラメーターがコマンドレットに追加され `Employee` ます。 動的パラメーターの詳細については、「 [コマンドレット動的パラメーター](./cmdlet-dynamic-parameters.md)」を参照してください。
 
 ## <a name="to-define-dynamic-parameters"></a>動的パラメーターを定義するには
 
-1. コマンドレットのクラス宣言で、 [Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)インターフェイスを以下のように追加します。
+1. コマンドレットのクラス宣言で、 [Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters) インターフェイスを以下のように追加します。
 
    ```csharp
    public class SendGreetingCommand : Cmdlet, IDynamicParameters

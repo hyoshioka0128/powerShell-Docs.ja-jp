@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の EntrySelectedBy の SelectionSetName 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 362f7844c09a52494387a62e329adfb309767427
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の EntrySelectedBy の SelectionSetName 要素 (書式)
+description: GroupBy の EntrySelectedBy の SelectionSetName 要素 (書式)
+ms.openlocfilehash: 7ebe5d884061243c8b4af196788187d84c15a92e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785287"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651846"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-groupby-format"></a>GroupBy の EntrySelectedBy の SelectionSetName 要素 (書式)
 
@@ -46,9 +48,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 各カスタムコントロール定義には、少なくとも1つの型名、選択セット、または選択条件が定義されている必要があります。
 
-選択セットは、通常、複数のビューで使用されるオブジェクトのグループを定義する場合に使用します。 たとえば、同じオブジェクトのセットに対してテーブルビューとリストビューを作成することができます。 選択セットの定義の詳細については、「[選択セットの定義](./defining-selection-sets.md)」を参照してください。
+選択セットは、通常、複数のビューで使用されるオブジェクトのグループを定義する場合に使用します。 たとえば、同じオブジェクトのセットに対してテーブルビューとリストビューを作成することができます。 選択セットの定義の詳細については、「 [選択セットの定義](./defining-selection-sets.md)」を参照してください。
 
-カスタムコントロールビューのコンポーネントの詳細については、「[カスタムコントロールの作成](./creating-custom-controls.md)」を参照してください。
+カスタムコントロールビューのコンポーネントの詳細については、「 [カスタムコントロールの作成](./creating-custom-controls.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

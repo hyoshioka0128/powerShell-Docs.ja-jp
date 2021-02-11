@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ノード上で構成を適用、取得、およびテストする
-ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: このガイドでは、ターゲット ノード上の構成を操作する方法を説明します。
+ms.openlocfilehash: 6bc9262bc0e2ce8eea7b85bd46ecc0c0a691276d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953839"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651012"
 ---
 # <a name="apply-get-and-test-configurations-on-a-node"></a>ノード上で構成を適用、取得、およびテストする
 
@@ -38,14 +39,14 @@ Sample -OutputPath "C:\Temp\"
 
 この構成をコンパイルすると、2 つの ".mof" ファイルが生成されます。
 
-```output
+```Output
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a----       11/27/2018   7:29 AM     2.13KB localhost.mof
 -a----       11/27/2018   7:29 AM     2.13KB server02.mof
 ```
 
-構成を適用するには、[Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを使います。 `-Path` パラメーターでは、".mof" ファイルが存在するディレクトリを指定します。 `-Computername` を指定しないと、`Start-DSCConfiguration` では、".mof" ファイルの名前によって指定されているコンピューター名 (\<コンピューター名\>.mof) に対して、各構成の適用が試みられます。 詳細な出力を表示するには、`Start-DSCConfiguration` に対して `-Verbose` を指定します。
+構成を適用するには、[Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを使います。 `-Path` パラメーターでは、".mof" ファイルが存在するディレクトリを指定します。 `-Computername` を指定しないと、`Start-DSCConfiguration` では、".mof" ファイルの名前によって指定されているコンピューター名 (`<computername>.mof`) に対して、各構成の適用が試みられます。 詳細な出力を表示するには、`Start-DSCConfiguration` に対して `-Verbose` を指定します。
 
 ```powershell
 Start-DSCConfiguration -Path C:\Temp\ -Verbose
@@ -53,7 +54,7 @@ Start-DSCConfiguration -Path C:\Temp\ -Verbose
 
 `-Wait` を指定しない場合、1 つのジョブが作成されます。 作成されたジョブには、`Start-DSCConfiguration` によって処理される ".mof" ファイルごとに 1 つの **ChildJob** があります。
 
-```output
+```Output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 45     Job45           Configuratio... Running       True            localhost,server02   Start-DSCConfiguration...
@@ -72,22 +73,23 @@ $job = Get-Job
 $job.ChildJobs
 ```
 
-```output
+```Output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 49     Job49           Configuratio... Completed     True            localhost            Start-DSCConfiguration...
 50     Job50           Configuratio... Completed     True            server02             Start-DSCConfiguration...
 ```
 
-**詳細**な出力を見るには、次のコマンドを使って、各 **ChildJob** の**詳細**ストリームを表示します。 PowerShell のジョブについて詳しくは、「[About Jobs (ジョブについて)](/powershell/module/microsoft.powershell.core/about/about_jobs)」をご覧ください。
+**詳細** な出力を見るには、次のコマンドを使って、各 **ChildJob** の **詳細** ストリームを表示します。 PowerShell のジョブについて詳しくは、「[About Jobs (ジョブについて)](/powershell/module/microsoft.powershell.core/about/about_jobs)」をご覧ください。
 
 ```powershell
 # View the verbose output of the localhost job using array indexing.
 $job.ChildJobs[0].Verbose
 ```
 
-```output
-Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
+```Output
+Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendConfigurationApply,
+'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
 An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-124525095-708259637-1543119021-1282804.
 [SERVER01]: LCM:  [ Start  Set      ]
 [SERVER01]: LCM:  [ Start  Resource ]  [[File]SampleFile]
@@ -109,19 +111,20 @@ Start-DSCConfiguration -UseExisting -Verbose -Wait
 
 ## <a name="test-a-configuration"></a>構成をテストする
 
-[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を使って、現在適用されている構成をテストできます。 `Test-DSCConfiguration` では、ノードが準拠している場合は `True` が返され、そうでない場合は `False` が返されます。
+[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を使って、現在適用されている構成をテストできます。
+`Test-DSCConfiguration` では、ノードが準拠している場合は `True` が返され、そうでない場合は `False` が返されます。
 
 ```powershell
 Test-DSCConfiguration
 ```
 
-PowerShell 5.0 で初めて追加された`-Detailed` パラメーターでは、**ResourcesInDesiredState** および **ResourcesNotInDesiredState** のコレクションを含むオブジェクトが返されます
+PowerShell 5.0 で初めて追加された`-Detailed` パラメーターでは、 **ResourcesInDesiredState** および **ResourcesNotInDesiredState** のコレクションを含むオブジェクトが返されます
 
 ```powershell
 Test-DSCConfiguration -Detailed
 ```
 
-PowerShell 5.0 以降では、適用しないで構成をテストできます。 `-ReferenceConfiguration` パラメーターは、ノードのテスト対象の ".mof" ファイルのパスを受け取ります。 ノードに対して**設定**アクションは実行されません。 PowerShell 4.0 では、適用しないで構成をテストする回避策がありますが、ここでは説明しません。
+PowerShell 5.0 以降では、適用しないで構成をテストできます。 `-ReferenceConfiguration` パラメーターは、ノードのテスト対象の ".mof" ファイルのパスを受け取ります。 ノードに対して **設定** アクションは実行されません。 PowerShell 4.0 では、適用しないで構成をテストする回避策がありますが、ここでは説明しません。
 
 ## <a name="get-configuration-values"></a>構成の値を取得する
 
@@ -133,7 +136,7 @@ Get-DSCConfiguration
 
 正しく適用されている場合、サンプルの構成からの出力は次のようになります。
 
-```output
+```Output
 ConfigurationName    : Sample
 DependsOn            :
 ModuleName           : PSDesiredStateConfiguration
@@ -162,13 +165,13 @@ CimClassName         : MSFT_FileDirectoryConfiguration
 
 ## <a name="get-configuration-status"></a>構成の状態を取得する
 
-PowerShell 5.0 以降の [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) コマンドレットでは、ノードに適用された構成の履歴を参照できます。 PowerShell DSC では、**プッシュ**または**プル** モードで適用された直近 {{N}} 個の構成が追跡されています。 これには、LCM によって実行された "*整合性*" チェックが含まれます。 既定の `Get-DSCConfigurationStatus` では、最後の履歴エントリだけが表示されます。
+PowerShell 5.0 以降の [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) コマンドレットでは、ノードに適用された構成の履歴を参照できます。 PowerShell DSC では、 **プッシュ** または **プル** モードで適用された直近 {{N}} 個の構成が追跡されています。 これには、LCM によって実行された " *整合性* " チェックが含まれます。 既定の `Get-DSCConfigurationStatus` では、最後の履歴エントリだけが表示されます。
 
 ```powershell
 Get-DSCConfigurationStatus
 ```
 
-```output
+```Output
 Status     StartDate                 Type            Mode  RebootRequested      NumberOfResources
 ------     ---------                 ----            ----  ---------------      -----------------
 Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                1
@@ -183,7 +186,7 @@ Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                
 Get-DSCConfigurationStatus -All
 ```
 
-```output
+```Output
 Status     StartDate                 Type            Mode  RebootRequested      NumberOfResources
 ------     ---------                 ----            ----  ---------------      -----------------
 Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                1
@@ -200,7 +203,7 @@ Success    11/27/2018 6:03:44 AM     Consistency     PUSH  False                
 
 ## <a name="manage-configuration-documents"></a>構成ドキュメントを管理する
 
-LCM では、**構成ドキュメント**を処理することによって、ノードの構成が管理されます。 これらの ".mof" ファイルは、"C:\Windows\System32\Configuration" ディレクトリに存在します。
+LCM では、 **構成ドキュメント** を処理することによって、ノードの構成が管理されます。 これらの ".mof" ファイルは、`C:\Windows\System32\Configuration` ディレクトリにあります。
 
 PowerShell 5.0 以降では、[Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) を使って ".mof" ファイルを削除することで、将来の整合性チェックを停止したり、適用されるときにエラーがある構成を削除したりできます。 `-Stage` パラメーターで、削除する ".mof" ファイルを指定できます。
 
@@ -219,6 +222,6 @@ PowerShell 5.0 以降では、[Publish-DSCConfiguration](/powershell/module/PSDe
 Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [取得、テスト、および設定](../resources/get-test-set.md)

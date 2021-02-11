@@ -1,12 +1,14 @@
 ---
-title: ListControl (Format) の EntrySelectedBy の SelectionSetName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4315d81da4ceeb7a5b171087434ae15fb09e6592
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl の EntrySelectedBy の SelectionSetName 要素 (書式)
+description: ListControl の EntrySelectedBy の SelectionSetName 要素 (書式)
+ms.openlocfilehash: 413a77f7ba06fe952e574061e58d0b5d80c5b3c4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785270"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651830"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の SelectionSetName 要素 (書式)
 
@@ -46,9 +48,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 各リストエントリには、少なくとも1つの型名、選択セット、または選択条件が定義されている必要があります。
 
-選択セットは、通常、複数のビューで使用されるオブジェクトのグループを定義する場合に使用します。 たとえば、同じオブジェクトのセットに対してテーブルビューとリストビューを作成することができます。 選択セットの定義の詳細については、「[ビューのオブジェクトセットの定義](./defining-selection-sets.md)」を参照してください。
+選択セットは、通常、複数のビューで使用されるオブジェクトのグループを定義する場合に使用します。 たとえば、同じオブジェクトのセットに対してテーブルビューとリストビューを作成することができます。 選択セットの定義の詳細については、「 [ビューのオブジェクトセットの定義](./defining-selection-sets.md)」を参照してください。
 
-リストビューのコンポーネントの詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
+リストビューのコンポーネントの詳細については、「 [リストビューの作成](./creating-a-list-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 

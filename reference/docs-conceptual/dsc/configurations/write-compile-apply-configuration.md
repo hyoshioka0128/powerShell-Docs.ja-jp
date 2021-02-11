@@ -2,12 +2,13 @@
 ms.date: 06/22/2020
 keywords: dsc, powershell, 構成, サービス, セットアップ
 title: 構成の作成、コンパイル、適用
-ms.openlocfilehash: 9acb2db882795d7150326fadb2964deb1105b2cc
-ms.sourcegitcommit: 7eea0885dd7ac90ab36e5664501438a292217f7f
+description: この演習では、DSC の構成の作成と適用について最初から最後まで説明します。 次の例では、非常に単純な構成を作成して適用する方法について学習します
+ms.openlocfilehash: f173fe0dc6cd73e2b49bb8c44a9ee1a53eab475f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85295677"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645025"
 ---
 # <a name="write-compile-and-apply-a-configuration"></a>構成の作成、コンパイル、適用
 
@@ -63,16 +64,16 @@ Configuration HelloWorld {
 
 ファイルを "HelloWorld.ps1" という名前で保存します。
 
-構成を定義するのは、関数の定義と似ています。 `localhost` 場合、**ノード**ブロックは構成するターゲット ノードを指定します。
+構成を定義するのは、関数の定義と似ています。 `localhost` 場合、 **ノード** ブロックは構成するターゲット ノードを指定します。
 
 構成では、1 つの[リソース](../resources/resources.md) (`File` リソース) を呼び出します。 リソースは、ターゲット ノードが構成によって定義された状態になっているか確認します。
 
 ## <a name="compile-the-configuration"></a>構成のコンパイル
 
-DSC 構成をノードに適用するには、最初にコンパイルを行い、MOF ファイルを出力する必要があります。 関数のように構成を実行すると、`Node` ブロックで定義されたノードごとに、`.mof` ファイルが 1 つコンパイルされます。 構成を実行するには、現在の範囲で `HelloWorld.ps1` スクリプトを "_ドット ソース_" で実行する必要があります。 詳細については、[スクリプト](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)に関するページを参照してください。
+DSC 構成をノードに適用するには、最初にコンパイルを行い、MOF ファイルを出力する必要があります。 関数のように構成を実行すると、`Node` ブロックで定義されたノードごとに、`.mof` ファイルが 1 つコンパイルされます。 構成を実行するには、現在の範囲で `HelloWorld.ps1` スクリプトを " _ドット ソース_ " で実行する必要があります。 詳細については、[スクリプト](/powershell/module/microsoft.powershell.core/about/about_scripts#script-scope-and-dot-sourcing)に関するページを参照してください。
 
 <!-- markdownlint-disable MD038 -->
-`HelloWorld.ps1` スクリプトを "_ドット ソース_" で実行するには、`. ` (ドット、スペース) の後で、それを保存した場所のパス内に入力します。 その後、関数のように呼び出すことで、構成を実行することができます。 また、スクリプトの一番下にある構成関数を呼び出すと、ドット ソースで実行する必要がなくなります。
+`HelloWorld.ps1` スクリプトを " _ドット ソース_ " で実行するには、`. ` (ドット、スペース) の後で、それを保存した場所のパス内に入力します。 その後、関数のように呼び出すことで、構成を実行することができます。 また、スクリプトの一番下にある構成関数を呼び出すと、ドット ソースで実行する必要がなくなります。
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
@@ -100,7 +101,7 @@ Mode                LastWriteTime         Length Name
 以下のコードを使用して、`Start-DSCConfiguration` コマンドレットを実行します。 `localhost.mof` が保存されているディレクトリ パスを **Path** パラメーターに指定します。 `Start-DSCConfiguration` コマンドレットは、任意の `<computername>.mof` ファイルに対して指定されたディレクトリが対象になります。 `Start-DSCConfiguration` コマンドレットでは、見つかった各 `.mof` ファイルを、ファイル名 ("localhost"、"server01"、"dc-02" など) で指定された `computername` に適用する試みが行われます。
 
 > [!NOTE]
-> `-Wait` パラメーターが指定されていない場合、`Start-DSCConfiguration` では操作を実行するためにバックグラウンド ジョブが作成されます。 `-Verbose` パラメーターを指定すると、操作の**詳細**出力を確認できます。 `-Wait` および `-Verbose` は、どちらも省略可能なパラメーターです。
+> `-Wait` パラメーターが指定されていない場合、`Start-DSCConfiguration` では操作を実行するためにバックグラウンド ジョブが作成されます。 `-Verbose` パラメーターを指定すると、操作の **詳細** 出力を確認できます。 `-Wait` および `-Verbose` は、どちらも省略可能なパラメーターです。
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
@@ -110,7 +111,7 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 `Start-DSCConfiguration` コマンドレットが完了すると、指定した場所に `HelloWorld.txt` ファイルが表示されます。 [Get-Content](/powershell/module/microsoft.powershell.management/get-content) コマンドレットを使用して、コンテンツを確認できます。
 
-[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を使用して、現在の状態を_テスト_することもできます。
+[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を使用して、現在の状態を _テスト_ することもできます。
 
 現在、ノードが適用された構成に準拠している場合、出力は `True` になります。
 

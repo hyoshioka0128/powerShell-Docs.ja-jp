@@ -4,10 +4,10 @@ keywords: JEA, PowerShell, セキュリティ
 title: JEA の使用
 description: この記事では、JEA エンドポイントに接続して使用できるさまざまな方法について説明します。
 ms.openlocfilehash: b3d81cc0aa76549c81136e5a1a5af28df9c6fa7a
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501543"
 ---
 # <a name="using-jea"></a>JEA の使用
@@ -31,7 +31,7 @@ $nonAdminCred = Get-Credential
 Enter-PSSession -ComputerName localhost -ConfigurationName JEAMaintenance -Credential $nonAdminCred
 ```
 
-現在のユーザー アカウントに JEA エンドポイントへのアクセス権がある場合は、 **Credential** パラメーターを省略できます。
+現在のユーザー アカウントに JEA エンドポイントへのアクセス権がある場合は、**Credential** パラメーターを省略できます。
 
 PowerShell プロンプトが `[localhost]: PS>` に変わると、現在、リモート JEA セッションとやりとりしている状態であることがわかります。 `Get-Command` を実行して、使用できるコマンドを確認できます。 使用できるパラメーターまたは許可されているパラメーター値に制限があるかどうかを確認するには、管理者に問い合わせてください。
 

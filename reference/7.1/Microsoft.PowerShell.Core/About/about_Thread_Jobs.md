@@ -2,16 +2,16 @@
 description: PowerShell スレッドベースのジョブに関する情報を提供します。 スレッドジョブは、現在のセッションプロセス内の別のスレッドでコマンドまたは式を実行するバックグラウンドジョブの一種です。
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 10/16/2020
+ms.date: 11/11/2020
 online version: 1.0.0
 schema: 2.0.0
 title: about_Thread_Jobs
-ms.openlocfilehash: d3f7c2754a2e54bc1b6f9fb95d1cf6ce2fed5b9b
-ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
+ms.openlocfilehash: ba6251a195d3efdebd427b3f705386336b069211
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "93224592"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524843"
 ---
 # <a name="about-thread-jobs"></a>スレッドジョブについて
 
@@ -21,36 +21,40 @@ PowerShell スレッドベースのジョブに関する情報を提供します
 
 ## <a name="long-description"></a>長い説明
 
-この記事では、ローカルコンピューター上の PowerShell でスレッドジョブを実行する方法について説明します。
-ローカルコンピューターでのバックグラウンドジョブの実行の詳細については、「 [about_Jobs](about_Jobs.md)」を参照してください。
+PowerShell は、ジョブを使用してコマンドとスクリプトを同時に実行します。 同時実行をサポートするために PowerShell によって提供されるジョブの種類は3つあります。
 
-スレッドジョブは、次の2つの方法のいずれかで開始できます。
+- `RemoteJob` -コマンドとスクリプトはリモートセッションで実行されます。 詳細については、「 [about_Remote_Jobs](about_Remote_Jobs.md)」を参照してください。
+- `BackgroundJob` -コマンドとスクリプトは、ローカルコンピューター上で個別のプロセスで実行されます。 詳細については、「[about_Jobs](about_Jobs.md)」を参照してください。
+- `PSTaskJob` または `ThreadJob` -コマンドとスクリプトは、ローカルコンピューター上の同じプロセス内の別のスレッドで実行されます。
 
-最初の方法は、コマンドレットを使用することです `Start-ThreadJob` 。 このコマンドレットは、PowerShell に付属している **Threadjob** モジュールで使用できます。 `Start-ThreadJob` 実行中のコマンドまたはスクリプトをカプセル化し、コマンドレットを操作するすべての PowerShell ジョブで使用できる単一のジョブオブジェクトを返します。
+スレッドベースのジョブは、異なるスレッドで同じプロセスで実行されるため、リモートジョブやバックグラウンドジョブほど堅牢ではありません。 あるジョブで、プロセスをクラッシュさせる重大なエラーが発生している場合は、プロセス内の他のすべてのジョブが終了します。
 
-2番目の方法は、コマンドレットを使用して、パラメーター `ForEach-Object` の `-Parallel` スクリプトブロック引数をパラメータースイッチと共に使用する方法です `-AsJob` 。 このコマンドレットは、コマンドレットにパイプされた各入力の子ジョブを含む単一の (親) ジョブオブジェクトを返します。 各子ジョブは、 `-ThrottleLimit` 特定の時点で実行される子ジョブの数に対して () を制限した別のスレッドでスクリプトを実行します。
+ただし、スレッドベースのジョブではオーバーヘッドが少なくなります。 これらは、リモート処理レイヤーまたはシリアル化を使用しません。 結果オブジェクトは、現在のセッションのライブオブジェクトへの参照として返されます。 このオーバーヘッドがないと、スレッドベースのジョブはより高速に実行され、他の種類のジョブよりも使用されるリソースが少なくなります。
 
-## <a name="the-job-cmdlets"></a>ジョブのコマンドレット
+> [!IMPORTANT]
+> ジョブを作成した親セッションもジョブの状態を監視し、パイプラインデータを収集します。 ジョブが完了状態になると、親プロセスによってジョブの子プロセスが終了します。 親セッションが終了すると、実行中のすべての子ジョブが子プロセスと共に終了します。
 
-|コマンドレット           |説明                                            |
-|-----------------|-------------------------------------------------------|
-|`Start-ThreadJob`|ローカルコンピューター上でスレッドジョブを開始します。               |
-|`ForEach-Object` |パイプされた入力オブジェクトごとにスレッドジョブを開始します。   |
-|                 |-Parallel および-AsJob パラメーターと共に使用します。             |
-|`Get-Job`        |現在のセッションで開始されたジョブを取得します。|
-|`Receive-Job`    |ジョブの結果を取得します。                              |
-|`Stop-Job`       |実行中のジョブを停止します。                                   |
-|`Wait-Job`       |1つまたはすべてのジョブが完了するまで、コマンドプロンプトを表示しません。|
-|                 |完了.                                              |
-|`Remove-Job`     |ジョブを削除します。                                         |
+この状況に対処するには、次の2つの方法があります。
 
-## <a name="how-to-start-a-thread-job-on-the-local-computer"></a>ローカルコンピューターでスレッドジョブを開始する方法
+1. `Invoke-Command`切断されたセッションで実行されるジョブを作成するには、を使用します。 詳細については、「 [about_Remote_Jobs](about_Remote_Jobs.md)」を参照してください。
+1. `Start-Process`ジョブではなく新しいプロセスを作成するには、を使用します。 詳細については、「 [Start-Process](xref:Microsoft.PowerShell.Management.Start-Process)」を参照してください。
 
-ローカルコンピューターでスレッドジョブを開始するには、コマンドレットを使用し `Start-ThreadJob` ます。
+## <a name="how-to-start-and-manage-thread-based-jobs"></a>スレッドベースのジョブを開始および管理する方法
 
-コマンドを記述するに `Start-ThreadJob` は、コマンドを囲むか、ジョブの実行を中かっこ () で囲み `{ }` ます。
+スレッドベースのジョブを開始するには、次の2つの方法があります。
 
-次のコマンドは、 `Get-Process` ローカルコンピューター上でコマンドを実行するスレッドジョブを開始します。
+- `Start-ThreadJob` - **Threadjob** モジュールから
+- `ForEach-Object -Parallel -AsJob` -並列機能は PowerShell 7.0 で追加されました。
+
+[About_Jobs](about_Jobs.md)に記載されているのと同じ **ジョブ** コマンドレットを使用して、スレッドベースのジョブを管理します。
+
+### <a name="using-start-threadjob"></a>`Start-ThreadJob` の使用
+
+**Threadjob** モジュールは、最初に PowerShell 6 に付属しています。 また、Windows PowerShell 5.1 の PowerShell ギャラリーからインストールすることもできます。
+
+ローカルコンピューターでスレッドジョブを開始するに `Start-ThreadJob` は、コマンドレットを、中かっこ () で囲まれたコマンドまたはスクリプトと共に使用し `{ }` ます。
+
+次の例では、ローカルコンピューターでコマンドを実行するスレッドジョブを開始し `Get-Process` ます。
 
 ```powershell
 Start-ThreadJob -ScriptBlock { Get-Process }
@@ -58,7 +62,11 @@ Start-ThreadJob -ScriptBlock { Get-Process }
 
 コマンドは、 `Start-ThreadJob` `ThreadJob` 実行中のジョブを表すオブジェクトを返します。 Job オブジェクトには、現在実行中の状態を含む、ジョブに関する有用な情報が含まれています。 結果が生成されると、ジョブの結果が収集されます。
 
-コマンドを記述するには `ForEach-Object -Parallel` 、パイプでデータをコマンドに渡し、コマンドまたはスクリプトを囲みます。ジョブは中かっこ () で実行し `{}` ます。 パラメータースイッチを使用し `-AsJob` て、ジョブオブジェクトが返されるようにします。
+### <a name="using-foreach-object--parallel--asjob"></a>`ForEach-Object -Parallel -AsJob` の使用
+
+PowerShell 7.0 によって、コマンドレットに新しいパラメーターが設定されました `ForEach-Object` 。 新しいパラメーターを使用すると、スクリプトブロックを PowerShell ジョブとして並列スレッドで実行できます。
+
+パイプを使用してデータをにパイプすることができ `ForEach-Object -Parallel` ます。 データは、並列で実行されるスクリプトブロックに渡されます。 パラメーターは、 `-AsJob` 並列スレッドごとにジョブオブジェクトを作成します。
 
 次のコマンドは、コマンドにパイプを使用して、各入力値の子ジョブを含むジョブを開始します。 各子ジョブは、 `Write-Output` パイプを使用した入力値を引数としてコマンドを実行します。
 
@@ -96,26 +104,6 @@ Start-ThreadJob -ScriptBlock { Get-Process } | Wait-Job | Receive-Job
 
 各子ジョブは並行して実行されるため、生成される結果の順序は保証されません。
 
-## <a name="powershell-concurrency-and-jobs"></a>PowerShell の同時実行とジョブ
-
-PowerShell では、コマンドを同時に実行してジョブをスクリプト化します。 同時実行をサポートするために PowerShell によって提供される3つのジョブベースのソリューションがあります。
-
-|ジョブ            |説明                                                  |
-|---------------|-------------------------------------------------------------|
-|`RemoteJob`    |コマンドとスクリプトをリモートコンピューターで実行します。                 |
-|`BackgroundJob`|コマンドとスクリプトがローカルの別のプロセスで実行される    |
-|               |割り当てます。                                                     |
-|`ThreadJob`    |コマンドとスクリプトが同じ内の別のスレッドで実行される  |
-|               |ローカルコンピューターでプロセスを実行します。                                |
-
-各種類のジョブには、利点と欠点があります。 別のコンピューターまたは別のプロセスでスクリプトをリモートで実行すると、優れた分離ができます。 エラーが発生しても、他の実行中のジョブや、ジョブを開始したクライアントには影響しません。 ただし、リモート処理層では、オブジェクトのシリアル化などのオーバーヘッドが発生します。 リモートセッションとの間でやり取りされるすべてのオブジェクトをシリアル化してから、クライアントとターゲットセッション間でやり取りするときに逆シリアル化する必要があります。 シリアル化操作では、大規模な複雑なデータオブジェクトに対して多くのコンピューティングリソースとメモリリソースを使用できます。
-
-## <a name="powershell-thread-based-jobs"></a>PowerShell スレッドベースのジョブ
-
-スレッドベースのジョブは、異なるスレッドで同じプロセスで実行されるため、リモートジョブやバックグラウンドジョブほど堅牢ではありません。 あるジョブで、プロセスをクラッシュさせる重大なエラーが発生している場合は、プロセス内の他のすべてのジョブも失敗します。
-
-ただし、スレッドベースのジョブのオーバーヘッドはかなり少なくなります。 リモート処理レイヤーまたはシリアル化を使用する必要はありません。 その結果、スレッドベースのジョブの実行速度が大幅に向上し、他の種類のジョブよりもはるかに少ないリソースが使用されます。
-
 ## <a name="thread-job-performance"></a>スレッドジョブのパフォーマンス
 
 スレッドジョブは、他の種類のジョブよりも高速で軽量です。 ただし、ジョブが行っている作業と比べると、大きなオーバーヘッドが発生する可能性があります。
@@ -132,23 +120,39 @@ PowerShell は、セッションでコマンドとスクリプトを実行しま
 (Measure-Command {
     1..1000 | ForEach { Start-ThreadJob { Write-Output "Hello $using:_" } } | Receive-Job -Wait
 }).TotalMilliseconds
-10457.962
-
+36860.8226
 
 (Measure-Command {
     1..1000 | ForEach-Object { "Hello: $_" }
 }).TotalMilliseconds
-24.9277
+7.1975
 ```
 
-上の最初の例は、単純な文字列の書き込みを行うために1000のスレッドジョブを作成する foreach ループを示しています。 ジョブのオーバーヘッドが原因で、完了までに33秒以上かかります。
+上の最初の例は、単純な文字列の書き込みを行うために1000のスレッドジョブを作成する foreach ループを示しています。 ジョブのオーバーヘッドが原因で、完了までに36秒以上かかります。
 
-2番目の例では、 `ForEach` コマンドレットを実行して同じ1000操作を実行します。また、各文字列の書き込みは、ジョブのオーバーヘッドなしで順番に実行されます。 わずか25ミリ秒で完了します。
+2番目の例では、 `ForEach` 同じ1000操作を実行するためにコマンドレットを実行します。
+この時間は、ジョブのオーバーヘッドを発生させる `ForEach-Object` ことなく、1つのスレッドで順番に実行されます。 わずか7ミリ秒で完了します。
+
+次の例では、10個の個別のシステムログについて最大5000のエントリが収集されます。 このスクリプトには多数のログが含まれているため、操作を並行して実行するのが理にかなっています。
 
 ```powershell
 $logNames.count
 10
 
+Measure-Command {
+    $logs = $logNames | ForEach-Object {
+        Get-WinEvent -LogName $_ -MaxEvents 5000 2>$null
+    }
+}
+
+TotalMilliseconds : 252398.4321 (4 minutes 12 seconds)
+$logs.Count
+50000
+```
+
+このスクリプトは、ジョブが並列で実行される半分の時間に完了します。
+
+```powershell
 Measure-Command {
     $logs = $logNames | ForEach {
         Start-ThreadJob {
@@ -162,23 +166,9 @@ $logs.Count
 50000
 ```
 
-上の例では、10個の個別のシステムログに対して最大5000のエントリが収集されます。 このスクリプトには多数のログが含まれているため、操作を並行して実行するのが理にかなっています。 また、ジョブは、スクリプトが順番に実行されるのと同じ速さで完了します。
-
-```powershell
-Measure-Command {
-    $logs = $logNames | ForEach-Object {
-        Get-WinEvent -LogName $_ -MaxEvents 5000 2>$null
-    }
-}
-
-TotalMilliseconds : 252398.4321 (4 minutes 12 seconds)
-$logs.Count
-50000
-```
-
 ## <a name="thread-jobs-and-variables"></a>スレッドジョブと変数
 
-変数は、さまざまな方法でスレッドジョブに渡されます。
+スレッドベースのジョブには、複数の方法で値を渡すことができます。
 
 `Start-ThreadJob`は、コマンドレットにパイプ処理されるか、キーワードを使用してスクリプトブロックに渡されるか、ArgumentList パラメーターを介して渡される変数を受け入れることができ `$using` ます。 **ArgumentList**
 
@@ -191,9 +181,9 @@ Start-ThreadJob { Write-Output $using:msg } | Wait-Job | Receive-Job
 
 Start-ThreadJob { param ([string] $message) Write-Output $message } -ArgumentList @($msg) |
   Wait-Job | Receive-Job
+```
 
-`ForEach-Object -Parallel` accepts piped in variables, and variables passed
-directly to the script block via the `$using` keyword.
+`ForEach-Object -Parallel` 変数でパイプを受け取り、キーワードを使用してスクリプトブロックに直接渡された変数を受け入れ `$using` ます。
 
 ```powershell
 $msg = "Hello"
@@ -204,6 +194,8 @@ $msg | ForEach-Object -Parallel { Write-Output $_ } -AsJob | Wait-Job | Receive-
 ```
 
 スレッドジョブは同じプロセスで実行されるため、ジョブに渡される変数参照型は慎重に扱う必要があります。 スレッドセーフなオブジェクトでない場合は、に割り当てられないようにし、メソッドとプロパティを呼び出さないようにする必要があります。
+
+次の例では、スレッドセーフな .NET `ConcurrentDictionary` オブジェクトをすべての子ジョブに渡して、一意の名前付きプロセスオブジェクトを収集します。 スレッドセーフなオブジェクトであるため、ジョブがプロセス内で同時に実行されている間に安全に使用できます。
 
 ```powershell
 $threadSafeDictionary = [System.Collections.Concurrent.ConcurrentDictionary[string,object]]::new()
@@ -225,8 +217,6 @@ NPM(K)  PM(M)   WS(M) CPU(s)    Id SI ProcessName
 ------  -----   ----- ------    -- -- -----------
   112  108.25  124.43  69.75 16272  1 pwsh
 ```
-
-上の例では、スレッドセーフな dotNet `ConcurrentDictionary` オブジェクトをすべての子ジョブに渡して、一意の名前を付けた process オブジェクトを収集します。 スレッドセーフなオブジェクトであるため、ジョブがプロセス内で同時に実行されている間に安全に使用できます。
 
 ## <a name="see-also"></a>関連項目
 

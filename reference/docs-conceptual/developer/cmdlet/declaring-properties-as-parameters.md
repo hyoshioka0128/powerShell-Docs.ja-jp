@@ -1,12 +1,14 @@
 ---
-title: パラメーターとしてのプロパティの宣言 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 63113f541df534b1f720ceb06e14b5031f2311b2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: パラメーターとしてプロパティを宣言する
+description: パラメーターとしてプロパティを宣言する
+ms.openlocfilehash: ade7928e2ca277da8bbd1a5e04997bd1d05f1e5d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774645"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653151"
 ---
 # <a name="declaring-properties-as-parameters"></a>パラメーターとしてプロパティを宣言する
 
@@ -34,9 +36,9 @@ private string userName;
 
 - 自由形式のテキストプロパティ以外のすべてに対して、基本的な文字列パラメーターを使用しないようにします。
 
-- 任意の数のパラメーターセットにパラメーターを追加できます。 パラメーターセットの詳細については、「[コマンドレットパラメーターセット](./cmdlet-parameter-sets.md)」を参照してください。
+- 任意の数のパラメーターセットにパラメーターを追加できます。 パラメーターセットの詳細については、「 [コマンドレットパラメーターセット](./cmdlet-parameter-sets.md)」を参照してください。
 
-Windows PowerShell には、すべてのコマンドレットで自動的に使用できる一連の共通パラメーターも用意されています。 これらのパラメーターとそのエイリアスの詳細については、「[コマンドレットの共通パラメーター](./common-parameter-names.md)」を参照してください。
+Windows PowerShell には、すべてのコマンドレットで自動的に使用できる一連の共通パラメーターも用意されています。 これらのパラメーターとそのエイリアスの詳細については、「 [コマンドレットの共通パラメーター](./common-parameter-names.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 
@@ -44,4 +46,4 @@ Windows PowerShell には、すべてのコマンドレットで自動的に使�
 
 [コマンドレットパラメーターの型](./types-of-cmdlet-parameters.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

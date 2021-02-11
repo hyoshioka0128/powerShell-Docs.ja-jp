@@ -1,31 +1,29 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,コマンドレット
 title: Windows PowerShell ISE の操作
-ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: この記事では、Windows PowerShell ISE の機能の概要について説明します。
+ms.topic: conceptual
+ms.custom: ISE-F1-page
+ms.openlocfilehash: 91161763c817972a62b4da1558a7ca119d8c8616
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809828"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090448"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Windows PowerShell ISE の操作
 
-Windows PowerShell® Integrated Scripting Environment (ISE) を使用すると、コマンドやスクリプトを作成、実行、デバッグできます。 Windows PowerShell ISE は、メニュー バー、Windows PowerShell タブ、ツール バー、スクリプト タブ、スクリプト ウィンドウ、コンソール ウィンドウ、ステータス バー、文字サイズ スライダー、状況依存のヘルプで構成されています。
-
-> [!NOTE]
-> Windows PowerShell ISE 3.0 以降、コマンド ウィンドウと出力ウィンドウは、単一のコンソール ウィンドウに統合されました。
+Windows PowerShell Integrated Scripting Environment (ISE) を使用すると、コマンドやスクリプトを作成、実行、デバッグできます。 Windows PowerShell ISE は、メニュー バー、Windows PowerShell タブ、ツール バー、スクリプト タブ、スクリプト ウィンドウ、コンソール ウィンドウ、ステータス バー、文字サイズ スライダー、状況依存のヘルプで構成されています。
 
 ## <a name="menu-bar"></a>メニュー バー
 
 メニュー バーには、 **[ファイル]** 、 **[編集]** 、 **[表示]** 、 **[ツール]** 、 **[デバッグ]** 、 **[アドオン]** 、 **[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および Windows PowerShell ISE でのコマンドの実行に関連したタスクを実行できます。 さらに、[ISE オブジェクト モデルの階層](object-model/The-ISE-Object-Model-Hierarchy.md)を使用するスクリプトを実行して、[アドオン ツール](object-model/The-ISEAddOnTool-Object.md)をメニュー バーに配置することもできます。
 
-> [!NOTE]
-> Windows PowerShell ISE 2.0 には、 **[ツール]** と **[アドオン]** メニューはありませんでした。
-
 ## <a name="windows-powershell-tabs"></a>Windows PowerShell タブ
 
 Windows PowerShell タブは、Windows PowerShell スクリプトが動作する環境です。 Windows PowerShell ISE で新しい Windows PowerShell タブを開いて、ローカル コンピューターまたはリモート コンピューターに別個の環境を作成することができます。 最大 8 つの PowerShell タブを同時に開くことができます。
+
+詳細については、「[Windows PowerShell ISE で PowerShell タブを作成する方法](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)」を参照してください。
 
 ## <a name="toolbar"></a>ツール バー
 
@@ -59,15 +57,17 @@ Windows PowerShell タブは、Windows PowerShell スクリプトが動作する
 
 ## <a name="script-pane"></a>スクリプト ウィンドウ
 
-スクリプトを作成して実行することができます。 スクリプト ウィンドウでは、既存のスクリプトを開いたり、編集および実行したりできます。
+スクリプトを作成して実行することができます。 スクリプト ウィンドウでは、既存のスクリプトを開いたり、編集および実行したりできます。 詳細については、「[Windows PowerShell ISE でスクリプトを記述および実行する方法](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)」を参照してください。
 
-## <a name="output-pane"></a>出力ウィンドウ
+## <a name="console-pane"></a>コンソール ウィンドウ
 
-実行したコマンドおよびスクリプトの結果が表示されます。 出力ウィンドウの内容をコピーおよびクリアすることもできます。
+実行したコマンドおよびスクリプトの結果が表示されます。 コマンドは、コンソール ウィンドウで実行できます。 コンソール ウィンドウの内容をコピーおよびクリアすることもできます。
 
-## <a name="command-pane"></a>コマンド ウィンドウ
+詳細については、以下の記事を参照してください。
 
-コマンドを記述できます。 コマンド ウィンドウでは、1 行のコマンドまたは複数行のコマンドを実行できます。 <kbd>Shift</kbd> + <kbd>Enter</kbd> キーを押すことで、改行を挿入し、複数行のコマンドを入力できます。最後の行の後で <kbd>Enter</kbd> キーを押すと、複数行のコマンドが実行されます。 コマンド ウィンドウの上部に表示されるプロンプトには、現在の作業ディレクトリへのパスが表示されます。
+- [Windows PowerShell ISE でコンソール ウィンドウを使用する方法](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE でスクリプトをデバッグする方法](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
+- [スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 
 ## <a name="status-bar"></a>ステータス バー
 
@@ -79,9 +79,12 @@ Windows PowerShell タブは、Windows PowerShell スクリプトが動作する
 
 ## <a name="help"></a>ヘルプ
 
-Windows PowerShell ISE のヘルプは、Web 上の TechNet ライブラリで利用できます。 ヘルプを開くには、 **[ヘルプ]** メニューの **[Windows PowerShell ISE ヘルプ]** をクリックするか、<kbd>F1</kbd> キーを押します。これは、スクリプト ウィンドウまたはコンソール ウィンドウでコマンドレット名の上にカーソルがある場合を除き、どこからでも実行できます。
+Windows PowerShell ISE のヘルプは docs.microsoft.com にあります。 ヘルプを開くには、 **[ヘルプ]** メニューの **[Windows PowerShell ISE ヘルプ]** をクリックするか、<kbd>F1</kbd> キーを押します。これは、スクリプト ウィンドウまたはコンソール ウィンドウでコマンドレット名の上にカーソルがある場合を除き、どこからでも実行できます。
 **[ヘルプ]** メニューからは、`Update-Help` コマンドレットを実行することや、コマンド ウィンドウを表示することもできます。コマンド ウィンドウは、コマンドレットのすべてのパラメーターを示したり、使いやすいフォームにパラメーターを入力できるようにしたりして、コマンドの作成を助けます。
 
 ## <a name="see-also"></a>参照
 
 - [Windows PowerShell ISE の紹介](Introducing-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE でプロファイルを使用する方法](How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE のアクセシビリティ](Accessibility-in-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE のキーボード ショートカット](Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)

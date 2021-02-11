@@ -1,12 +1,14 @@
 ---
-title: WideEntry の EntrySelectedBy 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ba0a776839c39d753d12859335388c5326639fd4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideEntry の EntrySelectedBy 要素 (書式)
+description: WideEntry の EntrySelectedBy 要素 (書式)
+ms.openlocfilehash: 246a1967300ab0551f376c4799deac275068308c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774084"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660239"
 ---
 # <a name="entryselectedby-element-for-wideentry-format"></a>WideEntry の EntrySelectedBy 要素 (書式)
 
@@ -50,9 +52,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ワイドビュー定義には、少なくとも1つの種類、選択セット、または選択条件を指定する必要があります。 使用できる子要素の数に上限はありません。
 
-選択条件は、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプト値がに評価される場合など、使用する定義のために存在する必要がある条件を定義するために使用され `true` ます。 選択条件の詳細については、「[データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件は、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプト値がに評価される場合など、使用する定義のために存在する必要がある条件を定義するために使用され `true` ます。 選択条件の詳細については、「 [データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
-ワイドビューのその他のコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
+ワイドビューのその他のコンポーネントの詳細については、「 [ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

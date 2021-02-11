@@ -6,12 +6,12 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem プロバイダー
-ms.openlocfilehash: 3b37f6e4eb53ef7291c30cbc9820caf83641a9bb
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 204a90dc346e6d4ff483777b9adf7a70017ef093
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223491"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386914"
 ---
 # <a name="filesystem-provider"></a>FileSystem プロバイダー
 
@@ -206,7 +206,7 @@ $e[0]
 Get-Acl -Path test.txt | Format-List -Property *
 ```
 
-このオブジェクトの詳細については、コマンドを [Get Member](xref:Microsoft.PowerShell.Utility.Get-Member) コマンドレットにパイプ処理してください。 または、MSDN (Microsoft Developer Network) ライブラリの「[System.security.accesscontrol.filesecurity](/dotnet/api/system.security.accesscontrol.filesecurity) クラス」を参照してください。
+このオブジェクトの詳細については、コマンドを [Get Member](xref:Microsoft.PowerShell.Utility.Get-Member) コマンドレットにパイプ処理してください。 または、「 [System.security.accesscontrol.filesecurity](/dotnet/api/system.security.accesscontrol.filesecurity) クラス」を参照してください。
 
 ### <a name="modify-the-acl-for-a-file"></a>ファイルの ACL を変更する
 
@@ -517,10 +517,6 @@ Get-ChildItem -Attributes Compressed,Encrypted
 ### <a name="raw-switchparameter"></a>Raw \<SwitchParameter\>
 
 改行文字が無視されます。 コンテンツを 1 つの項目として返します。
-
-#### <a name="cmdlets-supported"></a>サポートされているコマンドレット
-
-- [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)
 
 #### <a name="cmdlets-supported"></a>サポートされているコマンドレット
 

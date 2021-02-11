@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 1/7/2019
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-csv?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Csv
-ms.openlocfilehash: 858ae1098d271d28fd9b758855f0952a6307eb95
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 9638577ef63a6f5d81fa1f84aee355c080ab6538
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93211067"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913378"
 ---
 # ConvertTo-Csv
 
@@ -205,7 +204,7 @@ Accept wildcard characters: False
 
 ### -QuoteFields
 
-引用符で囲む必要がある列の名前を指定します。 このパラメーターを使用する場合は、指定した列のみが引用符で囲まれます。
+引用符で囲む必要がある列の名前を指定します。 このパラメーターを使用する場合は、指定した列のみが引用符で囲まれます。 このパラメーターは、PowerShell 7.0 で追加されました。
 
 ```yaml
 Type: System.String[]
@@ -226,6 +225,8 @@ CSV ファイルで引用符を使用するかどうかを指定します。 次
 - なし-何も引用しない
 - すべてを常に引用符で囲む (既定の動作)
 - AsNeeded-区切り文字を含む quote フィールドのみ
+
+このパラメーターは、PowerShell 7.0 で追加されました。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
@@ -273,6 +274,6 @@ PowerShell 6.0 以降では、の既定の動作で `ConvertTo-CSV` は、 **#TY
 
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 
-[Export-Csv](Export-Csv.md)
+[エクスポート-Csv](Export-Csv.md)
 
 [Import-Csv](Import-Csv.md)

@@ -6,12 +6,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Methods
-ms.openlocfilehash: 1de1d2f85a878d671669ba632a381f4c2b46f96c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 25056ff8b3c0bc8828be1426463b2d087e23a131
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222179"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391002"
 ---
 # <a name="about-methods"></a>メソッドの概要
 
@@ -81,7 +81,7 @@ PowerShell 4.0 以降では、動的なメソッド名を使用したメソッ�
 
 ### <a name="learning-about-methods"></a>メソッドについて学習する
 
-オブジェクトのメソッドの定義を検索するには、MSDN でオブジェクトの種類のヘルプトピックにアクセスし、そのメソッドのページを探します。 たとえば、次のページでは、process オブジェクトのメソッドについて説明して[います。](/dotnet/api/system.diagnostics.process#methods)
+オブジェクトのメソッドの定義を検索するには、オブジェクトの種類のヘルプトピックにアクセスして、そのメソッドのページを探します。 たとえば、次のページでは、process オブジェクトのメソッドについて説明して[います。](/dotnet/api/system.diagnostics.process#methods)
 
 メソッドの引数を確認するには、メソッドの定義を確認します。これは、PowerShell コマンドレットの構文ダイアグラムに似ています。
 
@@ -220,7 +220,7 @@ object: 1
 int: 1
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [about_Objects](about_Objects.md)
 

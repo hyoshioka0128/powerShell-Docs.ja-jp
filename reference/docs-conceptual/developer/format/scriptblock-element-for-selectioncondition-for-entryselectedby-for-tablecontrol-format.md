@@ -1,12 +1,14 @@
 ---
-title: TableControl による EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a23d3515749393e9f5a2053634a44d1a817ebf38
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)
+description: TableControl の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)
+ms.openlocfilehash: a984bda6b8fba3a5cb9485576ffd847f0d366d3e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783451"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659881"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>TableControl の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)
 
@@ -44,9 +46,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-選択条件では、少なくとも1つのスクリプトブロックまたはプロパティ名を指定する必要がありますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件では、少なくとも1つのスクリプトブロックまたはプロパティ名を指定する必要がありますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「 [ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

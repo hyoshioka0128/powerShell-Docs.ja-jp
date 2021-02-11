@@ -1,12 +1,14 @@
 ---
-title: CustomEntry for CustomControl for View (Format) の EntrySelectedBy 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4d4900cefb0d499397fc9dff7e037ce0a541f72f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の CustomControl の CustomEntry の EntrySelectedBy 要素 (書式)
+description: View の CustomControl の CustomEntry の EntrySelectedBy 要素 (書式)
+ms.openlocfilehash: 4821f22560f35034f90d018e5a109004f331441f
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783689"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655342"
 ---
 # <a name="entryselectedby-element-for-customentry-for-customcontrol-for-view-format"></a>View の CustomControl の CustomEntry の EntrySelectedBy 要素 (書式)
 
@@ -50,9 +52,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 エントリの種類、選択セット、または選択条件を少なくとも1つ指定する必要があります。 使用できる子要素の数に上限はありません。
 
-選択条件は、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプトがに評価される場合など、エントリの使用に必要な条件を定義するために使用し `true` ます。 選択条件の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件は、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプトがに評価される場合など、エントリの使用に必要な条件を定義するために使用し `true` ます。 選択条件の詳細については、「 [ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
-カスタムコントロールビューのコンポーネントの詳細については、「[カスタムコントロールビュー](./creating-custom-controls.md)」を参照してください。
+カスタムコントロールビューのコンポーネントの詳細については、「 [カスタムコントロールビュー](./creating-custom-controls.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

@@ -1,12 +1,14 @@
 ---
-title: WideControl (Format) の ColumnNumber 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5f151bb0e629efcebe6295cdcae6cebcbbb1b39b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl の ColumnNumber 要素 (書式)
+description: WideControl の ColumnNumber 要素 (書式)
+ms.openlocfilehash: 1ddbbfbd5b53065afcc6c1326d6abf1fadedc67b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783859"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648403"
 ---
 # <a name="columnnumber-element-for-widecontrol-format"></a>WideControl の ColumnNumber 要素 (書式)
 
@@ -46,7 +48,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ワイドビューを定義する場合は、 `AutoSize` 要素または `ColumnNumber` 要素を追加できますが、両方を追加することはできません。
 
-ワイドビューのコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
+ワイドビューのコンポーネントの詳細については、「 [ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
 ワイドビューの例については、「 [Wide ビュー (Basic)](./wide-view-basic.md)」を参照してください。
 

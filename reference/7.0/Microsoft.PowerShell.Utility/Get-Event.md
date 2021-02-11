@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-event?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Event
-ms.openlocfilehash: d8f10fd9a0244d6f6bf84d2042b188d5c73215b7
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 45d9e45bfbbeba7b9467985dc6abf3a28cd8702b
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210896"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342350"
 ---
 # Get-Event
 
@@ -35,15 +35,11 @@ Get-Event [-EventIdentifier] <Int32> [<CommonParameters>]
 
 ## Description
 
-**Get イベント** コマンドレットは、現在のセッションの PowerShell イベントキューにあるイベントを取得します。
-すべてのイベントを取得するか、 *EventIdentifier* パラメーターまたは *SourceIdentifier* パラメーターを使用してイベントを指定できます。
+`Get-Event`コマンドレットは、現在のセッションの PowerShell イベントキューにあるイベントを取得します。 すべてのイベントを取得するか、 **EventIdentifier** パラメーターまたは **SourceIdentifier** パラメーターを使用してイベントを指定できます。
 
-イベントは、発生時に、イベント キューに追加されます。
-イベントキューには、登録したイベント、New-Event コマンドレットを使用して作成されたイベント、および PowerShell が終了したときに発生するイベントが含まれます。
-イベントを取得するには、 **Get イベント** または Wait-Event を使用します。
+イベントは、発生時に、イベント キューに追加されます。 イベントキューには、登録したイベント、コマンドレットを使用して作成されたイベント、 `New-Event` および PowerShell の終了時に発生するイベントが含まれます。 またはを使用し `Get-Event` `Wait-Event` て、イベントを取得できます。
 
-このコマンドレットは、イベント ビューアーのログからイベントを取得しません。
-これらのイベントを取得するには、Get-WinEvent または Get-EventLog を使用します。
+このコマンドレットは、イベント ビューアーのログからイベントを取得しません。 これらのイベントを取得するには、またはを使用し `Get-WinEvent` `Get-EventLog` ます。
 
 ## 例
 
@@ -90,13 +86,11 @@ MessageData      :
 
 この例では SourceIdentifier 以外のプロパティを使用してイベントを取得する方法を示します。
 
-最初のコマンドは、イベントキュー内のすべてのイベントを取得し、$Events 変数に保存します。
+最初のコマンドは、イベントキュー内のすべてのイベントを取得し、変数に保存し `$Events` ます。
 
-2番目のコマンドは、配列表記を使用して、$Events 変数内の配列内の最初の (0 インデックス) イベントを取得します。
-コマンドは、パイプライン演算子 (|) を使用して Format-List コマンドにイベントを送信します。Format-List コマンドは、一覧内のイベントのすべてのプロパティを表示します。
-これによって、イベント オブジェクトのプロパティを調べることができます。
+2番目のコマンドは、配列表記を使用して、変数内の配列内の最初の (0 インデックス) イベントを取得し `$Events` ます。 このコマンドは、パイプライン演算子 () を使用して `|` コマンドにイベントを送信し `Format-List` ます。これにより、イベントのすべてのプロパティが一覧に表示されます。 これによって、イベント オブジェクトのプロパティを調べることができます。
 
-3番目のコマンドは、Where-Object コマンドレットを使用して、生成された時刻に基づいてイベントを取得する方法を示しています。
+3番目のコマンドは、コマンドレットを使用して、生成された時刻に基づいてイベントを取得する方法を示して `Where-Object` います。
 
 ### 例 4: 識別子を使用してイベントを取得する
 
@@ -126,9 +120,7 @@ Accept wildcard characters: False
 
 ### -SourceIdentifier
 
-このコマンドレットがイベントを取得するソース識別子を指定します。
-既定では、イベント キュー内のすべてのイベントです。
-ワイルドカードは使用できません。
+このコマンドレットがイベントを取得するソース識別子を指定します。 既定では、イベント キュー内のすべてのイベントです。 ワイルドカードは使用できません。
 
 ```yaml
 Type: System.String
@@ -156,52 +148,34 @@ Accept wildcard characters: False
 
 ### PSEventArgs (システム管理)
 
-**PSEventArgs** は、イベントごとに1つのオブジェクト **を返します** 。
-このオブジェクトの説明を表示するには、「」 `Get-Help Get-Event -Full` と入力し、ヘルプトピックの「メモ」セクションを参照してください。
+`Get-Event` 各イベントの **PSEventArgs** オブジェクトを返します。 このオブジェクトの説明を表示するには、「」 `Get-Help Get-Event -Full` と入力し、ヘルプトピックの「メモ」セクションを参照してください。
 
 ## 注
 
-* イベント、イベント サブスクリプション、およびイベント キューは、現在のセッションにのみ存在します。 現在のセッションを閉じた場合、イベント キューが破棄され、イベント サブスクリプションが取り消されます。
+Linux または macOS プラットフォームで使用できるイベントソースがありません。
 
-  **Get Event** コマンドレットは、次のプロパティを持つ **PSEventArgs** オブジェクト ( **PSEventArgs** ) を返します。
+イベント、イベント サブスクリプション、およびイベント キューは、現在のセッションにのみ存在します。 現在のセッションを閉じた場合、イベント キューが破棄され、イベント サブスクリプションが取り消されます。
 
-  - ComputerName。
-イベントが発生したコンピューターの名前。
-このプロパティ値は、リモート コンピューターからイベントが転送された場合にのみ入力されます。
+`Get-Event`コマンドレットは、次のプロパティを持つ **PSEventArgs** オブジェクト ( **PSEventArgs** ) を返します。
 
-  - RunspaceId.
-イベントが発生したセッションを一意に識別する GUID。
-このプロパティ値は、リモート コンピューターからイベントが転送された場合にのみ入力されます。
+- ComputerName。 イベントが発生したコンピューターの名前。 このプロパティ値は、リモート コンピューターからイベントが転送された場合にのみ入力されます。
 
-  - EventIdentifier.
-現在のセッションにおけるイベント通知を一意に識別する整数 (Int32)。
+- RunspaceId. イベントが発生したセッションを一意に識別する GUID。 このプロパティ値は、リモート コンピューターからイベントが転送された場合にのみ入力されます。
 
-  - センダー.
-イベントを生成したオブジェクト。
-*Action* パラメーターの値では、$Sender の自動変数に Sender オブジェクトが含まれています。
+- EventIdentifier. 現在のセッションにおけるイベント通知を一意に識別する整数 (Int32)。
 
-  - SourceEventArgs.
-存在する場合は、EventArgs から派生した最初のパラメーター。
-たとえば、署名に "オブジェクト送信者, ElapsedEventArgs e" という形式の timer elapsed イベントがある場合、SourceEventArgs プロパティには ElapsedEventArgs が含まれます。
-*Action* パラメーターの値には、$EventArgs の自動変数にこの値が含まれています。
+- センダー. イベントを生成したオブジェクト。 **Action** パラメーターの値では、 `$Sender` 自動変数に sender オブジェクトが含まれています。
 
-  - SourceArgs。
-元のイベント署名のすべてのパラメーター。
-標準イベントシグネチャの場合、$Args \[ 0 は \] 送信者を表し、$Args \[ 1 \] は sourceeventargs を表します。
-*Action* パラメーターの値には、$Args の自動変数にこの値が含まれています。
+- SourceEventArgs. 存在する場合は、EventArgs から派生した最初のパラメーター。 たとえば、署名に "オブジェクト送信者, **ElapsedEventArgs** e" という形式の timer elapsed イベントがある場合、 **sourceeventargs** プロパティには **ElapsedEventArgs** が含まれます。 **Action** パラメーターの値では、 `$EventArgs` 自動変数にこの値が含まれています。
 
-  - SourceIdentifier.
-イベント サブスクリプションを識別する文字列。
-*Action* パラメーターの値では、$Event の自動変数の SourceIdentifier プロパティにこの値が含まれています。
+- SourceArgs。 元のイベント署名のすべてのパラメーター。 標準イベントシグネチャの場合、は `$Args[0]` 送信者を表し、 `$Args[1]` **sourceeventargs** を表します。 **Action** パラメーターの値では、 `$Args` 自動変数にこの値が含まれています。
 
-  - TimeGenerated.
-イベントが生成された時刻を表す **DateTime** オブジェクト。
-*Action* パラメーターの値では、$Event 自動変数の timegenerated プロパティにこの値が含まれています。
+- SourceIdentifier. イベント サブスクリプションを識別する文字列。 **Action** パラメーターの値では、自動変数の **SourceIdentifier** プロパティに `$Event` この値が含まれています。
 
-  - MessageData.
-イベント サブスクリプションに関連付けられているデータ。
-ユーザーは、イベントを登録するときに、このデータを指定します。
-*Action* パラメーターの値では、$Event 自動変数の messagedata プロパティにこの値が含まれています。
+- TimeGenerated. イベントが生成された時刻を表す **DateTime** オブジェクト。
+  **Action** パラメーターの値では、自動変数の **timegenerated** プロパティに `$Event` この値が含まれています。
+
+- MessageData. イベント サブスクリプションに関連付けられているデータ。 ユーザーは、イベントを登録するときに、このデータを指定します。 **Action** パラメーターの値では、自動変数の **messagedata** プロパティに `$Event` この値が含まれています。
 
 ## 関連リンク
 

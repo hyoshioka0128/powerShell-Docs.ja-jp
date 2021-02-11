@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の DSC 機能強化
-ms.openlocfilehash: 445d0f7bb54c6b21b6af26c4174f3d6422caf6dd
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: この記事には、WMF 5.1 に含まれる Desired State Configuration (DSC) の機能強化が列挙されています
+ms.openlocfilehash: 564cf0e8321b6b2b2e5d856acd4d3644d6566100
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771551"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667291"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
@@ -149,7 +148,7 @@ WMF 5.0 では、PowerShell デバッガーは、クラス ベースのリソー
 
 DSC [複合](/powershell/scripting/dsc/resources/authoringresourcecomposite)リソースで [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) を使用できるようになりました。
 
-構成内で複合リソースを使用するとき、**PsDscRunAsCredential** の値を指定できるようになりました。 指定されると、すべてのリソースが複合リソース内で RunAs ユーザーとして実行されます。 複合リソースが別の複合リソースを呼び出す場合、すべてのそれらのリソースも RunAs ユーザーとして実行されます。 RunAs 資格情報が複合リソース階層のあらゆるレベルに配信されます。 複合リソース内のいずれかのリソースで **PsDscRunAsCredential** に対して独自の値が指定されている場合、構成コンパイル中に結合エラーが発生します。
+構成内で複合リソースを使用するとき、 **PsDscRunAsCredential** の値を指定できるようになりました。 指定されると、すべてのリソースが複合リソース内で RunAs ユーザーとして実行されます。 複合リソースが別の複合リソースを呼び出す場合、すべてのそれらのリソースも RunAs ユーザーとして実行されます。 RunAs 資格情報が複合リソース階層のあらゆるレベルに配信されます。 複合リソース内のいずれかのリソースで **PsDscRunAsCredential** に対して独自の値が指定されている場合、構成コンパイル中に結合エラーが発生します。
 
 この例では、PSDesiredStateConfiguration モジュールに含まれている [WindowsFeatureSet](/powershell/scripting/dsc/reference/resources/windows/windowsfeaturesetresource) 複合リソースの利用が示されています。
 
@@ -227,7 +226,7 @@ Configuration WebApplication
 }
 ```
 
-以前のリリースでは、'Web サーバー' ロールが確実にインストールされるようにするために発生する WindowsFeature FE_IIS と WindowsFeature Worker_IIS インスタンス間の競合により、コンパイルの失敗に終わっていました。 構成が実行される*すべて*のプロパティは、これら 2 つの構成間で一致していることに注目してください。 これらの 2 つのプロパティのリソースは*すべて*一致するため、結果として正常にコンパイルできるようになりました。
+以前のリリースでは、'Web サーバー' ロールが確実にインストールされるようにするために発生する WindowsFeature FE_IIS と WindowsFeature Worker_IIS インスタンス間の競合により、コンパイルの失敗に終わっていました。 構成が実行される *すべて* のプロパティは、これら 2 つの構成間で一致していることに注目してください。 これらの 2 つのプロパティのリソースは *すべて* 一致するため、結果として正常にコンパイルできるようになりました。
 
 2 つのリソース間でいずれかのプロパティが異なる場合、一致していないと見なされ、コンパイルは失敗します。
 

@@ -1,12 +1,14 @@
 ---
-title: Quantity パラメーター |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7ff6562380bb6336b08879b31d8d9fed47bfb6a7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 数量のパラメーター
+description: 数量のパラメーター
+ms.openlocfilehash: 3f7c23eec34a709b1f2d59f611c93909b20f4124
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781819"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92650299"
 ---
 # <a name="quantity-parameters"></a>数量のパラメーター
 
@@ -24,6 +26,6 @@ ms.locfileid: "87781819"
 
 [コマンドレットのパラメーター](./cmdlet-parameters.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

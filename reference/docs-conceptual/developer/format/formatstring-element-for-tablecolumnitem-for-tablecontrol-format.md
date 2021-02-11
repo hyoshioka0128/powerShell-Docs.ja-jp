@@ -1,12 +1,14 @@
 ---
-title: TableControl (Format) の TableColumnItem の FormatString 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 848583e697d0ab7bd5b017c14c47aba3c51a3c17
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl の TableColumnItem の FormatString 要素 (書式)
+description: TableControl の TableColumnItem の FormatString 要素 (書式)
+ms.openlocfilehash: 3d386e61ac321c05e0b298019c2298f76b391b21
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781547"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667897"
 ---
 # <a name="formatstring-element-for-tablecolumnitem-for-tablecontrol-format"></a>TableControl の TableColumnItem の FormatString 要素 (書式)
 
@@ -40,13 +42,13 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="text-value"></a>テキスト値
 
-データの書式設定に使用するパターンを指定します。 たとえば、このパターンを使用して、型が system.string のプロパティの値を書式設定することができ[ます。 Timespan](/dotnet/api/System.TimeSpan): {0: MMM} {0: dd} {0: HH}: {0: mm}。
+データの書式設定に使用するパターンを指定します。 たとえば、このパターンを使用して、型が system.string のプロパティの値を書式設定することができ [ます。 Timespan](/dotnet/api/System.TimeSpan): {0: MMM} {0: dd} {0: HH}: {0: mm}。
 
 ## <a name="remarks"></a>解説
 
-書式指定文字列は、テーブルビュー、リストビュー、ワイドビュー、またはカスタムビューを作成するときに使用できます。 ビューに表示される値の書式設定の詳細については、「[表示されるデータの書式設定](./formatting-displayed-data.md)」を参照してください。
+書式指定文字列は、テーブルビュー、リストビュー、ワイドビュー、またはカスタムビューを作成するときに使用できます。 ビューに表示される値の書式設定の詳細については、「 [表示されるデータの書式設定](./formatting-displayed-data.md)」を参照してください。
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビュー](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビュー](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 

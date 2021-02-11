@@ -7,12 +7,12 @@ ms.date: 11/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
-ms.openlocfilehash: 8177b1ed45f6d6cdabf13670e36be4fcbb55a77b
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: 9bb687aa7f497dbf2c07633abddf4e1a17a9622e
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239953"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879203"
 ---
 # New-ModuleManifest
 
@@ -21,7 +21,7 @@ ms.locfileid: "93239953"
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 New-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>] [-Author <String>]
@@ -48,7 +48,7 @@ New-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>] [
 `New-ModuleManifest` 共通に使用されるすべてのマニフェストキーを含むマニフェストを作成します。そのため、既定の出力をマニフェストテンプレートとして使用できます。 値を追加または変更したり、このコマンドレットでは追加されないモジュールキーを追加したりするには、結果のファイルをテキストエディターで開きます。
 
 **Path** および **PassThru** を除き、各パラメーターは、モジュールマニフェストキーとその値を作成します。
-モジュール マニフェストでは、 **ModuleVersion** キーのみが必須です。 パラメーターの説明で指定されていない限り、コマンドからパラメーターを省略すると、によっ `New-ModuleManifest` て影響を与えることなく、関連付けられた値のコメント文字列がによって作成されます。
+モジュール マニフェストでは、**ModuleVersion** キーのみが必須です。 パラメーターの説明で指定されていない限り、コマンドからパラメーターを省略すると、によっ `New-ModuleManifest` て影響を与えることなく、関連付けられた値のコメント文字列がによって作成されます。
 
 PowerShell 2.0 では、では、 `New-ModuleManifest` 必須のパラメーター値に加えて、コマンドで指定されていない一般的に使用されるパラメーターの値を入力するように求められます。 PowerShell 3.0 以降では、 `New-ModuleManifest` 必要なパラメーター値が指定されていない場合にのみプロンプトが表示されます。
 
@@ -203,7 +203,7 @@ PrivateData = @{
 
 ### 例 2-いくつかの事前設定される設定を使用して新しいマニフェストを作成する
 
-この例では、新しいモジュールマニフェストを作成します。 **PowerShellVersion** および **AliasesToExport** 　パラメーターを使用して、値を対応するマニフェスト キーに追加します。
+この例では、新しいモジュールマニフェストを作成します。 **PowerShellVersion** および **AliasesToExport**　パラメーターを使用して、値を対応するマニフェスト キーに追加します。
 
 ```powershell
 New-ModuleManifest -PowerShellVersion 1.0 -AliasesToExport JKBC, DRC, TAC -Path C:\ps-test\ManifestTest.psd1
@@ -211,7 +211,7 @@ New-ModuleManifest -PowerShellVersion 1.0 -AliasesToExport JKBC, DRC, TAC -Path 
 
 ### 例 3-他のモジュールを必要とするマニフェストを作成する
 
-この例では、文字列形式を使用して **BitsTransfer** モジュールの名前を指定し、ハッシュテーブル形式を使用して、 **psscheduledjob** モジュールの名前、 **GUID** 、およびバージョンを指定します。
+この例では、文字列形式を使用して **BitsTransfer** モジュールの名前を指定し、ハッシュテーブル形式を使用して、 **psscheduledjob** モジュールの名前、 **GUID**、およびバージョンを指定します。
 
 ```powershell
 $moduleSettings = @{
@@ -225,7 +225,7 @@ $moduleSettings = @{
 New-ModuleManifest @moduleSettings
 ```
 
-この例では、 **Modulelist** 、 **RequiredModules** 、および **nestedmodules** パラメーターの文字列形式とハッシュテーブル形式を使用する方法を示します。 同じパラメーター値に、文字列とハッシュ テーブルを組み合わせることができます。
+この例では、 **Modulelist**、 **RequiredModules**、および **nestedmodules** パラメーターの文字列形式とハッシュテーブル形式を使用する方法を示します。 同じパラメーター値に、文字列とハッシュ テーブルを組み合わせることができます。
 
 ### 例 4-更新可能なヘルプをサポートするマニフェストを作成する
 
@@ -305,7 +305,7 @@ ExportedTypeFiles           : {C:\Windows\system32\WindowsPowerShell\v1.0\GetEve
 
 このパラメーターを使用して、モジュールによってエクスポートされるエイリアスを制限できます。 エクスポートされたエイリアスの一覧からエイリアスを削除できますが、一覧にエイリアスを追加することはできません。
 
-このパラメーターを省略した場合は、によって、 `New-ModuleManifest` **AliasesToExport** `*` モジュールで定義されているすべてのエイリアスがマニフェストによってエクスポートされることを示す値 (all) を使用して、指定されたキーが作成されます。
+このパラメーターを省略した場合は、によって、 `New-ModuleManifest`  `*` モジュールで定義されているすべてのエイリアスがマニフェストによってエクスポートされることを示す値 (all) を使用して、指定されたキーが作成されます。
 
 ```yaml
 Type: System.String[]
@@ -646,7 +646,7 @@ Accept wildcard characters: False
 
 このモジュールに含まれているすべてのモジュールを一覧表示します。
 
-各モジュールの名前を文字列として、または **ModuleName** 　キーと **ModuleVersion** キーを含むハッシュ テーブルとして入力します。 ハッシュ テーブルは、オプションの **GUID** キーも保持できます。 パラメーター値として文字列とハッシュ テーブルを組み合わせることができます。
+各モジュールの名前を文字列として、または **ModuleName**　キーと **ModuleVersion** キーを含むハッシュ テーブルとして入力します。 ハッシュ テーブルは、オプションの **GUID** キーも保持できます。 パラメーター値として文字列とハッシュ テーブルを組み合わせることができます。
 
 このキーは、モジュール インベントリとしての動作を想定して設計されています。 このキーの値に示されているモジュールは自動的に処理されません。
 
@@ -684,7 +684,7 @@ Accept wildcard characters: False
 
 `.psm1` `.dll` モジュールのセッション状態にインポートされるスクリプトモジュール () とバイナリモジュール () を指定します。 **Nestedmodules** キー内のファイルは、値に示されている順序で実行されます。
 
-各モジュールの名前を文字列として、または **ModuleName** 　キーと **ModuleVersion** キーを含むハッシュ テーブルとして入力します。 ハッシュ テーブルは、オプションの **GUID** キーも保持できます。 パラメーター値として文字列とハッシュ テーブルを組み合わせることができます。
+各モジュールの名前を文字列として、または **ModuleName**　キーと **ModuleVersion** キーを含むハッシュ テーブルとして入力します。 ハッシュ テーブルは、オプションの **GUID** キーも保持できます。 パラメーター値として文字列とハッシュ テーブルを組み合わせることができます。
 
 通常、入れ子になったモジュールには、ルート モジュールが内部処理のために必要とするコマンドが含まれています。
 既定では、入れ子になったモジュール内のコマンドは、モジュールのセッション状態から呼び出し元のセッション状態にエクスポートされますが、ルートモジュールは、エクスポートするコマンドを制限できます。 たとえば、コマンドを使用し `Export-ModuleMember` ます。
@@ -780,7 +780,7 @@ Accept wildcard characters: False
 
 ### -PowerShellVersion
 
-このモジュールで動作する PowerShell の最小バージョンを指定します。 たとえば、パラメーターの値として1.0、2.0、または3.0 を入力できます。
+このモジュールで動作する PowerShell の最小バージョンを指定します。 たとえば、パラメーターの値として1.0、2.0、または3.0 を入力できます。 これは、X. X 形式である必要があります。 たとえば、を送信すると、 `5` PowerShell によってエラーがスローされます。
 
 ```yaml
 Type: System.Version
@@ -880,7 +880,7 @@ Accept wildcard characters: False
 モジュールに必要なアセンブリ () ファイルを指定し `.dll` ます。 アセンブリ ファイル名を入力します。
 PowerShell は、型または形式を更新する前、入れ子になったモジュールをインポートする前、または **RootModule** キーの値に指定されているモジュールファイルをインポートする前に、指定されたアセンブリを読み込みます。
 
-このパラメーターを使用して、アセンブリが **NestedModules** キーでバイナリ モジュールとして列挙されている場合でも、 **FormatsToProcess** キーまたは **TypesToProcess** キーに列挙される形式または型ファイルを更新するために読み込む必要があるアセンブリを含め、モジュールに必要なすべてのアセンブリを列挙できます。
+このパラメーターを使用して、アセンブリが **NestedModules** キーでバイナリ モジュールとして列挙されている場合でも、**FormatsToProcess** キーまたは **TypesToProcess** キーに列挙される形式または型ファイルを更新するために読み込む必要があるアセンブリを含め、モジュールに必要なすべてのアセンブリを列挙できます。
 
 ```yaml
 Type: System.String[]
@@ -898,7 +898,7 @@ Accept wildcard characters: False
 
 グローバル セッション状態にする必要があるモジュールを指定します。 必要なモジュールがグローバルセッション状態でない場合は、PowerShell によってインポートされます。 必要なモジュールが使用できない場合、 `Import-Module` コマンドは失敗します。
 
-各モジュールの名前を文字列として、または **ModuleName** 　キーと **ModuleVersion** キーを含むハッシュ テーブルとして入力します。 ハッシュ テーブルは、オプションの **GUID** キーも保持できます。 パラメーター値として文字列とハッシュ テーブルを組み合わせることができます。
+各モジュールの名前を文字列として、または **ModuleName**　キーと **ModuleVersion** キーを含むハッシュ テーブルとして入力します。 ハッシュ テーブルは、オプションの **GUID** キーも保持できます。 パラメーター値として文字列とハッシュ テーブルを組み合わせることができます。
 
 PowerShell 2.0 では、は `Import-Module` 必要なモジュールを自動的にインポートしません。 必要なモジュールがグローバル セッション状態であることを確認するだけです。
 
@@ -958,7 +958,7 @@ Accept wildcard characters: False
 `.ps1`モジュールをインポートするときに、呼び出し元のセッション状態で実行されるスクリプト () ファイルを指定します。
 ログイン スクリプトを使用する場合と同様に、これらのスクリプトを使用して、環境を準備できます。
 
-モジュールのセッション状態で実行するスクリプトを指定するには、 **NestedModules** キーを使用します。
+モジュールのセッション状態で実行するスクリプトを指定するには、**NestedModules** キーを使用します。
 
 ```yaml
 Type: System.String[]

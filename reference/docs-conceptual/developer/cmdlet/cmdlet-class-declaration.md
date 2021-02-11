@@ -1,43 +1,42 @@
 ---
-title: コマンドレットクラス宣言 |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell SDK], declaring
-- declaring cmdlets [PowerShell SDK]
-ms.openlocfilehash: 96ce8144795346b6f46878ee6163ce69cdb1799a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレットのクラス宣言
+description: コマンドレットのクラス宣言
+ms.openlocfilehash: 854b0a4ca9f6c87c4fad3b71ee726beade585e02
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784505"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653504"
 ---
 # <a name="cmdlet-class-declaration"></a>コマンドレットのクラス宣言
 
-Microsoft .NET Framework クラスは、クラスのメタデータとして**コマンドレット**属性を指定することで、コマンドレットとして宣言されます。 (**コマンドレット**属性は、すべてのコマンドレットに必要な唯一の属性です)。
-**コマンドレット**の属性を指定する場合は、コマンドレットを識別する動詞と名詞のペアをユーザーに指定する必要があります。 また、コマンドレットがサポートする Windows PowerShell の機能について説明する必要があります。 **コマンドレット**属性の指定に使用される宣言構文の詳細については、「[コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
+Microsoft .NET Framework クラスは、クラスのメタデータとして **コマンドレット** 属性を指定することで、コマンドレットとして宣言されます。 ( **コマンドレット** 属性は、すべてのコマンドレットに必要な唯一の属性です)。
+**コマンドレット** の属性を指定する場合は、コマンドレットを識別する動詞と名詞のペアをユーザーに指定する必要があります。 また、コマンドレットがサポートする Windows PowerShell の機能について説明する必要があります。 **コマンドレット** 属性の指定に使用される宣言構文の詳細については、「[コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
 
 > [!NOTE]
-> **コマンドレット**属性は、system.servicemodel[属性](/dotnet/api/System.Management.Automation.CmdletAttribute)クラスによって定義されます。 このクラスのプロパティは、属性を宣言するときに使用される宣言パラメーターに対応します。
+> **コマンドレット** 属性は、system.servicemodel [属性](/dotnet/api/System.Management.Automation.CmdletAttribute)クラスによって定義されます。 このクラスのプロパティは、属性を宣言するときに使用される宣言パラメーターに対応します。
 
 ## <a name="nouns"></a>名詞
 
 コマンドレットの名詞は、コマンドレットが処理するリソースを指定します。 名詞は、コマンドレットを他のコマンドレットと区別します。
 
-コマンドレット名の名詞は固有である必要があります。また、*サーバー*などの汎用名詞の場合は、リソースを他の類似リソースと区別する短いプレフィックスを追加することをお勧めします。 たとえば、というプレフィックスを持つ名詞を含むコマンドレット名は、 `Get-SQLServer` です。 特定の名詞とより一般的な動詞を組み合わせることで、ユーザーはコマンドレットをアクションですばやく検索し、不要なコマンドレット名の重複を回避して、コマンドレットをリソースで識別できます。
+コマンドレット名の名詞は固有である必要があります。また、 *サーバー* などの汎用名詞の場合は、リソースを他の類似リソースと区別する短いプレフィックスを追加することをお勧めします。 たとえば、というプレフィックスを持つ名詞を含むコマンドレット名は、 `Get-SQLServer` です。 特定の名詞とより一般的な動詞を組み合わせることで、ユーザーはコマンドレットをアクションですばやく検索し、不要なコマンドレット名の重複を回避して、コマンドレットをリソースで識別できます。
 
-コマンドレット名に使用できない特殊文字の一覧については、「[必要な開発ガイドライン](./required-development-guidelines.md)」を参照してください。
+コマンドレット名に使用できない特殊文字の一覧については、「 [必要な開発ガイドライン](./required-development-guidelines.md)」を参照してください。
 
 ## <a name="verbs"></a>動詞
 
 動詞を指定する場合、開発ガイドラインでは、Windows PowerShell によって提供される定義済み動詞のいずれかを使用する必要があります。 これらの定義済み動詞のいずれかを使用すると、作成したコマンドレットと、Microsoft によって作成されたコマンドレットと他のコマンドレットとの間の一貫性が確保されます。 たとえば、データを取得するコマンドレットには、"Get" 動詞を使用します。
 
-動詞のガイドラインの詳細については、「[コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。 コマンドレット名に使用できない特殊文字の一覧については、「[必要な開発ガイドライン](./required-development-guidelines.md)」を参照してください。
+動詞のガイドラインの詳細については、「 [コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。 コマンドレット名に使用できない特殊文字の一覧については、「 [必要な開発ガイドライン](./required-development-guidelines.md)」を参照してください。
 
 ## <a name="supporting-windows-powershell-functionality"></a>Windows PowerShell の機能のサポート
 
-**コマンドレット**属性では、コマンドレットが Windows PowerShell によって提供されるいくつかの一般的な機能をサポートするように指定することもできます。 これには、ユーザーフィードバックの確認 ("ユーザーの操作" 機能のサポートと呼ばれます) などの一般的な機能のサポートと、トランザクションのサポートが含まれます。 (トランザクションのサポートは、Windows PowerShell 2.0 で導入されました)。
+**コマンドレット** 属性では、コマンドレットが Windows PowerShell によって提供されるいくつかの一般的な機能をサポートするように指定することもできます。 これには、ユーザーフィードバックの確認 ("ユーザーの操作" 機能のサポートと呼ばれます) などの一般的な機能のサポートと、トランザクションのサポートが含まれます。 (トランザクションのサポートは、Windows PowerShell 2.0 で導入されました)。
 
-**コマンドレット**属性の指定に使用される宣言構文の詳細については、「[コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
+**コマンドレット** 属性の指定に使用される宣言構文の詳細については、「[コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
 
 ## <a name="cmdlet-class-definition"></a>コマンドレットのクラス定義
 
@@ -57,6 +56,6 @@ Microsoft .NET Framework クラスは、クラスのメタデータとして**�
 
 [コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

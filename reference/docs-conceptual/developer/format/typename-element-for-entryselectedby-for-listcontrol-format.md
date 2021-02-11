@@ -1,12 +1,14 @@
 ---
-title: ListControl (Format) の EntrySelectedBy の TypeName 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5e7b73db5aa597d96141454008c5c58b1827df24
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl の EntrySelectedBy の TypeName 要素 (書式)
+description: ListControl の EntrySelectedBy の TypeName 要素 (書式)
+ms.openlocfilehash: 6fc5a2385fde3140abbc984e3da6a4dda483b2a8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780221"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645666"
 ---
 # <a name="typename-element-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の TypeName 要素 (書式)
 
@@ -46,7 +48,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 各リストエントリには、少なくとも1つの型名、選択セット、または選択条件が定義されている必要があります。
 
-リストビューでのこの要素の使用方法の詳細については、「[リストビュー](./creating-a-list-view.md)」を参照してください。
+リストビューでのこの要素の使用方法の詳細については、「 [リストビュー](./creating-a-list-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 

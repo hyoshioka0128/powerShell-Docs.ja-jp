@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, PowerShell, セットアップ
 title: 新規および更新されたコマンドレット
-ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell 5.1 には、新規または更新されたコマンドレットが多数含まれています。
+ms.openlocfilehash: bdfbe5a263864a172aefb0aa5731f59b95ab43ca
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809118"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663216"
 ---
 # <a name="new-and-updated-cmdlets"></a>新規および更新されたコマンドレット
 
@@ -41,7 +41,7 @@ Microsoft.PowerShell.Security モジュールに次の新しいコマンドレ�
 
 Cryptographic Message Syntax コマンドレットは、[RFC5652](https://tools.ietf.org/html/rfc5652.html) で説明されているように暗号によってメッセージを保護するための IETF 標準書式を使用して、コンテンツの暗号化と暗号化解除をサポートします。
 
-CMS 暗号化標準では、公開キー暗号化が実装されます。公開キー暗号化では、コンテンツの暗号化に使用されるキー (*公開キー*) とコンテンツの暗号化解除に使用されるキー (*秘密キー*) は別です。
+CMS 暗号化標準では、公開キー暗号化が実装されます。公開キー暗号化では、コンテンツの暗号化に使用されるキー ( *公開キー* ) とコンテンツの暗号化解除に使用されるキー ( *秘密キー* ) は別です。
 
 公開キーは広く共有でき、機密データではありません。 公開キーで暗号化したコンテンツは、秘密キーを使用してのみ暗号化解除できます。 公開キー暗号化の詳細については、「[公開鍵暗号](https://en.wikipedia.org/wiki/Public-key_cryptography)」を参照してください。
 
@@ -80,7 +80,7 @@ Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse
 
 ## <a name="updates-to-fileinfo-object"></a>FileInfo オブジェクトの更新
 
-ファイルのバージョン情報は、特にファイルにパッチが適用された場合に、間違えやすいです。 WMF 5.0 では、**FileInfo** オブジェクトに新しいスクリプト プロパティとして **FileVersionRaw** と **ProductVersionRaw** が追加されています。
+ファイルのバージョン情報は、特にファイルにパッチが適用された場合に、間違えやすいです。 WMF 5.0 では、 **FileInfo** オブジェクトに新しいスクリプト プロパティとして **FileVersionRaw** と **ProductVersionRaw** が追加されています。
 powershell.exe に対して表示されるプロパティを次に示します ($pid は PowerShell プロセスの ID であるとします)。
 
 ```powershell
@@ -192,7 +192,7 @@ New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 
 ### <a name="hard-links"></a>ハード リンク
 
-**パス**と**名前**の同じ組み合わせが前述のように許可されています。
+**パス** と **名前** の同じ組み合わせが前述のように許可されています。
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
@@ -200,7 +200,7 @@ New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshom
 
 ### <a name="directory-junctions"></a>ディレクトリ ジャンクション
 
-**パス**と**名前**の同じ組み合わせが前述のように許可されています。
+**パス** と **名前** の同じ組み合わせが前述のように許可されています。
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
@@ -286,7 +286,7 @@ ODataUtils モジュールでは、OData をサポートする REST エンドポ
 - -Select パラメーターを使用したサーバー側フィルタリング
 - Web 要求のヘッダーのサポート
 
-`Export-ODataEndPointProxy` コマンドレットで生成されるプロキシ コマンドレットは、サーバー側の OData エンドポイントからの**情報**ストリームの追加情報を提供します。
+`Export-ODataEndPointProxy` コマンドレットで生成されるプロキシ コマンドレットは、サーバー側の OData エンドポイントからの **情報** ストリームの追加情報を提供します。
 
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
@@ -324,7 +324,7 @@ while($skipCount -le $additionalInfo['odata.count'])
 Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
-`Export-ODataEndpointProxy` コマンドレットとそれによって生成されるプロキシ コマンドレットで、**Header** パラメーターがサポートされるようになりました。 このヘッダーを使用すると、OData エンドポイントで必要な追加情報をチャネルできます。
+`Export-ODataEndpointProxy` コマンドレットとそれによって生成されるプロキシ コマンドレットで、 **Header** パラメーターがサポートされるようになりました。 このヘッダーを使用すると、OData エンドポイントで必要な追加情報をチャネルできます。
 
 次の例では、サブスクリプション キーを含むハッシュ テーブルが **Headers** パラメーターに提供されます。 これは、認証にサブスクリプション キーを必要とするサービスの典型例です。
 

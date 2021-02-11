@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/unregister-event?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-Event
-ms.openlocfilehash: b132e842167bb6684519bfd196a3f4a03d078a62
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: b7aab2ef1e97ae1cc19d42b07145bd7a057f33fc
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93211376"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347756"
 ---
 # Unregister-Event
 
@@ -34,13 +34,12 @@ Unregister-Event [-SubscriptionId] <Int32> [-Force] [-WhatIf] [-Confirm] [<Commo
 ```
 
 ## Description
-イベントの登録 **解除** コマンドレットは、Register-engineevent、Register/objectevent、または Register-WmiEvent コマンドレットを使用して作成されたイベントサブスクリプションをキャンセルします。
 
-イベント サブスクリプションが取り消されると、セッションからイベント サブスクライバーが削除され、サブスクライブされたイベントはイベント キューに追加されません。
-New-Event コマンドレットを使用して作成されたイベントのサブスクリプションを取り消すと、新しいイベントはセッションからも削除されます。
+`Unregister-Event`コマンドレットでは `Register-EngineEvent` 、、 `Register-ObjectEvent` 、またはコマンドレットを使用して作成されたイベントサブスクリプションをキャンセルし `Register-WmiEvent` ます。
 
-**登録解除-** イベントはイベントキューからイベントを削除しません。
-イベントを削除するには、Remove-Event コマンドレットを使用します。
+イベント サブスクリプションが取り消されると、セッションからイベント サブスクライバーが削除され、サブスクライブされたイベントはイベント キューに追加されません。 コマンドレットを使用して作成されたイベントへのサブスクリプションをキャンセルすると、 `New-Event` 新しいイベントもセッションから削除されます。
+
+`Unregister-Event` イベントキューからイベントを削除しません。 イベントを削除するには、コマンドレットを使用し `Remove-Event` ます。
 
 ## 例
 
@@ -52,8 +51,7 @@ PS C:\> Unregister-Event -SourceIdentifier "ProcessStarted"
 
 このコマンドは、ソース識別子が ProcessStarted ているイベントサブスクリプションをキャンセルします。
 
-イベントのソース識別子を調べるには、Get-Event コマンドレットを使用します。
-イベントサブスクリプションのソース識別子を検索するには、 **Get EventSubscriber** コマンドレットを使用します。
+イベントのソース識別子を検索するには、コマンドレットを使用し `Get-Event` ます。 イベントサブスクリプションのソース識別子を検索するには、コマンドレットを使用し `Get-EventSubscriber` ます。
 
 ### 例 2: サブスクリプション id によってイベントサブスクリプションを取り消す
 
@@ -63,7 +61,7 @@ PS C:\> Unregister-Event -SubscriptionId 2
 
 このコマンドは、サブスクリプション識別子が 2 のイベント サブスクリプションを取り消します。
 
-イベントサブスクリプションのサブスクリプション識別子を検索するには、 **Get EventSubscriber** コマンドレットを使用します。
+イベントサブスクリプションのサブスクリプション識別子を検索するには、コマンドレットを使用し `Get-EventSubscriber` ます。
 
 ### 例 3: すべてのイベントサブスクリプションを取り消す
 
@@ -73,15 +71,15 @@ PS C:\> Get-EventSubscriber -Force | Unregister-Event -Force
 
 このコマンドは、セッション内のすべてのイベント サブスクリプションを取り消します。
 
-このコマンドは、 **Get EventSubscriber** コマンドレットを使用して、セッション内のすべてのイベントサブスクライバーオブジェクトを取得します。これには、イベント登録コマンドレットの *supportevent* パラメーターを使用して非表示になっているサブスクライバーも含まれます。
+このコマンドは、コマンドレットを使用して、 `Get-EventSubscriber` セッション内のすべてのイベントサブスクライバーオブジェクトを取得します。これには、イベント登録コマンドレットの **supportevent** パラメーターを使用して非表示になっているサブスクライバーも含まれます。
 
-パイプライン演算子 (|) を使用して、サブスクライバーオブジェクトを **登録解除イベント** に送信します。このオブジェクトは、セッションから削除されます。
-タスクを完了するには、 **イベントの登録解除** で *Force* パラメーターも必要です。
+パイプライン演算子 () を使用して `|` 、サブスクライバーオブジェクトをに送信します。これにより `Unregister-Event` 、セッションからサブスクライバーオブジェクトが削除されます。 タスクを完了するには、で **Force** パラメーターも必要です `Unregister-Event` 。
 
 ## PARAMETERS
 
 ### -Force
-**Register-engineevent** の *supportevent* **パラメーターを使用** して非表示になっていたサブスクリプションを **含め、すべて** のイベントサブスクリプションをキャンセルします。
+
+、、およびの **Supportevent** パラメーターを使用して非表示にされたサブスクリプションも含め、すべてのイベントサブスクリプションをキャンセルし `Register-ObjectEvent` `Register-WmiEvent` `Register-EngineEvent` ます。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -96,9 +94,10 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 このコマンドレットでイベントサブスクリプションをキャンセルするソース識別子を指定します。
 
-各コマンドには、 *SourceIdentifier* パラメーターまたは *SubscriptionId* パラメーターを含める必要があります。
+各コマンドには、 **SourceIdentifier** パラメーターまたは **SubscriptionId** パラメーターを含める必要があります。
 
 ```yaml
 Type: System.String
@@ -113,9 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
+
 このコマンドレットによってイベントサブスクリプションが取り消されるソース識別子 ID を指定します。
 
-各コマンドには、 *SourceIdentifier* パラメーターまたは *SubscriptionId* パラメーターを含める必要があります。
+各コマンドには、 **SourceIdentifier** パラメーターまたは **SubscriptionId** パラメーターを含める必要があります。
 
 ```yaml
 Type: System.Int32
@@ -130,6 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 コマンドレットの実行前に確認を求めるメッセージが表示されます。
 
 ```yaml
@@ -145,8 +146,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -161,26 +162,28 @@ Accept wildcard characters: False
 ```
 
 ### 共通パラメーター
+
 このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
 
 ## 入力
 
 ### PSEventSubscriber (システム管理)
-パイプを使用して、出力を Get-EventSubscriber から **登録解除** することができます。
+
+パイプを使用して、出力をからにパイプすることができ `Get-EventSubscriber` `Unregister-Event` ます。
 
 ## 出力
 
 ### なし
+
 このコマンドレットによる戻り値はありません。
 
 ## 注
 
-* イベント、イベント サブスクリプション、およびイベント キューは、現在のセッションにのみ存在します。 現在のセッションを閉じた場合、イベント キューが破棄され、イベント サブスクリプションが取り消されます。
+Linux または macOS プラットフォームで使用できるイベントソースがありません。
 
-  **Register-engineevent** コマンドレットを使用してイベントをサブスクライブしている場合を除き、New-Event コマンドレットを使用して作成されたイベントを削除することは **できません** 。
-セッションからカスタム イベントを削除するには、プログラムを使用してそれを削除するか、セッションを閉じる必要があります。
+イベント、イベント サブスクリプション、およびイベント キューは、現在のセッションにのみ存在します。 現在のセッションを閉じた場合、イベント キューが破棄され、イベント サブスクリプションが取り消されます。
 
-*
+`Unregister-Event` コマンドレットを使用して `New-Event` イベントをサブスクライブしていない限り、コマンドレットを使用して作成されたイベントを削除することはできません `Register-EngineEvent` 。 セッションからカスタム イベントを削除するには、プログラムを使用してそれを削除するか、セッションを閉じる必要があります。
 
 ## 関連リンク
 

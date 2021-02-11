@@ -7,12 +7,12 @@ ms.date: 10/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
-ms.openlocfilehash: 7f44f1d363c5fae79722fdfb5bd894cb24e00d0c
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 1cbecd37217c4c0113079dfa9ac7008dd0d91823
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93217880"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342231"
 ---
 # Get-Service
 
@@ -298,6 +298,8 @@ Accept wildcard characters: True
 
 ## 注
 
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
+
 PowerShell 6.0 以降では、 **ServiceController** オブジェクトに、 **UserName** 、 **Description** 、 **delayedautostart** 、 **binaryp name** 、および **startuptype** というプロパティが追加されています。
 
 また、組み込みエイリアスであるを参照することもでき `Get-Service` `gsv` ます。 詳細については、「 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)」を参照してください。
@@ -325,4 +327,3 @@ PowerShell 6.0 以降では、 **ServiceController** オブジェクトに、 **
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-

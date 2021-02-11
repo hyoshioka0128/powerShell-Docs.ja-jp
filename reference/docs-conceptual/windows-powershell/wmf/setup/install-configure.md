@@ -1,15 +1,13 @@
 ---
 ms.date: 06/10/2020
-ms.topic: conceptual
-keywords: WMF, PowerShell, セットアップ
-contributor: keithb
 title: WMF 5.1 のインストールと構成
-ms.openlocfilehash: 9e0b4b6ed387b0a0d7fcf62a913677986d70de92
-ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
+description: この記事では、WMF 5.1 のインストール方法と、その前提要件について説明します。
+ms.openlocfilehash: 0e076bfab684b6c83d62d236eea3bbd7ab2ad411
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84671395"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660848"
 ---
 # <a name="install-and-configure-wmf-51"></a>WMF 5.1 のインストールと構成
 
@@ -38,7 +36,7 @@ ms.locfileid: "84671395"
 
 - WMF 5.1 RTM をインストールする前に、WMF 5.1 プレビューをアンインストールする必要があります。
 - WMF 5.1 は、WMF 5.0 または WMF 4.0 の上に直接インストールできます。
-- Windows 7 および Windows Server 2008 R2 の上に WMF 5.1 をインストールする前に、WMF 4.0 をインストールする**必要はありません**。
+- Windows 7 および Windows Server 2008 R2 の上に WMF 5.1 をインストールする前に、WMF 4.0 をインストールする **必要はありません** 。
 
 ## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>Windows Server 2008 R2 および Windows 7 で WMF 5.1 をインストールする
 
@@ -50,7 +48,7 @@ ms.locfileid: "84671395"
 Windows Server 2008 R2 SP1 または Windows 7 SP1 に WMF 5.1 をインストールするには、次を行う必要があります。
 
 - 最新の Service Pack をインストールする必要があります。
-- WMF 3.0 をインストール**しないでください**。 WMF 3.0 経由で WMF 5.1 をインストールすると、**PSModulePath** (`$env:PSModulePath`) が失われ、これによって他のアプリケーションで障害が発生する場合があります。 WMF 5.1 をインストールする前に WMF 3.0 をアンインストールするか、**PSModulePath** を保存して、WMF 5.1 のインストールが完了した後に手動で復元する必要があります。
+- WMF 3.0 をインストール **しないでください** 。 WMF 3.0 経由で WMF 5.1 をインストールすると、 **PSModulePath** (`$env:PSModulePath`) が失われ、これによって他のアプリケーションで障害が発生する場合があります。 WMF 5.1 をインストールする前に WMF 3.0 をアンインストールするか、 **PSModulePath** を保存して、WMF 5.1 のインストールが完了した後に手動で復元する必要があります。
 - WMF 5.1には少なくとも [.NET Framework 4.5.2 ](https://www.microsoft.com/download/details.aspx?id=42642)が必要です。 Microsoft .NET Framework 4.5.2 をインストールするには、ダウンロード場所で提供されている手順に従ってください。
 
 ### <a name="installing-wmf-51-on-windows-server-2008-r2-and-windows-7"></a>Windows Server 2008 R2 および Windows 7 で WMF 5.1 をインストールする
@@ -65,8 +63,8 @@ Windows Server 2008 R2 SP1 または Windows 7 SP1 に WMF 5.1 をインスト�
 
    `Install-WMF5.1.ps1` では、Windows Server 2008 R2 および Windows 7 でのインストールの自動化を容易にするため、次のパラメーターが使用されます。
 
-   - **AcceptEula**:このパラメーターが含まれる場合、使用許諾契約書は自動的に受け入れられ、表示はされません。
-   - **AllowRestart**:このパラメーターは、AcceptEula が指定されている場合にのみ使用できます。 このパラメーターが含まれていて、WMF 5.1 のインストール後に再起動が必要な場合は、インストールが完了した後すぐに、メッセージが表示されることなく再起動が実行されます。
+   - **AcceptEula** :このパラメーターが含まれる場合、使用許諾契約書は自動的に受け入れられ、表示はされません。
+   - **AllowRestart** :このパラメーターは、AcceptEula が指定されている場合にのみ使用できます。 このパラメーターが含まれていて、WMF 5.1 のインストール後に再起動が必要な場合は、インストールが完了した後すぐに、メッセージが表示されることなく再起動が実行されます。
 
 ## <a name="winrm-dependency"></a>WinRM の依存関係
 

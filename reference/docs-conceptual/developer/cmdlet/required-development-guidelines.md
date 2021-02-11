@@ -1,12 +1,14 @@
 ---
-title: 必要な開発ガイドライン |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ca0168050e3c1c2e7537036f96da62f52d50982e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 必要な開発ガイドライン
+description: 必要な開発ガイドライン
+ms.openlocfilehash: 98db075b314eb7f54f2deb56022799d9f830f9ef
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781700"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655760"
 ---
 # <a name="required-development-guidelines"></a>必要な開発ガイドライン
 
@@ -52,21 +54,21 @@ ms.locfileid: "87781700"
 
 コマンドレット属性で指定する動詞は、Windows PowerShell によって提供される、認識された動詞のセットから取得する必要があります。 禁止されたシノニムの1つである必要はありません。 次の列挙体で定義されている定数文字列を使用して、コマンドレット動詞を指定します。
 
-- [VerbsCommon (システム管理)](/dotnet/api/System.Management.Automation.VerbsCommon)
+- [System.Management.Automation.VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon)
 
-- [VerbsCommunications (システム管理)](/dotnet/api/System.Management.Automation.VerbsCommunications)
+- [System.Management.Automation.VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
 
-- [VerbsData (システム管理)](/dotnet/api/System.Management.Automation.VerbsData)
+- [System.Management.Automation.VerbsData](/dotnet/api/System.Management.Automation.VerbsData)
 
-- [VerbsDiagnostic (システム管理)](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
+- [System.Management.Automation.VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
 
-- [VerbsLifeCycle (システム管理)](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
+- [System.Management.Automation.VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
 
-- [VerbsSecurity (システム管理)](/dotnet/api/System.Management.Automation.VerbsSecurity)
+- [System.Management.Automation.VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
 
-- [VerbsOther (システム管理)](/dotnet/api/System.Management.Automation.VerbsOther)
+- [System.Management.Automation.VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)
 
-承認された動詞名の詳細については、「[コマンドレットの動詞](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
+承認された動詞名の詳細については、「 [コマンドレットの動詞](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
 
 ユーザーには、検出可能な一連のコマンドレット名が必要です。 適切な動詞を使用して、ユーザーがコマンドレットの動作を迅速に評価し、システムの機能を簡単に検出できるようにします。 たとえば、次のコマンドラインコマンドは、名前が "start" で始まるシステム上のすべてのコマンドの一覧を取得し `get-command start-*` ます。 コマンドレットの名詞を使用して、他のコマンドレットとコマンドレットを区別します。 名詞は、操作が実行されるリソースを示します。 操作自体は動詞によって表されます。
 
@@ -82,7 +84,7 @@ ms.locfileid: "87781700"
 |{}|かっこ|
 |[]|カッコ|
 |&|アンパサンド|
-|-|ハイフン**メモ:** ハイフンを使用して、名詞から動詞を区切ることができますが、名詞内または動詞内で使用することはできません。|
+|-|ハイフン **メモ:**  ハイフンを使用して、名詞から動詞を区切ることができますが、名詞内または動詞内で使用することはできません。|
 |/|スラッシュ記号|
 |\\| 円記号|
 |$|ドル記号|
@@ -104,22 +106,22 @@ ms.locfileid: "87781700"
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>使用できないパラメーター名 (RD03)
 
-Windows PowerShell は、すべてのコマンドレットにパラメーターを設定し、特定の状況で追加されるパラメーターを追加します。 独自のコマンドレットを設計する場合、Confirm、Debug、ErrorAction、Erroraction、OutBuffer、Outbuffer、Warnings Action、Warnings Variable、WhatIf、UseTransaction、Verbose の各名前は使用できません。 これらのパラメーターの詳細については、「[共通パラメーター名](./common-parameter-names.md)」を参照してください。
+Windows PowerShell は、すべてのコマンドレットにパラメーターを設定し、特定の状況で追加されるパラメーターを追加します。 独自のコマンドレットを設計する場合、Confirm、Debug、ErrorAction、Erroraction、OutBuffer、Outbuffer、Warnings Action、Warnings Variable、WhatIf、UseTransaction、Verbose の各名前は使用できません。 これらのパラメーターの詳細については、「 [共通パラメーター名](./common-parameter-names.md)」を参照してください。
 
 ### <a name="support-confirmation-requests-rd04"></a>確認要求のサポート (RD04)
 
-システムを変更する操作を実行するコマンドレットについては、確認を要求するために、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドを呼び出す必要があります。また、特殊なケース[では、](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)このメソッドを呼び出します。 (" [System](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ......................................................... [...](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
+システムを変更する操作を実行するコマンドレットについては、確認を要求するために、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) メソッドを呼び出す必要があります。また、特殊なケース [では、](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) このメソッドを呼び出します。 (" [System](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ......................................................... [...](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
 
-これらの呼び出しを行うには、コマンドレット属性のキーワードを設定して、コマンドレットで確認要求をサポートするように指定する必要があり `SupportsShouldProcess` ます。 この属性の設定の詳細については、「[コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
+これらの呼び出しを行うには、コマンドレット属性のキーワードを設定して、コマンドレットで確認要求をサポートするように指定する必要があり `SupportsShouldProcess` ます。 この属性の設定の詳細については、「 [コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
 
 > [!NOTE]
-> コマンドレットクラスの Cmdlet 属性によって、コマンドレットが[システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出しをサポートしていることが示されている場合、コマンドレットは、system..... [. コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出しを実行できません。また、コマンドレットは、システムを予期せず変更する可能性があります。
+> コマンドレットクラスの Cmdlet 属性によって、コマンドレットが [システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) の呼び出しをサポートしていることが示されている場合、コマンドレットは、system..... [. コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) の呼び出しを実行できません。また、コマンドレットは、システムを予期せず変更する可能性があります。
 
-システムを変更する場合は、System...[コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)を使用します。 ユーザー設定とパラメーターによって `WhatIf` 、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドが制御されます。 これに[対して、"..](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ....................................... このメソッドは、ユーザー設定またはパラメーターによって制御されません `WhatIf` 。 コマンドレットで、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドを呼び出す場合は、 `Force` この2つのメソッドの呼び出しをバイパスして操作を続行するパラメーターが必要です。 これは、非対話型のスクリプトやホストでコマンドレットを使用できるようにするために重要です。
+システムを変更する場合は、System... [コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) を使用します。 ユーザー設定とパラメーターによって `WhatIf` 、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) メソッドが制御されます。 これに [対して、"..](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ....................................... このメソッドは、ユーザー設定またはパラメーターによって制御されません `WhatIf` 。 コマンドレットで、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) メソッドを呼び出す場合は、 `Force` この2つのメソッドの呼び出しをバイパスして操作を続行するパラメーターが必要です。 これは、非対話型のスクリプトやホストでコマンドレットを使用できるようにするために重要です。
 
-コマンドレットがこれらの呼び出しをサポートしている場合、ユーザーはアクションを実際に実行するかどうかを判断できます。 たとえば、 [Stop Process](/powershell/module/microsoft.powershell.management/stop-process)コマンドレットは、システム、Winlogon、spoolsv.exe の各プロセスを含む一連の重要なプロセスを停止する前に、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドを呼び出します。
+コマンドレットがこれらの呼び出しをサポートしている場合、ユーザーはアクションを実際に実行するかどうかを判断できます。 たとえば、 [Stop Process](/powershell/module/microsoft.powershell.management/stop-process) コマンドレットは、システム、Winlogon、spoolsv.exe の各プロセスを含む一連の重要なプロセスを停止する前に、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) メソッドを呼び出します。
 
-これらのメソッドのサポートの詳細については、「[確認の要求](./requesting-confirmation-from-cmdlets.md)」を参照してください。
+これらのメソッドのサポートの詳細については、「 [確認の要求](./requesting-confirmation-from-cmdlets.md)」を参照してください。
 
 ### <a name="support-force-parameter-for-interactive-sessions-rd05"></a>対話型セッションの Force パラメーターのサポート (RD05)
 
@@ -147,9 +149,9 @@ Windows PowerShell は、パイプラインに書き込まれたオブジェク�
 
 ### <a name="derive-from-the-cmdlet-or-pscmdlet-classes-rc01"></a>コマンドレットまたは PSCmdlet クラスからの派生 (RC01)
 
-コマンドレットは、 [PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底クラス[またはのいずれ](/dotnet/api/System.Management.Automation.Cmdlet)かから派生する必要があります。 System.servicemodel[クラスから派生した](/dotnet/api/System.Management.Automation.Cmdlet)コマンドレットは、Windows PowerShell ランタイムに依存しません。 これらは、任意の Microsoft .NET Framework 言語から直接呼び出すことができます。 [PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラスから派生したコマンドレットは、Windows PowerShell ランタイムに依存します。 そのため、実行空間内で実行されます。
+コマンドレットは、 [PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底クラス[またはのいずれ](/dotnet/api/System.Management.Automation.Cmdlet)かから派生する必要があります。 System.servicemodel [クラスから派生した](/dotnet/api/System.Management.Automation.Cmdlet) コマンドレットは、Windows PowerShell ランタイムに依存しません。 これらは、任意の Microsoft .NET Framework 言語から直接呼び出すことができます。 [PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラスから派生したコマンドレットは、Windows PowerShell ランタイムに依存します。 そのため、実行空間内で実行されます。
 
-実装するすべてのコマンドレットクラスは、パブリッククラスである必要があります。 これらのコマンドレットクラスの詳細については、「[コマンドレットの概要](./cmdlet-overview.md)」を参照してください。
+実装するすべてのコマンドレットクラスは、パブリッククラスである必要があります。 これらのコマンドレットクラスの詳細については、「 [コマンドレットの概要](./cmdlet-overview.md)」を参照してください。
 
 ### <a name="specify-the-cmdlet-attribute-rc02"></a>コマンドレットの属性 (RC02) を指定します。
 
@@ -159,21 +161,21 @@ Windows PowerShell によってコマンドレットが認識されるように�
 
 - 複数のパラメーターセットが指定されている場合に使用される既定のパラメーターセット。 既定のパラメーターセットは、Windows PowerShell に、使用するパラメーターセットを決定するのに十分な情報がない場合に使用されます。
 
-- コマンドレットで、システムの呼び出しをサポートするかどうかを示し[ます](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)。 このメソッドは、コマンドレットによってシステムが変更される前に、ユーザーに確認メッセージを表示します。 確認要求の実行方法の詳細については、「[確認](./requesting-confirmation-from-cmdlets.md)の要求」を参照してください。
+- コマンドレットで、システムの呼び出しをサポートするかどうかを示し [ます](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) 。 このメソッドは、コマンドレットによってシステムが変更される前に、ユーザーに確認メッセージを表示します。 確認要求の実行方法の詳細については、「 [確認](./requesting-confirmation-from-cmdlets.md)の要求」を参照してください。
 
-- 確認メッセージに関連付けられているアクションの影響レベル (または重大度) を示します。 ほとんどの場合、既定値の Medium が使用されます。 影響レベルがユーザーに表示される確認要求に与える影響の詳細については、「[確認の要求](./requesting-confirmation-from-cmdlets.md)」を参照してください。
+- 確認メッセージに関連付けられているアクションの影響レベル (または重大度) を示します。 ほとんどの場合、既定値の Medium が使用されます。 影響レベルがユーザーに表示される確認要求に与える影響の詳細については、「 [確認の要求](./requesting-confirmation-from-cmdlets.md)」を参照してください。
 
-コマンドレット属性を宣言する方法の詳細については、「コマンドレット[属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
+コマンドレット属性を宣言する方法の詳細については、「コマンドレット [属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
 
 ### <a name="override-an-input-processing-method-rc03"></a>入力処理メソッドのオーバーライド (RC03)
 
-コマンドレットを Windows PowerShell 環境に参加させるには、次の*入力処理メソッド*の少なくとも1つをオーバーライドする必要があります。
+コマンドレットを Windows PowerShell 環境に参加させるには、次の *入力処理メソッド* の少なくとも1つをオーバーライドする必要があります。
 
-[このメソッド](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)は、1回だけ呼び出され、事前処理機能を提供するために使用されます。
+[このメソッド](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) は、1回だけ呼び出され、事前処理機能を提供するために使用されます。
 
-[このメソッド](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)は、複数回呼び出されます。また、レコードごとの機能を提供するために使用されます。
+[このメソッド](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) は、複数回呼び出されます。また、レコードごとの機能を提供するために使用されます。
 
-[このメソッド](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)は、1回だけ呼び出され、後処理機能を提供するために使用されます。
+[このメソッド](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) は、1回だけ呼び出され、後処理機能を提供するために使用されます。
 
 ### <a name="specify-the-outputtype-attribute-rc04"></a>OutputType 属性の指定 (RC04)
 
@@ -181,19 +183,19 @@ OutputType 属性 (Windows PowerShell 2.0 で導入) では、コマンドレッ
 
 ### <a name="do-not-retain-handles-to-output-objects-rc05"></a>出力オブジェクトのハンドルを保持しない (RC05)
 
-コマンドレットは、 [WriteObject *](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッドに渡されるオブジェクトへのハンドルを保持しないようにする必要があります。 これらのオブジェクトは、パイプラインの次のコマンドレットに渡されるか、スクリプトによって使用されます。 オブジェクトへのハンドルを保持すると、2つのエンティティが各オブジェクトを所有し、エラーが発生します。
+コマンドレットは、 [WriteObject *](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) メソッドに渡されるオブジェクトへのハンドルを保持しないようにする必要があります。 これらのオブジェクトは、パイプラインの次のコマンドレットに渡されるか、スクリプトによって使用されます。 オブジェクトへのハンドルを保持すると、2つのエンティティが各オブジェクトを所有し、エラーが発生します。
 
 ### <a name="handle-errors-robustly-rc06"></a>エラーを確実に処理する (RC06)
 
 管理環境は、本質的に、管理しているシステムに対して重要な変更を検出し、それを行います。 このため、コマンドレットでエラーを正しく処理することが重要です。 エラーレコードの詳細については、「 [Windows PowerShell エラー報告](./error-reporting-concepts.md)」を参照してください。
 
-- エラーが原因で、コマンドレットがそれ以上のレコードの処理を続行できない場合は、終了エラーになります。 コマンドレットは、 [ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッドを呼び出す必要があります。このメソッドは、[このオブジェクトを参照します](/dotnet/api/System.Management.Automation.ErrorRecord)。 コマンドレットによって例外がキャッチされない場合、Windows PowerShell ランタイム自体は、より少ない情報を含む終了エラーをスローします。
+- エラーが原因で、コマンドレットがそれ以上のレコードの処理を続行できない場合は、終了エラーになります。 コマンドレットは、 [ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) メソッドを呼び出す必要があります。このメソッドは、 [このオブジェクトを参照します](/dotnet/api/System.Management.Automation.ErrorRecord) 。 コマンドレットによって例外がキャッチされない場合、Windows PowerShell ランタイム自体は、より少ない情報を含む終了エラーをスローします。
 
 - パイプラインからの次のレコード (たとえば、別のプロセスによって生成されるレコード) での操作を停止しない未終了エラーについては、コマンドレットで[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドを呼び出す必要があります。このメソッドは、[このオブジェクトを参照します。](/dotnet/api/System.Management.Automation.ErrorRecord) 終了しないエラーの例としては、特定のプロセスの停止に失敗した場合に発生するエラーがあります。 [WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドを呼び出すと、ユーザーは、要求された操作を一貫して実行し、失敗した特定の操作に関する情報を保持することができます。 コマンドレットでは、各レコードを可能な限り個別に処理する必要があります。
 
-- [ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッドと WriteError * メソッドによって参照されている、 [*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドのコアでは、例外が必要になります。[このオブジェクトを](/dotnet/api/System.Management.Automation.ErrorRecord)参照してください。 使用する例外を決定するときは、.NET Framework 設計ガイドラインに従ってください。 エラーが意味的に既存の例外と同じ場合は、その例外を使用するか、その例外から派生させます。 それ以外の場合は、新しい例外または例外の階層を[system.exception](/dotnet/api/System.Exception)型から直接派生させます。
+- [ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッドと WriteError * メソッドによって参照されている、 [*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドのコアでは、例外が必要になります。[このオブジェクトを](/dotnet/api/System.Management.Automation.ErrorRecord)参照してください。 使用する例外を決定するときは、.NET Framework 設計ガイドラインに従ってください。 エラーが意味的に既存の例外と同じ場合は、その例外を使用するか、その例外から派生させます。 それ以外の場合は、新しい例外または例外の階層を [system.exception](/dotnet/api/System.Exception) 型から直接派生させます。
 
-また、[システムの管理. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトには、ユーザーのエラーをグループ化するエラーカテゴリも必要です。 ユーザーは、シェル変数の値を category ビューに設定することにより、カテゴリに基づいてエラーを表示でき `$ErrorView` ます。 使用可能なカテゴリは、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙型によって定義されます。
+また、 [システムの管理. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) オブジェクトには、ユーザーのエラーをグループ化するエラーカテゴリも必要です。 ユーザーは、シェル変数の値を category ビューに設定することにより、カテゴリに基づいてエラーを表示でき `$ErrorView` ます。 使用可能なカテゴリは、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) 列挙型によって定義されます。
 
 - コマンドレットによって新しいスレッドが作成され、そのスレッドで実行されているコードがハンドルされない例外をスローした場合、Windows PowerShell はエラーをキャッチせず、プロセスを終了します。
 
@@ -209,4 +211,4 @@ OutputType 属性 (Windows PowerShell 2.0 で導入) では、コマンドレッ
 
 [お勧めする開発ガイドライン](./advisory-development-guidelines.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

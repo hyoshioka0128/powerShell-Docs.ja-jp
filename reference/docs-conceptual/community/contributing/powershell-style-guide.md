@@ -1,34 +1,34 @@
 ---
 title: PowerShell ドキュメントのスタイル ガイド
 description: この記事では、PowerShell ドキュメントを記述するためのスタイル規則について説明します。
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 32df641f7cafa2a5bfcf1bcbf94be594aa77c7d0
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
-ms.translationtype: HT
+ms.openlocfilehash: 6f23f63cffc9fed9cbbcf84539875bfaf4247732
+ms.sourcegitcommit: 61765d08321623743dc5db5367160f6982fe7857
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837445"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "99599278"
 ---
 # <a name="powershell-docs-style-guide"></a>PowerShell ドキュメントのスタイル ガイド
 
-この記事では、PowerShell ドキュメントのコンテンツに固有のスタイル ガイダンスについて説明します。 これは、[概要](overview.md#get-started-writing-docs)に記載されている情報に基づいています。
+この記事では、PowerShell ドキュメントのコンテンツに固有のスタイル ガイダンスについて説明します。 [概要](overview.md#get-started-writing-docs)に記載されている情報に基づいています。
 
 ## <a name="product-terminology"></a>製品に関する用語
 
 PowerShell にはいくつかのバリエーションがあります。
 
-- **PowerShell** - これが既定値です。 PowerShell 7 以降のすべての PowerShell の総称として使用されます。
-- **PowerShell Core** - .NET Core 上で構築される PowerShell です。 **Core** という用語の使用は、Windows PowerShell と区別する必要がある場合にのみ限定する必要があります。
+- **PowerShell** - これが既定値です。 PowerShell 7 以降を使用することをお勧めします。
+- **PowerShell Core** - .NET Core 上で構築される PowerShell です。 **コア** という用語の使用は、Windows PowerShell と区別する必要がある場合に限定する必要があります。
 - **Windows PowerShell** - .NET Framework 上で構築される PowerShell です。 Windows PowerShell は Windows にのみ付属しており、完全な Framework が必要です。
 
-  通常、ドキュメント内の "Windows PowerShell" は、"PowerShell" に読み替えることができます。
-  "Windows PowerShell" 固有の動作について説明する場合は、"Windows PowerShell" を使用する必要があります。
+  一般に、ドキュメント内の "Windows PowerShell" への参照は _PowerShell_ に変更できます。
+  _Windows powershell_ 固有の動作について説明する場合は、"windows powershell" を使用する必要があります。
 
 関連製品
 
-- **Visual Studio Code (VS Code)** - これは Microsoft の無料のオープン ソース エディターです。 最初のメンションでは、完全な名前を使用する必要があります。 その後で、**VS Code** を使用できます。 "VSCode" は使用しないでください。
-- **Visual Studio Code 用の PowerShell 拡張機能** - この拡張機能によって VS Code が PowerShell 用の推奨 IDE に切り替えられます。 最初のメンションでは、完全な名前を使用する必要があります。 その後で、**PowerShell 拡張機能**を使用できます。
+- **Visual Studio Code (VS Code)** -これは Microsoft の無料のオープンソースエディターです。 最初のメンションでは、完全な名前を使用する必要があります。 その後で、**VS Code** を使用できます。 "VSCode" は使用しないでください。
+- **Visual Studio Code 用の PowerShell 拡張機能** - この拡張機能によって VS Code が PowerShell 用の推奨 IDE に切り替えられます。 最初のメンションでは、完全な名前を使用する必要があります。 その後で、**PowerShell 拡張機能** を使用できます。
 - **Azure PowerShell** - これは、Azure サービスを管理するために使用される PowerShell モジュールのコレクションです。
 - **Azure Stack PowerShell** - これは、Microsoft のハイブリッド クラウド ソリューションを管理するために使用される PowerShell モジュールのコレクションです。
 
@@ -42,7 +42,8 @@ Microsoft のドキュメントを構築する Microsoft Open Publishing System 
 
 空白行は、Markdown 内のブロックが終わることも示します。 異なる種類の Markdown ブロックの間 (段落とリストの間や段落とヘッダーの間など) には、単一の空白行が必要です。
 
-重複する空白行を削除します。 複数の空白行は HTML では単一の空白行として表示されるため、複数の空白行には目的がありません。 コード ブロック内に複数の空白行があると、コード ブロックが分割されてしまいます。
+HTML では、連続した複数の空白行が1つの空白行として表示されます。 目的はありません。
+コードブロック内では、連続する空白行によってコードブロックが分割されます。
 
 行の末尾の余分なスペースを削除してください。
 
@@ -57,8 +58,8 @@ Microsoft のドキュメントを構築する Microsoft Open Publishing System 
 - `#` と見出しの最初の文字の間には単一のスペースが必要
 - 見出しの上下は単一の空白行にする
 - ドキュメントごとの H1 は 1 つのみにする
-- ヘッダーのレベルは 1 つずつ増分する。 レベルをスキップしないでください
-- ヘッダーに太字またはその他のマークアップを使用しない
+- ヘッダーのレベルは 1 つずつ増分する。 レベルをスキップしない
+- ヘッダーで太字またはその他のマークアップを使用しない
 
 ### <a name="limit-line-length-to-100-characters"></a>行の長さを 100 文字に制限する
 
@@ -66,44 +67,44 @@ Microsoft のドキュメントを構築する Microsoft Open Publishing System 
 
 Visual Studio Code の [Reflow Markdown][reflow] 拡張機能を使用すると、規定の行の長さに合うように段落が簡単にリフロ―されます。
 
-About_topics の長さは 80 文字に制限されます。 詳細については、「[参照記事の編集](./editing-cmdlet-ref.md#formatting-about_-files)」を参照してください。
+About_topics の長さは 80 文字に制限されます。 詳細については、「 [About_ ファイルの書式設定](#formatting-about_-files)」を参照してください。
 
 ### <a name="lists"></a>リスト
 
-リストに複数の文または段落が含まれている場合は、リストではなくサブレベルのヘッダーを使用することを検討してください。
+リストに複数の文または段落が含まれている場合は、リストではなくサブレベルヘッダーを使用することを検討してください。
 
 リストの上下は単一の空白行にします。
 
 #### <a name="unordered-lists"></a>箇条書きリスト
 
-リスト項目に複数の文が含まれていない限り、リスト項目にはピリオドをつけないでください。 リスト項目の箇条書き記号には、ハイフン文字 (`-`) を使用します。 これにより、アスタリスク [`*`] を使用する、太字または斜体のマークアップとの混同を回避できます。 段落またはその他の要素を箇条書き項目の下に含めるには、改行を挿入し、インデントを箇条書き記号の後ろの最初の文字に揃えます。
+複数の文が含まれている場合を除き、ピリオドでリスト項目を終了しないでください。 リスト項目の箇条書き記号には、ハイフン文字 (`-`) を使用します。 これにより、アスタリスク [`*`] を使用する、太字または斜体のマークアップとの混同を回避できます。 段落またはその他の要素を箇条書き項目の下に含めるには、改行を挿入し、インデントを箇条書き記号の後ろの最初の文字に揃えます。
 
 次に例を示します。
 
 ```markdown
-This is a list that contain sub-elements under a bullet item.
+This is a list that contain child elements under a bullet item.
 
 - First bullet item
 
   Sentence explaining the first bullet.
 
-  - Sub-bullet item
+  - Child bullet item
 
-    Sentence explaining the sub-bullet.
+    Sentence explaining the child bullet.
 
 - Second bullet item
 - Third bullet item
 ```
 
-これは、箇条書き項目の下にサブ要素が含まれているリストです。
+これは箇条書き項目の下にある子要素を含むリストです。
 
 - 最初の箇条書き項目
 
   最初の箇条書きの内容文。
 
-  - サブ箇条書き項目
+  - 子の箇条書き項目
 
-    サブ箇条書きの内容文。
+    子の箇条書きを説明する文。
 
 - 2 番目の箇条書き項目
 - 3 番目の箇条書き項目
@@ -147,16 +148,16 @@ Example:
 ![Introduction](./media/overview/Introduction.png)
 ```
 
-`alt text` は画像の簡単な説明であり、`<folder path>` は画像の相対パスです。 代替テキストは、視覚障碍がある読者のために必要です。 サイトのバグで画像を表示できない場合にも役立ちます。
+`alt text` は画像の簡単な説明であり、`<folder path>` は画像の相対パスです。 代替テキストは、視覚障碍がある読者のために必要です。
 
-画像は、記事が含まれているフォルダー内の `media/<article-name>` フォルダーに格納されている必要があります。
-複数の記事で画像を共有することはできません。 `media` フォルダーの下に、記事のファイル名と一致するフォルダーを作成します。 記事のための画像を、その新しいフォルダーにコピーします。 画像が複数の記事で使用される場合は、各画像フォルダーにその画像ファイルのコピーが含まれている必要があります。 ある記事内の画像の変更が他の記事に影響するのを防ぐことができます。
+画像は `media/<article-name>` 、アーティクルを含むフォルダー内のフォルダーに格納されている必要があります。
+記事間で画像を共有しないでください。 `media` フォルダーの下に、記事のファイル名と一致するフォルダーを作成します。 その記事のイメージをその新しいフォルダーにコピーします。 複数の記事でイメージが使用されている場合は、各イメージ フォルダーにそのイメージ ファイルのコピーを含める必要があります。 これにより、ある記事でイメージを変更しても、別の記事に影響を与えることがなくなります。
 
-次の種類の画像ファイルがサポートされています。`*.png`、`*.gif`、`*.jpeg`、`*.jpg`、`*.svg`
+サポートされているイメージファイルの種類は、、、、 `*.png` `*.gif` `*.jpeg` `*.jpg` 、です。 `*.svg`
 
-### <a name="markdown-extensions-supported-by-open-publishing"></a>Open Publishing でサポートされる Markdown 拡張機能
+### <a name="markdown-extensions-supported-by-open-publishing"></a>Open Publishing でサポートされる Markdown の拡張機能
 
-[Microsoft Docs Authoring Pack](/contribute/how-to-write-docs-auth-pack) には、Microsoft のパブリッシング システム固有の機能をサポートするツールが含まれています。 アラートは、docs.microsoft.com に表示されるブロック引用を、その内容の重要性を強調表示する色とアイコンを使用して作成する Markdown 拡張機能です。 次のアラートの種類がサポートされています。
+[Microsoft Docs Authoring Pack](/contribute/how-to-write-docs-auth-pack)には、公開システム固有の機能をサポートするツールが含まれています。 アラートは、コンテンツの有意性を強調する色とアイコンを使用して docs.microsoft.com に表示するブロック引用符を作成するための Markdown 拡張機能です。 次の種類のアラートがサポートされています。
 
 ```markdown
 > [!NOTE]
@@ -175,82 +176,91 @@ Example:
 > Dangerous certain consequences of an action.
 ```
 
-これらのアラートは、docs.microsoft.com に次のように表示されます。
+これらのアラートは docs.microsoft.com 上で次のように表示されます。
+
+メモブロック
+
+> [!NOTE]
+> Information the user should notice even if skimming.
+
+ヒントブロック
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+重要なブロック
+
+> [!IMPORTANT]
+> Essential information required for user success.
 
 注意ブロック
 
-> [!NOTE]
-> 流し読みする場合でも、ユーザーが注目する必要がある情報です。
-
-ヒント ブロック
-
-> [!TIP]
-> ユーザーの成果を向上させるために役立つオプションの情報です。
-
-重要ブロック
-
-> [!IMPORTANT]
-> ユーザーが目的を達成するために必要な、非常に重要な情報です。
-
-注意事項ブロック
-
 > [!CAUTION]
-> アクションの考えられる悪影響です。
+> Negative potential consequences of an action.
 
 警告ブロック
 
 > [!WARNING]
-> アクションの避けられない危険な影響です。
+> Dangerous certain consequences of an action. (ある行動で起こるいくつかの危険な結果。)
 
 ### <a name="hyperlinks"></a>ハイパーリンク
 
-- ハイパーリンクには Markdown 構文を使用する必要があります `[friendlyname](url-or-path)`
-- 可能な場合は、リンクを HTTPS にする必要があります。
-- リンクにはフレンドリ名が必要です。通常はリンク先のトピックのタイトルを使用します。
-- 下部にある「関連リンク」セクションのすべての項目は、ハイパーリンクにする必要があります
-- ハイパーリンクの角かっこ内で、バックティック、太字、またはその他のマークアップを使用しないでください。
-- 特定の URI について述べている場合は、URL そのものを使用できます。 その URI はバックティックで囲む必要があります。 次に例を示します。
+- ハイパーリンクには Markdown 構文を使用する必要があり `[friendlyname](url-or-path)` ます。 [リンク参照][linkref] がサポートされています。
+- 公開システムでは、次の3種類のリンクがサポートされています。
+  - URL リンク
+  - ファイルリンク
+  - 相互参照リンク
+- Docs.microsoft.com の他の記事へのリンクは、サイト相対パスである必要があります。
+- 外部 web サイトへのすべての Url は、ターゲットサイトで有効でない場合を除き、HTTPS を使用する必要があります。
+- リンクにはフレンドリ名が必要です。通常はリンクアーティクルのタイトルです
+- 下部にある [ _関連リンク_ ] セクションのすべての項目はハイパーリンクにする必要があります。
+- ハイパーリンクの角かっこ内には、バックティック、太字、またはその他のマークアップを使用しないでください。
+- 特定の URI をドキュメント化するときに、ベア Url を使用できます。 URI は、バックティックで囲む必要があります。 次に例を示します。
 
   ```markdown
-  By default, if you do not specify this parameter, the DMTF standard resource URI
+  By default, if you don't specify this parameter, the DMTF standard resource URI
   `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
   ```
 
-#### <a name="linking-to-other-content"></a>他のコンテンツへのリンク
+#### <a name="linking-to-other-content-on-docsmicrosoftcom"></a>Docs.microsoft.com の他のコンテンツへのリンク
 
-パブリッシング システムでサポートされるハイパーリンクには、
+- Docs.microsoft.com の他の記事への **URL リンク** は、サイト相対パスである必要があります。 相対リンクを作成する最も簡単な方法は、ブラウザーから URL をコピーし、 `https://docs.microsoft.com/en-us` markdown に貼り付ける値から削除することです。 Microsoft のプロパティの Url にロケールを含めないで `/en-us` ください (url から削除)。 URL から不要なクエリパラメーターを削除します。 削除する必要がある例を次に示します。
 
-**URL リンク**では、docs.microsoft.com のルートに対する相対的な URL パスを使用できます。 または、完全な URL 構文を含む絶対 URL を使用することもできます 例: `https:/github.com/MicrosoftDocs/PowerShell-Docs`
+  - `?view=powershell-5.1` -PowerShell の特定のバージョンへのリンクに使用されます。
+  - `?redirectedfrom=MSDN` -古い記事から新しい場所にリダイレクトされるときに URL に追加されます。
 
-- PowerShell ドキュメント以外のコンテンツにリンクする場合、または PowerShell ドキュメント内のコマンドレット リファレンスと概念記事の間にリンクを設定する場合は、URL リンクを使用します。相対リンクを作成する最も簡単な方法は、ブラウザーから URL をコピーした後、Markdown に貼り付ける値から `https://docs.microsoft.com/en-us` を削除することです。
-- URL には Microsoft プロパティのロケールを含めないでください (例: URL から `/en-us` を削除する)。
-- 記事の特定のバージョンにリンクする必要がない限り、URL から不要なクエリ パラメーターは削除します。 例 :
-  - `?view=powershell-5.1` - PowerShell の特定のバージョンにリンクするために使用されます。
-  - `?redirectedfrom=MSDN` - これは、古い記事からその新しい場所にリダイレクトされると、URL に追加されます。
-- ターゲット サイトで無効な場合を除き、外部 Web サイトへのすべての URL には HTTPS を使用する必要があります。
+  ドキュメントの特定のバージョンにリンクする必要がある場合は、クエリ文字列にパラメーターを追加する必要があり `&preserve_view=true` ます。 例: `?view=powershell-5.1&preserve_view=true`
 
-ある参照記事から別の参照記事へのリンク、またはある概念記事から別の概念記事へのリンクを設定する場合は、**ファイル リンク**を使用します。 PowerShell の特定のバージョン用の参照記事にリンクする必要がある場合は、URL リンクを使用する必要があります。
+- **ファイルリンク** は、ある参照記事から別の参照記事へのリンク、またはある概念記事から別の参照アーティクルへのリンクに使用されます。 PowerShell の特定のバージョンに関する参照記事にリンクする必要がある場合は、URL リンクを使用する必要があります。
 
-- ファイル リンクには、相対ファイル パスを含めます (例: `../folder/file.md`)
-- すべてのファイル パスにスラッシュ (`/`) 文字を使用します
+  - ファイルリンクには、相対ファイルパスが含まれています (例: `../folder/file.md` )。
+  - すべてのファイルパスはスラッシュ () 文字を使用します `/`
 
-ディープ リンクは、URL リンクとファイルリンクの両方で使用できます。 ターゲット パスの末尾にアンカーを追加します。
+- **相互参照リンク** は、公開システムによってサポートされる特別な機能です。 概念説明の記事で相互参照リンクを使用して、.NET API またはコマンドレットリファレンスにリンクすることができます。
+
+  .NET API リファレンスへのリンクについては、中央の共同作成者ガイドの [ドキュメントでリンクを使用する方法](/contribute/how-to-write-links#xref-cross-reference-links) に関するページを参照してください。
+
+  コマンドレットリファレンスへのリンクの形式は次のとおり `xref:<module-name>.<cmdlet-name>` です。 たとえば、を使用して、 `Get-Content` **管理** モジュールのコマンドレットにリンクします。
+
+  `[Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)`
+
+ディープリンクは、URL リンクとファイルリンクの両方で使用できます。 アンカーをターゲットパスの末尾に追加します。
 次に例を示します。
 
 - `[about_Splatting](about_Splatting.md#splatting-with-arrays)`
 - `[custom key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)`
 
-詳細については、「[ドキュメントでリンクを使用する](/contribute/how-to-write-links)」を参照してください。
+詳細については、 [ドキュメントの「リンクを使用する](/contribute/how-to-write-links)」を参照してください。
 
 ## <a name="formatting-command-syntax-elements"></a>コマンド構文要素の書式設定
 
-- コマンドレットとパラメーターには常に完全名を使用します。 別名について具体的に説明する場合を除いて、別名の使用は避けてください。
+- コマンドレットとパラメーターには常に完全名を使用します。 別名を明示的に示す場合を除き、エイリアスの使用は避けてください。
 
-- プロパティ、パラメーター、オブジェクト、型名、クラス名、クラス メソッドは**太字**にする必要があります。
-  - プロパティとパラメーターの値は、バックティック (`` ` ``) でラップする必要があります。
-  - かっこで囲まれたスタイルを使用して型を参照する場合は、バックティックを使用します。 例: `[System.Io.FileInfo]`
+- プロパティ、パラメーター、オブジェクト、型名、クラス名、クラスメソッドは **太字** にする必要があります。
+  - プロパティとパラメーターの値は、バックティック () でラップする必要があり `` ` `` ます。
+  - かっこで囲まれたスタイルを使用して型を参照する場合は、backticks を使用します。 例: `[System.Io.FileInfo]`
 
-- 言語キーワード、コマンドレット名、関数、変数、ネイティブ EXE、ファイル パス、インライン構文の例は、バックティック (`` ` ``) 文字でラップする必要があります。
+- 言語キーワード、コマンドレット名、関数、変数、ネイティブ Exe、ファイルパス、およびインライン構文の例は、バックティック () 文字でラップする必要があり `` ` `` ます。
 
   次に例を示します。
 
@@ -263,23 +273,23 @@ Example:
   ```
   ~~~
 
-  - パラメーターを名前で参照する場合は、名前を**太字**にする必要があります。 ハイフン プレフィックス付きのパラメーターの使用を示す場合は、パラメーターをバックティックで囲む必要があります。 次に例を示します。
+  - 名前でパラメーターを参照する場合、名前は **太字** にする必要があります。 パラメーターをハイフン プレフィックスと共に使用する場合は、パラメーターをバッククォートで囲む必要があります。 次に例を示します。
 
     ```markdown
-    The parameter's name is **Name**, but it is typed as `-Name` when used on the command
+    The parameter's name is **Name**, but it's typed as `-Name` when used on the command
     line as a parameter.
     ```
 
-  - 外部コマンドの使用例を示す場合は、例をバックティックで囲む必要があります。
-    ネイティブ コマンドには、常にファイル拡張子を含めます。 次に例を示します。
+  - 外部コマンドの使用例を示す場合は、例をバッククォートで囲む必要があります。
+    ネイティブコマンドには、常にファイル拡張子を含めます。 次に例を示します。
 
     ```markdown
     To start the spooler service on a remote computer named DC01, you type `sc.exe \\DC01 start spooler`.
     ```
 
-    ファイル拡張子を含めると、PowerShell のコマンドの優先順位に従って適切なコマンドが確実に実行されます。
+    ファイル拡張子を含めることで、PowerShell のコマンドの優先順位に従って正しいコマンドが実行されるようになります。
 
-- (参照コンテンツではなく) 概念記事を記述する場合は、最初に出現するコマンドレットの名前に、コマンドレットのドキュメントにリンクされたハイパーリンクを設定する必要があります。 ハイパーリンクの角かっこ内で、バックティック、太字、またはその他のマークアップを使用しないでください。
+- 概念説明の記事 (リファレンス コンテンツではなく) を記述する場合は、コマンドレット名の最初のインスタンスをコマンドレットのドキュメントにハイパーリンクする必要があります。 ハイパーリンクの角かっこ内には、バックティック、太字、またはその他のマークアップを使用しないでください。
 
   次に例を示します。
 
@@ -288,33 +298,33 @@ Example:
   uses the **Object** parameter to ...
   ```
 
-  詳細については、この記事の「[ハイパーリンク](#hyperlinks)」セクションを参照してください。
+  詳細については、この記事の「 [ハイパーリンク](#hyperlinks) 」セクションを参照してください。
 
-## <a name="markdown-for-code-samples"></a>コード サンプルの Markdown
+## <a name="markdown-for-code-samples"></a>コードサンプルの Markdown
 
-Markdown では、次の 2 つの異なるコード スタイルがサポートされています。
+Markdown は、次の 2 つの異なるコード スタイルをサポートしています。
 
-- **コード スパン (インライン)** - 単一のバックティック (`` ` ``) 文字でマークされます。 スタンドアロン ブロックとしてではなく、段落内で使用されます。
-- **コード ブロック** - トリプル バックティック (`` ``` ``) 文字列で囲まれた複数行のまとまりです。 コード ブロックでは、バックティックの後ろに言語ラベルを付けることもできます。 言語ラベルを使用して、構文でコード ブロックの内容を強調できます。
+- **コードの span (inline)** -1 つのバックティック ( `` ` `` ) 文字でマークされます。 スタンドアロンブロックとしてではなく、段落内で使用されます。
+- **コードブロック** -トリプルバックティック () 文字列で囲まれた複数行のブロック `` ``` `` 。 コードブロックには、バックティックの後に言語ラベルを付けることもできます。 言語ラベルを使用すると、コードブロックの内容に対して構文の強調表示が有効になります。
 
-すべてのコード ブロックは、コード フェンスに含まれている必要があります。 コード ブロックにはインデントを使用しないでください。 Markdown ではこのパターンを使用できますが、問題になる可能性があるため、回避する必要があります。
+すべてのコード ブロックは、コード フェンス内に含めるようにします。 コードブロックにはインデントを使用しないでください。 Markdown ではこのパターンを使用できますが、問題になる可能性があるため、回避する必要があります。
 
-コード ブロックは、3 つのバックティック (`` ``` ``) コード フェンスで囲まれた 1 行または複数行のコードです。
-コード フェンス マーカーは、サンプル コードの前と後ろの専用の行に配置する必要があります。 コード ブロックの開始を示すマーカーには、言語ラベルを含めることができます (省略可能)。 Microsoft の Open Publishing System (OPS) では、言語ラベルを使用した構文の強調機能がサポートされています。
+コードブロックは、3つのバックティック () コードフェンスで囲まれた1行以上のコードです `` ``` `` 。
+コード フェンス マーカーは、コード サンプルの前後にある独自の行に配置する必要があります。 コード ブロックの先頭にあるマーカーには、省略可能な言語ラベルを含めることができます。 Microsoft の Open Publishing System (OPS) では、言語ラベルを使用して、構文の強調表示機能をサポートしています。
 
-サポートされている言語タグの完全な一覧については、一元化された共同作成者ガイドの「[フェンスされたコード ブロック](/contribute/code-in-docs#fenced-code-blocks)」を参照してください。
+サポートされている言語タグの完全な一覧については、共同作成者ガイドの「 [たジオフェンス型 code block](/contribute/code-in-docs#fenced-code-blocks) 」を参照してください。
 
-OPS では、コード ブロックの内容をクリップボードにコピーする **[コピー]** ボタンも追加されます。 これにより、コード サンプルをテストするためのスクリプトにコードを簡単に貼り付けることができます。 ただし、ドキュメントのすべての例がそのとおりに実行されることを目的としているわけではありません。 一部のコード ブロックは、PowerShell の概念を簡単に説明するものです。
+また、OPS では、コード ブロックの内容をクリップボードにコピーする **[コピー]** ボタンも追加されます。 これにより、コードを簡単にスクリプトに貼り付けて、コードサンプルをテストすることができます。 ただし、このドキュメントに記載されているすべての例は、そのとおりに実行するためのものではありません。 一部のコードブロックは、PowerShell の概念を簡単に図解したものです。
 
-Microsoft のドキュメントでは、次の 3 種類のコード ブロックが使用されています。
+ドキュメントでは、3種類のコードブロックが使用されています。
 
 1. 構文ブロック
 1. 説明用の例
-1. 実行可能な例
+1. 実行可能ファイルの例
 
-### <a name="syntax-code-blocks"></a>構文のコード ブロック
+### <a name="syntax-code-blocks"></a>構文コードブロック
 
-構文のコード ブロックは、コマンドの構文構造を記述するために使用されます。 コード フェンスに対して言語タグを使用しないでください。 次の例は、`Get-Command` コマンドレットで使用できるすべてのパラメーターを示しています。
+構文コードブロックは、コマンドの構文構造を記述するために使用されます。 コードフェンスに言語タグを使用しないでください。 この例は、`Get-Command` コマンドレットのすべての使用できるパラメーターを示しています。
 
 ~~~markdown
 ```
@@ -325,7 +335,7 @@ Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
 ```
 ~~~
 
-次の例は、`for` ステートメントについて、一般的な用語で説明しています。
+この例では、`for` ステートメントを汎用的な用語で説明します。
 
 ~~~markdown
 ```
@@ -334,11 +344,11 @@ for (<init>; <condition>; <repeat>)
 ```
 ~~~
 
-### <a name="illustrative-examples"></a>説明用の例
+### <a name="illustrative-examples"></a>わかりやすい例
 
-説明用の例は、PowerShell の概念を説明するために使用されます。 これらは、クリップボードにコピーして実行するためのものではありません。 これらは、入力が簡単で理解しやすいシンプルな例として最も一般的に使用されています。 コード ブロックには、PowerShell プロンプトと出力例を含めることができます。
+わかりやすい例は、PowerShell の概念を説明するために使用されます。 これらは、実行のためにクリップボードにコピーされることを意図していません。 これらは、簡単に型を簡単に理解できる単純な例に使用されます。 コードブロックには、PowerShell プロンプトと出力例を含めることができます。
 
-PowerShell の比較演算子のシンプルな例を次に示します。 この例では、読者がこの例をコピーして実行することは想定されていません。
+次に、PowerShell の比較演算子の簡単な例を示します。 このケースでは、閲覧者がこの例をコピーして実行することは想定していません。
 
 ~~~markdown
 ```powershell
@@ -348,7 +358,7 @@ True
 PS> 2 -eq 3
 False
 
-PS>  1,2,3 -eq 2
+PS> 1,2,3 -eq 2
 2
 
 PS> "abc" -eq "abc"
@@ -362,9 +372,9 @@ abc
 ```
 ~~~
 
-### <a name="executable-examples"></a>実行可能な例
+### <a name="executable-examples"></a>実行可能ファイルの例
 
-複雑な例または、コピーして実行することを目的とした例では、次のブロックスタイルのマークアップを使用する必要があります。
+複雑な例、またはコピーして実行することを意図した例では、次のブロックスタイルのマークアップを使用する必要があります。
 
 ~~~markdown
 ```powershell
@@ -372,7 +382,7 @@ abc
 ```
 ~~~
 
-構文の強調を防ぐために、PowerShell コマンドによって表示される出力を **Output** コード ブロックに含める必要があります。 次に例を示します。
+PowerShell コマンドで表示される出力は、構文の強調表示を防ぐために **出力** コード ブロックで囲む必要があります。 次に例を示します。
 
 ~~~markdown
 ```powershell
@@ -400,23 +410,23 @@ Cmdlet       Unprotect-CmsMessage        3.0.0.0    Microsoft.PowerShell.Securit
 ```
 ~~~
 
-**Output** コード ラベルは、構文強調システムでサポートされている公式の "言語" ではありません。
-ただし、このラベルが有用なのは、これを使用すると、OPS によって、Web ページ上のコード ボックス フレームに "Output" ラベルが追加されるためです。 "Output" コード ボックスでは、構文の強調は行われません。
+**出力** コードラベルは、構文の強調表示システムでサポートされている公式の "言語" ではありません。
+ただし、このラベルは、OPS によって web ページ上のコードボックスフレームに "出力" ラベルが追加されるため便利です。 "出力" コードボックスには構文の強調表示がありません。
 
 ## <a name="coding-style-rules"></a>コーディング スタイルの規則
 
-### <a name="avoid-line-continuation-in-code-samples"></a>サンプル コードでは行を連結しないようにする
+### <a name="avoid-line-continuation-in-code-samples"></a>コード サンプルでの行の継続を避ける
 
-PowerShell のコード例では、行連結文字 (`` ` ``) の使用は避けてください。 これらは見えにくく、行末に余分なスペースがあると問題が発生する可能性があります。
+PowerShell コード例では、行連結文字 (`` ` ``) を使用しないでください。 これらはわかりにくいため、行末に余分なスペースがあると問題が発生する可能性があります。
 
-- PowerShell のスプラッティングを使用して、多数のパラメーターを使用するコマンドレットの行の長さを短くします。
-- パイプ (`|`) 文字、左中かっこ、左丸かっこ、左角かっこなどの PowerShell 本来の改行を活用します。
+- PowerShell スプラッティングを使用して、複数のパラメーターを持つコマンドレットの行の長さを減らします。
+- パイプ ( `|` ) 文字、左中かっこ ( `{` )、かっこ () `(` 、および角かっこ () のように、PowerShell の自然な改行の機会を活用し `[` ます。
 
-### <a name="avoid-using-powershell-prompts-in-examples"></a>例の中で PowerShell プロンプトを使用しないようにする
+### <a name="avoid-using-powershell-prompts-in-examples"></a>例で PowerShell プロンプトを使用しないようにする
 
-プロンプト文字列の使用は推奨されていません。コマンド ラインの使い方を示すシナリオに限定して使用する必要があります。 これらの例の大半では、プロンプト文字列を `PS>` にする必要があります。 このプロンプトは OS 固有のインジケーターに依存しません。
+プロンプト文字列の使用は推奨されていないため、コマンドラインの使用方法を示すシナリオに限定する必要があります。 これらの例の大部分では、プロンプト文字列をにする必要があり `PS>` ます。 このプロンプトは OS 固有のインジケーターに依存しません。
 
-プロンプトが必要なのは、プロンプトを変更するコマンドを例をあげて説明する場合、または説明しているシナリオでパスの表示に意味がある場合です。 次の例では、レジストリ プロバイダーの使用時にプロンプトがどのように変化するかを示しています。
+プロンプトを変更するコマンドや、表示されるパスがシナリオにとって重要であることを示すコマンドを示す例では、プロンプトが必要です。 次の例は、レジストリ プロバイダーの使用時にプロンプトがどのように変化するかを示しています。
 
 ```powershell
 PS C:\> cd HKCU:\System\
@@ -435,22 +445,111 @@ GameConfigStore        GameDVR_Enabled                       : 1
                        GameDVR_DXGIHonorFSEWindowsCompatible : 0
 ```
 
-### <a name="do-not-use-aliases-in-examples"></a>例の中で別名を使用しない
+### <a name="dont-use-aliases-in-examples"></a>例では別名を使用しない
 
-別名について具体的に説明する場合を除いて、常にすべてのコマンドレットとパラメーターの完全名を使用する必要があります。 コマンドレットとパラメーターの名前では、パスカル ケースの適切な名前を使用する必要があります。
+エイリアスを特に記述している場合を除き、すべてのコマンドレットとパラメーターの完全な名前を使用します。
+コマンドレットとパラメーター名には、 [Pascal][] 形式の正しい名前を使用する必要があります。
 
 ### <a name="using-parameters-in-examples"></a>例でのパラメーターの使用
 
-位置パラメーターの使用は避けてください。 通常は、パラメーターが位置パラメーターの場合でも、例では常にパラメーターの名前を含めるようにしてください。 これにより、例の中で混同が発生する機会が減少します。
+位置指定パラメーターは使用しないでください。 一般に、パラメーターが位置指定の場合でも、パラメーター名は常に例に含める必要があります。 これにより、例で混乱を招く可能性が減ります。
+
+## <a name="formatting-cmdlet-reference-articles"></a>コマンドレットのリファレンス記事の書式設定
+
+コマンドレットのリファレンス記事には、特定の構造があります。 この構造は、[PlatyPS][] によって定義されています。
+エラーでは、Markdown の PowerShell モジュールのコマンドレットヘルプが生成されます。 マークダウン ファイルを編集した後、PlatyPS を使用して、`Get-Help` コマンドレットによって使用される MAML ヘルプ ファイルを作成します。
+
+PlatyPS には、コード内に記述されるコマンドレット リファレンス用のハードコーディングされたスキーマが含まれます。 [platyPS.schema.md][] ドキュメントでは、この構造が記述されています。 スキーマ違反があると、投稿を受け入れる前に修正する必要があるビルド エラーが発生します。
+
+- ATX ヘッダー構造体は削除しないでください。 PlatyPS では、特定のヘッダーのセットが想定されています。
+- **Input type** ヘッダーと **Output type** ヘッダーでは、型が必要です。 コマンドレットが入力を受け取らない場合、または値を返さない場合は、値を使用し `None` ます。
+- インライン コード スパンは、どのパラグラフでも使用できます。
+- たジオフェンス型コードブロックは、「 **例** 」のセクションでのみ許可されています。
+
+エラースキーマでは、 **例** は H2 ヘッダーです。 各例は、H3 ヘッダーです。 例では、スキーマでコードブロックを段落で区切ることはできません。 スキーマでは、次の構造を使用できます。
+
+```
+### Example X - Title sentence
+
+0 or more paragraphs
+1 or more code blocks
+0 or more paragraphs.
+```
+
+各例に番号を指定し、簡単なタイトルを追加します。
+
+次に例を示します。
+
+~~~markdown
+### Example 1: Get cmdlets, functions, and aliases
+
+This command gets the PowerShell cmdlets, functions, and aliases that are installed on the
+computer.
+
+```powershell
+Get-Command
+```
+
+### Example 2: Get commands in the current session
+
+```powershell
+Get-Command -ListImported
+```
+~~~
+
+## <a name="formatting-about_-files"></a>About_ ファイルの書式設定
+
+`About_*` ファイルは Markdown で記述されますが、プレーンテキストファイルとして出荷されます。 [Pandoc][]を使用して、Markdown をプレーンテキストに変換します。 `About_*` ファイルは、すべてのバージョンの PowerShell と発行ツールで最適な互換性を持つように書式設定されています。
+
+基本的な書式設定に関するガイドライン:
+
+- 通常の行を80文字に制限する
+- コードブロックの文字数は76文字に制限されています
+- ブロックの引用符 (およびアラート) は78文字に制限されています
+- これらの特殊なメタ文字 (、、および) を使用する場合は、次のように `\` `$` `<` なります。
+  - ヘッダー内では、これらの文字は先頭文字を使用してエスケープする `\` か、バックティック () を使用してコード範囲で囲んでいる必要があります `` ` `` 。
+  - 段落内では、これらの文字をコードの範囲内に配置する必要があります。 次に例を示します。
+
+    ~~~markdown
+    ### The purpose of the \$foo variable
+
+    The `$foo` variable is used to store ...
+    ~~~
+
+- テーブルは76文字以内に収める必要があります
+  - 複数行にまたがるセルの内容は手動で折り返します
+  - 各行で開始と終了の `|` 文字を使用します
+  - 次の例では、セル内の複数の行に折り返される情報を含むテーブルを適切に構築する方法を示します。
+
+    ~~~markdown
+    ```
+    |Operator|Description                |Example                          |
+    |--------|---------------------------|---------------------------------|
+    |`-is`   |Returns TRUE when the input|`(get-date) -is [DateTime]`      |
+    |        |is an instance of the      |`True`                           |
+    |        |specified .NET type.       |                                 |
+    |`-isNot`|Returns TRUE when the input|`(get-date) -isNot [DateTime]`   |
+    |        |not an instance of the     |`False`                          |
+    |        |specified.NET type.        |                                 |
+    |`-as`   |Converts the input to the  |`"5/7/07" -as [DateTime]`        |
+    |        |specified .NET type.       |`Monday, May 7, 2007 12:00:00 AM`|
+    ```
+    ~~~
+
+    > [!NOTE]
+    > 76列の制限は、トピックにのみ適用さ `About_*` れます。 ワイド列は、概念説明またはコマンドレットのリファレンス記事で使用できます。
 
 ## <a name="next-steps"></a>次のステップ
 
-[コマンドレット編集リファレンス](editing-cmdlet-ref.md)
+[編集のチェックリスト](editorial-checklist.md)
 
-<!-- External URLs -->
-[platyPS]: https://github.com/PowerShell/platyPS
-[markdig]: https://github.com/lunet-io/markdig
-[CommonMark]: https://spec.commonmark.org/
+<!-- link references -->
 [atx]: https://github.github.com/gfm/#atx-headings
-[pascal-case]: https://en.wikipedia.org/wiki/PascalCase
+[CommonMark]: https://spec.commonmark.org/
+[markdig]: https://github.com/lunet-io/markdig
+[Pandoc]: https://pandoc.org
+[Pascal 形式の大文字と小文字の区別]: https://en.wikipedia.org/wiki/PascalCase
+[platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
+[PlatyPS]: https://github.com/powershell/platyps
 [reflow]: https://marketplace.visualstudio.com/items?itemName=marvhen.reflow-markdown
+[linkref]: https://spec.commonmark.org/0.29/#link-reference-definitions

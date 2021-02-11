@@ -7,17 +7,16 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-sddlstring?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-SddlString
-ms.openlocfilehash: 128a86312f424eaf9dcfb6cdc97ebd3e148c7886
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: dbb6263c628c08876f64335b420f76d5ecc8f59b
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "93219808"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344373"
 ---
 # ConvertFrom-SddlString
 
 ## 概要
-
 SDDL 文字列をカスタムオブジェクトに変換します。
 
 ## SYNTAX
@@ -145,6 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### 共通パラメーター
+
 このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
 
 ## 入力

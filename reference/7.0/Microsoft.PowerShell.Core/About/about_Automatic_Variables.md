@@ -1,17 +1,16 @@
 ---
 description: PowerShell の状態情報を格納する変数について説明します。 これらの変数は、PowerShell によって作成および管理されます。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 08/14/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: e7525ad8acd6dd5aa2dc65a8d49d03c1c6260bea
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: d99d800680c5cf5ae01ac0cbb16ccaf6a91aada5
+ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93220763"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577259"
 ---
 # <a name="about-automatic-variables"></a>自動変数について
 
@@ -53,7 +52,7 @@ $? # $true
 ネイティブコマンド (実行可能ファイル) の場合、が `$?` 0 の場合は **True** に設定され、 `$LASTEXITCODE` が他の値の場合は **False** に設定され `$LASTEXITCODE` ます。
 
 > [!NOTE]
-> PowerShell 7 までは、かっこ内にステートメントが含ま `(...)` れている限り、部分式構文 `$(...)` または配列式は常に true にリセットされるので、は `@(...)` `$?` true になり **True** `(Write-Error)` `$?` ます。 **True**
+> PowerShell 7 までは、かっこ内にステートメントが含ま `(...)` れている限り、部分式構文 `$(...)` または配列式は常に true にリセットされるので、は `@(...)` `$?` true になり `(Write-Error)` `$?` ます。 
 > これは PowerShell 7 で変更されているため、 `$?` は常に、これらの式で最後に実行されたコマンドの実際の成功を反映します。
 
 ### <a name=""></a>$^
@@ -138,6 +137,12 @@ PowerShell の現在のホストアプリケーションを表すオブジェク
 
 列挙子には、ループ値を取得したり、現在のループの反復を変更したりするために使用できるプロパティとメソッドが含まれています。 詳細については、「 [列挙子の使用](#using-enumerators)」を参照してください。
 
+変数は、 `$input` `-Command` `pwsh` コマンドラインから呼び出されたときに、のパラメーターで指定したコマンドにも使用できます。 次の例は、Windows コマンドシェルから実行されます。
+
+```CMD
+echo Hello | pwsh -Command """$input World!"""
+```
+
 ### <a name="iscoreclr"></a>$IsCoreCLR
 
 `$True`現在のセッションが .Net Core ランタイム (CoreCLR) で実行されているかどうかを示します。 それ以外 `$False` の場合は。
@@ -171,7 +176,7 @@ PowerShell の現在のホストアプリケーションを表すオブジェク
 
 現在のコマンドに関する情報 (名前、パラメーター、パラメーター値など)、コマンドの開始、呼び出し、または呼び出しの方法 (現在のコマンドを呼び出したスクリプトの名前など) に関する情報を格納します。
 
-`$MyInvocation` は、スクリプト、関数、およびスクリプトブロックに対してのみ設定されます。 現在のスクリプトの **System.Management.Automation.InvocationInfo** `$MyInvocation` パスとファイル名 ( `$MyInvocation.MyCommand.Path` )、または関数の名前 () を使用して現在のコマンドを `$MyInvocation.MyCommand.Name` 識別することで、InvocationInfo オブジェクトの情報を使用することができます。 これは、現在のスクリプトの名前を検索する場合に特に便利です。
+`$MyInvocation` は、スクリプト、関数、およびスクリプトブロックに対してのみ設定されます。 現在のスクリプトの `$MyInvocation` パスとファイル名 ( `$MyInvocation.MyCommand.Path` )、または関数の名前 () を使用して現在のコマンドを `$MyInvocation.MyCommand.Name` 識別することで、InvocationInfo オブジェクトの情報を使用することができます。 これは、現在のスクリプトの名前を検索する場合に特に便利です。
 
 PowerShell 3.0 以降では、に `MyInvocation` 次の新しいプロパティが追加されています。
 
@@ -328,7 +333,7 @@ PowerShell 7 以降では、は `$PSCulture` 現在の powershell 実行空間 (
 
 ### <a name="psdebugcontext"></a>$PSDebugContext
 
-デバッグ中に、この変数にはデバッグ環境に関する情報が含まれます。 それ以外の場合は、 **null** 値が含まれます。 その結果、デバッガーにコントロールがあるかどうかを示すために使用できます。 値が設定されると、 **ブレークポイント** と **InvocationInfo** プロパティを持つ **psdebugcontext** オブジェクトが格納されます。 **InvocationInfo** プロパティには、 **Location** プロパティなど、いくつかの便利なプロパティがあります。 **Location** プロパティは、デバッグされているスクリプトのパスを示します。
+デバッグ中に、この変数にはデバッグ環境に関する情報が含まれます。 それ以外の場合は、 **null** 値が含まれます。 その結果、デバッガーにコントロールがあるかどうかを示すために使用できます。 値が設定されると、**ブレークポイント** と **InvocationInfo** プロパティを持つ **psdebugcontext** オブジェクトが格納されます。 **InvocationInfo** プロパティには、 **Location** プロパティなど、いくつかの便利なプロパティがあります。 **Location** プロパティは、デバッグされているスクリプトのパスを示します。
 
 ### <a name="pshome"></a>$PSHOME
 
@@ -455,7 +460,7 @@ PSSession を開始したユーザーに関する情報が含まれます。こ�
 
 **現在** のプロパティは、 **MoveNext** が呼び出されるまで、同じプロパティを返し続けます。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 ### <a name="example-1-using-the-input-variable"></a>例 1: $input 変数の使用
 
@@ -566,7 +571,7 @@ After MoveNext:
 
 **現在** のプロパティを使用して、 **Reset** メソッドを使用せずに、現在のパイプライン値に複数回アクセスできます。 プロセスブロックは自動的に **MoveNext** メソッドを呼び出しません。
 
-明示的に **MoveNext** を呼び出さない限り、 **現在** のプロパティには値が設定されません。 **現在** のプロパティには、その値をクリアせずに、プロセスブロック内で複数回アクセスできます。
+明示的に **MoveNext** を呼び出さない限り、**現在** のプロパティには値が設定されません。 **現在** のプロパティには、その値をクリアせずに、プロセスブロック内で複数回アクセスできます。
 
 ```powershell
 function Current
@@ -681,7 +686,7 @@ Reset Loop: 0
 次の例は、すべての列挙子の概念を示しています。
 
 > [!NOTE]
-> MoveNext メソッドの後にステートメントが存在しない場合でも、Note のよう **な大文字** と小文字の区別が実行されないことに注意して `break` ください。 **MoveNext**
+> MoveNext メソッドの後にステートメントが存在しない場合でも、Note のよう **な大文字** と小文字の区別が実行されないことに注意して `break` ください。 
 
 ```powershell
 $values = "Start", "MoveNext", "NotEvaluated", "Reset", "End"

@@ -1,16 +1,18 @@
 ---
-title: Runspace01 のコードサンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 14e5dfa3b16459c06a2d0c40c76c53d74e5a7094
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace01 コード サンプル
+description: Runspace01 コード サンプル
+ms.openlocfilehash: a6710a9b37689b03cc104cca7ee588ffafce5626
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787089"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659216"
 ---
 # <a name="runspace01-code-samples"></a>Runspace01 コード サンプル
 
-ここでは、「[指定されたコマンドを実行するコンソールアプリケーションの作成](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)」で説明されている実行空間のコードサンプルを示します。 実行空間で呼び出されるコマンドは、コマンド `Get-Process` レットです。
+ここでは、「 [指定されたコマンドを実行するコンソールアプリケーションの作成](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)」で説明されている実行空間のコードサンプルを示します。 実行空間で呼び出されるコマンドは、コマンド `Get-Process` レットです。
 
 完全なサンプルコードについては、次のトピックを参照してください。
 

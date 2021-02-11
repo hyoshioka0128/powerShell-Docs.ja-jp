@@ -1,12 +1,14 @@
 ---
-title: TableControl (Format) の TableRowEntry の Wrap 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1ef1f6133f9e5e7da685933cfe90d39a0519ff44
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl の TableRowEntry の Wrap 要素 (書式)
+description: TableControl の TableRowEntry の Wrap 要素 (書式)
+ms.openlocfilehash: 1937427c9869c3d301faef0bc8ccea42eb0e7365
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779881"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659549"
 ---
 # <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>TableControl の TableRowEntry の Wrap 要素 (書式)
 
@@ -40,7 +42,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 のバグ修正
-ms.openlocfilehash: 8edf295eb6304dc04de2fa5d3792b1c2fc4b01f3
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: この記事では、WMF 5.1 のリリースで修正されたバグの一覧を示します。
+ms.openlocfilehash: 2673860852ecd6e0b6582f6f69076f8c463eeccc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809308"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660773"
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 のバグ修正
 
@@ -49,7 +48,7 @@ $obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
-**SendKeys** メソッドは string を受け取りますが、PowerShell では char が string に変換されず、変換は **IDispatch::Invoke** に延期されていました。このメソッドでは、**VariantChangeType** を使って変換が行われます。 この例では、結果として、期待される **Volume.Mute** キーではなくキー "1"、"7"、"3" が送られます。
+**SendKeys** メソッドは string を受け取りますが、PowerShell では char が string に変換されず、変換は **IDispatch::Invoke** に延期されていました。このメソッドでは、 **VariantChangeType** を使って変換が行われます。 この例では、結果として、期待される **Volume.Mute** キーではなくキー "1"、"7"、"3" が送られます。
 
 #### <a name="enumerable-com-objects-not-always-handled-correctly"></a>列挙可能な COM オブジェクトが正しく処理されないことがある
 
@@ -99,4 +98,4 @@ WMF 5.1 では、最新バージョンのトピックのヘルプを返すこと
 
 ### <a name="powershellexe-creates-spike-in-cpu-usage-on-startup"></a>powershell.exe の起動時に CPU 使用率が急増する
 
-PowerShell は、ログインの遅延を回避するために WMI クエリを使用して、グループ ポリシーから起動したかどうかを確認します。 WMI の **Win32_Process** クラスはローカル タイムゾーンの情報を取得しようとするため、WMI クエリによって、最終的にシステムのすべてのプロセスに tzres.mui.dll が挿入されます。 結果として、**wmiprvse** (WMI プロバイダーのホスト) で大きな CPU 使用率の急増が発生します。 修正プログラムでは、WMI を使用する代わりに、Win32 API 呼び出しを使用して同じ情報を取得します。
+PowerShell は、ログインの遅延を回避するために WMI クエリを使用して、グループ ポリシーから起動したかどうかを確認します。 WMI の **Win32_Process** クラスはローカル タイムゾーンの情報を取得しようとするため、WMI クエリによって、最終的にシステムのすべてのプロセスに tzres.mui.dll が挿入されます。 結果として、 **wmiprvse** (WMI プロバイダーのホスト) で大きな CPU 使用率の急増が発生します。 修正プログラムでは、WMI を使用する代わりに、Win32 API 呼び出しを使用して同じ情報を取得します。

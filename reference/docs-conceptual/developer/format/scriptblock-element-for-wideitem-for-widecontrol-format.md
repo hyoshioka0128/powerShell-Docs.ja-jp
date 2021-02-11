@@ -1,12 +1,14 @@
 ---
-title: WideItem for WideControl (Format) の ScriptBlock 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: be649d6de0d2dfa6bad14f2d7476cced9cd6cb6d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl の WideItem の ScriptBlock 要素 (書式)
+description: WideControl の WideItem の ScriptBlock 要素 (書式)
+ms.openlocfilehash: 68e47926e5e6b846c8a0a3dbc16d1f0d59f11dee
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787599"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659877"
 ---
 # <a name="scriptblock-element-for-wideitem-for-widecontrol-format"></a>WideControl の WideItem の ScriptBlock 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-ワイドビューのコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
+ワイドビューのコンポーネントの詳細については、「 [ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 

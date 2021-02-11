@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の SelectionCondition の TypeName 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ea1e0cb50c3a749f6c26d13fff4b001240ce6b95
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の SelectionCondition の TypeName 要素 (書式)
+description: GroupBy の SelectionCondition の TypeName 要素 (書式)
+ms.openlocfilehash: 096d2355e113a7e44cc6ae31ea23efc3f01080a0
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772554"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664630"
 ---
 # <a name="typename-element-for-selectioncondition-for-groupby-format"></a>GroupBy の SelectionCondition の TypeName 要素 (書式)
 
@@ -45,7 +47,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>解説
 
-この要素が指定されている場合、要素を指定することはできません `SelectionSetName` 。 選択条件の定義の詳細については、「[データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+この要素が指定されている場合、要素を指定することはできません `SelectionSetName` 。 選択条件の定義の詳細については、「 [データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

@@ -7,12 +7,12 @@ ms.date: 10/29/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Show-Command
-ms.openlocfilehash: 976a9ba6047d79bc1ac6225896c7285702daf38a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e6995da1e9ff2a1678c5703b79223481533bc9a5
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210163"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346158"
 ---
 # Show-Command
 
@@ -40,7 +40,7 @@ Show-Command [[-Name] <String>] [-Height <Double>] [-Width <Double>] [-NoCommonP
 
 PowerShell Integrated Scripting Environment (ISE) では、ウィンドウのバリエーション `Show-Command` が既定で表示されます。 このコマンドウィンドウの使用方法の詳細については、PowerShell ISE のヘルプトピックを参照してください。
 
-このコマンドレットは、PowerShell 7 で再導入されました。 
+このコマンドレットは、PowerShell 7 で再導入されました。
 
 このコマンドレットはユーザーインターフェイスを必要とするため、Windows Server Core または Windows Nano Server では機能しません。 このコマンドレットは、Windows デスクトップをサポートする Windows システムでのみ使用できます。
 
@@ -271,6 +271,8 @@ Accept wildcard characters: False
 **PassThru** パラメーターを使用すると、は `Show-Command` コマンド文字列を返します。 **Errorpopup** パラメーターを使用すると、は `Show-Command` コマンド出力 (すべてのオブジェクト) を返します。 それ以外の場合、 `Show-Command` は出力を生成しません。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 `Show-Command` リモートセッションでは機能しません。
 

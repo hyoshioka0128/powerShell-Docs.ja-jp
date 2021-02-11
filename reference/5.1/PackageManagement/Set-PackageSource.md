@@ -7,12 +7,12 @@ ms.date: 04/03/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/set-packagesource?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PackageSource
-ms.openlocfilehash: a8dc659d3ffdfcd296660f64f7b7cbd0bb132217
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4d534ebf97f7d7f37115e23f12cbd4d725e2212b
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93213272"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889955"
 ---
 # Set-PackageSource
 
@@ -79,7 +79,7 @@ Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential 
 
 ### 例 1: パッケージソースを変更する
 
-このコマンドは、パッケージソースの既存の名前を変更します。 ソースは [ **信頼済み** ] に設定されています。これにより、パッケージのインストール時にソースを確認するためのプロンプトが表示されなくなります。
+このコマンドは、パッケージソースの既存の名前を変更します。 ソースは [ **信頼済み**] に設定されています。これにより、パッケージのインストール時にソースを確認するためのプロンプトが表示されなくなります。
 
 ```
 PS C:\> Set-PackageSource -Name MyNuget -NewName NewNuGet -Trusted -ProviderName NuGet
@@ -421,6 +421,13 @@ Accept wildcard characters: False
 ### このコマンドレットは出力を生成しません。
 
 ## 注
+
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
 
 ## 関連リンク
 

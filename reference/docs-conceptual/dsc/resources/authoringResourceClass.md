@@ -2,12 +2,13 @@
 ms.date: 07/08/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell クラスを使用したカスタム DSC リソースの記述
-ms.openlocfilehash: b7f6d3135cb1da7ade106f8a4cc41e3afb7306af
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: この記事では、指定されたパス内のファイルを管理する単純なリソースを作成する方法について説明します。
+ms.openlocfilehash: 72a828795c29e10ff66f164b8871b0fea7a1e0a8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217561"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667319"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell クラスを使用したカスタム DSC リソースの記述
 
@@ -17,7 +18,7 @@ Windows PowerShell 5.0 の PowerShell クラスの導入により、クラスを
 
 クラスベースの DSC リソースでは、スキーマは、プロパティの型を指定する属性で変更できるクラスのプロパティとして定義されます。 リソースは、`Get()` 、`Set()` 、および `Test()` メソッド (スクリプト リソースの `Get-TargetResource`、`Set-TargetResource`、および `Test-TargetResource` 関数に相当します) によって実装されます。
 
-このトピックでは、指定されたパス内のファイルを管理する **FileResource** という名前の単純なリソースを作成します。
+この記事では、指定されたパス内のファイルを管理する **FileResource** という名前の単純なリソースを作成します。
 
 DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」をご覧ください。
 
@@ -511,7 +512,7 @@ class FileResource {
            |- SecondResource.psm1
    ```
 
-1. すべてのリソースは、**DSCResources** フォルダー以下で定義します。
+1. すべてのリソースは、 **DSCResources** フォルダー以下で定義します。
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -524,7 +525,7 @@ class FileResource {
    ```
 
 > [!NOTE]
-> 上記の例で、**DSCResource** 以下の PSM1 ファイルを PSD1 ファイルの **NestedModules** キーに追加します。
+> 上記の例で、 **DSCResource** 以下の PSM1 ファイルを PSD1 ファイルの **NestedModules** キーに追加します。
 
 ### <a name="access-the-user-context"></a>ユーザー コンテキストへのアクセス
 

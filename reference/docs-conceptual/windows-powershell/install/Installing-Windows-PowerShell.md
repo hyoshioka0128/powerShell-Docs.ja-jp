@@ -1,13 +1,13 @@
 ---
 ms.date: 08/09/2017
-keywords: powershell, コマンドレット, ダウンロード, インストール, セットアップ, windows 10, windows 8.1, windows 8.0, windows 7
 title: Windows PowerShell のインストール
-ms.openlocfilehash: 26675eb0b213818eaa72e148f0814545ee9f960e
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: この記事では、さまざまなバージョンの Windows に Windows PowerShell をインストールする方法について説明します。
+ms.openlocfilehash: 04e6d791e6895dd50825c58c905ff9cf8fa86ca8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236222"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663980"
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell のインストール
 
@@ -17,7 +17,7 @@ PowerShell 6 以降を使う場合は、Windows PowerShell ではなく PowerShe
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>Windows 10、8.1、8.0、7 で PowerShell を見つける
 
-Windows で PowerShell コンソールや ISE (Integrated Scripting Environment) を見つけるのは、その場所が Windows のあるバージョンから次のバージョンへ移動するため、難しい場合があります。
+Windows で PowerShell コンソールや Integrated Scripting Environment (ISE) を見つけるのは、その場所が Windows のあるバージョンから次のバージョンへ移動するため、難しい場合があります。
 
 次の表は、使用している Windows のバージョンで PowerShell を見つけるのに役立ちます。 ここに一覧されているバージョンはすべて、リリース時の元のバージョンです。更新プログラムは含まれていません。
 
@@ -34,7 +34,7 @@ Windows で PowerShell コンソールや ISE (Integrated Scripting Environment)
 |     Version      |                                                            Location                                                            |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | Windows 10       | 左下隅にある Windows アイコンをクリックして、「ISE」と入力し始めます                                                                         |
-| Windows 8.1、8.0 | スタート画面で、「**PowerShell ISE**」と入力します。<br/>デスクトップで、左下隅にある Windows アイコンをクリックして、「**PowerShell ISE**」と入力します |
+| Windows 8.1、8.0 | スタート画面で、「 **PowerShell ISE** 」と入力します。<br/>デスクトップで、左下隅にある Windows アイコンをクリックして、「 **PowerShell ISE** 」と入力します |
 | Windows 7 SP1    | 左下隅にある Windows アイコンをクリックして、検索ボックスに「PowerShell」と入力し始めます                                                |
 
 ## <a name="finding-powershell-in-windows-server-versions"></a>Windows Server バージョンで PowerShell を見つける
@@ -75,7 +75,7 @@ PowerShell の既存のバージョンを更新する場合、Windows では、�
 
 ## <a name="need-azure-powershell"></a>Azure PowerShell が必要な場合
 
-**Azure PowerShell** を探している場合は、「[Overview of Azure PowerShell](/powershell/azure/overview)」 (Azure PowerShell の概要) から開始することができます。
+**Azure PowerShell** を探している場合は、「 [Overview of Azure PowerShell](/powershell/azure/overview)」 (Azure PowerShell の概要) から開始することができます。
 
 その他にも、[Azure PowerShell のインストールと構成](/powershell/azure/install-az-ps)が必要な場合があります
 

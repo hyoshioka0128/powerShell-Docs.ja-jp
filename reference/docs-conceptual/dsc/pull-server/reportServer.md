@@ -2,28 +2,30 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC レポート サーバーの使用
-ms.openlocfilehash: 1ccd4f96b782b41b7d7c953735cb41b3ba3d2bce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 構成の状態に関するレポートをプル サーバーに送信するように、ノードのローカル構成マネージャー (LCM) を構成できます。これにより、プル サーバーに対してクエリを実行してデータを取得できるようになります。
+ms.openlocfilehash: 58ff1684bbe1d23fa68296aa56dd94ba6bc5b148
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953579"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653711"
 ---
 # <a name="using-a-dsc-report-server"></a>DSC レポート サーバーの使用
 
-適用先: Windows PowerShell 5.0
+適用先:Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
+> プル サーバー (Windows Feature *DSC-Service* ) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 >
 > [!NOTE]
 > このトピックで説明しているレポート サーバーは、PowerShell 4.0 では使用できません。
 
-構成の状態に関するレポートをプル サーバーに送信するように、ノードのローカル構成マネージャー (LCM) を構成できます。これにより、プル サーバーに対してクエリを実行してデータを取得できるようになります。 ノードは、構成を確認して適用するたびに、レポート サーバーにレポートを送信します。 これらのレポートは、サーバー上のデータベースに格納され、レポート Web サービスを呼び出すことで取得できます。 各レポートには、適用された構成の内容、構成適用の成否、使用されたリソース、スローされたエラー、開始時刻と終了時刻などの情報が含まれています。
+構成の状態に関するレポートをプル サーバーに送信するように、ノードのローカル構成マネージャー (LCM) を構成できます。これにより、プル サーバーに対してクエリを実行してデータを取得できるようになります。 ノードは、構成を確認して適用するたびに、レポート サーバーにレポートを送信します。 これらのレポートは、サーバー上のデータベースに格納され、レポート Web サービスを呼び出すことで取得できます。
+各レポートには、適用された構成の内容、構成適用の成否、使用されたリソース、スローされたエラー、開始時刻と終了時刻などの情報が含まれています。
 
 ## <a name="configuring-a-node-to-send-reports"></a>レポートを送信するようにするためのノードの構成
 
-ノードがサーバーにレポートを送信するようにするには、そのノードの LCM 構成で **ReportServerWeb** ブロックを使用します (LCM の構成については、「[ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)」を参照)。 ノードのレポート送信先になるサーバーは、Web プル サーバーとしてセットアップする必要があります (SMB 共有にレポートを送信することはできません)。 プル サーバーのセットアップについては、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。 レポート サーバーは、ノードが構成をプルしてリソースを取得するのと同じサービスにすることも、別のサービスにすることもできます。
+ノードがサーバーにレポートを送信するようにするには、そのノードの LCM 構成で **ReportServerWeb** ブロックを使用します (LCM の構成については、「 [ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)」を参照)。 ノードのレポート送信先になるサーバーは、Web プル サーバーとしてセットアップする必要があります (SMB 共有にレポートを送信することはできません)。 プル サーバーのセットアップについては、「[DSC Web プル サーバーのセットアップ](pullServer.md)」をご覧ください。 レポート サーバーは、ノードが構成をプルしてリソースを取得するのと同じサービスにすることも、別のサービスにすることもできます。
 
 **ReportServerWeb** ブロックには、プル サービスの URL と、サーバーに認識されている登録キーを指定します。
 
@@ -94,11 +96,14 @@ PullClientConfig
 ```
 
 > [!NOTE]
-> プル サーバーを設定するとき、Web サービスには任意の名前を指定できますが、**ServerURL** プロパティはサービス名と一致する必要があります。
+> プル サーバーを設定するとき、Web サービスには任意の名前を指定できますが、 **ServerURL** プロパティはサービス名と一致する必要があります。
 
 ## <a name="getting-report-data"></a>レポート データの取得
 
-プル サーバーに送信されたレポートは、サーバー上のデータベースに格納されます。 これらのレポートは、Web サービスを呼び出すことで利用できます。 特定のノードのレポートを取得するには、次の形式でレポート Web サービスに HTTP 要求を送信します。`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+プル サーバーに送信されたレポートは、サーバー上のデータベースに格納されます。 これらのレポートは、Web サービスを呼び出すことで利用できます。 特定のノードのレポートを取得するには、次の形式でレポート Web サービスに HTTP 要求を送信します。
+
+`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+
 ここで、`MyNodeAgentId` はレポートを取得するノードの AgentId です。 ノードの AgentID を取得するには、そのノードで [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) を呼び出します。
 
 レポートは、JSON オブジェクトの配列として返されます。
@@ -110,7 +115,7 @@ function GetReport
 {
     param
     (
-        $AgentId = "$((glcm).AgentId)", 
+        $AgentId = "$((glcm).AgentId)",
         $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc"
     )
 
@@ -125,7 +130,7 @@ function GetReport
 
 ## <a name="viewing-report-data"></a>レポート データの表示
 
-**GetReport** 関数の結果を変数に設定すると、返される配列の要素に個別のフィールドを表示できます。
+**GetReport** 関数の結果を変数に設定すると、返される配列の要素を個別のフィールドで表示できます。
 
 ```powershell
 $reports = GetReport
@@ -166,7 +171,7 @@ StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Ad
 AdditionalData       : {}
 ```
 
-既定では、レポートは **JobID** 順に並べ替えられます。 最新のレポートを取得するには、**StartTime** プロパティを降順にしてレポートを並べ替えることができます。そして、配列の最初の要素を取得します。
+既定では、レポートは **JobID** 順に並べ替えられます。 最新のレポートを取得するには、 **StartTime** プロパティを降順にしてレポートを並べ替えることができます。そして、配列の最初の要素を取得します。
 
 ```powershell
 $reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
@@ -233,7 +238,7 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-これらの例は、レポート データを使用してどのようなことができるかを理解するためのものです。 PowerShell での JSON の使用方法については、「[Playing with JSON and PowerShell (PowerShell での JSON の使用)](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/)」を参照してください。
+これらの例は、レポート データを使用してどのようなことができるかを理解するためのものです。 PowerShell での JSON の使用方法については、「[Playing with JSON and PowerShell (PowerShell での JSON の使用)](https://devblogs.microsoft.com/scripting/playing-with-json-and-powershell/)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

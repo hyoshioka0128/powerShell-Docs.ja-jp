@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: アイテムの作成と公開
-ms.openlocfilehash: 1aa9cc84f259869ca6f8b8e2f6952e43eaac14df
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、スクリプトまたはモジュールを準備して PowerShell ギャラリーに公開するまでの仕組みと重要な手順について説明します
+ms.openlocfilehash: be846799aff71d38bdd0c98b3f43eaee5aef7798
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71327923"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662512"
 ---
 # <a name="creating-and-publishing-an-item"></a>アイテムの作成と公開
 
@@ -67,7 +66,8 @@ PowerShell ギャラリーにアイテムを公開する前に、コードに対
 
 [PowerShell Script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) は静的コード分析ツールで、コードをスキャンして、PowerShell のコーディングの基本的なガイドラインを満たしていることを確認します。 このツールはコードに含まれる一般的で重大な問題を特定するもので、アイテムを公開できるようにするために、開発中に定期的に実行する必要があります。 PowerShell Script Analyzer は、エラー、警告、および情報として特定した問題を一覧で提供します。 エラーはすべて、PowerShell ギャラリーに公開する前に対処する必要があります。 警告は確認する必要があり、大半を処理する必要があります。 PowerShell Script Analyzer は、PowerShell ギャラリーでアイテムが公開または更新されるたびに実行されます。 ギャラリー運用チームは、エラーが検出されると対処のためにアイテムの所有者に連絡します。
 
-アイテムに含まれるマニフェスト情報が PowerShell ギャラリー インフラストラクチャで読み取れない場合、公開することはできません。 [Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) は、インストールするとそのモジュールが使用できなくなるような、一般的な問題を検出します。 これはすべてのモジュールについて、PowerShell ギャラリーに公開する前に実行する必要があります。
+アイテムに含まれるマニフェスト情報が PowerShell ギャラリー インフラストラクチャで読み取れない場合、公開することはできません。
+[Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) は、インストールするとそのモジュールが使用できなくなるような、一般的な問題を検出します。 これはすべてのモジュールについて、PowerShell ギャラリーに公開する前に実行する必要があります。
 
 同様に、[Test-ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) はスクリプトに含まれるメタデータを検証するもので、すべてのスクリプト (モジュールとは別に公開された) で、PowerShell ギャラリーに公開する前に実行する必要があります。
 
@@ -94,4 +94,3 @@ PowerShell ギャラリーに公開されるすべてのアイテムは、ウイ
 PowerShell ギャラリーにアイテムを公開したら、アイテムに関するフィードバックがないか注視する必要があります。
 
 - 公開に使用したアカウントに関連付けられている電子メール アドレスをチェックするようにします。 ユーザーおよび PowerShell ギャラリー オペレーション チームは、そのアカウントを使用して、フィードバックや、PowerShell Script Analyzer またはウイルス対策スキャンからの問題を提供します。 [使用条件](https://www.powershellgallery.com/policies/Terms)に記載されているように、電子メール アカウントが無効である、または、アカウントに深刻な問題が報告されたのに長期間にわたり未解決のままである場合は、アイテムは放棄されたとみなされ、PowerShell ギャラリーから削除されます。
-- 公開した PowerShell ギャラリー アイテムの各々について、コメントをサブスクライブすることをお勧めします。 こうすると、PowerShell ギャラリーのアイテムに誰かがコメントしたときに通知されます。 LiveFyre でアカウントを作成する必要があるため、この設定はオプションです。

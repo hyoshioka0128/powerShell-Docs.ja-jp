@@ -2,16 +2,17 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データでの資格情報オプション
-ms.openlocfilehash: aac27f1ff4b4287b53745fa3b946fb3de84771c2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC では、資格情報を提供して、ローカル システム アカウントではなく、特定のユーザー アカウントのコンテキストで構成設定を適用することができます。
+ms.openlocfilehash: 41478dc042ca59fb70aa033de81b589a4a8c09c7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870559"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658654"
 ---
 # <a name="credentials-options-in-configuration-data"></a>構成データでの資格情報オプション
 
-> 適用先: Windows PowerShell 5.0
+> 適用先:Windows PowerShell 5.0
 
 ## <a name="plain-text-passwords-and-domain-users"></a>プレーンテキスト パスワードとドメイン ユーザー
 
@@ -61,7 +62,7 @@ Group [String] #ResourceName
 
 DSC は `Local System` で実行されるため、ローカル ユーザーおよびグループを変更するためのアクセス許可が既にあります。 追加されたメンバーがローカル アカウントの場合、資格情報は必要ありません。 `Group` リソースがローカル グループにドメイン アカウントを追加する場合、資格情報が必要となります。
 
-Active Directory への匿名クエリは許可されません。 `Group` リソースの `Credential` プロパティは、Active Directory のクエリに使用されるドメイン アカウントです。 既定では、ユーザーは Active Directory 内の大部分のオブジェクトを*読み取る*ことができるため、ほとんどの場合これは汎用ユーザー アカウントです。
+Active Directory への匿名クエリは許可されません。 `Group` リソースの `Credential` プロパティは、Active Directory のクエリに使用されるドメイン アカウントです。 既定では、ユーザーは Active Directory 内の大部分のオブジェクトを *読み取る* ことができるため、ほとんどの場合これは汎用ユーザー アカウントです。
 
 ## <a name="example-configuration"></a>構成の例
 
@@ -167,7 +168,7 @@ DomainCredentialExample -ConfigurationData $cd
 
 ### <a name="localhostmof"></a>localhost.mof
 
-**PSDSCAllowPlainTextPassword** フラグを使うときは、ユーザーが MOF ファイルにプレーン テキスト パスワードを格納するリスクを認識している必要があります。 生成される MOF ファイルでは、**SecureString** を含む **PSCredential** オブジェクトが使われている場合であっても、パスワードはプレーン テキストとして表示されます。 これは、資格情報が公開されるときだけです。 この MOF ファイルにアクセスできるすべてのユーザーは、管理者アカウントにアクセスできます。
+**PSDSCAllowPlainTextPassword** フラグを使うときは、ユーザーが MOF ファイルにプレーン テキスト パスワードを格納するリスクを認識している必要があります。 生成される MOF ファイルでは、 **SecureString** を含む **PSCredential** オブジェクトが使われている場合であっても、パスワードはプレーン テキストとして表示されます。 これは、資格情報が公開されるときだけです。 この MOF ファイルにアクセスできるすべてのユーザーは、管理者アカウントにアクセスできます。
 
 ```
 /*
@@ -205,7 +206,7 @@ ModuleVersion = "1.0";
 ### <a name="credentials-in-transit-and-at-rest"></a>送信中および保存時の資格情報
 
 - **PSDscAllowPlainTextPassword** フラグを使用すると、クリア テキストのパスワードが含まれる MOF ファイルをコンパイルできます。 クリア テキストのパスワードが含まれる MOF ファイルを格納するときは注意が必要です。
-- MOF ファイルが**プッシュ** モードでノードに配信されるときは、**AllowUnencrypted** パラメーターで既定値を上書きしない限り、WinRM によってクリア テキスト パスワードを保護するために通信が暗号化されます。
+- MOF ファイルが **プッシュ** モードでノードに配信されるときは、 **AllowUnencrypted** パラメーターで既定値を上書きしない限り、WinRM によってクリア テキスト パスワードを保護するために通信が暗号化されます。
   - 証明書で MOF を暗号化すると、ノードに適用される前の保存時の MOF ファイルが保護されます。
 - **プル** モードでは、HTTPS を使用してインターネット インフォメーション サーバーで指定されているプロトコルでトラフィックを暗号化するように、Windows プル サーバーを構成することができます。 詳しくは、「[DSC プル クライアントのセットアップ](../pull-server/pullclient.md)」および「[証明書を使用した MOF ファイルのセキュリティ保護](../pull-server/secureMOF.md)」をご覧ください。
   - [Azure Automation State Configuration](/azure/automation/automation-dsc-overview) サービスでは、プル トラフィックは常に暗号化されます。
@@ -224,7 +225,7 @@ ModuleVersion = "1.0";
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-上記の DSC `Group` リソースの例では、Active Directory ドメインのクエリを実行するにはドメイン アカウントが*必要です*。 この場合は、次のように `ConfigurationData` ブロックに `PSDscAllowDomainUser` プロパティを追加します。
+上記の DSC `Group` リソースの例では、Active Directory ドメインのクエリを実行するにはドメイン アカウントが *必要です* 。 この場合は、次のように `ConfigurationData` ブロックに `PSDscAllowDomainUser` プロパティを追加します。
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force

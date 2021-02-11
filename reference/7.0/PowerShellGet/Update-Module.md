@@ -7,12 +7,12 @@ ms.date: 07/16/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
-ms.openlocfilehash: 29ba3907a349257f63e127739786ab6e210c0f82
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: dee60b0beae3f39642cbc1c388ffb79e687626b8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210208"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891126"
 ---
 # Update-Module
 
@@ -21,7 +21,7 @@ ms.locfileid: "93210208"
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 Update-Module [[-Name] <String[]>] [-RequiredVersion <String>] [-MaximumVersion <String>]
@@ -345,6 +345,13 @@ Accept wildcard characters: False
 PowerShell バージョン6.0 以降では、既定のインストールスコープは常に **CurrentUser** です。
 **CurrentUser** のモジュール更新プログラムには、 `$home\Documents\PowerShell\Modules` 昇格されたアクセス許可は必要ありません。 **AllUsers** のモジュール更新プログラムには、 `$env:ProgramFiles\PowerShell\Modules` 昇格されたアクセス許可が必要です。
 
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
+
 `Update-Module` powershell 3.0 以降の PowerShell で、windows 7 または Windows 2008 R2 以降のリリースの Windows で実行されます。
 
 **Name** パラメーターで指定したモジュールがを使用してインストールされなかった場合は `Install-Module` 、エラーが発生します。
@@ -363,4 +370,4 @@ PowerShell バージョン6.0 以降では、既定のインストールスコ�
 
 [Publish-Module](Publish-Module.md)
 
-[Uninstall-Module](Uninstall-Module.md)
+[アンインストール-モジュール](Uninstall-Module.md)

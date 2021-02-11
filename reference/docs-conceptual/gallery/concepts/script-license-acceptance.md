@@ -1,20 +1,19 @@
 ---
 ms.date: 06/09/2017
-schema: 2.0.0
-keywords: powershell
 title: スクリプトでのライセンス同意の必須化
-ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PowerShell ギャラリーで公開されているスクリプトのうち、エンド ユーザー ライセンスの受け入れを必要とするものの取り扱い方法について説明します。
+ms.openlocfilehash: d82974810fd1e73ef8d9e5771fc430d0f7964e87
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328083"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656074"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>スクリプトでのライセンス同意の必須化
 
 ライセンス同意は、スクリプトではサポートされていません。 ただし、ライセンスへの同意が必要なモジュールにスクリプトが依存するシナリオはサポートされています。
 
-スクリプト コマンド (Install-Script/Save-Script/Update-Script) では、ユーザーがライセンスを確認する場合と同じ動作をする新パラメーター -AcceptLicense がサポートされます。 -AcceptLicense を指定しない場合、ユーザーには依存モジュールの license.txt が示され、このライセンスに同意するように求められます。
+PowerShellGet スクリプト コマンドでは、ユーザーがライセンスを確認した場合と同じ動作をするパラメーター **AcceptLicense** がサポートされています。 **AcceptLicense** を指定しない場合、ユーザーには依存モジュールの `license.txt` ファイルが示され、このライセンスに同意するように求められます。
 
 ## <a name="examples"></a>例
 

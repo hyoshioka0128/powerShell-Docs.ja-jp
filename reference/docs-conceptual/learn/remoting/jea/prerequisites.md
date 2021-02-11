@@ -4,10 +4,10 @@ keywords: JEA, PowerShell, セキュリティ
 title: JEA の前提条件
 description: この記事では、JEA の使用を開始するために満たす必要のある前提条件について説明します。
 ms.openlocfilehash: 5cc70a06887a2d0a840cc83117f865d3148056e1
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501730"
 ---
 # <a name="prerequisites"></a>前提条件

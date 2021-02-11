@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.ConsoleHost.dll-help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 04/22/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
-ms.openlocfilehash: c7e95988c385a32802c93f92216710746d268e5e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4f90dd8e3080d393e50fb8f48133c74909ec2b80
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93211939"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860747"
 ---
 # Start-Transcript
 
-## 概要
+## 構文
 テキストファイルへの PowerShell セッションのすべてまたは一部のレコードを作成します。
 
-## SYNTAX
+## 構文
 
 ### ByPath (既定値)
 
@@ -42,7 +42,7 @@ Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber] [
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## [説明]
 
 コマンドレットにより、 `Start-Transcript` PowerShell セッションのすべてまたは一部のレコードがテキストファイルに作成されます。 トランスクリプトには、ユーザーが入力したすべてのコマンドと、コンソールに表示されたすべての出力が含まれます。
 
@@ -50,7 +50,9 @@ Windows PowerShell 5.0 以降、では、 `Start-Transcript` すべてのトラ�
 コマンドレットによって作成されるファイルには、 `Start-Transcript` 2 つ以上のトランスクリプトが同時に開始された場合に上書きや重複が発生しないように、名前にランダムな文字が含まれます。
 これにより、一元化されたファイル共有に保存されているトランスクリプトの不正な検出も防止されます。
 
-## 例
+**Append** パラメーターを使用する場合、ターゲットファイルにバイトオーダーマーク (BOM) がない場合は、 `Start-Transcript` ターゲットファイルのエンコードが既定で設定され `ASCII` ます。 この動作によって、トランスクリプトで mulitbyte 文字が不適切にエンコードされることがあります。
+
+## 使用例
 
 ### 例 1: 既定の設定を使用してトランスクリプトファイルを開始する
 
@@ -68,7 +70,7 @@ Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 
 このコマンドは、のファイルでトランスクリプトを開始 `Transcript0.txt` `C:\transcripts` します。 **NoClobber** パラメーターが使用されているため、既存のファイルは上書きされません。 ファイルが `Transcript0.txt` 既に存在する場合、コマンドは失敗します。
 
-## PARAMETERS
+## パラメーター
 
 ### -追加
 
@@ -120,7 +122,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-トランスクリプトファイルの場所を指定します。 **Path** パラメーターと異なり、 **LiteralPath** パラメーターの値は入力したとおりに使用されます。 ワイルドカードとして解釈される文字はありません。 パスにエスケープ文字が含まれている場合は、単一引用符で囲みます。 単一引用符は、文字をエスケープシーケンスとして解釈しないことを PowerShell に伝えます。
+トランスクリプトファイルの場所を指定します。 **Path** パラメーターと異なり、**LiteralPath** パラメーターの値は入力したとおりに使用されます。 ワイルドカードとして解釈される文字はありません。 パスにエスケープ文字が含まれている場合は、単一引用符で囲みます。 単一引用符は、文字をエスケープシーケンスとして解釈しないことを PowerShell に伝えます。
 
 ```yaml
 Type: System.String

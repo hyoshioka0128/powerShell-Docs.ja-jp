@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/25/2019
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: c34c581b9af74f3199437b26971b902f6b39620f
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 39c03ec53056c5ec8e2d68f9b71a17a6f4a8ea8a
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93211592"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890418"
 ---
 # New-Service
 
@@ -38,7 +38,7 @@ New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] 
 ### 例 1: サービスを作成する
 
 ```powershell
-New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+New-Service -Name "TestService" -BinaryPathName '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
 ```
 
 このコマンドは、TestService という名前のサービスを作成します。
@@ -48,7 +48,7 @@ New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe
 ```powershell
 $params = @{
   Name = "TestService"
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName = "Test Service"
   StartupType = "Manual"
@@ -83,7 +83,7 @@ Status    : OK
 ```powershell
 $SDDL = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;SU)"
 $params = @{
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName "Test Service"
   StartupType = "Manual"
@@ -100,6 +100,12 @@ New-Service @params
 ### -ビン名
 
 サービスの実行可能ファイルのパスを指定します。 このパラメーターは必須です。
+
+サービスバイナリファイルへの完全修飾パス。 パスにスペースが含まれている場合は、正しく解釈されるように引用符で囲む必要があります。 たとえば、は `d:\my share\myservice.exe` として指定する必要があり `'"d:\my share\myservice.exe"'` ます。
+
+パスには、自動開始サービスの引数を含めることもできます。 たとえば、「 `'"d:\myshare\myservice.exe arg1 arg2"'` 」のように入力します。 これらの引数は、サービスのエントリポイントに渡されます。
+
+詳細については、 [CreateServiceW](/windows/win32/api/winsvc/nf-winsvc-createservicew) API の **Lpbinaryp name** パラメーターを参照してください。
 
 ```yaml
 Type: System.String
@@ -186,8 +192,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-サービスの名前を指定します。
-このパラメーターは必須です。
+サービスの名前を指定します。 このパラメーターは必須です。
 
 ```yaml
 Type: System.String
@@ -208,7 +213,7 @@ Accept wildcard characters: False
 - **自動** -サービスが開始されているか、システムの起動時にオペレーティングシステムによって開始されました。
   自動的に開始されるサービスが手動で開始されるサービスに依存する場合は、手動で開始されるサービスもシステムの起動時に自動的に開始されます。
 - 自動 **Delayedstart** -システムが起動した直後に開始します。
-- [ **無効** ]-サービスは無効になっており、ユーザーまたはアプリケーションが開始することはできません。
+- [**無効**]-サービスは無効になっており、ユーザーまたはアプリケーションが開始することはできません。
 - **Invalidvalue** -この値はサポートされていません。 この値を使用すると、エラーが発生します。
 - **手動** -サービスは、ユーザー、サービスコントロールマネージャー、またはアプリケーションによって手動でのみ開始されます。
 
@@ -261,8 +266,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -294,7 +298,9 @@ Accept wildcard characters: False
 
 ## 注
 
-Windows Vista 以降のバージョンの Windows オペレーティングシステムでこのコマンドレットを実行するには、[管理者として実行] オプションを使用して PowerShell を起動します。
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
+
+このコマンドレットを実行するには、[ **管理者として実行** ] オプションを使用して PowerShell を起動します。
 
 ## 関連リンク
 
@@ -313,4 +319,3 @@ Windows Vista 以降のバージョンの Windows オペレーティングシス
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-

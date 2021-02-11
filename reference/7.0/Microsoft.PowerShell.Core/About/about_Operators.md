@@ -2,16 +2,16 @@
 description: PowerShell でサポートされている演算子について説明します。
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 10/28/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: d442a64be77934cef4636e905c098d9630451b8f
-ms.sourcegitcommit: c1e4739f5d52282fb05a8cff92b0f5d10e2edac1
+ms.openlocfilehash: 88369b1ccf3157e56dd5266784d8ca16e55b1f8f
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93225304"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892523"
 ---
 # <a name="about-operators"></a>演算子について
 
@@ -117,6 +117,11 @@ Folder list: Program Files, Program Files (x86), Users, Windows
 ```powershell
 @(Get-CimInstance win32_logicalDisk)
 ```
+
+#### <a name="hash-table-literal-syntax-"></a>ハッシュテーブルリテラルの構文 `@{}`
+
+配列の部分式と同様に、この構文はハッシュテーブルを宣言するために使用されます。
+詳細については、「 [about_Hash_Tables](about_Hash_Tables.md)」を参照してください。
 
 #### <a name="call-operator-"></a>Call 演算子 `&`
 
@@ -498,8 +503,6 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 
 Null 条件演算子は、 `?.` そのオペランドが null 以外に評価される場合にのみ、メンバーアクセス、、または要素アクセス、、演算をオペランドに適用します。 `?[]` それ以外の場合は、null を返します。
 
-PowerShell では、変数名の一部として `?` が許可されるため、これらの演算子を使用するには、変数名の正式な仕様が必要です。 したがって、変数名は、`${a}` や、`?` が変数名 `${a?}` に含まれる場合のように、`{}` で囲む必要があります。
-
 次の例では、 **PropName** の値が返されます。
 
 ```powershell
@@ -535,6 +538,11 @@ ${a}?[0]
 $a = $null
 ${a}?[0]
 ```
+
+> [!NOTE]
+> PowerShell では、変数名の一部として `?` が許可されるため、これらの演算子を使用するには、変数名の正式な仕様が必要です。 したがって、変数名は、`${a}` や、`?` が変数名 `${a?}` に含まれる場合のように、`{}` で囲む必要があります。
+>
+> の変数名の構文は、 `${<name>}` 部分式演算子と混同しないようにしてください `$()` 。 詳細については、「 [about_Variables](about_Variables.md#variable-names-that-include-special-characters)」の「変数名」セクションを参照してください。
 
 ## <a name="see-also"></a>関連項目
 

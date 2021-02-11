@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
-ms.openlocfilehash: d58d26a93e9b785bcba425537ea570feeffa1606
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: c6aa8a16bd5ccbeb00252b872e997018b1997181
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210624"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346702"
 ---
 # Set-Service
 
@@ -418,6 +418,8 @@ Accept wildcard characters: False
 既定では、は `Set-Service` オブジェクトを返しません。 **PassThru** パラメーターを使用して、 **ServiceController** オブジェクトを出力します。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 `Set-Service` 昇格されたアクセス許可が必要です。 [ **管理者として実行** ] オプションを使用します。
 

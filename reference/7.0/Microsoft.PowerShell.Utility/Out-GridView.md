@@ -7,12 +7,12 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-GridView
-ms.openlocfilehash: 73a2685947ac5980adab99a3f101a0c1f7f809d2
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 37b5349c8ed39ff70453b59fe6758c57880f0087
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210331"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346940"
 ---
 # Out-GridView
 
@@ -148,7 +148,7 @@ pwsh -Command "Get-Service | Out-GridView -Wait"
 
 コマンドレットが入力として受け入れるオブジェクトを指定し `Out-GridView` ます。
 
-**InputObject** パラメーターを使用してオブジェクトのコレクションをに送信すると `Out-GridView` 、に `Out-GridView` よってコレクションが1つのコレクションオブジェクトとして扱われ、コレクションを表す1つの行が表示されます。 コレクション内の各オブジェクトを表示するには、パイプライン演算子 (|) を使用して、オブジェクトをに送信し `Out-GridView` ます。
+**InputObject** パラメーターを使用してオブジェクトのコレクションをに送信すると `Out-GridView` 、に `Out-GridView` よってコレクションが1つのコレクションオブジェクトとして扱われ、コレクションを表す1つの行が表示されます。 コレクション内の各オブジェクトを表示するには、パイプライン演算子 () を使用して、 `|` オブジェクトをに送信し `Out-GridView` ます。
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 
 このパラメーターの値が、パイプラインに送信できるアイテムの数を決定します。
 
-- なし。  項目がありません。 これが既定値です。
+- [なし] :  項目がありません。 これが既定値です。
 - 単一: 項目数は 0 または 1 です。 次のコマンドが受け取ることができる入力オブジェクトが 1 つのみの場合、この値を使用します。
 - 複数. 項目数は、0、1、または複数です。 次のコマンドが受け取ることができる入力オブジェクトが複数の場合、この値を使用します。 この値は、 **Passthru** パラメーターと同じです。
 
@@ -255,6 +255,8 @@ Accept wildcard characters: False
 通常、 `Out-GridView` はオブジェクトを返しません。 **PassThru** パラメーターを使用すると、選択された行を表すオブジェクトがパイプラインに返されます。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 リモート コマンドを使用して、別のコンピューター上でグリッド ビュー ウィンドウを開くことはできません。
 

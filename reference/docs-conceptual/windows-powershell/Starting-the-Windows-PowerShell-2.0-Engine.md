@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: Windows PowerShell 2.0 エンジンの使用
-ms.openlocfilehash: c5ac92159d63e5669643908016186ed32dfb46db
-ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
+description: Windows PowerShell 2.0 エンジンは、既存のスクリプトまたはホスト プログラムが、Windows PowerShell 2.0 用に記述されており、かつ CLR 2.0 を使用してコンパイルされたホスト プログラムは修正なしには実行できないために、実行できないときに限り使用することを意図しています。
+ms.openlocfilehash: 214b87b7314f31974801bb07f98ddea3b68008f0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216024"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664011"
 ---
 # <a name="using-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンの使用
 
@@ -40,18 +41,18 @@ PowerShell.exe -Version 2
 
 ## <a name="how-to-start-a-remote-session-with-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンを使用してリモート セッションを開始する方法
 
-リモート セッションで Windows PowerShell 2.0 エンジンを実行するには、Windows PowerShell 2.0 エンジンを読み込むリモート コンピューターでセッション構成 ("_エンドポイント_" とも呼ばれる) を作成します。 セッション構成は、リモート コンピューターに保存され、許可されているユーザーは誰でもそれを使って Windows PowerShell 2.0 エンジンを使用するセッションを作成できます。
+リモート セッションで Windows PowerShell 2.0 エンジンを実行するには、Windows PowerShell 2.0 エンジンを読み込むリモート コンピューターでセッション構成 (" _エンドポイント_ " とも呼ばれる) を作成します。 セッション構成は、リモート コンピューターに保存され、許可されているユーザーは誰でもそれを使って Windows PowerShell 2.0 エンジンを使用するセッションを作成できます。
 
 これは、通常システム管理者によって実行される高度なタスクです。
 
-次の手順では、[Register-PSSessionConfiguration][] コマンドレットの **PSVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを使用するセッション構成を作成します。 [New-PSSessionConfigurationFile][] コマンドレットの **PowerShellVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを読み込むセッションのセッション構成ファイルを作成することも、[Set-PSSessionConfiguration][] パラメーターの **PSVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを使用するようにセッション構成を変更することもできます。
+次の手順では、 [Register-PSSessionConfiguration][] コマンドレットの **PSVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを使用するセッション構成を作成します。 [New-PSSessionConfigurationFile][] コマンドレットの **PowerShellVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを読み込むセッションのセッション構成ファイルを作成することも、 [Set-PSSessionConfiguration][] パラメーターの **PSVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを使用するようにセッション構成を変更することもできます。
 
 セッション構成ファイルの詳細については、「[about_Session_Configuration_Files][]」を参照してください。
 セットアップとセキュリティを含むセッション構成の詳細については、「[about_Session_Configurations][]」を参照してください。
 
 ### <a name="to-start-a-remote-windows-powershell-20-session"></a>リモートの Windows PowerShell 2.0 セッションを開始するには
 
-1. Windows PowerShell 2.0 エンジンを必要とするセッション構成を作成するには、**PSVersion** パラメーターに値 `2.0` を指定して `Register-PSSessionConfiguration` コマンドレットを使用します。
+1. Windows PowerShell 2.0 エンジンを必要とするセッション構成を作成するには、 **PSVersion** パラメーターに値 `2.0` を指定して `Register-PSSessionConfiguration` コマンドレットを使用します。
    接続の "サーバー側" (受信側) にあるコンピューターでこのコマンドを実行します。
 
    次のサンプル コマンドは、Server01 コンピューター上に PS2 セッション構成を作成します。 このコマンドを実行するには、 **[管理者として実行]** オプションを使用して Windows PowerShell を起動します。
@@ -72,7 +73,7 @@ PowerShell.exe -Version 2
 
 ## <a name="how-to-start-a-background-job-with-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンを使用してバックグラウンド ジョブを開始する方法
 
-Windows PowerShell 2.0 エンジンを使用してバックグラウンド ジョブを開始するには、[Start-Job][] コマンドレットの **PSVersion** パラメーターを使用します。
+Windows PowerShell 2.0 エンジンを使用してバックグラウンド ジョブを開始するには、 [Start-Job][] コマンドレットの **PSVersion** パラメーターを使用します。
 
 次のコマンドは、Windows PowerShell 2.0 エンジンを使用してバックグラウンド ジョブを開始します。
 

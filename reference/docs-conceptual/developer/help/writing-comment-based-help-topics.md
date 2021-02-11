@@ -1,12 +1,14 @@
 ---
-title: コメントベースのヘルプ トピックを記述する
 ms.date: 09/13/2016
-ms.openlocfilehash: f29a30d27eba2b84883c4c2bd3cee68349c94e19
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: コメントベースのヘルプ トピックを記述する
+description: コメントベースのヘルプ トピックを記述する
+ms.openlocfilehash: 11bbadfde27a74bde29d336b91516939e7265b3b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893103"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658795"
 ---
 # <a name="writing-comment-based-help-topics"></a>コメントベースのヘルプ トピックを記述する
 
@@ -18,10 +20,10 @@ ms.locfileid: "86893103"
 
 ## <a name="in-this-section"></a>このセクションの内容
 
- [コメントベースのヘルプの構文](./syntax-of-comment-based-help.md)コメントベースのヘルプの構文について説明します。
+ [Comment-Based ヘルプの構文](./syntax-of-comment-based-help.md) コメントベースのヘルプの構文について説明します。
 
- [コメントベースのヘルプキーワード](./comment-based-help-keywords.md)コメントベースのヘルプのキーワードの一覧を示します。
+ [コメントベースのヘルプキーワード](./comment-based-help-keywords.md) コメントベースのヘルプのキーワードの一覧を示します。
 
- [関数にコメントベースのヘルプを配置](./placing-comment-based-help-in-functions.md)する関数のコメントベースのヘルプを配置する場所を示します。
+ [関数に Comment-Based ヘルプを配置](./placing-comment-based-help-in-functions.md) する関数のコメントベースのヘルプを配置する場所を示します。
 
- [スクリプトにコメントベースのヘルプを配置](./placing-comment-based-help-in-scripts.md)するスクリプトのコメントベースのヘルプを配置する場所を示します。
+ [スクリプトに Comment-Based ヘルプを配置](./placing-comment-based-help-in-scripts.md) するスクリプトのコメントベースのヘルプを配置する場所を示します。

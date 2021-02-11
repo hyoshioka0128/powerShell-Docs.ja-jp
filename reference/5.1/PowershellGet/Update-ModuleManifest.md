@@ -7,12 +7,12 @@ ms.date: 07/08/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-modulemanifest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-ModuleManifest
-ms.openlocfilehash: 47070823d18f2fd07339d503444e532a0c521e0e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 0924366eac2e6ee0e8a250db916d354ee6993cb7
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93216163"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892040"
 ---
 # Update-ModuleManifest
 
@@ -21,7 +21,7 @@ ms.locfileid: "93216163"
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 Update-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>] [-Author <String>]
@@ -61,7 +61,7 @@ $Parms = @{
 Update-ModuleManifest @Parms
 ```
 
-`$Parms` は、 **Path** 、 **Author** 、 **CompanyName** 、 **Copyright** のパラメーター値を格納する記号です。 `Update-ModuleManifest` からパラメーター値を取得 `@Parms` し、モジュールマニフェスト ( **TestManifest.psd1** ) を更新します。
+`$Parms` は、 **Path**、 **Author**、 **CompanyName**、 **Copyright** のパラメーター値を格納する記号です。 `Update-ModuleManifest` からパラメーター値を取得 `@Parms` し、モジュールマニフェスト ( **TestManifest.psd1**) を更新します。
 
 ## PARAMETERS
 
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 
 ### -CompatiblePSEditions
 
-モジュールの互換性のある **PSEditions** を指定します。 **PSEdition** の詳細については、「 [モジュールと互換性のある PowerShell のエディション](/powershell/scripting/gallery/concepts/module-psedition-support)」を参照してください。
+モジュールの互換性のある **PSEditions** を指定します。 **PSEdition** の詳細については、「[モジュールと互換性のある PowerShell のエディション](/powershell/scripting/gallery/concepts/module-psedition-support)」を参照してください。
 
 ```yaml
 Type: System.String[]
@@ -354,7 +354,7 @@ Accept wildcard characters: False
 **HELPINFO XML** ファイルは、PowerShell バージョン3.0 で導入された更新可能なヘルプ機能をサポートしています。 これには、モジュールのダウンロード可能なヘルプファイルの場所、およびサポートされている各ロケールの最新のヘルプファイルのバージョン番号に関する情報が含まれます。
 
 更新可能なヘルプの詳細については、「 [about_Updatable_Help](../Microsoft.PowerShell.Core/About/about_Updatable_Help.md)」を参照してください。
-**HELPINFO XML** ファイルの詳細については、「 [更新可能なヘルプのサポート](/powershell/scripting/developer/module/supporting-updatable-help)」を参照してください。
+**HELPINFO XML** ファイルの詳細については、「[更新可能なヘルプのサポート](/powershell/scripting/developer/module/supporting-updatable-help)」を参照してください。
 
 ```yaml
 Type: System.Uri
@@ -404,7 +404,7 @@ Accept wildcard characters: False
 
 モジュールに含まれるモジュールの配列を指定します。
 
-各モジュールの名前を文字列として、または **ModuleName** 　キーと **ModuleVersion** キーを含むハッシュ テーブルとして入力します。 ハッシュ テーブルは、オプションの **GUID** キーも保持できます。 パラメーター値として文字列とハッシュ テーブルを組み合わせることができます。
+各モジュールの名前を文字列として、または **ModuleName**　キーと **ModuleVersion** キーを含むハッシュ テーブルとして入力します。 ハッシュ テーブルは、オプションの **GUID** キーも保持できます。 パラメーター値として文字列とハッシュ テーブルを組み合わせることができます。
 
 このキーは、モジュール インベントリとしての動作を想定して設計されています。 このキーの値に示されているモジュールは自動的に処理されません。
 
@@ -440,7 +440,7 @@ Accept wildcard characters: False
 
 `.psm1` `.dll` モジュールのセッション状態にインポートされるスクリプトモジュール () とバイナリモジュール () を指定します。 **Nestedmodules** キー内のファイルは、値に示されている順序で実行されます。
 
-各モジュールの名前を文字列として、または **ModuleName** 　キーと **ModuleVersion** キーを含むハッシュ テーブルとして入力します。 ハッシュ テーブルは、オプションの **GUID** キーも保持できます。 パラメーター値として文字列とハッシュ テーブルを組み合わせることができます。
+各モジュールの名前を文字列として、または **ModuleName**　キーと **ModuleVersion** キーを含むハッシュ テーブルとして入力します。 ハッシュ テーブルは、オプションの **GUID** キーも保持できます。 パラメーター値として文字列とハッシュ テーブルを組み合わせることができます。
 
 ```yaml
 Type: System.Object[]
@@ -726,7 +726,7 @@ Accept wildcard characters: False
 `.ps1`モジュールをインポートするときに、呼び出し元のセッション状態で実行されるスクリプト () ファイルを指定します。
 ログイン スクリプトを使用する場合と同様に、これらのスクリプトを使用して、環境を準備できます。
 
-モジュールのセッション状態で実行するスクリプトを指定するには、 **NestedModules** キーを使用します。
+モジュールのセッション状態で実行するスクリプトを指定するには、**NestedModules** キーを使用します。
 
 ```yaml
 Type: System.String[]
@@ -822,5 +822,12 @@ Accept wildcard characters: False
 ### System.Object
 
 ## 注
+
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
 
 ## 関連リンク

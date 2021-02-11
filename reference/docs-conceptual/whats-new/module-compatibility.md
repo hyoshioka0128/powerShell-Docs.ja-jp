@@ -2,12 +2,12 @@
 title: PowerShell 7 モジュールの互換性
 ms.date: 02/03/2020
 description: この記事では、他の Microsoft 製品向けに公開されている PowerShell モジュールでの PowerShell 7 の状態を示します。
-ms.openlocfilehash: f845b33881c93fa076d97adf101f4f3e006df73b
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 718ba0f502a23bc2c2a9268d65d3b8129de0af49
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501628"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661377"
 ---
 # <a name="powershell-7-module-compatibility"></a>PowerShell 7 モジュールの互換性
 
@@ -75,7 +75,7 @@ Windows 10 では、Windows 管理モジュールは **Windows オプション�
 | AppBackgroundTask                  | ネイティブに互換性あり                  | Windows 10 1903 以降                   |
 | AppLocker                          | 互換性レイヤーでテストされていない    |                                    |
 | AppvClient                         | 互換性レイヤーでテストされていない    |                                    |
-| appx                               | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降 |
+| appx                               | ネイティブに互換性あり**                | Windows Server 1809 以降<br>Windows 10 1809 以降<br>**PowerShell 7.1 で互換性レイヤーを使用する必要があります |
 | AssignedAccess                     | ネイティブに互換性あり                  | Windows 10 1809 以降                   |
 | BestPractices                      | 互換性レイヤーでサポートされていない |                                    |
 | BitLocker                          | ネイティブに互換性あり                  | BitLocker 搭載 Windows Server 1809 以降<br>Windows 10 1809 以降 |
@@ -158,7 +158,7 @@ Windows 10 では、Windows 管理モジュールは **Windows オプション�
 | ScheduledTasks                     | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降      |
 | SecureBoot                         | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降      |
 | ServerCore                         | 互換性レイヤーでテストされていない    |                                               |
-| ServerManager                      | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Rsat.ServerManager.Tools 搭載 Windows 10 1809 以降<br>" _下記のメモを参照してください_ " |
+| ServerManager                      | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Rsat.ServerManager.Tools 搭載 Windows 10 1809 以降<br>"_下記のメモを参照してください_" |
 | ServerManagerTasks                 | 互換性レイヤーでテストされていない    |                                               |
 | ShieldedVMDataFile                 | ネイティブに互換性あり                  | RSAT-Shielded-VM-Tools 搭載 Windows Server 1903 以降<br>Rsat.Shielded.VM.Tools 搭載 Windows 10 1903 以降 |
 | ShieldedVMProvisioning             | ネイティブに互換性あり                  | HostGuardian 搭載 Windows Server 1809 以降<br>HostGuardian 搭載 Windows 10 1809 以降  |

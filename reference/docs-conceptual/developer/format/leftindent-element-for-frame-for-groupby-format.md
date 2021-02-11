@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の Frame の左インデント要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4bf848047a01ff61183fb6b3ec5d540ab22b50c9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の Frame の LeftIndent 要素 (書式)
+description: GroupBy の Frame の LeftIndent 要素 (書式)
+ms.openlocfilehash: e662a59311bbc8bd66d35087d857067db1c9b2d9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781156"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659984"
 ---
 # <a name="leftindent-element-for-frame-for-groupby-format"></a>GroupBy の Frame の LeftIndent 要素 (書式)
 

@@ -7,12 +7,12 @@ ms.date: 03/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-acl?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Acl
-ms.openlocfilehash: cb38b327920fc56817c5c8ec73f548ffba8bdd7a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: d9adce420ff8904fa40c7689a8b2ab5a3b5e945f
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93211467"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347212"
 ---
 # Get-Acl
 
@@ -240,6 +240,8 @@ Accept wildcard characters: False
 `Get-Acl` 取得する Acl を表すオブジェクトを返します。 オブジェクトの種類は、ACL の種類に依存します。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 既定では、リソース `Get-Acl` () への PowerShell パス、 `<provider>::<resource-path>` リソースの所有者、およびリソースの随意アクセス制御リスト (DACL) のアクセス制御エントリのリスト (配列) が表示されます。 DACL リストは、リソースの所有者によって制御されます。
 

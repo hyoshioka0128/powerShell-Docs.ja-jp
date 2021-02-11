@@ -1,12 +1,14 @@
 ---
-title: ビュー (Format) のコントロールに対する EntrySelectedBy の TypeName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6eaa4f80a18c91ca351657fd40a8cac6f688c22f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の Controls の EntrySelectedBy の TypeName 要素 (書式)
+description: View の Controls の EntrySelectedBy の TypeName 要素 (書式)
+ms.openlocfilehash: 03a70b0c6c71910932f1d032c94c602cef8ab964
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783332"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647895"
 ---
 # <a name="typename-element-for-entryselectedby-for-controls-for-view-format"></a>View の Controls の EntrySelectedBy の TypeName 要素 (書式)
 

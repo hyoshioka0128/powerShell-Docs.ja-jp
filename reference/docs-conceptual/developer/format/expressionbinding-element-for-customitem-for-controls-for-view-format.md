@@ -1,12 +1,14 @@
 ---
-title: ビューのコントロールに対する CustomItem の式のバインド要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6760bf17be58411948ecb3437bf18bce40073954
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の Controls の CustomItem の ExpressionBinding 要素 (書式)
+description: View の Controls の CustomItem の ExpressionBinding 要素 (書式)
+ms.openlocfilehash: da87bb26d21dcb051871e67997cc3fba7ce73c74
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773812"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649893"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-view-format"></a>View の Controls の CustomItem の ExpressionBinding 要素 (書式)
 

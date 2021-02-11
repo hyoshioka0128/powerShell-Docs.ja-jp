@@ -6,12 +6,12 @@ ms.date: 07/31/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
-ms.openlocfilehash: 6e4c8c3783af1fda68c6a0c067b79e8d22943c1a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 8eada7e85b6f970a5ba4c6e1714ee598cf768706
+ms.sourcegitcommit: 021ea294327dec542ec040619dac0d2171397a90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222523"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804148"
 ---
 # <a name="about-signing"></a>署名について
 
@@ -102,9 +102,9 @@ from trusted publishers.
 
 自己署名証明書を作成する場合は、証明書に対して強力な秘密キーの保護を有効にする必要があります。 これにより、悪意のあるプログラムがユーザーに代わってスクリプトに署名するのを防ぐことができます。 手順については、このトピックの最後に記載されています。
 
-## <a name="create-a-self-signed-certificate"></a>自己署名証明書の作成
+## <a name="create-a-self-signed-certificate"></a>自己署名証明書を作成する
 
-で自己署名証明書を作成するには、 `New-SelfSignedCertificate` PKI モジュールのコマンドレットを使用します。 このモジュールは PowerShell 3.0 で導入され、Windows 8 および Windows Server 2012 に含まれています。 詳細については、コマンドレットのヘルプトピックを参照してください `New-SelfSignedCertificate` 。
+自己署名証明書を作成するには、 `New-SelfSignedCertificate` PKI モジュールのコマンドレットを使用します。 このモジュールは PowerShell 3.0 で導入され、Windows 8 および Windows Server 2012 に含まれています。 詳細については、コマンドレットのヘルプトピックを参照してください `New-SelfSignedCertificate` 。
 
 以前のバージョンの Windows で自己署名証明書を作成するには、証明書作成ツールを使用し `MakeCert.exe` ます。 このツールは、Microsoft .NET SDK (バージョン1.1 以降) と Microsoft Windows SDK に含まれています。
 

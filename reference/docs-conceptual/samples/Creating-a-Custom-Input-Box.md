@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: ユーザー設定の入力ボックスを作成する
 description: この記事では、Windows PowerShell で .NET Framework のフォーム作成機能を使用して、カスタム入力ボックスを作成する方法を示します。
-ms.openlocfilehash: 18fba743b169010936d2ea83dca4e95203664fe9
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: b7786706d2461c329da429c1bd4971d7dc874d6d
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92500557"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390084"
 ---
 # <a name="creating-a-custom-input-box"></a>ユーザー設定の入力ボックスを作成する
 
@@ -74,11 +74,11 @@ $form = New-Object System.Windows.Forms.Form
 
 フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。
 
-- **Text** 。 ウィンドウのタイトルになります。
+- **Text**。 ウィンドウのタイトルになります。
 
-- **Size** 。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
+- **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
 
-- **StartingPosition** 。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。
+- **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。
   このプロパティを追加しない場合は、Windows によりフォームが開かれる場所が選択されます。 **StartingPosition** を **CenterScreen** に設定すると、フォームは読み込まれるたびに画面中央に自動的に表示されます。
 
 ```powershell
@@ -121,7 +121,7 @@ $label.Text = 'Please enter the information in the space below:'
 $form.Controls.Add($label)
 ```
 
-ラベルのテキストに記述されている情報をユーザーが提供できるコントロール (この場合はテキスト ボックス) を追加します。 テキスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、MSDN の「[System.Windows.Forms 名前空間](/dotnet/api/system.windows.forms)」をご覧ください。
+ラベルのテキストに記述されている情報をユーザーが提供できるコントロール (この場合はテキスト ボックス) を追加します。 テキスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、「[System.Windows.Forms 名前空間](/dotnet/api/system.windows.forms)」をご覧ください。
 
 ```powershell
 $textBox = New-Object System.Windows.Forms.TextBox
@@ -148,7 +148,7 @@ $form.Add_Shown({$textBox.Select()})
 $result = $form.ShowDialog()
 ```
 
-最後に、 **If** ブロック内のコードは、ユーザーがテキスト ボックスにテキストを入力した後の Windows の動作を指示します。続いて **[OK]** ボタンをクリックするか、 **Enter** キーを押します。
+最後に、**If** ブロック内のコードは、ユーザーがテキスト ボックスにテキストを入力した後の Windows の動作を指示します。続いて **[OK]** ボタンをクリックするか、**Enter** キーを押します。
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)

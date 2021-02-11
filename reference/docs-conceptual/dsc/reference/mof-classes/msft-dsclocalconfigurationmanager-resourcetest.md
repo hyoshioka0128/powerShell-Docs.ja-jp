@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: ResourceTest メソッド
-ms.openlocfilehash: 7ef65227342091cb2a5063aaf95a2780d217f85a
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ResourceTest メソッド
+ms.openlocfilehash: cbac53ea96a59ec92fa840f75cd264a3125b965a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463807"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650682"
 ---
 # <a name="resourcetest-method"></a>ResourceTest メソッド
 
@@ -17,10 +18,10 @@ DSC リソースの **Test** メソッドを直接呼び出します。
 
 ```mof
 uint32 ResourceTest(
-  [in]  string  ResourceType,
-  [in]  string  ModuleName,
-  [in]  uint8   resourceProperty[],
-  [out] boolean InDesiredState
+  [in]  string  ResourceType,
+  [in]  string  ModuleName,
+  [in]  uint8   resourceProperty[],
+  [out] boolean InDesiredState
 );
 ```
 
@@ -30,7 +31,7 @@ uint32 ResourceTest(
 
 **ModuleName** \[in\] 呼び出すリソースを含むモジュールの名前。
 
-***resourceProperty** \[in\] ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。 リソースのプロパティと種類を検出するには、[Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) コマンドレットを使用します。
+**_resourceProperty_* \[in\] ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。 リソースのプロパティと種類を検出するには、[Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) コマンドレットを使用します。
 
 *InDesiredState** \[out\] ターゲット ノードが目的の状態にある場合、制御が戻るときに、このプロパティは **true** に設定されます。
 
@@ -46,7 +47,7 @@ uint32 ResourceTest(
 
 **MOF:** DscCore.mof
 
-**名前空間**:Root\Microsoft\Windows\DesiredStateConfiguration
+**名前空間** :Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

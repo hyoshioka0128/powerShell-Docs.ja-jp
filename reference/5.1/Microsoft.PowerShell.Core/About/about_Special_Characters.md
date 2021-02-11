@@ -2,16 +2,16 @@
 description: PowerShell でシーケンス内の次の文字を解釈する方法を制御する特殊文字シーケンスについて説明します。
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 04/04/2020
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Special_Characters
-ms.openlocfilehash: 875a1c3c63e759151c3c64b5396312b030955cb7
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 7e0ea9298dd85627c08298917464cb005f4f37ff
+ms.sourcegitcommit: 364c3fe46b2069b810107d840be59fe519ea7b4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222520"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100100735"
 ---
 # <a name="about-special-characters"></a>特殊文字について
 
@@ -31,7 +31,7 @@ PowerShell は、次のエスケープシーケンスを認識します。
 
 |  Sequence   |       説明       |
 | ----------- | ----------------------- |
-| `` `0 ``    | [Null]                    |
+| `` `0 ``    | Null                    |
 | `` `a ``    | アラート:                   |
 | `` `b ``    | バックスペース               |
 | `` `f ``    | フォーム フィード               |
@@ -67,7 +67,7 @@ for ($i = 0; $i -le 1; $i++){"`a"}
 Backspace ( `` `b `` ) 文字はカーソルを1文字前に移動しますが、文字は削除しません。
 
 この例では、 **バックアップ** という単語を書き込み、カーソルを2回移動します。
-次に、新しい位置で、スペースを書き込み、続けて「 **out** 」と入力します。
+次に、新しい位置で、スペースを書き込み、続けて「 **out**」と入力します。
 
 ```powershell
 "backup`b`b out"
@@ -129,13 +129,28 @@ Column1         Column2         Column3
 
 ## <a name="vertical-tab-v"></a>垂直タブ (' v)
 
-水平タブ ( `` `v `` ) 文字は、次の垂直タブに進み、その時点で残りの出力を書き込みます。 これは、既定の Windows コンソールには影響しません。
+垂直タブ ( `` `v `` ) 文字は、次の垂直タブに進み、その時点で残りの出力を書き込みます。 垂直タブのレンダリングは、デバイスと端末に依存します。
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
 ```
 
-次の例は、プリンターまたは別のコンソールホストで取得する出力を示しています。
+次の例では、いくつかの一般的な環境で、垂直タブのレンダリングされた出力を示します。
+
+Windows コンソールホストアプリケーションは ( `` `v `` ) を特殊文字として解釈しますが、余分な空白は追加されません。
+
+```Output
+There is a vertical tab♂between the words.
+```
+
+[Windows ターミナル](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)は、垂直タブ文字をキャリッジリターンとラインフィードとしてレンダリングします。 出力の残りの部分は、次の行の先頭に印刷されます。
+
+```Output
+There is a vertical tab
+between the words.
+```
+
+プリンターまたは unix ベースのコンソールでは、垂直タブ文字が次の行に進み、その時点で残りの出力を書き込みます。
 
 ```Output
 There is a vertical tab

@@ -1,18 +1,20 @@
 ---
+ms.date: 01/11/2021
+ms.topic: reference
 title: コメント ベースのヘルプの例
-ms.date: 09/12/2016
-ms.openlocfilehash: fe5d054c84952367a4e7c2d5d9e32551a4e5c3a8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: コメント ベースのヘルプの例
+ms.openlocfilehash: 237e65c59cc3b35f48b6d667c8fb297994b03638
+ms.sourcegitcommit: 4879b9cdfa3f03b04a07b84442dc1ca9ae0f6b46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772299"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98105164"
 ---
 # <a name="examples-of-comment-based-help"></a>コメント ベースのヘルプの例
 
 このトピックには、スクリプトや関数にコメントベースのヘルプを使用する方法を示す例が含まれています。
 
-## <a name="example-1-comment-based-help-for-a-function"></a>例 1: 関数のコメントベースのヘルプ
+## <a name="example-1-comment-based-help-for-a-function"></a>例 1: 関数のヘルプを Comment-Based
 
  次のサンプル関数には、コメントベースのヘルプが含まれています。
 
@@ -44,15 +46,15 @@ function Add-Extension
         System.String. Add-Extension returns a string with the extension or file name.
 
         .EXAMPLE
-        C:\PS> extension -name "File"
+        PS> extension -name "File"
         File.txt
 
         .EXAMPLE
-        C:\PS> extension -name "File" -extension "doc"
+        PS> extension -name "File" -extension "doc"
         File.doc
 
         .EXAMPLE
-        C:\PS> extension "File" "doc"
+        PS> extension "File" "doc"
         File.doc
 
         .LINK
@@ -67,7 +69,7 @@ function Add-Extension
 次の出力は、 `Get-Help` 関数のヘルプを表示するコマンドの結果を示して `Add-Extension` います。
 
 ```powershell
-C:\PS> get-help add-extension -full
+PS> Get-Help Add-Extension -full
 ```
 
 ```Output
@@ -116,17 +118,17 @@ C:\PS> get-help add-extension -full
 
             -------------------------- EXAMPLE 1 --------------------------
 
-            C:\PS> extension -name "File"
+            PS> extension -name "File"
             File.txt
 
             -------------------------- EXAMPLE 2 --------------------------
 
-            C:\PS> extension -name "File" -extension "doc"
+            PS> extension -name "File" -extension "doc"
             File.doc
 
             -------------------------- EXAMPLE 3 --------------------------
 
-            C:\PS> extension "File" "doc"
+            PS> extension "File" "doc"
             File.doc
 
         RELATED LINKS
@@ -134,7 +136,7 @@ C:\PS> get-help add-extension -full
             Set-Item
 ```
 
-## <a name="example-2-comment-based-help-for-a-script"></a>例 2: スクリプトのコメントベースのヘルプ
+## <a name="example-2-comment-based-help-for-a-script"></a>例 2: スクリプトのヘルプを Comment-Based する
 
 次のサンプル関数には、コメントベースのヘルプが含まれています。
 
@@ -164,13 +166,13 @@ C:\PS> get-help add-extension -full
   None. Update-Month.ps1 does not generate any output.
 
   .EXAMPLE
-  C:\PS> .\Update-Month.ps1
+  PS> .\Update-Month.ps1
 
   .EXAMPLE
-  C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+  PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
   .EXAMPLE
-  C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath C:\Reports\2009\January.csv
+  PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath C:\Reports\2009\January.csv
 #>
 
 param ([string]$InputPath, [string]$OutPutPath)
@@ -181,7 +183,7 @@ function Get-Data { }
 次のコマンドは、スクリプトのヘルプを取得します。 スクリプトは Path 環境変数に示されているディレクトリにないため、スクリプトヘルプを `Get-Help` 取得するコマンドではスクリプトパスを指定する必要があります。
 
 ```powershell
-C:\PS> get-help c:\ps-test\update-month.ps1 -full
+PS> Get-Help c:\ps-test\update-month.ps1 -full
 ```
 
 ```Output
@@ -234,15 +236,15 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
             -------------------------- EXAMPLE 1 --------------------------
 
-            C:\PS> .\Update-Month.ps1
+            PS> .\Update-Month.ps1
 
             -------------------------- EXAMPLE 2 --------------------------
 
-            C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+            PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
             -------------------------- EXAMPLE 3 --------------------------
 
-            C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
+            PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
             C:\Reports\2009\January.csv
 
             RELATED LINKS
@@ -275,7 +277,7 @@ function Add-Extension
     #>
 ```
 
-結果は、例1の結果と同じです。 `Get-Help`パラメーターの説明は、キーワードが付いているかのように解釈され `.Parameter` ます。
+結果は、例1の結果と同じです。 `Get-Help` パラメーターの説明は、キーワードが付いているかのように解釈され `.Parameter` ます。
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>例 4: XML ファイルへのリダイレクト
 
@@ -304,7 +306,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>例 5: 別のヘルプトピックへのリダイレクト
 
-次のコードは、PowerShell の組み込み関数の先頭から抜粋したもので、一度 `Help` に1画面のヘルプテキストを表示します。 Get-help コマンドレットのヘルプトピックでは Help 関数について説明しているので、Help 関数はキーワードとキーワードを使用して `.ForwardHelpTargetName` `.ForwardHelpCategory` ユーザーを get-help コマンドレットのヘルプトピックにリダイレクトします。
+次のコードは、PowerShell の組み込み関数の先頭から抜粋したもので、一度 `Help` に1画面のヘルプテキストを表示します。 Get-Help コマンドレットのヘルプトピックでは Help 関数について説明しているので、Help 関数はキーワードとキーワードを使用して、 `.ForwardHelpTargetName` `.ForwardHelpCategory` ユーザーを Get-Help コマンドレットヘルプトピックにリダイレクトします。
 
 ```powershell
 function help
@@ -325,7 +327,7 @@ function help
 次のコマンドでは、この機能を使用します。 ユーザーが関数のコマンドを入力すると `Get-Help` `Help` 、によってコマンド `Get-Help` レットのヘルプトピックが表示され `Get-Help` ます。
 
 ```powershell
-C:\PS> get-help help
+PS> get-help help
 ```
 
 ```Output

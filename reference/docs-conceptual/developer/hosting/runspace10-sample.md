@@ -1,18 +1,20 @@
 ---
-title: Runspace10 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4d858c432c6221f2347f6de664d1e4ee299f5801
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace10 サンプル
+description: Runspace10 サンプル
+ms.openlocfilehash: fd58cea553e6b830a56df7edfa7901d39f46a06c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784947"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657582"
 ---
 # <a name="runspace10-sample"></a>Runspace10 サンプル
 
 このサンプルでは、既定の初期セッション状態を作成する方法、コマンドレットを[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)に追加する方法、初期セッション状態を使用する実行空間を作成する方法、およびオブジェクトを使用してコマンドを実行する方法を示し[ます。](/dotnet/api/system.management.automation.powershell)
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -22,19 +24,19 @@ ms.locfileid: "87784947"
 
 - [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを作成しています。
 
-- (ホストアプリケーションによって定義された) コマンドレットを[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトに追加します。
+- (ホストアプリケーションによって定義された) コマンドレットを [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) オブジェクトに追加します。
 
-- オブジェクトを使用する、 [system.string オブジェクトを](/dotnet/api/System.Management.Automation.Runspaces.Runspace)作成します。
+- オブジェクトを使用する、 [system.string オブジェクトを](/dotnet/api/System.Management.Automation.Runspaces.Runspace) 作成します。
 
-- System.object オブジェクトを使用する、[システムの管理](/dotnet/api/system.management.automation.powershell)........... [...](/dotnet/api/System.Management.Automation.Runspaces.Runspace) .................
+- System.object オブジェクトを使用する、 [システムの管理](/dotnet/api/system.management.automation.powershell) ........... [...](/dotnet/api/System.Management.Automation.Runspaces.Runspace) .................
 
-- コマンド[を、system.servicemodel オブジェクトの](/dotnet/api/system.management.automation.powershell)パイプラインに追加します。
+- コマンド [を、system.servicemodel オブジェクトの](/dotnet/api/system.management.automation.powershell) パイプラインに追加します。
 
-- コマンドによって返された、[システムの管理](/dotnet/api/System.Management.Automation.PSObject)オブジェクトからプロパティを抽出しています。
+- コマンドによって返された、 [システムの管理](/dotnet/api/System.Management.Automation.PSObject) オブジェクトからプロパティを抽出しています。
 
 ## <a name="example"></a>例
 
-このサンプルでは、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを使用して、実行空間を開いたときに使用可能な要素を定義する実行空間を作成します。 このサンプルでは、(ホストアプリケーションによって定義される) Get Proc コマンドレットが初期セッション状態に追加され、コマンドレットは、[システムの管理](/dotnet/api/system.management.automation.powershell)オブジェクトを使用して同期的に実行されます。
+このサンプルでは、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) オブジェクトを使用して、実行空間を開いたときに使用可能な要素を定義する実行空間を作成します。 このサンプルでは、(ホストアプリケーションによって定義される) Get-Proc コマンドレットが初期セッション状態に追加され、コマンドレットは、 [System. Powershell](/dotnet/api/system.management.automation.powershell) オブジェクトを使用して同期的に実行されます。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

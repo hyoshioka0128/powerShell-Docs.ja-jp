@@ -1,23 +1,22 @@
 ---
-description: PowerShell は、エンジン、プロバイダー、およびコマンドレットからの内部操作をログに記録します。
+description: PowerShell は、エンジン、プロバイダー、およびコマンドレットからの内部操作を Windows イベントログに記録します。
 keywords: powershell
 Locale: en-US
 ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging-Windows
-ms.openlocfilehash: 62fa0592d931f5f675661f4d41ee01df6b89dc06
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: b36c45e0e8192a292dab88615cdd23f877068774
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222192"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354781"
 ---
 # <a name="about-logging-windows"></a>ログ記録ウィンドウについて
 
 ## <a name="short-description"></a>簡単な説明
-
-PowerShell は、エンジン、プロバイダー、およびコマンドレットからの内部操作をログに記録します。
+PowerShell は、エンジン、プロバイダー、およびコマンドレットからの内部操作を Windows イベントログに記録します。
 
 ## <a name="long-description"></a>長い説明
 
@@ -32,14 +31,14 @@ PowerShell ログは、Windows イベントビューアーを使用して表示�
 
 スクリプトブロックのログ記録を有効にすると、PowerShell によって次のイベントがログに記録され `PowerShellCore/Operational` ます。
 
-|フィールド| 値|
-|-|-|
-|EventId|`4104` / `0x1008`|
-|チャネル|`Operational`|
-|Level|`Verbose`|
-|オペコード|`Create`|
-|タスク|`CommandStart`|
-|Keyword|`Runspace`|
+|  フィールド  |       値       |
+| ------- | ----------------- |
+| EventId | `4104` / `0x1008` |
+| チャネル | `Operational`     |
+| Level   | `Verbose`         |
+| オペコード  | `Create`          |
+| タスク    | `CommandStart`    |
+| Keyword | `Runspace`        |
 
 ### <a name="registering-the-powershell-event-provider-on-windows"></a>Windows での PowerShell イベントプロバイダーの登録
 

@@ -1,12 +1,14 @@
 ---
-title: CustomControl for View (Format) の EntrySelectedBy の SelectionSetName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3728a1886d5406b8fa4888125d1c031d0f9b1b03
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の CustomControl の EntrySelectedBy の SelectionSetName 要素 (書式)
+description: View の CustomControl の EntrySelectedBy の SelectionSetName 要素 (書式)
+ms.openlocfilehash: a158c5476fb3a168a146ce67565c0ed6f7859519
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785304"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651924"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format"></a>View の CustomControl の EntrySelectedBy の SelectionSetName 要素 (書式)
 
@@ -46,9 +48,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (F
 
 各カスタムコントロールエントリには、少なくとも1つの型名、選択セット、または選択条件が定義されている必要があります。
 
-選択セットは、通常、複数のビューで使用されるオブジェクトのグループを定義する場合に使用します。 たとえば、同じオブジェクトのセットに対してテーブルビューとリストビューを作成することができます。 選択セットの定義の詳細については、「[選択セットの定義](./defining-selection-sets.md)」を参照してください。
+選択セットは、通常、複数のビューで使用されるオブジェクトのグループを定義する場合に使用します。 たとえば、同じオブジェクトのセットに対してテーブルビューとリストビューを作成することができます。 選択セットの定義の詳細については、「 [選択セットの定義](./defining-selection-sets.md)」を参照してください。
 
-カスタムコントロールビューのコンポーネントの詳細については、「[カスタムコントロールの作成](./creating-custom-controls.md)」を参照してください。
+カスタムコントロールビューのコンポーネントの詳細については、「 [カスタムコントロールの作成](./creating-custom-controls.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

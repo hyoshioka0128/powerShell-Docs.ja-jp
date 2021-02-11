@@ -1,42 +1,41 @@
 ---
-title: Host04 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a34c8424fd661b9c41e6233c4d8d48177a9cfb4e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Host04 サンプル
+description: Host04 サンプル
+ms.openlocfilehash: a768258d58d39d0067c5a2a9c40d74e32bf64943
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783281"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355427"
 ---
 # <a name="host04-sample"></a>Host04 サンプル
 
 このサンプルでは、コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する対話型コンソールベースのホストアプリケーションを構築する方法を示します。 このホスト アプリケーションでは、複数選択を指定するための確認メッセージを表示することもできます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
- このサンプルには、Windows PowerShell 2.0 が必要です。
+このサンプルには、Windows PowerShell 2.0 が必要です。
 
 ## <a name="demonstrates"></a>対象
 
-- [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラス、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、および Pshostrawuserinterface クラスから派生したクラスを持つカスタムホストを作成しています。このホストには、 [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスが含まれています。
+- [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラス、 [PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、および PSHostRawUserInterface クラスから派生したクラスを持つカスタムホストを作成しています。このホストには、 [](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスが含まれています。
 
 - これらのホストクラスを使用して対話型の Windows PowerShell シェルを構築するコンソールアプリケーションを構築します。
 
 - 変数を作成 `$profile` し、次のプロファイルを読み込みます。
 
   - 現在のユーザー、現在のホスト
-
   - 現在のユーザー、すべてのホスト
-
   - すべてのユーザー、現在のホスト
-
   - すべてのユーザー、すべてのホスト
 
-- [Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)インターフェイスを実装してください。
+- [IHostUISupportsMultipleChoiceSelection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)インターフェイスを実装してください。
 
-## <a name="example"></a>例
+## <a name="example-1"></a>例 1
 
- この例では、コマンドラインでコマンドを入力し、そのコマンドを処理して、結果を出力することをユーザーに許可します。
+この例では、コマンドラインでコマンドを入力し、そのコマンドを処理して、結果を出力することをユーザーに許可します。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -373,9 +372,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>例
+## <a name="example-2"></a>例 2
 
- 次のコードは、このホストアプリケーションで使用される[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
+次のコードは、このホストアプリケーションで使用される [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -555,9 +554,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>例
+## <a name="example-3"></a>例 3
 
- 次のコードは、このホストアプリケーションで使用される[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラスを実装したものです。
+次のコードは、このホストアプリケーションで使用される [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) クラスを実装したものです。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1073,9 +1072,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>例
+## <a name="example-4"></a>例 4
 
- 次のコードは、このホストアプリケーションで使用される[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
+次のコードは、このホストアプリケーションで使用される [Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

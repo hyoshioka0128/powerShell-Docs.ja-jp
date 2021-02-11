@@ -1,12 +1,14 @@
 ---
-title: 列挙 Able膨張 (Format) の EntrySelectedBy の SelectionCondition 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d5858145e092dc962174a776889a4f62db366d71
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EnumerableExpansion の EntrySelectedBy の SelectionCondition 要素 (書式)
+description: EnumerableExpansion の EntrySelectedBy の SelectionCondition 要素 (書式)
+ms.openlocfilehash: 3ecf7fde99b9ee66a153eea416792f351ff62af3
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785338"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647915"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の SelectionCondition 要素 (書式)
 
@@ -58,7 +60,7 @@ Configuration 要素 (Format) DefaultSettings Element (format) 列挙 able膨張
 
 - 選択条件では、任意の数の .NET 型または選択セットを指定できますが、両方を指定することはできません。
 
-選択条件の使用方法の詳細については、「[データの Diplaying の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件の使用方法の詳細については、「 [データの Diplaying の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ワイドビューのその他のコンポーネントの詳細については、「 [Wide ビュー](./creating-a-wide-view.md)」を参照してください。
 

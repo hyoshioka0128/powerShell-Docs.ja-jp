@@ -7,12 +7,12 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-printer?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Printer
-ms.openlocfilehash: 552ccc39cc19d625c5173df360fa20a10c6040c1
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: bd9a141537c7f075d3c02827af4694813d6f0db6
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210312"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346923"
 ---
 # Out-Printer
 
@@ -116,6 +116,8 @@ Accept wildcard characters: False
 `Out-Printer` はオブジェクトを返しません。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 動詞を含むコマンドレットは、 `Out` オブジェクトを書式設定しません。 それらをレンダリングして、指定された表示先に送信するだけです。 書式設定されていないオブジェクトをコマンドレットに送信すると、コマンドレットによって、 `Out` レンダリングされる前に書式設定コマンドレットに送信されます。
 

@@ -1,21 +1,20 @@
 ---
 ms.date: 09/11/2018
-contributor: JKeithB
-keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリー アカウントを作成する
-ms.openlocfilehash: f43d7e65bb8bf9a9bbdda9790cc622786377fa38
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PowerShell ギャラリーのユーザー アカウント要件について説明します
+ms.openlocfilehash: 24c7531e61128415a284d1b438b43f3af0d1053a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278784"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662609"
 ---
 # <a name="creating-a-powershell-gallery-account"></a>PowerShell ギャラリー アカウントを作成する
 
 PowerShell ギャラリーに何らかのアイテムを公開する前に、PowerShell ギャラリー アカウントを作成する必要があります。
 PowerShell ギャラリー アカウントは、電子メール対応のログイン アカウントにリンクする必要があります。 このアカウントには、Azure Active Directory アカウントまたは outlook.com や hotmail.com の電子メール アカウントのような Microsoft ID を指定できます。
 
-PowerShell ギャラリー アカウントを作成するには、[https://PowerShellGallery.com](https://PowerShellGallery.com) にアクセスして、次の図のように、 **[サインイン]** をクリックします。
+PowerShell ギャラリー アカウントを作成するには、 [https://PowerShellGallery.com](https://PowerShellGallery.com) にアクセスして、次の図のように、 **[サインイン]** をクリックします。
 
 ![新規アカウントの作成](media/creating-an-account/CreateAccount-Register.png)
 

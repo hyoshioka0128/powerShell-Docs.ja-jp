@@ -1,18 +1,20 @@
 ---
-title: Runspace09 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6110fcb96af25f55682064c466ba2add6377902d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace09 サンプル
+description: Runspace09 サンプル
+ms.openlocfilehash: 8dedc3e2ee7c1d41f7b7ad367d8cebeb5f58b8e9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783145"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657618"
 ---
 # <a name="runspace09-sample"></a>Runspace09 サンプル
 
-このサンプルでは、スクリプトを[システム](/dotnet/api/system.management.automation.powershell)のパイプラインに追加する方法と、スクリプトを非同期で実行する方法を示します。 イベントはスクリプトの出力を処理するために使用されます。
+このサンプルでは、スクリプトを [システム](/dotnet/api/system.management.automation.powershell) のパイプラインに追加する方法と、スクリプトを非同期で実行する方法を示します。 イベントはスクリプトの出力を処理するために使用されます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -20,15 +22,15 @@ ms.locfileid: "87783145"
 
 このサンプルでは、次のことを示します。
 
-- 実行空間[を使用](/dotnet/api/system.management.automation.powershell)する、system.string オブジェクトを作成します。
+- 実行空間 [を使用](/dotnet/api/system.management.automation.powershell) する、system.string オブジェクトを作成します。
 
-- スクリプトを追加して、[システムの管理. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトのパイプラインを作成します。
+- スクリプトを追加して、 [システムの管理. Powershell](/dotnet/api/system.management.automation.powershell) オブジェクトのパイプラインを作成します。
 
-- パイプラインを非同期的に実行するために、[このメソッドを](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)使用します。
+- パイプラインを非同期的に実行するために、 [このメソッドを](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) 使用します。
 
 - [システム管理](/dotnet/api/system.management.automation.powershell)オブジェクトのイベントを使用して、スクリプトの出力を処理します。
 
-- パイプラインの呼び出しを中断するに[は、「」のよう](/dotnet/api/System.Management.Automation.PowerShell.Stop)にします。
+- パイプラインの呼び出しを中断するに [は、「」のよう](/dotnet/api/System.Management.Automation.PowerShell.Stop) にします。
 
 ## <a name="example"></a>例
 

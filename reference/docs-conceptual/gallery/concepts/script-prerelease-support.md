@@ -1,14 +1,14 @@
 ---
 ms.date: 10/17/2017
-contributor: keithb
-keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: プレリリース バージョンのスクリプト
-ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShellGet モジュールでは、セマンティック バージョニングを使用して、1.0.0 以上のバージョンのスクリプトにプレリリースとしてのタグ付けをすることができます。
+ms.openlocfilehash: e9873a69148fd80553e566b31c7455a4ecaee5ce
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328483"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661476"
+---
 ---
 # <a name="prerelease-versions-of-scripts"></a>プレリリース バージョンのスクリプト
 
@@ -45,12 +45,12 @@ ms.locfileid: "71328483"
 - プレリリースのサフィックスは、Major.Minor.Build の Version が 3 セグメントである場合にのみ指定できます
   これは、SemVer v1.0.0 と適合します
 - プレリリースのサフィックスはハイフンで始まる文字列で、ASCII 英数字 [0-9A-Za-z-] を含めることができます
-- 現時点では、SemVer v1.0.0 の Prerelease 文字列のみがサポートされているため、プレリリースのサフィックスに (SemVer 2.0 では許可されている) ピリオドまたは + [.+] のどちらかを含めることは**できません**
+- 現時点では、SemVer v1.0.0 の Prerelease 文字列のみがサポートされているため、プレリリースのサフィックスに (SemVer 2.0 では許可されている) ピリオドまたは + [.+] のどちらかを含めることは **できません**
 - サポートされている PrereleaseString 文字列には、-alpha、-alpha1、-BETA、-update20171020 などがあります
 
 ### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>並べ替え順序およびインストール フォルダーへのプレリリース バージョン管理の影響
 
-並べ替え順序は、PowerShell ギャラリーへの発行時に重要なプレリリース バージョンを使用するときや、PowerShellGet コマンドを使用してスクリプトをインストールするときに変更されます。 バージョン番号を含む 2 つのスクリプトのバージョンが存在する場合、並べ替え順序はハイフンの後の文字列部分に基づきます。 そのため、バージョン 2.5.0-alpha は 2.5.0-beta より小さく、2.5.0-beta は 2.5.0-gamma より小さくなります。 2 つのスクリプトに同じバージョン番号が含まれ、うち 1 つにのみ PrereleaseString が含まれる場合は、プレリリースのサフィックスの**ない**スクリプトが実稼働可能なバージョンと見なされ、プレリリース バージョンより後のバージョンとして並べ替えられます。 たとえば、2.5.0 と 2.5.0-beta を比較すると、2.5.0 バージョンの方が後だと見なされます。
+並べ替え順序は、PowerShell ギャラリーへの発行時に重要なプレリリース バージョンを使用するときや、PowerShellGet コマンドを使用してスクリプトをインストールするときに変更されます。 バージョン番号を含む 2 つのスクリプトのバージョンが存在する場合、並べ替え順序はハイフンの後の文字列部分に基づきます。 そのため、バージョン 2.5.0-alpha は 2.5.0-beta より小さく、2.5.0-beta は 2.5.0-gamma より小さくなります。 2 つのスクリプトに同じバージョン番号が含まれ、うち 1 つにのみ PrereleaseString が含まれる場合は、プレリリースのサフィックスの **ない** スクリプトが実稼働可能なバージョンと見なされ、プレリリース バージョンより後のバージョンとして並べ替えられます。 たとえば、2.5.0 と 2.5.0-beta を比較すると、2.5.0 バージョンの方が後だと見なされます。
 
 PowerShell ギャラリーに発行すると、既定により、発行されているスクリプトのバージョンが必ず PowerShell ギャラリーにある以前に発行されているバージョンよりも後のバージョンになります。 パブリッシャーは 2.5.0-alpha のバージョンを 2.5.0-beta、または 2.5.0 (プレリリースのサフィックスなし) に更新することができます。
 
@@ -61,7 +61,7 @@ Find-Script、Install-Script、Update-Script、Save-Script の PowerShellGet コ
 PowerShellGet スクリプトのコマンドで、これに対する例外が Get-InstalledScript です。場合によっては Uninstall-Script も含まれます。
 
 - Get-InstalledScript はバージョン文字列にプレリリース情報がある場合に、常に自動的に表示します。
-- Uninstall-Script は**バージョンが指定されていない**場合に、既定でスクリプトの最新のバージョンをアンインストールします。 この動作は変更されていません。 ただし、`-RequiredVersion` を使用してプレリリース バージョンが指定された場合は、`-AllowPrerelease` が必要になります。
+- Uninstall-Script は **バージョンが指定されていない** 場合に、既定でスクリプトの最新のバージョンをアンインストールします。 この動作は変更されていません。 ただし、`-RequiredVersion` を使用してプレリリース バージョンが指定された場合は、`-AllowPrerelease` が必要になります。
 
 ## <a name="examples"></a>例
 

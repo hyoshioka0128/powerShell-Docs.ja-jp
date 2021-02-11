@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 description: このドキュメントには、DSC プル サーバーを展開するエンジニアを支援するためのベスト プラクティスが記載されています。
 keywords: DSC, PowerShell, 構成, セットアップ
 title: プル サーバーのベスト プラクティス
-ms.openlocfilehash: 99009fd73ea08ca4ac42832a055e914a3ce6dbcf
-ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
+ms.openlocfilehash: 6c754e6d035cc714a86da86ec916ba2c7f833268
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846951"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389387"
 ---
 # <a name="pull-server-best-practices"></a>プル サーバーのベスト プラクティス
 
@@ -72,7 +72,7 @@ Windows Server 2012 R2 には、DSC サービスという機能が含まれて�
 
 ### <a name="dsc-resource"></a>DSC リソース
 
-プル サーバーの展開は、DSC 構成スクリプトを使用してサービスをプロビジョニングすることで簡略化できます。 このドキュメントには、運用準備ができているサーバー ノードの展開で使用できる構成スクリプトが含まれています。 構成スクリプトを使用するには、Windows Server に含まれていない DSC モジュールが必要になります。 必要なモジュール名は**xPSDesiredStateConfiguration** で、DSC リソースの **xDscWebService** が含まれます。 xPSDesiredStateConfiguration モジュールは[こちら](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)からダウンロードできます。
+プル サーバーの展開は、DSC 構成スクリプトを使用してサービスをプロビジョニングすることで簡略化できます。 このドキュメントには、運用準備ができているサーバー ノードの展開で使用できる構成スクリプトが含まれています。 構成スクリプトを使用するには、Windows Server に含まれていない DSC モジュールが必要になります。 必要なモジュール名は **xPSDesiredStateConfiguration** で、DSC リソースの **xDscWebService** が含まれます。 xPSDesiredStateConfiguration モジュールは[こちら](https://github.com/dsccommunity/xPSDesiredStateConfiguration)からダウンロードできます。
 
 **PowerShellGet** モジュールから `Install-Module` コマンドレットを使用します。
 
@@ -119,8 +119,7 @@ Install-Module xPSDesiredStateConfiguration
 
 DNS CNAME では、ホスト (A) レコードを参照する別名を作成できます。 追加の名前レコードの目的は、後で変更が必要になった場合に備えて柔軟性を高めることです。 CNAME はクライアント構成の分離に役立ちます。したがって、プル サーバーの置換や追加などの、サーバー環境の変更に合わせて、クライアント構成を変更する必要はありません。
 
-DNS レコードの名前を選択する場合は、ソリューションのアーキテクチャに注意してください。
-負荷分散を使用する場合、HTTPS 経由でトラフィックを保護するために使用される証明書で DNS レコードと同じ名前を共有する必要があります。
+DNS レコードの名前を選択する場合は、ソリューションのアーキテクチャに注意してください。 負荷分散を使用する場合、HTTPS 経由でトラフィックを保護するために使用される証明書で DNS レコードと同じ名前を共有する必要があります。
 
 |       シナリオ        |                                                                                         推奨事項
 |:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -212,7 +211,7 @@ New-DscChecksum -ConfigurationPath .\ -OutPath .\
 - **サーバーごとに GUID を割り当てる** — 確実にすべてのサーバー構成が個別に制御されるようにします。 これにより、正確に更新が行われ、少数のサーバーを含む環境で適切に機能します。
 - **サーバーの役割ごとに GUID を割り当てる** — Web サーバーなど、同じ機能を実行するすべてのサーバーに同じ GUID を使用し、必要な構成データが参照されるようにします。 多くのサーバーで同じ GUID を共有している場合、それらすべてのサーバーは、構成の変更と同時に更新されることに注意してください。
 
-  GUID は、使用環境でのサーバーの展開と構成方法に関する情報を得るために悪意のあるユーザーによって利用される可能性があるため、機密データとして扱う必要があります。 詳細については、「[Securely allocating GUIDs in PowerShell Desired State Configuration Pull Mode](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/)」 (PowerShell Desired State Configuration プル モードでの安全な GUID の割り当て) を参照してください。
+  GUID は、使用環境でのサーバーの展開と構成方法に関する情報を得るために悪意のあるユーザーによって利用される可能性があるため、機密データとして扱う必要があります。 詳細については、「[Securely allocating GUIDs in PowerShell Desired State Configuration Pull Mode](https://devblogs.microsoft.com/powershell/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/)」 (PowerShell Desired State Configuration プル モードでの安全な GUID の割り当て) を参照してください。
 
 計画タスク
 
@@ -247,7 +246,7 @@ Install-Module xPSDesiredStateConfiguration
 
 DSC プル サーバーを展開する最適な方法は、DSC 構成スクリプトを使用することです。 このドキュメントでは、DSC Web サービスのみを構成する基本設定と、DSC Web サービスを含む Windows Server エンド ツー エンドを構成する詳細設定の両方を含むスクリプトを示します。
 
-注: 現時点では、`xPSDesiredStateConfiguration` DSC モジュールでは、サーバーのロケールとして EN-US を設定する必要があります。
+注:現時点では、`xPSDesiredStateConfiguration` DSC モジュールでは、サーバーのロケールとして EN-US を設定する必要があります。
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Windows Server 2012 の基本構成
 
@@ -537,7 +536,7 @@ CNAME レコードを DNS ゾーンに追加する場合は、[Add-DnsServerReso
 
 データ ファイルは、OData Web サービスを含む、プル サーバーの展開時に情報を作成するために格納されます。 ファイルの種類は、以下の説明のとおり、オペレーティング システムによって異なります。
 
-- **Windows Server 2012** ファイルの種類は常に .mdb になります。
-- **Windows Server 2012 R2** 構成で .mdb が指定されていない限り、ファイルの種類は既定で .edb になります。
+- **Windows Server 2012** - ファイルの種類は常に `.mdb` になる
+- **Windows Server 2012 R2** - 構成で `.mdb` が指定されていない限り、ファイルの種類は既定で `.edb` になる
 
 プル サーバーをインストールするための[スクリプトの詳細な例](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts)では、ファイルの種類によって発生する可能性のあるエラーを防ぐために web.config ファイル設定を自動的に制御する方法の例も示されます。

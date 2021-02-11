@@ -7,12 +7,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: ff1b709b363684e27a1f4eb8fdeada2d5ae1d588
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 5aa9b9967ec6a79a569c9f0e7ca93db9e9e4d5b6
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93211035"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387041"
 ---
 # Export-PSSession
 
@@ -22,7 +22,7 @@ ms.locfileid: "93211035"
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 Export-PSSession [-OutputModule] <String> [-Force] [-Encoding <Encoding>]
@@ -213,7 +213,7 @@ Accept wildcard characters: True
 - ExternalScript。 Path 環境変数 () に示されているパス内のすべての ps1 ファイル。 `$env:path`
 - フィルターと関数。 すべての PowerShell 関数。
 - スクリプティング。 現在のセッションのスクリプト ブロック。
-- 稟議. PowerShell ワークフロー。 詳細については、「 [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1)」を参照してください。
+- 稟議. PowerShell ワークフロー。 詳細については、「 [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows)」を参照してください。
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -243,7 +243,6 @@ Accept wildcard characters: False
 - `utf8BOM`: バイト順マーク (BOM) を使用して UTF-8 形式でエンコードします。
 - `utf8NoBOM`: バイトオーダーマーク (BOM) を使用せずに UTF-8 形式でエンコードします。
 - `utf32`:32 UTF-8 形式でエンコードします。
-
 
 PowerShell 6.2 以降では、 **Encoding** パラメーターを使用して、登録されているコードページの数値 id (など) `-Encoding 1251` や、登録されているコードページの文字列名 (など) を使用することもでき `-Encoding "windows-1251"` ます。 詳細については、 [コードページ](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)の .net ドキュメントを参照してください。
 
@@ -300,16 +299,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-**Modul特定** のオブジェクトの形式で指定された名前を持つモジュールを指定します。
-「 [Modulの認識コンストラクター (Hashtable)](https://msdn.microsoft.com/library/jj136290)」の「解説」を参照してください。
+**Modul特定** のオブジェクトの形式で指定された名前を持つモジュールを指定します。 「 [Modulの認識コンストラクター (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)」の「解説」を参照してください。
 
 たとえば、 **FullyQualifiedModule** パラメーターは、次のいずれかの形式で指定されたモジュール名を受け入れます。
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**ModuleName** と **ModuleVersion** は必須ですが、 **Guid** は省略可能です。 **モジュール** パラメーターと同じコマンドで **FullyQualifiedModule** パラメーターを指定することはできません。2つのパラメーターは相互に排他的です。
+**ModuleName** と **ModuleVersion** は必須ですが、 **Guid** は省略可能です。 **モジュール** パラメーターと同じコマンドで **FullyQualifiedModule** パラメーターを指定することはできません。 2つのパラメーターは相互に排他的です。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

@@ -1,12 +1,14 @@
 ---
-title: Windows PowerShell プロバイダーの概要 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c248f1c337e96a1b83cbeb5fb486147504777eb1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell プロバイダーの概要
+description: Windows PowerShell プロバイダーの概要
+ms.openlocfilehash: 2f1c5f5991a64fb2b85ece7feba915164ebd34ee
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778224"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355512"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell プロバイダーの概要
 
@@ -20,11 +22,12 @@ Windows PowerShell プロバイダーを使用すると、マウントされた�
 
 ## <a name="type-of-providers"></a>プロバイダーの種類
 
-プロバイダーにはいくつかの種類があり、それぞれに異なるレベルの機能が用意されています。 プロバイダーは、 [SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0)のいずれかの**プロバイダー**クラスの子孫から派生するクラスとして実装されます。 さまざまな種類のプロバイダーの詳細については、「[プロバイダーの種類](./provider-types.md)」を参照してください。
+プロバイダーにはいくつかの種類があり、それぞれに異なるレベルの機能が用意されています。 プロバイダーは、 [SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory)のいずれかのプロバイダークラスの子孫から派生するクラスとして実装され 
+ ます。 さまざまな種類のプロバイダーの詳細については、「 [プロバイダーの種類](./provider-types.md)」を参照してください。
 
 ## <a name="provider-cmdlets"></a>プロバイダー コマンドレット
 
-プロバイダーは、コマンドレットに対応するメソッドを実装し、そのプロバイダーのドライブで使用されている場合に、これらのコマンドレットのカスタム動作を作成できます。 プロバイダーの種類に応じて、異なる一連のコマンドレットを使用できます。 プロバイダーでカスタマイズ可能なコマンドレットの完全な一覧については、「[プロバイダーコマンドレット](./provider-cmdlets.md)」を参照してください。
+プロバイダーは、コマンドレットに対応するメソッドを実装し、そのプロバイダーのドライブで使用されている場合に、これらのコマンドレットのカスタム動作を作成できます。 プロバイダーの種類に応じて、異なる一連のコマンドレットを使用できます。 プロバイダーでカスタマイズ可能なコマンドレットの完全な一覧については、「 [プロバイダーコマンドレット](./provider-cmdlets.md)」を参照してください。
 
 ## <a name="provider-paths"></a>プロバイダーのパス
 
@@ -52,11 +55,13 @@ Windows PowerShell プロバイダーへのリモートアクセスを許可す�
 
 ## <a name="dynamic-parameters"></a>動的パラメーター
 
-プロバイダーは、ユーザーがコマンドレットのいずれかの静的パラメーターに特定の値を指定した場合に、プロバイダーコマンドレットに追加される動的パラメーターを定義できます。 プロバイダーは、1つまたは複数の動的パラメーターメソッドを実装することによってこれを行います。 動的パラメーターの追加に使用できるコマンドレットパラメーターの一覧と、それらを実装するために使用されるメソッドについては、「[プロバイダーコマンドレット動的パラメーター](./provider-cmdlet-dynamic-parameters.md)」を参照してください。
+プロバイダーは、ユーザーがコマンドレットのいずれかの静的パラメーターに特定の値を指定した場合に、プロバイダーコマンドレットに追加される動的パラメーターを定義できます。 プロバイダーは、1つまたは複数の動的パラメーターメソッドを実装することによってこれを行います。 動的パラメーターの追加に使用できるコマンドレットパラメーターの一覧と、それらを実装するために使用されるメソッドについては、「 [プロバイダーコマンドレット動的パラメーター](./provider-cmdlet-dynamic-parameters.md)」を参照してください。
 
 ## <a name="provider-capabilities"></a>プロバイダーの機能
 
-プロバイダーがサポートできるさまざまな機能が定義さ[れてい](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)ます ()。 これには、ワイルドカード、フィルター項目、およびサポートトランザクションを使用する機能が含まれます。 プロバイダーの機能を指定するには、 [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) `OR` プロバイダークラスの system.servicemodel (属性の2番目のパラメーター) プロパティとして、論理操作と組み合わせて、system.string 列挙型の値のリストを追加します。このプロパティ[には、](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)プロバイダークラスの[...](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) ............. プロバイダーの属性属性が含まれます。 たとえば、次の属性では、プロバイダーがシステムの[管理](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0)をサポートしていることを指定しています。プロバイダーは、の**処理**と[システムの管理](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **Transactions**を実行します。
+プロバイダーがサポートできるさまざまな機能が定義さ [れてい](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) ます ()。 これには、ワイルドカード、フィルター項目、およびサポートトランザクションを使用する機能が含まれます。 プロバイダーの機能を指定するには、 [](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) `OR` プロバイダークラスの system.servicemodel (属性の2番目のパラメーター) プロパティとして、論理操作と組み合わせて、system.string 列挙型の値のリストを追加します。このプロパティ[には、](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)プロバイダークラスの[...](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) ............. プロバイダーの属性属性が含まれます。 たとえば、次の属性では、プロバイダーがシステムの[管理](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)をサポートしていることを指定しています。プロバイダーは、の 
+ **処理** と[システムの管理](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) 
+ を実行します。
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]
@@ -65,9 +70,11 @@ Windows PowerShell プロバイダーへのリモートアクセスを許可す�
 
 ## <a name="provider-cmdlet-help"></a>プロバイダーコマンドレットのヘルプ
 
-プロバイダーを作成するときに、サポートするプロバイダーコマンドレットに独自のヘルプを実装できます。 これには、プロバイダーコマンドレットごとに1つのヘルプトピックが含まれています。また、プロバイダーコマンドレットの動作が動的パラメーターの使用方法によって異なる場合は、複数のバージョンのヘルプトピックがあります。 プロバイダーのコマンドレット固有のヘルプをサポートするには、プロバイダーが[Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp)インターフェイスを実装する必要があります。
+プロバイダーを作成するときに、サポートするプロバイダーコマンドレットに独自のヘルプを実装できます。
+これには、プロバイダーコマンドレットごとに1つのヘルプトピックが含まれています。また、プロバイダーコマンドレットの動作が動的パラメーターの使用方法によって異なる場合は、複数のバージョンのヘルプトピックがあります。 プロバイダーのコマンドレット固有のヘルプをサポートするには、プロバイダーが [Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp) インターフェイスを実装する必要があります。
 
-Windows PowerShell エンジンは、 [Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml)を呼び出して、プロバイダーのコマンドレットのヘルプトピックを表示するためのメソッドを呼び出します。 エンジンは、コマンドレットの実行時にユーザーが指定したコマンドレットの名前 `Get-Help` と、ユーザーの現在のパスを提供します。 プロバイダーが異なるドライブに対して同じプロバイダーコマンドレットの異なるバージョンを実装している場合は、現在のパスが必要です。 メソッドは、コマンドレットヘルプの XML を含む文字列を返す必要があります。
+Windows PowerShell エンジンは、 [Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml) を呼び出して、プロバイダーのコマンドレットのヘルプトピックを表示するためのメソッドを呼び出します。 エンジンは、コマンドレットの実行時にユーザーが指定したコマンドレットの名前 `Get-Help` と、ユーザーの現在のパスを提供します。
+プロバイダーが異なるドライブに対して同じプロバイダーコマンドレットの異なるバージョンを実装している場合は、現在のパスが必要です。 メソッドは、コマンドレットヘルプの XML を含む文字列を返す必要があります。
 
 ヘルプファイルの内容は、PSMAML XML を使用して書き込まれます。 これは、スタンドアロンのコマンドレットのヘルプコンテンツを記述するために使用される XML スキーマと同じです。 カスタムコマンドレットのヘルプの内容を、プロバイダーのヘルプファイルの要素の下に追加し `CmdletHelpPaths` ます。 次の例は、 `command` 1 つのプロバイダーコマンドレットの要素を示しています。また、プロバイダーが提供するプロバイダーコマンドレットの名前を指定する方法を示しています。 対応
 

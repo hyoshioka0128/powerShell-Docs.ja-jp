@@ -3,10 +3,10 @@ title: Windows PowerShell 5.1 から PowerShell 7 への移行
 description: Windows プラットフォームで PowerShell 5.1 から PowerShell 7 に更新します。
 ms.date: 03/25/2020
 ms.openlocfilehash: cb14a4f159b6dc33f31386da4264c0ebb640aef8
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "83809208"
 ---
 # <a name="migrating-from-windows-powershell-51-to-powershell-7"></a>Windows PowerShell 5.1 から PowerShell 7 への移行
@@ -238,11 +238,11 @@ Get-WinEvent -ListLog *PowerShell*
 - 新しい CodeLens 統合
 - パスのオートコンプリートの向上
 
-簡単に Visual Studio Code への移行を行うには、**コマンド パレット**で使用できる **ISE モードの有効化**機能を使用します。 この機能を使うと、VSCode が ISE スタイルのレイアウトに切り替わります。 ISE スタイルのレイアウトでは、使い慣れたユーザー エクスペリエンスで、PowerShell のすべての新機能を使用できます。
+簡単に Visual Studio Code への移行を行うには、**コマンド パレット** で使用できる **ISE モードの有効化** 機能を使用します。 この機能を使うと、VSCode が ISE スタイルのレイアウトに切り替わります。 ISE スタイルのレイアウトでは、使い慣れたユーザー エクスペリエンスで、PowerShell のすべての新機能を使用できます。
 
-新しい ISE レイアウトに切り替えるには、<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> キーを押して**コマンド パレット**を開き、「`PowerShell`」と入力して次を選択します: **[PowerShell:Enable ISE Mode]\(PowerShell: ISE モードの有効化\)**。
+新しい ISE レイアウトに切り替えるには、<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> キーを押して **コマンド パレット** を開き、「`PowerShell`」と入力して次を選択します: **[PowerShell:Enable ISE Mode]\(PowerShell: ISE モードの有効化\)**。
 
-レイアウトを元のレイアウトに設定するには、**コマンド パレット**を開き、次を選択します: **[PowerShell:Disable ISE Mode (restore to defaults)]\(PowerShell: ISE モードの無効化 (既定値に戻す)\)**。
+レイアウトを元のレイアウトに設定するには、**コマンド パレット** を開き、次を選択します: **[PowerShell:Disable ISE Mode (restore to defaults)]\(PowerShell: ISE モードの無効化 (既定値に戻す)\)**。
 
 VSCode のレイアウトを ISE にカスタマイズする方法の詳細については、「[Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法](/powershell/scripting/components/vscode/how-to-replicate-the-ise-experience-in-vscode)」をご覧ください
 

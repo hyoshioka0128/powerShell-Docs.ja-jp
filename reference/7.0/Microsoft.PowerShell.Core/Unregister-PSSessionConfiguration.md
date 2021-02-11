@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/unregister-pssessionconfiguration?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-PSSessionConfiguration
-ms.openlocfilehash: 0d0e9701bdc67b2a48fb0f8f25e0ac9269cb74d8
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 842b30951f24b0cc4211ddf45892d9e430e2dc82
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93218659"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347467"
 ---
 # Unregister-PSSessionConfiguration
 
@@ -208,6 +208,8 @@ Accept wildcard characters: False
 このコマンドレットはオブジェクトを返しません。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 このコマンドレットを実行するには、[ **管理者として実行** ] オプションを使用して PowerShell を起動する必要があります。
 

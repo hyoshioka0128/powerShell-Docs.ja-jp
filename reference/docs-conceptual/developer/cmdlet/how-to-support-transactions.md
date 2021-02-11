@@ -1,19 +1,21 @@
 ---
-title: トランザクションをサポートする方法 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6fda27394091195b589afef5ee53c6d3bec4efc0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: トランザクションをサポートする方法
+description: トランザクションをサポートする方法
+ms.openlocfilehash: 5691c246830dab9f4808801c04353ebfb2c3e981
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786613"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666962"
 ---
 # <a name="how-to-support-transactions"></a>トランザクションをサポートする方法
 
 この例は、コマンドレットにトランザクションのサポートを追加する基本的なコード要素を示しています。
 
 > [!IMPORTANT]
-> Windows PowerShell によるトランザクションの処理方法の詳細については、「[トランザクションについ][about_Transactions]て」を参照してください。
+> Windows PowerShell によるトランザクションの処理方法の詳細については、「 [トランザクションについ][about_Transactions]て」を参照してください。
 
 ## <a name="to-support-transactions"></a>トランザクションをサポートするには
 

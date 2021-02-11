@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソースをパッケージ化してプル サーバーにアップロードする
-ms.openlocfilehash: d0e070b7aa43acbbbf087729d53f06dbc7e7734a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: この記事では、プル サーバーにリソースをアップロードして、DSC によって管理されるノードの構成によってそれらをダウンロードできるようにする方法について説明します。
+ms.openlocfilehash: a19d04346a0ae546cfcaf70701fde870d3839f65
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782890"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661697"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>リソースをパッケージ化してプル サーバーにアップロードする
 
@@ -16,7 +17,7 @@ ms.locfileid: "87782890"
 - [DSC SMB プル サーバーを設定する](pullServerSmb.md)
 - [DSC HTTP プル サーバーを設定する](pullServer.md)
 
-各ターゲット ノードは、構成やリソースをダウンロードし、さらにその状態を報告するように構成できます。 この記事では、ダウンロードできるようにリソースをアップロードする方法、およびリソースを自動的にダウンロードするようにクライアントを構成する方法を示します。 ノードは、割り当てられた構成を**プル**または**プッシュ** (v5) によって受け取ると、構成で必要なすべてのリソースを LCM で指定された場所から自動的にダウンロードします。
+各ターゲット ノードは、構成やリソースをダウンロードし、さらにその状態を報告するように構成できます。 この記事では、ダウンロードできるようにリソースをアップロードする方法、およびリソースを自動的にダウンロードするようにクライアントを構成する方法を示します。 ノードは、割り当てられた構成を **プル** または **プッシュ** (v5) によって受け取ると、構成で必要なすべてのリソースを LCM で指定された場所から自動的にダウンロードします。
 
 ## <a name="package-resource-modules"></a>リソース モジュールをパッケージ化する
 
@@ -25,7 +26,7 @@ ms.locfileid: "87782890"
 > [!NOTE]
 > PowerShell 4.0 を使用しているクライアントがある場合は、リソース フォルダーの構造をフラット化し、すべてのバージョン フォルダーを削除する必要があります。 詳しくは、「[Multiple Resource Versions (複数のリソース バージョン)](../configurations/import-dscresource.md#multiple-resource-versions)」をご覧ください。
 
-好みのユーティリティ、スクリプト、または方法を使って、リソース ディレクトリを圧縮することができます。 Windows の場合、`xPSDesiredStateConfiguration` ディレクトリを "_右クリック_" して、 **[送信先]** 、 **[圧縮フォルダー]** の順に選択します。
+好みのユーティリティ、スクリプト、または方法を使って、リソース ディレクトリを圧縮することができます。 Windows の場合、`xPSDesiredStateConfiguration` ディレクトリを " _右クリック_ " して、 **[送信先]** 、 **[圧縮フォルダー]** の順に選択します。
 
 ![右クリック - [送信先] - [圧縮フォルダー]](media/package-upload-resources/right-click.gif)
 
@@ -41,7 +42,7 @@ ms.locfileid: "87782890"
 
 ### <a name="create-checksums"></a>チェックサムを作成する
 
-リソース モジュールを圧縮して名前を変更した後は、**チェックサム**を作成する必要があります。 **チェックサム**は、クライアント上の LCM によって、リソースが変更されていて、再度ダウンロードする必要があるかどうかを判断するために使われます。 次の例で示すように、**チェックサム**は [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) コマンドレットで作成できます。
+リソース モジュールを圧縮して名前を変更した後は、 **チェックサム** を作成する必要があります。 **チェックサム** は、クライアント上の LCM によって、リソースが変更されていて、再度ダウンロードする必要があるかどうかを判断するために使われます。 次の例で示すように、 **チェックサム** は [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) コマンドレットで作成できます。
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
@@ -53,7 +54,7 @@ New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 
 #### <a name="on-a-dsc-http-pull-server"></a>DSC HTTP プル サーバー上
 
-HTTP プル サーバーをセットアップするときは、「[DSC HTTP プル サーバーを設定する](pullServer.md)」で説明されているように、**ModulePath** キーと **ConfigurationPath** キーに対するディレクトリを指定します。 **ConfigurationPath** キーは、".mof" ファイルを格納する必要がある場所を示します。 **ModulePath** は、DSC リソース モジュールを格納する必要がある場所を示します。
+HTTP プル サーバーをセットアップするときは、「 [DSC HTTP プル サーバーを設定する](pullServer.md)」で説明されているように、 **ModulePath** キーと **ConfigurationPath** キーに対するディレクトリを指定します。 **ConfigurationPath** キーは、".mof" ファイルを格納する必要がある場所を示します。 **ModulePath** は、DSC リソース モジュールを格納する必要がある場所を示します。
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -68,7 +69,7 @@ HTTP プル サーバーをセットアップするときは、「[DSC HTTP プ�
 
 #### <a name="on-an-smb-share"></a>SMB 共有上
 
-**ResourceRepositoryShare** を指定した場合は、プル クライアントをセットアップするときに、**ResourceRepositoryShare** ブロックの **SourcePath** ディレクトリに、アーカイブとチェックサムを格納します。
+**ResourceRepositoryShare** を指定した場合は、プル クライアントをセットアップするときに、 **ResourceRepositoryShare** ブロックの **SourcePath** ディレクトリに、アーカイブとチェックサムを格納します。
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -82,7 +83,7 @@ ResourceRepositoryShare SMBResourceServer
 }
 ```
 
-**ConfigurationRepositoryShare** だけを指定した場合は、プル クライアントをセットアップするときに、**ConfigurationRepositoryShare** ブロックの **SourcePath** ディレクトリに、アーカイブとチェックサムを格納します。
+**ConfigurationRepositoryShare** だけを指定した場合は、プル クライアントをセットアップするときに、 **ConfigurationRepositoryShare** ブロックの **SourcePath** ディレクトリに、アーカイブとチェックサムを格納します。
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer

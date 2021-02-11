@@ -1,48 +1,46 @@
 ---
-title: Host06 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5dfcdb2b8a968d91e938c27c6e1e6a8503c90aba
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Host06 サンプル
+description: Host06 サンプル
+ms.openlocfilehash: 8e94a8cf61e746adcdd22869ec853c0f2a27be91
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783247"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355393"
 ---
 # <a name="host06-sample"></a>Host06 サンプル
 
 このサンプルでは、コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する対話型コンソールベースのホストアプリケーションを構築する方法を示します。 さらに、このサンプルでは、トークナイザー API を使用して、ユーザーが入力したテキストの色を指定します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 - このサンプルには、Windows PowerShell 2.0 が必要です。
-
 - このアプリケーションは、管理者特権モードで実行する必要があります (管理者として実行)。
 
 ## <a name="demonstrates"></a>対象
 
-- [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラス、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、および Pshostrawuserinterface クラスから派生したクラスを持つカスタムホストを作成しています。このホストには、 [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスが含まれています。
+- [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラス、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、および Pshostrawuserinterface クラスから派生したクラスを持つカスタムホストを作成しています。このホストには、 [](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスが含まれています。
 
 - これらのホストクラスを使用して対話型の Windows PowerShell シェルを構築するコンソールアプリケーションを構築します。
 
 - 変数を作成 `$profile` し、次のプロファイルを読み込みます。
 
   - 現在のユーザー、現在のホスト
-
   - 現在のユーザー、すべてのホスト
-
   - すべてのユーザー、現在のホスト
-
   - すべてのユーザー、すべてのホスト
 
-- [Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)インターフェイスを実装してください。
+- [IHostUISupportsMultipleChoiceSelection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)インターフェイスを実装してください。
 
-- [Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)インターフェイスを実装して、[パススルー](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)および[出口](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)のコマンドレットを使用して、対話型リモート処理をサポートします。
+- [IHostSupportsInteractiveSession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)インターフェイスを実装して、[パススルー](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)および[出口](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)のコマンドレットを使用して、対話型リモート処理をサポートします。
 
 - トークン化 API を使用して、入力時にコマンドラインを色分けします。
 
-## <a name="example"></a>例
+## <a name="example-1"></a>例 1
 
- この例では、コマンドラインでコマンドを入力し、そのコマンドを処理して、結果を出力することをユーザーに許可します。
+この例では、コマンドラインでコマンドを入力し、そのコマンドを処理して、結果を出力することをユーザーに許可します。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -403,9 +401,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>例
+## <a name="example-2"></a>例 2
 
- 次のコードは、このホストアプリケーションで使用される[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
+次のコードは、このホストアプリケーションで使用される [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -627,9 +625,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>例
+## <a name="example-3"></a>例 3
 
- 次のコードは、このホストアプリケーションで使用される[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラスを実装したものです。
+次のコードは、このホストアプリケーションで使用される [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) クラスを実装したものです。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1145,9 +1143,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>例
+## <a name="example-4"></a>例 4
 
- 次のコードは、このホストアプリケーションで使用される[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
+次のコードは、このホストアプリケーションで使用される [Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) クラスを実装したものです。 実装されていない要素は、例外をスローするか、nothing を返します。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1357,9 +1355,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>例
+## <a name="example-5"></a>例 5
 
- 次のコードは、コマンドラインを読み取り、入力時にテキストの色を指定します。 トークンは、[トークン化 *](/dotnet/api/System.Management.Automation.PSParser.Tokenize)メソッドを使用して決定されます。
+次のコードは、コマンドラインを読み取り、入力時にテキストの色を指定します。 トークンは、 [トークン化 *](/dotnet/api/System.Management.Automation.PSParser.Tokenize) メソッドを使用して決定されます。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

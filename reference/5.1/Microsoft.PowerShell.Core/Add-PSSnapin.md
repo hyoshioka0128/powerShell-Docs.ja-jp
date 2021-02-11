@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/add-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-PSSnapin
-ms.openlocfilehash: 5adba912d91369250ee9891ee2bb2ca0f8cba796
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: a21c2974fd66a9b02929752ae487c8995579b8a7
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93212123"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388826"
 ---
 # Add-PSSnapin
 
@@ -136,15 +136,15 @@ Accept wildcard characters: False
 
 ## 注
 
-* Windows PowerShell 3.0 以降、Windows PowerShell と共にインストールされるコア コマンドはモジュールにパッケージ化されています。 Windows PowerShell 2.0、およびそれ以降のバージョンの Windows PowerShell で古いスタイルのセッションを作成するホストプログラムでは、コアコマンドはスナップイン (PSSnapins) にパッケージ化されます。 例外は、常にスナップインである、 **PowerShell です** 。 また、New-PSSession コマンドレットによって開始されたリモートセッションは、コアスナップインを含む古い形式のセッションです。
+- Windows PowerShell 3.0 以降、Windows PowerShell と共にインストールされるコア コマンドはモジュールにパッケージ化されています。 Windows PowerShell 2.0、およびそれ以降のバージョンの Windows PowerShell で古いスタイルのセッションを作成するホストプログラムでは、コアコマンドはスナップイン (PSSnapins) にパッケージ化されます。 例外は、常にスナップインである、 **PowerShell です** 。 また、New-PSSession コマンドレットによって開始されたリモートセッションは、コアスナップインを含む古い形式のセッションです。
 
-  コアモジュールで新しいスタイルのセッションを作成する **CreateDefault2** メソッドの詳細については、MSDN ライブラリの「 [CreateDefault2 メソッド](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) 」を参照してください。
+  コアモジュールで新しいスタイルのセッションを作成する **CreateDefault2** メソッドの詳細については、「 [CreateDefault2 メソッド](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2#System_Management_Automation_Runspaces_InitialSessionState_CreateDefault2)」を参照してください。
 
-* スナップインの詳細については、「 [about_PSSnapins](About/about_PSSnapins.md) 」および「 [Windows PowerShell スナップインを作成する方法](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in)」を参照してください。
-* `Add-PSSnapin` 現在のセッションにのみ、スナップインを追加します。 スナップインをすべての Windows PowerShell セッションに追加するには、そのスナップインを Windows PowerShell プロファイルに追加します。 詳細については、「about_Profiles」を参照してください。
-* Microsoft .NET Framework インストールユーティリティを使用して登録されたスナップインを追加できます。 詳細については、「 [コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions//ms714644(v=vs.85))」を参照してください。
-* コンピューターに登録されているスナップインの一覧を取得するには、「」と入力 `Get-PSSnapin -Registered` します。
-* スナップインを追加する前に、スナップインのバージョンを確認して、 `Add-PSSnapin` 現在のバージョンの Windows PowerShell と互換性があることを確認します。 スナップインがバージョン チェックに失敗した場合、Windows PowerShell はエラーを報告します。
+- スナップインの詳細については、「 [about_PSSnapins](About/about_PSSnapins.md) 」および「 [Windows PowerShell スナップインを作成する方法](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in)」を参照してください。
+- `Add-PSSnapin` 現在のセッションにのみ、スナップインを追加します。 スナップインをすべての Windows PowerShell セッションに追加するには、そのスナップインを Windows PowerShell プロファイルに追加します。 詳細については、「about_Profiles」を参照してください。
+- Microsoft .NET Framework インストールユーティリティを使用して登録されたスナップインを追加できます。 詳細については、「 [コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions//ms714644(v=vs.85))」を参照してください。
+- コンピューターに登録されているスナップインの一覧を取得するには、「」と入力 `Get-PSSnapin -Registered` します。
+- スナップインを追加する前に、スナップインのバージョンを確認して、 `Add-PSSnapin` 現在のバージョンの Windows PowerShell と互換性があることを確認します。 スナップインがバージョン チェックに失敗した場合、Windows PowerShell はエラーを報告します。
 
 ## 関連リンク
 

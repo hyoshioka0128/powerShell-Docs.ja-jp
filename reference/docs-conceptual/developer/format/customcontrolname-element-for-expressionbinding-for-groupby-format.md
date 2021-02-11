@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の式のバインドの CustomControlName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 06e612b25accf81467108ca48500943153efd575
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の ExpressionBinding の CustomControlName 要素 (書式)
+description: GroupBy の ExpressionBinding の CustomControlName 要素 (書式)
+ms.openlocfilehash: bb7dbd449137628da1794628c5a7d7e10158dd46
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786001"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655433"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-groupby-format"></a>GroupBy の ExpressionBinding の CustomControlName 要素 (書式)
 

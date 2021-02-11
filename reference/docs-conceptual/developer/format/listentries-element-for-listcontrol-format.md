@@ -1,12 +1,14 @@
 ---
-title: ListControl の ListEntries 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0fe07e739c2d2fec153599ec6c0c0b3ecc14df18
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl の ListEntries 要素 (書式)
+description: ListControl の ListEntries 要素 (書式)
+ms.openlocfilehash: d4d6625bb92ea27863fc30d5bf5625f9275e4f69
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785712"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666605"
 ---
 # <a name="listentries-element-for-listcontrol-format"></a>ListControl の ListEntries 要素 (書式)
 
@@ -44,11 +46,11 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="remarks"></a>解説
 
-リストビューの詳細については、「[リストビュー](./creating-a-list-view.md)」を参照してください。
+リストビューの詳細については、「 [リストビュー](./creating-a-list-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-この例は、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトのリストビューを定義する XML 要素を示しています。
+この例は、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) オブジェクトのリストビューを定義する XML 要素を示しています。
 
 ```xml
 <View>

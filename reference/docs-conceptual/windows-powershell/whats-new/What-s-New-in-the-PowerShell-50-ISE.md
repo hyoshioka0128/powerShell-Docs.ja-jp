@@ -2,16 +2,17 @@
 ms.date: 09/06/2019
 keywords: powershell,コマンドレット
 title: PowerShell 5.0 ISE の新機能
-ms.openlocfilehash: 1f5d32d583165ff8ead0a95b1c882386cf654326
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: この記事では、Windows PowerShell Integrated Scripting Environment (ISE) バージョン 5.0 に導入された新機能と更新された機能について説明します。
+ms.openlocfilehash: 75d37d0dafe381c84898ac48343336cd525d2dd1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809138"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660832"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Windows PowerShell 5.0 ISE の新機能
 
-このトピックでは、Windows PowerShell Integrated Scripting Environment (ISE) バージョン 5.0 に導入された新機能と更新された機能について説明します。
+この記事では、Windows PowerShell Integrated Scripting Environment (ISE) バージョン 5.0 に導入された新機能と更新された機能について説明します。
 
 > [!NOTE]
 > PowerShell ISE は、アクティブな機能開発の対象ではなくなりました。 Windows に付属するコンポーネントとして、セキュリティや優先順位の高いサービスに関する修正プログラムが引き続き公式でサポートされます。
@@ -68,7 +69,7 @@ Windows PowerShell ISE で、オブジェクト モデルを使用するアド�
 
 **動作の相違点**
 
-Windows PowerShell ISE 3.0 以降には、**Commands** アドオンが付属しています。 **Commands** アドオンを使用すると、コマンドレットを参照し、 **[スクリプト]** ウィンドウと **[コンソール]** ウィンドウで同時にコマンドレットに関するヘルプにアクセスできます。
+Windows PowerShell ISE 3.0 以降には、 **Commands** アドオンが付属しています。 **Commands** アドオンを使用すると、コマンドレットを参照し、 **[スクリプト]** ウィンドウと **[コンソール]** ウィンドウで同時にコマンドレットに関するヘルプにアクセスできます。
 
 追加のアドオンは、 **[アドオン]** メニューの **[アドオン ツール Web サイトを開く]** コマンドを使用して検索することができます。
 
@@ -135,7 +136,7 @@ Windows PowerShell ISE 2.0 では、コマンド ウィンドウと出力ウィ�
 
 > PowerShell 3.0 に追加
 
-コマンド ライン (「**Powershell_ise.exe**」を入力) から Windows PowerShell ISE を起動する場合、次の新しいコマンド ライン スイッチを追加できます。
+コマンド ライン (「 **Powershell_ise.exe** 」を入力) から Windows PowerShell ISE を起動する場合、次の新しいコマンド ライン スイッチを追加できます。
 
 - `-NoProfile`:`$profile` を実行せずに Windows PowerShell ISE を起動する
 - `-Help`:ヘルプ ウィンドウを表示する
@@ -157,12 +158,12 @@ Windows PowerShell ISE 2.0 では、これらのコマンド ライン スイッ
 
 - **XML 構文の色分け** - Windows PowerShell ISE では、Windows PowerShell 構文を色分けする方法と同じ方法で XML 構文が色分けされるようになりました。
 - **かっこの照合** - Windows PowerShell ISE にはかっこの照合と強調表示を行う機能が含まれ、次のように使用できます。たとえば、始めかっこを選択している場合、 **[一致する項目に移動]** コマンドまたは <kbd>Ctrl</kbd>+<kbd>]</kbd> キーを使用すると、終わりかっこが見つかります。
-- **アウトライン表示**。スクリプト ウィンドウでは、アウトラインがサポートされます。これにより、左余白のプラス記号またはマイナス記号をクリックすると、コードのセクションを折りたたんだり展開したりできます。 かっこ、または `#region` タグと `#endregion` タグを使用して、折りたたみ可能なセクションの先頭と末尾をマークすることができます。 すべての領域を展開する、または折りたたむには、<kbd>Ctrl</kbd>+<kbd>M</kbd> キーを押します。
+- **アウトライン表示** 。スクリプト ウィンドウでは、アウトラインがサポートされます。これにより、左余白のプラス記号またはマイナス記号をクリックすると、コードのセクションを折りたたんだり展開したりできます。 かっこ、または `#region` タグと `#endregion` タグを使用して、折りたたみ可能なセクションの先頭と末尾をマークすることができます。 すべての領域を展開する、または折りたたむには、<kbd>Ctrl</kbd>+<kbd>M</kbd> キーを押します。
 - **ドラッグ アンド ドロップ テキスト編集** - Windows PowerShell ISE で、ドラッグ アンド ドロップによるテキスト編集がサポートされるようになりました。 任意のテキストのブロックを選択し、そのテキストをドラッグしてエディターまたはコンソール内の別の場所に移動できます。 <kbd>Ctrl</kbd> キーを押したまま選択したテキストをドラッグし、マウス ボタンを放すと、テキストが新しい場所にコピーされます。 このバージョンの Windows PowerShell ISE では、ファイルを Windows PowerShell ISE 上にドラッグ アンド ドロップすると、Windows PowerShell ISE でファイルが開かれます。
 - **解析エラーの表示** - 解析エラーは赤い下線で示されます。 示されたエラーをポイントすると、コード内で見つかった問題がヒントのテキストに表示されます。
 - **ズーム** - ズーム スライダー (Windows PowerShell ISE ウィンドウの右下隅にあります) を使用するか、コンソール ウィンドウで `$psise.options.Zoom` コマンドを入力することで、コンソールのコンテンツのズーム倍率を設定できます。
 - **リッチ テキストのコピーと貼り付け** - Windows PowerShell ISE でクリップボードにコピーすると、元の選択範囲のフォント、サイズ、および色の情報が保存されます。
-- **ブロック選択** - テキストのブロックを選択するには、<kbd>Alt</kbd> キーを押したままマウスでスクリプト ウィンドウ内のテキストを選択するか、<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>方向</kbd>キーを押します。
+- **ブロック選択** - テキストのブロックを選択するには、 <kbd>Alt</kbd> キーを押したままマウスでスクリプト ウィンドウ内のテキストを選択するか、 <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>方向</kbd>キーを押します。
 
 **この変更の利点**
 
@@ -176,7 +177,7 @@ Windows PowerShell ISE 2.0 では、これらのコマンド ライン スイッ
 
 > PowerShell 3.0 に追加
 
-カーソルがコマンドレット内にあるかコマンドレットの一部を強調表示しているときに <kbd>F1</kbd> キーを押すと、強調表示されたコマンドレットに関する状況依存のヘルプが新しいヘルプ ビューアーで開かれます。 Windows PowerShell の **About** ヘルプを表示するには、コンソール ウィンドウで「`operators`」と入力し、<kbd>F1</kbd> キーを押します。
+カーソルがコマンドレット内にあるかコマンドレットの一部を強調表示しているときに <kbd>F1</kbd> キーを押すと、強調表示されたコマンドレットに関する状況依存のヘルプが新しいヘルプ ビューアーで開かれます。 Windows PowerShell の **About** ヘルプを表示するには、コンソール ウィンドウで「`operators`」と入力し、 <kbd>F1</kbd> キーを押します。
 
 この機能を使用する前に、Microsoft Web サイトから Windows PowerShell のヘルプ トピックの最新バージョンをダウンロードしてください。 ヘルプ トピックをダウンロードする最も簡単な方法は、管理者として Windows PowerShell を実行中に、コンソール ウィンドウで `Update-Help` コマンドレットを実行することです。
 

@@ -2,16 +2,16 @@
 description: PowerShell のスコープの概念について説明し、要素のスコープを設定および変更する方法を示します。
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 03/13/2020
+ms.date: 11/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_scopes
-ms.openlocfilehash: 8bf35e1309f027e1cf0061a95bdede0926d39ee0
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 6dc416632a6948c60c8016df6066694ce01a8b5d
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93221987"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354968"
 ---
 # <a name="about-scopes"></a>スコープについて
 
@@ -36,7 +36,7 @@ PowerShell では、変数、エイリアス、関数、および PowerShell ド
 
 PowerShell では、次のスコープがサポートされます。
 
-- グローバル: PowerShell の起動時に有効なスコープ。 PowerShell の起動時に存在する変数と関数は、自動変数やユーザー設定変数など、グローバルスコープで作成されています。 PowerShell プロファイル内の変数、エイリアス、および関数も、グローバルスコープで作成されます。
+- グローバル: PowerShell が開始されたとき、または新しいセッションまたは実行空間を作成したときに有効なスコープ。 PowerShell の起動時に存在する変数と関数は、自動変数やユーザー設定変数など、グローバルスコープで作成されています。 PowerShell プロファイル内の変数、エイリアス、および関数も、グローバルスコープで作成されます。 グローバルスコープは、セッションのルート親スコープです。
 
 - Local: 現在のスコープ。 ローカルスコープには、グローバルスコープまたはその他のスコープを指定できます。
 
@@ -47,11 +47,15 @@ PowerShell では、次のスコープがサポートされます。
 
 ## <a name="parent-and-child-scopes"></a>親と子のスコープ
 
-新しいスコープを作成するには、スクリプトまたは関数を実行するか、セッションを作成するか、PowerShell の新しいインスタンスを開始します。 新しいスコープを作成すると、結果は親スコープ (元のスコープ) と子スコープ (作成したスコープ) になります。
-
-PowerShell では、すべてのスコープがグローバルスコープの子スコープですが、多くのスコープと多数の再帰的なスコープを作成できます。
+新しい子スコープを作成するには、スクリプトまたは関数を呼び出します。 呼び出し元のスコープは親スコープです。 呼び出されたスクリプトまたは関数は、子スコープです。
+呼び出す関数またはスクリプトは、他の関数を呼び出して、ルートスコープがグローバルスコープである子スコープの階層を作成することができます。
 
 項目をプライベートに明示的に設定しない限り、親スコープ内の項目は子スコープで使用できます。 ただし、子スコープで作成および変更した項目は、項目の作成時にスコープを明示的に指定しない限り、親スコープには影響しません。
+
+> [!NOTE]
+> モジュールの関数は、呼び出し元のスコープの子スコープでは実行されません。
+> モジュールには、グローバルスコープにリンクされている独自のセッション状態があります。
+> すべてのモジュールコードは、独自のルートスコープを持つスコープのモジュール固有階層で実行されます。
 
 ## <a name="inheritance"></a>継承
 
@@ -489,4 +493,3 @@ Invoke-Command $s {
 [about_Script_Blocks](about_Script_Blocks.md)
 
 [Start-ThreadJob](/powershell/module/ThreadJob/Start-ThreadJob)
-

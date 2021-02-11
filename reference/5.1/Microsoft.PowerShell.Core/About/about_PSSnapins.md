@@ -6,12 +6,12 @@ ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSSnapins
-ms.openlocfilehash: cc22f8de0b9d8a55dcfa12f3b47f3852d891e67b
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 494b3275e4fe8a3aacdc358317950542962957cf
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222664"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388894"
 ---
 # <a name="about-pssnapins"></a>PSSnapins について
 
@@ -57,7 +57,7 @@ Get-Command -Module <snap-in_name>
 
 Windows PowerShell スナップインは、.dll ファイルにコンパイルされる .NET Framework の言語で記述されたプログラムです。 スナップインでプロバイダーとコマンドレットを使用するには、最初にスナップインを登録 (レジストリに追加) する必要があります。
 
-ほとんどのスナップインには、.dll ファイルを登録するインストールプログラム (.exe または .msi ファイル) が含まれています。 ただし、.dll ファイルとしてスナップインを受け取った場合は、システムに登録することができます。 詳細については、MSDN ライブラリの「 [コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://go.microsoft.com/fwlink/?LinkID=143619) 」を参照してください。
+ほとんどのスナップインには、.dll ファイルを登録するインストールプログラム (.exe または .msi ファイル) が含まれています。 ただし、.dll ファイルとしてスナップインを受け取った場合は、システムに登録することができます。 詳細については、「 [コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions//ms714644(v=vs.85))」を参照してください。
 
 システムに登録されているすべてのスナップインを取得したり、スナップインが登録されていることを確認したりするには、次のように入力します。
 

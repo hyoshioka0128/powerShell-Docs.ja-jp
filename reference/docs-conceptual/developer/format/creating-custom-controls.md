@@ -1,12 +1,14 @@
 ---
-title: カスタムコントロールの作成 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c36fa9b778e01501a3c88f735cdefdfbb04411a0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: カスタム コントロールを作成する
+description: カスタム コントロールを作成する
+ms.openlocfilehash: 78d8cc2970b2b3e493bef25d78404ba1be195bb1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786120"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668050"
 ---
 # <a name="creating-custom-controls"></a>カスタム コントロールを作成する
 
@@ -14,7 +16,7 @@ ms.locfileid: "87786120"
 
 ## <a name="custom-control-example"></a>カスタムコントロールの例
 
-次の例は、Certificates.Format.ps1xml ファイルで定義されているカスタムコントロールを示しています。 このカスタムコントロールは、テーブルビューに表示さ[れるオブジェクトを](/dotnet/api/System.Management.Automation.Signature)区切るために使用されます。
+次の例は、Certificates.Format.ps1xml ファイルで定義されているカスタムコントロールを示しています。 このカスタムコントロールは、テーブルビューに表示さ [れるオブジェクトを](/dotnet/api/System.Management.Automation.Signature) 区切るために使用されます。
 
 ```xml
 <Controls>

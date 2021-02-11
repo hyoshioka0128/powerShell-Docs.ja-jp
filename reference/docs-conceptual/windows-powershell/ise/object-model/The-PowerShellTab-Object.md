@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,コマンドレット
 title: PowerShellTab オブジェクト
-ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: PowerShellTab オブジェクトは、Windows PowerShell ランタイム環境を表します。
+ms.openlocfilehash: ac89875e408a41a92d7e3d1a83a849466296c3c6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809558"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663387"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab オブジェクト
 
@@ -156,7 +156,7 @@ $newFile.Editor.LineCount
 
 ### <a name="output"></a>出力
 
-この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。 Windows PowerShell ISE 2.0 より後のバージョンでは、**ConsolePane** オブジェクトを同じ目的で使用できます。
+この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。 Windows PowerShell ISE 2.0 より後のバージョンでは、 **ConsolePane** オブジェクトを同じ目的で使用できます。
 
 現在の[エディター](The-ISEEditor-Object.md)の出力ウィンドウが取得する読み取り専用のプロパティです。
 

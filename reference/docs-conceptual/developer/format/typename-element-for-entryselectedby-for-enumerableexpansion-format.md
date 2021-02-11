@@ -1,12 +1,14 @@
 ---
-title: 列挙型拡張に対する EntrySelectedBy の TypeName 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 670aeb0986b07c8b7834a9f4f9510f1757a62186
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EnumerableExpansion の EntrySelectedBy の TypeName 要素 (書式)
+description: EnumerableExpansion の EntrySelectedBy の TypeName 要素 (書式)
+ms.openlocfilehash: 7c1195717ae0963ace3e02f0ae2ae7c34f69078a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785083"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654822"
 ---
 # <a name="typename-element-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の TypeName 要素 (書式)
 

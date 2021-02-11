@@ -1,12 +1,14 @@
 ---
-title: 列挙 Able展開要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2b536b1ab9b34b0089d0a38d3c5dc7a937176443
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EnumerableExpansions 要素 (書式)
+description: EnumerableExpansions 要素 (書式)
+ms.openlocfilehash: 789599e6ff368b4685c7937d5b6eb38618752f9e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774016"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660178"
 ---
 # <a name="enumerableexpansions-element-format"></a>EnumerableExpansions 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) DefaultSettings 要素 (Format) 列挙 Able展開�
 
 ## <a name="remarks"></a>解説
 
-この要素は、コレクションオブジェクトとコレクション内のオブジェクトをどのように表示するかを定義するために使用されます。 この場合、コレクションオブジェクト**は、system.string インターフェイスを**サポートする任意のオブジェクトを参照します。
+この要素は、コレクションオブジェクトとコレクション内のオブジェクトをどのように表示するかを定義するために使用されます。 この場合、コレクションオブジェクト  **は、system.string インターフェイスを** サポートする任意のオブジェクトを参照します。
 
 ## <a name="see-also"></a>参照
 

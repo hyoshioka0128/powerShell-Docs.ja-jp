@@ -1,12 +1,14 @@
 ---
-title: Customitem for View (Format) 用の CustomItem のテキスト要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 94294665b481edabdb8ed920d1a209a609b18fd8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の CustomView の CustomItem の Text 要素 (書式)
+description: View の CustomView の CustomItem の Text 要素 (書式)
+ms.openlocfilehash: b1bbb53473774be56e8422b79db8745fb9700b9b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783383"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659744"
 ---
 # <a name="text-element-for-customitem-for-customview-for-view-format"></a>View の CustomView の CustomItem の Text 要素 (書式)
 

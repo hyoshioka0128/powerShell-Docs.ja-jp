@@ -1,16 +1,18 @@
 ---
-title: パラメーターセットを宣言する方法 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e6d06a9a78356693fe7a338dc5c9207044b23441
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: パラメーター セットを宣言する方法
+description: パラメーター セットを宣言する方法
+ms.openlocfilehash: bd4d504a9fe6c7f7626901c49bc08851244f0995
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784165"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667064"
 ---
 # <a name="how-to-declare-parameter-sets"></a>パラメーター セットを宣言する方法
 
-この例では、コマンドレットのパラメーターを宣言するときに2つのパラメーターセットを定義する方法を示します。 各パラメーターセットには、一意のパラメーターと、両方のパラメーターセットで使用される共有パラメーターの両方があります。 既定のパラメーターセットの指定方法など、パラメーターセットの詳細については、「[コマンドレットパラメーターセット](./cmdlet-parameter-sets.md)」を参照してください。
+この例では、コマンドレットのパラメーターを宣言するときに2つのパラメーターセットを定義する方法を示します。 各パラメーターセットには、一意のパラメーターと、両方のパラメーターセットで使用される共有パラメーターの両方があります。 既定のパラメーターセットの指定方法など、パラメーターセットの詳細については、「 [コマンドレットパラメーターセット](./cmdlet-parameter-sets.md)」を参照してください。
 
 > [!IMPORTANT]
 > 可能な限り、パラメーターセットの一意のパラメーターを必須パラメーターとして定義します。 ただし、パラメーターを指定せずにコマンドレットを実行する場合は、unique パラメーターを省略可能なパラメーターにすることができます。 たとえば、コマンドレットの一意のパラメーター `Get-Command` は省略可能です。
@@ -60,4 +62,4 @@ ms.locfileid: "87784165"
 
 [コマンドレット パラメーター セット](./cmdlet-parameter-sets.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

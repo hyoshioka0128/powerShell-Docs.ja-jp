@@ -3,20 +3,20 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Exit-PSSession
-ms.openlocfilehash: fb6c0f930536e7a32d83c9f390a0e351a6952550
-ms.sourcegitcommit: 2e497178126b2b33a169ff04c31e251e0b59e89b
+ms.openlocfilehash: 7947855afa08bc3301d02e64fcb2ad8bb6b59db7
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "93209239"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975126"
 ---
 # Exit-PSSession
 
-## 概要
+## 構文
 リモート コンピューターとの対話型セッションを終了します。
 
 ## SYNTAX
@@ -25,19 +25,18 @@ ms.locfileid: "93209239"
 Exit-PSSession [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
-**終了 PSSession** コマンドレットは、Enter-PSSession コマンドレットを使用して開始した対話型セッションを終了します。
+コマンドレットは `Exit-PSSession` 、コマンドレットを使用して開始した対話型セッションを終了し `Enter-PSSession` ます。
 
-また、 **Exit** キーワードを使用して、対話型セッションを終了することもできます。
-効果は、 **終了 PSSession** を使用する場合と同じです。
+また、キーワードを使用して、 `exit` 対話型セッションを終了することもできます。 効果は、を使用する場合と同じです `Exit-PSSession` 。
 
 ## 例
 
 ### 例 1: 対話型セッションを開始および停止する
 
-```
-PS> Enter-PSSession -computername Server01
+```powershell
+PS> Enter-PSSession -ComputerName Server01
 Server01\PS> Exit-PSSession
 PS>
 ```
@@ -46,7 +45,7 @@ PS>
 
 ### 例 2: PSSession オブジェクトを使用して対話型セッションを開始および停止する
 
-```
+```powershell
 PS> $s = New-PSSession -ComputerName Server01
 PS> Enter-PSSession -Session $s
 Server01\PS> Exit-PSSession
@@ -56,33 +55,29 @@ Id Name            ComputerName    State    ConfigurationName
 1  Session1        Server01        Opened   Microsoft.PowerShell
 ```
 
-これらのコマンドは、PowerShell セッション ( **PSSession** ) を使用する Server01 コンピューターとの対話型セッションを開始および停止します。
+これらのコマンドは、PowerShell セッション (**PSSession**) を使用する Server01 コンピューターとの対話型セッションを開始および停止します。
 
-対話型セッションは PowerShell セッションを使用して開始されたため、対話型セッションが終了しても **PSSession** は引き続き利用できます。
-*ComputerName* パラメーターを使用する場合、「 **-PSSession** 」と入力すると、対話型セッションが終了したときに閉じられる一時的なセッションが作成されます。
+対話型セッションは PowerShell セッションを使用して開始されたため、対話型セッションが終了しても **PSSession** は引き続き利用できます。 _ComputerName_ パラメーターを使用すると、 `Enter-PSSession` 対話型セッションが終了したときに閉じられる一時的なセッションがによって作成されます。
 
-最初のコマンドは、New-PSSession コマンドレットを使用して、Server01 コンピューター上に **PSSession** を作成します。
-このコマンドは、 **PSSession** を $s 変数に保存します。
+最初のコマンドは、コマンドレットを使用して、 `New-PSSession` Server01 コンピューター上に **PSSession** を作成します。 このコマンドは、 **PSSession** を変数に保存し `$s` ます。
 
-2番目のコマンドは、 **Enter-pssession** を使用して、$S の **PSSession** を使用して対話型セッションを開始します。
+2番目のコマンドは、を使用し `Enter-PSSession` て、の **PSSession** を使用して対話型セッションを開始し `$s` ます。
 
-3番目のコマンドは、 **出口** を使用して対話型セッションを停止します。
+3番目のコマンドは、を使用し `Exit-PSSession` て対話型セッションを停止します。
 
-最後のコマンドは、$s 変数内の **PSSession** を表示します。
-**State** プロパティは、 **PSSession** がまだ開いており、使用可能であることを示しています。
+最後のコマンドは、変数内の **PSSession** を表示し `$s` ます。 **State** プロパティは、 **PSSession** がまだ開いており、使用可能であることを示しています。
 
 ### 例 3: Exit キーワードを使用してセッションを停止する
 
-```
-PS> Enter-PSSession -computername Server01
+```powershell
+PS> Enter-PSSession -ComputerName Server01
 Server01\PS> exit
 PS>
 ```
 
-この例では、 **Exit** キーワードを使用して、 **入力 PSSession** を使用して開始された対話型セッションを停止します。
-**Exit** キーワードは、 **出口** を使用する場合と同じ効果があります。
+この例では、キーワードを使用して、 `exit` を使用して開始された対話型セッションを停止し `Enter-PSSession` ます。 キーワードは、 `exit` を使用する場合と同じ効果があり `Exit-PSSession` ます。
 
-## PARAMETERS
+## パラメーター
 
 ### 共通パラメーター
 
@@ -100,11 +95,9 @@ PS>
 
 このコマンドレットによる戻り値はありません。
 
-## 注
+## ノート
 
-* このコマンドレットは、共通パラメーターのみを受け取ります。
-
-*
+このコマンドレットは、共通パラメーターのみを受け取ります。
 
 ## 関連リンク
 

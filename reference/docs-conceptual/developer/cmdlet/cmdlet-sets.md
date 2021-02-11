@@ -1,12 +1,14 @@
 ---
-title: コマンドレットの設定 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9595c9ca09148de05c69d60a2ede5688c3db61b0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレット セット
+description: コマンドレット セット
+ms.openlocfilehash: b4bcb6548f9d64a8cc5e3fc3a66c671a5566001d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774815"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668237"
 ---
 # <a name="cmdlet-sets"></a>コマンドレット セット
 
@@ -20,13 +22,13 @@ ms.locfileid: "87774815"
 
 - 基底クラスの適切な入力処理メソッドをオーバーライドします。
 
-- すべてのコマンドレットクラスで[system.servicemodel 属性を](/dotnet/api/System.Management.Automation.CmdletAttribute)宣言しますが、基底クラスでは宣言しません。
+- すべてのコマンドレットクラスで [system.servicemodel 属性を](/dotnet/api/System.Management.Automation.CmdletAttribute) 宣言しますが、基底クラスでは宣言しません。
 
-- コマンドレットのセットを反映した名前と説明を持つ[add-pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn)または[Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn)クラスを実装します。
+- コマンドレットのセットを反映した名前と説明を持つ [add-pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) または [Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) クラスを実装します。
 
 ## <a name="example"></a>例
 
-次の例は、同じ基本クラスから派生した、Get Proc と Stop Proc コマンドレットによって使用される基底クラスの実装を示しています。
+次の例は、同じ基本クラスから派生する Get-Proc および Stop-Proc コマンドレットによって使用される基底クラスの実装を示しています。
 
 ```csharp
 using System;

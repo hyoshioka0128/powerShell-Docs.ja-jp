@@ -1,12 +1,14 @@
 ---
-title: コマンドレット内からコマンドレットを呼び出す方法 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2d5b0788d3310d0dd7b311f86c497afe8eec9d11
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレット内からコマンドレットを呼び出す方法
+description: コマンドレット内からコマンドレットを呼び出す方法
+ms.openlocfilehash: d137ac895f66000329de76a2c16a74b02c0e82ca
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784148"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667047"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>コマンドレット内からコマンドレットを呼び出す方法
 
@@ -17,7 +19,7 @@ Get-Process -name [a-t]
 ```
 
 > [!IMPORTANT]
-> を呼び出すことができるのは、 [system.servicemodel クラスから直接派生した](/dotnet/api/System.Management.Automation.Cmdlet)コマンドレットだけです。 [PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラスから派生したコマンドレットを呼び出すことはできません。
+> を呼び出すことができるのは、 [system.servicemodel クラスから直接派生した](/dotnet/api/System.Management.Automation.Cmdlet) コマンドレットだけです。 [PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラスから派生したコマンドレットを呼び出すことはできません。
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>コマンドレット内からコマンドレットを呼び出すには
 
@@ -29,7 +31,7 @@ Get-Process -name [a-t]
     using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
     ```
 
-2. コマンドレットの入力処理メソッドで、呼び出すコマンドレットの新しいインスタンスを作成します。 この例では、コマンドレットが呼び出されたときに使用される引数を含む文字列と共に、型を指定すると、 [Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand)という型のオブジェクトが作成されます。
+2. コマンドレットの入力処理メソッドで、呼び出すコマンドレットの新しいインスタンスを作成します。 この例では、コマンドレットが呼び出されたときに使用される引数を含む文字列と共に、型を指定すると、 [Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) という型のオブジェクトが作成されます。
 
     ```csharp
     GetProcessCommand gp = new GetProcessCommand();
@@ -48,7 +50,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>例
 
-この例では、コマンドレットは、コマンド `Get-Process` レットの System.servicemodel[処理](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド内から呼び出されます。
+この例では、コマンドレットは、コマンド `Get-Process` レットの System.servicemodel [処理](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) メソッド内から呼び出されます。
 
 ```csharp
 using System;

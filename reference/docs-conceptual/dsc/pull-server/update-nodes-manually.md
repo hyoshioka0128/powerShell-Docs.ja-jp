@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: プル サーバーからのノードを更新する
-ms.openlocfilehash: fa59a2f6574db2dbc96621be4326f1d5a55e5de9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、プル サーバーから DSC マネージド ノードを更新する方法について説明します
+ms.openlocfilehash: 7256a0e1fdfaa8e56150c4f7299640bc95b82cee
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500675"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656766"
 ---
 # <a name="update-nodes-from-a-pull-server"></a>プル サーバーからのノードを更新する
 
@@ -16,7 +17,7 @@ ms.locfileid: "80500675"
 - [DSC SMB プル サーバーを設定する](pullServerSmb.md)
 - [DSC HTTP プル サーバーを設定する](pullServer.md)
 
-各ターゲット ノードは、構成やリソースをダウンロードし、さらにその状態を報告するように構成できます。 この記事では、ダウンロードできるようにリソースをアップロードする方法、およびリソースを自動的にダウンロードするようにクライアントを構成する方法を示します。 ノードは、割り当てられた構成を**プル**または**プッシュ** (v5) によって受け取ると、構成で必要なすべてのリソースを LCM で指定された場所から自動的にダウンロードします。
+各ターゲット ノードは、構成やリソースをダウンロードし、さらにその状態を報告するように構成できます。 この記事では、ダウンロードできるようにリソースをアップロードする方法、およびリソースを自動的にダウンロードするようにクライアントを構成する方法を示します。 ノードは、割り当てられた構成を **プル** または **プッシュ** (v5) によって受け取ると、構成で必要なすべてのリソースを LCM で指定された場所から自動的にダウンロードします。
 
 ## <a name="using-the-update-dscconfiguration-cmdlet"></a>Update-DSCConfiguration コマンドレットの使用
 

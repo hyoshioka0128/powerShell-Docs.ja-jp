@@ -1,14 +1,13 @@
 ---
 ms.date: 09/26/2017
-contributor: keithb
-keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: プレリリース モジュールのバージョン
-ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShellGet モジュールでは、セマンティック バージョニングを使用して、1.0.0 以上のバージョンのモジュールにプレリリースとしてのタグ付けをすることができます。
+ms.openlocfilehash: f794722f0a89f98f8f445ecd45dad9d3d2d7f3cb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328143"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661515"
 ---
 # <a name="prerelease-module-versions"></a>プレリリース モジュールのバージョン
 
@@ -52,7 +51,7 @@ Prerelease 文字列の詳しい要件は次のとおりです。
 - Prerelease 文字列は、Major.Minor.Build の ModuleVersion が 3 セグメントである場合にのみ指定できます。 これは、SemVer v1.0.0 と適合します。
 - ハイフンは、ビルド番号と Prerelease 文字列の間の区切り文字です。 ハイフンは、Prerelease 文字列の最初の文字としてのみ含めることができます。
 - Prerelease 文字列には ASCII 英数字 [0-9A-Za-z-] のみを含めることができます。 Prerelease 文字列はアルファベットで始めることをお勧めします。パッケージの一覧を見たときにプレリリース バージョンであることが識別しやすくなるためです。
-- 現時点では、SemVer v1.0.0 の Prerelease 文字列のみがサポートされています。 Prerelease 文字列には (SemVer 2.0 では許可されている) ピリオドまたは + [.+] のどちらかを含めることは**できません**。
+- 現時点では、SemVer v1.0.0 の Prerelease 文字列のみがサポートされています。 Prerelease 文字列には (SemVer 2.0 では許可されている) ピリオドまたは + [.+] のどちらかを含めることは **できません** 。
 - サポートされている Prerelease 文字列には、-alpha、-alpha1、-BETA、-update20171020 などがあります。
 
 ### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>並べ替え順序およびインストール フォルダーへのプレリリース バージョン管理の影響
@@ -68,7 +67,7 @@ Find-Module、Install-Module、Update-Module、Save-Module の PowerShellGet コ
 PowerShellGet モジュールのコマンドで、これに対する唯一の例外が Get-InstalledModule です。場合によっては Uninstall-Module も含まれます。
 
 - Get-InstalledModule は常にモジュールのバージョン文字列にプレリリース情報を自動的に表示します。
-- Uninstall-Module は__バージョンが指定されていない__場合に、既定でモジュールの最新のバージョンをアンインストールします。 この動作は変更されていません。 ただし、-RequiredVersion を使用してプレリリース バージョンが指定された場合は、-AllowPrerelease が必要になります。
+- Uninstall-Module は __バージョンが指定されていない__ 場合に、既定でモジュールの最新のバージョンをアンインストールします。 この動作は変更されていません。 ただし、-RequiredVersion を使用してプレリリース バージョンが指定された場合は、-AllowPrerelease が必要になります。
 
 ## <a name="examples"></a>例
 
@@ -123,7 +122,7 @@ Version         Name          Repository  Description
 1.9.0-alpha     TestPackage   PSGallery   Package used to validate changes to the PowerShe...
 ```
 
-プレリリースが指定されているかどうかの違いしかない、モジュールのバージョンの同時インストールはサポートされません。 PowerShellGet を使用してモジュールをインストールすると、ModuleVersion を使用してフォルダー名が作成され、同じモジュールの異なるバージョンが同時にインストールされます。 Prerelease 文字列のない ModuleVersion がフォルダー名で使用されます。 ユーザーが MyModule バージョン 2.5.0-alpha をインストールすると、`MyModule\2.5.0` フォルダーにインストールされます。 その後、ユーザーが 2.5.0-beta をインストールすると、2.5.0-beta バージョンがフォルダー `MyModule\2.5.0` の内容を**上書き**します。 この方法の 1 つの利点が、実稼働可能バージョンのインストール後にプレリリース バージョンをアンインストールする必要がないことです。 以下の例は、予想すべき内容を示します。
+プレリリースが指定されているかどうかの違いしかない、モジュールのバージョンの同時インストールはサポートされません。 PowerShellGet を使用してモジュールをインストールすると、ModuleVersion を使用してフォルダー名が作成され、同じモジュールの異なるバージョンが同時にインストールされます。 Prerelease 文字列のない ModuleVersion がフォルダー名で使用されます。 ユーザーが MyModule バージョン 2.5.0-alpha をインストールすると、`MyModule\2.5.0` フォルダーにインストールされます。 その後、ユーザーが 2.5.0-beta をインストールすると、2.5.0-beta バージョンがフォルダー `MyModule\2.5.0` の内容を **上書き** します。 この方法の 1 つの利点が、実稼働可能バージョンのインストール後にプレリリース バージョンをアンインストールする必要がないことです。 以下の例は、予想すべき内容を示します。
 
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions

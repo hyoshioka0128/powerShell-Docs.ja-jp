@@ -2,12 +2,12 @@
 title: PowerShell 7.0 の新機能
 description: PowerShell 7.0 でリリースされた新機能と変更
 ms.date: 03/04/2020
-ms.openlocfilehash: d52b536efd9d7a1f8e6b01a58952f08ca49016b1
-ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
+ms.openlocfilehash: 3a5a1aaa0bd9dd1e0df7d6f5e6021678ed21dce4
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162462"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355274"
 ---
 # <a name="whats-new-in-powershell-70"></a>PowerShell 7.0 の新機能
 
@@ -42,14 +42,14 @@ PowerShell 7.0 は、異種環境とハイブリッド クラウドを管理す�
 
 さらに、PowerShell 7.0 では、Debian、Ubuntu、ARM64 Alpine Linux の ARM32 および ARM64 フレーバーもサポートされています。
 
-お使いのオペレーティング システム [Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7)、[macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7)、または [Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7) のインストール手順を確認してください。
+お使いのオペレーティング システム [Windows](/powershell/scripting/install/installing-powershell-core-on-windows)、[macOS](/powershell/scripting/install/installing-powershell-core-on-macos)、または [Linux](/powershell/scripting/install/installing-powershell-core-on-linux) のインストール手順を確認してください。
 
 公式にはサポートされていませんが、コミュニティでは、[Arch](https://aur.archlinux.org/packages/powershell/) および Kali Linux 用のパッケージも提供しています。
 
 > [!NOTE]
-> 現在、Debian 10 および CentOS 8 では、WinRM リモート処理はサポートされません。 SSH ベースのリモート処理設定の詳細については、「[SSH 経由の PowerShell リモート処理](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)」を参照してください。
+> 現在、Debian 10 および CentOS 8 では、WinRM リモート処理はサポートされません。 SSH ベースのリモート処理設定の詳細については、「[SSH 経由の PowerShell リモート処理](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core)」を参照してください。
 
-サポートされているオペレーティング システムとサポート ライフサイクルの最新情報については、[PowerShell サポート ライフサイクル](/powershell/scripting/powershell-support-lifecycle?view=powershell-7)に関するページをご覧ください。
+サポートされているオペレーティング システムとサポート ライフサイクルの最新情報については、[PowerShell サポート ライフサイクル](/powershell/scripting/powershell-support-lifecycle)に関するページをご覧ください。
 
 ## <a name="running-powershell-7"></a>PowerShell 7 の実行
 
@@ -72,7 +72,7 @@ PowerShell 7 のインストーラー パッケージは、以前のバージョ
 
 PowerShell 7.0 では .NET Core 3.1 への移行がマークされ、既存の Windows PowerShell モジュールとの下位互換性が大幅に向上しています。 これには、`Out-GridView`、`Show-Command` などの GUI 機能を必要とする Windows 上の多くのモジュール、および Windows の一部として出荷される多くの役割管理モジュールが含まれます。
 
-Windows の場合、新しいスイッチ パラメーター **UseWindowsPowerShell** が `Import-Module` に追加されています。 このスイッチにより、PowerShell 7 にプロキシ モジュールが作成されます。このモジュールは、ローカルの Windows PowerShell プロセスを使用して、そのモジュールに含まれる任意のコマンドレットを暗黙的に実行します。 詳細については、「[Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7)」を参照してください。
+Windows の場合、新しいスイッチ パラメーター **UseWindowsPowerShell** が `Import-Module` に追加されています。 このスイッチにより、PowerShell 7 にプロキシ モジュールが作成されます。このモジュールは、ローカルの Windows PowerShell プロセスを使用して、そのモジュールに含まれる任意のコマンドレットを暗黙的に実行します。 詳細については、「[Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&preserve-view=true)」を参照してください。
 
 PowerShell 7.0 で動作する Microsoft モジュールの詳細については、[モジュールの互換性に関する表](https://aka.ms/PSModuleCompat)をご覧ください。
 
@@ -102,7 +102,7 @@ $logEntries.Count
 
 `$_` 変数を使用して、スクリプト ブロックで現在の入力オブジェクトを表すします。 `$using:` スコープを使用して、変数参照を実行中のスクリプト ブロックに渡します。
 
-詳細については、「[ForEach-Object](/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7)」を参照してください。
+詳細については、「[ForEach-Object](/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&preserve-view=true)」を参照してください。
 
 ## <a name="ternary-operator"></a>三項演算子
 
@@ -113,7 +113,7 @@ PowerShell の三項演算子は、C# 三項演算子構文に基づく類似の
 <condition> ? <if-true> : <if-false>
 ```
 
-常に条件式が評価され、その結果は、次の評価対象となる分岐を判断するために**ブール値**に変換されます。
+常に条件式が評価され、その結果は、次の評価対象となる分岐を判断するために **ブール値** に変換されます。
 
 - `<if-true>` 式は、`<condition>` 式が true の場合に実行されます
 - `<if-false>` 式は、`<condition>` 式が false の場合に実行されます
@@ -124,13 +124,13 @@ PowerShell の三項演算子は、C# 三項演算子構文に基づく類似の
 $message = (Test-Path $path) ? "Path exists" : "Path not found"
 ```
 
-この例では、パスが存在すると、**Path exists** が表示されます。 パスが存在しない場合は、**Path not found** が表示されます。
+この例では、パスが存在すると、 **Path exists** が表示されます。 パスが存在しない場合は、 **Path not found** が表示されます。
 
-詳細については、「[About If](/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7)」を参照してください。
+詳細については、「[About If](/powershell/module/microsoft.powershell.core/about/about_if)」を参照してください。
 
 ## <a name="pipeline-chain-operators"></a>パイプライン チェーン演算子
 
-PowerShell 7 では、`&&` 演算子と `||` 演算子が実装され、条件に応じてパイプラインがチェーンされます。 これらの演算子は、PowerShell では "パイプライン チェーン演算子" として知られ、**Bash**、**Zsh** などのシェルにある AND リストと OR リスト、および Windows コマンド シェル (**cmd.exe**) の条件付き処理シンボルと似ています。
+PowerShell 7 では、`&&` 演算子と `||` 演算子が実装され、条件に応じてパイプラインがチェーンされます。 これらの演算子は、PowerShell では "パイプライン チェーン演算子" として知られ、 **Bash** 、 **Zsh** などのシェルにある AND リストと OR リスト、および Windows コマンド シェル ( **cmd.exe** ) の条件付き処理シンボルと似ています。
 
 `&&` 演算子では、左側のパイプラインが成功した場合に、右側のパイプラインが実行されます。 反対に、`||` 演算子では、左側のパイプラインが失敗した場合に、右側のパイプラインが実行されます。
 
@@ -179,7 +179,7 @@ Write-Error 'Bad'
 Second
 ```
 
-詳細については、「[パイプライン チェーン演算子の概要](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7)」を参照してください。
+詳細については、「[パイプライン チェーン演算子の概要](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7&preserve-view=true)」を参照してください。
 
 ## <a name="null-coalescing-assignment-and-conditional-operators"></a>null 合体演算子、代入演算子、および条件演算子
 
@@ -226,7 +226,7 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 ### <a name="null-conditional-member-access-operators--and--experimental"></a>null 条件付きメンバー アクセス演算子 ?. および ?[] (試験段階)
 
 > [!NOTE]
-> これは **PSNullConditionalOperators** という試験的な機能です。 詳細については、[試験的な機能](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7)に関するページをご覧ください。
+> これは **PSNullConditionalOperators** という試験的な機能です。 詳細については、「[試験的な機能の使用](/powershell/scripting/learn/experimental-features)」を参照してください。
 
 null 条件演算子は、そのオペランドが null 以外に評価される場合にのみ、メンバー アクセス `?.`、または要素アクセス `?[]` をそのオペランドに許可します。それ以外の場合は、null を返します。
 
@@ -263,7 +263,7 @@ $a = $null
 ${a}?[0]
 ```
 
-詳細については、「[About_Operators](/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7)」を参照してください。
+詳細については、「[About_Operators](/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&preserve-view=true)」を参照してください。
 
 ## <a name="new-view-conciseview-and-cmdlet-get-error"></a>新しい ConciseView ビューと Get-Error コマンドレット
 
@@ -305,13 +305,13 @@ $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 $Error | Get-Error
 ```
 
-`Get-Error` コマンドレットでは、**最新**のパラメーターがサポートされているため、現在のセッションから表示するエラーの数を指定できます。
+`Get-Error` コマンドレットでは、 **最新** のパラメーターがサポートされているため、現在のセッションから表示するエラーの数を指定できます。
 
 ```powershell
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
 ```
 
-詳細については、「[Get-Error](/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7)」を参照してください。
+詳細については、「[Get-Error](/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7&preserve-view=true)」を参照してください。
 
 ## <a name="new-version-notification"></a>新しいバージョンの通知
 
@@ -346,18 +346,18 @@ $Env:POWERSHELL_UPDATECHECK = 'LTS'
 $Env:POWERSHELL_UPDATECHECK = 'Default'
 ```
 
-詳細については、「[更新通知](/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)」を参照してください。
+詳細については、「[更新通知](/powershell/module/microsoft.powershell.core/about/about_update_notifications)」を参照してください。
 
 ## <a name="new-dsc-resource-support-with-invoke-dscresource-experimental"></a>Invoke-DSCResource を使用した新しい DSC リソースのサポート (試験段階)
 
 > [!NOTE]
-> これは **PSDesiredStateConfiguration.InvokeDscResource** という試験的な機能です。 詳細については、[試験的な機能](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7)に関するページをご覧ください。
+> これは **PSDesiredStateConfiguration.InvokeDscResource** という試験的な機能です。 詳細については、「[試験的な機能の使用](/powershell/scripting/learn/experimental-features)」を参照してください。
 
 `Invoke-DscResource` コマンドレットは、指定された PowerShell Desired State Configuration (DSC) リソースのメソッドを実行します。
 
 このコマンドレットは、構成ドキュメントを作成せずに、DSC リソースを直接呼び出します。 このコマンドレットを使用すると、構成管理製品で DSC リソースを使って Windows または Linux を管理できます。 DSC エンジンの実行中、デバッグが有効になっている場合は、このコマンドレットでリソースのデバッグを有効にすることもできます。
 
-このコマンドは、**WindowsProcess** という名前のリソースの **Set** メソッドを呼び出し、指定された Windows プロセスを開始するために必須の **Path** プロパティと **Arguments** プロパティを指定します。
+このコマンドは、 **WindowsProcess** という名前のリソースの **Set** メソッドを呼び出し、指定された Windows プロセスを開始するために必須の **Path** プロパティと **Arguments** プロパティを指定します。
 
 ```powershell
 Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
@@ -366,7 +366,7 @@ Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateCo
 }
 ```
 
-詳細については、「[Invoke-DSCResource](/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7)」を参照してください。
+詳細については、「[Invoke-DSCResource](/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7&preserve-view=true)」を参照してください。
 
 ## <a name="breaking-changes-and-improvements"></a>破壊的変更と機能強化
 

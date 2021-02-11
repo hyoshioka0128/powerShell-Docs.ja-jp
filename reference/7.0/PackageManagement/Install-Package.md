@@ -7,12 +7,12 @@ ms.date: 05/23/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-package?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Package
-ms.openlocfilehash: 506775bf4ef58244a04cb13c1cab926d112111bf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 9778263a0a9d5db6924579c863419e87bb27ef71
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93217288"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890268"
 ---
 # Install-Package
 
@@ -234,7 +234,7 @@ Accept wildcard characters: False
 
 ### -Credential
 
-コンピューターにアクセスしてコマンドを実行するアクセス許可を持つユーザーアカウントを指定します。 コマンドレットによって生成されたユーザー名 ( **User01** 、 **domain01\user01」** など) を入力するか、 **PSCredential** オブジェクトを入力し `Get-Credential` ます。 ユーザー名を入力すると、パスワードの入力を求めるメッセージが表示されます。
+コンピューターにアクセスしてコマンドを実行するアクセス許可を持つユーザーアカウントを指定します。 コマンドレットによって生成されたユーザー名 ( **User01**、 **domain01\user01」** など) を入力するか、 **PSCredential** オブジェクトを入力し `Get-Credential` ます。 ユーザー名を入力すると、パスワードの入力を求めるメッセージが表示されます。
 
 **Credential** パラメーターが指定されていない場合、は `Install-Package` 現在のユーザーを使用します。
 
@@ -748,9 +748,9 @@ Accept wildcard characters: False
 
 モジュール、スクリプト、またはその両方を含むパッケージを検索するかどうかを指定します。 このパラメーターに指定できる値は次のとおりです。
 
-- [Module]
+- Module
 - スクリプト
-- All
+- すべて
 
 ```yaml
 Type: System.String
@@ -812,6 +812,13 @@ Accept wildcard characters: False
 ## 注
 
 コマンドにパッケージプロバイダーを含めると、コマンドレットで動的パラメーターを使用できるようになります。 動的パラメーターは、パッケージプロバイダーに固有のものです。 コマンドレットにより、 `Get-Help` コマンドレットのパラメーターセットが一覧表示され、プロバイダーのパラメーターセットが含まれます。 たとえば、には、、、 `Install-Package` およびを含む **PowerShellGet** パラメーターが設定されてい `-NoPathUpdate` `AllowClobber` `SkipPublisherCheck` ます。
+
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
 
 ## 関連リンク
 

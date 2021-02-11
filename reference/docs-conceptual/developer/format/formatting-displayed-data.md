@@ -1,12 +1,14 @@
 ---
-title: 表示データの書式設定 |Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 97d23b3079b2779e518b6b6d2f2ac0c5e9d1f3a3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 表示されるデータの書式を設定する
+description: 表示されるデータの書式を設定する
+ms.openlocfilehash: 40f6b3b4fa36062ee0bad3f197ad159f571445c8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781513"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667863"
 ---
 # <a name="formatting-displayed-data"></a>表示されるデータの書式を設定する
 
@@ -14,7 +16,7 @@ ms.locfileid: "87781513"
 
 ## <a name="using-the-formatstring-element"></a>FormatString 要素の使用
 
-次の例では、system.string `TotalProcessorTime` オブジェクトのプロパティの[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)値が FormatString 要素を使用して書式設定されています。 `TotalProcessorTime`プロパティ
+次の例では、system.string `TotalProcessorTime` オブジェクトのプロパティの[](/dotnet/api/System.Diagnostics.Process)値が FormatString 要素を使用して書式設定されています。 `TotalProcessorTime`プロパティ
 
 ```
 <TableColumnItem>

@@ -1,19 +1,21 @@
 ---
-title: GetProc04 (C#) サンプルコード |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: dd3965ee504641b1b629ba203090ee14c670da43
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc04 (C#) サンプル コード
+description: GetProc04 (C#) サンプル コード
+ms.openlocfilehash: 80020b60a7ab34caec0c856b9b7d12021f4276b9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771891"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654373"
 ---
 # <a name="getproc04-c-sample-code"></a>GetProc04 (C#) サンプル コード
 
-次のコードは、 `Get-Process` 終了しないエラーを報告するコマンドレットの実装を示しています。 この実装では、 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドを呼び出して、終了しないエラーを報告します。
+次のコードは、 `Get-Process` 終了しないエラーを報告するコマンドレットの実装を示しています。 この実装では、 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) メソッドを呼び出して、終了しないエラーを報告します。
 
 > [!NOTE]
-> この getprov04.cs コマンドレットの C# ソースファイル () をダウンロードするには、Microsoft Windows Software Development Kit for Windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
+> この Get-Proc コマンドレットの C# ソースファイル (getprov04.cs) をダウンロードするには、Microsoft Windows Software Development Kit for Windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
 > ダウンロードしたソースファイルは、ディレクトリにあり **\<PowerShell Samples>** ます。
 
 ## <a name="code-sample"></a>コード サンプル

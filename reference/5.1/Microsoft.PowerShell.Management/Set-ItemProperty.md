@@ -7,12 +7,12 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ItemProperty
-ms.openlocfilehash: 969cb181758dc1ac40b9d8fca2c22fa97f87c693
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: cbd1229721650823d9780517934c40a2287f4227
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93214456"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692666"
 ---
 # Set-ItemProperty
 
@@ -64,7 +64,7 @@ Set-ItemProperty -LiteralPath <String[]> -InputObject <PSObject> [-PassThru] [-F
 
 ### 例 1: ファイルのプロパティを設定する
 
-このコマンドは、"final.doc" ファイルの **IsReadOnly** プロパティの値を "true" に設定します。 **パス** を使用してファイルを指定し、 **名前** にプロパティの名前を指定し、 **値** pazrameter を使用して新しい値を指定します。
+このコマンドは、"final.doc" ファイルの **IsReadOnly** プロパティの値を "true" に設定します。 **パス** を使用して、**ファイルを指定し、プロパティ** の名前を指定し、 **value** パラメーターを使用して新しい値を指定します。
 
 ファイルは **IsReadOnly** オブジェクトであり、そのプロパティの1つにすぎ **ません。**
 すべてのプロパティを表示するには、「」と入力 `Get-Item C:\GroupFiles\final.doc | Get-Member -MemberType Property` します。
@@ -147,7 +147,7 @@ Get-ChildItem weekly.txt | Set-ItemProperty -Name IsReadOnly -Value $True
 この処理を実行するアクセス許可を持つユーザー アカウントを指定します。
 既定値は現在のユーザーです。
 
-「User01」や「Domain01\User01」のようなユーザー名を入力するか、  コマンドレットで生成されるような `Get-Credential` オブジェクトを入力します。
+「User01」や「Domain01\User01」のようなユーザー名を入力するか、 コマンドレットで生成されるような `Get-Credential` オブジェクトを入力します。
 ユーザー名を入力すると、パスワードの入力を求めるメッセージが表示されます。
 
 > [!NOTE]
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ### -除外
 
 コマンドレットが動作しない項目を指定し、他の項目もすべて含めます。
-このパラメーターの値は、 **Path** パラメーターを修飾します。
+このパラメーターの値は、**Path** パラメーターを修飾します。
 「*.txt」などのパス要素またはパターンを入力します。
 ワイルドカード文字を使用できます。
 
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ### -Filter
 
 プロバイダーの形式または言語でフィルターを指定します。
-このパラメーターの値は、 **Path** パラメーターを修飾します。
+このパラメーターの値は、**Path** パラメーターを修飾します。
 
 ワイルドカード文字の使用など、フィルターの構文はプロバイダーによって異なります。
 フィルターは他のパラメーターよりも効率的です。これは、取得後にオブジェクトを PowerShell でフィルター処理するのではなく、コマンドレットがオブジェクトを取得するときに、フィルターが適用されるためです。
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 ### -Include
 
 コマンドレットが処理する項目だけを指定します。この場合、他の項目はすべて除外されます。
-このパラメーターの値は、 **Path** パラメーターを修飾します。
+このパラメーターの値は、**Path** パラメーターを修飾します。
 「*.txt」などのパス要素またはパターンを入力します。
 ワイルドカード文字を使用できます。
 
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 ### -LiteralPath
 
 項目プロパティのパスを指定します。
-**Path** パラメーターと異なり、 **LiteralPath** の値は入力したとおりに使用されます。
+**Path** パラメーターと異なり、**LiteralPath** の値は入力したとおりに使用されます。
 ワイルドカードとして解釈される文字はありません。
 パスにエスケープ文字が含まれている場合は、単一引用符で囲みます。
 単一引用符で囲まれた文字はエスケープシーケンスとして解釈されません。
@@ -336,14 +336,14 @@ Accept wildcard characters: False
 このコマンドレットによって追加されるプロパティの型を指定します。
 このパラメーターの有効値は、次のとおりです。
 
-- **String** : null で終わる文字列を指定します。 **REG_SZ** と同じです。
-- **Expandstring** : 値の取得時に展開される環境変数への展開されていない参照を含む、null で終わる文字列を指定します。 **REG_EXPAND_SZ** と同じです。
-- **Binary** : 任意の形式のバイナリデータを指定します。 **REG_BINARY** と同じです。
-- **DWord** :32 ビットのバイナリ数値を指定します。 **REG_DWORD** と同じです。
+- **String**: null で終わる文字列を指定します。 **REG_SZ** と同じです。
+- **Expandstring**: 値の取得時に展開される環境変数への展開されていない参照を含む、null で終わる文字列を指定します。 **REG_EXPAND_SZ** と同じです。
+- **Binary**: 任意の形式のバイナリデータを指定します。 **REG_BINARY** と同じです。
+- **DWord**:32 ビットのバイナリ数値を指定します。 **REG_DWORD** と同じです。
 - Strings: 2 つの null 文字で終了する null で終わる文字列の配列を指定 **します。**
   **REG_MULTI_SZ** と同じです。
-- **Qword** :64 ビットのバイナリ数値を指定します。 **REG_QWORD** と同じです。
-- **不明** : **REG_RESOURCE_LIST** など、サポートされていないレジストリデータ型を示します。
+- **Qword**:64 ビットのバイナリ数値を指定します。 **REG_QWORD** と同じです。
+- **不明**: **REG_RESOURCE_LIST** など、サポートされていないレジストリデータ型を示します。
 
 ```yaml
 Type: RegistryValueKind

@@ -1,12 +1,14 @@
 ---
-title: Windows PowerShell ヘルプの作成
 ms.date: 09/13/2016
-ms.openlocfilehash: 8807fe48c6354022900738de0b912c55dec9febb
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Windows PowerShell ヘルプの作成
+description: Windows PowerShell ヘルプの作成
+ms.openlocfilehash: 3e34d76b61ed50ae47e8bfa7e6fe5e990e36dd68
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892899"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649503"
 ---
 # <a name="writing-windows-powershell-help"></a>Windows PowerShell ヘルプの作成
 
@@ -22,4 +24,4 @@ ms.locfileid: "86892899"
 
  Windows PowerShell は、PSMAML スキーマを使用して、コマンドレットとプロバイダーヘルプファイルの XML ファイルの要素を定義します。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

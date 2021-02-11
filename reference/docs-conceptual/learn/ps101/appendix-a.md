@@ -2,15 +2,14 @@
 title: 付録 A - ヘルプの構文
 description: この記事では、Get-Help によって表示されるコマンドレットの構文を読んで理解する方法について説明します。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: e8e28f66c02370b098f63a0396ef8a724cf3a1bd
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
-ms.translationtype: HT
+ms.openlocfilehash: b8fe218f2a9af1ad1ee6b88740414ecede0194bd
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437983"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99605427"
 ---
 # <a name="appendix-a---help-syntax"></a>付録 A - ヘルプの構文
 
@@ -43,7 +42,7 @@ SYNTAX
 
 構文は基本的に複数の左角かっこと右角かっこ (`[]`) で構成されています。 その意味は 2 つあり、使用方法に応じて異なります。 角かっこに含まれるものは、空の角かっこ `[]` を除いて、すべて省略可能です。 空の角かっこは、データ型の後にのみ表示されます (`<string[]>` など)。 これは、特定のパラメーターが、その型の値を複数受け入れることができることを意味します。
 
-`Get-EventLog` の最初のパラメーター セットの最初のパラメーター は **LogName** です。 LogName は角かっこで囲まれており、位置指定パラメーターであることを意味します。 つまり、パラメーターが正しい位置に指定されていれば、パラメーター自体の名前は指定しなくても構いません。 パラメーター名の後の山かっこ (`<>`) の情報は、1 つの**文字列**値が必要であることを示します。 パラメーター名とデータ型全体が角かっこで囲まれていないので、このパラメーター セットを使用する場合は、**LogName** パラメーターが必要です。
+`Get-EventLog` の最初のパラメーター セットの最初のパラメーター は **LogName** です。 LogName は角かっこで囲まれており、位置指定パラメーターであることを意味します。 つまり、パラメーターが正しい位置に指定されていれば、パラメーター自体の名前は指定しなくても構いません。 パラメーター名の後の山かっこ (`<>`) の情報は、1 つの **文字列** 値が必要であることを示します。 パラメーター名とデータ型全体が角かっこで囲まれていないので、このパラメーター セットを使用する場合は、**LogName** パラメーターが必要です。
 
 ```powershell
 Get-EventLog [-LogName] <String>

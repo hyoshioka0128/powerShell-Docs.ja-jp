@@ -2,32 +2,33 @@
 ms.date: 07/06/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MOF ファイルのセキュリティ保護
-ms.openlocfilehash: b1319167010a85e639fdb51a1a0b8b472dfda3a6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: この記事では、ターゲット ノードが MOF ファイルを暗号化したことを確認する方法について説明します。
+ms.openlocfilehash: ca94a901468626e5644880574457d899a012d311
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778153"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090349"
 ---
 # <a name="securing-the-mof-file"></a>MOF ファイルのセキュリティ保護
 
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
-DSC では、ローカル構成マネージャー (LCM) が必要な終了状態を実装する、MOF ファイルに格納されている情報を適用することで、サーバー ノードの構成を管理します。 このファイルには構成の詳細が含まれているため、安全に保つことが重要です。 このトピックでは、ターゲット ノードがファイルを暗号化したことを確認する方法について説明します。
+DSC では、ローカル構成マネージャー (LCM) が必要な終了状態を実装する、MOF ファイルに格納されている情報を適用することで、サーバー ノードの構成を管理します。 このファイルには構成の詳細が含まれているため、安全に保つことが重要です。 この記事では、ターゲット ノードがファイルを暗号化したことを確認する方法について説明します。
 
 PowerShell バージョン 5.0 以降では、`Start-DSCConfiguration` コマンドレットを使用してノードに適用されている場合、MOF ファイル全体が既定で暗号化されます。 この記事で説明されているプロセスが必要になるのは、証明書が管理されていない場合にプル サービス プロトコルを使用してソリューションを実装する場合のみです。これにより、ターゲット ノードによってダウンロードされた構成を暗号化解除し、適用される前にシステムで読み取れるようになります (たとえば、Windows Server でプル サービスが使用できるようになります)。 [Azure Automation DSC](/azure/automation/automation-dsc-overview) に登録されているノードには自動的に証明書がインストールされ、サービスによって管理されます。管理オーバーヘッドは必要ありません。
 
 > [!NOTE]
-> このトピックでは、暗号化に使用する証明書について説明します。 暗号化には、自己署名証明書で十分です。秘密キーは常に秘密に保たれますし、暗号化はドキュメントの信頼性を意味しないからです。 認証の目的では、自己署名証明書を使用_しないでください_。 認証の目的では、常に信頼された証明機関 (CA) からの証明書を使用する必要があります。
+> このトピックでは、暗号化に使用する証明書について説明します。 暗号化には、自己署名証明書で十分です。秘密キーは常に秘密に保たれますし、暗号化はドキュメントの信頼性を意味しないからです。 認証の目的では、自己署名証明書を使用 _しないでください_。 認証の目的では、常に信頼された証明機関 (CA) からの証明書を使用する必要があります。
 
 ## <a name="prerequisites"></a>前提条件
 
 DSC 構成のセキュリティ保護に使用される資格情報を正常に暗号化するには、次のものが必要になります。
 
-- **証明書を発行して配布するための手段**。 このトピックとその例では、Active Directory 証明機関を使用することを前提としています。 Active Directory 証明書サービスの背景情報の詳細については、「[Active Directory 証明書サービスの概要](https://technet.microsoft.com/library/hh831740.aspx)」と「[Active Directory 証明書サービス](https://technet.microsoft.com/windowsserver/dd448615.aspx)」を参照してください。
+- **証明書を発行して配布するための手段**。 このトピックとその例では、Active Directory 証明機関を使用することを前提としています。 Active Directory 証明書サービスの背景情報の詳細については、「[Active Directory 証明書サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))」を参照してください。
 - **ターゲット ノードへの管理アクセス**。
-- **各ターゲット ノードでは、暗号化可能な証明書がそれぞれの個人用ストアに保存されています**。 Windows PowerShell では、ストアへのパスは Cert:\LocalMachine\My です。 このトピックの例では、"ワークステーション認証" テンプレートを使用します。このテンプレートは、その他の証明書テンプレートと共に、[[既定の証明書テンプレート]](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx) にあります。
-- ターゲット ノード以外のコンピューターでこの構成を実行する場合は、**証明書の公開キーをエクスポート**して、構成の実行元であるコンピューターにインポートします。 **公開**キーのみをエクスポートし、秘密キーは安全に保護してください。
+- **各ターゲット ノードでは、暗号化可能な証明書がそれぞれの個人用ストアに保存されています**。 Windows PowerShell では、ストアへのパスは Cert:\LocalMachine\My です。 このトピックの例では、"ワークステーション認証" テンプレートを使用します。このテンプレートは、その他の証明書テンプレートと共に、[[既定の証明書テンプレート]](/previous-versions/windows/it-pro/windows-server-2003/cc740061(v=ws.10)) にあります。
+- ターゲット ノード以外のコンピューターでこの構成を実行する場合は、**証明書の公開キーをエクスポート** して、構成の実行元であるコンピューターにインポートします。 **公開** キーのみをエクスポートし、秘密キーは安全に保護してください。
 
 > [!NOTE]
 > スクリプト リソースには、暗号化に関する制限があります。 詳細については、「[スクリプト リソース](../reference/resources/windows/scriptResource.md#known-limitations)」を参照してください。
@@ -43,7 +44,7 @@ DSC 構成のセキュリティ保護に使用される資格情報を正常に�
 
 ## <a name="certificate-requirements"></a>証明書の要件
 
-資格情報の暗号化を指定するには、公開キー証明書が、DSC 構成の作成に使用されているコンピューターから**信頼された**_ターゲット ノード_で使用可能である必要があります。 この公開キー証明書を DSC 資格情報の暗号化に使うには、満たす必要のある特定の要件があります。
+資格情報の暗号化を指定するには、公開キー証明書が、DSC 構成の作成に使用されているコンピューターから **信頼された**_ターゲット ノード_ で使用可能である必要があります。 この公開キー証明書を DSC 資格情報の暗号化に使うには、満たす必要のある特定の要件があります。
 
 1. **キー使用法**:
    - 含める必要がある: "KeyEncipherment" と "DataEncipherment"。
@@ -52,29 +53,29 @@ DSC 構成のセキュリティ保護に使用される資格情報を正常に�
    - 含める必要がある: ドキュメントの暗号化 (1.3.6.1.4.1.311.80.1)。
    - 含める "_べきではない_": クライアント認証 (1.3.6.1.5.5.7.3.2) とサーバー認証 (1.3.6.1.5.5.7.3.1)。
 1. 証明書の秘密キーが *ターゲット ノード_ で使用可能であること。
-1. 証明書の**プロバイダー**は、"Microsoft RSA SChannel Cryptographic Provider" でなければならない。
+1. 証明書の **プロバイダー** は、"Microsoft RSA SChannel Cryptographic Provider" でなければならない。
 
 > [!IMPORTANT]
 > 'Digital Signature' のキー使用法またはいずれかの認証 EKU が含まれている証明書を使用することはできますが、暗号化キーの誤用や、攻撃に対する脆弱性を引き起こしやすくなります。 したがって、ベスト プラクティスとしては、DSC の資格情報をセキュリティで保護する目的で特別に作成した証明書を使い、その証明書ではこれらのキー使用法と EKU を省略することをお勧めします。
 
-_ターゲット ノード_にある既存の証明書で、これらの条件を満たしているものがあれば、DSC 資格情報をセキュリティで保護するために使うことができます。
+_ターゲット ノード_ にある既存の証明書で、これらの条件を満たしているものがあれば、DSC 資格情報をセキュリティで保護するために使うことができます。
 
 ## <a name="certificate-creation"></a>証明書の作成
 
 必要な暗号化証明書 (公開/秘密キー ペア) を作成して使用するための方法は 2 つあります。
 
-1. **ターゲット ノード**上に作成し、公開キーのみを**オーサリング ノード**にエクスポートする
-1. **オーサリング ノード**上に作成し、キー ペア全体を**ターゲット ノード**にエクスポートする
+1. **ターゲット ノード** 上に作成し、公開キーのみを **オーサリング ノード** にエクスポートする
+1. **オーサリング ノード** 上に作成し、キー ペア全体を **ターゲット ノード** にエクスポートする
 
 MOF の証明書の暗号化を解除するための秘密キーが常にターゲット ノードで保持されるため、1 つ目の方法をお勧めします。
 
 ### <a name="creating-the-certificate-on-the-target-node"></a>ターゲット ノードでの証明書の作成
 
-秘密キーは、**ターゲット ノード**で MOF の暗号化解除に使用されるため、秘密に保つ必要があります。そのための最も簡単な方法は、**ターゲット ノード**で秘密キー証明書を作成し、DSC 構成を MOF ファイルに作成するために使用されるコンピューターに**公開キー証明書**をコピーすることです。 次に例を示します。
+秘密キーは、**ターゲット ノード** で MOF の暗号化解除に使用されるため、秘密に保つ必要があります。そのための最も簡単な方法は、**ターゲット ノード** で秘密キー証明書を作成し、DSC 構成を MOF ファイルに作成するために使用されるコンピューターに **公開キー証明書** をコピーすることです。 次に例を示します。
 
-1. **ターゲット ノード**で証明書を作成します。
-1. 公開キー証明書を**ターゲット ノード**にエクスポートします。
-1. 公開キー証明書を**オーサリング ノード**の**マイ**証明書ストアにインポートします。
+1. **ターゲット ノード** で証明書を作成します。
+1. 公開キー証明書を **ターゲット ノード** にエクスポートします。
+1. 公開キー証明書を **オーサリング ノード** の **マイ** 証明書ストアにインポートします。
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>ターゲット ノード: 証明書を作成してエクスポートする
 
@@ -87,12 +88,12 @@ $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-エクスポートしたら、`DscPublicKey.cer` を**オーサリング ノード**にコピーする必要があります。
+エクスポートしたら、`DscPublicKey.cer` を **オーサリング ノード** にコピーする必要があります。
 
 > ターゲット ノード: Windows Server 2012 R2/Windows 8.1 以前
 
 > [!WARNING]
-> Windows 10 および Windows Server 2016 より前の Windows オペレーティング システムの `New-SelfSignedCertificate` コマンドレットでは、**Type** パラメーターがサポートされていないため、これらのオペレーティング システムでは、他の方法でこの証明書を作成する必要があります。 この場合は、`makecert.exe` または `certutil.exe` を使って証明書を作成できます。 また、別の方法として、[Microsoft スクリプト センターから New-SelfSignedCertificateEx.ps1 スクリプトをダウンロード](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)し、それを使用して証明書を作成することもできます。
+> Windows 10 および Windows Server 2016 より前の Windows オペレーティング システムの `New-SelfSignedCertificate` コマンドレットでは、**Type** パラメーターがサポートされていないため、これらのオペレーティング システムでは、他の方法でこの証明書を作成する必要があります。 この場合は、`makecert.exe` または `certutil.exe` を使って証明書を作成できます。 この例では、Microsoft スクリプト センターの [New-SelfSignedCertificateEx.ps1](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) スクリプトを、証明書を作成する代替方法として使用しています。 このスクリプトの更新バージョンは、PowerShell ギャラリーの [PSPKI](https://www.powershellgallery.com/packages/PSPKI/) モジュールで入手できます。
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -118,7 +119,7 @@ $Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-エクスポートしたら、```DscPublicKey.cer``` を**オーサリング ノード**にコピーする必要があります。
+エクスポートしたら、```DscPublicKey.cer``` を **オーサリング ノード** にコピーする必要があります。
 
 #### <a name="on-the-authoring-node-import-the-certs-public-key"></a>オーサリング ノード: 証明書の公開キーをインポートする
 
@@ -129,13 +130,13 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 ### <a name="creating-the-certificate-on-the-authoring-node"></a>オーサリング ノードでの証明書の作成
 
-**オーサリング ノード**で暗号化証明書を作成し、**秘密キー**と共に PFX ファイルとしてエクスポートして、**ターゲット ノード**にインポートすることもできます。 これは、DSC 資格情報の暗号化を実装するために _Nano Server_ で実行されている現在の手法です。 PFX はパスワードで保護されていますが、転送中はセキュリティで保護する必要があります。 次に例を示します。
+**オーサリング ノード** で暗号化証明書を作成し、**秘密キー** と共に PFX ファイルとしてエクスポートして、**ターゲット ノード** にインポートすることもできます。 これは、DSC 資格情報の暗号化を実装するために _Nano Server_ で実行されている現在の手法です。 PFX はパスワードで保護されていますが、転送中はセキュリティで保護する必要があります。 次に例を示します。
 
-1. **オーサリング ノード**で証明書を作成します。
-1. **オーサリング ノード**で、秘密キーを含む証明書をエクスポートします。
-1. **オーサリング ノード**から秘密キーを削除します。ただし、公開キー証明書を**マイ** ストアに保管しておきます。
-1. 秘密キー証明書を**ターゲット ノード**のマイ (個人用) 証明書ストアにインポートします。
-   - これはルート ストアに追加されるため、**ターゲット ノード**で信頼されるようになります。
+1. **オーサリング ノード** で証明書を作成します。
+1. **オーサリング ノード** で、秘密キーを含む証明書をエクスポートします。
+1. **オーサリング ノード** から秘密キーを削除します。ただし、公開キー証明書を **マイ** ストアに保管しておきます。
+1. 秘密キー証明書を **ターゲット ノード** のマイ (個人用) 証明書ストアにインポートします。
+   - これはルート ストアに追加されるため、**ターゲット ノード** で信頼されるようになります。
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>オーサリング ノード: 証明書を作成してエクスポートする
 
@@ -153,12 +154,12 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-エクスポートしたら、`DscPrivateKey.pfx` を**ターゲット ノード**にコピーする必要があります。
+エクスポートしたら、`DscPrivateKey.pfx` を **ターゲット ノード** にコピーする必要があります。
 
 > ターゲット ノード: Windows Server 2012 R2/Windows 8.1 以前
 
 > [!WARNING]
-> Windows 10 および Windows Server 2016 より前の Windows オペレーティング システムの `New-SelfSignedCertificate` コマンドレットでは、**Type** パラメーターがサポートされていないため、これらのオペレーティング システムでは、他の方法でこの証明書を作成する必要があります。 この場合は、`makecert.exe` または `certutil.exe` を使って証明書を作成できます。 また、別の方法として、[Microsoft スクリプト センターから New-SelfSignedCertificateEx.ps1 スクリプトをダウンロード](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)し、それを使用して証明書を作成することもできます。
+> Windows 10 および Windows Server 2016 より前の Windows オペレーティング システムの `New-SelfSignedCertificate` コマンドレットでは、**Type** パラメーターがサポートされていないため、これらのオペレーティング システムでは、他の方法でこの証明書を作成する必要があります。 この場合は、`makecert.exe` または `certutil.exe` を使って証明書を作成できます。 また、別の方法として、Microsoft スクリプト センターから [New-SelfSignedCertificateEx.ps1](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) スクリプトをダウンロードし、それを使用して証明書を作成することもできます。
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -204,9 +205,9 @@ Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation
 資格情報の暗号化に関連するノードごとに構成可能な要素は次のとおりです。
 
 - **NodeName** - 資格情報の暗号化が構成されているターゲット ノードの名前。
-- **PsDscAllowPlainTextPassword** - 暗号化されていない資格情報をこのノードに渡してよいかどうか。 これは**推奨されません**。
-- **Thumbprint** - _ターゲット ノード_上で DSC 構成に含まれる資格情報を復号化するために使用される証明書の拇印です。 **この証明書は、ターゲット ノード上のローカル コンピューターの証明書ストアに存在する必要があります。**
-- **CertificateFile** - _ターゲット ノード_用の証明書を暗号化するために使用する必要のある証明書ファイル (公開キーのみを含む)。 これは、DER Encoded Binary X.509 または Base-64 encoded X.509 のいずれかの形式の証明書ファイルである必要があります。
+- **PsDscAllowPlainTextPassword** - 暗号化されていない資格情報をこのノードに渡してよいかどうか。 これは **推奨されません**。
+- **Thumbprint** - _ターゲット ノード_ 上で DSC 構成に含まれる資格情報を復号化するために使用される証明書の拇印です。 **この証明書は、ターゲット ノード上のローカル コンピューターの証明書ストアに存在する必要があります。**
+- **CertificateFile** - _ターゲット ノード_ 用の証明書を暗号化するために使用する必要のある証明書ファイル (公開キーのみを含む)。 これは、DER Encoded Binary X.509 または Base-64 encoded X.509 のいずれかの形式の証明書ファイルである必要があります。
 
 この例に示す構成データ ブロックでは、処理対象のターゲット ノードの名前を targetNode とし、公開キー証明書ファイル (targetNode.cer という名前) へのパス、および公開キーの拇印を指定しています。
 
@@ -258,7 +259,7 @@ configuration CredentialEncryptionExample
 
 ## <a name="setting-up-decryption"></a>暗号化の解除のセットアップ
 
-[`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) が機能するようにするには、各ターゲット ノードのローカル構成マネージャーに対して、どの証明書を使用して資格情報の暗号化を解除するかを指示し、CertificateID リソースを使用して証明書の拇印を検証する必要があります。 この例の関数は、適切なローカル証明書を検出します (使用する証明書が正しく検出されるようにカスタマイズすることが必要になる場合もあります)。
+[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) が機能するようにするには、各ターゲット ノードのローカル構成マネージャーに対して、どの証明書を使用して資格情報の暗号化を解除するかを指示し、CertificateID リソースを使用して証明書の拇印を検証する必要があります。 この例の関数は、適切なローカル証明書を検出します (使用する証明書が正しく検出されるようにカスタマイズすることが必要になる場合もあります)。
 
 ```powershell
 # Get the certificate that works for encryption
@@ -306,8 +307,8 @@ configuration CredentialEncryptionExample
 
 この時点では、構成を実行すると、次の 2 つのファイルが出力されます。
 
-- \*.meta.mof ファイル。ローカル コンピューター ストアに格納され、拇印で識別される証明書を使用して資格情報の暗号化を解除するように、ローカル構成マネージャーを構成します。
-  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) が、\*.meta.mof ファイルを適用します。
+- `*.meta.mof ` ファイル。ローカル コンピューター ストアに格納され、拇印で識別される証明書を使用して資格情報の暗号化を解除するように、ローカル構成マネージャーを構成します。
+  [Set-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/Set-DscLocalConfigurationManager) は、`*.meta.mof ` ファイルを適用します。
 - 構成を実際に適用する MOF ファイル。 Start-DscConfiguration は、構成を適用します。
 
 次のコマンドがこれらの手順を実施します。

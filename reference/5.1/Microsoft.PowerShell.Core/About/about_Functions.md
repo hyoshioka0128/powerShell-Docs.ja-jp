@@ -6,12 +6,12 @@ ms.date: 2/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions
-ms.openlocfilehash: f033bc36bf67a9d01e3f238645b83df7d75c6963
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: e028ba5f29568c9eb962ee482087ac69a42e84b1
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222747"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386900"
 ---
 # <a name="about-functions"></a>Functions について
 
@@ -390,7 +390,7 @@ End:   The input is:
 
 詳細については、「[列挙子の使用](about_Automatic_Variables.md#using-enumerators)」を参照してください。
 
-## <a name="filters"></a>フィルタ
+## <a name="filters"></a>フィルター
 
 フィルターは、パイプライン内の各オブジェクトに対して実行される関数の一種です。 フィルターは、ブロック内のすべてのステートメントを含む関数に似て `Process` います。
 
@@ -454,7 +454,7 @@ Get-ChildItem function:
 $function:help
 ```
 
-ドライブの詳細については `Function:` 、 **関数** プロバイダーのヘルプトピックを参照してください。 「`Get-Help Function`.
+ドライブの詳細については `Function:` 、 **関数** プロバイダーのヘルプトピックを参照してください。 「`Get-Help Function`」と入力します。
 
 ## <a name="reusing-functions-in-new-sessions"></a>新しいセッションでの関数の再利用
 
@@ -486,7 +486,7 @@ Get-Help Get-MyDisks
 
   関数を XML ベースのヘルプトピックに関連付けるには、 `.ExternalHelp` コメントベースのヘルプキーワードを使用します。 このキーワードがない場合、は `Get-Help` 関数のヘルプトピックを見つけることができず、関数に対してを呼び出すと、 `Get-Help` 自動生成されたヘルプだけが返されます。
 
-  キーワードの詳細については `ExternalHelp` 、「 [about_Comment_Based_Help](about_Comment_Based_Help.md)」を参照してください。 XML ベースのヘルプの詳細については、MSDN ライブラリの「 [How To Write Cmdlet help](https://go.microsoft.com/fwlink/?LinkID=123415) 」を参照してください。
+  キーワードの詳細については `ExternalHelp` 、「 [about_Comment_Based_Help](about_Comment_Based_Help.md)」を参照してください。 XML ベースのヘルプの詳細については、「 [How To Write Cmdlet help](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

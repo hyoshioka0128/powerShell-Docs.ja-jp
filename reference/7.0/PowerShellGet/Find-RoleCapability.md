@@ -7,12 +7,12 @@ ms.date: 06/05/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-rolecapability?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-RoleCapability
-ms.openlocfilehash: 00b3bacbb82ee2316896581d2aa9c5998bd8d448
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 1cee4ac54bf83d387f61a4842104a80512a8b223
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210107"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891526"
 ---
 # Find-RoleCapability
 
@@ -21,7 +21,7 @@ ms.locfileid: "93210107"
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 Find-RoleCapability [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <String>] 
@@ -118,7 +118,7 @@ Version    Name            Repository     Description
 ```
 
 `Find-RoleCapability`**Name** パラメーターを使用して、 **Lev1** ロール機能を指定します。
-オブジェクトは、パイプラインで送信されます。 `Install-Module` では、インストール中に **Verbose** パラメーターを使用してステータスメッセージが表示されます。 インストールが完了すると、JeaExamples モジュールがインストールされたことが出力によっ `Get-InstalledModule` て確認されます。 **JeaExamples**
+オブジェクトは、パイプラインで送信されます。 `Install-Module` では、インストール中に **Verbose** パラメーターを使用してステータスメッセージが表示されます。 インストールが完了すると、JeaExamples モジュールがインストールされたことが出力によっ `Get-InstalledModule` て確認されます。 
 
 ## PARAMETERS
 
@@ -331,6 +331,13 @@ Accept wildcard characters: False
 `Find-RoleCapability`コマンドレットは、 **Psgetrolecap信頼性情報** オブジェクトを返します。
 
 ## 注
+
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
 
 ## 関連リンク
 

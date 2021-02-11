@@ -1,12 +1,14 @@
 ---
-title: View (Format) コントロールの CustomEntries の CustomEntry 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4fc960ab803580f684ce0f224b1db4d7d4af1720
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の Controls の CustomEntries の CustomEntry 要素 (書式)
+description: View の Controls の CustomEntries の CustomEntry 要素 (書式)
+ms.openlocfilehash: a525b198c8f595e04dc0804d36b5533b94f43c6b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785899"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646085"
 ---
 # <a name="customentry-element-for-customentries-for-controls-for-view-format"></a>View の Controls の CustomEntries の CustomEntry 要素 (書式)
 

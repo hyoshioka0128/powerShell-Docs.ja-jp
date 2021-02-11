@@ -2,15 +2,14 @@
 title: オブジェクト、プロパティ、およびメソッドの検出
 description: オブジェクト、プロパティ、およびメソッドを理解して使用するうえで開発者である必要はありません。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 5ab972755afeba0d94bf6c2debaf84ec84cd9244
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
-ms.translationtype: HT
+ms.openlocfilehash: f226221da7dd3b663f54cf23439dd7f945ed3a2a
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438073"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99600086"
 ---
 # <a name="chapter-3---discovering-objects-properties-and-methods"></a>第 3 章 - オブジェクト、プロパティ、およびメソッドの検出
 
@@ -698,7 +697,7 @@ UserPrincipalName      : miker@mikefrobbins.com
 - [about_Objects][]
 - [about_Properties][]
 - [about_Methods][]
-- [何かを開始または停止する PowerShell コマンドレットがない場合、Get コマンドレットのメソッドを確認することを忘れないでください][use-methods]
+- [PowerShell コマンドレットで何かを開始または停止することはできませんか。Get コマンドレットでメソッドを確認することを忘れないでください。][use-methods]
 
 <!-- link references -->
 [Windows 用 RSAT]: https://support.microsoft.com/help/2693643

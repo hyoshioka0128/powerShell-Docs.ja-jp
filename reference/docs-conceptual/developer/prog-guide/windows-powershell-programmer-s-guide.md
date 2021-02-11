@@ -1,14 +1,14 @@
 ---
-title: Windows PowerShell プログラマーズ&#39;s ガイド |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Windows PowerShell Programmer's Guide
-ms.openlocfilehash: 64feb66b8e42ab12b279025ebe6c86d7f91ecae5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell プログラマーズ&#39;s ガイド
+description: Windows PowerShell プログラマーズ&#39;s ガイド
+ms.openlocfilehash: 446be2241bb7b05b4bd7ffe8b7797214a7564944
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771568"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355291"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell プログラマーズ&#39;s ガイド
 
@@ -60,9 +60,10 @@ Windows PowerShell ランタイムは、コマンド処理を実装する実行�
 
 Windows PowerShell 言語には、コマンドを呼び出すスクリプト関数とメカニズムが用意されています。 詳細なスクリプト情報については、Windows powershell に付属している Windows PowerShell の言語リファレンスを参照してください。
 
-### <a name="extended-type-system-ets"></a>拡張型システム (型)
+### <a name="extended-type-system-ets"></a>拡張型システム (ETS)
 
-Windows PowerShell では、.NET や XML オブジェクトなど、さまざまなオブジェクトにアクセスできます。 結果として、すべてのオブジェクトの種類に共通の抽象化を提示するために、シェルは拡張型システム (この) を使用します。 ほとんどの機能はユーザーに対して透過的ですが、スクリプトまたは .NET 開発者は次の目的でこの機能を使用します。
+Windows PowerShell では、.NET や XML オブジェクトなど、さまざまなオブジェクトにアクセスできます。
+結果として、すべてのオブジェクトの種類に共通の抽象化を提示するために、シェルは拡張型システム (この) を使用します。 ほとんどの機能はユーザーに対して透過的ですが、スクリプトまたは .NET 開発者は次の目的でこの機能を使用します。
 
 - 特定のオブジェクトのメンバーのサブセットを表示する。 Windows PowerShell には、いくつかの特定のオブジェクトの種類の "調整された" ビューが用意されています。
 
@@ -74,7 +75,7 @@ Windows PowerShell では、.NET や XML オブジェクトなど、さまざま
 
   この方法を使用すると、Windows PowerShell 言語と互換性のある柔軟な新しい "型" を作成できます。 .NET 開発者は、Windows PowerShell 言語がスクリプトに適用されるのと同じセマンティクスを使用してオブジェクトを操作できます。たとえば、オブジェクトがに評価されるかどうかを判断し `true` ます。
 
-  Windows PowerShell でのオブジェクトの使用方法と方法の詳細については、「 [Windows Powershell オブジェクトの概念](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6)」を参照してください。
+  Windows PowerShell でのオブジェクトの使用方法と方法の詳細については、「 [Windows Powershell オブジェクトの概念](/powershell/scripting/learn/understanding-important-powershell-concepts)」を参照してください。
 
 ## <a name="programming-for-windows-powershell"></a>Windows PowerShell のプログラミング
 
@@ -86,7 +87,7 @@ Windows PowerShell 用に開発する場合の参考資料については、 [Wi
 
 ## <a name="getting-started-using-windows-powershell"></a>Windows PowerShell を使用したはじめに
 
-Windows PowerShell シェルの使用を開始する方法の詳細については、「windows powershell に付属している[Windows powershell でのはじめに](/powershell/scripting/getting-started/getting-started-with-windows-powershell)」を参照してください。 コマンドレットの使用に関する入門資料としても、クイックリファレンスの3折ドキュメントが提供されています。
+Windows PowerShell シェルの使用を開始する方法の詳細については、「windows powershell に付属している [Windows powershell でのはじめに](/powershell/scripting/getting-started/getting-started-with-windows-powershell) 」を参照してください。 コマンドレットの使用に関する入門資料としても、クイックリファレンスの3折ドキュメントが提供されています。
 
 ## <a name="contents-of-this-guide"></a>このガイドの内容
 

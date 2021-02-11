@@ -1,12 +1,14 @@
 ---
-title: AccessDbProviderSample06 コードサンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f650648320a0a31324af1bd1a112f01bdfc6c599
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: AccessDbProviderSample06 コード サンプル
+description: AccessDbProviderSample06 コード サンプル
+ms.openlocfilehash: 401aca7fab86cfbf3fa8d671eab17412dd162a88
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787242"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647498"
 ---
 # <a name="accessdbprovidersample06-code-sample"></a>AccessDbProviderSample06 コード サンプル
 

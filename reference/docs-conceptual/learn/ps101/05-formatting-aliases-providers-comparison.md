@@ -1,16 +1,15 @@
 ---
 title: 書式設定、エイリアス、プロバイダー、比較
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 description: この章では、出力書式設定、コマンド エイリアス、プロバイダー、比較演算の概念について説明します。
-ms.openlocfilehash: efe70d2d220f8451e781603b6000c3553dda910c
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.openlocfilehash: 5573ca58601af0c6af15736b772a9792d8d77a79
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501611"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99600778"
 ---
 # <a name="chapter-5---formatting-aliases-providers-comparison"></a>第 5 章 - 書式設定、エイリアス、プロバイダー、比較
 
@@ -159,7 +158,7 @@ groupingEntry                           Property   Microsoft.PowerShell.Commands
 
 PowerShell のエイリアスは、短いコマンド名です。 PowerShell には、一連の組み込みエイリアスが含まれていますが、独自のエイリアスを定義することもできます。
 
-`Get-Alias` コマンドレットは、エイリアスを見つけるときに使用します。 コマンドのエイリアスが既にわかっている場合は、 **Name** パラメーターを使用して、エイリアスが関連付けられているコマンドを確認します。
+`Get-Alias` コマンドレットは、エイリアスを見つけるときに使用します。 コマンドのエイリアスが既にわかっている場合は、**Name** パラメーターを使用して、エイリアスが関連付けられているコマンドを確認します。
 
 ```powershell
 Get-Alias -Name gcm
@@ -196,7 +195,7 @@ CommandType     Name                                               Version    So
 Alias           gm -> Get-Member
 ```
 
-コマンドのエイリアスを検索する場合は、 **Definition** パラメーターを使用する必要があります。
+コマンドのエイリアスを検索する場合は、**Definition** パラメーターを使用する必要があります。
 
 ```powershell
 Get-Alias -Definition Get-Command, Get-Member
@@ -394,7 +393,7 @@ False
 False
 ```
 
-この例で "より大きい" ではなく "以上" を使用すると、5 と 5 は等しいため、 **ブール値** true が返されます。
+この例で "より大きい" ではなく "以上" を使用すると、5 と 5 は等しいため、**ブール値** true が返されます。
 
 ```powershell
 5 -ge 5
@@ -473,7 +472,7 @@ $Numbers -notcontains 15
 True
 ```
 
-この例では、`$Numbers` 変数には確かに 15 が含まれていないため、 **ブール値** true が返されます。 しかし、数値 10 は含まれているため、テストを実行すると false になります。
+この例では、`$Numbers` 変数には確かに 15 が含まれていないため、**ブール値** true が返されます。 しかし、数値 10 は含まれているため、テストを実行すると false になります。
 
 ```powershell
 $Numbers -notcontains 10
@@ -525,7 +524,7 @@ False
 
 この例では、`$Numbers` 配列に 10 が含まれており、この条件では 10 が含まれていないことを確認するテストを行ったため、false が返されます。
 
-15は `$Numbers` 配列に "ない" ため、 **ブール値** true が返されます。
+15は `$Numbers` 配列に "ない" ため、**ブール値** true が返されます。
 
 ```powershell
 15 -notin $Numbers
@@ -555,7 +554,7 @@ Power
 SQL Sat - Baton Rouge
 ```
 
-Replace 演算子と同じように動作する **Replace ()** などのメソッドを使って、何かを置き換えることもできます。 ただし、`-Replace` 演算子では、既定では大文字と小文字が区別されませんが、 **Replace ()** メソッドでは大文字と小文字が区別されます。
+Replace 演算子と同じように動作する **Replace ()** などのメソッドを使って、何かを置き換えることもできます。 ただし、`-Replace` 演算子では、既定では大文字と小文字が区別されませんが、**Replace ()** メソッドでは大文字と小文字が区別されます。
 
 ```powershell
 'SQL Saturday - Baton Rouge'.Replace('saturday','Sat')
@@ -565,7 +564,7 @@ Replace 演算子と同じように動作する **Replace ()** などのメソ�
 SQL Saturday - Baton Rouge
 ```
 
-この例では "Saturday" という単語が置き換えられていないことに注意してください。 これは、大文字と小文字の使い方が元の単語と異なるためです。 元の単語と同じように "Saturday" と指定すれば、 **Replace ()** メソッドによって、意図したとおりに置き換えられます。
+この例では "Saturday" という単語が置き換えられていないことに注意してください。 これは、大文字と小文字の使い方が元の単語と異なるためです。 元の単語と同じように "Saturday" と指定すれば、**Replace ()** メソッドによって、意図したとおりに置き換えられます。
 
 ```powershell
 'SQL Saturday - Baton Rouge'.Replace('Saturday','Sat')
@@ -575,7 +574,7 @@ SQL Saturday - Baton Rouge
 SQL Sat - Baton Rouge
 ```
 
-メソッドを使用してデータを変換するときは、" _トルコ テスト_ " の失敗のように、予期しない問題が発生する可能性があるため注意が必要です。 例については、「[Pester を使用した他のカルチャでの PowerShell コードのテスト][]」というタイトルのブログ記事を参照してください。 このような問題が発生しないように、できるだけメソッドではなく演算子を使用することをお勧めします。
+メソッドを使用してデータを変換するときは、"_トルコ テスト_" の失敗のように、予期しない問題が発生する可能性があるため注意が必要です。 例については、「[Pester を使用した他のカルチャでの PowerShell コードのテスト][]」というタイトルのブログ記事を参照してください。 このような問題が発生しないように、できるだけメソッドではなく演算子を使用することをお勧めします。
 
 比較演算子は前の例で紹介したように使用できますが、通常は、`Where-Object` コマンドレットを使用して、何らかのフィルター処理を行っています。
 

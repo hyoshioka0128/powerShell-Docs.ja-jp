@@ -7,12 +7,12 @@ ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: 2fda80c934db3e868f0e49e131e6721c7b899f7c
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 5d5841720c6187863902a929632e15d1687685e1
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "93218008"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389404"
 ---
 # Export-PSSession
 
@@ -22,7 +22,7 @@ ms.locfileid: "93218008"
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 Export-PSSession [-OutputModule] <String> [-Force] [-Encoding <Encoding>]
@@ -213,7 +213,7 @@ Accept wildcard characters: True
 - ExternalScript。 Path 環境変数 () に示されているパス内のすべての ps1 ファイル。 `$env:path`
 - フィルターと関数。 すべての PowerShell 関数。
 - スクリプティング。 現在のセッションのスクリプト ブロック。
-- 稟議. PowerShell ワークフロー。 詳細については、「 [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1)」を参照してください。
+- 稟議. PowerShell ワークフロー。 詳細については、「 [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows)」を参照してください。
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -300,16 +300,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-**Modul特定** のオブジェクトの形式で指定された名前を持つモジュールを指定します。
-「 [Modulの認識コンストラクター (Hashtable)](https://msdn.microsoft.com/library/jj136290)」の「解説」を参照してください。
+**Modul特定** のオブジェクトの形式で指定された名前を持つモジュールを指定します。 「 [Modulの認識コンストラクター (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)」の「解説」を参照してください。
 
 たとえば、 **FullyQualifiedModule** パラメーターは、次のいずれかの形式で指定されたモジュール名を受け入れます。
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**ModuleName** と **ModuleVersion** は必須ですが、 **Guid** は省略可能です。 **モジュール** パラメーターと同じコマンドで **FullyQualifiedModule** パラメーターを指定することはできません。2つのパラメーターは相互に排他的です。
+**ModuleName** と **ModuleVersion** は必須ですが、 **Guid** は省略可能です。 **モジュール** パラメーターと同じコマンドで **FullyQualifiedModule** パラメーターを指定することはできません。 2つのパラメーターは相互に排他的です。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

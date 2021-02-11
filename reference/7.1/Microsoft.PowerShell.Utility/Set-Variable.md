@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Variable
-ms.openlocfilehash: c175fce3df41a3860a54ccb13a280955dce4a55c
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: c90a2f49c95333e45893e186d6e1f1da4b3fe41a
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239893"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771826"
 ---
 # Set-Variable
 
@@ -53,13 +53,13 @@ desc                           A description
 この例では、システム上のすべてのプロセスを含む読み取り専用のグローバル変数を作成し、変数のすべてのプロパティを表示します。
 
 ```powershell
-Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru |
+Set-Variable -Name "processes" -Value (Get-Process) -Option Constant -Scope global -Description "All processes" -PassThru |
     Format-List -Property *
 ```
 
 このコマンドは、コマンドレットを使用して `Set-Variable` 変数を作成します。 **PassThru** パラメーターを使用して新しい変数を表すオブジェクトを作成し、パイプライン演算子 () を使用して `|` オブジェクトを `Format-List` コマンドレットに渡します。 この例では、の **Property** パラメーターを `Format-List` all () と共に使用して `*` 、新しく作成された変数のすべてのプロパティを表示します。
 
-値は、 `(Get-Process)` 変数に格納される前に実行されるように、かっこで囲まれています。 それ以外の場合、変数には " **Get Process** " という単語が含まれます。
+値は、 `(Get-Process)` 変数に格納される前に実行されるように、かっこで囲まれています。 それ以外の場合、変数には "**Get Process**" という単語が含まれます。
 
 ### 例 3: パブリック変数とプライベート変数を理解する
 
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 
 ### -除外
 
-このコマンドレットによって操作から除外される項目の配列を指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。
+このコマンドレットによって操作から除外される項目の配列を指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。
 ワイルドカードを使用できます。
 
 ```yaml
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 - グローバル
 - ローカル
 - スクリプト
-- Private
+- プライベート
 - 現在のスコープに対して相対的な数値 (0 ~ スコープの数。0は現在のスコープ、1はその親)。
 
 既定値は Local です。

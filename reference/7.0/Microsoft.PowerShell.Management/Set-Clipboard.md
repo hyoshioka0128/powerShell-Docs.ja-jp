@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/09/2019
-online version: https://go.microsoft.com/fwlink/?linkid=526220
+ms.date: 12/03/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
-ms.openlocfilehash: 271d9191a0968b03b1e7ec3d283eacc36e633516
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: efb24b14122ad37043636d999afaa4199eb3097b
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239803"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564375"
 ---
 # Set-Clipboard
 
@@ -38,6 +37,14 @@ Set-Clipboard [-Value] <string[]> [-Append] [-WhatIf] [-Confirm] [<CommonParamet
 
 ```powershell
 Set-Clipboard -Value "This is a test string"
+```
+
+### 例 2: ファイルの内容をクリップボードにコピーする
+
+この例では、ファイルの内容をクリップボードにパイプします。 この例では、GitHub などの別のアプリケーションに貼り付けることができるように、ssh の公開キーを取得しています。
+
+```powershell
+Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
 ```
 
 ## PARAMETERS

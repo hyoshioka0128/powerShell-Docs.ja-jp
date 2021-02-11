@@ -1,12 +1,14 @@
 ---
-title: パラメーターの別名 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e320eeb4d2ab91acf2116fdc817a50e93c82aead
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: パラメーターのエイリアス
+description: パラメーターのエイリアス
+ms.openlocfilehash: 0895e2c4df3a149ae75a9741fb65134a8e1122c1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781989"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648515"
 ---
 # <a name="parameter-aliases"></a>パラメーターのエイリアス
 
@@ -24,7 +26,7 @@ ms.locfileid: "87781989"
 
 - Alias 属性を ValueFromPipelineByName 属性と共に使用することで、コマンドレットがさまざまなオブジェクトの種類にバインドできるようにするパラメーターを定義できます。 たとえば、異なる型の2つのオブジェクトがあり、最初のオブジェクトが writer プロパティを持ち、2番目のオブジェクトにエディタープロパティがあるとします。 コマンドレットにライターとエディターのエイリアスを持つパラメーターがあり、コマンドレットがプロパティ名に基づくパイプライン入力を受け入れた場合、2つのパラメーターエイリアスを使用して、コマンドレットで両方のオブジェクトにバインドすることができます。
 
-特定のパラメーターと共に使用できるエイリアスの詳細については、「[共通パラメーター名](./common-parameter-names.md)」を参照してください。
+特定のパラメーターと共に使用できるエイリアスの詳細については、「 [共通パラメーター名](./common-parameter-names.md)」を参照してください。
 
 ## <a name="defining-parameter-aliases"></a>パラメーターの別名の定義
 
@@ -47,4 +49,4 @@ private string userName;
 
 [コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

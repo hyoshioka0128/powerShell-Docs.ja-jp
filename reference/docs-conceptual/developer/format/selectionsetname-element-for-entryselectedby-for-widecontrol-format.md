@@ -1,12 +1,14 @@
 ---
-title: WideControl (Format) の EntrySelectedBy の SelectionSetName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 546225b0619ebec83d04a7e27bbc298ffef0a14d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl の EntrySelectedBy の SelectionSetName 要素 (書式)
+description: WideControl の EntrySelectedBy の SelectionSetName 要素 (書式)
+ms.openlocfilehash: bf6a44bb733421f36a9140d0ec10e61aedfbda6a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785253"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651698"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-widecontrol-format"></a>WideControl の EntrySelectedBy の SelectionSetName 要素 (書式)
 
@@ -47,9 +49,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (F
 
 各定義には、1つの型名、選択セット、または選択条件を指定する必要があります。
 
-選択セットは、通常、複数のビューで使用されるオブジェクトのグループを定義する場合に使用します。 たとえば、同じオブジェクトのセットに対してテーブルビューとリストビューを作成することができます。 選択セットの定義の詳細については、「[ビューのオブジェクトセットの定義](./defining-selection-sets.md)」を参照してください。
+選択セットは、通常、複数のビューで使用されるオブジェクトのグループを定義する場合に使用します。 たとえば、同じオブジェクトのセットに対してテーブルビューとリストビューを作成することができます。 選択セットの定義の詳細については、「 [ビューのオブジェクトセットの定義](./defining-selection-sets.md)」を参照してください。
 
-ワイドビューのその他のコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
+ワイドビューのその他のコンポーネントの詳細については、「 [ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

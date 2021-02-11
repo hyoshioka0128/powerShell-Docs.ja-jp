@@ -7,12 +7,12 @@ ms.date: 07/16/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
-ms.openlocfilehash: 719eaa019dd721b156b26d2e38e8790e6b9af584
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: ee94ba7808cb364306826325cfbc3df2cf9834a5
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93215168"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892588"
 ---
 # Update-Module
 
@@ -21,7 +21,7 @@ ms.locfileid: "93215168"
 
 ## SYNTAX
 
-### All
+### すべて
 
 ```
 Update-Module [[-Name] <String[]>] [-RequiredVersion <String>] [-MaximumVersion <String>]
@@ -342,7 +342,14 @@ Accept wildcard characters: False
 
 ## 注
 
-PowerShell 5.1 以降では、昇格されたセッションの既定のスコープは **AllUsers** 、管理者以外のセッションでは **CurrentUser** です。 **AllUsers** のモジュール更新プログラムには、 `$env:ProgramFiles\PowerShell\Modules` 昇格されたアクセス許可が必要です。 **CurrentUser** のモジュール更新プログラムには、 `$home\Documents\PowerShell\Modules` 昇格されたアクセス許可は必要ありません。
+PowerShell 5.1 以降では、昇格されたセッションの既定のスコープは **AllUsers**、管理者以外のセッションでは **CurrentUser** です。 **AllUsers** のモジュール更新プログラムには、 `$env:ProgramFiles\PowerShell\Modules` 昇格されたアクセス許可が必要です。 **CurrentUser** のモジュール更新プログラムには、 `$home\Documents\PowerShell\Modules` 昇格されたアクセス許可は必要ありません。
+
+> [!IMPORTANT]
+> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
 
 `Update-Module` powershell 3.0 以降の PowerShell で、windows 7 または Windows 2008 R2 以降のリリースの Windows で実行されます。
 
@@ -362,4 +369,4 @@ PowerShell 5.1 以降では、昇格されたセッションの既定のスコ�
 
 [Publish-Module](Publish-Module.md)
 
-[Uninstall-Module](Uninstall-Module.md)
+[アンインストール-モジュール](Uninstall-Module.md)

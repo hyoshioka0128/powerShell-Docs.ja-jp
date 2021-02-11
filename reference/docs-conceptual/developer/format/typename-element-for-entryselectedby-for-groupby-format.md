@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の EntrySelectedBy の TypeName 要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e62762cf142bd2d20b21ad8f4249285bd3679280
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の EntrySelectedBy の TypeName 要素 (書式)
+description: GroupBy の EntrySelectedBy の TypeName 要素 (書式)
+ms.openlocfilehash: 07cc92e9c501aa0eb2d219e416851be0fcd80f47
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780269"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645703"
 ---
 # <a name="typename-element-for-entryselectedby-for-groupby-format"></a>GroupBy の EntrySelectedBy の TypeName 要素 (書式)
 
@@ -46,7 +48,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 各コントロール定義には、少なくとも1つの型名、選択セット、または選択条件が定義されている必要があります。
 
-カスタムコントロールビューのコンポーネントの詳細については、「[カスタムコントロールの作成](./creating-custom-controls.md)」を参照してください。
+カスタムコントロールビューのコンポーネントの詳細については、「 [カスタムコントロールの作成](./creating-custom-controls.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

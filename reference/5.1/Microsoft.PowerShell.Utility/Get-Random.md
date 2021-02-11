@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/08/2020
+ms.date: 02/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Random
-ms.openlocfilehash: 6aa7d6db9e8c2fb8a3001c8ddb9593a7ceafe2ab
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 97576832ea851f01b463f63948fbd80028c9a6fb
+ms.sourcegitcommit: fa1a84c81e15f1ffac962110b0b4c850c1b173a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93213955"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99495844"
 ---
 # Get-Random
 
@@ -37,15 +36,22 @@ Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Count <Int32>] [<Commo
 
 `Get-Random`コマンドレットでは、ランダムに選択された番号を取得します。 オブジェクトのコレクションをに送信すると `Get-Random` 、コレクションからランダムに選択された1つ以上のオブジェクトを取得します。
 
-パラメーターまたは入力を指定しない場合、コマンドは、 `Get-Random` 0 (ゼロ) ~ int32.maxvalue (,) **Int32.MaxValue** の間でランダムに選択された32ビット符号なし整数を返し `0x7FFFFFFF` `2,147,483,647` ます。
+パラメーターまたは入力を指定しない場合、コマンドは、 `Get-Random` 0 (ゼロ) ~ int32.maxvalue (,) の間でランダムに選択された32ビット符号なし整数を返し `0x7FFFFFFF` `2,147,483,647` ます。
 
-のパラメーターを使用して、 `Get-Random` シード番号、最小値と最大値、および送信されたコレクションから返されるオブジェクトの数を指定できます。
+既定では、は `Get-Random` [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) クラスを使用して、暗号的に安全なランダム性を生成します。
+
+のパラメーターを使用して、 `Get-Random` 最小値と最大値、コレクションから返されるオブジェクトの数、またはシード番号を指定できます。
+
+> [!CAUTION]
+> シードを意図的に設定すると、ランダムではない反復可能な動作になります。 コマンドを含むスクリプトをデバッグまたは分析する場合など、動作を再現するときにのみ使用してください `Get-Random` 。
+>
+> このシード値は、現在のコマンドと、 `Get-Random` **setseed** を再度使用するかセッションを閉じるまで、現在のセッションの後続のすべてのコマンドに使用されます。 シードを既定値にリセットすることはできません。
 
 ## 例
 
 ### 例 1: ランダムな整数を取得する
 
-このコマンド **は、0** (ゼロ) ~ int32.maxvalue のランダムな整数を取得します。
+このコマンド **は、0**(ゼロ) ~ int32.maxvalue のランダムな整数を取得します。
 
 ```powershell
 Get-Random
@@ -148,7 +154,7 @@ yellow
 
 ### 例 9: SetSeed パラメーターを使用する
 
-この例は、 **SetSeed** パラメーターを使用した場合の効果を示しています。
+この例は、**SetSeed** パラメーターを使用した場合の効果を示しています。
 
 **Setseed** は、ランダムではない動作を生成するため、通常は、スクリプトのデバッグや分析などの結果を再現するためだけに使用されます。
 
@@ -206,7 +212,7 @@ $Sample = $Files | Get-Random -Count 50
 
 ### 例 11: ロールフェアダイス
 
-この例では、公正な1200回をロールし、結果をカウントします。 最初のコマンドは、 `For-EachObject` `Get-Random` パイプされた数 (1-6) からの呼び出しを繰り返します。 結果は、の値によってグループ化され、 `Group-Object` でテーブルとして書式設定され `Select-Object` ます。
+この例では、公正な1200回をロールし、結果をカウントします。 最初のコマンドは、 `ForEach-Object` `Get-Random` パイプされた数 (1-6) からの呼び出しを繰り返します。 結果は、の値によってグループ化され、 `Group-Object` でテーブルとして書式設定され `Select-Object` ます。
 
 ```powershell
 1..1200 | ForEach-Object {
@@ -265,7 +271,7 @@ Accept wildcard characters: False
 
 乱数の最大値を指定します。 `Get-Random` は、最大値 (等しくない) より小さい値を返します。 整数、倍精度浮動小数点数、または数値文字列 ("100") などの整数または倍精度に変換できるオブジェクトを入力します。
 
-**Maximum** の値は、 **Minimum** の値より大きくする必要があります (等しくない)。 **最大** 値または **最小** 値が浮動小数点数の場合、は `Get-Random` ランダムに選択された浮動小数点数を返します。
+**Maximum** の値は、**Minimum** の値より大きくする必要があります (等しくない)。 **最大** 値または **最小** 値が浮動小数点数の場合、は `Get-Random` ランダムに選択された浮動小数点数を返します。
 
 64ビットのコンピューターでは、[ **最小** ] の値が32ビットの整数の場合、[ **最大** 値] の既定値は int32.maxvalue. **MaxValue** です。
 
@@ -287,7 +293,7 @@ Accept wildcard characters: False
 
 乱数の最小値を指定します。 整数、倍精度浮動小数点数、または数値文字列 ("100") などの整数または倍精度に変換できるオブジェクトを入力します。 既定値は 0 (ゼロ) です。
 
-**Minimum** の値は、 **Maximum** の値より小さくする必要があります (等しくない)。 **最大** 値または **最小** 値が浮動小数点数の場合、は `Get-Random` ランダムに選択された浮動小数点数を返します。
+**Minimum** の値は、**Maximum** の値より小さくする必要があります (等しくない)。 **最大** 値または **最小** 値が浮動小数点数の場合、は `Get-Random` ランダムに選択された浮動小数点数を返します。
 
 ```yaml
 Type: System.Object
@@ -303,9 +309,12 @@ Accept wildcard characters: False
 
 ### -SetSeed
 
-乱数ジェネレーターのシード値を指定します。 このシード値は、現在のコマンドと、 `Get-Random` **setseed** を再度使用するかセッションを閉じるまで、現在のセッションの後続のすべてのコマンドに使用されます。 シードを既定値にリセットすることはできません。
+乱数ジェネレーターのシード値を指定します。 **Setseed** を使用する場合、コマンドレットは、 [Random](/dotnet/api/system.random)メソッドを使用して、暗号的に安全ではない擬似乱数を生成します。
 
-**Setseed** パラメーターは必要ありません。 既定では、は `Get-Random` [RandomNumberGenerator ()](/dotnet/api/system.security.cryptography.randomnumbergenerator) メソッドを使用してシード値を生成します。 **Setseed** は、ランダムではない動作をするため、通常は、コマンドを含むスクリプトをデバッグまたは分析する場合など、動作を再現しようとした場合にのみ使用され `Get-Random` ます。
+> [!CAUTION]
+> シードを設定すると、ランダムではない動作になります。 コマンドを含むスクリプトをデバッグまたは分析する場合など、動作を再現するときにのみ使用してください `Get-Random` 。
+>
+> このシード値は、現在のコマンドと、 `Get-Random` **setseed** を再度使用するかセッションを閉じるまで、現在のセッションの後続のすべてのコマンドに使用されます。 シードを既定値にリセットすることはできません。
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -337,7 +346,7 @@ Accept wildcard characters: False
 
 ## 注
 
-`Get-Random` セッションの開始時に、システム時刻のクロックに基づいて、各セッションの既定のシードを設定します。
+既定では、は `Get-Random` [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) クラスを使用して、暗号的に安全なランダム性を生成します。
 
 `Get-Random` は、必ずしも入力値と同じデータ型を返すとは限りません。 次の表は、各数値入力型の出力の種類を示しています。
 
@@ -357,3 +366,7 @@ Accept wildcard characters: False
 Windows PowerShell 3.0 以降では、は `Get-Random` 64 ビット整数をサポートしています。 Windows PowerShell 2.0 では、すべての値が **system.string にキャストされます。**
 
 ## 関連リンク
+
+[RandomNumberGenerator () です。](/dotnet/api/system.security.cryptography.randomnumbergenerator)
+
+[システム。ランダム](/dotnet/api/system.random)

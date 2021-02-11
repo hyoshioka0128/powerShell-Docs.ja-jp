@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーの概要
-ms.openlocfilehash: bae0af144e6f520142e7eaea3dd0e1039976dae4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PowerShell ギャラリーと PowerShellGet コマンドレットの使用を開始する方法について説明します
+ms.openlocfilehash: a5045e4ecee2eb8bc9aa373a6b8ec3a940b4de33
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81219695"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913282"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>PowerShell ギャラリーの概要
 
@@ -19,7 +18,7 @@ PowerShell ギャラリーは、ダウンロードして利用できるスクリ
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>PowerShell ギャラリーでのパッケージの検出
 
-PowerShell ギャラリーの[ホーム ページ](https://www.powershellgallery.com)の **[検索]** コントロールを使用して、または [[パッケージ] ページ](https://www.powershellgallery.com/packages)からモジュールとスクリプトを参照することによって、PowerShell ギャラリー内のパッケージを検索できます。 また、[Find-Module][]、[Find-DscResource]、[Find-Script][] コマンドレットを、パッケージの種類に応じて `-Repository PSGallery` を指定して実行すると、PowerShell ギャラリーからパッケージを検索できます。
+PowerShell ギャラリーの [ホーム ページ](https://www.powershellgallery.com)の **[検索]** コントロールを使用して、または [[パッケージ] ページ](https://www.powershellgallery.com/packages)からモジュールとスクリプトを参照することによって、PowerShell ギャラリー内のパッケージを検索できます。 また、[Find-Module][]、[Find-DscResource]、[Find-Script][] コマンドレットを、パッケージの種類に応じて `-Repository PSGallery` を指定して実行すると、PowerShell ギャラリーからパッケージを検索できます。
 
 次のパラメーターを使用して、ギャラリーからの結果をフィルター処理できます。
 
@@ -31,7 +30,7 @@ PowerShell ギャラリーの[ホーム ページ](https://www.powershellgallery
 - Includes
 - DscResource
 - RoleCapability
-- command
+- コマンド
 - Assert
 
 ギャラリー内の特定の DSC リソースのみを検出したい場合は、[Find-DscResource][] コマンドレットを実行します。 Find-DscResource では、ギャラリーに含まれている DSC リソースのデータが返されます。 DSC リソースは常にモジュールの一部として配布されるため、この DSC リソースをインストールする場合も [Install-Module][] を実行する必要があります。
@@ -60,17 +59,17 @@ PowerShell ギャラリーからパッケージをダウンロードするとき
 
 使用のためにギャラリーからパッケージをインストールするには、パッケージの種類に応じて [Install-Module][] または [Install-Script][] コマンドレットを実行します。
 
-[Install-Module][] は、既定では `$env:ProgramFiles\WindowsPowerShell\Modules` にモジュールをインストールします。
+[Install-module][] は、既定では `$env:ProgramFiles\WindowsPowerShell\Modules` にモジュールをインストールします。
 これには管理者アカウントが必要です。 `-Scope CurrentUser` パラメーターを追加する場合は、モジュールは `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` にインストールされます。
 
-[Install-Script][] は、既定では `$env:ProgramFiles\WindowsPowerShell\Scripts` にスクリプトをインストールします。
+[Install-script][] は、既定では、 `$env:ProgramFiles\WindowsPowerShell\Scripts` にスクリプトをインストールします。
 これには管理者アカウントが必要です。 `-Scope CurrentUser` パラメーターを追加する場合は、スクリプトは `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` にインストールされます。
 
 既定では、[Install-Module][] および [Install-Script][] は最新バージョンのパッケージをインストールします。 前のバージョンのパッケージをインストールするには、`-RequiredVersion` パラメーターを追加します。
 
 ### <a name="deploy"></a>配置
 
-パッケージを PowerShell ギャラリーから Azure Automation にデプロイするには、 **[Azure Automation]** をクリックした後、パッケージの詳細ページで **[Deploy to Azure Automation]\(Azure Automation にデプロイする\)** をクリックします。 Azure 管理ポータルにリダイレクトされるため、そこで Azure アカウント資格情報を使用してサインインします。 依存関係のあるパッケージをデプロイすると、すべての依存関係が Azure Automation にデプロイされることに注意してください。 [Azure Automation にデプロイする] ボタンは、**AzureAutomationNotSupported** タグをパッケージのメタデータに追加すると無効にできます。
+パッケージを PowerShell ギャラリーから Azure Automation にデプロイするには、**[Azure Automation]** をクリックした後、パッケージの詳細ページで **[Deploy to Azure Automation]\(Azure Automation にデプロイする\)** をクリックします。 Azure 管理ポータルにリダイレクトされるため、そこで Azure アカウント資格情報を使用してサインインします。 依存関係のあるパッケージをデプロイすると、すべての依存関係が Azure Automation にデプロイされることに注意してください。 [Azure Automation にデプロイする] ボタンは、**AzureAutomationNotSupported** タグをパッケージのメタデータに追加すると無効にできます。
 
 Azure Automation の詳細については、[Azure Automation](/azure/automation) のドキュメントをご覧ください。
 
@@ -91,10 +90,14 @@ PowerShell ギャラリーからどのモジュールをインストールした
 PowerShell ギャラリーでは、次のホスト名が使用されます。
 
 - `psg-prod-eastus.azureedge.net` - CDN ホスト名
+- `az818661.vo.msecnd.net` - CDN ホスト名
 - `devopsgallerystorage.blob.core.windows.net` - ストレージ アカウントのホスト名
 - `*.powershellgallery.com` - Web サイト
+- `go.microsoft.com` - リダイレクト サービス
 
 これらのホスト名は、ご利用のネットワークからのアクセスを制御する許可リストに追加する必要があります。
+
+[!INCLUDE [TLS 1.2 Requirement](../../includes/tls-gallery.md)]
 
 [Find-DscResource]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module

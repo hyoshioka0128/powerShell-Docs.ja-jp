@@ -7,12 +7,12 @@ ms.date: 02/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
-ms.openlocfilehash: 26a8ef5bfb9fd520fabc836ca1e5da40558e0e8a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: cff52e9a321428cde31977f6d91e2d1047faa2ee
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210304"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346855"
 ---
 # Register-EngineEvent
 
@@ -256,6 +256,8 @@ Accept wildcard characters: False
 **Action** パラメーターを使用すると、は `Register-EngineEvent` **PSEventJob** オブジェクトを返します。 それ以外の場合、出力は生成されません。
 
 ## 注
+
+Linux または macOS プラットフォームで使用できるイベントソースがありません。
 
 イベント、イベント サブスクリプション、およびイベント キューは、現在のセッションにのみ存在します。 現在のセッションを閉じた場合、イベント キューが破棄され、イベント サブスクリプションが取り消されます。
 

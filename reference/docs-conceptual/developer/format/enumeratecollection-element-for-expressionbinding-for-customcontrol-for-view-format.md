@@ -1,12 +1,14 @@
 ---
-title: CustomControl for View (Format) の式のバインドの列挙 Atecollection 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 91505ca2661c6bfd0dcb2bbdb26a645d237a7fb9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の CustomControl の ExpressionBinding の EnumerateCollection 要素 (書式)
+description: View の CustomControl の ExpressionBinding の EnumerateCollection 要素 (書式)
+ms.openlocfilehash: e1df19460afbe813d6a53b88664629662d4abb74
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773931"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667982"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-customcontrol-for-view-format"></a>View の CustomControl の ExpressionBinding の EnumerateCollection 要素 (書式)
 

@@ -1,12 +1,14 @@
 ---
-title: ビューのコントロールの式のバインドの ItemSelectionCondition 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e8e3ea64fd947fbb2b98c410ac08533f386c9505
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の Controls の ExpressionBinding の ItemSelectionCondition 要素 (書式)
+description: View の Controls の ExpressionBinding の ItemSelectionCondition 要素 (書式)
+ms.openlocfilehash: adbe747bdb4f6c1d180e5b630247de0fd3d72b85
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781207"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648064"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format"></a>View の Controls の ExpressionBinding の ItemSelectionCondition 要素 (書式)
 

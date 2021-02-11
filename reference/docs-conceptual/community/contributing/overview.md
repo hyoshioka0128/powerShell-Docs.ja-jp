@@ -1,14 +1,14 @@
 ---
 title: PowerShell ドキュメントへの投稿
-description: この記事では、PowerShell ドキュメントの共同作成者として作業を開始する方法の概要を説明します。
-ms.date: 03/05/2020
+description: この記事では、PowerShell ドキュメントに投稿するために必要な手順について説明します。
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3ea08c3acf4a31cbb7262aac57bf28b75388275d
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
-ms.translationtype: HT
+ms.openlocfilehash: 9fbdafa023eac80340437f30d2d6925a1a4ed3cb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158158"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "99599509"
 ---
 # <a name="contributing-to-powershell-documentation"></a>PowerShell ドキュメントへの投稿
 
@@ -24,11 +24,12 @@ PowerShell のサポートにご協力いただき、ありがとうございま
 
 - [イシューの報告][file-an-issue]により、Microsoft は弊社のドキュメントの問題や矛盾点を特定することができます。 場合によっては、イシューは解決が難しく、調査がさらに必要になることがあります。 イシューのプロセスにより、私たちは問題について会話し、十分な解決策を策定することができます。
 
-- 新しいコンテンツや変更を既存の記事に送信することは、より複雑なプロセスです。 次の情報では、ドキュメントにコンテンツを送信するためのツール、プロセス、基準について説明します。
+- コンテンツを追加または変更するための[プル要求の送信](pull-requests.md)は、より複雑なプロセスです。
+  次の情報では、ドキュメントにコンテンツを送信するためのツール、プロセス、基準について説明します。
 
 ## <a name="prepare-to-make-a-contribution"></a>投稿するための準備
 
-ドキュメントの共同作成には、GitHub アカウントが必要です。 次のチェックリストを使用して、ツールを入手し、投稿の作成について Microsoft が採用しているプロセスを理解できます。
+ドキュメントの共同作成には、GitHub アカウントが必要です。 次のチェックリストを使用して、投稿を行うために必要なツールをインストールして構成します。
 
 1. [GitHub にサインアップします](/contribute/get-started-setup-github)
 1. [Git ツールと Markdown ツールをインストールします](/contribute/get-started-setup-tools)
@@ -66,7 +67,6 @@ docs.microsoft.com に公開されるすべてのリポジトリには、「[Mic
 - [ドキュメントの作成を開始する](get-started-writing.md)
 - [プル要求の送信](pull-requests.md)
 - [PowerShell ドキュメントのスタイル ガイド](powershell-style-guide.md)
-- [コマンドレット リファレンスの編集](editing-cmdlet-ref.md)
 
 その他のリソース
 

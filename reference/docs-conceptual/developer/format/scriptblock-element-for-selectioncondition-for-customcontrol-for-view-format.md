@@ -1,12 +1,14 @@
 ---
-title: CustomControl for View (Format) の SelectionCondition の ScriptBlock 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d3506188d32ce85ad6345dc0d0866dd789a1f293
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の CustomControl の SelectionCondition の ScriptBlock 要素 (書式)
+description: View の CustomControl の SelectionCondition の ScriptBlock 要素 (書式)
+ms.openlocfilehash: 78b977548243b6f3a658f15a0249d8cad12e2f1b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785406"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664922"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format"></a>View の CustomControl の SelectionCondition の ScriptBlock 要素 (書式)
 
@@ -44,7 +46,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (f
 
 ## <a name="remarks"></a>解説
 
-選択条件には、評価するスクリプトまたはプロパティ名を少なくとも1つ指定する必要がありますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「[データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件には、評価するスクリプトまたはプロパティ名を少なくとも1つ指定する必要がありますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「 [データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

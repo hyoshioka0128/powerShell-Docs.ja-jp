@@ -1,12 +1,14 @@
 ---
-title: 入力フィルターパラメーター |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ccaf6c4859d2a4f14866ec1252b999e90e1a830f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 入力フィルターのパラメーター
+description: 入力フィルターのパラメーター
+ms.openlocfilehash: 419ffea2afb4aa534a3e19ecdfce6d6af1da46a6
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784046"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648534"
 ---
 # <a name="input-filter-parameters"></a>入力フィルターのパラメーター
 
@@ -16,7 +18,7 @@ ms.locfileid: "87784046"
 
 ## <a name="include-and-exclude-parameters"></a>Include パラメーターと Exclude パラメーター
 
-`Include`パラメーターと `Exclude` パラメーターは、コマンドレットに渡された入力オブジェクトのセットに含まれる、または除外されるオブジェクトを識別します。 フィルターを標準のワイルドカード言語で表現できる場合は、これらのパラメーターを使用します。 (ワイルドカード文字の詳細については、「[コマンドレットパラメーターでのワイルドカードのサポート](./supporting-wildcard-characters-in-cmdlet-parameters.md)」を参照してください)。パラメーターには、 `Include` 包含フィルターに一致する名前を持つすべてのオブジェクトが含まれます。 パラメーターには、 `Exclude` フィルターに一致する名前を持つすべてのオブジェクトが除外されます。
+`Include`パラメーターと `Exclude` パラメーターは、コマンドレットに渡された入力オブジェクトのセットに含まれる、または除外されるオブジェクトを識別します。 フィルターを標準のワイルドカード言語で表現できる場合は、これらのパラメーターを使用します。 (ワイルドカード文字の詳細については、「 [コマンドレットパラメーターでのワイルドカードのサポート](./supporting-wildcard-characters-in-cmdlet-parameters.md)」を参照してください)。パラメーターには、 `Include` 包含フィルターに一致する名前を持つすべてのオブジェクトが含まれます。 パラメーターには、 `Exclude` フィルターに一致する名前を持つすべてのオブジェクトが除外されます。
 
 ## <a name="filter-parameter"></a>フィルターパラメーター
 

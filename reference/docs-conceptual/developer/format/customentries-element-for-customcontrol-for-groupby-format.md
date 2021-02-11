@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の CustomControl の CustomEntries 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2221d1bb94159697ff10466e4606d6d54e117e30
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の CustomControl の CustomEntries 要素 (書式)
+description: GroupBy の CustomControl の CustomEntries 要素 (書式)
+ms.openlocfilehash: cde59d38b83930cb64a3a0040891783e4ab96723
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785950"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666792"
 ---
 # <a name="customentries-element-for-customcontrol-for-groupby-format"></a>GroupBy の CustomControl の CustomEntries 要素 (書式)
 

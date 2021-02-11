@@ -1,16 +1,14 @@
 ---
-title: ValidateSet 属性宣言 |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- attributes, ValidateSet
-- ValidateSet attribute, described
-- ValidateSet attribute
-ms.openlocfilehash: 0b6833efb0ce8e9474e9d91049fd201fc845cbea
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ValidateSet 属性の宣言
+description: ValidateSet 属性の宣言
+ms.openlocfilehash: 7894d00561366ada492911e8147acbd8d3454a55
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787769"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660473"
 ---
 # <a name="validateset-attribute-declaration"></a>ValidateSet 属性の宣言
 
@@ -27,14 +25,14 @@ ValidateSetAttribute 属性は、コマンドレットパラメーターの引�
 
 #### <a name="parameters"></a>パラメーター
 
-`ValidValues`([System.string](/dotnet/api/System.String)) が必要です。 有効なパラメーター要素の値を指定します。 次のサンプルは、1つまたは複数の要素を指定する方法を示しています。
+`ValidValues` ([System.string](/dotnet/api/System.String)) が必要です。 有効なパラメーター要素の値を指定します。 次のサンプルは、1つまたは複数の要素を指定する方法を示しています。
 
 ```csharp
 [ValidateSetAttribute("Steve")]
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-`IgnoreCase`([System.string) 省略](/dotnet/api/System.Boolean)可能な名前付きパラメーター。 の既定値は、 `true` 大文字小文字を区別しないことを示します。 値をにすると `false` 、コマンドレットでは大文字と小文字が区別されます。
+`IgnoreCase` ([System.string) 省略](/dotnet/api/System.Boolean)可能な名前付きパラメーター。 の既定値は、 `true` 大文字小文字を区別しないことを示します。 値をにすると `false` 、コマンドレットでは大文字と小文字が区別されます。
 
 ## <a name="remarks"></a>解説
 
@@ -42,10 +40,10 @@ ValidateSetAttribute 属性は、コマンドレットパラメーターの引�
 
 - パラメーター値が配列の場合は、配列のすべての要素が属性セットの要素と一致している必要があります。
 
-- ValidateSetAttribute 属性は、 [ValidateSetAttribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)クラスによって定義されます。
+- ValidateSetAttribute 属性は、 [ValidateSetAttribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute) クラスによって定義されます。
 
 ## <a name="see-also"></a>参照
 
 [Validatesetattribute (システム管理)](/dotnet/api/System.Management.Automation.ValidateSetAttribute)
 
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

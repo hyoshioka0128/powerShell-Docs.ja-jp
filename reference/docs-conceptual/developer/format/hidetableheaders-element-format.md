@@ -1,12 +1,14 @@
 ---
-title: HideTableHeaders 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 529a3ebbbc1be17131c17e537311c2c041326393
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: HideTableHeaders 要素 (Format)
+description: HideTableHeaders 要素 (Format)
+ms.openlocfilehash: fefd296757ba190151f1ce592e6609c5f3f070e2
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781360"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648130"
 ---
 # <a name="hidetableheaders-element-format"></a>HideTableHeaders 要素 (Format)
 
@@ -44,7 +46,7 @@ ViewDefinitions 要素 (Format) ビュー要素 (形式) TableControl Element (F
 
 ## <a name="remarks"></a>解説
 
-テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
+テーブルビューのコンポーネントの詳細については、「 [テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

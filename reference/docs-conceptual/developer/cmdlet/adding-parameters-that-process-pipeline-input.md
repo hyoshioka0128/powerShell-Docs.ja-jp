@@ -1,27 +1,26 @@
 ---
-title: パイプライン入力を処理するパラメーターを追加する |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell Programmer's Guide], pipeline input
-- parameters [PowerShell Programmer's Guide], pipeline input
-ms.openlocfilehash: a678df30a13086b317d5680ee0fbc4d3c3391235
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: パイプライン入力を処理するパラメーターを追加する
+description: パイプライン入力を処理するパラメーターを追加する
+ms.openlocfilehash: b150d5be93207d9c010a6d2d4de901b4526f1d79
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784556"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668356"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>パイプライン入力を処理するパラメーターを追加する
 
-コマンドレットの1つの入力ソースは、上流のコマンドレットで発生したパイプライン上のオブジェクトです。 このセクションでは、コマンドレットがパイプラインオブジェクトを処理できるように、Get Proc コマンドレット ([最初のコマンドレットの作成](./creating-a-cmdlet-without-parameters.md)に関するページで説明) にパラメーターを追加する方法について説明します。
+コマンドレットの1つの入力ソースは、上流のコマンドレットで発生したパイプライン上のオブジェクトです。 このセクションでは、コマンドレットがパイプラインオブジェクトを処理できるように、Get-Proc コマンドレット ( [最初のコマンドレットの作成](./creating-a-cmdlet-without-parameters.md)に関するページで説明) にパラメーターを追加する方法について説明します。
 
-この Get Proc コマンドレットは、 `Name` パイプラインオブジェクトからの入力を受け入れ、指定された名前に基づいてローカルコンピューターからプロセス情報を取得し、コマンドラインでプロセスに関する情報を表示するパラメーターを使用します。
+この Get-Proc コマンドレットは、 `Name` パイプラインオブジェクトからの入力を受け入れるパラメーターを使用し、指定された名前に基づいてローカルコンピューターからプロセス情報を取得し、コマンドラインでプロセスに関する情報を表示します。
 
 ## <a name="defining-the-cmdlet-class"></a>コマンドレットクラスの定義
 
-コマンドレットの作成の最初の手順では、常にコマンドレットに名前を付け、コマンドレットを実装する .NET クラスを宣言します。 このコマンドレットはプロセス情報を取得するため、ここで選択した動詞名は "Get" です。 (情報を取得できるほとんどすべての種類のコマンドレットは、コマンドライン入力を処理できます)。承認されたコマンドレット動詞の詳細については、「[コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
+コマンドレットの作成の最初の手順では、常にコマンドレットに名前を付け、コマンドレットを実装する .NET クラスを宣言します。 このコマンドレットはプロセス情報を取得するため、ここで選択した動詞名は "Get" です。 (情報を取得できるほとんどすべての種類のコマンドレットは、コマンドライン入力を処理できます)。承認されたコマンドレット動詞の詳細については、「 [コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
 
-この Get Proc コマンドレットの定義を次に示します。 この定義の詳細につい[ては、最初のコマンドレットの作成](./creating-a-cmdlet-without-parameters.md)に関する説明をご確認ください。
+この Get-Proc コマンドレットの定義を次に示します。 この定義の詳細につい [ては、最初のコマンドレットの作成](./creating-a-cmdlet-without-parameters.md)に関する説明をご確認ください。
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -36,12 +35,12 @@ Public Class GetProcCommand
 
 ## <a name="defining-input-from-the-pipeline"></a>パイプラインからの入力の定義
 
-このセクションでは、コマンドレットのパイプラインからの入力を定義する方法について説明します。 この Get Proc コマンドレットは、 `Name` 「[コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)」で説明されているように、パラメーターを表すプロパティを定義します。
+このセクションでは、コマンドレットのパイプラインからの入力を定義する方法について説明します。 この Get-Proc コマンドレットは、 `Name` 「 [コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)」で説明されているように、パラメーターを表すプロパティを定義します。
 (パラメーターの宣言に関する一般的な情報については、「」を参照してください)。
 
-ただし、コマンドレットでパイプラインの入力を処理する必要がある場合は、Windows PowerShell ランタイムによって入力値にバインドされたパラメーターを持つ必要があります。 これを行うには、キーワードを追加するか、またはキーワードを system.string 属性宣言に追加する必要があり `ValueFromPipeline` `ValueFromPipelineByProperty` ます。 [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) `ValueFromPipeline`コマンドレットが入力オブジェクト全体にアクセスする場合は、キーワードを指定します。 `ValueFromPipelineByProperty`コマンドレットがオブジェクトのプロパティのみにアクセスする場合は、を指定します。
+ただし、コマンドレットでパイプラインの入力を処理する必要がある場合は、Windows PowerShell ランタイムによって入力値にバインドされたパラメーターを持つ必要があります。 これを行うには、キーワードを追加するか、またはキーワードを system.string 属性宣言に追加する必要があり `ValueFromPipeline` `ValueFromPipelineByProperty` ます。 [](/dotnet/api/System.Management.Automation.ParameterAttribute) `ValueFromPipeline`コマンドレットが入力オブジェクト全体にアクセスする場合は、キーワードを指定します。 `ValueFromPipelineByProperty`コマンドレットがオブジェクトのプロパティのみにアクセスする場合は、を指定します。
 
-`Name`パイプラインの入力を受け入れる、この Get Proc コマンドレットのパラメーターのパラメーター宣言を次に示します。
+`Name`パイプラインの入力を受け入れるこの Get-Proc コマンドレットのパラメーターのパラメーター宣言を次に示します。
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs" range="35-44":::
 
@@ -69,9 +68,9 @@ End Property
 
 ## <a name="overriding-an-input-processing-method"></a>入力処理メソッドのオーバーライド
 
-コマンドレットがパイプライン入力を処理する場合は、適切な入力処理メソッドをオーバーライドする必要があります。 基本的な入力処理方法は、[最初のコマンドレットを作成するとき](./creating-a-cmdlet-without-parameters.md)に導入されます。
+コマンドレットがパイプライン入力を処理する場合は、適切な入力処理メソッドをオーバーライドする必要があります。 基本的な入力処理方法は、 [最初のコマンドレットを作成するとき](./creating-a-cmdlet-without-parameters.md)に導入されます。
 
-この Get Proc コマンドレット[は、](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) `Name` ユーザーまたはスクリプトによって指定されたパラメーター入力を処理するために、system.servicemodel メソッドをオーバーライドします。 このメソッドは、要求された各プロセス名のプロセスを取得します。名前が指定されていない場合は、すべてのプロセスを取得します。 [WriteObject (system.object, system.string)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)の呼び出しが、出力オブジェクトをパイプラインに送信するための出力機構として使用されていることに注意し[てください。](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) この呼び出しの2番目のパラメーターは、をに設定して、 `enumerateCollection` `true` プロセスオブジェクトの配列を列挙し、一度に1つのプロセスをコマンドラインに書き込むように Windows PowerShell ランタイムに指示します。
+この Get-Proc コマンドレットは [、](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) `Name` ユーザーまたはスクリプトによって指定されたパラメーター入力を処理するために、system.object メソッドをオーバーライドします。 このメソッドは、要求された各プロセス名のプロセスを取得します。名前が指定されていない場合は、すべてのプロセスを取得します。 [WriteObject (system.object, system.string)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)の呼び出しが、出力オブジェクトをパイプラインに送信するための出力機構として使用されていることに注意し[てください。](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) この呼び出しの2番目のパラメーターは、をに設定して、 `enumerateCollection` `true` プロセスオブジェクトの配列を列挙し、一度に1つのプロセスをコマンドラインに書き込むように Windows PowerShell ランタイムに指示します。
 
 ```csharp
 protected override void ProcessRecord()
@@ -124,11 +123,11 @@ End Sub 'ProcessRecord
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類と書式設定の定義
 
-Windows PowerShell は、.Net オブジェクトを使用してコマンドレット間で情報を渡します。 そのため、コマンドレットで独自の型を定義する必要がある場合や、コマンドレットで別のコマンドレットによって提供される既存の型を拡張する必要がある場合があります。 新しい型を定義する、または既存の型を拡張する方法の詳細については、「[オブジェクトの型と書式設定の拡張](/previous-versions//ms714665(v=vs.85))」を参照してください。
+Windows PowerShell は、.Net オブジェクトを使用してコマンドレット間で情報を渡します。 そのため、コマンドレットで独自の型を定義する必要がある場合や、コマンドレットで別のコマンドレットによって提供される既存の型を拡張する必要がある場合があります。 新しい型を定義する、または既存の型を拡張する方法の詳細については、「 [オブジェクトの型と書式設定の拡張](/previous-versions//ms714665(v=vs.85))」を参照してください。
 
 ## <a name="building-the-cmdlet"></a>コマンドレットのビルド
 
-コマンドレットを実装した後は、Windows powershell スナップインを使用して Windows PowerShell に登録する必要があります。 コマンドレットの登録の詳細については、「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions//ms714644(v=vs.85))」を参照してください。
+コマンドレットを実装した後は、Windows powershell スナップインを使用して Windows PowerShell に登録する必要があります。 コマンドレットの登録の詳細については、「 [コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions//ms714644(v=vs.85))」を参照してください。
 
 ## <a name="testing-the-cmdlet"></a>コマンドレットのテスト
 

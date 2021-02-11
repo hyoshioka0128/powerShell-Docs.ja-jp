@@ -7,12 +7,12 @@ ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
-ms.openlocfilehash: c29a938fc73b8b69ea1bbf96f12f5d42d16f79bf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 0bcd46e49559ad625621a7ff81162af695f6f93c
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93217659"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661326"
 ---
 # Get-ChildItem
 
@@ -72,7 +72,7 @@ d-----        2/15/2019     08:29                Logs
 -ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
-既定で `Get-ChildItem` は、モード ( **属性** )、 **lastwritetime** 、ファイルサイズ ( **長さ** )、およびアイテムの **名前** が一覧表示されます。 **Mode** プロパティの文字は、次のように解釈できます。
+既定で `Get-ChildItem` は、モード (**属性**)、 **lastwritetime**、ファイルサイズ (**長さ**)、およびアイテムの **名前** が一覧表示されます。 **Mode** プロパティの文字は、次のように解釈できます。
 
 - `l` リンク
 - `d` 名簿
@@ -143,7 +143,7 @@ Mode                LastWriteTime         Length Name
 -ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
-この `Get-ChildItem` コマンドレットは、 **Path** パラメーターを使用してを指定し `C:\Test\*.txt` ます。 **Path** はアスタリスク ( `*` ) ワイルドカードを使用して、ファイル名拡張子を持つすべてのファイルを指定し `.txt` ます。 **再帰** パラメーターは、 **ディレクトリ:** 見出しに示されているように、 **パス** ディレクトリ内のサブディレクトリを検索します。 **Force** パラメーターは、 `hiddenfile.txt` モードが **h** のなどの非表示ファイルを表示します。
+この `Get-ChildItem` コマンドレットは、 **Path** パラメーターを使用してを指定し `C:\Test\*.txt` ます。 **Path** はアスタリスク ( `*` ) ワイルドカードを使用して、ファイル名拡張子を持つすべてのファイルを指定し `.txt` ます。 **再帰** パラメーターは、**ディレクトリ:** 見出しに示されているように、**パス** ディレクトリ内のサブディレクトリを検索します。 **Force** パラメーターは、 `hiddenfile.txt` モードが **h** のなどの非表示ファイルを表示します。
 
 ### 例 4: Include パラメーターを使用して子項目を取得する
 
@@ -178,8 +178,8 @@ Mode                LastWriteTime         Length Name
 
 **Include** パラメーターを使用する場合、 **Path** パラメーターには、 `*` ディレクトリの内容を指定するための末尾のアスタリスク () ワイルドカードが必要です。 たとえば、「 `-Path C:\Test\*` 」のように入力します。
 
-- **再帰** パラメーターがコマンドに追加された場合、Path パラメーターの末尾のアスタリスク ( `*` ) は省略可能です。 **Path** **再帰** パラメーターは、 **パス** ディレクトリとそのサブディレクトリから項目を取得します。 たとえば、`-Path C:\Test\ -Recurse -Include *.txt` のように指定します。
-- パスパラメーターに末尾のアスタリスク () が含まれていない場合 `*` 、コマンドは出力を返さず、PowerShell プロンプトに戻ります。 **Path** たとえば、「 `-Path C:\Test\` 」のように入力します。
+- **再帰** パラメーターがコマンドに追加された場合、Path パラメーターの末尾のアスタリスク ( `*` ) は省略可能です。  **再帰** パラメーターは、**パス** ディレクトリとそのサブディレクトリから項目を取得します。 たとえば、`-Path C:\Test\ -Recurse -Include *.txt` のように指定します。
+- パスパラメーターに末尾のアスタリスク () が含まれていない場合 `*` 、コマンドは出力を返さず、PowerShell プロンプトに戻ります。  たとえば、「 `-Path C:\Test\` 」のように入力します。
 
 ### 例 5: Exclude パラメーターを使用して子項目を取得する
 
@@ -217,12 +217,12 @@ d-----        2/15/2019     13:21                Backup
 ```
 
 コマンドレットでは、 `Get-ChildItem` **Path** パラメーターを使用してディレクトリを指定し `C:\Test\Logs` ます。
-**Exclude** パラメーターでは、アスタリスク () ワイルドカードを使用して、 `*` またはで **A** 始まる任意のファイルまたはディレクトリを出力から除外します。 **a**
+**Exclude** パラメーターでは、アスタリスク () ワイルドカードを使用して、 `*` またはで始まる任意のファイルまたはディレクトリを出力から除外します。 
 
-**Exclude** パラメーターを使用する場合、Path パラメーターの末尾のアスタリスク ( `*` ) は省略可能です。 **Path** たとえば、`-Path C:\Test\Logs` または `-Path C:\Test\Logs\*` です。
+**Exclude** パラメーターを使用する場合、Path パラメーターの末尾のアスタリスク ( `*` ) は省略可能です。  たとえば、`-Path C:\Test\Logs` または `-Path C:\Test\Logs\*` です。
 
-- Path パラメーターに末尾のアスタリスク ( `*` ) が含ま **Path** れていない場合は、 **path** パラメーターの内容が表示されます。 例外は、 **Exclude** パラメーターの値と一致するファイル名またはサブディレクトリ名です。
-- Path パラメーターに末尾のアスタリスク ( `*` ) が含ま **Path** れている場合、コマンドは **path** パラメーターのサブディレクトリに繰り返しします。 例外は、 **Exclude** パラメーターの値と一致するファイル名またはサブディレクトリ名です。
+- Path パラメーターに末尾のアスタリスク ( `*` ) が含まれていない場合は、 **path** パラメーターの内容が表示されます。 例外は、 **Exclude** パラメーターの値と一致するファイル名またはサブディレクトリ名です。
+- Path パラメーターに末尾のアスタリスク ( `*` ) が含まれている場合、コマンドは **path** パラメーターのサブディレクトリに繰り返しします。 例外は、 **Exclude** パラメーターの値と一致するファイル名またはサブディレクトリ名です。
 - **再帰パラメーターが** コマンドに追加された場合、 **Path** パラメーターに末尾のアスタリスク () が含まれているかどうかにかかわらず、再帰の出力は同じに `*` なります。
 
 ### 例 6: レジストリハイブからレジストリキーを取得する
@@ -317,9 +317,9 @@ PowerShell 6.2 では、ハードリンク情報を取得するために代替�
 Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithHardLink
 ```
 
-### 例 9: 試験的な特徴 PSUnixFileStat の出力
+### 例 9: Windows 以外のオペレーティングシステムの出力
 
-Unix システムの PowerShell 7 では、試験的な機能 **PSUnixFileStat** が unix に似た出力を提供します。
+Unix システムの PowerShell 7.1 では、は `Get-ChildItem` unix に似た出力を提供します。
 
 ```powershell
 PS> Get-ChildItem /etc/r*
@@ -349,6 +349,9 @@ lrwxr-xr-x root wheel  11/8/2019 15:35   22 resolv.conf -> /private/var/run/reso
 - **グループは** グループの所有者です
 - **サイズ** は、Unix システムで表されるファイルまたはディレクトリのサイズです。
 
+> [!NOTE]
+> この機能は、PowerShell 7.1 の試験段階からメインストリームに移行されました。
+
 ## パラメーター
 
 ### -属性
@@ -359,7 +362,7 @@ lrwxr-xr-x root wheel  11/8/2019 15:35   22 resolv.conf -> /private/var/run/reso
 
 `Get-ChildItem -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed`
 
-よく使用される属性を持つファイルとフォルダーを検索するには、 **attributes** パラメーターを使用します。 または、パラメーター **Directory** 、 **File** 、 **Hidden** 、 **ReadOnly** 、および **System** です。
+よく使用される属性を持つファイルとフォルダーを検索するには、 **attributes** パラメーターを使用します。 または、パラメーター **Directory**、 **File**、 **Hidden**、 **ReadOnly**、および **System** です。
 
 **Attributes** パラメーターでは、次のプロパティがサポートされています。
 
@@ -373,7 +376,7 @@ lrwxr-xr-x root wheel  11/8/2019 15:35   22 resolv.conf -> /private/var/run/reso
 - **標準**
 - **NoScrubData**
 - **NotContentIndexed**
-- **なっ**
+- **オフライン**
 - **ReadOnly**
 - **ReparsePoint**
 - **Sparc ファイル**
@@ -450,9 +453,9 @@ Accept wildcard characters: False
 ### -除外
 
 このコマンドレットによって操作から除外されるプロパティまたはプロパティを、文字列配列として指定します。
-このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (やなど) を入力し `*.txt` `A*` ます。 ワイルドカード文字を使用できます。
+このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (やなど) を入力し `*.txt` `A*` ます。 ワイルドカード文字を使用できます。
 
-Path パラメーターの末尾のアスタリスク ( `*` ) は省略可能です。 **Path** たとえば、`-Path C:\Test\Logs` または `-Path C:\Test\Logs\*` です。 末尾のアスタリスク ( `*` ) が含まれている場合、コマンドは **Path** パラメーターのサブディレクトリに繰り返しします。 アスタリスク () がない `*` 場合は、 **Path** パラメーターの内容が表示されます。 詳細については、例5とメモのセクションを参照してください。
+Path パラメーターの末尾のアスタリスク ( `*` ) は省略可能です。  たとえば、`-Path C:\Test\Logs` または `-Path C:\Test\Logs\*` です。 末尾のアスタリスク ( `*` ) が含まれている場合、コマンドは **Path** パラメーターのサブディレクトリに繰り返しします。 アスタリスク () がない `*` 場合は、 **Path** パラメーターの内容が表示されます。 詳細については、例5とメモのセクションを参照してください。
 
 ```yaml
 Type: System.String[]
@@ -468,7 +471,7 @@ Accept wildcard characters: True
 
 ### -File
 
-ファイルの一覧を取得するには、 **File** パラメーターを使用します。 **ファイル** では、 **再帰** パラメーターを使用できます。
+ファイルの一覧を取得するには、 **File** パラメーターを使用します。 **ファイル** では、**再帰** パラメーターを使用できます。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -534,7 +537,7 @@ Accept wildcard characters: False
 
 ### -Hidden
 
-非表示の項目のみを取得するには、hidden パラメーターまたは **Attributes** パラメーターを **hidden** プロパティと共に **使用します** 。 既定では、は非表示の `Get-ChildItem` 項目を表示しません。 **Force** パラメーターを使用して、非表示の項目を取得します。
+非表示の項目のみを取得するには、hidden パラメーターまたは **Attributes** パラメーターを **hidden** プロパティと共に **使用します**。 既定では、は非表示の `Get-ChildItem` 項目を表示しません。 **Force** パラメーターを使用して、非表示の項目を取得します。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -550,7 +553,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `"*.txt"` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
+文字列配列として、このコマンドレットによって操作に含まれる項目を指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `"*.txt"` ます。 ワイルドカード文字を使用できます。 **Include** パラメーターは、コマンドに項目の内容 (など) が含まれている場合にのみ有効になり `C:\Windows\*` ます。ワイルドカード文字は、ディレクトリの内容を指定し `C:\Windows` ます。
 
 ```yaml
 Type: System.String[]
@@ -685,7 +688,7 @@ Accept wildcard characters: False
 ## 注
 
 - `Get-ChildItem` は、組み込みのエイリアスである、、およびを使用して実行でき `ls` `dir` `gci` ます。 詳細については、「 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)」を参照してください。
-- `Get-ChildItem` 既定では、非表示の項目は取得されません。 隠し項目を取得するには、 **Force** パラメーターを使用します。
+- `Get-ChildItem` 既定では、非表示の項目は取得されません。 隠し項目を取得するには、**Force** パラメーターを使用します。
 - `Get-ChildItem`コマンドレットは、プロバイダーによって公開されるデータを使用するように設計されています。 セッションで使用可能なプロバイダーの一覧を表示するには、「」と入力 `Get-PSProvider` します。
   詳細については、「[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)」を参照してください。
 

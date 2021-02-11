@@ -1,24 +1,26 @@
 ---
-title: Windows PowerShell プロバイダーのクイックスタート |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 048812d1a4765b2ff0069698615453f91ee95409
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell プロバイダー クイック スタート
+description: Windows PowerShell プロバイダー クイック スタート
+ms.openlocfilehash: f0fe0ad60e9d10efd505cda60af995c597226b92
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783128"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664343"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell プロバイダー クイック スタート
 
-このトピックでは、新しいドライブを作成する基本的な機能を備えた Windows PowerShell プロバイダーを作成する方法について説明します。 プロバイダーの一般的な情報については、「 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)」を参照してください。 より詳細な機能を持つプロバイダーの例については、[プロバイダーのサンプル](./provider-samples.md)を参照してください。
+このトピックでは、新しいドライブを作成する基本的な機能を備えた Windows PowerShell プロバイダーを作成する方法について説明します。 プロバイダーの一般的な情報については、「 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)」を参照してください。 より詳細な機能を持つプロバイダーの例については、 [プロバイダーのサンプル](./provider-samples.md)を参照してください。
 
 ## <a name="writing-a-basic-provider"></a>基本的なプロバイダーの作成
 
-Windows PowerShell プロバイダーの最も基本的な機能は、ドライブを作成および削除することです。 この例では、Drivecmdletprovider クラスの[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) * メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを実装しています。この例では、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスが使用されています。この例を次に示します。 また、プロバイダークラスを宣言する方法についても説明します。
+Windows PowerShell プロバイダーの最も基本的な機能は、ドライブを作成および削除することです。 この例では、Drivecmdletprovider クラスの[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) * メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを実装しています。この例では、 [](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスが使用されています。この例を次に示します。 また、プロバイダークラスを宣言する方法についても説明します。
 
 プロバイダーを作成するときに、プロバイダーが利用可能になったときに自動的に作成される既定のドライブドライブを指定できます。 また、そのプロバイダーを使用する新しいドライブを作成するためのメソッドを定義します。
 
-このトピックで示す例は、Access データベースを Windows PowerShell ドライブとして表す大規模なサンプルの一部である[AccessDBProviderSample02](./accessdbprovidersample02.md)サンプルに基づいています。
+このトピックで示す例は、Access データベースを Windows PowerShell ドライブとして表す大規模なサンプルの一部である [AccessDBProviderSample02](./accessdbprovidersample02.md) サンプルに基づいています。
 
 ### <a name="setting-up-the-project"></a>プロジェクトの設定
 
@@ -28,15 +30,15 @@ Visual Studio で、AccessDBProviderSample という名前のクラスライブ�
 
 1. プロジェクトへの参照として、system.servicemodel アセンブリを追加します。
 
-2. [**プロジェクト > AccessDBProviderSample のプロパティ > デバッグ**] をクリックします。 [**プロジェクトの開始**] で、[**外部プログラムの開始**] をクリックし、Windows PowerShell 実行可能ファイル (通常は c:\Windows\System32\WindowsPowerShell\v1.0.powershell.exe) に移動し \\ ます。
+2. [ **プロジェクト > AccessDBProviderSample のプロパティ > デバッグ**] をクリックします。 [ **プロジェクトの開始**] で、[ **外部プログラムの開始**] をクリックし、Windows PowerShell 実行可能ファイル (通常は c:\Windows\System32\WindowsPowerShell\v1.0.powershell.exe) に移動し \\ ます。
 
-3. [**開始オプション**] で、[**コマンドライン引数**] ボックスに次のように入力します。`-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
+3. [ **開始オプション**] で、[ **コマンドライン引数** ] ボックスに次のように入力します。 `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
 ### <a name="declaring-the-provider-class"></a>プロバイダークラスの宣言
 
-このプロバイダーは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスから派生します。 実際の機能 (項目へのアクセスと操作、データストア内の移動、項目のコンテンツの取得と設定) を提供する[ほとんどのプロバイダーは、system.servicemodel](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスから派生します。
+このプロバイダーは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) クラスから派生します。 実際の機能 (項目へのアクセスと操作、データストア内の移動、項目のコンテンツの取得と設定) を提供する [ほとんどのプロバイダーは、system.servicemodel](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) クラスから派生します。
 
-クラスが Drivecmdletprovider から派生することを指定するだけでなく、例に示すように、このクラスを[System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)プロバイダーの[属性](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)で修飾する必要がありますが、
+クラスが Drivecmdletprovider から派生することを指定するだけでなく、例に示すように、このクラスを[](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)プロバイダーの[属性](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)で修飾する必要がありますが、
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers

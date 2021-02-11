@@ -1,12 +1,14 @@
 ---
-title: ListControl (Format) の EntrySelectedBy の SelectionCondition の TypeName 要素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bc58d630e65b316f9223bf3c529f928358e38ebc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)
+description: ListControl の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)
+ms.openlocfilehash: 2e8246e3ef2cba38824d8f8004acfffc3236df13
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787377"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645557"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)
 
@@ -44,9 +46,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>解説
 
-選択条件では、任意の数の .NET 型または選択セットを指定できますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件では、任意の数の .NET 型または選択セットを指定できますが、両方を指定することはできません。 選択条件の使用方法の詳細については、「 [データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
-リストビューのその他のコンポーネントの詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
+リストビューのその他のコンポーネントの詳細については、「 [リストビューの作成](./creating-a-list-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

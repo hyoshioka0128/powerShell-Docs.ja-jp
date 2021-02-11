@@ -1,12 +1,14 @@
 ---
-title: ビューのコントロールの式のバインドの列挙 Atecollection 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 72c4528b79569f5065ea87696d1a08e501219ede
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: View の Controls の ExpressionBinding の EnumerateCollection 要素 (書式)
+description: View の Controls の ExpressionBinding の EnumerateCollection 要素 (書式)
+ms.openlocfilehash: c7b15ee701252b310f79d272452f6ffd1c62d268
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773948"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667999"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-controls-for-view-format"></a>View の Controls の ExpressionBinding の EnumerateCollection 要素 (書式)
 

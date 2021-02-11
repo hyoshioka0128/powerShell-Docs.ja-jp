@@ -1,18 +1,20 @@
 ---
-title: Windows PowerShell01 サンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6e799f35c0c5e3820c6471b49c8b0d8c47b1c6b2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell01 サンプル
+description: Windows PowerShell01 サンプル
+ms.openlocfilehash: 70ae67bfc2da9d3cc085ecb42de9cef4b163418d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771942"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657380"
 ---
 # <a name="windows-powershell01-sample"></a>Windows PowerShell01 サンプル
 
-このサンプルでは、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを使用して、実行空間の機能を制限する方法を示します。 このサンプルの出力では、実行空間の言語モードを制限する方法、コマンドレットをプライベートとしてマークする方法、コマンドレットとプロバイダーを追加および削除する方法、プロキシコマンドを追加する方法などについて説明します。 このサンプルでは、実行空間をプログラムで制限する方法について説明します。 実行空間を制限するためのスクリプトの代替手段としては $ExecutionContext、SessionState. LanguageMode コマンドと Register-pssessionconfiguration コマンドがあります。
+このサンプルでは、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) オブジェクトを使用して、実行空間の機能を制限する方法を示します。 このサンプルの出力では、実行空間の言語モードを制限する方法、コマンドレットをプライベートとしてマークする方法、コマンドレットとプロバイダーを追加および削除する方法、プロキシコマンドを追加する方法などについて説明します。 このサンプルでは、実行空間をプログラムで制限する方法について説明します。 実行空間を制限するためのスクリプトの代替手段としては $ExecutionContext、SessionState. LanguageMode コマンドと Register-pssessionconfiguration コマンドがあります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
@@ -20,13 +22,13 @@ ms.locfileid: "87771942"
 
 このサンプルでは、次の方法を示します。
 
-- System.Management.Automation.Runspaces.Initialsessionstate を設定して言語を制限[します。Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode)プロパティ。
+- System.Management.Automation.Runspaces.Initialsessionstate を設定して言語を制限 [ します。Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) プロパティ。
 
-- Sessionstatealiasentry を使用して、最初のセッション状態にエイリアスを追加する[Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry)オブジェクト。
+- Sessionstatealiasentry を使用して、最初のセッション状態にエイリアスを追加する [Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) オブジェクト。
 
 - コマンドをプライベートとしてマークします。
 
-- System.Management.Automation.Runspaces.Initialsessionstate を使用して、初期セッション状態からプロバイダーを削除し[ます。Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers)プロパティ。
+- System.Management.Automation.Runspaces.Initialsessionstate を使用して、初期セッション状態からプロバイダーを削除し [ ます。Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) プロパティ。
 
 - [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands)プロパティを使用して、初期セッション状態からコマンドを削除します。
 

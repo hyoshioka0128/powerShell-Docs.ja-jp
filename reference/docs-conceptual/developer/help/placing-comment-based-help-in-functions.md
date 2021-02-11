@@ -1,18 +1,20 @@
 ---
-title: 関数にコメント ベースのヘルプを配置する
 ms.date: 09/12/2016
-ms.openlocfilehash: c7a8f8db6c71fa2ef12aaa4df0f78815626ec8d6
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: 関数にコメント ベースのヘルプを配置する
+description: 関数にコメント ベースのヘルプを配置する
+ms.openlocfilehash: 3bd72f0c71d8f6ad54c43c99f044423c072fdeeb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893205"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658207"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>関数にコメント ベースのヘルプを配置する
 
 このトピックでは、コマンドレットによって `Get-Help` コメントベースのヘルプトピックが適切な関数に関連付けられるように、関数のコメントベースのヘルプを配置する場所について説明します。
 
-## <a name="where-to-place-comment-based-help-for-a-function"></a>関数のコメントベースのヘルプを配置する場所
+## <a name="where-to-place-comment-based-help-for-a-function"></a>関数の Comment-Based ヘルプを配置する場所
 
 - 関数本体の先頭にあります。
 

@@ -1,12 +1,14 @@
 ---
-title: GroupBy (Format) の CustomItem の式のバインド要素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5b0017e487aab4ffcbf901cd44aad9b275b22832
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy の CustomItem の ExpressionBinding 要素 (書式)
+description: GroupBy の CustomItem の ExpressionBinding 要素 (書式)
+ms.openlocfilehash: 742d9f081a674dc3ee4c84d600933aaf57b2aa6b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773727"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655305"
 ---
 # <a name="expressionbinding-element-for-customitem-for-groupby-format"></a>GroupBy の CustomItem の ExpressionBinding 要素 (書式)
 

@@ -1,16 +1,18 @@
 ---
-title: Runspace01 (VB.NET) コードサンプル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d40424283057b389d8a4aafeb8ddfa44284f3ba1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace01 (VB.NET) コード サンプル
+description: Runspace01 (VB.NET) コード サンプル
+ms.openlocfilehash: 69211662c166c40e6e99e287083f7bd53f9f536f
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778663"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653848"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01 (VB.NET) コード サンプル
 
-ここでは、「[指定されたコマンドを実行するコンソールアプリケーションの作成](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)」で説明されている実行空間のコードサンプルを示します。 これを行うには、アプリケーションが実行空間を呼び出し、コマンドを呼び出します。 (このアプリケーションでは、実行空間の構成情報が指定されていません。また、パイプラインを明示的に作成することもありません)。呼び出されるコマンドは、コマンド `Get-Process` レットです。
+ここでは、「 [指定されたコマンドを実行するコンソールアプリケーションの作成](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)」で説明されている実行空間のコードサンプルを示します。 これを行うには、アプリケーションが実行空間を呼び出し、コマンドを呼び出します。 (このアプリケーションでは、実行空間の構成情報が指定されていません。また、パイプラインを明示的に作成することもありません)。呼び出されるコマンドは、コマンド `Get-Process` レットです。
 
 ## <a name="code-sample"></a>コード サンプル
 

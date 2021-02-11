@@ -6,17 +6,16 @@ ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging_Non-Windows
-ms.openlocfilehash: 48f5177ed72c676056422307fa3915be9415952e
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: e1d46acb7dbe85e6c83df3bdcfb355c91a3c2e25
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222195"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354526"
 ---
 # <a name="about-logging-non-windows"></a>Windows 以外のログ記録について
 
 ## <a name="short-description"></a>簡単な説明
-
 PowerShell は、エンジン、プロバイダー、およびコマンドレットからの内部操作をログに記録します。
 
 ## <a name="long-description"></a>長い説明
@@ -36,7 +35,7 @@ TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID)
   [EVENTID:TASK.OPCODE.LEVEL] MESSAGE
 ```
 
-|フィールド        |説明                                             |
+|フィールド        |[説明]                                             |
 |-------------|--------------------------------------------------------|
 |`TIMESTAMP`  |ログエントリが生成された日付/時刻。            |
 |`MACHINENAME`|ログが生成されたシステムの名前。      |
@@ -201,7 +200,7 @@ Windows では、ETW トレースリスナーを作成するか、イベント�
 
 次の表に、PowerShell ログを構成するためのプロパティを示します。 などのアスタリスクでマーク `Operational*` された値は、ファイルに値が指定されていない場合の既定値を示します。
 
-|プロパティ   |値        |説明                                  |
+|プロパティ   |値        |[説明]                                  |
 |-----------|--------------|---------------------------------------------|
 |`LogIdentity`|(文字列名) |ログ記録時に使用する名前。 既定では、  |
 |           |powershell   |powershell は id です。 この値は次のようになります。|

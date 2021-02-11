@@ -1,13 +1,13 @@
 ---
 ms.date: 08/14/2018
-keywords: powershell,コマンドレット
 title: Windows PowerShell ISE の紹介
-ms.openlocfilehash: 3e4471d0982ba4d7ef1a9d59906a9ff297f6f7cb
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: PowerShell ISE は、Windows PowerShell でコマンドを実行して、単一の Windows ベースのグラフィカル ユーザー インターフェイスでスクリプトの書き込み、テスト、およびデバッグを行えるようにするためのホスト アプリケーションです。
+ms.openlocfilehash: ab2b11e5d81933b166d404c0b24c96aa73253895
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808718"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663619"
 ---
 # <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
 

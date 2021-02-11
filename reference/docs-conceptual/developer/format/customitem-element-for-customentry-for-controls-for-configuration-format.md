@@ -1,12 +1,14 @@
 ---
-title: CustomEntry for Controls for Controls の CustomItem 要素 (Format) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bb8124242496f192717127f201674bc1428e5de0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Configuration の Controls の CustomEntry の CustomItem 要素 (書式)
+description: Configuration の Controls の CustomEntry の CustomItem 要素 (書式)
+ms.openlocfilehash: 06c399e982b6ac0fba9c11e20c468fe8bef6f694
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785865"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666775"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-configuration-format"></a>Configuration の Controls の CustomEntry の CustomItem 要素 (書式)
 

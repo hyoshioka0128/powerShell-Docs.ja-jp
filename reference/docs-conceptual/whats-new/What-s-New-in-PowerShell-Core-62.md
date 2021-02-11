@@ -3,11 +3,11 @@ title: PowerShell Core 6.2 の新機能
 description: PowerShell Core 6.2 でリリースされた新機能と変更
 ms.date: 03/28/2019
 ms.openlocfilehash: 98dd97b064e11509bf97e68e0a312e6b34b5d2bc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.sourcegitcommit: f9d855dd73b916559a22e337672dea3fbb11c634
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76995473"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96833814"
 ---
 # <a name="whats-new-in-powershell-core-62"></a>PowerShell Core 6.2 の新機能
 
@@ -58,7 +58,7 @@ Suggestion [4,General]: The most similar commands are: Get-Command, Get-Content,
 Enable-ExperimentalFeature -Name PSImplicitRemotingBatching
 ```
 
-localhost 上での `Get-Process | Sort-Object` の実際のテストは、10 - 15 秒から 20 - 30 **ミリ秒**に短縮されます。 この機能は、クライアント上でのみ有効にする必要があります。 サーバー上で変更の必要はありません。
+localhost 上での `Get-Process | Sort-Object` の実際のテストは、10 - 15 秒から 20 - 30 **ミリ秒** に短縮されます。 この機能は、クライアント上でのみ有効にする必要があります。 サーバー上で変更の必要はありません。
 
 ### <a name="temp-drive"></a>一時ドライブ
 
