@@ -1,14 +1,14 @@
 ---
 title: switch ステートメントについて知りたかったことのすべて
 description: PowerShell の switch ステートメントには、他の言語では見つからない機能が用意されています。
-ms.date: 05/23/2020
+ms.date: 03/01/2021
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: c2e77aa5fb36d04fec1bc86f751291205120c729
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.openlocfilehash: f6baa624285557452a2b95150b2c4de1ab274f27
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93355121"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686007"
 ---
 # <a name="everything-you-ever-wanted-to-know-about-the-switch-statement"></a>switch ステートメントについて知りたかったことのすべて
 
@@ -169,7 +169,7 @@ Configure SQL
 
 ## <a name="parameters"></a>パラメーター
 
-PowerShell `switch` の固有の機能は、その実行方法を変更する[スイッチ パラメーター][]がいくつかあることです。
+PowerShell `switch` の固有の機能は、その実行方法を変更するスイッチ パラメーターがいくつかあることです。
 
 ### <a name="-casesensitive"></a>-CaseSensitive
 
@@ -738,6 +738,5 @@ switch ステートメントは表面上は単純ですが、あまり知られ�
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [switch]: /powershell/module/microsoft.powershell.core/about/about_switch
-[スイッチ パラメーター]: https://www.powershellmagazine.com/2013/12/20/using-powershell-switch-vs-boolean-parameters-in-sma-runbooks/
 [正規表現を使用するさまざまな方法]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression
 [ハッシュテーブル]: everything-about-hashtable.md

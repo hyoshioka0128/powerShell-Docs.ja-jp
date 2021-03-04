@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/04/2020
+ms.date: 03/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: 2efe75730ef7d35618dc0d1fbf7a8d6f8a5db5ae
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 5563413400abd28ce376265970631ad1206ca518
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99605444"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685257"
 ---
 # Read-Host
 
@@ -35,6 +35,9 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ## Description
 
 コマンドレットでは、 `Read-Host` コンソールから入力行を読み取ります。 ユーザーに入力を求めるために使用できます。 セキュリティで保護された文字列として入力を保存できるため、このコマンドレットを使用して、パスワードなどのセキュリティで保護されたデータと共有データなどの入力をユーザーに求めることができます。
+
+> [!NOTE]
+> `Read-Host` では、ユーザーからの入力として許容できる文字数は1022文字に制限されています。
 
 ## 例
 
@@ -99,10 +102,7 @@ Accept wildcard characters: False
 
 ### -Prompt
 
-プロンプトのテキストを指定します。
-文字列を入力します。
-文字列にスペースが含まれる場合は、二重引用符で囲みます。
-入力した `:` テキストに、PowerShell によってコロン () が追加されます。
+プロンプトのテキストを指定します。 文字列を入力します。 文字列にスペースが含まれる場合は、二重引用符で囲みます。 入力した `:` テキストに、PowerShell によってコロン () が追加されます。
 
 ```yaml
 Type: System.Object

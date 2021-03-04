@@ -6,12 +6,12 @@ ms.date: 07/31/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
-ms.openlocfilehash: 202af7ea491b8fa020ab2ff7ae6b1cc697829b6b
-ms.sourcegitcommit: 021ea294327dec542ec040619dac0d2171397a90
+ms.openlocfilehash: e6b9ac8b096ff2607dc6b68512a998ac00bd1796
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97804131"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685692"
 ---
 # <a name="about-signing"></a>署名について
 
@@ -102,7 +102,7 @@ from trusted publishers.
 
 自己署名証明書を作成する場合は、証明書に対して強力な秘密キーの保護を有効にする必要があります。 これにより、悪意のあるプログラムがユーザーに代わってスクリプトに署名するのを防ぐことができます。 手順については、このトピックの最後に記載されています。
 
-## <a name="create-a-self-signed-certificate"></a>自己署名証明書を作成する
+## <a name="create-a-self-signed-certificate"></a>自己署名証明書の作成
 
 自己署名証明書を作成するには、 `New-SelfSignedCertificate` PKI モジュールのコマンドレットを使用します。 このモジュールは PowerShell 3.0 で導入され、Windows 8 および Windows Server 2012 に含まれています。 詳細については、コマンドレットのヘルプトピックを参照してください `New-SelfSignedCertificate` 。
 
@@ -155,7 +155,7 @@ Thumbprint                                Subject
 次のサンプルスクリプトでは、 `Add-Signature.ps1` スクリプトに署名します。 ただし、 **AllSigned** 実行ポリシーを使用している場合は、スクリプトを実行する前に署名する必要があり `Add-Signature.ps1` ます。
 
 > [!IMPORTANT]
-> スクリプトは、ASCII または UTF8NoBOM エンコードを使用して保存する必要があります。別のエンコードを使用するスクリプトファイルに署名することができます。 ただし、スクリプトを実行できないか、スクリプトを含むモジュールをインポートできません。
+> スクリプトは、ASCII または UTF8NoBOM エンコードを使用して保存する必要があります。 別のエンコードを使用するスクリプトファイルに署名することができます。 ただし、スクリプトを実行できないか、スクリプトを含むモジュールをインポートできません。
 
 このスクリプトを使用するには、テキストファイルに次のテキストをコピーして、という名前を指定し `Add-Signature.ps1` ます。
 

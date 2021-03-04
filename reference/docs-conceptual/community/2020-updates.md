@@ -2,14 +2,14 @@
 title: 2020 年第 4 四半期の PowerShell ドキュメントの最新情報
 description: 2020 年第 4 四半期の PowerShell ドキュメントに対する変更の一覧
 ms.date: 01/05/2021
-ms.openlocfilehash: 823338560adbfecd6e17ad6b2e82681f5db35405
-ms.sourcegitcommit: fa1a84c81e15f1ffac962110b0b4c850c1b173a0
+ms.openlocfilehash: 2ac4a2e23ebed7cf1d371c29ceada661bc9a9bc3
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99603056"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685545"
 ---
-# <a name="whats-new-in-powershell-docs-for-2020-q4"></a>2020 年第 4 四半期の PowerShell ドキュメントの最新情報
+# <a name="whats-new-in-powershell-docs-for-2020"></a>2020の PowerShell ドキュメントの新機能
 
 この記事では、先月ドキュメントに行われた主な変更点をいくつか紹介し、コミュニティからのコントリビューションに感謝の意を表します。
 
@@ -19,7 +19,7 @@ ms.locfileid: "99603056"
 [contrib]: contributing/overview.md
 <!-- --------------- -->
 
-## <a name="2020-december-highlights"></a>2020-12 月のハイライト
+## <a name="2020-december"></a>2020-12 月
 
 - 共同作成者ガイドの更新
   - `&preserve_view=true`ハイパーリンクのクエリパラメーターについて説明します。
@@ -49,7 +49,7 @@ ms.locfileid: "99603056"
 | Cwilson-dataselfcom |            |       5       |
 | bobbybatatina       |            |       2       |
 
-## <a name="2020-november-highlights"></a>2020-11 月のハイライト
+## <a name="2020-november"></a>2020-11 月
 
 - PowerShell 7.1 GA リリース
   - PowerShell 7.1 の新機能
@@ -96,7 +96,7 @@ ms.locfileid: "99603056"
 | stephenrgentry  |            |       2       |
 | Vixb1122        |            |       2       |
 
-## <a name="2020-october-highlights"></a>2020 年 10 月のハイライト
+## <a name="2020-october"></a>2020-10 月
 
 - 新しい記事
   - [about_Character_Encoding](/powershell/module/microsoft.powershell.core/about/about_character_encoding)
@@ -129,7 +129,7 @@ ms.locfileid: "99603056"
 | mklement0    |            |       3       |
 | Abdullah0820 |            |       2       |
 
-## <a name="2020-september-highlights"></a>2020 年 9 月のハイライト
+## <a name="2020-september"></a>2020-9 月
 
 - ドキュメントのメンテナンス
   - 7\.1-preview コンテンツの更新
@@ -160,7 +160,7 @@ ms.locfileid: "99603056"
 | mklement0        |            |      13       |
 | setpeetrike      |            |       2       |
 
-## <a name="2020-august-highlights"></a>2020 年 8 月のハイライト
+## <a name="2020-august"></a>2020-8 月
 
 - 新しい PowerShell ドキュメント
   - [About_Calculated_Properties](/powershell/module/microsoft.powershell.core/about/about_calculated_properties)
@@ -190,7 +190,7 @@ ms.locfileid: "99603056"
 | joshSi           |     1      |               |
 | kmoad            |     1      |               |
 
-## <a name="2020-july-highlights"></a>2020 年 7 月のハイライト
+## <a name="2020-july"></a>2020-7 月
 
 - 新しい PowerShell ドキュメント
   - 復活した古い [ETS ドキュメント](/powershell/scripting/developer/ets/overview) - 7 件の記事が追加されました
@@ -227,7 +227,7 @@ ms.locfileid: "99603056"
 | sharpninja     |            |       2       |
 | XuHeng1021     |            |       2       |
 
-## <a name="2020-june-highlights"></a>2020 年 6 月のハイライト
+## <a name="2020-june"></a>2020-6 月
 
 - 新しい PowerShell ドキュメント
   - Mike F. Robbins が提供する新しい [PowerShell 101](../learn/ps101/00-introduction.md) コンテンツを公開しました
@@ -269,7 +269,7 @@ ms.locfileid: "99603056"
 | mklement0     |            |       2       |
 | Sagatboy33    |            |       4       |
 
-## <a name="2020-may-highlights"></a>2020 年 5 月のハイライト
+## <a name="2020-may"></a>2020-5 月
 
 - 新しい PowerShell ドキュメント
   - コミュニティの共同作成者である Kevin Marquette のコンテンツを含む新しい "[詳しく調べる](../learn/deep-dives/overview.md)" セクションを作成しました
@@ -322,7 +322,7 @@ ms.locfileid: "99603056"
 | JustinGrote    |            |       2       |
 | peetrike       |            |       2       |
 
-## <a name="2020-april-highlights"></a>2020 年 4 月のハイライト
+## <a name="2020-april"></a>2020-4 月
 
 - 新しいドキュメント
   - PowerShell ドキュメント
@@ -370,7 +370,7 @@ ms.locfileid: "99603056"
 
 ## <a name="2020-march"></a>2020 年 3 月
 
-### <a name="highlights"></a>ハイライト
+###
 
 - 新しいドキュメント
   - PowerShell ドキュメントのコミュニティ ページ
@@ -409,7 +409,7 @@ ms.locfileid: "99603056"
 
 ## <a name="2020-february"></a>2020 年 2 月
 
-### <a name="highlights"></a>ハイライト
+###
 
 - 新しいドキュメント
   - [about_Parameter_Sets](/powershell/module/microsoft.powershell.core/about/about_parameter_sets)
@@ -435,7 +435,7 @@ ms.locfileid: "99603056"
 
 ## <a name="2020-january"></a>2020 年 1 月
 
-### <a name="highlights"></a>ハイライト
+###
 
 - 新しいドキュメント
   - [about_Windows_PowerShell_Compatibility](/powershell/module/microsoft.powershell.core/about/about_Windows_PowerShell_Compatibility)

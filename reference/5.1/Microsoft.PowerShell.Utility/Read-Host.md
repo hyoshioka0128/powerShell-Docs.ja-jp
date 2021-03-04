@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: 9017d2352f1d2735f21343f4c1194c5e97ce2848
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+ms.openlocfilehash: 83ddac1e157f26d6a437716e9ae95e258aa1eecb
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "93217928"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685874"
 ---
 # Read-Host
 
@@ -28,6 +28,9 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ## Description
 
 コマンドレットでは、 `Read-Host` コンソールから入力行を読み取ります。 ユーザーに入力を求めるために使用できます。 セキュリティで保護された文字列として入力を保存できるため、このコマンドレットを使用して、パスワードなどのセキュリティで保護されたデータと共有データなどの入力をユーザーに求めることができます。
+
+> [!NOTE]
+> `Read-Host` では、ユーザーからの入力として許容できる文字数は8190文字に制限されています。
 
 ## 例
 
@@ -51,7 +54,7 @@ $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
 
 ### -AsSecureString
 
-コマンドレットによって、 `*` ユーザーが入力として入力した文字の代わりにアスタリスク () が表示されることを示します。 このパラメーターを使用すると、 `Read-Host` コマンドレットの出力は **SecureString** オブジェクト ( **SecureString** ) になります。
+コマンドレットによって、 `*` ユーザーが入力として入力した文字の代わりにアスタリスク () が表示されることを示します。 このパラメーターを使用すると、 `Read-Host` コマンドレットの出力は **SecureString** オブジェクト (**SecureString**) になります。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -67,10 +70,7 @@ Accept wildcard characters: False
 
 ### -Prompt
 
-プロンプトのテキストを指定します。
-文字列を入力します。
-文字列にスペースが含まれる場合は、二重引用符で囲みます。
-入力した `:` テキストに、PowerShell によってコロン () が追加されます。
+プロンプトのテキストを指定します。 文字列を入力します。 文字列にスペースが含まれる場合は、二重引用符で囲みます。 入力した `:` テキストに、PowerShell によってコロン () が追加されます。
 
 ```yaml
 Type: System.Object

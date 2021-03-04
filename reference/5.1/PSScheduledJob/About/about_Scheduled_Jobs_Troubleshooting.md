@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_troubleshooting?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Scheduled_Jobs_Troubleshooting
-ms.openlocfilehash: 924205edb9d44724cfef201d84baa304ecde67ad
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: aac2133cee4abdd7e50e7b433104b9578d74b0a8
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93221920"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685877"
 ---
 # <a name="about-scheduled-jobs-troubleshooting"></a>スケジュールされたジョブのトラブルシューティングについて
 
@@ -56,7 +56,7 @@ Id     Name         PSJobTypeName   State         HasMoreData     Location
 50     ProcessJob   PSScheduledJob  Completed     False           localhost
 ```
 
-コマンドレットでは、 `Get-Job` **プロセスジョブ** オブジェクトをパイプラインの下に送信します。 コマンドレットでは、 `Format-Table` スケジュールされたジョブインスタンスの **Name** 、 **ID** 、および **psbegintime** プロパティをテーブルに表示します。
+コマンドレットでは、 `Get-Job` **プロセスジョブ** オブジェクトをパイプラインの下に送信します。 コマンドレットでは、 `Format-Table` スケジュールされたジョブインスタンスの **Name**、 **ID**、および **psbegintime** プロパティをテーブルに表示します。
 
 ```powershell
 Get-Job ProcessJob | Format-Table -Property Name, ID, PSBeginTime -Auto
@@ -332,7 +332,7 @@ Id Enabled
 コマンドレットを使用して、 `Get-ScheduledJobOption` ジョブオプションとその値を確認します。
 
 ```powershell
-Get-ScheduledJob -Name ProcessJob
+Get-ScheduledJobOption -Name ProcessJob
 ```
 
 ```Output

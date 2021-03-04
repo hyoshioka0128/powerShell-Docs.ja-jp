@@ -5,12 +5,12 @@ ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: PSReadLine について
-ms.openlocfilehash: b0c5950b2af6a866d0ffcfdd6ce7ad92a1763778
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: ddc88dda3514e4279b6d91b023e26da88f645af7
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500214"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685209"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -114,13 +114,19 @@ Set-PSReadLineOption -PredictionSource None
 - Vi の挿入モード: `<Backspace>`
 - Vi コマンドモード: `<X>` 、 `<d,h>`
 
+### <a name="backwarddeleteinput"></a>BackwardDeleteInput
+
+Like BackwardKillInput-入力の開始位置からテキストを削除しますが、削除されたテキストはキルリングには挿入されません。
+
+- コマンド: `<Ctrl+Home>`
+- Vi 挿入モード: `<Ctrl+u>` 、 `<Ctrl+Home>`
+- Vi コマンドモード: `<Ctrl+u>` 、 `<Ctrl+Home>`
+
 ### <a name="backwarddeleteline"></a>BackwardDeleteLine
 
 Like BackwardKillLine-行の先頭から先頭までのテキストを削除しますが、削除されたテキストはキルリングには挿入されません。
 
-- コマンド: `<Ctrl+Home>`
-- Vi 挿入モード: `<Ctrl+u>` 、 `<Ctrl+Home>`
-- Vi コマンドモード: `<Ctrl+u>` 、 `<Ctrl+Home>` 、 `<d,0>`
+- Vi コマンドモード: `<d,0>`
 
 ### <a name="backwarddeleteword"></a>BackwardDeleteWord
 
@@ -128,11 +134,17 @@ Like BackwardKillLine-行の先頭から先頭までのテキストを削除し�
 
 - Vi コマンドモード: `<Ctrl+w>` 、 `<d,b>`
 
-### <a name="backwardkillline"></a>BackwardKillLine
+### <a name="backwardkillinput"></a>BackwardKillInput
 
-入力の先頭からカーソルまでの入力をクリアします。 クリアテキストはキルリングに配置されます。
+入力の先頭からカーソルまでのテキストをクリアします。 クリアテキストはキルリングに配置されます。
 
 - Emacs: `<Ctrl+u>` 、 `<Ctrl+x,Backspace>`
+
+### <a name="backwardkillline"></a>BackwardKillLine
+
+現在の論理行の先頭からカーソルまでのテキストをクリアします。 クリアテキストはキルリングに配置されます。
+
+- 関数はバインド解除されています。
 
 ### <a name="backwardkillword"></a>BackwardKillWord
 
@@ -243,13 +255,19 @@ Like BackwardKillLine-行の先頭から先頭までのテキストを削除し�
 
 - Vi コマンドモード: `<d,w>`
 
-### <a name="forwarddeleteline"></a>ForwardDeleteLine
+### <a name="forwarddeleteinput"></a>ForwardDeleteInput
 
-同じように、Forwardは、行の末尾から最後までのテキストを削除しますが、削除されたテキストはキルリングには挿入されません。
+[行の削除] と同様に、入力のポイントから末尾までのテキストは削除されますが、削除されたテキストはキルリングには挿入されません。
 
 - コマンド: `<Ctrl+End>`
 - Vi の挿入モード: `<Ctrl+End>`
 - Vi コマンドモード: `<Ctrl+End>`
+
+### <a name="forwarddeleteline"></a>ForwardDeleteLine
+
+ポイントから現在の論理行の末尾までのテキストを削除しますが、削除されたテキストをキルリングに配置しません。
+
+- 関数がバインド解除されています
 
 ### <a name="insertlineabove"></a>InsertLineAbove
 
@@ -1029,7 +1047,9 @@ PSReadLine の履歴をクリアします。 これは、PowerShell の履歴に
 
 ### <a name="showcommandhelp"></a>ShowCommandHelp
 
-**Microsoft PowerShell** のポケットベルを使用して、代替画面バッファーの完全なコマンドレットヘルプを表示します。
+コマンドレットの完全なヘルプのビューを提供します。 カーソルが完全に展開されたパラメーターの最後にある場合、キーを押すと、 `<F1>` そのパラメーターの位置でヘルプが表示されます。
+
+ヘルプは、 **Microsoft の PowerShell** のポケットベルを使用して、別の画面バッファーに表示されます。 ページャーを終了すると、元の画面の元のカーソル位置に戻ります。 このポケットベルは、 [Windows ターミナル](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701)などの最新のターミナルアプリケーションでのみ機能します。
 
 - コマンド: `<F1>`
 - .Emacs `<F1>`
@@ -1046,7 +1066,7 @@ PSReadLine の履歴をクリアします。 これは、PowerShell の履歴に
 
 ### <a name="showparameterhelp"></a>ShowParameterHelp
 
-のような現在のコマンドラインの下に表示することにより、パラメーターの動的なヘルプを提供 `MenuComplete` します。
+のような現在のコマンドラインの下に表示することにより、パラメーターの動的なヘルプを提供 `MenuComplete` します。 カーソルは、キーを押したときに、完全に展開されたパラメーター名の末尾に配置する必要があり `<Alt+h>` ます。
 
 - コマンド: `<Alt+h>`
 - .Emacs `<Alt+h>`
@@ -1125,6 +1145,15 @@ $Env: EDITOR または $env: ビジュアルによって指定されたテキス
 
 - コマンド: `<Shift+Ctrl+LeftArrow>`
 - .Emacs `<Alt+B>`
+
+### <a name="selectcommandargument"></a>SelectCommandArgument
+
+コマンド引数をビジュアルに選択します。 引数の選択範囲は、スクリプトブロック内で指定します。 カーソル位置に基づいて、最も内側のスクリプトブロックから最も外側のスクリプトブロックに向かって検索し、スクリプトブロックスコープ内の引数を検出すると停止します。
+
+この関数は、DigitArgument を受け入れます。 このメソッドは、正または負の引数の値を、現在選択されている引数からの前方または後方オフセットとして、または引数が選択されていない場合は現在のカーソル位置から処理します。
+
+- コマンド: `<Alt+a>`
+- .Emacs `<Alt+a>`
 
 ### <a name="selectforwardchar"></a>SelectForwardChar
 
@@ -1430,7 +1459,7 @@ bool TryGetArgAsInt(System.Object arg, [ref] int numericArg,
   [ref]$numericArg, 1)
 ```
 
-## <a name="notes"></a>ノート
+## <a name="notes"></a>Notes
 
 ### <a name="command-history"></a>コマンド履歴
 

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-EventLog
-ms.openlocfilehash: 695a13d4fbbf60caadeed994c1aa9c36432be917
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: af1c808b22a812700857e756136fd570fa0acc35
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93215563"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685898"
 ---
 # Clear-EventLog
 
@@ -27,11 +27,9 @@ Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Co
 
 ## Description
 
-`Clear-EventLog`コマンドレットは、ローカルコンピューターまたはリモートコンピューター上の指定されたイベントログからすべてのエントリを削除します。
-を使用するには `Clear-EventLog` 、影響を受けるコンピューターの Administrators グループのメンバーである必要があります。
+`Clear-EventLog`コマンドレットは、ローカルコンピューターまたはリモートコンピューター上の指定されたイベントログからすべてのエントリを削除します。 を使用するには `Clear-EventLog` 、影響を受けるコンピューターの Administrators グループのメンバーである必要があります。
 
-**Eventlog** 名詞を含むコマンドレット (eventlog コマンドレット) は、従来のイベントログでのみ機能します。
-Windows Vista 以降のバージョンの windows で windows イベントログテクノロジを使用するログからイベントを取得するには、Get-WinEvent コマンドレットを使用します。
+**Eventlog** 名詞を含むコマンドレット (eventlog コマンドレット) は、従来のイベントログでのみ機能します。 Windows Vista 以降のバージョンの windows で windows イベントログテクノロジを使用するログからイベントを取得するには、Get-WinEvent コマンドレットを使用します。
 
 ## 例
 
@@ -96,14 +94,11 @@ Max(K) Retain OverflowAction        Entries Log
 
 ### -ComputerName
 
-リモート コンピューターを指定します。
-既定値はローカル コンピューターです。
+リモート コンピューターを指定します。 既定値はローカル コンピューターです。
 
-リモート コンピューターの NetBIOS 名、インターネット プロトコル (IP) アドレス、または完全修飾ドメイン名を入力します。
-ローカル コンピューターを指定するには、コンピューター名、ドット (.)、または「localhost」を入力します。
+リモート コンピューターの NetBIOS 名、インターネット プロトコル (IP) アドレス、または完全修飾ドメイン名を入力します。 ローカル コンピューターを指定するには、コンピューター名、ドット (.)、または「localhost」を入力します。
 
-このパラメーターは、Windows PowerShell リモート処理に依存しません。
-**ComputerName** `Get-EventLog` コンピューターがリモートコマンドを実行するように構成されていない場合でも、の ComputerName パラメーターを使用できます。
+このパラメーターは、Windows PowerShell リモート処理に依存しません。  `Get-EventLog` コンピューターがリモートコマンドを実行するように構成されていない場合でも、の ComputerName パラメーターを使用できます。
 
 ```yaml
 Type: System.String[]
@@ -119,10 +114,10 @@ Accept wildcard characters: False
 
 ### -LogName
 
-イベント ログを指定します。
-1 つ以上のイベント ログのログ名 (LogDisplayName ではなく Log プロパティの値) をコンマ区切りで入力します。
-ワイルドカード文字は使用できません。
-このパラメーターは必須です。
+イベント ログを指定します。 1つ以上のイベントログのログ名 ( **Logdisplayname** ではなく **log** プロパティの値) をコンマで区切って入力します。 ワイルドカード文字は使用できません。 このパラメーターは必須です。
+
+> [!IMPORTANT]
+> このパラメーターは、プロパティ名によってパイプラインからの値を受け取ることを想定しています。 ただし、これが機能しないというバグがあります。 パラメーターを使用して値を直接渡す必要があります。
 
 ```yaml
 Type: System.String[]

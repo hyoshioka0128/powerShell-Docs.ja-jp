@@ -1,14 +1,14 @@
 ---
-ms.date: 09/07/2018
+ms.date: 03/01/2021
 ms.topic: reference
 title: PowerShell コマンドに承認されている動詞
 description: PowerShell コマンドに承認されている動詞
-ms.openlocfilehash: fc1ff989ae86862e0f9cc24d8bcba2ff02ef68cc
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 277472f141eb1ef2b7b0f19801c622a899e93665
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "93355104"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686080"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell コマンドに承認されている動詞
 
@@ -57,7 +57,7 @@ PowerShell の場合、コマンドレットの名前を表すため、および
 
 ### <a name="invoke-vs-start"></a>Invoke と [開始]
 
-`Invoke` 動詞は、同期操作を実行するときに使用します。コマンドを実行し、その終了を待機する場合などです。 `Start` 動詞は、非同期操作を開始するときに使用します。自律的なプロセスを開始する場合などです。
+`Invoke` 動詞は、同期操作を実行するときに使用します。コマンドを実行し、その終了を待機する場合などです。 動詞を使用し `Start` て、独立したプロセスの開始などの非同期操作を開始します。
 
 ### <a name="ping-vs-test"></a>Ping と テスト
 

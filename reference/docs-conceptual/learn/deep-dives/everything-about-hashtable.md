@@ -3,12 +3,12 @@ title: ハッシュテーブルについて知りたかったことのすべて
 description: ハッシュテーブルは PowerShell で非常に重要であるため、十分に理解しておくことをお勧めします。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: e386e2aa2f7b85bee4bf622fd9251ef7642cf16a
-ms.sourcegitcommit: 57e577097085dc621bd797ef4a7e2854ea7d4e29
+ms.openlocfilehash: a471c0fe2c48820d6c1d152e2850b1e431d28f23
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "97980503"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686061"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>ハッシュテーブルについて知りたかったことのすべて
 
@@ -360,7 +360,7 @@ $property = @{
 
 ```powershell
 $drives = Get-PSDrive | Where Used
-$drives | Select-Object -Properties name, $property
+$drives | Select-Object -Property name, $property
 
 Name     totalSpaceGB
 ----     ------------
@@ -370,7 +370,7 @@ C    238.472652435303
 変数に配置しましたが、インラインで簡単に定義することもできます。また、`name` を `n` に短縮し、`expression` を `e` に短縮できます。
 
 ```powershell
-$drives | Select-Object -properties name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
+$drives | Select-Object -property name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
 ```
 
 コマンドが長くなるうえ、説明は省きますが問題のある行動を助長させることも多いため、個人的には好きではありません。 私なら、スクリプトでこのアプローチを使用する代わりに、必要なすべてのフィールドとプロパティを含む新しいハッシュテーブルまたは `pscustomobject` を作成するでしょう。 しかし、これを行うコードはたくさんあるため、認識していただくことが目的でした。 `pscustomobject` の作成については後で説明します。

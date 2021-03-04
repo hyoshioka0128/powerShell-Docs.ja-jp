@@ -1,16 +1,16 @@
 ---
 description: PowerShell の値を比較する演算子について説明します。
 Locale: en-US
-ms.date: 01/20/2021
+ms.date: 02/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: aa2d2d09fe0eb35c42c5ee84083c8ee29354cf8f
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: bab5ec020a51584572d1a3e4e3731bcf9bee6732
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500178"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685992"
 ---
 # <a name="about-comparison-operators"></a>比較演算子について
 
@@ -158,7 +158,7 @@ $null -ne $a
 ```
 
 ```output
-False
+True
 ```
 
 ただし、次の例では、からすべての null 要素を除外してい `$a` ます。
@@ -249,7 +249,7 @@ Members smaller than or equal to 7
 
 これらの演算子は、 [system.icomparable][1]を実装するすべてのクラスで機能します。
 
-次に例を示します。
+例 :
 
 ```powershell
 # Date comparison
@@ -395,7 +395,7 @@ Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 
 既定では、 `-replace` 演算子は大文字と小文字を区別しません。 大文字と小文字を区別するには、を使用 `-creplace` します。 大文字と小文字を区別しないようにするには、を使用 `-ireplace` します。
 
-次に例を示します。
+例 :
 
 ```powershell
 "book" -ireplace "B", "C" # Case insensitive
@@ -505,7 +505,7 @@ Hello
 
 これらの演算子は、セットに特定の要素が含まれているかどうかを判断します。 `-contains` 右側 (テストオブジェクト) がセット内のいずれかの要素と一致する場合に True を返します。 `-notcontains` 代わりに False を返します。 テストオブジェクトがコレクションの場合、これらの演算子は参照の等価性を使用します。つまり、セットの要素の1つがテストオブジェクトの同じインスタンスであるかどうかを確認します。
 
-次に例を示します。
+例 :
 
 ```powershell
 "abc", "def" -contains "def"                  # Output: True

@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/08/2020
+ms.date: 02/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: c54efeb79f4129b55e078a1ccf9d46afc2e754ab
-ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
+ms.openlocfilehash: 584ca877cedfe1494f8386af75f9f1911a5b8f15
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97725172"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685651"
 ---
 # ForEach-Object
 
@@ -42,7 +42,7 @@ ForEach-Object [-InputObject <PSObject>] -Parallel <ScriptBlock> [-ThrottleLimit
  [-TimeoutSeconds <Int32>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## [説明]
+## 説明
 
 `ForEach-Object`コマンドレットは、入力オブジェクトのコレクション内の各項目に対して操作を実行します。 入力オブジェクトは、コマンドレットにパイプすることも、 **InputObject** パラメーターを使用して指定することもできます。
 
@@ -77,7 +77,7 @@ Windows PowerShell 3.0 以降では、コマンドを構築する方法は2つ�
   例外などの終了エラーは、発生した scriptblocks の個々の並列インスタンスを終了します。 1つの scriptblocks で終了エラーが発生しても、コマンドレットが終了しないことがあり `Foreach-Object` ます。 並列で実行されている他の scriptblocks は、終了エラーも発生しない限り実行を継続します。 終了エラーは、の **FullyQualifiedErrorId** を持つ **errorrecord** としてエラーデータストリームに書き込まれ `PSTaskException` ます。
   終了エラーは、PowerShell の try/catch ブロックまたはトラップブロックを使用して、終了しないエラーに変換できます。
 
-## 使用例
+## 例
 
 ### 例 1: 配列の整数を除算する
 
@@ -383,6 +383,44 @@ Output: 5
 
 `Output: 3` は、その反復処理の並列 scriptblock が終了したため、書き込まれませんでした。
 
+### 例 17: 入れ子になった並列スクリプト ScriptBlockSet での変数の引き渡し
+
+スコープを持つ scriptblock の外側に変数を作成 `Foreach-Object -Parallel` し、キーワードを使用して scriptblock 内で使用することができ `$using` ます。
+
+```powershell
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+}
+```
+
+```Output
+TestA
+TestA
+```
+
+```powershell
+# You CANNOT create a variable inside a scoped scriptblock
+# to be used in a nested foreach parallel scriptblock.
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+    $test2 = 'TestB'
+    1..2 | Foreach-Object -Parallel {
+        $using:test2
+    }
+}
+```
+
+```Output
+Line |
+   2 |  1..2 | Foreach-Object -Parallel {
+     |         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | The value of the using variable '$using:test2' cannot be retrieved because it has not been set in the local session.
+```
+
+入れ子になった scriptblock は変数にアクセスでき `$test2` ず、エラーがスローされます。
+
 ## パラメーター
 
 ### -ArgumentList
@@ -631,13 +669,13 @@ Accept wildcard characters: False
 
 このコマンドレットは、入力によって決定されたオブジェクトを返します。
 
-## 注
+## Notes
 
 - `ForEach-Object`コマンドレットは **foreach** ステートメントとよく似ていますが、入力を **foreach** ステートメントにパイプすることはできません。 **Foreach** ステートメントの詳細については、「 [about_Foreach](./About/about_Foreach.md)」を参照してください。
 
 - PowerShell 4.0 以降では `Where` 、 `ForEach` コレクションで使用するためのメソッドとメソッドが追加されました。 これらの新しいメソッドの詳細については、こちらを参照してください [about_arrays](./About/about_Arrays.md)
 
-- `ForEach-Object -Parallel`パラメーターセットは、PowerShell の内部 API を使用して各スクリプトブロックを実行します。 これは `ForEach-Object` 、通常のシーケンシャル処理で実行する場合よりも、オーバーヘッドが大幅に増加します。 **並列実行** のオーバーヘッドは、スクリプトブロックで実行される作業と比較して小さくすることが重要です。 以下に例を示します。
+- `ForEach-Object -Parallel`パラメーターセットは、PowerShell の内部 API を使用して各スクリプトブロックを実行します。 これは `ForEach-Object` 、通常のシーケンシャル処理で実行する場合よりも、オーバーヘッドが大幅に増加します。 **並列実行** のオーバーヘッドは、スクリプトブロックで実行される作業と比較して小さくすることが重要です。 次に例を示します。
 
   - マルチコアマシンでの多くのコンピューティング処理を要するスクリプト
   - 結果の待機時間またはファイル操作の実行に時間を費やすスクリプト
