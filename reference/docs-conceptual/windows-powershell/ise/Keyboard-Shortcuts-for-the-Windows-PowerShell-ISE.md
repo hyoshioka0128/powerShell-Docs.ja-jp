@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 title: Windows PowerShell ISE のキーボード ショートカット
 description: この記事では、PowerShell ISE で使用されるキーボード ショートカットの一覧を示します。
-ms.openlocfilehash: 690997524ab90d7581bb03c802f189d1a4b79d3f
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: 6a55bb2e6046fbda1c8b7b83345138f294009ac8
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500195"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685930"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE のキーボード ショートカット
 
@@ -20,6 +20,7 @@ Windows PowerShell&reg; Integrated Scripting Environment (ISE) の操作を実�
 |              アクション              |              キーボード ショートカット               |                                                                                                                                           使用する場所                                                                                                                                           |
 | -------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Help (ヘルプ)**                         | <kbd>F1</kbd>                                 | スクリプト ウィンドウ **重要:** <kbd>F1</kbd> ヘルプとして docs.microsoft.com またはダウンロードしたヘルプを表示するように指定できます (`Update-Help` を参照)。 選ぶには、 **[ツール]** 、 **[オプション]** の順にクリックし、 **[全般設定]** タブで **[オンライン コンテンツの代わりにローカル ヘルプ コンテンツを使用する]** をオンまたはオフにします。 |
+| **[すべて選択]**                   | <kbd>Ctrl</kbd> + <kbd>A</kbd>                  | スクリプト ウィンドウ                                                                                                                                                                                                                                                                                |
 | **Copy** に設定する必要があります                         | <kbd>Ctrl</kbd> + <kbd>C</kbd>                  | スクリプト ウィンドウ、コマンド ウィンドウ、出力ウィンドウ                                                                                                                                                                                                                                                     |
 | **切り取り**                          | <kbd>Ctrl</kbd> + <kbd>X</kbd>                  | スクリプト ウィンドウ、コマンド ウィンドウ                                                                                                                                                                                                                                                                  |
 | **アウトラインの展開または折りたたみ** | <kbd>Ctrl</kbd> + <kbd>M</kbd>                  | スクリプト ウィンドウ                                                                                                                                                                                                                                                                                |
@@ -36,6 +37,9 @@ Windows PowerShell&reg; Integrated Scripting Environment (ISE) の操作を実�
 | **[すべて選択]**                   | <kbd>Ctrl</kbd> + <kbd>A</kbd>                  | スクリプト ウィンドウ、コマンド ウィンドウ、出力ウィンドウ                                                                                                                                                                                                                                                     |
 | **スニペットの表示**                | <kbd>Ctrl</kbd> + <kbd>J</kbd>                  | スクリプト ウィンドウ、コマンド ウィンドウ                                                                                                                                                                                                                                                                  |
 | **元に戻す**                         | <kbd>Ctrl</kbd> + <kbd>Z</kbd>                  | スクリプト ウィンドウ、コマンド ウィンドウ                                                                                                                                                                                                                                                                  |
+| **Intellisense ヘルプの表示**       | <kbd>Ctrl</kbd>+<kbd>Space</kbd>              | スクリプト ウィンドウ                                                                                                                                                                                                                                                                                |
+| **左の単語を削除**          | <kbd>Ctrl</kbd>+<kbd>Backspace</kbd>          | スクリプト ウィンドウ                                                                                                                                                                                                                                                                                |
+| **右の単語を削除**         | <kbd>Ctrl</kbd>+<kbd>Del</kbd>             | スクリプト ウィンドウ                                                                                                                                                                                                                                                                                |
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>スクリプトを実行するためのキーボード ショートカット
 

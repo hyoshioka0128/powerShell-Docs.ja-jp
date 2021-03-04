@@ -3,12 +3,12 @@ title: 例外について知りたかったことのすべて
 description: エラー処理は、コードを記述するときにはなくてはならないものです。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: cd17ae6b5ded052c93923b648155a4dda8956b34
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 589e5d1decff7aa49ce36e10908e4464a768758d
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "90012563"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685513"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>例外について知りたかったことのすべて
 
