@@ -6,12 +6,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: 6f5c76faafa2c68a6d9dfc604238c514489aa717
-ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
+ms.openlocfilehash: bb3c3686310440d9f75d36ca1c83fb60066f5d6a
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99975058"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771498"
 ---
 # Get-Date
 
@@ -513,7 +513,7 @@ Accept wildcard characters: False
 
 ### パイプラインの入力
 
-`Get-Date` パイプラインの入力を受け入れます。 たとえば、`Get-ChildItem | Get-Date` のようにします。
+`Get-Date` パイプラインの入力を受け入れます。 たとえば、「 `Get-ChildItem | Get-Date` 」のように入力します。
 
 ## 出力
 
@@ -526,7 +526,7 @@ Accept wildcard characters: False
 メソッドは、 `(Get-Date).ToString()` **DateTime** オブジェクトを **String** オブジェクトに変換します。
 
 オブジェクトのプロパティとメソッドを表示するには、オブジェクトをパイプライン内でに送信し `Get-Member` ます。
-たとえば、`Get-Date | Get-Member` のようにします。
+たとえば、「 `Get-Date | Get-Member` 」のように入力します。
 
 ## 注
 
@@ -544,10 +544,10 @@ Accept wildcard characters: False
 | `%c` | 日付と時刻-省略形                                             | Thu 6 月 27 08:44:18 2019 |
 | `%D` | Mm/dd/yy 形式の日付                                                 | 06/27/19                 |
 | `%d` | 月の通算日-2 桁                                             | 05                       |
-| `%e` | 月の通算日-1 桁のみの場合はスペースで始まります。           | \<space\>5/5               |
+| `%e` | 月の通算日-1 桁のみの場合はスペースで始まります。           | \<space\>5                |
 | `%F` | YYYY-mm-dd 形式の日付。% Y-% m-% d (ISO 8601 日付形式) に相当します。 | 2019-06-27               |
-| `%G` | ' Y ' と同じ                                                             |                          |
-| `%g` | ' Y ' と同じ                                                             |                          |
+| `%G` | ISO 週の日付の年 (木曜日を含む年)               |                          |
+| `%g` | ' G '-2 桁と同じ                                                  |                          |
 | `%H` | 24時間形式の時間                                                  | 17                       |
 | `%h` | ' B ' と同じ                                                             |                          |
 | `%I` | 12時間形式の時間                                                  | 05                       |

@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/09/2020
+ms.date: 03/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
-ms.openlocfilehash: e44cad2bab6c81de67cdd0902af5172438efa19e
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 32fd07174bacb7d0b99361916574f6b672052d1b
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94388503"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771428"
 ---
 # Set-StrictMode
 
@@ -227,7 +227,7 @@ Accept wildcard characters: False
   - オブジェクトの存在しないプロパティへの参照を禁止します。
   - メソッドを呼び出すための構文を使用する関数呼び出しを禁止します。
   - 範囲外または解決できない配列インデックスを禁止します。
-- 最新
+- 最も遅い
   - 使用可能な最新バージョンを選択します。 最新バージョンは最も厳格です。 新しいバージョンを PowerShell に追加した場合でも、スクリプトが使用可能な最も厳格なバージョンを使用するようにするには、この値を使用します。
 
 > [!CAUTION]
@@ -262,6 +262,8 @@ Accept wildcard characters: False
 このコマンドレットによる戻り値はありません。
 
 ## 注
+
+`Set-StrictMode` **Version** パラメーターはより大きい値を受け取り `3.0` ますが、現在のところ、よりも新しい規則は定義されていません `3.0` 。
 
 `Set-StrictMode` は、その子スコープに設定されているスコープ内でのみ有効です。 PowerShell のスコープの詳細については、「 [about_Scopes](about/about_Scopes.md)」を参照してください。
 
