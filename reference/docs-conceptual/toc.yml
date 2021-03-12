@@ -19,7 +19,7 @@
       href: install/installing-powershell-core-on-linux.md
     - name: macOS への PowerShell のインストール
       href: install/installing-powershell-core-on-macos.md
-    - name: ARM への PowerShell のインストール
+    - name: Arm への PowerShell のインストール
       href: install/powershell-core-on-arm.md
     - name: Docker での PowerShell の使用
       href: install/PowerShell-in-Docker.md
