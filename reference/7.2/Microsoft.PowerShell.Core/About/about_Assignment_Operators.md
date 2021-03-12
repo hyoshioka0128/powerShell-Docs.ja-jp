@@ -1,15 +1,16 @@
 ---
 description: 演算子を使用して変数に値を割り当てる方法について説明します。
+Locale: en-US
 ms.date: 04/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Assignment_Operators
-ms.openlocfilehash: 4e21c9d0f2b0a47cd4db10ee515ceb07548eb971
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: adc54dd045fdffbb6605554b535c92680ee0d525
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99603245"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195250"
 ---
 # <a name="about-assignment-operators"></a>代入演算子の概要
 

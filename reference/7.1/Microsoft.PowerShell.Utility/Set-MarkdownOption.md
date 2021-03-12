@@ -1,15 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption?view=powershell-7.x.0&WT.mc_id=ps-gethelp
 ms.date: 01/30/2020
+online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: e7e70637afcf53f84c719b489575f5267f9048b1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+title: Set-MarkdownOption
+ms.openlocfilehash: 5e19dc25d0b10888f6ce2f915926610f0780daf6
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93211816"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195322"
 ---
 # Set-MarkdownOption
 
@@ -47,7 +49,7 @@ Set-MarkdownOption [-PassThru] [-InputObject] <PSObject> [<CommonParameters>]
 Markdown の詳細については、「 [Commonmark](https://commonmark.org/) 」 web サイトを参照してください。
 
 > [!NOTE]
-> 設定で使用される文字列値は、 **Escape** `[char]0x1B` ANSI エスケープシーケンスのエスケープ文字 () に続く文字です。 文字列に **エスケープ** 文字を含めないでください。 ANSI エスケープコードの詳細については、「 [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)」を参照してください。
+> 設定で使用される文字列値は、  `[char]0x1B` ANSI エスケープシーケンスのエスケープ文字 () に続く文字です。 文字列に **エスケープ** 文字を含めないでください。 ANSI エスケープコードの詳細については、「 [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)」を参照してください。
 
 ## 例
 

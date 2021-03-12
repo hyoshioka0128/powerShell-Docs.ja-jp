@@ -2,12 +2,12 @@
 title: PowerShell Core のサポート ライフサイクル
 description: PowerShell のサポートを管理するポリシーの詳細を説明します
 ms.date: 11/11/2020
-ms.openlocfilehash: 0803dda070c66b4c1d803171ecdb7029a096517b
-ms.sourcegitcommit: 4879b9cdfa3f03b04a07b84442dc1ca9ae0f6b46
+ms.openlocfilehash: a11c4df1f105364307b8a99ffe9b0cc7e9c29122
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98105181"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771479"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell のサポート ライフサイクル
 
@@ -131,11 +131,15 @@ PowerShell 7 では、Windows PowerShell 用に記述された既存の PowerShe
 PowerShell は、「[Windows での Microsoft セキュリティ サービス提供の基準][]」に従っています。
 次の表は、サービス提供の基準を満たす機能と、満たさない機能の概要を示しています。
 
-| 機能                          | Type             |
-|----------------------------------|------------------|
-| 実行ポリシー                 | 多層防御 |
-| システム ロックダウン - AppLocker を使用 | 多層防御 |
-| システム ロックダウン - WDAC を使用      | セキュリティ機能 |
+|                  機能                   |       Type       |
+| ------------------------------------------ | ---------------- |
+| 実行ポリシー                           | 多層防御 |
+| システム ロックダウン - AppLocker を使用           | 多層防御 |
+| 制約付き言語モード - AppLocker を使用 | 多層防御 |
+| システム ロックダウン - WDAC を使用                | セキュリティ機能 |
+| 制約付き言語モード - WDAC を使用      | セキュリティ機能 |
+
+AppLocker と Windows Defender Application Control (WDAC) の詳細については、[Windows のアプリケーション制御](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)に関する記事を参照してください。
 
 ## <a name="release-history"></a>リリース履歴
 

@@ -1,15 +1,17 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 10/15/2020
-online version: ''
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pssubsystem?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 34998e7c4a6876821df949019970dc1d87297397
-ms.sourcegitcommit: c9e56ec489522c706b8d6b8733f3f015d6d7e893
+title: Get-PSSubsystem
+ms.openlocfilehash: 1e08715562ab5a5b52193dacdd2c48cacb4540e8
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93224528"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195522"
 ---
 # Get-PSSubsystem
 
@@ -41,11 +43,11 @@ Get-PSSubsystem -SubsystemType <Type> [<CommonParameters>]
 PowerShell に登録されているサブシステムに関する情報を取得します。
 
 > [!NOTE]
-> これは試験段階の機能です。 このコマンドレットは、機能が有効になっている場合にのみ使用でき `PSSubsystemPluginModel` ます。 詳細については、「試験的な [機能の使用](/powershell/scripting/learn/experimental-features)」を参照してください。
+> これは試験段階の機能です。 このコマンドレットは、機能が有効になっている場合にのみ使用でき `PSSubsystemPluginModel` ます。 詳細については、「[試験的な機能の使用](/powershell/scripting/learn/experimental-features)」を参照してください。
 
 この機能により、`System.Management.Automation.dll` のコンポーネントを、独自のアセンブリに存在する個々のサブシステムに分けることができます。 この分割により、コア PowerShell エンジンのディスク占有領域が削減され、これらのコンポーネントを最小限の PowerShell インストールに対するオプション機能にすることができます。
 
-現時点では、 **CommandPredictor** サブシステムのみがサポートされています。 このサブシステムは、カスタム予測プラグインを提供するために、PSReadLine モジュールと共に使用されます。 今後、 **Job** 、 **CommandCompleter** 、 **Remoting** などのコンポーネントは、`System.Management.Automation.dll` 外のサブシステム アセンブリに分割される可能性があります。
+現時点では、**CommandPredictor** サブシステムのみがサポートされています。 このサブシステムは、カスタム予測プラグインを提供するために、PSReadLine モジュールと共に使用されます。 今後、**Job**、**CommandCompleter**、**Remoting** などのコンポーネントは、`System.Management.Automation.dll` 外のサブシステム アセンブリに分割される可能性があります。
 
 ## 例
 
