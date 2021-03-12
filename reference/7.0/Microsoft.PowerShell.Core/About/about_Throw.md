@@ -1,17 +1,16 @@
 ---
 description: 終了エラーを生成する Throw キーワードについて説明します。
-keywords: powershell,コマンドレット
 Locale: en-US
 ms.date: 12/01/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_throw?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Throw
-ms.openlocfilehash: d4bf0ea00145c03522d4db952be201c877c9d50c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 2984e0a9e5f470594dd1e5987b69b92f91ce4913
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93220523"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193958"
 ---
 # <a name="about-throw"></a>Throw の概要
 

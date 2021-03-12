@@ -4,15 +4,15 @@ keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 02/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unprotect-CmsMessage
-ms.openlocfilehash: 394e8c1b18d7ba0f4b65e1681faffe795592b97d
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 4c66b1785da53b3bf351e4377fef0e99076e3fcf
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347671"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194643"
 ---
 # Unprotect-CmsMessage
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-暗号化を解除する暗号化されたコンテンツへのパスを指定します。 **Path** とは異なり、 **LiteralPath** の値は入力した内容のまま使用されます。 ワイルドカードとして解釈される文字はありません。 パスにエスケープ文字が含まれている場合は、単一引用符で囲みます。 単一引用符で囲まれた文字はエスケープシーケンスとして解釈されません。
+暗号化を解除する暗号化されたコンテンツへのパスを指定します。 **Path** とは異なり、**LiteralPath** の値は入力した内容のまま使用されます。 ワイルドカードとして解釈される文字はありません。 パスにエスケープ文字が含まれている場合は、単一引用符で囲みます。 単一引用符で囲まれた文字はエスケープシーケンスとして解釈されません。
 
 ```yaml
 Type: System.String

@@ -1,13 +1,15 @@
 ---
 description: 高度な関数でパラメーターセットを定義して使用する方法について説明します。
 title: about_Parameter_Sets
+Locale: en-US
 ms.date: 01/05/2021
-ms.openlocfilehash: 876f6336dd344412b514ea22d413a97a98c9cd02
-ms.sourcegitcommit: eb7ad1850550032880f5529b4e4281514cba1673
+schema: 2.0.0
+ms.openlocfilehash: d9437c8d53a54e766b42e24cd405b1fa2fccc4f8
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97917825"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195595"
 ---
 # <a name="about-parameter-sets"></a>パラメーターセットについて
 

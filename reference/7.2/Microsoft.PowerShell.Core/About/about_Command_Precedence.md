@@ -1,15 +1,16 @@
 ---
 description: PowerShell が実行するコマンドを決定する方法について説明します。
+Locale: en-US
 ms.date: 02/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Command_Precedence
-ms.openlocfilehash: 0b1ad7dc0fae9c6c0ec16929b3d538e5db4aea55
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 8b8a27a47c454b59b5dd4bb2d6e8a8cc3cec78c8
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99599726"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196238"
 ---
 # <a name="about-command-precedence"></a>コマンドの優先順位について
 
@@ -97,7 +98,7 @@ PowerShell でのワイルドカードの使用方法の詳細については、
 パスを指定しない場合、PowerShell は、現在のセッションに読み込まれたすべての項目に対してコマンドを実行するときに、次の優先順位を使用します。
 
   1. エイリアス
-  2. Function
+  2. 関数
   3. コマンドレット
   4. 外部実行可能ファイル (プログラムと PowerShell 以外のスクリプト)
 
@@ -214,7 +215,7 @@ Microsoft.PowerShell.Utility
 &(Get-Command -Name Map -CommandType Function)
 ```
 
-または
+or
 
 ```powershell
 &(dir Function:\map)

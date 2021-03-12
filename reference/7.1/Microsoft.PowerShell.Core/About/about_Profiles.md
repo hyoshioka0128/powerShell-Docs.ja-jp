@@ -1,16 +1,16 @@
 ---
 description: PowerShell プロファイルを作成して使用する方法について説明します。
-keywords: powershell,コマンドレット
+Locale: en-US
 ms.date: 11/30/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Profiles
-ms.openlocfilehash: c807d32b1e1cf1558f662e0b7edad276102aba36
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 61458b60767f2bd51342546b74eb408433b8d29a
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222931"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195967"
 ---
 # <a name="about-profiles"></a>プロファイルについて
 

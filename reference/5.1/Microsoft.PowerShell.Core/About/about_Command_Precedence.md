@@ -1,16 +1,16 @@
 ---
 description: PowerShell が実行するコマンドを決定する方法について説明します。
-keywords: powershell,コマンドレット
+Locale: en-US
 ms.date: 02/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Command_Precedence
-ms.openlocfilehash: 288c01af2d66aca786cf1b97ad844dd91cac45ca
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 5dd1a5ab88d9049d6da7a221d0020567a3631ba4
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222808"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194591"
 ---
 # <a name="about-command-precedence"></a>コマンドの優先順位について
 
@@ -98,7 +98,7 @@ PowerShell でのワイルドカードの使用方法の詳細については、
 パスを指定しない場合、PowerShell は、現在のセッションに読み込まれたすべての項目に対してコマンドを実行するときに、次の優先順位を使用します。
 
   1. エイリアス
-  2. 機能
+  2. 関数
   3. コマンドレット
   4. 外部実行可能ファイル (プログラムと PowerShell 以外のスクリプト)
 
@@ -165,7 +165,7 @@ Cmdlet          Get-Date                  Microsoft.PowerShell.Utility
 
 #### <a name="qualified-names"></a>修飾名
 
-コマンドレットのモジュール修飾名を使用すると、同じ名前の項目によって非表示になっているコマンドを実行できます。 たとえば、コマンドレットを実行するには、 `Get-Date` モジュール名に " **Microsoft. PowerShell. ユーティリティ** " を付けます。
+コマンドレットのモジュール修飾名を使用すると、同じ名前の項目によって非表示になっているコマンドを実行できます。 たとえば、コマンドレットを実行するには、 `Get-Date` モジュール名に " **Microsoft. PowerShell. ユーティリティ**" を付けます。
 
 この推奨される方法は、配布するスクリプトを記述するときに使用します。 スクリプトが実行されるセッションに存在する可能性があるコマンドを予測することはできません。
 

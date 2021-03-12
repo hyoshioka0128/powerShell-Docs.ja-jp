@@ -1,16 +1,16 @@
 ---
 description: 関数とスクリプトのコメントベースのヘルプトピックを記述する方法について説明します。
-keywords: powershell,コマンドレット
+Locale: en-US
 ms.date: 06/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comment_Based_Help
-ms.openlocfilehash: 386ed8e1c28904c484261aa91d11ce028632cd16
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 6dfc735e02e7155d70d5db05753c4abfc54149f8
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94391274"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195926"
 ---
 # <a name="about-comment-based-help"></a>コメントベースのヘルプについて
 
@@ -21,7 +21,7 @@ ms.locfileid: "94391274"
 
 特別なヘルプコメントキーワードを使用して、関数およびスクリプトのコメントベースのヘルプトピックを記述できます。
 
-[Get-help](xref:Microsoft.PowerShell.Core.Get-Help)コマンドレットは、XML ファイルから生成されたコマンドレットヘルプトピックを表示するのと同じ形式で、コメントベースのヘルプを表示します。 ユーザーは、 `Get-Help` **詳細** 、 **完全** 、 **例** 、 **オンライン** など、のすべてのパラメーターを使用して、コメントベースのヘルプの内容を表示できます。
+[Get-help](xref:Microsoft.PowerShell.Core.Get-Help)コマンドレットは、XML ファイルから生成されたコマンドレットヘルプトピックを表示するのと同じ形式で、コメントベースのヘルプを表示します。 ユーザーは、 `Get-Help` **詳細**、 **完全**、 **例**、 **オンライン** など、のすべてのパラメーターを使用して、コメントベースのヘルプの内容を表示できます。
 
 関数とスクリプトの XML ベースのヘルプファイルを作成することもできます。 `Get-Help`コマンドレットで関数またはスクリプトの XML ベースのヘルプファイルを検索できるようにするには、キーワードを使用し `.ExternalHelp` ます。 このキーワードがない場合、で `Get-Help` は、関数またはスクリプトの XML ベースのヘルプトピックを見つけることができません。
 
@@ -38,7 +38,7 @@ ms.locfileid: "94391274"
 # <help content>
 ```
 
-または
+or
 
 ```
 <#
@@ -307,11 +307,11 @@ function Verb-Noun {
 
 ### <a name="parameter-attribute-table"></a>パラメーター属性テーブル
 
-`Get-Help` の **Full** パラメーターまたは **parameter** パラメーターを使用するときに表示されるパラメーター属性のテーブルを生成し `Get-Help` ます。 **必須** 、 **位置** 、および **既定** 値の属性の値は、関数またはスクリプトの構文から取得されます。
+`Get-Help` の **Full** パラメーターまたは **parameter** パラメーターを使用するときに表示されるパラメーター属性のテーブルを生成し `Get-Help` ます。 **必須**、**位置**、および **既定** 値の属性の値は、関数またはスクリプトの構文から取得されます。
 
 既定値および **Accept ワイルドカード文字** の値は、関数またはスクリプトで定義されている場合でも、parameter 属性テーブルには表示されません。 ユーザーを支援するために、この情報をパラメーターの説明に入力してください。
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>解説
 
 ヘルプトピックの「 **解説** 」セクションは、関数またはスクリプトの名前から自動的に生成されます。 コンテンツを変更または変更することはできません。
 

@@ -1,15 +1,16 @@
 ---
 description: コマンドラインインターフェイスの使用方法について説明 `pwsh` します。 コマンドラインパラメーターを表示し、構文について説明します。
+Locale: en-US
 ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
-ms.openlocfilehash: 25ccb20a4c19a9519bf9d2a518ef6187c2327323
-ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
+ms.openlocfilehash: 8acd83c23c1611b4bbad39b8778a3c5da7ab5eec
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97692701"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194831"
 ---
 # <a name="about-pwsh"></a>Pwsh の概要
 
@@ -98,7 +99,7 @@ pwsh -Command "& {Get-WinEvent -LogName security}"
 
 既存の PowerShell セッション内から呼び出された場合、結果は、ライブオブジェクトではなく、逆シリアル化された XML オブジェクトとして親シェルに返されます。 他のシェルの場合、結果は文字列として返されます。
 
-**Command** の値がの場合 `-` 、コマンドテキストは標準入力から読み取られます。 標準入力で **Command** パラメーターを使用する場合は、標準入力をリダイレクトする必要があります。 以下に例を示します。
+**Command** の値がの場合 `-` 、コマンドテキストは標準入力から読み取られます。 標準入力で **Command** パラメーターを使用する場合は、標準入力をリダイレクトする必要があります。 次に例を示します。
 
 ```powershell
 @'
@@ -135,7 +136,7 @@ PowerShell を実行する構成エンドポイントを指定します。 こ�
 
 このパラメーターは、PowerShell 6.2 で導入されました。
 
-以下に例を示します。
+次に例を示します。
 
 ```powershell
 # PowerShell instance 1
@@ -148,7 +149,7 @@ Enter-PSHostProcess -CustomPipeName mydebugpipe
 
 Base64 でエンコードされた文字列バージョンのコマンドを受け入れます。 このパラメーターを使用して、入れ子になった複雑な引用符を必要とするコマンドを PowerShell に送信します。 Base64 表現は、16LE でエンコードされた文字列である必要があります。
 
-以下に例を示します。
+次に例を示します。
 
 ```powershell
 $command = 'dir "c:\program files" '
@@ -239,7 +240,7 @@ SSH サブシステムとして PowerShell を実行するために sshd_config 
 
 ### <a name="-sta"></a>-STA
 
-シングルスレッドアパートメントを使用して PowerShell を起動します。 これは既定値です。 このスイッチは Windows でのみ使用できます。
+シングルスレッドアパートメントを使用して PowerShell を起動します。 既定値です。 このスイッチは Windows でのみ使用できます。
 
 ### <a name="-version---v"></a>-Version |-v
 
