@@ -1,17 +1,16 @@
 ---
 description: 項目のコレクションを格納するように設計されたデータ構造体である配列について説明します。
-keywords: powershell,コマンドレット
 Locale: en-US
 ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
-ms.openlocfilehash: 2283c36d899c3ea743f6c379dc686ec583d7a36c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 2febf96d49003263cbcfd3f605db60b6c1d2437b
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93220995"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412933"
 ---
 # <a name="about-arrays"></a>配列について
 
@@ -52,13 +51,13 @@ $C = 5..8
 
 結果として、 `$C` 5、6、7、8の4つの値が含まれます。
 
-データ型が指定されていない場合、PowerShell は各配列をオブジェクト配列 ( **system.object []** ) として作成します。 配列のデータ型を特定するには、 **GetType ()** メソッドを使用します。 たとえば、配列のデータ型を確認するには、次のように `$A` 入力します。
+データ型が指定されていない場合、PowerShell は各配列をオブジェクト配列 (**system.object []**) として作成します。 配列のデータ型を特定するには、 **GetType ()** メソッドを使用します。 たとえば、配列のデータ型を確認するには、次のように `$A` 入力します。
 
 ```powershell
 $A.GetType()
 ```
 
-厳密に型指定された配列 (特定の型の値のみを格納できる配列) を作成するには、 **string []** 、 **long []** 、 **int32 []** などの配列型として変数をキャストします。 配列をキャストするには、変数名の前に、角かっこで囲まれた配列型を使用します。 たとえば、 `$ia` 4 つの整数 (1500、2230、3350、および 4000) を含むという名前の32ビット整数配列を作成するには、次のように入力します。
+厳密に型指定された配列 (特定の型の値のみを格納できる配列) を作成するには、 **string []**、 **long []**、 **int32 []** などの配列型として変数をキャストします。 配列をキャストするには、変数名の前に、角かっこで囲まれた配列型を使用します。 たとえば、 `$ia` 4 つの整数 (1500、2230、3350、および 4000) を含むという名前の32ビット整数配列を作成するには、次のように入力します。
 
 ```powershell
 [int32[]]$ia = 1500,2230,3350,4000
@@ -321,7 +320,7 @@ $a.Length
 
 ### <a name="rank"></a>順位
 
-配列内の次元数を返します。 PowerShell のほとんどの配列には、ディメンションが1つだけあります。 多次元配列を構築していると思われる場合でも、次の例のようになります。
+配列内の次元数を返します。 PowerShell のほとんどの配列には、ディメンションが1つだけあります。 次の例のように、多次元配列を構築していると考えられます。
 
 ```powershell
 $a = @(
@@ -330,23 +329,72 @@ $a = @(
   @(Get-Process)
 )
 
-[int]$r = $a.Rank
-"`$a rank: $r"
+"`$a rank: $($a.Rank)"
+"`$a length: $($a.Length)"
+"`$a length: $($a.Length)"
+"Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
+
+この例では、他の配列を含む1次元配列を作成します。 これは、 _ジャグ配列_ とも呼ばれます。 **Rank** プロパティは、これが単次元であることを実証しています。 ジャグ配列内の項目にアクセスするには、インデックスを別の角かっこ () で囲む必要があり `[]` ます。
 
 ```Output
 $a rank: 1
+$a length: 3
+$a[2] length: 348
+Process $a[2][1]: AcroRd32
 ```
 
-次の例は、.Net Framework を使用して真の多次元配列を作成する方法を示しています。
+多次元配列は [、行優先順](https://wikipedia.org/wiki/Row-_and_column-major_order)で格納されます。 次の例は、真の多次元配列を作成する方法を示しています。
 
 ```powershell
-[int[,]]$rank2 = [int[,]]::new(5,5)
+[string[,]]$rank2 = [string[,]]::New(3,2)
 $rank2.rank
+$rank2.Length
+$rank2[0,0] = 'a'
+$rank2[0,1] = 'b'
+$rank2[1,0] = 'c'
+$rank2[1,1] = 'd'
+$rank2[2,0] = 'e'
+$rank2[2,1] = 'f'
+$rank2[1,1]
 ```
 
 ```Output
 2
+6
+d
+```
+
+多次元配列内の項目にアクセスするには、 `,` 1 組の角かっこ () 内でコンマ () を使用してインデックスを区切り `[]` ます。
+
+レプリケーションや連結など、多次元配列に対する一部の操作では、配列がフラット化されている必要があります。 フラット化により、配列は制約のない型の1次元配列に変換されます。 結果の配列は、行優先順のすべての要素を処理します。 次の例を確認してください。
+
+```powershell
+$a = "red",$true
+$b = (New-Object 'int[,]' 2,2)
+$b[0,0] = 10
+$b[0,1] = 20
+$b[1,0] = 30
+$b[1,1] = 40
+$c = $a + $b
+$a.GetType().Name
+$b.GetType().Name
+$c.GetType().Name
+$c
+```
+
+出力に示されているの `$c` は、 `$a` `$b` 行優先順にとの項目を含む1次元配列であることを示しています。
+
+```output
+Object[]
+Int32[,]
+Object[]
+red
+True
+10
+20
+30
+40
 ```
 
 ## <a name="methods-of-arrays"></a>配列のメソッド
@@ -548,7 +596,7 @@ $Zips.Where({$_.Length -gt 100MB}, 'Default', 1)
 > [!NOTE]
 > モードとモードは、どちらも `Default` `First` 最初の ( `numberToReturn` ) 項目を返し、同義に使用することができます。
 
-#### <a name="last"></a>Last (最後へ)
+#### <a name="last"></a>末尾
 
 ```powershell
 $h = (Get-Date).AddHours(-1)
@@ -579,7 +627,7 @@ localhost
 
 モードは、モードを `Until` 反転し `SkipUntil` ます。  コレクション内の **すべて** の項目を返します。これは、項目がスクリプトブロック式に合格するまで続きます。 項目が scriptblock 式を _渡す_ と、 `Where` メソッドは項目の処理を停止します。
 
-これは、メソッドから _渡されない_ 項目の最初のセットを受け取ることを意味し `Where` ます。 1つの項目が成功し _た後_ 、残りはテストも返されません。
+これは、メソッドから _渡されない_ 項目の最初のセットを受け取ることを意味し `Where` ます。 1つの項目が成功し _た後_、残りはテストも返されません。
 
 返される項目の数は、引数に値を渡すことによって制限できます `numberToReturn` 。
 

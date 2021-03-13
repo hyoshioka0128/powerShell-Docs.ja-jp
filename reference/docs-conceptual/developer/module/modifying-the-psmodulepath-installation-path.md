@@ -1,14 +1,14 @@
 ---
-ms.date: 09/13/2016
+ms.date: 03/12/2021
 ms.topic: reference
 title: PSModulePath インストール パスを変更する
 description: PSModulePath インストール パスを変更する
-ms.openlocfilehash: b802492bf9b49e8165e296817e3f80b9ae8265a6
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 1bea1e8ed20f55352cc9b4270e95cf7f0f7e2faa
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92661954"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412894"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>PSModulePath インストール パスを変更する
 
@@ -47,9 +47,12 @@ PowerShell を起動すると、 `PSModulePath` はシステム環境変数と�
 
   ```
 
+構成ファイルで値を設定することもでき `PSModulePath` `powershell.config.json` ます。 詳細については、「 [about_PowerShell_Config](/powershell/module/microsoft.powershell.core/about/about_powershell_config#psmodulepath)」を参照してください。
+
 ## <a name="to-remove-locations-from-the-psmodulepath"></a>PSModulePath から場所を削除するには
 
-同様のメソッドを使用して、変数からパスを削除できます。たとえば、 `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"` は、現在のセッションから **C:\ モジュールパス** パスを削除します。
+同様の方法を使用して、変数からパスを削除できます。たとえば、次のようにします。 `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"`
+は、現在のセッションから **C:\ モジュールパス** パスを削除します。
 
 ## <a name="see-also"></a>参照
 

@@ -5,12 +5,12 @@ ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
-ms.openlocfilehash: 2e7cf9c8f7d4e6f1d5bc66310f56d3de9461e592
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 4ec216a502f0031bc35cc7b04aacf5d262fd696d
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99599317"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412847"
 ---
 # <a name="about-arrays"></a>配列について
 
@@ -320,7 +320,7 @@ $a.Length
 
 ### <a name="rank"></a>順位
 
-配列内の次元数を返します。 PowerShell のほとんどの配列には、ディメンションが1つだけあります。 多次元配列を構築していると思われる場合でも、次の例のようになります。
+配列内の次元数を返します。 PowerShell のほとんどの配列には、ディメンションが1つだけあります。 次の例のように、多次元配列を構築していると考えられます。
 
 ```powershell
 $a = @(
@@ -329,28 +329,77 @@ $a = @(
   @(Get-Process)
 )
 
-[int]$r = $a.Rank
-"`$a rank: $r"
+"`$a rank: $($a.Rank)"
+"`$a length: $($a.Length)"
+"`$a length: $($a.Length)"
+"Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
+
+この例では、他の配列を含む1次元配列を作成します。 これは、 _ジャグ配列_ とも呼ばれます。 **Rank** プロパティは、これが単次元であることを実証しています。 ジャグ配列内の項目にアクセスするには、インデックスを別の角かっこ () で囲む必要があり `[]` ます。
 
 ```Output
 $a rank: 1
+$a length: 3
+$a[2] length: 348
+Process $a[2][1]: AcroRd32
 ```
 
-次の例は、.Net Framework を使用して真の多次元配列を作成する方法を示しています。
+多次元配列は [、行優先順](https://wikipedia.org/wiki/Row-_and_column-major_order)で格納されます。 次の例は、真の多次元配列を作成する方法を示しています。
 
 ```powershell
-[int[,]]$rank2 = [int[,]]::new(5,5)
+[string[,]]$rank2 = [string[,]]::New(3,2)
 $rank2.rank
+$rank2.Length
+$rank2[0,0] = 'a'
+$rank2[0,1] = 'b'
+$rank2[1,0] = 'c'
+$rank2[1,1] = 'd'
+$rank2[2,0] = 'e'
+$rank2[2,1] = 'f'
+$rank2[1,1]
 ```
 
 ```Output
 2
+6
+d
+```
+
+多次元配列内の項目にアクセスするには、 `,` 1 組の角かっこ () 内でコンマ () を使用してインデックスを区切り `[]` ます。
+
+レプリケーションや連結など、多次元配列に対する一部の操作では、配列がフラット化されている必要があります。 フラット化により、配列は制約のない型の1次元配列に変換されます。 結果の配列は、行優先順のすべての要素を処理します。 次の例を確認してください。
+
+```powershell
+$a = "red",$true
+$b = (New-Object 'int[,]' 2,2)
+$b[0,0] = 10
+$b[0,1] = 20
+$b[1,0] = 30
+$b[1,1] = 40
+$c = $a + $b
+$a.GetType().Name
+$b.GetType().Name
+$c.GetType().Name
+$c
+```
+
+出力に示されているの `$c` は、 `$a` `$b` 行優先順にとの項目を含む1次元配列であることを示しています。
+
+```output
+Object[]
+Int32[,]
+Object[]
+red
+True
+10
+20
+30
+40
 ```
 
 ## <a name="methods-of-arrays"></a>配列のメソッド
 
-### <a name="clear"></a>クリア
+### <a name="clear"></a>Clear
 
 すべての要素の値を、配列の要素型の _既定値_ に設定します。
 Clear () メソッドでは、配列のサイズはリセットされません。
@@ -547,7 +596,7 @@ $Zips.Where({$_.Length -gt 100MB}, 'Default', 1)
 > [!NOTE]
 > モードとモードは、どちらも `Default` `First` 最初の ( `numberToReturn` ) 項目を返し、同義に使用することができます。
 
-#### <a name="last"></a>Last (最後へ)
+#### <a name="last"></a>末尾
 
 ```powershell
 $h = (Get-Date).AddHours(-1)

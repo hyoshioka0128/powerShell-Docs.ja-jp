@@ -1,17 +1,16 @@
 ---
-description: レジストリ構成を置き換える PowerShell Core の構成ファイル。
-keywords: powershell
+description: レジストリ構成を置き換える PowerShell の構成ファイル。
 Locale: en-US
-ms.date: 11/02/2018
+ms.date: 03/12/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_Config
-ms.openlocfilehash: 88e2f5fc5eaaf3ffffd5ceb3df0632866eee705e
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 1ba0472e52ff6fc810a0b357fb7fa60c008d0de2
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223088"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412946"
 ---
 # <a name="about-powershell-config"></a>PowerShell の構成について
 
@@ -23,11 +22,7 @@ ms.locfileid: "93223088"
 このファイルには、 `powershell.config.json` PowerShell Core の構成設定が含まれています。 PowerShell は起動時にこの構成を読み込みます。 設定は、実行時に変更することもできます。 以前は、これらの設定は PowerShell 用の Windows レジストリに格納されていましたが、macOS と Linux での構成を可能にするためにファイルに含まれるようになりました。
 
 > [!WARNING]
-> ファイルに `powershell.config.json` 無効な JSON が含まれている場合は、対話型セッションを開始できません。
-> この問題が発生した場合は、構成ファイルを修正する必要があります。
-
-> [!NOTE]
-> 認識されないキーまたは構成ファイル内の無効な値は、警告なしで無視されます。
+> 認識されないキーまたは構成ファイル内の無効な値は、警告なしで無視されます。 ファイルに `powershell.config.json` 無効な JSON が含まれている場合、PowerShell で対話型セッションを開始することはできません。 この問題が発生した場合は、構成ファイルを修正する必要があります。
 
 ### <a name="allusers-shared-configuration"></a>AllUsers (共有) 構成
 
@@ -59,11 +54,9 @@ CurrentUser 構成の場合、 **currentuser** 実行ポリシーが設定され
 "<shell-id>:ExecutionPolicy": "<execution-policy>"
 ```
 
-各値の説明:
+条件:
 
-- `<shell-id>` 現在の PowerShell ホストの ID を参照します。
-  通常の PowerShell Core の場合、これは `Microsoft.PowerShell` です。
-  任意の PowerShell セッションで、を使用して検出でき `$ShellId` ます。
+- `<shell-id>` 現在の PowerShell ホストの ID を参照します。 通常の PowerShell Core の場合、これは `Microsoft.PowerShell` です。 任意の PowerShell セッションで、を使用して検出でき `$ShellId` ます。
 - `<execution-policy>` 有効な実行ポリシー名を参照します。
 
 次の例では、PowerShell の実行ポリシーをに設定し `RemoteSigned` ます。
@@ -78,25 +71,24 @@ Windows では、同等のレジストリキーがおよびの `\SOFTWARE\Micros
 
 ### <a name="psmodulepath"></a>PSModulePath
 
-この PowerShell セッションの PSModulePath コンポーネントをオーバーライドします。 現在のユーザーの構成である場合は、CurrentUser モジュールのパスを設定します。 構成がすべてのユーザーを対象としている場合は、AllUser モジュールパスを設定します。
+`PSModulePath`この PowerShell セッションの設定を上書きします。 現在のユーザーの構成である場合は、 **CurrentUser** モジュールのパスを設定します。 構成がすべてのユーザーを対象としている場合は、 **AllUsers** モジュールパスを設定します。
 
 > [!WARNING]
-> ここで AllUsers または CurrentUser モジュールパスを構成しても、 [インストールモジュール](/powershell/module/powershellget/install-module)のような PowerShellGet モジュールの対象となるインストール場所は変更されません。
-> これらのコマンドレットは、常に *既定* のモジュールパスを使用します。
+> ここで **AllUsers** または **CurrentUser** モジュールパスを構成しても、 [インストールモジュール](/powershell/module/powershellget/install-module)のような PowerShellGet コマンドレットの範囲指定されたインストール場所は変更されません。 これらのコマンドレットは、常に _既定_ のモジュールパスを使用します。
 
-値が設定されていない場合は、それぞれのモジュールパスコンポーネントの既定値が使用されます。 これらの既定の詳細については、「 [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath) 」を参照してください。
+値が設定されていない場合、PowerShell はそれぞれのモジュールパス設定に既定値を使用します。 これらの既定値の詳細については、「 [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath)」を参照してください。
 
-この設定により、CMD で許可され `%` `"%HOME%\Documents\PowerShell\Modules"` ているのと同じように、環境変数を文字間に埋め込むことによって使用できます。 この構文は、Linux と macOS でも適用されます。 次の例を参照してください。
+この設定により、のように、CMD で許可されて `%` いるのと同じように、環境変数を文字間に埋め込むことによって使用でき `"%HOME%\Documents\PowerShell\Modules"` ます。 この構文は、Linux と macOS でも適用されます。 次の例を参照してください。
 
 ```Schema
 "PSModulePath": "<ps-module-path>"
 ```
 
-各値の説明:
+条件:
 
 - `<ps-module-path>` は、モジュールディレクトリへの絶対パスです。 すべてのユーザー構成について、これは AllUsers 共有モジュールディレクトリです。 現在のユーザー構成では、CurrentUser モジュールディレクトリになります。
 
-次の例は、Windows 環境の PSModulePath 構成を示しています。
+次の例は、 `PSModulePath` Windows 環境の構成を示しています。
 
 ```json
 {
@@ -104,7 +96,7 @@ Windows では、同等のレジストリキーがおよびの `\SOFTWARE\Micros
 }
 ```
 
-次の例は、macOS または Linux 環境の PSModulePath 構成を示しています。
+次の例は、 `PSModulePath` macOS または Linux 環境の構成を示しています。
 
 ```json
 {
@@ -112,7 +104,7 @@ Windows では、同等のレジストリキーがおよびの `\SOFTWARE\Micros
 }
 ```
 
-この例では、PSModulePath 構成に環境変数を埋め込む方法を示します。 `HOME`環境変数とディレクトリの区切り記号を使用すると `/` 、Windows、MacOS、Linux で動作することに注意してください。
+この例は、構成に環境変数を埋め込む方法を示して `PSModulePath` います。 `HOME`環境変数とディレクトリの区切り記号を使用すると `/` 、Windows、MacOS、Linux で動作することに注意してください。
 
 ```json
 {
@@ -120,7 +112,7 @@ Windows では、同等のレジストリキーがおよびの `\SOFTWARE\Micros
 }
 ```
 
-この例では、macOS と Linux でのみ機能する PSModulePath 構成に環境変数を埋め込む方法を示します。
+次の例で `PSModulePath` は、macOS と Linux でのみ機能する構成に環境変数を埋め込む方法を示します。
 
 ```json
 {
@@ -129,20 +121,18 @@ Windows では、同等のレジストリキーがおよびの `\SOFTWARE\Micros
 ```
 
 > [!NOTE]
-> PowerShell 変数は、PSModulePath 構成に埋め込むことはできません。
-> Linux と macOS での PSModulePath の構成では、大文字と小文字が区別されます。 PSModulePath 構成では、プラットフォームに有効なディレクトリ区切り記号を使用する必要があります。 MacOS と Linux では、これは `/` です。 Windows では、 `/` との両方 `\` が動作します。
+> PowerShell 変数を構成に埋め込むことはできません `PSModulePath` 。
+> `PSModulePath` Linux と macOS での構成では、大文字と小文字が区別されます。 構成では `PSModulePath` 、プラットフォームに有効なディレクトリ区切り記号を使用する必要があります。 MacOS と Linux では、これは `/` です。 Windows では、 `/` との両方 `\` が動作します。
 
 ### <a name="experimentalfeatures"></a>ExperimentalFeatures
 
-PowerShell で有効にする試験的な機能の名前。
-既定では、試験的な機能は有効になっていません。
-既定値は空の配列です。
+PowerShell で有効にする試験的な機能の名前。 既定では、試験的な機能は有効になっていません。 既定値は空の配列です。
 
 ```Schema
 "ExperimentalFeatures": ["<experimental-feature-name>", ...]
 ```
 
-各値の説明:
+条件:
 
 - `<experimental-feature-name>` 有効にする試験的な機能の名前を指定します。
 
@@ -157,7 +147,7 @@ PowerShell で有効にする試験的な機能の名前。
 }
 ```
 
-試験的な機能の詳細については、「 [POWERSHELL RFC 29][RFC0029]」を参照してください。
+試験的な機能の詳細については、「試験的な [機能の使用](/powershell/scripting/learn/experimental-features)」を参照してください。
 
 ## <a name="non-windows-logging-configuration"></a>Windows 以外のログの構成
 
@@ -178,7 +168,7 @@ Powershell の macOS と Linux でのログ記録は、PowerShell 構成ファ�
 "LogIdentity": "<log-identity>"
 ```
 
-各値の説明:
+条件:
 
 - `<log-identity>` は、PowerShell が syslog に書き込むために使用する文字列 id です。
 
@@ -204,10 +194,10 @@ PowerShell がログに記録する必要がある最小重大度レベルを指
 "LogLevel": "<log-level>|default"
 ```
 
-各値の説明:
+条件:
 
-- `<log-level>` 次のいずれか:
-  - Always
+- `<log-level>`は次のいずれかです:
+  - 常時
   - Critical
   - エラー
   - 警告
@@ -240,9 +230,9 @@ PowerShell がログに記録する必要がある最小重大度レベルを指
 "LogChannels": "<log-channel>,..."
 ```
 
-各値の説明:
+条件:
 
-- `<log-channel>` 次のいずれか:
+- `<log-channel>`は次のいずれかです:
   - 操作ログ PowerShell アクティビティに関する基本情報
   - 分析-より詳細な診断情報をログに記録します
 
@@ -265,9 +255,9 @@ PowerShell のどの部分がログに記録されるかを決定します。 �
 "LogKeywords": "<log-keyword>,..."
 ```
 
-各値の説明:
+条件:
 
-- `<log-keyword>` 次のいずれか:
+- `<log-keyword>`は次のいずれかです:
   - 実行空間-実行空間の管理
   - パイプラインパイプライン操作
   - プロトコル通信プロトコルの処理 (PSRP など)
@@ -279,8 +269,7 @@ PowerShell のどの部分がログに記録されるかを決定します。 �
   - ManagedPlugin-WSMan プラグイン
 
 > [!NOTE]
-> 一般的に、PowerShell の既知の部分で特定の動作を診断する場合を除き、この値を設定しないことをお勧めします。
-> この値を変更すると、ログに記録される情報の量が減少します。
+> 一般的に、PowerShell の既知の部分で特定の動作を診断する場合を除き、この値を設定しないことをお勧めします。 この値を変更すると、ログに記録される情報の量が減少します。
 
 この例では、実行空間操作、パイプラインロジック、およびコマンドレットの使用に対するログ記録を制限します。 その他のすべてのログは省略されます。
 
@@ -350,5 +339,3 @@ PowerShell のどの部分がログに記録されるかを決定します。 �
 [実行ポリシーについて](./about_Execution_Policies.md)
 
 [自動変数について](./about_Automatic_Variables.md)
-
-[RFC0029]: https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md
