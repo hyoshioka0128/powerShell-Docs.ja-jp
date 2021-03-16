@@ -1,16 +1,16 @@
 ---
 description: PowerShell の値を比較する演算子について説明します。
 Locale: en-US
-ms.date: 02/19/2021
+ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: d99033caac2412852b3f3de0f7a15b74d7ef8e18
-ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
+ms.openlocfilehash: 9b287ca0c156d348141c3c1d1ab50aff1d2bcf9f
+ms.sourcegitcommit: 080c8b05a1242348c365fe1684457e873325f11e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101685944"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103483387"
 ---
 # <a name="about-comparison-operators"></a>比較演算子について
 
@@ -39,7 +39,7 @@ PowerShell の比較演算子は、2つの値を比較するか、コレクシ�
 |             | -notcontains | コレクションに値が含まれていません       |
 |             | -in          | 値がコレクション内にあります                  |
 |             | -notin       | 値がコレクション内にありません              |
-| Type        | -が          | 両方のオブジェクトが同じ型です。            |
+| 種類        | -が          | 両方のオブジェクトが同じ型です。            |
 |             | -isnot       | オブジェクトが同じ型ではありません         |
 
 ## <a name="common-features"></a>共通機能
@@ -64,7 +64,7 @@ Object[]
 
 - 含有演算子と型演算子は、常に **ブール** 値を返します。
 - 演算子は、 `-replace` 置換結果を返します。
-- `-match`And `-notmatch` 演算子も `$Matches` 自動変数を設定します。
+- `-match`And 演算子は、 `-notmatch` `$Matches` 式の左側がコレクションでない限り、自動変数を設定します。
 
 ## <a name="equality-operators"></a>等値演算子
 
@@ -322,7 +322,7 @@ $a -gt 'a'
 'bag'        -notmatch 'b[iou]g'   # Output: True
 ```
 
-入力がコレクションの場合、演算子はそのコレクションの一致するメンバーを返します。
+入力がコレクションの場合、演算子はそのコレクションの一致するメンバーを返し、 `$Matches` 自動変数は `$null` です。
 
 コレクションの例:
 

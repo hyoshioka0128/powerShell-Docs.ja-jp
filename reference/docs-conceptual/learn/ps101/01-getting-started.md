@@ -4,12 +4,12 @@ description: 新規ユーザー向けの PowerShell の場所と起動方法。
 ms.date: 06/02/2020
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 8b9fee222347970df4e35f9ba0841232952a292d
-ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.openlocfilehash: cc634eb1732947dca953d7d91baedf8052edf718
+ms.sourcegitcommit: 080c8b05a1242348c365fe1684457e873325f11e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "99605160"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103483476"
 ---
 # <a name="chapter-1---getting-started-with-powershell"></a>第 1 章 - PowerShell の概要
 
@@ -61,7 +61,7 @@ At line:1 char:29
 ```
 
 この問題の解決策は、ローカル管理者であるドメイン ユーザーとして PowerShell を実行することです。
-これが、私の 2 番目のドメイン ユーザー アカウントの構成方法です。 最小限の特権の原則に従って、このアカウントはドメイン管理者にしたり、ドメイン内で昇格された特権を与えたりしないようにします。
+これが、私の 2 番目のドメイン ユーザー アカウントの構成方法です。 最小限の特権の原則を使用して、このアカウントをドメイン管理者にしたり、ドメインの特権を昇格させたりすることはできません。
 
 PowerShell を閉じます。 PowerShell コンソールを再起動します。ただし、今回は、図 1-5 に示すように **[Windows PowerShell]** ショートカットを右クリックし、 **[管理者として実行]** を選択します。
 
