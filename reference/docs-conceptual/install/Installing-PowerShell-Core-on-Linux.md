@@ -2,12 +2,12 @@
 title: Linux への PowerShell のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell のインストールに関する情報
 ms.date: 02/02/2021
-ms.openlocfilehash: 1e7fabdc94ba70a91eb5c6425893bc5af640e584
-ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
+ms.openlocfilehash: ab075a3570695f5a58b7e7fbf968243a4ff45929
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100563302"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195262"
 ---
 # <a name="installing-powershell-on-linux"></a>Linux への PowerShell のインストール
 
@@ -711,6 +711,15 @@ pwsh
 apt -y remove powershell
 ```
 
+## <a name="support-for-arm-processors"></a>Arm プロセッサのサポート
+
+PowerShell は、いくつかの Linux ディストリビューションにインストールできます。 PowerShell は、Arm の .NET サポートに依存しています。 PowerShell は、次のディストリビューションでサポートされています。
+
+- Alpine Linux v3.11 以上 - .NET では Arm64 がサポートされていますが、現時点では PowerShell のインストール可能なパッケージはありません
+- Raspbian - 以下のインストール手順を参照してください
+- Debian v9 以上 - [バイナリ アーカイブ](#binary-archives)のインストール方法を使用して Arm32 と Arm64 がサポートされています
+- Ubuntu 20.10、20.04、18.04、16.04 - [バイナリ アーカイブ](#binary-archives)のインストール方法を使用して Arm32 と Arm64 がサポートされています
+
 ## <a name="raspbian"></a>Raspbian
 
 > [!NOTE]
@@ -821,6 +830,12 @@ PowerShell はすべての Linux ディストリビューションに移植可�
 
 ### <a name="installation---binary-archives"></a>インストール - バイナリ アーカイブ
 
+次の例は、x64 のバイナリ アーカイブをインストールする手順を示しています。 お使いのプラットフォームのプロセッサの種類に対応する適切なバイナリ アーカイブを選択する必要があります。
+
+- powershell-7.1.2-linux-arm32.tar.gz
+- powershell-7.1.2-linux-arm64.tar.gz
+- powershell-7.1.2-linux-x64.tar.gz
+
 #### <a name="linux"></a>Linux
 
 ```sh
@@ -854,7 +869,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 - ユーザー モジュールは `~/.local/share/powershell/Modules` から読み込まれます
 - 共有モジュールは `/usr/local/share/powershell/Modules` から読み込まれます
 - 既定のモジュールは `$PSHOME/Modules` から読み込まれます
-- PSReadLine 履歴は、`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt` に記録されます
+- PSReadLine 履歴は `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt` に記録されます
 
 プロファイルは PowerShell のホスト別構成を順守します。そのため、既定のホスト固有プロファイルは同じ場所の `Microsoft.PowerShell_profile.ps1` にあります。
 

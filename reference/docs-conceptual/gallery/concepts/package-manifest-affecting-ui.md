@@ -2,12 +2,12 @@
 ms.date: 06/09/2017
 title: PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
 description: この記事では、PowerShell ギャラリーによって使用されるモジュール マニフェストの値について説明します。
-ms.openlocfilehash: c59f65e72874a8a4ef946c954e1e8f12aad62b29
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 28dd707034f84fa752aba55b5ccc5bcbedff0d94
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664145"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196219"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
 
@@ -20,7 +20,7 @@ ms.locfileid: "92664145"
 
 次の表に、公開者によって制御される PowerShell ギャラリー パッケージ ページの UI 要素を示します。 UI 要素がモジュール マニフェストによって制御されるか、スクリプト マニフェストによって制御されるかを項目ごとに表示しています。
 
-| UI 要素 | 説明 | [Module] | スクリプト |
+| UI 要素 | 説明 | Module | スクリプト |
 | --- | --- | --- | --- |
 | **Title** | ギャラリーに公開されるパッケージの名前です  | いいえ | いいえ |
 | **バージョン** | 表示されるバージョンはメタデータ内のバージョン文字列で、指定されている場合、プレリリースです。 モジュール マニフェストでのバージョンの基本部分は、ModuleVersion です。 スクリプトの場合、.VERSION として指定されます。 プレリリース バージョンの文字列が指定されている場合、その文字列は、モジュールでは ModuleVersion に追加され、スクリプトでは .VERSION の一部として指定されます。 [モジュール](module-prerelease-support.md)や[スクリプト](script-prerelease-support.md)でプレリリースの文字列を指定するためのドキュメントがあります。 | はい | はい |
@@ -43,7 +43,7 @@ ms.locfileid: "92664145"
 | **バージョン履歴** | バージョン履歴は、モジュールに加えられた更新を PowerShell ギャラリーに反映します。 削除機能を使用してパッケージのバージョンを非表示にしている場合、パッケージの所有者以外には、パッケージのバージョンはバージョン履歴に表示されません。 | いいえ | いいえ |
 | **プロジェクト サイト** | プロジェクト サイトは、モジュールでは ProjectURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.PROJECTURI を指定することにより制御されます。 | はい | はい |
 | **License** | ライセンス リンクは、モジュールでは LicenseURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.LICENSEURI を指定することにより制御されます。 LicenseURI を通してライセンスが指定されていない、またはモジュール内にライセンスが指定されていない場合には、PowerShell ギャラリーの使用条件によってパッケージの使用条件が指定されることに注意する必要があります。 詳細については、使用条件をご覧ください。 | はい | はい |
-| **アイコン** | スクリプト マニフェストまたはモジュール マニフェストの Privatedata-PSData セクションに IconURI フラグを指定することで、PowerShell Gallery のパッケージにアイコンを指定できます。 IconURI は透明の背景を持つ 85x85 の画像を指す必要があります。 URI は直接的な画像 URL にする **必要があり** 、PowerShell Gallery パッケージの画像またはファイルが含まれる Web ページに移動することは **できません** 。 | はい | はい |
+| **アイコン** | スクリプト マニフェストまたはモジュール マニフェストの Privatedata-PSData セクションに IconURI フラグを指定することで、PowerShell Gallery のパッケージにアイコンを指定できます。 IconURI は透明の背景を持つ 85x85 の画像を指す必要があります。 URI は直接的な画像 URL にする **必要があり**、PowerShell Gallery パッケージの画像またはファイルが含まれる Web ページに移動することは **できません**。 | はい | はい |
 
 ## <a name="editing-package-details"></a>パッケージの詳細の編集
 
@@ -77,7 +77,7 @@ PowerShell ギャラリーと PowerShellGet コマンドレットが独自に扱
 | --- | --- |
 | Azure |  |
 | DSC | DesiredStateConfiguration は長すぎるため推奨されません |
-| ResourceManager | ARM は、プロセッサのグループを表す場合に使用します。Azure Resource Manager には使用しないでください |
+| ResourceManager | "Arm" は、プロセッサのグループを表す場合に使用します。Azure Resource Manager には使用しないでください |
 | DSCResourceKit |  |
 | SQL |  |
 | AWS |  |
