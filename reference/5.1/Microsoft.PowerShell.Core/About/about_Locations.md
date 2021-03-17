@@ -1,28 +1,31 @@
 ---
 description: PowerShell で作業場所から項目にアクセスする方法について説明します。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 06/09/2017
+ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_locations?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Locations
-ms.openlocfilehash: ed8d17b7f217c86ba3161f017e2794524d5da829
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 01905972b2c0844b9440cb00d1d8b04f0f8195a5
+ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222683"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575680"
 ---
 # <a name="about_locations"></a>about_Locations
 
-## <a name="short-description"></a>概要
-
+## <a name="short-description"></a>簡単な説明
 PowerShell で作業場所から項目にアクセスする方法について説明します。
 
-## <a name="long-description"></a>詳細説明
+## <a name="long-description"></a>長い説明
 
 現在の作業場所は、コマンドが指す既定の場所です。
-つまり、これは、コマンドの影響を受ける項目または場所への明示的なパスを指定していない場合に PowerShell が使用する場所です。 ほとんどの場合、現在の作業場所は、PowerShell FileSystem プロバイダーを介してアクセスされるドライブで、場合によってはそのドライブ上のディレクトリです。
+つまり、これは、コマンドの影響を受ける項目または場所への明示的なパスを指定していない場合に PowerShell が使用する場所です。
+
+> [!NOTE]
+> PowerShell では、プロセスごとに複数の実行空間がサポートされます。 各実行空間には、独自の _現在のディレクトリ_ があります。 これは、プロセスの現在のディレクトリと同じではありませ `[System.Environment]::CurrentDirectory` ん。
+
+ほとんどの場合、現在の作業場所は、PowerShell FileSystem プロバイダーを介してアクセスされるドライブで、場合によってはそのドライブ上のディレクトリです。
 たとえば、現在の作業場所を次の場所に設定できます。
 
 ```powershell
@@ -32,13 +35,13 @@ C:\Program Files\Windows PowerShell
 その結果、別のパスが明示的に指定されていない限り、すべてのコマンドがこの場所から処理されます。
 
 PowerShell は、ドライブが現在のドライブではない場合でも、各ドライブの現在の作業場所を保持します。 これにより、別の場所のドライブのみを参照して、現在の作業場所から項目にアクセスできるようになります。
-たとえば、現在の作業場所が C: Windows であるとし \\ ます。 ここで、次のコマンドを使用して、現在の作業場所を HKLM: ドライブに変更したとします。
+たとえば、現在の作業場所がであると `C:\Windows` します。 ここで、次のコマンドを使用して、現在の作業場所を HKLM: ドライブに変更したとします。
 
 ```powershell
 Set-Location HKLM:
 ```
 
-現在の場所はレジストリドライブになっていますが、 \\ 次の例に示すように、c: ドライブを使用するだけで c: Windows ディレクトリ内の項目にアクセスできます。
+現在の場所はレジストリドライブになっていますが、 `C:\Windows` 次の例に示すように、C: ドライブを使用するだけでディレクトリ内の項目にアクセスできます。
 
 ```powershell
 Get-ChildItem C:
@@ -70,21 +73,21 @@ PowerShell では、特殊文字を使用して、現在の作業場所とその
 Get-ChildItem .\system
 ```
 
-現在の作業場所が C: windows の場合 \\ 、このコマンドは c: windows システム内のすべての項目の一覧を返し \\ \\ ます。 ただし、2つの期間を使用する場合は、次の例に示すように、現在の作業ディレクトリの親ディレクトリが使用されます。
+現在の作業場所がの場合 `C:\Windows` 、このコマンドは内のすべての項目の一覧を返し `C:\Windows\System` ます。 ただし、2つの期間を使用する場合は、次の例に示すように、現在の作業ディレクトリの親ディレクトリが使用されます。
 
 ```powershell
 Get-ChildItem ..\"program files"
 ```
 
-この場合、PowerShell は2つの期間を C: ドライブとして扱います。そのため、コマンドは C: Program Files ディレクトリ内のすべての項目を取得し \\ ます。
+この場合、PowerShell は2つの期間を C: ドライブとして扱います。このため、コマンドはディレクトリ内のすべての項目を取得し `C:\Program Files` ます。
 
-スラッシュで始まるパスは、現在のドライブのルートからのパスを識別します。 たとえば、現在の作業場所が C: \\ Program Files PowerShell の場合、 \\ ドライブのルートは c になります。したがって、次のコマンドでは、C: Windows ディレクトリ内のすべての項目が一覧表示され \\ ます。
+スラッシュで始まるパスは、現在のドライブのルートからのパスを識別します。 たとえば、現在の作業場所がの場合、 `C:\Program Files\PowerShell` ドライブのルートは C です。そのため、次のコマンドは、ディレクトリ内のすべての項目を一覧表示し `C:\Windows` ます。
 
 ```powershell
 Get-ChildItem \windows
 ```
 
-コンテナーまたは項目の名前を指定するときに、ドライブ名、スラッシュ、ピリオドで始まるパスを指定しなかった場合、コンテナーまたは項目は現在の作業場所に配置されていると見なされます。 たとえば、現在の作業場所が C: windows の場合、 \\ 次のコマンドは c: windows システムディレクトリ内のすべての項目を返し \\ \\ ます。
+コンテナーまたは項目の名前を指定するときに、ドライブ名、スラッシュ、ピリオドで始まるパスを指定しなかった場合、コンテナーまたは項目は現在の作業場所に配置されていると見なされます。 たとえば、現在の作業場所がの場合、 `C:\Windows` 次のコマンドを実行すると、ディレクトリ内のすべての項目が返され `C:\Windows\System` ます。
 
 ```powershell
 Get-ChildItem system
@@ -92,7 +95,7 @@ Get-ChildItem system
 
 ディレクトリ名ではなくファイル名を指定すると、PowerShell によってそのファイルの詳細が返されます (ファイルが現在の作業場所にあることを前提としています)。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
 

@@ -1,16 +1,16 @@
 ---
 description: メソッドを使用して PowerShell のオブジェクトに対してアクションを実行する方法について説明します。
 Locale: en-US
-ms.date: 04/08/2020
+ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Methods
-ms.openlocfilehash: 35eaafcec5d645be6fe88f506bc0971344406273
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: c52afed005965512b16e6869dd32f21d9f72740c
+ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99602783"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575544"
 ---
 # <a name="about-methods"></a>メソッドの概要
 
@@ -78,7 +78,7 @@ this is rock science
 
 PowerShell 4.0 以降では、動的なメソッド名を使用したメソッド呼び出しがサポートされています。
 
-### <a name="learning-about-methods"></a>メソッドについて学習する
+## <a name="learning-about-methods"></a>メソッドについて学習する
 
 オブジェクトのメソッドの定義を検索するには、オブジェクトの種類のヘルプトピックにアクセスして、そのメソッドのページを探します。 たとえば、次のページでは、process オブジェクトのメソッドについて説明して[います。](/dotnet/api/system.diagnostics.process#methods)
 
@@ -110,7 +110,7 @@ PowerShell 4.0 以降では、動的なメソッド名を使用したメソッ�
 (Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt", $true)
 ```
 
-### <a name="methods-of-scalar-objects-and-collections"></a>スカラーオブジェクトとコレクションのメソッド
+## <a name="methods-of-scalar-objects-and-collections"></a>スカラーオブジェクトとコレクションのメソッド
 
 特定の型の1つの ("スカラー") オブジェクトのメソッドは、多くの場合、同じ型のオブジェクトのコレクションのメソッドとは異なります。
 
@@ -172,7 +172,7 @@ PowerShell 4.0 以降では、メソッド構文を使用したコレクショ�
 
 これらのメソッドの詳細については、「[about_arrays](about_arrays.md)」を参照してください。
 
-### <a name="calling-a-specific-method-when-multiple-overloads-exist"></a>複数のオーバーロードが存在する場合の特定のメソッドの呼び出し
+## <a name="calling-a-specific-method-when-multiple-overloads-exist"></a>複数のオーバーロードが存在する場合の特定のメソッドの呼び出し
 
 .NET メソッドを呼び出すときは、次のシナリオを考慮してください。 メソッドがオブジェクトを受け取り、より具体的な型を取得するインターフェイスを介してオーバーロードを持つ場合、PowerShell は、明示的にそのインターフェイスにキャストしない限り、オブジェクトを受け入れるメソッドを選択します。
 
@@ -219,11 +219,16 @@ object: 1
 int: 1
 ```
 
-## <a name="see-also"></a>参照
+## <a name="using-net-methods-that-take-filesystem-paths"></a>ファイルシステムパスを受け取る .NET メソッドの使用
+
+PowerShell では、プロセスごとに複数の実行空間がサポートされます。 各実行空間には、独自の _現在のディレクトリ_ があります。 これは、現在のプロセスの作業ディレクトリと同じではありませ `[System.Environment]::CurrentDirectory` ん。
+
+.NET メソッドでは、プロセスの作業ディレクトリが使用されます。 PowerShell コマンドレットは、実行空間の場所を使用します。 また、.NET メソッドは、PowerShell Path オブジェクトではなく、ネイティブファイルシステムパスでのみ機能します。 .NET メソッドで PowerShell パスを使用するには、.NET メソッドに渡す前に、ファイルシステムネイティブパスへのパスを解決する必要があります。
+
+## <a name="see-also"></a>関連項目
 
 [about_Objects](about_Objects.md)
 
 [about_Properties](about_Properties.md)
 
 [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
-

@@ -1,16 +1,16 @@
 ---
 description: PowerShell の状態情報を格納する変数について説明します。 これらの変数は、PowerShell によって作成および管理されます。
 Locale: en-US
-ms.date: 12/14/2020
+ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 82fc08a49b58b9518cfa50be916cf2889b5007d2
-ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
+ms.openlocfilehash: d06adeac446caf6589bf4e49db2bb7d4ec158dcf
+ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577226"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575748"
 ---
 # <a name="about-automatic-variables"></a>自動変数について
 
@@ -162,7 +162,7 @@ echo Hello | powershell -Command """$input World!"""
 
 PowerShell 3.0 以降では、に `MyInvocation` 次の新しいプロパティが追加されています。
 
-| プロパティ      | 説明                                         |
+| プロパティ      | Description                                         |
 | ------------- | --------------------------------------------------- |
 | **PSScriptRoot**  | 呼び出されたスクリプトへの完全なパスを格納します。   |
 |               | 現在のコマンド。 このプロパティの値は次のようになります。  |
@@ -348,7 +348,7 @@ PSSession を開始したユーザーに関する情報が含まれます。こ�
 
 現在のセッションで実行されている PowerShell のバージョンに関する詳細を表示する読み取り専用のハッシュテーブルが含まれています。 この表には、次の項目が含まれています。
 
-| プロパティ                  | 説明                                   |
+| プロパティ                  | Description                                   |
 | ------------------------- | --------------------------------------------- |
 | **BuildVersion**          | 現在のバージョンのビルド番号       |
 | **CLRVersion**            | 共通言語ランタイムのバージョン    |
@@ -368,7 +368,10 @@ PSSession を開始したユーザーに関する情報が含まれます。こ�
 
 ### <a name="pwd"></a>$PWD
 
-現在のディレクトリの完全パスを表す path オブジェクトを格納します。
+現在の PowerShell 実行空間の現在のディレクトリの場所の完全パスを表すパスオブジェクトを格納します。
+
+> [!NOTE]
+> PowerShell では、プロセスごとに複数の実行空間がサポートされます。 各実行空間には、独自の _現在のディレクトリ_ があります。 これは、プロセスの現在のディレクトリと同じではありませ `[System.Environment]::CurrentDirectory` ん。
 
 ### <a name="sender"></a>$Sender
 
@@ -435,7 +438,7 @@ PSSession を開始したユーザーに関する情報が含まれます。こ�
 
 **現在** のプロパティは、 **MoveNext** が呼び出されるまで、同じプロパティを返し続けます。
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 ### <a name="example-1-using-the-input-variable"></a>例 1: $input 変数の使用
 
@@ -704,7 +707,7 @@ Default (Current): Start
 Default (Current): End
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 [about_Functions](about_Functions.md)
 

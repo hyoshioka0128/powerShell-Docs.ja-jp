@@ -1,16 +1,16 @@
 ---
 description: PowerShell の状態情報を格納する変数について説明します。 これらの変数は、PowerShell によって作成および管理されます。
 Locale: en-US
-ms.date: 12/14/2020
+ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 8a2410dd2adcc1679ab203293b4c4e712b960278
-ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
+ms.openlocfilehash: 8267b71c8d5103bcaa915b664ee9f1746d0045bb
+ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99975143"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575646"
 ---
 # <a name="about-automatic-variables"></a>自動変数について
 
@@ -393,7 +393,10 @@ PSSession を開始したユーザーに関する情報が含まれます。こ�
 
 ### <a name="pwd"></a>$PWD
 
-現在のディレクトリの完全パスを表す path オブジェクトを格納します。
+現在の PowerShell 実行空間の現在のディレクトリの場所の完全パスを表すパスオブジェクトを格納します。
+
+> [!NOTE]
+> PowerShell では、プロセスごとに複数の実行空間がサポートされます。 各実行空間には、独自の _現在のディレクトリ_ があります。 これは、プロセスの現在のディレクトリと同じではありませ `[System.Environment]::CurrentDirectory` ん。
 
 ### <a name="sender"></a>$Sender
 
@@ -729,7 +732,7 @@ Default (Current): Start
 Default (Current): End
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 [about_Functions](about_Functions.md)
 
