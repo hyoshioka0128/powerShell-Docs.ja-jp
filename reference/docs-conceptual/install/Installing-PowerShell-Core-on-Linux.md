@@ -2,12 +2,12 @@
 title: Linux への PowerShell のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell のインストールに関する情報
 ms.date: 02/02/2021
-ms.openlocfilehash: ab075a3570695f5a58b7e7fbf968243a4ff45929
-ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
+ms.openlocfilehash: b093e3ff20772016139999836adc5ec1b7a18197
+ms.sourcegitcommit: 080c8b05a1242348c365fe1684457e873325f11e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103195262"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103483351"
 ---
 # <a name="installing-powershell-on-linux"></a>Linux への PowerShell のインストール
 
@@ -95,12 +95,12 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>直接ダウンロードによるインストール - Ubuntu 16.04
 
-[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell_7.1.2-1.ubuntu.16.04_amd64.deb` をダウンロードします。
+[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell_7.1.3-1.ubuntu.16.04_amd64.deb` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
-sudo dpkg -i powershell_7.1.2-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_7.1.3-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -144,12 +144,12 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>直接ダウンロードによるインストール - Ubuntu 18.04
 
-[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell_7.1.2-1.ubuntu.18.04_amd64.deb` をダウンロードします。
+[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell_7.1.3-1.ubuntu.18.04_amd64.deb` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
-sudo dpkg -i powershell_7.1.2-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell_7.1.3-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -193,12 +193,12 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-2004"></a>直接ダウンロードによるインストール - Ubuntu 20.04
 
-[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell_7.1.2-1.ubuntu.20.04_amd64.deb` をダウンロードします。
+[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell_7.1.3-1.ubuntu.20.04_amd64.deb` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
-sudo dpkg -i powershell_7.1.2-1.ubuntu.20.04_amd64.deb
+sudo dpkg -i powershell_7.1.3-1.ubuntu.20.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -289,12 +289,12 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-9"></a>直接ダウンロードによるインストール - Debian 9
 
-[リリース][] ページから Debian コンピューターに Debian パッケージ `powershell_7.1.2-1.debian.9_amd64.deb` をダウンロードします。
+[リリース][] ページから Debian コンピューターに Debian パッケージ `powershell_7.1.3-1.debian.9_amd64.deb` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
-sudo dpkg -i powershell_7.1.2-1.debian.9_amd64.deb
+sudo dpkg -i powershell_7.1.3-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -334,7 +334,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-10"></a>直接ダウンロードによるインストール - Debian 10
 
-[リリース][] ページから Debian コンピューターに tar.gz パッケージ `powershell-7.1.2-linux-x64.tar.gz` をダウンロードします。
+[リリース][] ページから Debian コンピューターに tar.gz パッケージ `powershell-7.1.3-linux-x64.tar.gz` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -356,7 +356,7 @@ sudo apt-get install -y \
         curl
 
 # Download the powershell '.tar.gz' archive
-curl -L  https://github.com/PowerShell/PowerShell/releases/download/v7.1.2/powershell-7.1.2-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L  https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
@@ -381,7 +381,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>直接ダウンロードによるインストール - Alpine 3.9 および 3.10
 
-[リリース][] ページから Alpine コンピューターに tar.gz パッケージ `powershell-7.1.2-linux-alpine-x64.tar.gz` をダウンロードします。
+[リリース][] ページから Alpine コンピューターに tar.gz パッケージ `powershell-7.1.3-linux-alpine-x64.tar.gz` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -406,7 +406,7 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.2/powershell-7.1.2-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
@@ -448,18 +448,18 @@ pwsh
 
 ### <a name="installation-via-direct-download---centos-7"></a>直接ダウンロードによるインストール - CentOS 7
 
-[CentOS 7][] を利用し、[リリース][] ページから CentOS コンピューターに RPM パッケージ `powershell-7.1.2-1.rhel.7.x86_64.rpm` をダウンロードします。
+[CentOS 7][] を利用し、[リリース][] ページから CentOS コンピューターに RPM パッケージ `powershell-7.1.3-1.rhel.7.x86_64.rpm` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
-sudo yum install powershell-7.1.2-1.rhel.7.x86_64.rpm
+sudo yum install powershell-7.1.3-1.rhel.7.x86_64.rpm
 ```
 
 ダウンロードという中間の手順なしで RPM をインストールすることができます。
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.2/powershell-7.1.2-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>アンインストール - CentOS 7
@@ -491,18 +491,18 @@ pwsh
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>直接ダウンロードによるインストール - Red Hat Enterprise Linux (RHEL) 7
 
-[リリース][] ページから Red Hat Enterprise Linux コンピューターに RPM パッケージ `powershell-7.1.2-1.rhel.7.x86_64.rpm` をダウンロードします。
+[リリース][] ページから Red Hat Enterprise Linux コンピューターに RPM パッケージ `powershell-7.1.3-1.rhel.7.x86_64.rpm` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
-sudo yum install powershell-7.1.2-1.rhel.7.x86_64.rpm
+sudo yum install powershell-7.1.3-1.rhel.7.x86_64.rpm
 ```
 
 ダウンロードという中間の手順なしで RPM をインストールすることができます。
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.2/powershell-7.1.2-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>アンインストール - Red Hat Enterprise Linux (RHEL) 7
@@ -520,7 +520,7 @@ sudo yum remove powershell
 zypper update && zypper --non-interactive install curl tar libicu52_1
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.2/powershell-7.1.2-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 mkdir -p /opt/microsoft/powershell/7
@@ -545,7 +545,7 @@ pwsh
 zypper update && zypper --non-interactive install curl tar gzip libopenssl1_0_0 libicu60_2
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.2/powershell-7.1.2-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 mkdir -p /opt/microsoft/powershell/7
@@ -603,20 +603,20 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>直接ダウンロードによるインストール - Fedora 28、29、および 30
 
-[リリース][] ページから Fedora コンピューターに RPM パッケージ `powershell-7.1.2-1.rhel.7.x86_64.rpm` をダウンロードします。
+[リリース][] ページから Fedora コンピューターに RPM パッケージ `powershell-7.1.3-1.rhel.7.x86_64.rpm` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install powershell-7.1.2-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-7.1.3-1.rhel.7.x86_64.rpm
 ```
 
 ダウンロードという中間の手順なしで RPM をインストールすることができます。
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.1.2/powershell-7.1.2-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---fedora-28-29-and-30"></a>アンインストール - Fedora 28、29、および 30
@@ -748,13 +748,13 @@ sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
 # Download and extract PowerShell
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.1.2/powershell-7.1.2-linux-arm32.tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-linux-arm32.tar.gz
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-7.1.2-linux-arm32.tar.gz -C ~/powershell
+tar -xvf ./powershell-7.1.3-linux-arm32.tar.gz -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
@@ -806,6 +806,12 @@ dotnet tool install によって、`PATH` 環境変数に `~/.dotnet/tools` が�
 
 Linux プラットフォームで高度な展開シナリオを実行するために、PowerShell バイナリ `tar.gz` アーカイブが用意されています。
 
+> [!NOTE]
+> この方法を使用して、最新バージョンを含む任意のバージョンの PowerShell をインストールできます。
+> - 安定版リリース: [https://aka.ms/powershell-release?tag=stable](https://aka.ms/powershell-release?tag=stable)
+> - プレビュー リリース: [https://aka.ms/powershell-release?tag=preview](https://aka.ms/powershell-release?tag=preview)
+> - LTS リリース: [https://aka.ms/powershell-release?tag=lts](https://aka.ms/powershell-release?tag=lts)
+
 ### <a name="dependencies"></a>依存関係
 
 PowerShell はすべての Linux ディストリビューションに移植可能なバイナリをビルドします。 ただし、.NET Core ランタイムにはディストリビューションごとに異なる依存関係が必要であり、PowerShell でも同じです。
@@ -832,15 +838,15 @@ PowerShell はすべての Linux ディストリビューションに移植可�
 
 次の例は、x64 のバイナリ アーカイブをインストールする手順を示しています。 お使いのプラットフォームのプロセッサの種類に対応する適切なバイナリ アーカイブを選択する必要があります。
 
-- powershell-7.1.2-linux-arm32.tar.gz
-- powershell-7.1.2-linux-arm64.tar.gz
-- powershell-7.1.2-linux-x64.tar.gz
+- powershell-7.1.3-linux-arm32.tar.gz
+- powershell-7.1.3-linux-arm64.tar.gz
+- powershell-7.1.3-linux-x64.tar.gz
 
 #### <a name="linux"></a>Linux
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.2/powershell-7.1.2-linux-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
