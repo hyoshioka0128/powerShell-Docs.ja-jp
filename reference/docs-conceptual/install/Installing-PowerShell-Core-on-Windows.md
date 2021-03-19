@@ -2,12 +2,12 @@
 title: Windows への PowerShell のインストール
 description: Windows への PowerShell のインストールに関する情報
 ms.date: 02/02/2021
-ms.openlocfilehash: 12dedfed8349d243d3f2988fd7cb69c4cfc276bb
-ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
+ms.openlocfilehash: bd3643c1ca6beb60a8727478a1ae612dcb34c7fb
+ms.sourcegitcommit: 080c8b05a1242348c365fe1684457e873325f11e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100563271"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103483438"
 ---
 # <a name="installing-powershell-on-windows"></a>Windows への PowerShell のインストール
 
@@ -30,8 +30,8 @@ Windows に PowerShell をインストールするには、[最新][]のイン�
 
 MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようになります。 次に例を示します。
 
-- `PowerShell-7.1.2-win-x64.msi`
-- `PowerShell-7.1.2-win-x86.msi`
+- `PowerShell-7.1.3-win-x64.msi`
+- `PowerShell-7.1.3-win-x86.msi`
 
 ダウンロードしたら、インストーラーをダブルクリックし、プロンプトの指示に従います。
 
@@ -62,7 +62,7 @@ MSI パッケージはコマンド ラインからインストールできるた
 すべてのインストール オプションを有効にして PowerShell をサイレント インストールする方法を、次の例に示します。
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 `Msiexec.exe` 用のコマンド ライン オプションの完全な一覧については、[コマンド ライン オプション](/windows/desktop/Msi/command-line-options)に関するページをご覧ください。
@@ -84,14 +84,20 @@ PowerShell 7.1 以降では、MSI パッケージによって、インストー�
 
 PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 [リリース][リリース] ページから、次のいずれかの ZIP アーカイブをダウンロードします。
 
-- PowerShell-7.1.2-win-x64.zip
-- PowerShell-7.1.2-win-x86.zip
-- PowerShell-7.1.2-win-arm64.zip
-- PowerShell-7.1.2-win-arm32.zip
+- PowerShell-7.1.3-win-x64.zip
+- PowerShell-7.1.3-win-x86.zip
+- PowerShell-7.1.3-win-arm64.zip
+- PowerShell-7.1.3-win-arm32.zip
 
 ファイルのダウンロード方法によっては、`Unblock-File` コマンドレットを使用して、ファイルのブロックを解除することが必要になる場合があります。 任意の場所にコンテンツを解凍し、そこから `pwsh.exe` を実行します。 MSI パッケージをインストールする場合とは異なり、ZIP アーカイブをインストールしても、前提条件は確認されません。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確かめてください。
 
 この方法を使用して、Microsoft Surface Pro X のようなコンピューターに ARM ベース バージョンの PowerShell をインストールします。最適な結果を得るには、PowerShell を `$env:ProgramFiles\PowerShell\7` フォルダーにインストールします。
+
+> [!NOTE]
+> この方法を使用して、最新バージョンを含む任意のバージョンの PowerShell をインストールできます。
+> - 安定版リリース: [https://aka.ms/powershell-release?tag=stable](https://aka.ms/powershell-release?tag=stable)
+> - プレビュー リリース: [https://aka.ms/powershell-release?tag=preview](https://aka.ms/powershell-release?tag=preview)
+> - LTS リリース: [https://aka.ms/powershell-release?tag=lts](https://aka.ms/powershell-release?tag=lts)
 
 ## <a name="deploying-on-windows-10-iot-enterprise"></a>Windows 10 IoT Enterprise への展開
 
@@ -224,10 +230,11 @@ dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE
    ```
 
    ```Output
-   Name               Id                           Version
-   ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.1.2
-   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.2-preview.5
+   Name                      Id                                Version
+   ---------------------------------------------------------------------------
+   PowerShell                Microsoft.PowerShell              7.1.3
+   PowerShell Preview (MSIX) Microsoft.PowerShell-Preview-MSIX 7.0.2
+   PowerShell-Preview        Microsoft.PowerShell-Preview      7.2.0-preview.3
    ```
 
 1. `--exact` パラメーターを使用して、いずれかのバージョンの PowerShell をインストールします
