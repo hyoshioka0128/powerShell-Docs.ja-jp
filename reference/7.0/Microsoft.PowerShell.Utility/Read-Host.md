@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/02/2021
+ms.date: 03/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: 4f5a5705c726aef7150b734a6265308a5915decb
-ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
+ms.openlocfilehash: 63af2f300f78b4059420ba0aec7e09318729f9e4
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101685602"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726439"
 ---
 # Read-Host
 
@@ -27,7 +26,7 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 
 ## Description
 
-コマンドレットでは、 `Read-Host` コンソールから入力行を読み取ります。 ユーザーに入力を求めるために使用できます。 セキュリティで保護された文字列として入力を保存できるため、このコマンドレットを使用して、パスワードなどのセキュリティで保護されたデータと共有データなどの入力をユーザーに求めることができます。
+`Read-Host`コマンドレットは、コンソール (stdin) からの入力行を読み取ります。 ユーザーに入力を求めるために使用できます。 セキュリティで保護された文字列として入力を保存できるため、このコマンドレットを使用して、パスワードなどのセキュリティで保護されたデータをユーザーに要求することができます。
 
 > [!NOTE]
 > `Read-Host` では、ユーザーからの入力として許容できる文字数は1022文字に制限されています。
@@ -92,7 +91,7 @@ Accept wildcard characters: False
 
 ### なし
 
-パイプを使用してこのコマンドレットに入力を渡すことはできません。
+このコマンドレットは、PowerShell パイプラインからの入力を受け入れません。
 
 ## 出力
 
@@ -101,6 +100,8 @@ Accept wildcard characters: False
 **AsSecureString** パラメーターが使用されている場合、は `Read-Host` **SecureString** を返します。 それ以外の場合、文字列を返します。
 
 ## 注
+
+このコマンドレットは、ホストプロセスの stdin ストリームからの読み取りのみを行います。 通常、stdin ストリームは、ホストコンソールのキーボードに接続されています。
 
 ## 関連リンク
 

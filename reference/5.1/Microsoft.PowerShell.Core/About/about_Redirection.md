@@ -1,16 +1,16 @@
 ---
 description: PowerShell からテキストファイルに出力をリダイレクトする方法について説明します。
 Locale: en-US
-ms.date: 10/14/2020
+ms.date: 03/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
-ms.openlocfilehash: 2f2081bbfcc2cfc97eaa5a3c2c527cdd9cd61d2c
-ms.sourcegitcommit: b9826dcf402db8a2b6d3eab37edb82c6af113343
+ms.openlocfilehash: e12514fed8e126dcffb80536b252e19ab3ffa697
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98040882"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726623"
 ---
 # <a name="about-redirection"></a>リダイレクトについて
 
@@ -19,7 +19,7 @@ PowerShell からテキストファイルに出力をリダイレクトする方
 
 ## <a name="long-description"></a>長い説明
 
-既定では、powershell は出力を PowerShell ホストに送信します。 通常、これはコンソールアプリケーションです。 ただし、出力をテキストファイルに送信したり、エラー出力を通常の出力ストリームにリダイレクトしたりすることはできます。
+既定では、powershell は出力を PowerShell ホストに送信します。 通常、これはコンソールアプリケーションです。 ただし、出力をテキストファイルにリダイレクトして、エラー出力を通常の出力ストリームにリダイレクトすることができます。
 
 出力をリダイレクトするには、次の方法を使用できます。
 
@@ -36,7 +36,7 @@ PowerShell からテキストファイルに出力をリダイレクトする方
 
 PowerShell では、次の出力ストリームのリダイレクトがサポートされています。
 
-| 一連# |      [説明]       | で導入  |    Write コマンドレット     |
+| 一連# |      説明       | で導入  |    Write コマンドレット     |
 | -------- | ---------------------- | -------------- | ------------------- |
 | 1        | **成功** 一連     | PowerShell 2.0 | `Write-Output`      |
 | 2        | **エラー** 一連       | PowerShell 2.0 | `Write-Error`       |
@@ -46,8 +46,10 @@ PowerShell では、次の出力ストリームのリダイレクトがサポー
 | 6        | **情報** 一連 | PowerShell 5.0 | `Write-Information` |
 | *        | すべてのストリーム            | PowerShell 3.0 |                     |
 
-> [!NOTE]
-> PowerShell には **進行状況** ストリームもありますが、リダイレクトはサポートされていません。
+PowerShell には **進行状況** ストリームもありますが、リダイレクトはサポートされていません。
+
+> [!IMPORTANT]
+> **成功** と **エラー** のストリームは、他のシェルの stdin および stderr ストリームに似ています。 ただし、stdin は入力のために PowerShell パイプラインに接続されていません。
 
 ### <a name="powershell-redirection-operators"></a>PowerShell リダイレクト演算子
 
@@ -62,7 +64,7 @@ PowerShell リダイレクト演算子は次のようになります。ここで
 > [!NOTE]
 > 一部の Unix シェルとは異なり、他のストリームは **成功** ストリームにのみリダイレクトできます。
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 ### <a name="example-1-redirect-errors-and-output-to-a-file"></a>例 1: エラーと出力をファイルにリダイレクトする
 
@@ -183,7 +185,7 @@ Ignore
 Inquire
 ```
 
-## <a name="notes"></a>注
+## <a name="notes"></a>Notes
 
 データを追加しないリダイレクト演算子 ( `>` および) は、 `n>` 指定されたファイルの現在の内容を警告なしで上書きします。
 

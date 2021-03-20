@@ -1,16 +1,16 @@
 ---
 description: PowerShell でコマンドをパイプラインに結合する
 Locale: en-US
-ms.date: 09/27/2019
+ms.date: 03/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pipelines
-ms.openlocfilehash: e4ae85fbbfe5232048a90e1fe4f62db3e95e5f1b
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 6e3f15682caeecba6fa10166e1def7cc3d4a9eed
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99602221"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726742"
 ---
 # <a name="about-pipelines"></a>パイプラインについて
 
@@ -115,6 +115,19 @@ Get-Process | Sort-Object -Property handles
 Get-Process winlogon | Format-List -Property *
 ```
 
+パイプを使用して、ネイティブコマンドの出力を PowerShell コマンドレットに送ることもできます。 次に例を示します。
+
+```powershell
+PS> ipconfig.exe | Select-String -Pattern 'IPv4'
+
+   IPv4 Address. . . . . . . . . . . : 172.24.80.1
+   IPv4 Address. . . . . . . . . . . : 192.168.1.45
+   IPv4 Address. . . . . . . . . . . : 100.64.108.37
+```
+
+> [!IMPORTANT]
+> **成功** と **エラー** のストリームは、他のシェルの stdin および stderr ストリームに似ています。 ただし、stdin は入力のために PowerShell パイプラインに接続されていません。 詳細については、「 [about_Redirection](about_Redirection.md)」を参照してください。
+
 単純なコマンドをパイプラインにまとめると、時間と入力が節約され、スクリプトの効率が向上することがわかります。
 
 ## <a name="how-pipelines-work"></a>パイプラインのしくみ
@@ -131,7 +144,7 @@ Get-Process winlogon | Format-List -Property *
 Get-Help Start-Service -Full
 ```
 
-または
+or
 
 ```powershell
 Get-Help Start-Service -Parameter *

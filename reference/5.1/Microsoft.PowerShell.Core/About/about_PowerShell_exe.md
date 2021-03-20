@@ -6,12 +6,12 @@ ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_exe
-ms.openlocfilehash: ef03558a6b58868b98c9da488934b0bfbbce9fe7
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 4025630ebb3abe4c0598c85940cfce383e9c7890
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223331"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726657"
 ---
 # <a name="about-powershellexe"></a>PowerShell.exe について
 
@@ -108,12 +108,12 @@ PowerShell を実行する構成エンドポイントを指定します。 こ�
 
 スクリプトに渡されるパラメーターは、(現在のシェルによる解釈の後で) リテラル文字列として渡されます。 たとえば、 **cmd.exe** で環境変数の値を渡す必要がある場合は、 **cmd.exe** 構文を使用します。 `powershell.exe -File .\test.ps1 -TestParam %windir%`
 
-これに対し、 `powershell.exe -File .\test.ps1 -TestParam $env:windir` **cmd.exe** で実行すると、 `$env:windir` 現在の **cmd.exe** シェルに特別な意味を持たないため、スクリプトがリテラル文字列を受け取ることになります。 `$env:windir`環境変数参照のスタイルは、PowerShell コードとして解釈されるため、 **コマンド** パラメーター内で使用 _でき_ ます。
+これに対し、 `powershell.exe -File .\test.ps1 -TestParam $env:windir` **cmd.exe** で実行すると、 `$env:windir` 現在の **cmd.exe** シェルに特別な意味を持たないため、スクリプトがリテラル文字列を受け取ることになります。 `$env:windir`環境変数参照のスタイルは、PowerShell コードとして解釈されるため、**コマンド** パラメーター内で使用 _でき_ ます。
 
 同様に、 **バッチスクリプト** から同じコマンドを実行する場合 `%~dp0` は、またはの代わりにを使用し `.\` `$PSScriptRoot` て、現在の実行ディレクトリを表し `powershell.exe -File %~dp0test.ps1 -TestParam %windir%` ます。
 代わりにを使用すると `.\test.ps1` 、PowerShell はリテラルパスを見つけることができないため、エラーをスローします。 `.\test.ps1`
 
-ファイルの値がファイルパスの場合、 **file パラメーター名** の後に入力された文字はスクリプトファイルのパスとして解釈され、その後にスクリプトパラメーターが続くため、 **ファイル****はコマンド** の最後のパラメーターである _必要があり_ ます。
+ファイルの値がファイルパスの場合、 **file パラメーター名** の後に入力された文字はスクリプトファイルのパスとして解釈され、その後にスクリプトパラメーターが続くため、**ファイル****はコマンド** の最後のパラメーターである _必要があり_ ます。
 
 **ファイル** パラメーターの値には、スクリプトのパラメーターと値を含めることができます。 例: `-File .\Get-Script.ps1 -Domain Central`
 
@@ -133,7 +133,7 @@ PowerShell を実行する構成エンドポイントを指定します。 こ�
 
 **Command** の値には `-` 、、スクリプトブロック、または文字列を指定できます。 **Command** の値がの場合 `-` 、コマンドテキストは標準入力から読み取られます。
 
-**コマンド** パラメーターでは、 **コマンド** に **ScriptBlock** 型として渡された値を認識できる場合に限り、スクリプトブロックを実行できます。 これは _only_ `powershell.exe` 、別の PowerShell ホストから実行する場合にのみ可能です。 **ScriptBlock** 型は、に渡される前に、既存の変数に格納されるか、式から返されるか、または PowerShell ホストによって、中かっこ () で囲まれたリテラルスクリプトブロックとして解析されることがあり `{}` `powershell.exe` ます。
+**コマンド** パラメーターでは、**コマンド** に **ScriptBlock** 型として渡された値を認識できる場合に限り、スクリプトブロックを実行できます。 これは `powershell.exe` 、別の PowerShell ホストから実行する場合にのみ可能です。 **ScriptBlock** 型は、に渡される前に、既存の変数に格納されるか、式から返されるか、または PowerShell ホストによって、中かっこ () で囲まれたリテラルスクリプトブロックとして解析されることがあり `{}` `powershell.exe` ます。
 
 ```powershell
 powershell -Command {Get-WinEvent -LogName security}
@@ -144,7 +144,7 @@ powershell -Command {Get-WinEvent -LogName security}
 **コマンド** に渡された文字列は PowerShell コードとして実行されます。そのため、からの実行時には、スクリプトブロックの中かっこを最初に記述する必要はありません `cmd.exe` 。 文字列内で定義されているインライン スクリプト ブロックを実行するには、次の[呼び出し演算子](about_operators.md#special-operators) `&` を使用できます。
 
 ```cmd
-pwsh -Command "& {Get-WinEvent -LogName security}"
+powershell.exe -Command "& {Get-WinEvent -LogName security}"
 ```
 
 **Command** の値が文字列の場合、 **command** は pwsh の最後のパラメーターである必要があります。これは、後続のすべての引数が、実行するコマンドの一部として解釈されるためです。
@@ -174,19 +174,7 @@ out
 
 プロセス終了コードは、スクリプトブロック内の最後の (実行された) コマンドの状態によって決定されます。 がの場合、 `0` `$?` または `$true` `1` `$?` がの場合 `$false` 、終了コードはです。 最後のコマンドが、または以外の終了コードを明示的に設定する外部プログラムまたは PowerShell スクリプトの場合 `0` `1` 、終了コードは `1` プロセス終了コード用にに変換されます。 特定の終了コードを保持するに `exit $LASTEXITCODE` は、をコマンド文字列またはスクリプトブロックに追加します。
 
-同様に、やなどのスクリプト終了 (実行空間終了) エラーが発生したとき、または `throw` `-ErrorAction Stop` <kbd>Ctrl C キーを押し</kbd>て実行が中断されたときに、値1が返され - <kbd>C</kbd>ます。
-
-別の PowerShell ホストから **PowerShell.exe** を実行する場合に _のみ_ 可能です。
-**ScriptBlock** 型は、 `{}` **PowerShell.exe** に渡される前に、既存の変数に格納されているか、式から返されるか、または PowerShell ホストによって中かっこで囲まれたリテラルスクリプトブロックとして解析されることがあります。
-
-**cmd.exe** では、スクリプトブロック (または **ScriptBlock** 型) のようなものは存在しないため、 **コマンド** に渡される値は _常に_ 文字列になります。 文字列の中にスクリプト ブロックを記述することはできますが、実行されるのではなく、通常の PowerShell プロンプトで入力した場合とまったく同じように動作し、スクリプト ブロックの内容が出力されます。
-
-**コマンド** に渡された文字列は PowerShell として実行されます。そのため、 **cmd.exe** から実行した場合、最初の場所では、スクリプトブロック中かっこが不要になることがよくあります。 文字列内に定義されているインラインスクリプトブロックを実行するには、[呼び出し演算子](about_operators.md#special-operators)を 
- `&` 使用できます。
-
-```console
-"& {<command>}"
-```
+同様に、やなどのスクリプト終了 (実行空間終了) エラーが発生したとき、または `throw` `-ErrorAction Stop` <kbd>Ctrl C キーを押し</kbd>て実行が中断されたときに、値1が返され - <kbd></kbd>ます。
 
 #### <a name="-help---"></a>-Help、-?、/?
 

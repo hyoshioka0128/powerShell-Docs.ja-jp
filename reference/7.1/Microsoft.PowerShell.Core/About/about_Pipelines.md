@@ -1,17 +1,16 @@
 ---
 description: PowerShell でコマンドをパイプラインに結合する
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 09/27/2019
+ms.date: 03/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pipelines
-ms.openlocfilehash: ca933e7e130959ef725d760d859ca43b99bdfc76
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 91c0d5f1f7b05b8c8536bf27a443c3894da01347
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222024"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726419"
 ---
 # <a name="about-pipelines"></a>パイプラインについて
 
@@ -116,6 +115,19 @@ Get-Process | Sort-Object -Property handles
 Get-Process winlogon | Format-List -Property *
 ```
 
+パイプを使用して、ネイティブコマンドの出力を PowerShell コマンドレットに送ることもできます。 次に例を示します。
+
+```powershell
+PS> ipconfig.exe | Select-String -Pattern 'IPv4'
+
+   IPv4 Address. . . . . . . . . . . : 172.24.80.1
+   IPv4 Address. . . . . . . . . . . : 192.168.1.45
+   IPv4 Address. . . . . . . . . . . : 100.64.108.37
+```
+
+> [!IMPORTANT]
+> **成功** と **エラー** のストリームは、他のシェルの stdin および stderr ストリームに似ています。 ただし、stdin は入力のために PowerShell パイプラインに接続されていません。 詳細については、「 [about_Redirection](about_Redirection.md)」を参照してください。
+
 単純なコマンドをパイプラインにまとめると、時間と入力が節約され、スクリプトの効率が向上することがわかります。
 
 ## <a name="how-pipelines-work"></a>パイプラインのしくみ
@@ -171,11 +183,11 @@ Accept wildcard characters?  false
 
 コマンドレットのパラメーターは、次の2つの方法のいずれかでパイプライン入力を受け入れることができます。
 
-- **Byvalue** : パラメーターは、予期された .net 型に一致する値、またはその型に変換できる値を受け入れます。
+- **Byvalue**: パラメーターは、予期された .net 型に一致する値、またはその型に変換できる値を受け入れます。
 
   たとえば、の **Name** パラメーターは、 `Start-Service` 値によってパイプライン入力を受け入れます。 文字列に変換できる文字列オブジェクトまたはオブジェクトを受け入れることができます。
 
-- **Bypropertyname** : パラメーターは、入力オブジェクトにパラメーターと同じ名前のプロパティがある場合にのみ、入力を受け入れます。
+- **Bypropertyname**: パラメーターは、入力オブジェクトにパラメーターと同じ名前のプロパティがある場合にのみ、入力を受け入れます。
 
   たとえば、の Name パラメーターは、 `Start-Service` **name** プロパティを持つオブジェクトを受け入れることができます。 オブジェクトのプロパティを一覧表示するには、をにパイプし `Get-Member` ます。
 
@@ -191,7 +203,7 @@ PowerShell のパラメーターバインドコンポーネントは、次の条
 - パラメーターは、送信されるオブジェクトの型または必要な型に変換できる型を受け入れる必要があります。
 - パラメーターがコマンドで使用されませんでした。
 
-たとえば、 `Start-Service` コマンドレットには多くのパラメーターがありますが、その **Name** うちの **InputObject** 2 つだけがパイプライン入力を受け入れます。 **Name** パラメーターは文字列を受け取り、 **InputObject** パラメーターはサービスオブジェクトを受け取ります。 したがって、文字列、サービスオブジェクト、およびオブジェクトを、文字列またはサービスオブジェクトに変換できるプロパティと共にパイプすることができます。
+たとえば、 `Start-Service` コマンドレットには多くのパラメーターがありますが、そのうちの 2 つだけがパイプライン入力を受け入れます。 **Name** パラメーターは文字列を受け取り、 **InputObject** パラメーターはサービスオブジェクトを受け取ります。 したがって、文字列、サービスオブジェクト、およびオブジェクトを、文字列またはサービスオブジェクトに変換できるプロパティと共にパイプすることができます。
 
 PowerShell は、可能な限り効率的にパラメーターバインディングを管理します。 特定のパラメーターにバインドする PowerShell を提案したり、強制したりすることはできません。 PowerShell がパイプされたオブジェクトをバインドできない場合、コマンドは失敗します。
 
@@ -272,7 +284,7 @@ NPM       AliasProperty  NPM = NonpagedSystemMemorySize
 > [!NOTE]
 > `Get-Member` 重複を排除します。したがって、オブジェクトの種類がすべて同じである場合は、オブジェクトの種類が1つだけ表示されます。
 
-ただし、の **InputObject** パラメーターを使用すると、は `Get-Member` `Get-Member` 1 つの単位 **System.Diagnostics.Process** として system.string オブジェクトの配列を受け取ります。 オブジェクトの配列のプロパティを表示します。 ( `[]` **System.object** 型名の後にある配列シンボル () に注意してください)。
+ただし、の **InputObject** パラメーターを使用すると、は `Get-Member` `Get-Member` 1 つの単位として system.string オブジェクトの配列を受け取ります。 オブジェクトの配列のプロパティを表示します。 ( `[]` **System.object** 型名の後にある配列シンボル () に注意してください)。
 
 たとえば、次のように入力します。
 
@@ -382,7 +394,7 @@ Get-Help Move-ItemProperty -Parameter Destination
 Get-Item -Path HKLM:\Software\MyCompany\sales | Get-Member
 ```
 
-出力には、項目が、 **変換先** のプロパティを持たない、 **Microsoft の Win32 の RegistryKey** オブジェクトであることが示されています。 コマンドが失敗した理由について説明します。
+出力には、項目が、**変換先** のプロパティを持たない、 **Microsoft の Win32 の RegistryKey** オブジェクトであることが示されています。 コマンドが失敗した理由について説明します。
 
 **Path** パラメーターは、名前または値によってパイプラインの入力を受け入れます。
 
@@ -447,7 +459,7 @@ Get-Process | Where-Object CPU | Where-Object Path
 ```
 
 > [!IMPORTANT]
-> シェルで対話的に作業する場合は、 <kbd>Ctrl</kbd>V を使用して貼り付けるときにのみ、パイプラインを使用してコードを行の先頭に貼り付け + <kbd>V</kbd>ます。
+> シェルで対話的に作業する場合は、 <kbd>Ctrl</kbd>V を使用して貼り付けるときにのみ、パイプラインを使用してコードを行の先頭に貼り付け + <kbd></kbd>ます。
 > [貼り付け操作] を右クリックすると、行が1つずつ挿入されます。 行の末尾がパイプライン文字ではないため、PowerShell は入力が完了したと見なし、入力された行を実行します。
 
 ## <a name="see-also"></a>参照
@@ -461,4 +473,3 @@ Get-Process | Where-Object CPU | Where-Object Path
 [about_Command_Syntax](about_command_syntax.md)
 
 [about_ForEach](about_foreach.md)
-
