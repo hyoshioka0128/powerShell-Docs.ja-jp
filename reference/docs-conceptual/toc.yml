@@ -51,6 +51,12 @@
           href: learn/ps101/10-script-modules.md
         - name: 付録 A - ヘルプの構文
           href: learn/ps101/appendix-a.md
+    - name: チュートリアル
+      items:
+        - name: はじめに
+          href: learn/tutorials/00-introduction.md
+        - name: PowerShell について探索する
+          href: learn/tutorials/01-discover-powershell.md
     - name: 詳しく調べる
       items:
         - name: 概要
