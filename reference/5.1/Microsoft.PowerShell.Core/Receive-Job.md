@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 03/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-Job
-ms.openlocfilehash: 7b872c2a28943ee3d2b9ab27459ddb87722cc954
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6d1018b2e623129b9d5315e8f674bc3faf88ae34
+ms.sourcegitcommit: a0148ef8bf9757f68c788d24f2eaf92792c3979f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93212840"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104796330"
 ---
 # Receive-Job
 
@@ -180,9 +180,10 @@ Running AppMgmt     Application Management             Server02
 # Use the New-PSSession cmdlet to create three user-managed PSSessions on three servers, and save the sessions in the $s variable.
 $s = New-PSSession -ComputerName Server01, Server02, Server03
 # Use Invoke-Command run a Start-Job command in each of the PSSessions in the $s variable.
-# The job outputs the ComputerName of each server.
+# The creates a new job with a custom name to each server
+# The job outputs the datetime from each server
 # Save the job objects in the $j variable.
-$j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {$env:COMPUTERNAME}}
+$j = Invoke-Command -Session $s -ScriptBlock {Start-Job -Name $('MyJob-' +$env:COMPUTERNAME) -ScriptBlock {(Get-Date).ToString()}}
 # To confirm that these job objects are from the remote machines, run Get-Job to show no local jobs running.
 Get-Job
 ```
@@ -198,30 +199,27 @@ $j
 ```
 
 ```Output
-Id   Name     State      HasMoreData   Location   Command
---   ----     -----      -----------   --------   -------
-1    Job1     Completed  True          Localhost  $env:COMPUTERNAME
-2    Job2     Completed  True          Localhost  $env:COMPUTERNAME
-3    Job3     Completed  True          Localhost  $env:COMPUTERNAME
+Id   Name               State      HasMoreData   Location   Command
+--   ----               -----      -----------   --------   -------
+1    MyJob-Server01     Completed  True          Localhost  (Get-Date).ToString()
+2    MyJob-Server02     Completed  True          Localhost  (Get-Date).ToString()
+3    MyJob-Server03     Completed  True          Localhost  (Get-Date).ToString()
 ```
 
 ```powershell
-# Use Invoke-Command to run a Receive-Job command in each of the sessions in the $s variable and save the results in the $Results variable.
+# Use Invoke-Command to run a Receive-Job command in each of the sessions in the $s variable and save the results in the $results variable.
 # The Receive-Job command must be run in each session because the jobs were run locally on each server.
-$results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Job $Using:j}
+$results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Name $('MyJob-' +$env:COMPUTERNAME)}
 ```
 
 ```Output
-Server01
-Server02
-Server03
+3/22/2021 7:41:47 PM
+3/22/2021 7:41:47 PM
+3/22/2021 9:41:47 PM
 ```
 
 この例は、3 つのリモート コンピューター上で実行されるバックグラウンド ジョブの結果を取得する方法を示しています。
 前の例とは異なり、を使用して `Invoke-Command` コマンドを実行すると、 `Start-Job` 3 台のコンピューターそれぞれに対して3つの独立したジョブが実際に開始されます。 結果として、このコマンドは、3 つの異なるコンピューターでローカルに実行される 3 つのジョブを表す 3 つのジョブ オブジェクトを返します。
-
-> [!NOTE]
-> 最後のコマンドでは、 `$j` がローカル変数であるため、スクリプトブロックは **Using** スコープ修飾子を使用して変数を識別し `$j` ます。 スコープ修飾子の **使用** の詳細については、「 [about_Remote_Variables](./About/about_Remote_Variables.md)」を参照してください。
 
 ### 例 5: 子ジョブにアクセスする
 
@@ -479,7 +477,7 @@ Accept wildcard characters: False
 ### -セッション
 
 セッションの配列を指定します。
-このコマンドレットは、指定された PowerShell セッション ( **PSSession** ) で実行されたジョブの結果を取得します。
+このコマンドレットは、指定された PowerShell セッション (**PSSession**) で実行されたジョブの結果を取得します。
 **Pssession** を含む変数、またはコマンドなどの **pssession** を取得するコマンドを入力し `Get-PSSession` ます。
 
 ```yaml
@@ -499,7 +497,7 @@ Accept wildcard characters: False
 すべてのジョブの結果を受信するまでコマンドプロンプトが表示されないことを示します。
 既定では、は `Receive-Job` 使用可能な結果を直ちに返します。
 
-既定では、 **Wait** パラメーターは、ジョブが次のいずれかの状態になるまで待機します:
+既定では、**Wait** パラメーターは、ジョブが次のいずれかの状態になるまで待機します:
 
 - 完了
 - 失敗
@@ -527,7 +525,7 @@ Accept wildcard characters: False
 
 このコマンドレットがジョブの完了を待機している間に、ジョブの状態の変化を報告することを示します。
 
-このパラメーターは、 **Wait** パラメーターがこのコマンドで使用され、 **Keep** パラメーターが省略される場合にのみ有効です。
+このパラメーターは、**Wait** パラメーターがこのコマンドで使用され、**Keep** パラメーターが省略される場合にのみ有効です。
 
 このパラメーターは Windows PowerShell 3.0 で導入されました。
 
@@ -547,7 +545,7 @@ Accept wildcard characters: False
 
 このコマンドレットによってジョブオブジェクトが返され、その後に結果が返されることを示します。
 
-このパラメーターは、 **Wait** パラメーターがこのコマンドで使用され、 **Keep** パラメーターが省略される場合にのみ有効です。
+このパラメーターは、**Wait** パラメーターがこのコマンドで使用され、**Keep** パラメーターが省略される場合にのみ有効です。
 
 このパラメーターは Windows PowerShell 3.0 で導入されました。
 

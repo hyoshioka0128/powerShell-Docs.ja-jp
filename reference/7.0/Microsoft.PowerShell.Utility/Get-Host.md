@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Host
-ms.openlocfilehash: a0c2b5523dd75dfc7c9822fd55804537035d25f1
-ms.sourcegitcommit: 2e497178126b2b33a169ff04c31e251e0b59e89b
+ms.openlocfilehash: c99266f4f9de008cd8ea46a01d6b9c025f03d5ca
+ms.sourcegitcommit: a0148ef8bf9757f68c788d24f2eaf92792c3979f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "93209228"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104796313"
 ---
 # Get-Host
 
@@ -36,7 +35,8 @@ Get-Host [<CommonParameters>]
 ### 例 1: PowerShell コンソールホストに関する情報を取得する
 
 ```
-PS C:\> Get-Host
+Get-Host
+
 Name             : ConsoleHost
 Version          : 2.0
 InstanceId       : e4e0ab54-cc5e-4261-9117-4081f20ce7a2
@@ -48,26 +48,27 @@ IsRunspacePushed : False
 Runspace         : System.Management.Automation.Runspaces.LocalRunspace
 ```
 
-このコマンドは、この例の Windows PowerShell の現在のホスト プログラムである Windows PowerShell コンソールに関する情報を表示します。 これには、ホストの名前、ホストで実行されている Windows PowerShell のバージョン、現在のカルチャおよび UI カルチャが含まれます。
+このコマンドは、powershell コンソール (この例では PowerShell の現在のホストプログラム) に関する情報を表示します。 これには、ホストの名前、ホストで実行されている PowerShell のバージョン、および現在のカルチャと UI カルチャが含まれます。
 
-Version、UI、CurrentCulture、CurrentUICulture、PrivateData、および Runspace プロパティには、それぞれ非常に便利なプロパティを持つオブジェクトが含まれています。 後で示す例では、これらのプロパティを説明します。
+**Version**、 **UI**、 **CurrentCulture**、 **CurrentUICulture**、 **privatedata**、および実行 **空間** の各プロパティには、他の便利なプロパティを持つオブジェクトがそれぞれ含まれています。 後で示す例では、これらのプロパティを説明します。
 
 ### 例 2: PowerShell ウィンドウのサイズを変更する
 
 ```powershell
-PS C:\> $H = Get-Host
-PS C:\> $Win = $H.UI.RawUI.WindowSize
-PS C:\> $Win.Height = 10
-PS C:\> $Win.Width  = 10
-PS C:\> $H.UI.RawUI.Set_WindowSize($Win)
+$H = Get-Host
+$Win = $H.UI.RawUI.WindowSize
+$Win.Height = 10
+$Win.Width  = 10
+$H.UI.RawUI.Set_WindowSize($Win)
 ```
 
-このコマンドは、Windows PowerShell ウィンドウを 10 x 10 ピクセルにサイズ変更します。
+このコマンドを実行すると、Windows PowerShell ウィンドウのサイズが10文字に変更されます。
 
 ### 例 3: ホストの PowerShell のバージョンを取得する
 
 ```powershell
-PS C:\> (Get-Host).Version | Format-List -Property *
+(Get-Host).Version | Format-List -Property *
+
 Major         : 2
 Minor         : 0
 Build         : -1
@@ -79,12 +80,13 @@ MinorRevision : -1
 このコマンドは、ホストで実行されている Windows PowerShell のバージョンに関する詳細情報を取得します。
 これらの値は表示できますが、変更することはできません。
 
-の Version プロパティに `Get-Host` は、 **System.Version** system.string オブジェクトが含まれています。 このコマンドは、パイプライン演算子 (|) を使用して、バージョンオブジェクトをコマンドレットに送信し `Format-List` ます。 この `Format-List` コマンドは、 *Property* パラメーターを all (*) 値と共に使用して、version オブジェクトのすべてのプロパティとプロパティ値を表示します。
+の Version プロパティに `Get-Host` は、  system.string オブジェクトが含まれています。 このコマンドは、パイプライン演算子 () を使用して、 `|` バージョンオブジェクトをコマンドレットに送信し `Format-List` ます。 この `Format-List` コマンドは、 **Property** パラメーターと値 all () を使用して、 `*` version オブジェクトのすべてのプロパティとプロパティ値を表示します。
 
 ### 例 4: ホストの現在のカルチャを取得する
 
 ```powershell
-PS C:\> (Get-Host).CurrentCulture | Format-List -Property *
+(Get-Host).CurrentCulture | Format-List -Property *
+
 Parent                         : en
 LCID                           : 1033
 KeyboardLayoutId               : 1033
@@ -112,12 +114,13 @@ IsReadOnly                     : False
 
 同様に、 **CurrentUICulture** プロパティはを返すのと同じオブジェクトを返し `Get-UICulture` ます。
 
-ホストオブジェクトの **CurrentCulture** **プロパティには、system.string オブジェクトが** 含まれています。 このコマンドは、パイプライン演算子 (|) を使用して、 **CultureInfo** オブジェクトをコマンドレットに送信し `Format-List` ます。 この `Format-List` コマンドは、 *Property* パラメーターを all (*) 値と共に使用して、 **CultureInfo** オブジェクトのすべてのプロパティとプロパティ値を表示します。
+ホストオブジェクトの **CurrentCulture** **プロパティには、system.string オブジェクトが** 含まれています。 このコマンドは、パイプライン演算子 () を使用して、 `|` **CultureInfo** オブジェクトをコマンドレットに送信し `Format-List` ます。 この `Format-List` コマンドは、 **Property** パラメーターと値 all () を使用して、 `*` **CultureInfo** オブジェクトのすべてのプロパティとプロパティ値を表示します。
 
 ### 例 5: 現在のカルチャの DateTimeFormat を取得する
 
 ```powershell
-PS C:\> (Get-Host).CurrentCulture.DateTimeFormat | Format-List -Property *
+(Get-Host).CurrentCulture.DateTimeFormat | Format-List -Property *
+
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
 DateSeparator                    : /
@@ -155,7 +158,8 @@ MonthGenitiveNames               : {January, February, March, April...}
 ### 例 6: ホストの RawUI プロパティを取得する
 
 ```
-PS C:\> (Get-Host).UI.RawUI | Format-List -Property *
+(Get-Host).UI.RawUI | Format-List -Property *
+
 ForegroundColor       : DarkYellow
 BackgroundColor       : DarkBlue
 CursorPosition        : 0,390
@@ -174,25 +178,25 @@ WindowTitle           : Windows PowerShell 2.0 (04/11/2008 00:08:14)
 ### 例 7: PowerShell コンソールの背景色を設定する
 
 ```powershell
-PS C:\> (Get-Host).UI.RawUI.BackgroundColor = "Black"
-PS C:\> cls
+(Get-Host).UI.RawUI.BackgroundColor = "Black"
+cls
 ```
 
 これらのコマンドは、Windows PowerShell コンソールの背景色を黒に変更します。 **Cls** コマンドは、関数のエイリアスで、 `Clear-Host` 画面をクリアし、画面全体を新しい色に変更します。
 
-この変更は、現在のセッションでのみ有効です。 すべてのセッションでコンソールの背景色を変更するには、コマンドを Windows PowerShell プロファイルに追加します。
+この変更は、現在のセッションでのみ有効です。 すべてのセッションでコンソールの背景色を変更するには、PowerShell プロファイルにコマンドを追加します。
 
 ### 例 8: エラーメッセージの背景色を設定する
 
-```
-PS C:\> $Host.PrivateData.ErrorBackgroundColor = "white"
+```powershell
+$Host.PrivateData.ErrorBackgroundColor = "white"
 ```
 
 このコマンドは、エラー メッセージの背景色を白に変更します。
 
 このコマンドは、 `$Host` 現在のホストプログラムのホストオブジェクトを含む自動変数を使用します。 `Get-Host` はを含む同じオブジェクトを返し `$Host` ます。そのため、これらを区別して使用することができます。
 
-このコマンドは、ErrorBackgroundColor プロパティとしての **Privatedata** プロパティを使用し `$Host` ます。 オブジェクトのすべてのプロパティを表示するには、「」を参照してください `$Host` 。PrivateData プロパティ、「」と入力 `$host.privatedata | format-list *` します。
+このコマンドは、ErrorBackgroundColor プロパティとしての **Privatedata** プロパティを使用し `$Host` ます。 オブジェクトのすべてのプロパティを表示するには、「」を参照してください `$Host` 。PrivateData プロパティ、「」と入力 `$host.PrivateData | format-list *` します。
 
 ## PARAMETERS
 
@@ -202,7 +206,8 @@ PS C:\> $Host.PrivateData.ErrorBackgroundColor = "white"
 
 ## 入力
 
-### なし
+### None
+
 パイプを使用してこのコマンドレットに入力を渡すことはできません。
 
 ## 出力
