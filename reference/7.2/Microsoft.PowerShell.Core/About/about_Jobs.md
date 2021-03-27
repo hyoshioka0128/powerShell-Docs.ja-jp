@@ -1,16 +1,16 @@
 ---
 description: PowerShell バックグラウンドジョブが、現在のセッションと対話せずにバックグラウンドでコマンドまたは式を実行する方法について説明します。
 Locale: en-US
-ms.date: 11/11/2020
+ms.date: 03/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Jobs
-ms.openlocfilehash: 862fbf54b927bb70c68e4b3cc43c564f178f9db5
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 189476d98f92b8d53251b16bd27e45f4a980ab0e
+ms.sourcegitcommit: ca5a89977913bad9efec6bcc23a792d113ec0396
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99599700"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105630969"
 ---
 # <a name="about-jobs"></a>ジョブについて
 
@@ -23,7 +23,7 @@ PowerShell は、ジョブを使用してコマンドとスクリプトを同時
 
 - `RemoteJob` -コマンドとスクリプトは、リモートセッションで実行されます。 詳細については、「 [about_Remote_Jobs](about_Remote_Jobs.md)」を参照してください。
 - `BackgroundJob` -コマンドとスクリプトは、ローカルコンピューター上で個別のプロセスで実行されます。
-- `PSTaskJob` または `ThreadJob` -コマンドとスクリプトは、ローカルコンピューター上の同じプロセス内の別のスレッドで実行されます。 詳細については、「 [about_Thread_Jobs](/powershell/module/ThreadJob/about_Thread_Jobs)」を参照してください。
+- `PSTaskJob` または `ThreadJob` -コマンドとスクリプトは、ローカルコンピューター上の同じプロセス内の別のスレッドで実行されます。 詳細については、「 [about_Thread_Jobs](about_Thread_Jobs.md)」を参照してください。
 
 別のコンピューターまたは別のプロセスでスクリプトをリモートで実行すると、優れた分離が実現します。 リモートジョブで発生したエラーは、他の実行中のジョブ、またはジョブを開始した親セッションには影響しません。 ただし、リモート処理層では、オブジェクトのシリアル化などのオーバーヘッドが発生します。 すべてのオブジェクトは、親セッションとリモート (ジョブ) セッションの間で渡されるときにシリアル化および逆シリアル化されます。 大きな複雑なデータオブジェクトのシリアル化は、大量のコンピューティングリソースとメモリリソースを消費し、ネットワーク経由で大量のデータを転送することがあります。
 

@@ -2,20 +2,20 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/08/2020
+ms.date: 03/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: 8a79dcf9c2af7aed0c52c361467cab23f880a893
-ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
+ms.openlocfilehash: 53759d50e622d2c840781c5bddfd91c6fddfea45
+ms.sourcegitcommit: ca5a89977913bad9efec6bcc23a792d113ec0396
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "99603221"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105630984"
 ---
 # ForEach-Object
 
-## 構文
+## 概要
 入力オブジェクトのコレクション内の各項目に対して操作を実行します。
 
 ## 構文
@@ -382,6 +382,9 @@ Output: 5
 
 `Output: 3` は、その反復処理の並列 scriptblock が終了したため、書き込まれませんでした。
 
+> [!NOTE]
+> [PipelineVariable](About/about_CommonParameters.md)共通パラメーター変数は `Foreach-Object -Parallel` 、キーワードを使用した場合でも、シナリオではサポートされません `$using:` 。
+
 ## パラメーター
 
 ### -ArgumentList
@@ -648,7 +651,7 @@ Accept wildcard characters: False
 
 このコマンドレットは、入力によって決定されたオブジェクトを返します。
 
-## メモ
+## Notes
 
 - `ForEach-Object`コマンドレットは **foreach** ステートメントとよく似ていますが、入力を **foreach** ステートメントにパイプすることはできません。 **Foreach** ステートメントの詳細については、「 [about_Foreach](./About/about_Foreach.md)」を参照してください。
 
@@ -660,6 +663,8 @@ Accept wildcard characters: False
   - 結果の待機時間またはファイル操作の実行に時間を費やすスクリプト
 
   **Parallel** パラメーターを使用すると、スクリプトの実行速度が通常より遅くなる可能性があります。 並列スクリプトが単純な場合は特にそうです。 **並列** で実験して、利点がある場所を見つけます。
+
+- [PipelineVariable](About/about_CommonParameters.md)共通パラメーター変数は `Foreach-Object -Parallel` 、キーワードを使用した場合でも、シナリオではサポートされません `$using:` 。
 
   > [!IMPORTANT]
   > `ForEach-Object -Parallel`パラメーターセットは、個別のプロセススレッドでスクリプトブロックを並列に実行します。 `$using:`キーワードを使用すると、実行中の各スクリプトブロックスレッドに、コマンドレット呼び出しスレッドから変数参照を渡すことができます。 スクリプトブロックは異なるスレッドで実行されるため、参照渡しで渡されるオブジェクト変数は安全に使用する必要があります。 一般に、変更されていない参照先オブジェクトからは安全に読み取ることができます。 ただし、オブジェクトの状態が変更されている場合は、.Net system.string などのスレッドセーフなオブジェクトを使用する必要が **あります (** 例11を参照)。

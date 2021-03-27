@@ -2,16 +2,16 @@
 description: PowerShell バックグラウンドジョブが、現在のセッションと対話せずにバックグラウンドでコマンドまたは式を実行する方法について説明します。
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 11/11/2020
+ms.date: 03/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Jobs
-ms.openlocfilehash: 51409a124363d21f540459d49eb7e08a7c70d39a
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: 9ad4a30bf7596914abc1a604f3b8a27bc5b146b5
+ms.sourcegitcommit: ca5a89977913bad9efec6bcc23a792d113ec0396
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524860"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105631036"
 ---
 # <a name="about-jobs"></a>ジョブについて
 
@@ -24,7 +24,7 @@ PowerShell は、ジョブを使用してコマンドとスクリプトを同時
 
 - `RemoteJob` -コマンドとスクリプトは、リモートセッションで実行されます。 詳細については、「 [about_Remote_Jobs](about_Remote_Jobs.md)」を参照してください。
 - `BackgroundJob` -コマンドとスクリプトは、ローカルコンピューター上で個別のプロセスで実行されます。
-- `PSTaskJob` または `ThreadJob` -コマンドとスクリプトは、ローカルコンピューター上の同じプロセス内の別のスレッドで実行されます。 詳細については、「 [about_Thread_Jobs](/powershell/module/ThreadJob/about_Thread_Jobs)」を参照してください。
+- `PSTaskJob` または `ThreadJob` -コマンドとスクリプトは、ローカルコンピューター上の同じプロセス内の別のスレッドで実行されます。 詳細については、「 [about_Thread_Jobs](about_Thread_Jobs.md)」を参照してください。
 
 別のコンピューターまたは別のプロセスでスクリプトをリモートで実行すると、優れた分離が実現します。 リモートジョブで発生したエラーは、他の実行中のジョブ、またはジョブを開始した親セッションには影響しません。 ただし、リモート処理層では、オブジェクトのシリアル化などのオーバーヘッドが発生します。 すべてのオブジェクトは、親セッションとリモート (ジョブ) セッションの間で渡されるときにシリアル化および逆シリアル化されます。 大きな複雑なデータオブジェクトのシリアル化は、大量のコンピューティングリソースとメモリリソースを消費し、ネットワーク経由で大量のデータを転送することがあります。
 
@@ -94,7 +94,7 @@ $job = Get-Process &
 Get-Job
 ```
 
-ジョブオブジェクトには、ジョブが完了したかどうかを示すジョブの状態が含まれています。 完了したジョブの状態が " **完了** " または " **失敗** " になっています。 ジョブも **ブロック** されているか、実行され **ている** 可能性があります。
+ジョブオブジェクトには、ジョブが完了したかどうかを示すジョブの状態が含まれています。 完了したジョブの状態が " **完了** " または " **失敗**" になっています。 ジョブも **ブロック** されているか、実行され **ている** 可能性があります。
 
 ```Output
 Id  Name  PSJobTypeName State      HasMoreData  Location   Command
@@ -159,7 +159,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
   1121      25    28408      32940   174   430.14   3048 explorer
 ```
 
-返され **Keep** `Receive-Job` たジョブの結果がから削除されないようにするには、Keep パラメーターを使用します。 次のコマンドは、まだ完了していないジョブで **Keep** パラメーターを使用した場合の影響を示しています。
+返され `Receive-Job` たジョブの結果がから削除されないようにするには、Keep パラメーターを使用します。 次のコマンドは、まだ完了していないジョブで **Keep** パラメーターを使用した場合の影響を示しています。
 
 ```powershell
 C:\PS> Receive-Job -Job $job -Keep

@@ -3,20 +3,20 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 02/18/2021
+ms.date: 03/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: 584ca877cedfe1494f8386af75f9f1911a5b8f15
-ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
+ms.openlocfilehash: e204e034d6b3df6ca7175d307e0ee99b58045e05
+ms.sourcegitcommit: ca5a89977913bad9efec6bcc23a792d113ec0396
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101685651"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105631002"
 ---
 # ForEach-Object
 
-## 構文
+## 概要
 入力オブジェクトのコレクション内の各項目に対して操作を実行します。
 
 ## 構文
@@ -681,6 +681,8 @@ Accept wildcard characters: False
   - 結果の待機時間またはファイル操作の実行に時間を費やすスクリプト
 
   **Parallel** パラメーターを使用すると、スクリプトの実行速度が通常より遅くなる可能性があります。 並列スクリプトが単純な場合は特にそうです。 **並列** で実験して、利点がある場所を見つけます。
+
+- [PipelineVariable](About/about_CommonParameters.md)共通パラメーター変数は `Foreach-Object -Parallel` 、キーワードを使用した場合でも、シナリオではサポートされません `$using:` 。
 
   > [!IMPORTANT]
   > `ForEach-Object -Parallel`パラメーターセットは、個別のプロセススレッドでスクリプトブロックを並列に実行します。 `$using:`キーワードを使用すると、実行中の各スクリプトブロックスレッドに、コマンドレット呼び出しスレッドから変数参照を渡すことができます。 スクリプトブロックは異なるスレッドで実行されるため、参照渡しで渡されるオブジェクト変数は安全に使用する必要があります。 一般に、変更されていない参照先オブジェクトからは安全に読み取ることができます。 ただし、オブジェクトの状態が変更されている場合は、.Net system.string などのスレッドセーフなオブジェクトを使用する必要が **あります (** 例11を参照)。
