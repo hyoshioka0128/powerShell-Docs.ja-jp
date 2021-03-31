@@ -7,12 +7,12 @@ ms.date: 04/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-typedata?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-TypeData
-ms.openlocfilehash: 83e520f5d48aed89bdd1a461958331185eb46b9a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 63e5fbfcce681a1c3d17959a486ee9ab1998741a
+ms.sourcegitcommit: bdd0fedaf9ba534645b2f7eb1fe1241481f58715
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210539"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936548"
 ---
 # Get-TypeData
 
@@ -47,20 +47,19 @@ Get-TypeData [[-TypeName] <String[]>] [<CommonParameters>]
 Get-TypeData
 ```
 
-### 例 2: 名前を指定して型を取得する
+### 例 2: 名前を指定して型データを取得する
 
-この例では、イベントを含む名前を持つ、現在のセッションのすべての型を取得します。
+この例では、名前が "System.IO" で修飾されている、現在のセッションのすべての型データを取得します。
 
- ```powershell
-"*Eventing*" | Get-TypeData
+```powershell
+Get-TypeData -TypeName System.IO.*
 ```
 
 ```Output
-TypeName                                                  Members
---------                                                  -------
-System.Diagnostics.Eventing.Reader.EventLogConfiguration  {}System.Diagnostics.Eventing.Reader.EventLogRecord
-                                                          {}System.Diagnostics.Eventing.Reader.ProviderMetadata
-                                                          {[ProviderName, System.Management.Automation.Runspaces.AliasProper...
+TypeName                Members
+--------                -------
+System.IO.DirectoryInfo {[Mode, System.Management.Automation.Runspaces.CodePropert…
+System.IO.FileInfo      {[Mode, System.Management.Automation.Runspaces.CodePropert…
 ```
 
 ### 例 3: プロパティ値を作成するスクリプトブロックを取得する
@@ -94,11 +93,11 @@ else {
 }
 ```
 
-このコマンドは、コマンドレットを使用して、 `Get-TypeData` **DataTime** 型の拡張型データを取得します。 コマンドは、 **TypeData** オブジェクトの **Members** プロパティを取得します。
+このコマンドは、コマンドレットを使用して、 `Get-TypeData` **DataTime** 型の拡張型データを取得します。 コマンドは、**TypeData** オブジェクトの **Members** プロパティを取得します。
 
 **Members** プロパティには、拡張型データで定義されているプロパティとメソッドのハッシュテーブルが含まれています。 Members ハッシュ テーブルの各キーは、プロパティ名またはメソッド名であり、各値は、プロパティ値またはメソッド値の定義です。
 
-このコマンドは、 **メンバー** の **DateTime** キーと **getscriptblock** プロパティ値を取得します。
+このコマンドは、**メンバー** の **DateTime** キーと **getscriptblock** プロパティ値を取得します。
 
 出力には、PowerShell のすべての system.string オブジェクトの **datetime** プロパティの値を作成するスクリプトブロックが示されて **います。**
 

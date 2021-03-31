@@ -1,16 +1,16 @@
 ---
 description: PowerShell の状態情報を格納する変数について説明します。 これらの変数は、PowerShell によって作成および管理されます。
 Locale: en-US
-ms.date: 03/15/2021
+ms.date: 03/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: d06adeac446caf6589bf4e49db2bb7d4ec158dcf
-ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
+ms.openlocfilehash: 68d67c341db46015da948fe24c2e16b305b669e9
+ms.sourcegitcommit: bdd0fedaf9ba534645b2f7eb1fe1241481f58715
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575748"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936701"
 ---
 # <a name="about-automatic-variables"></a>自動変数について
 
@@ -149,10 +149,13 @@ echo Hello | powershell -Command """$input World!"""
 
 ### <a name="matches"></a>$Matches
 
-変数は、 `Matches` `-match` 演算子と演算子と連携し `-notmatch` ます。
+変数は、 `$Matches` `-match` 演算子と演算子と連携し `-notmatch` ます。
 スカラー入力を or 演算子に送信 `-match` `-notmatch` し、一方が一致を検出した場合は、ブール値を返し、 `$Matches` 一致した文字列値のハッシュテーブルで自動変数を設定します。 `$Matches`演算子で正規表現を使用する場合、ハッシュテーブルにキャプチャを設定することもでき `-match` ます。
 
 オペレーターの詳細については `-match` 、「 [about_Comparison_Operators](about_comparison_operators.md)」を参照してください。 正規表現の詳細については、「 [about_Regular_Expressions](about_Regular_Expressions.md)」を参照してください。
+
+変数は、 `$Matches` パラメーターを持つステートメントでも動作し `switch` `-Regex` ます。 および演算子と同じ方法で設定さ `-match` れ `-notmatch` ます。
+ステートメントの詳細については `switch` 、「 [about_Switch](about_Switch.md)」を参照してください。
 
 ### <a name="myinvocation"></a>$MyInvocation
 
@@ -162,7 +165,7 @@ echo Hello | powershell -Command """$input World!"""
 
 PowerShell 3.0 以降では、に `MyInvocation` 次の新しいプロパティが追加されています。
 
-| プロパティ      | Description                                         |
+| プロパティ      | 説明                                         |
 | ------------- | --------------------------------------------------- |
 | **PSScriptRoot**  | 呼び出されたスクリプトへの完全なパスを格納します。   |
 |               | 現在のコマンド。 このプロパティの値は次のようになります。  |
@@ -348,7 +351,7 @@ PSSession を開始したユーザーに関する情報が含まれます。こ�
 
 現在のセッションで実行されている PowerShell のバージョンに関する詳細を表示する読み取り専用のハッシュテーブルが含まれています。 この表には、次の項目が含まれています。
 
-| プロパティ                  | Description                                   |
+| プロパティ                  | 説明                                   |
 | ------------------------- | --------------------------------------------- |
 | **BuildVersion**          | 現在のバージョンのビルド番号       |
 | **CLRVersion**            | 共通言語ランタイムのバージョン    |
@@ -707,7 +710,7 @@ Default (Current): Start
 Default (Current): End
 ```
 
-## <a name="see-also"></a>こちらもご覧ください
+## <a name="see-also"></a>参照
 
 [about_Functions](about_Functions.md)
 

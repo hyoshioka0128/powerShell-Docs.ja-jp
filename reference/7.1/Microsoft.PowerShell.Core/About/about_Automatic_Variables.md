@@ -1,16 +1,16 @@
 ---
 description: PowerShell の状態情報を格納する変数について説明します。 これらの変数は、PowerShell によって作成および管理されます。
 Locale: en-US
-ms.date: 03/15/2021
+ms.date: 03/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 8267b71c8d5103bcaa915b664ee9f1746d0045bb
-ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
+ms.openlocfilehash: a439ba5e678c68dcd25b79ea898ed7a157c851b5
+ms.sourcegitcommit: bdd0fedaf9ba534645b2f7eb1fe1241481f58715
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575646"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936664"
 ---
 # <a name="about-automatic-variables"></a>自動変数について
 
@@ -172,6 +172,9 @@ echo Hello | pwsh -Command """$input World!"""
 
 オペレーターの詳細については `-match` 、「 [about_Comparison_Operators](about_comparison_operators.md)」を参照してください。 正規表現の詳細については、「 [about_Regular_Expressions](about_Regular_Expressions.md)」を参照してください。
 
+変数は、 `$Matches` パラメーターを持つステートメントでも動作し `switch` `-Regex` ます。 および演算子と同じ方法で設定さ `-match` れ `-notmatch` ます。
+ステートメントの詳細については `switch` 、「 [about_Switch](about_Switch.md)」を参照してください。
+
 ### <a name="myinvocation"></a>$MyInvocation
 
 現在のコマンドに関する情報 (名前、パラメーター、パラメーター値など)、コマンドの開始、呼び出し、または呼び出しの方法 (現在のコマンドを呼び出したスクリプトの名前など) に関する情報を格納します。
@@ -180,7 +183,7 @@ echo Hello | pwsh -Command """$input World!"""
 
 PowerShell 3.0 以降では、に `MyInvocation` 次の新しいプロパティが追加されています。
 
-| プロパティ      | Description                                         |
+| プロパティ      | 説明                                         |
 | ------------- | --------------------------------------------------- |
 | **PSScriptRoot**  | 呼び出されたスクリプトへの完全なパスを格納します。   |
 |               | 現在のコマンド。 このプロパティの値は次のようになります。  |
@@ -368,7 +371,7 @@ PSSession を開始したユーザーに関する情報が含まれます。こ�
 
 現在のセッションで実行されている PowerShell のバージョンに関する詳細を表示する読み取り専用のハッシュテーブルが含まれています。 この表には、次の項目が含まれています。
 
-| プロパティ                  | Description                                   |
+| プロパティ                  | 説明                                   |
 | ------------------------- | --------------------------------------------- |
 | **PSVersion**             | PowerShell のバージョン番号                 |
 | **PSEdition**             | このプロパティの値は、  |
@@ -732,7 +735,7 @@ Default (Current): Start
 Default (Current): End
 ```
 
-## <a name="see-also"></a>こちらもご覧ください
+## <a name="see-also"></a>参照
 
 [about_Functions](about_Functions.md)
 

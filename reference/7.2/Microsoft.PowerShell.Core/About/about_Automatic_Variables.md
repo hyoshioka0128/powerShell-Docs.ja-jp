@@ -1,16 +1,16 @@
 ---
 description: PowerShell の状態情報を格納する変数について説明します。 これらの変数は、PowerShell によって作成および管理されます。
 Locale: en-US
-ms.date: 03/15/2021
+ms.date: 03/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 8ba4dbc65283c3e229e40c5a634d8e79347bc15b
-ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
+ms.openlocfilehash: 49c1a311c13078b4e625fbcb450817f1d5039e0d
+ms.sourcegitcommit: bdd0fedaf9ba534645b2f7eb1fe1241481f58715
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575782"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936656"
 ---
 # <a name="about-automatic-variables"></a>自動変数について
 
@@ -171,6 +171,9 @@ echo Hello | pwsh -Command """$input World!"""
 スカラー入力を or 演算子に送信 `-match` `-notmatch` し、一方が一致を検出した場合は、ブール値を返し、 `$Matches` 一致した文字列値のハッシュテーブルで自動変数を設定します。 `$Matches`演算子で正規表現を使用する場合、ハッシュテーブルにキャプチャを設定することもでき `-match` ます。
 
 オペレーターの詳細については `-match` 、「 [about_Comparison_Operators](about_comparison_operators.md)」を参照してください。 正規表現の詳細については、「 [about_Regular_Expressions](about_Regular_Expressions.md)」を参照してください。
+
+変数は、 `$Matches` パラメーターを持つステートメントでも動作し `switch` `-Regex` ます。 および演算子と同じ方法で設定さ `-match` れ `-notmatch` ます。
+ステートメントの詳細については `switch` 、「 [about_Switch](about_Switch.md)」を参照してください。
 
 ### <a name="myinvocation"></a>$MyInvocation
 
@@ -755,7 +758,7 @@ Default (Current): Start
 Default (Current): End
 ```
 
-## <a name="see-also"></a>こちらもご覧ください
+## <a name="see-also"></a>参照
 
 [about_Functions](about_Functions.md)
 

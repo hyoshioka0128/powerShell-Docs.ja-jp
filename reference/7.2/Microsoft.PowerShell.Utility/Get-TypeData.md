@@ -6,12 +6,12 @@ ms.date: 04/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-typedata?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-TypeData
-ms.openlocfilehash: db5dc586f2a165d83c25bdf2addaeb625f9e1ba0
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: a4f7106bfeadc963a265f5fb239f9fa6bab40800
+ms.sourcegitcommit: bdd0fedaf9ba534645b2f7eb1fe1241481f58715
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99601195"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936514"
 ---
 # Get-TypeData
 
@@ -46,20 +46,19 @@ Get-TypeData [[-TypeName] <String[]>] [<CommonParameters>]
 Get-TypeData
 ```
 
-### 例 2: 名前を指定して型を取得する
+### 例 2: 名前を指定して型データを取得する
 
-この例では、イベントを含む名前を持つ、現在のセッションのすべての型を取得します。
+この例では、名前が "System.IO" で修飾されている、現在のセッションのすべての型データを取得します。
 
- ```powershell
-"*Eventing*" | Get-TypeData
+```powershell
+Get-TypeData -TypeName System.IO.*
 ```
 
 ```Output
-TypeName                                                  Members
---------                                                  -------
-System.Diagnostics.Eventing.Reader.EventLogConfiguration  {}System.Diagnostics.Eventing.Reader.EventLogRecord
-                                                          {}System.Diagnostics.Eventing.Reader.ProviderMetadata
-                                                          {[ProviderName, System.Management.Automation.Runspaces.AliasProper...
+TypeName                Members
+--------                -------
+System.IO.DirectoryInfo {[Mode, System.Management.Automation.Runspaces.CodePropert…
+System.IO.FileInfo      {[Mode, System.Management.Automation.Runspaces.CodePropert…
 ```
 
 ### 例 3: プロパティ値を作成するスクリプトブロックを取得する
