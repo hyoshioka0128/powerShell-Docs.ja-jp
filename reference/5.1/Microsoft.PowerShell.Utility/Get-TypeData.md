@@ -37,7 +37,7 @@ Get-TypeData [[-TypeName] <String[]>] [<CommonParameters>]
 
 このコマンドレットは、Windows PowerShell 3.0 で導入されました。
 
-## 使用例
+## 例
 
 ### 例 1: すべての拡張型データを取得する
 
