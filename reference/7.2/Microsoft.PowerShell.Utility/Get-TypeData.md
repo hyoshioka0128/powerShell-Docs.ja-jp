@@ -36,7 +36,7 @@ Get-TypeData [[-TypeName] <String[]>] [<CommonParameters>]
 
 このコマンドレットは、Windows PowerShell 3.0 で導入されました。
 
-## 例
+## 使用例
 
 ### 例 1: すべての拡張型データを取得する
 
@@ -134,7 +134,7 @@ Accept wildcard characters: True
 
 ### システムの管理.... TypeData
 
-## メモ
+## Notes
 
 `Get-TypeData` 現在のセッションの拡張型データのみを取得します。 このコマンドレットは、モジュールに定義されている一方で現在のセッションにインポートされていない拡張型のように、コンピューター上に存在していて現在のセッションに追加されていない拡張型データは取得しません。
 

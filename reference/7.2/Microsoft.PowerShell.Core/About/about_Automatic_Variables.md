@@ -489,7 +489,7 @@ PowerShell 7.2 の時点で、自動変数にアクセスして、 `$PSStyle` AN
 
 **現在** のプロパティは、 **MoveNext** が呼び出されるまで、同じプロパティを返し続けます。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 ### <a name="example-1-using-the-input-variable"></a>例 1: $input 変数の使用
 
@@ -758,7 +758,7 @@ Default (Current): Start
 Default (Current): End
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [about_Functions](about_Functions.md)
 
