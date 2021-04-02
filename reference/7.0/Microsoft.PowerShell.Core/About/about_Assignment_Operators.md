@@ -1,16 +1,16 @@
 ---
 description: 演算子を使用して変数に値を割り当てる方法について説明します。
 Locale: en-US
-ms.date: 04/26/2020
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Assignment_Operators
-ms.openlocfilehash: fd5f807241953c19d2db32fb9063e5596615a44f
-ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
+ms.openlocfilehash: 5ebb637d885488cfdccd63052b1bc5ffa161867f
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103193849"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072398"
 ---
 # <a name="about-assignment-operators"></a>代入演算子の概要
 
@@ -665,7 +665,9 @@ Tuesday, May 31, 2005 12:00:00 AM
 
 ## <a name="assigning-multiple-variables"></a>複数の変数の割り当て
 
-PowerShell では、1つのコマンドを使用して、複数の変数に値を割り当てることができます。 代入値の最初の要素が最初の変数に割り当てられ、2番目の要素が2番目の変数に割り当てられ、3番目の要素が3番目の変数に代入されます。 たとえば、次のコマンドでは、変数に値1、値2を変数に、値3を変数に代入してい `$a` `$b` `$c` ます。
+PowerShell では、1つのコマンドを使用して、複数の変数に値を割り当てることができます。 代入値の最初の要素が最初の変数に割り当てられ、2番目の要素が2番目の変数に割り当てられ、3番目の要素が3番目の変数に代入されます。 これは、 _複数の割り当て_ と呼ばれます。
+
+たとえば、次のコマンドでは、変数に値1、値2を変数に、値3を変数に代入してい `$a` `$b` `$c` ます。
 
 ```powershell
 $a, $b, $c = 1, 2, 3
@@ -686,13 +688,13 @@ $d, $e, $f = $c
 
 このコマンドは、変数に値3を代入し、 `$d` 値4を変数に、 `$e` 値5を変数に代入し `$f` ます。
 
-代入値に含まれる要素の数が変数よりも少ない場合、末尾の残りのすべての変数には値が割り当てられません。 たとえば、次のコマンドには、3つの変数と2つの値が含まれています。
+代入値に含まれる要素の数が変数の数よりも多い場合、残りの変数には値が割り当てられ `$null` ます。 たとえば、次のコマンドには、3つの変数と2つの値が含まれています。
 
 ```powershell
 $a, $b, $c = 1, 2
 ```
 
-したがって、PowerShell は変数に値1を代入 `$a` し、値2を `$b` 変数に割り当てます。 変数に値は割り当てられません `$c` 。
+したがって、PowerShell は変数に値1を代入 `$a` し、値2を `$b` 変数に割り当てます。 `$c`変数は `$null` です。
 
 変数を連結することによって、複数の変数に1つの値を割り当てることもできます。 たとえば、次のコマンドでは、4つの変数すべてに "3" という値が割り当てられます。
 

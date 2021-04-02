@@ -1,13 +1,13 @@
 ---
 title: Windows への PowerShell のインストール
 description: Windows への PowerShell のインストールに関する情報
-ms.date: 02/02/2021
-ms.openlocfilehash: bd3643c1ca6beb60a8727478a1ae612dcb34c7fb
-ms.sourcegitcommit: 080c8b05a1242348c365fe1684457e873325f11e
+ms.date: 03/30/2021
+ms.openlocfilehash: 7e21a34ea4dd74d2d8a9108393009c9c2660dff9
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103483438"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072716"
 ---
 # <a name="installing-powershell-on-windows"></a>Windows への PowerShell のインストール
 
@@ -211,7 +211,7 @@ PowerShell バイナリを展開するには、2 つの方法があります。
 dotnet tool install --global PowerShell
 ```
 
-dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE\dotnet\tools` が追加されます。 ただし、現在実行中のシェルには更新された `$env:PATH` が設定されていません。 新しいシェルからは、「`pwsh`」と入力すると PowerShell を起動できます。
+dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE\.dotnet\tools` が追加されます。 ただし、現在実行中のシェルには更新された `$env:PATH` が設定されていません。 新しいシェルからは、「`pwsh`」と入力すると PowerShell を起動できます。
 
 ## <a name="install-powershell-via-winget"></a>Winget を使用して PowerShell をインストールする
 

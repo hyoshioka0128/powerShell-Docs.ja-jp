@@ -1,13 +1,13 @@
 ---
-title: 2020 年第 4 四半期の PowerShell ドキュメントの最新情報
-description: 2020 年第 4 四半期の PowerShell ドキュメントに対する変更の一覧
+title: 2020の PowerShell ドキュメントの新機能
+description: 2020の PowerShell ドキュメントに対する変更の一覧
 ms.date: 01/05/2021
-ms.openlocfilehash: 2ac4a2e23ebed7cf1d371c29ceada661bc9a9bc3
-ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
+ms.openlocfilehash: cb6e5a7f6e843619e720264b6ecd80458ba133af
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101685545"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072546"
 ---
 # <a name="whats-new-in-powershell-docs-for-2020"></a>2020の PowerShell ドキュメントの新機能
 

@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-variable?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Variable
-ms.openlocfilehash: c77eb9c64022d028c3c4b2de6bf4551886b940e1
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 71bb70dac3436c5293b2a34ce52e54e751786a48
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99601991"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072263"
 ---
 # New-Variable
 
-## 概要
+## 構文
 新しい変数を作成します。
 
-## SYNTAX
+## 構文
 
 ```
 New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Option <ScopedItemOptions>]
@@ -26,29 +26,28 @@ New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Opti
  [<CommonParameters>]
 ```
 
-## Description
-**新しい変数** のコマンドレットは、PowerShell で新しい変数を作成します。
-変数の作成時に、変数に値を割り当てることも、作成後に値の割り当てまたは変更を行うこともできます。
+## 説明
 
-**新しい変数** のパラメーターを使用して、変数のプロパティの設定、変数のスコープの設定、および変数がパブリックかプライベートかの判断を行うことができます。
+`New-Variable`コマンドレットでは、Windows PowerShell で新しい変数を作成します。 変数の作成時に、変数に値を割り当てることも、作成後に値の割り当てまたは変更を行うこともできます。
 
-通常は、変数名とその値 (など) を入力して新しい変数を作成し `$Var = 3` ますが、パラメーターを使用するには、 **新しい** 変数のコマンドレットを使用します。
+のパラメーターを使用して、変数 `New-Variable` のプロパティの設定、変数のスコープの設定、および変数がパブリックかプライベートかの判断を行うことができます。
+
+通常、新しい変数を作成するには、変数名とその値 (など) を入力し `$Var = 3` ますが、コマンドレットを使用してそのパラメーターを使用することもでき `New-Variable` ます。
 
 ## 例
 
 ### 例 1: 変数を作成する
 
 ```
-PS C:\> New-Variable days
+New-Variable days
 ```
 
-このコマンドは、days という名前の新しい変数を作成します。
-*Name* パラメーターを入力する必要はありません。
+このコマンドは、days という名前の新しい変数を作成します。 **Name** パラメーターを入力する必要はありません。
 
 ### 例 2: 変数を作成して値を割り当てる
 
 ```
-PS C:\> New-Variable -Name "zipcode" -Value 98033
+New-Variable -Name "zipcode" -Value 98033
 ```
 
 このコマンドは、zipcode という名前の変数を作成し、値98033を割り当てます。
@@ -69,18 +68,24 @@ At line:1 char:1
 PS C:\> New-Variable -Name max -Value 1024 -Force
 ```
 
-この例では、 **New 変数** の ReadOnly オプションを使用して、変数を上書きから保護する方法を示します。
+この例では、のオプションを使用し `ReadOnly` `New-Variable` て、変数を上書きから保護する方法を示します。
 
-最初のコマンドは、Max という名前の新しい変数を作成し、その値を256に設定します。
-この例では、 *オプション* パラメーターに ReadOnly の値を指定しています。
+最初のコマンドは、Max という名前の新しい変数を作成し、その値を256に設定します。 この例では、 **オプション** パラメーターに値を指定 `ReadOnly` しています。
 
-2 番目のコマンドは、同じ名前の 2 番目の変数の作成を試みます。
-その変数に読み取り専用オプションが設定されているため、このコマンドはエラーを返します。
+2 番目のコマンドは、同じ名前の 2 番目の変数の作成を試みます。 その変数に読み取り専用オプションが設定されているため、このコマンドはエラーを返します。
 
-3番目のコマンドは、 *Force* パラメーターを使用して、変数の読み取り専用保護を上書きします。
+3番目のコマンドは、 **Force** パラメーターを使用して、変数の読み取り専用保護を上書きします。
 この場合、コマンドは、同じ名前を持つ新しい変数を正常に作成できます。
 
-### 例 4: プライベート変数を作成する
+### 例 4: 変数に複数のオプションを割り当てる
+
+```powershell
+New-Variable -Name 'TestVariable' -Value 'Test Value' -Option AllScope,Constant
+```
+
+この例では、変数を作成し、 `AllScope` オプションとオプションを割り当て `Constant` ます。これにより、変数は現在のスコープで使用できるようになり、新しいスコープが作成され、変更または削除できなくなります。
+
+### 例 5: プライベート変数を作成する
 
 ```
 PS C:\> New-Variable -Name counter -Visibility Private
@@ -111,14 +116,11 @@ Counter1     3.1415
 ...
 ```
 
-このコマンドは、モジュール内のプライベート変数の動作を示しています。
-モジュールには、Counter という名前のプライベート変数を持つ Get-Counter コマンドレットが含まれています。
-このコマンドは、 *Visibility* パラメーターと値 Private を使用して変数を作成します。
+このコマンドは、モジュール内のプライベート変数の動作を示しています。 モジュールには、 `Get-Counter` Counter という名前のプライベート変数を持つコマンドレットが含まれています。 このコマンドは、 **Visibility** パラメーターと値 Private を使用して変数を作成します。
 
-サンプル出力は、プライベート変数の動作を示しています。
-モジュールを読み込んだユーザーは、Counter 変数の値を表示または変更できませんが、モジュール内のコマンドによって Counter 変数を読み取ったり変更したりすることができます。
+サンプル出力は、プライベート変数の動作を示しています。 モジュールを読み込んだユーザーは、Counter 変数の値を表示または変更できませんが、モジュール内のコマンドによって Counter 変数を読み取ったり変更したりすることができます。
 
-### 例 5: スペースを含む変数を作成する
+### 例 6: スペースを含む変数を作成する
 
 ```
 PS C:\> New-Variable -Name 'with space' -Value 'abc123xyz'
@@ -133,12 +135,12 @@ PS C:\> ${with space}
 abc123xyz
 ```
 
-このコマンドは、スペースを含む変数を作成できることを示しています。
-変数は、変数を中かっこで区切ることによって、変数を **取得** したり、変数に直接アクセスしたりすることができます。
+このコマンドは、スペースを含む変数を作成できることを示しています。 変数は、コマンドレットを使用して、 `Get-Variable` または変数を中かっこで区切ることによって直接アクセスできます。
 
-## PARAMETERS
+## パラメーター
 
 ### -Description
+
 変数の説明を指定します。
 
 ```yaml
@@ -154,10 +156,10 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 コマンドレットによって、既存の読み取り専用変数と同じ名前の変数が作成されることを示します。
 
-既定では、変数のオプション値が ReadOnly または Constant でない限り、変数を上書きできます。
-詳細については、「 *オプション* パラメーター」を参照してください。
+既定では、変数のオプションの値がまたはの場合を除き、変数を上書きでき `ReadOnly` `Constant` ます。 詳細については、「 **オプション** パラメーター」を参照してください。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,6 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 新しい変数の名前を指定します。
 
 ```yaml
@@ -187,24 +190,18 @@ Accept wildcard characters: False
 ```
 
 ### -Option
-変数の **Options** プロパティの値を指定します。このパラメーターに指定できる値は次のとおりです。
 
-- [なし] :
-オプションを設定しません
-(既定値は None です)。
-- ReadOnly.
-削除できます。
-*Force* パラメーターを使用する場合を除き、を変更することはできません。
-- プライベート。
-変数は、現在のスコープ内でのみ使用可能です。
-- Allscope オプション.
-変数は、作成された任意の新しいスコープにコピーされます。
-- 定数。
-削除または変更できません。
-定数は、変数を作成する場合にのみ有効です。
-既存の変数のオプションを定数に変更することはできません。
+変数の **Options** プロパティの値を指定します。 このパラメーターの有効値は、次のとおりです。
 
-セッション内のすべての変数の **Options** プロパティを表示するには、「」と入力 `Get-Variable | Format-Table -Property name, options -autosize` します。
+- `None` -オプションを設定しません。 `None` は既定値です。
+- `ReadOnly` -削除できます。 **Force** パラメーターを使用する場合を除き、を変更することはできません。
+- `Private` -変数は、現在のスコープでのみ使用できます。
+- `AllScope` -変数は、作成された新しいスコープにコピーされます。
+- `Constant` -削除または変更できません。 `Constant` 変数を作成する場合にのみ有効です。 既存の変数のオプションをに変更することはできません `Constant` 。
+
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として **オプション** パラメーターに渡すことも、その値のコンマ区切りの文字列として渡すこともできます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
+
+セッション内のすべての変数の Options プロパティを表示するには、「」と入力 `Get-Variable | Format-Table -Property name, options -AutoSize` します。
 
 ```yaml
 Type: System.Management.Automation.ScopedItemOptions
@@ -220,8 +217,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-作業中の項目を表すオブジェクトを返します。
-既定では、このコマンドレットによる出力はありません。
+
+作業中の項目を表すオブジェクトを返します。 既定では、このコマンドレットによる出力はありません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -236,24 +233,18 @@ Accept wildcard characters: False
 ```
 
 ### -スコープ
-新しい変数のスコープを指定します。
-このパラメーターの有効値は、次のとおりです。
 
-- 全体.
-グローバルスコープで作成された変数は、PowerShell プロセス内のすべての場所でアクセスできます。
-- Local。
-ローカルスコープは、現在のスコープを参照します。これは、コンテキストによっては任意のスコープにすることができます。
-- スクリプティング。
-スクリプトスコープで作成された変数は、で作成されたスクリプトファイルまたはモジュール内でのみアクセスできます。
-- プライベート。
-プライベートスコープで作成された変数は、存在するスコープの外部ではアクセスできません。
-プライベートスコープを使用すると、別のスコープに同じ名前の項目のプライベートバージョンを作成できます。
-- 現在のスコープに対して相対的な数値 (0 ~ スコープの数。0は現在のスコープ、1は親、親スコープの親は2など)。
-負の数値は使用できません。
+新しい変数のスコープを指定します。 このパラメーターの有効値は、次のとおりです。
 
-Scope パラメーターが指定されていない場合、Local は既定のスコープです。
+- `Global` -グローバルスコープで作成された変数は、PowerShell プロセス内のすべての場所でアクセスできます。
+- `Local` -ローカルスコープは現在のスコープを参照します。これは、コンテキストによっては任意のスコープにすることができます。
+- `Script` -スクリプトスコープで作成された変数は、で作成されたスクリプトファイルまたはモジュール内でのみアクセスできます。
+- `Private` -プライベートスコープ内に作成された変数は、存在するスコープの外部ではアクセスできません。 プライベートスコープを使用すると、別のスコープに同じ名前の項目のプライベートバージョンを作成できます。
+- 現在のスコープに対して相対的な数値 (0 ~ スコープの数。0は現在のスコープ、1は親、親スコープの親は2など)。 負の数値は使用できません。
 
-詳細については、「about_Scopes」を参照してください。
+`Local` スコープパラメーターが指定されていない場合、は既定のスコープです。
+
+詳細については、「 [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md)」を参照してください。
 
 ```yaml
 Type: System.String
@@ -268,6 +259,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
+
 変数の初期値を指定します。
 
 ```yaml
@@ -283,19 +275,13 @@ Accept wildcard characters: False
 ```
 
 ### -可視性
-変数を、作成元のセッションの外部で表示されるようにするかどうかを決定します。
-このパラメーターは、他のユーザーに配信されるスクリプトおよびコマンドで使用する目的で設計されています。
-このパラメーターの有効値は、次のとおりです。
 
-- パブリック。
-変数は表示されます
-(Public が既定値です)。
-- プライベート。
-変数は表示されません。
+変数を、作成元のセッションの外部で表示されるようにするかどうかを決定します。 このパラメーターは、他のユーザーに配信されるスクリプトおよびコマンドで使用するために設計されています。 このパラメーターの有効値は、次のとおりです。
 
-変数がプライベートの場合、その変数は、Get-Variable で返されるような変数一覧または Variable: ドライブの表示には出現しません。
-プライベート変数の値を読み取りまたは変更するコマンドは、エラーを返します。
-ただし、コマンドが、変数の定義元のセッションで記述されている場合は、プライベート変数を使用するコマンドを実行できます。
+- `Public` -変数が表示されます。 `Public` は既定値です。
+- `Private` -変数は表示されません。
+
+変数がプライベートである場合は、によって返された変数 `Get-Variable` や、ドライブの表示形式など、変数の一覧に表示されません `Variable:` 。 プライベート変数の値を読み取りまたは変更するコマンドは、エラーを返します。 ただし、コマンドが、変数の定義元のセッションで記述されている場合は、プライベート変数を使用するコマンドを実行できます。
 
 ```yaml
 Type: System.Management.Automation.SessionStateEntryVisibility
@@ -311,6 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 コマンドレットの実行前に確認を求めるメッセージが表示されます。
 
 ```yaml
@@ -326,8 +313,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -342,20 +329,22 @@ Accept wildcard characters: False
 ```
 
 ### 共通パラメーター
+
 このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
 
 ## 入力
 
 ### System.Object
-パイプを使用して値を **新しい変数** にパイプすることができます。
+
+パイプを使用して値をにパイプすることができ `New-Variable` ます。
 
 ## 出力
 
 ### None または system.string です。
-*PassThru* パラメーターを使用すると、 **new 変数** は新しい変数を表す **system.string オブジェクト** を生成します。
-それ以外の場合、このコマンドレットによる出力はありません。
 
-## 注
+**PassThru** パラメーターを使用すると、に `New-Variable` よって新しい変数を表す system.string オブジェクトが生成されます。 それ以外の場合、このコマンドレットによる出力はありません。
+
+## メモ
 
 ## 関連リンク
 
@@ -366,4 +355,3 @@ Accept wildcard characters: False
 [Remove-Variable](Remove-Variable.md)
 
 [変数の設定](Set-Variable.md)
-

@@ -1,29 +1,27 @@
 ---
 description: Split 演算子を使用して1つ以上の文字列を部分文字列に分割する方法について説明します。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 12/20/2017
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Split
-ms.openlocfilehash: e93f68265bf560b03ac503ca914a11dde1f6b061
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 1667964840c0ead67ccd72aac4697779b84f864e
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222499"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072648"
 ---
 # <a name="about-split"></a>分割について
 
 ## <a name="short-description"></a>概要
-
 Split 演算子を使用して1つ以上の文字列を部分文字列に分割する方法について説明します。
 
 ## <a name="long-description"></a>詳細説明
 
 Split 操作は、1つまたは複数の文字列を部分文字列に分割します。 Split 操作の次の要素を変更できます。
 
-- 区切り記号. 既定値は空白ですが、区切り記号を指定する文字、文字列、パターン、またはスクリプトブロックを指定できます。 Windows PowerShell の Split 演算子は、単純な文字ではなく、区切り記号に正規表現を使用します。
+- 区切り記号. 既定値は空白ですが、区切り記号を指定する文字、文字列、パターン、またはスクリプトブロックを指定できます。 PowerShell の Split 演算子は、単純な文字ではなく、区切り記号に正規表現を使用します。
 - 部分文字列の最大数。 既定では、すべての部分文字列が返されます。 部分文字列の数よりも小さい数値を指定した場合、残りの部分文字列は最後の部分文字列で連結されます。
 - 区切り記号が一致する条件を指定するオプション (SimpleMatch や Multiline など)。
 
@@ -62,7 +60,7 @@ green
 
 部分文字列の末尾を識別する文字。 既定の区切り記号は空白文字で、スペースや印刷不可能な文字 (改行 ( \` n)、タブ ( \` t) など) が含まれます。 文字列が分割されると、すべての部分文字列の区切り記号が省略されます。 例:
 
-```
+```powershell
 "Lastname:FirstName:Address" -split ":"
 Lastname
 FirstName
@@ -70,11 +68,11 @@ Address
 ```
 
 既定では、区切り記号は結果から除外されます。 区切り記号の全体または一部を保持するには、保持する部分をかっこで囲みます。
-パラメーターを \<Max-substrings\> 追加すると、コマンドによってコレクションが分割されるときに、これが優先されます。 出力の一部として区切り記号を含めることを選択した場合、コマンドは出力の一部として区切り記号を返します。ただし、出力の一部として区切り記号を返すように文字列を分割することは、分割としてカウントされません。
+パラメーターを `<Max-substrings>` 追加すると、コマンドによってコレクションが分割されるときに、これが優先されます。 出力の一部として区切り記号を含めることを選択した場合、コマンドは出力の一部として区切り記号を返します。ただし、出力の一部として区切り記号を返すように文字列を分割することは、分割としてカウントされません。
 
 例 :
 
-```
+```powershell
 "Lastname:FirstName:Address" -split "(:)"
 Lastname
 :
@@ -90,26 +88,9 @@ FirstName
 Address
 ```
 
-次の例で \<Max-substrings\> は、が3に設定されています。 この結果、文字列値は3つの分割が行われますが、結果の出力には合計5つの文字列が含まれます。分割の後に、最大3つの部分文字列に到達するまで、区切り記号が含まれます。 最後の部分文字列の追加の区切り記号は、部分文字列の一部になります。
+### `<Max-substrings>`
 
-```powershell
-'Chocolate-Vanilla-Strawberry-Blueberry' -split '(-)', 3
-```
-
-```output
-Chocolate
--
-Vanilla
--
-Strawberry-Blueberry
-```
-
-### \<Max-substrings\>
-
-文字列が分割される最大回数を指定します。 既定では、区切り記号によって分割されたすべての部分文字列です。 複数の部分文字列がある場合、それらは最後の部分文字列に連結されます。 部分文字列が少数の場合は、すべての部分文字列が返されます。 値0と負の値を指定すると、すべての部分文字列が返されます。
-
-Max 部分文字列には、返されるオブジェクトの最大数が指定されていません。この値は、文字列が分割される最大回数と同じです。
-複数の文字列 (文字列の配列) を Split 演算子に送信すると、各文字列に対して最大部分文字列の制限が個別に適用されます。
+分割操作によって返される部分文字列の最大数を指定します。 既定では、区切り記号によって分割されたすべての部分文字列です。 複数の部分文字列がある場合、それらは最後の部分文字列に連結されます。 部分文字列が少数の場合は、すべての部分文字列が返されます。 値が0の場合は、すべての部分文字列が返されます。
 
 例:
 
@@ -118,13 +99,45 @@ $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
 $c -split ",", 5
 ```
 
-```output
+```Output
 Mercury
 Venus
 Earth
 Mars
 Jupiter,Saturn,Uranus,Neptune
 ```
+
+複数の文字列 (文字列の配列) を演算子に送信した場合 `-split` 、 `Max-substrings` 制限は各文字列に個別に適用されます。
+
+```powershell
+$c = 'a,b,c','1,2,3,4,5'
+$c -split ',', 3
+
+a
+b
+c
+1
+2
+3,4,5
+```
+
+`<Max-substrings>` 返されるオブジェクトの最大数は指定しません。 次の例で `<Max-substrings>` は、が3に設定されています。
+この結果、3つの部分文字列値が生成されますが、結果の出力には合計5つの文字列が含まれます。 区切り記号は、3つの部分文字列の最大数に達するまで分割した後に含まれます。 最後の部分文字列の追加の区切り記号は、部分文字列の一部になります。
+
+```powershell
+'Chocolate-Vanilla-Strawberry-Blueberry' -split '(-)', 3
+```
+
+```Output
+Chocolate
+-
+Vanilla
+-
+Strawberry-Blueberry
+```
+
+負の値は無視されます。
+
 
 ### \<ScriptBlock\>
 
@@ -137,7 +150,7 @@ $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
 $c -split {$_ -eq "e" -or $_ -eq "p"}
 ```
 
-```output
+```Output
 M
 rcury,V
 nus,
@@ -164,19 +177,19 @@ Options パラメーターの構文は次のとおりです。
 
 SimpleMatch オプションは次のとおりです。
 
-- **SimpleMatch** : 区切り記号を評価するときに、単純な文字列比較を使用します。 RegexMatch と共に使用することはできません。
-- **IgnoreCase** :-csplit 演算子が指定されている場合でも、大文字と小文字を区別しない一致を強制的に実行します。
+- **SimpleMatch**: 区切り記号を評価するときに、単純な文字列比較を使用します。 RegexMatch と共に使用することはできません。
+- **IgnoreCase**:-csplit 演算子が指定されている場合でも、大文字と小文字を区別しない一致を強制的に実行します。
 
 RegexMatch オプションは次のとおりです。
 
-- **RegexMatch** : 正規表現の照合を使用して、区切り記号を評価します。 これは既定の動作です。 SimpleMatch と共に使用することはできません。
-- **IgnoreCase** :-csplit 演算子が指定されている場合でも、大文字と小文字を区別しない一致を強制的に実行します。
-- **Regexoptions.cultureinvariant** : 区切り記号を評価するときに、言語のカルチャの違いを無視します。 RegexMatch でのみ有効です。
-- **Ignorepattern whitespace** : エスケープされていない空白と、シャープ記号 (#) でマークされたコメントを無視します。 RegexMatch でのみ有効です。
-- **Multiline** : 複数行モードでは `^` 、 `$` 入力文字列の先頭と末尾ではなく、すべての行の先頭の末尾とが一致します。
-- **Regexoptions.singleline** : regexoptions.singleline モードでは、入力文字列が *regexoptions.singleline* として扱われます。
+- **RegexMatch**: 正規表現の照合を使用して、区切り記号を評価します。 これが既定の動作です。 SimpleMatch と共に使用することはできません。
+- **IgnoreCase**:-csplit 演算子が指定されている場合でも、大文字と小文字を区別しない一致を強制的に実行します。
+- **Regexoptions.cultureinvariant**: 区切り記号を評価するときに、言語のカルチャの違いを無視します。 RegexMatch でのみ有効です。
+- **Ignorepattern whitespace**: エスケープされていない空白と、シャープ記号 (#) でマークされたコメントを無視します。 RegexMatch でのみ有効です。
+- **Multiline**: 複数行モードでは `^` 、 `$` 入力文字列の先頭と末尾ではなく、すべての行の先頭の末尾とが一致します。
+- **Regexoptions.singleline**: regexoptions.singleline モードでは、入力文字列が *regexoptions.singleline* として扱われます。
   `.`改行を除くすべての文字に一致するのではなく、すべての文字が (改行を含めて) 一致するように強制し `\n` ます。
-- **Regexoptions.explicitcapture** : 明示的なキャプチャグループのみが結果一覧に返されるように、名前のない一致グループを無視します。 RegexMatch でのみ有効です。
+- **Regexoptions.explicitcapture**: 明示的なキャプチャグループのみが結果一覧に返されるように、名前のない一致グループを無視します。 RegexMatch でのみ有効です。
 
 > [!NOTE]
 > Regexoptions.singleline は既定の動作です。 Regexoptions.singleline と Multiline は、options パラメーターと一緒に使用することはできません。 これは、PowerShell 6.0 で解決されました。
@@ -193,7 +206,7 @@ RegexMatch オプションは次のとおりです。
 - すべての文字列をかっこで囲みます。
 - 変数に文字列を格納し、その変数を split 演算子に送信します。
 
-次の例を確認してください。
+次に例を示します。
 
 ```
 PS> -split "1 2", "a b"
@@ -235,7 +248,7 @@ b
 -split "Windows PowerShell 2.0`nWindows PowerShell with remoting"
 ```
 
-```output
+```Output
 
 Windows
 PowerShell
@@ -252,7 +265,7 @@ remoting
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split ','
 ```
 
-```output
+```Output
 Mercury
 Venus
 Earth
@@ -269,7 +282,7 @@ Neptune
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split 'er'
 ```
 
-```output
+```Output
 M
 cury,Venus,Earth,Mars,Jupit
 ,Saturn,Uranus,Neptune
@@ -281,7 +294,7 @@ cury,Venus,Earth,Mars,Jupit
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -cSplit 'N'
 ```
 
-```output
+```Output
 Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,
 eptune
 ```
@@ -292,7 +305,7 @@ eptune
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[et]'
 ```
 
-```output
+```Output
 M
 rcury,V
 nus,
@@ -311,7 +324,7 @@ un
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[er]', 6
 ```
 
-```output
+```Output
 M
 
 cu
@@ -326,7 +339,7 @@ arth,Mars,Jupiter,Saturn,Uranus,Neptune
 "a,b,c,d,e,f,g,h" -split ",", 3
 ```
 
-```output
+```Output
 a
 b
 c,d,e,f,g,h
@@ -339,7 +352,7 @@ c,d,e,f,g,h
 "a,b,c,d", "e,f,g,h" -split ",", 3
 ```
 
-```output
+```Output
 a
 b
 c,d
@@ -378,7 +391,7 @@ The third of three lines.
 "This.is.a.test" -split "\."
 ```
 
-```output
+```Output
 This
 is
 a
@@ -393,7 +406,7 @@ test
 "This.is.a.test" -split ".", 0, "simplematch"
 ```
 
-```output
+```Output
 This
 is
 a
@@ -408,7 +421,7 @@ $c = "LastName, FirstName; Address, City, State, Zip"
 $c -split $(if ($i -lt 1) {","} else {";"})
 ```
 
-```output
+```Output
 LastName, FirstName
  Address, City, State, Zip
 ```

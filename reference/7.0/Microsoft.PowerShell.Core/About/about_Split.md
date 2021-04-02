@@ -1,17 +1,16 @@
 ---
 description: Split 演算子を使用して1つ以上の文字列を部分文字列に分割する方法について説明します。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 03/24/2020
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Split
-ms.openlocfilehash: ed57cec30577fbd02f7aa317460bf1a73b006685
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: fcf7568cfc2055331cc6025622352eee9711f4ec
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93220539"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072442"
 ---
 # <a name="about-split"></a>分割について
 
@@ -61,7 +60,7 @@ green
 
 部分文字列の末尾を識別する文字。 既定の区切り記号は空白文字で、スペースや印刷不可能な文字 (改行 ( \` n)、タブ ( \` t) など) が含まれます。 文字列が分割されると、すべての部分文字列の区切り記号が省略されます。 例:
 
-```
+```powershell
 "Lastname:FirstName:Address" -split ":"
 Lastname
 FirstName
@@ -69,11 +68,11 @@ Address
 ```
 
 既定では、区切り記号は結果から除外されます。 区切り記号の全体または一部を保持するには、保持する部分をかっこで囲みます。
-パラメーターを \<Max-substrings\> 追加すると、コマンドによってコレクションが分割されるときに、これが優先されます。 出力の一部として区切り記号を含めることを選択した場合、コマンドは出力の一部として区切り記号を返します。ただし、出力の一部として区切り記号を返すように文字列を分割することは、分割としてカウントされません。
+パラメーターを `<Max-substrings>` 追加すると、コマンドによってコレクションが分割されるときに、これが優先されます。 出力の一部として区切り記号を含めることを選択した場合、コマンドは出力の一部として区切り記号を返します。ただし、出力の一部として区切り記号を返すように文字列を分割することは、分割としてカウントされません。
 
 例 :
 
-```
+```powershell
 "Lastname:FirstName:Address" -split "(:)"
 Lastname
 :
@@ -89,29 +88,9 @@ FirstName
 Address
 ```
 
-次の例で \<Max-substrings\> は、が3に設定されています。 この結果、文字列値は3つの分割が行われますが、結果の出力には合計5つの文字列が含まれます。分割の後に、最大3つの部分文字列に到達するまで、区切り記号が含まれます。 最後の部分文字列の追加の区切り記号は、部分文字列の一部になります。
+### `<Max-substrings>`
 
-```powershell
-'Chocolate-Vanilla-Strawberry-Blueberry' -split '(-)', 3
-```
-
-```Output
-Chocolate
--
-Vanilla
--
-Strawberry-Blueberry
-```
-
-### \<Max-substrings\>
-
-文字列が分割される最大回数を指定します。 既定では、区切り記号によって分割されたすべての部分文字列です。 複数の部分文字列がある場合、それらは最後の部分文字列に連結されます。 部分文字列が少数の場合は、すべての部分文字列が返されます。 値が0の場合は、すべての部分文字列が返されます。 負の値は、入力文字列の末尾から要求された部分文字列の量を返します。
-
-> [!NOTE]
-> PowerShell 7 では、負の値のサポートが追加されました。
-
-**Max 部分文字列** には、返されるオブジェクトの最大数が指定されていません。 この値は、文字列が分割される最大回数と同じです。
-複数の文字列 (文字列の配列) を演算子に送信すると `-split` 、各文字列に対して **最大部分** 文字列の制限が個別に適用されます。
+分割操作によって返される部分文字列の最大数を指定します。 既定では、区切り記号によって分割されたすべての部分文字列です。 複数の部分文字列がある場合、それらは最後の部分文字列に連結されます。 部分文字列が少数の場合は、すべての部分文字列が返されます。 値が0の場合は、すべての部分文字列が返されます。
 
 例:
 
@@ -127,6 +106,40 @@ Earth
 Mars
 Jupiter,Saturn,Uranus,Neptune
 ```
+
+複数の文字列 (文字列の配列) を演算子に送信した場合 `-split` 、 `Max-substrings` 制限は各文字列に個別に適用されます。
+
+```powershell
+$c = 'a,b,c','1,2,3,4,5'
+$c -split ',', 3
+
+a
+b
+c
+1
+2
+3,4,5
+```
+
+`<Max-substrings>` 返されるオブジェクトの最大数は指定しません。 次の例で `<Max-substrings>` は、が3に設定されています。
+この結果、3つの部分文字列値が生成されますが、結果の出力には合計5つの文字列が含まれます。 区切り記号は、3つの部分文字列の最大数に達するまで分割した後に含まれます。 最後の部分文字列の追加の区切り記号は、部分文字列の一部になります。
+
+```powershell
+'Chocolate-Vanilla-Strawberry-Blueberry' -split '(-)', 3
+```
+
+```Output
+Chocolate
+-
+Vanilla
+-
+Strawberry-Blueberry
+```
+
+負の値は、入力文字列の末尾から要求された部分文字列の量を返します。
+
+> [!NOTE]
+> PowerShell 7 では、負の値のサポートが追加されました。
 
 ```powershell
 $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
@@ -179,19 +192,19 @@ Options パラメーターの構文は次のとおりです。
 
 SimpleMatch オプションは次のとおりです。
 
-- **SimpleMatch** : 区切り記号を評価するときに、単純な文字列比較を使用します。 RegexMatch と共に使用することはできません。
-- **IgnoreCase** :-csplit 演算子が指定されている場合でも、大文字と小文字を区別しない一致を強制的に実行します。
+- **SimpleMatch**: 区切り記号を評価するときに、単純な文字列比較を使用します。 RegexMatch と共に使用することはできません。
+- **IgnoreCase**:-csplit 演算子が指定されている場合でも、大文字と小文字を区別しない一致を強制的に実行します。
 
 RegexMatch オプションは次のとおりです。
 
-- **RegexMatch** : 正規表現の照合を使用して、区切り記号を評価します。 これは既定の動作です。 SimpleMatch と共に使用することはできません。
-- **IgnoreCase** :-csplit 演算子が指定されている場合でも、大文字と小文字を区別しない一致を強制的に実行します。
-- **Regexoptions.cultureinvariant** : 区切り記号を評価するときに、言語のカルチャの違いを無視します。 RegexMatch でのみ有効です。
-- **Ignorepattern whitespace** : エスケープされていない空白と、シャープ記号 (#) でマークされたコメントを無視します。 RegexMatch でのみ有効です。
-- **Multiline** : 複数行モードでは `^` 、 `$` 入力文字列の先頭と末尾ではなく、すべての行の先頭の末尾とが一致します。
-- **Regexoptions.singleline** : regexoptions.singleline モードでは、入力文字列が *regexoptions.singleline* として扱われます。
+- **RegexMatch**: 正規表現の照合を使用して、区切り記号を評価します。 これが既定の動作です。 SimpleMatch と共に使用することはできません。
+- **IgnoreCase**:-csplit 演算子が指定されている場合でも、大文字と小文字を区別しない一致を強制的に実行します。
+- **Regexoptions.cultureinvariant**: 区切り記号を評価するときに、言語のカルチャの違いを無視します。 RegexMatch でのみ有効です。
+- **Ignorepattern whitespace**: エスケープされていない空白と、シャープ記号 (#) でマークされたコメントを無視します。 RegexMatch でのみ有効です。
+- **Multiline**: 複数行モードでは `^` 、 `$` 入力文字列の先頭と末尾ではなく、すべての行の先頭の末尾とが一致します。
+- **Regexoptions.singleline**: regexoptions.singleline モードでは、入力文字列が *regexoptions.singleline* として扱われます。
   `.`改行を除くすべての文字に一致するのではなく、すべての文字が (改行を含めて) 一致するように強制し `\n` ます。
-- **Regexoptions.explicitcapture** : 明示的なキャプチャグループのみが結果一覧に返されるように、名前のない一致グループを無視します。 RegexMatch でのみ有効です。
+- **Regexoptions.explicitcapture**: 明示的なキャプチャグループのみが結果一覧に返されるように、名前のない一致グループを無視します。 RegexMatch でのみ有効です。
 
 ## <a name="unary-and-binary-split-operators"></a>単項分割演算子と二項分割演算子
 
@@ -203,7 +216,7 @@ RegexMatch オプションは次のとおりです。
 - すべての文字列をかっこで囲みます。
 - 変数に文字列を格納し、その変数を split 演算子に送信します。
 
-次の例を確認してください。
+次に例を示します。
 
 ```
 PS> -split "1 2", "a b"

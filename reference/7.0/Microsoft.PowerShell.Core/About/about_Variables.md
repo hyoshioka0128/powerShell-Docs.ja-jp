@@ -1,17 +1,16 @@
 ---
 description: PowerShell で使用できる値を変数に格納する方法について説明します。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 11/09/2020
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Variables
-ms.openlocfilehash: e1eee80740d1f59ab9a96122c09ba81ef99d35cc
-ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
+ms.openlocfilehash: ac5e2a065d7d510c5d3f577b9ff81b35c49b30d2
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94483029"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072493"
 ---
 # <a name="about-variables"></a>変数について
 
@@ -128,6 +127,21 @@ Remove-Variable -Name MyVariable
 ```powershell
 Remove-Item -Path Variable:\MyVariable
 ```
+
+1つのステートメントで複数の変数に値を指定することもできます。 次の例では、同じ値を複数の変数に代入します。
+
+```powershell
+$a = $b = $c = 0
+```
+
+次の例では、複数の変数に複数の値を割り当てます。
+
+```powershell
+$i,$j,$k = 10, "red", $true    # $i is 10, $j is "red", $k is True
+$i,$j = 10, "red", $true       # $i is 10, $j is [object[]], Length 2
+```
+
+詳細については、「 [about_Assignment_Operators](about_assignment_operators.md#assigning-multiple-variables)」の「**複数の変数の割り当て**」を参照してください。
 
 ## <a name="types-of-variables"></a>変数の種類
 
@@ -250,7 +264,7 @@ Use the $PROFILE variable.
 
 英数字の変数名には、次の文字を含めることができます。
 
-- これらのカテゴリの Unicode 文字: **Lu** 、 **Ll** 、 **Lt** 、 **Lm** 、 **Lo** 、 **Nd** 。
+- これらのカテゴリの Unicode 文字: **Lu**、 **Ll**、 **Lt**、 **Lm**、 **Lo**、 **Nd**。
 - アンダースコア ( `_` ) 文字。
 - 疑問符 ( `?` ) 文字。
 

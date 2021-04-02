@@ -7,12 +7,12 @@ ms.date: 02/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-LocalUser
-ms.openlocfilehash: 34210145bcddc8d9420552d637a6cd6e5f8e61cc
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 2b1831a854c4c61d4c4631ae475a59d8240a926b
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93211888"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072278"
 ---
 # Get-LocalUser
 
@@ -70,7 +70,7 @@ Name                                    Enabled  Description
 MicrosoftAccount\username@outlook.com  True     Description of this account.
 ```
 
-### 例 3: Microsoft アカウントに接続されているアカウントを取得する
+### 例 3: 指定された SID を持つアカウントを取得する
 
 この例では、指定された SID を持つローカルユーザーアカウントを取得します。
 
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 
 ## 注
 
-**LocalUser** 、 **LocalGroup** 、および **localprincipal** オブジェクトの **principalsource** プロパティは、オブジェクトのソースを記述します。 考えられるソースは次のとおりです。
+**LocalUser**、 **LocalGroup**、および **localprincipal** オブジェクトの **principalsource** プロパティは、オブジェクトのソースを記述します。 考えられるソースは次のとおりです。
 
 - ローカル
 - Active Directory
