@@ -1,19 +1,18 @@
 ---
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113633
 Help Version: 7.0.1.0
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/02/2021
 schema: 2.0.0
 title: Microsoft.PowerShell.Utility
-ms.openlocfilehash: 6afa678e516ca3f3f6af5be87d2bb7eea628fcf5
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+ms.openlocfilehash: 65801c5c75c449fc1ef074c2abe70ebeb8fae2a0
+ms.sourcegitcommit: c91f79576bc54e162bcc7adf78026417b2776687
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "93220403"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106274034"
 ---
 # Microsoft.PowerShell.Utility モジュール
 
@@ -27,7 +26,7 @@ ms.locfileid: "93220403"
 PowerShell オブジェクトのインスタンスにカスタムプロパティとメソッドを追加します。
 
 ### [Add-Type](Add-Type.md)
-PowerShell セッションに Microsoft .NET コアクラスを追加します。
+PowerShell セッションに Microsoft .NET クラスを追加します。
 
 ### [Clear-Variable](Clear-Variable.md)
 変数の値を削除します。
@@ -83,7 +82,7 @@ SDDL 文字列をカスタムオブジェクトに変換します。
 ### [Export-Clixml](Export-Clixml.md)
 1 つまたは複数のオブジェクトの XML ベースの表現を作成し、ファイルに格納します。
 
-### [Export-Csv](Export-Csv.md)
+### [エクスポート-Csv](Export-Csv.md)
 オブジェクトを一連のコンマ区切り値 (CSV) 文字列に変換し、その文字列をファイルに保存します。
 
 ### [Export-FormatData](Export-FormatData.md)
@@ -113,7 +112,7 @@ SDDL 文字列をカスタムオブジェクトに変換します。
 ### [Get-Culture](Get-Culture.md)
 オペレーティング システムの現在のカルチャ設定を取得します。
 
-### [Get-Date](Get-Date.md)
+### [取得-日付](Get-Date.md)
 現在の日付と時刻を取得します。
 
 ### [Get-Error](Get-Error.md)
@@ -299,7 +298,7 @@ XML 文字列または XML ドキュメント内のテキストを検索しま�
 ### [Set-TraceSource](Set-TraceSource.md)
 PowerShell コンポーネントのトレースを構成、開始、および停止します。
 
-### [Set-Variable](Set-Variable.md)
+### [変数の設定](Set-Variable.md)
 変数の値を設定します。 要求された名前の変数が存在しない場合は、変数を作成します。
 
 ### [Show-Command](Show-Command.md)
@@ -347,7 +346,7 @@ VT100 エスケープシーケンスを使用するか、HTML を使用してブ
 ### [Write-Debug](Write-Debug.md)
 デバッグ メッセージをコンソールに出力します。
 
-### [書き込み-エラー](Write-Error.md)
+### [Write-Error](Write-Error.md)
 エラー ストリームにオブジェクトを書き込みます。
 
 ### [Write-Host](Write-Host.md)

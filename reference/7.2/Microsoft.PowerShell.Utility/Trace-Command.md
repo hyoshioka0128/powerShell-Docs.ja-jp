@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/09/2020
+ms.date: 04/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/trace-command?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Trace-Command
-ms.openlocfilehash: afc08b263d75f8a728ce6d64cc7ede0a639df196
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 97571023c1428de5db0c2e6e13e285cafe609843
+ms.sourcegitcommit: 5b48fe7b2593581b7d4f7dd7c22206d8a45bb8af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99601410"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106184411"
 ---
 # Trace-Command
 
-## 概要
+## 構文
 指定された式またはコマンドのトレースを構成し、開始します。
 
-## SYNTAX
+## 構文
 
 ### 式セット (既定値)
 
@@ -36,7 +36,8 @@ Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSo
  [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
-## Description
+## 説明
+
 `Trace-Command`コマンドレットは、指定された式またはコマンドのトレースを構成し、開始します。
 Set-TraceSource と同様に機能しますが、指定されたコマンドにのみ適用される点が異なります。
 
@@ -70,7 +71,7 @@ Trace-Command ParameterBinding {Get-Alias $Input} -PSHost -InputObject $A
 
 処理される式はです `Get-Alias $Input` 。ここで、 `$Input` 変数は **InputObject** パラメーターに関連付けられています。 **InputObject** パラメーターは、変数 `$A` を式に渡します。 実際には、トレース中に処理されるコマンドは `Get-Alias -InputObject $A" or "$A | Get-Alias` です。
 
-## PARAMETERS
+## パラメーター
 
 ### -ArgumentList
 
@@ -190,17 +191,17 @@ Accept wildcard characters: False
 
 出力の各トレースメッセージのプレフィックスにオプションのデータを指定します。 このパラメーターの有効値は、次のとおりです。
 
-- なし
-- LogicalOperationStack
-- DateTime
-- Timestamp
-- ProcessId
-- スレッド Id
-- 呼び出し履歴
+- `None`
+- `LogicalOperationStack`
+- `DateTime`
+- `Timestamp`
+- `ProcessId`
+- `ThreadId`
+- `Callstack`
 
-**[なし]** が既定値です。
+`None` は既定値です。
 
-複数のオプションを指定するには、スペースなしで、コンマで区切り、"ProcessID,ThreadID" のように引用符で囲みます。
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として **ListenerOption** パラメーターに渡すことも、それらの値のコンマ区切りの文字列として渡すこともできます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 ```yaml
 Type: System.Diagnostics.TraceOptions
@@ -235,36 +236,36 @@ Accept wildcard characters: False
 
 トレース対象のイベントの種類を決定します。 このパラメーターの有効値は、次のとおりです。
 
-- なし
-- コンストラクター
-- Dispose
-- ファイナライザー
-- メソッド
-- プロパティ
-- デリゲート
-- イベント
-- 例外
-- ロック
-- エラー
-- エラー
-- 警告
-- "詳細"
-- WriteLine
-- データ
-- Scope
-- ExecutionFlow
-- Assert
-- すべて
+- `None`
+- `Constructor`
+- `Dispose`
+- `Finalizer`
+- `Method`
+- `Property`
+- `Delegates`
+- `Events`
+- `Exception`
+- `Lock`
+- `Error`
+- `Errors`
+- `Warning`
+- `Verbose`
+- `WriteLine`
+- `Data`
+- `Scope`
+- `ExecutionFlow`
+- `Assert`
+- `All`
 
-ALL が既定値です。
+`All` は既定値です。
 
 次の値はその他の値の組み合わせです。
 
-- ExecutionFlow: (コンストラクター、Dispose、ファイナライザー、メソッド、デリゲート、イベント、およびスコープ)
-- データ: (コンストラクター、Dispose、ファイナライザー、プロパティ、Verbose、および WriteLine)
-- エラー: (エラーと例外)。
+- `ExecutionFlow`: `Constructor`, `Dispose`, `Finalizer`, `Method`, `Delegates`, `Events`, `Scope`
+- `Data`: `Constructor`, `Dispose`, `Finalizer`, `Property`, `Verbose`, `WriteLine`
+- `Errors`: `Error`, `Exception`
 
-複数のオプションを指定するには、スペースなしで、コンマで区切り、"Constructor,Dispose" のように引用符で囲みます。
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として **オプション** パラメーターに渡すことも、その値のコンマ区切りの文字列として渡すこともできます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 ```yaml
 Type: System.Management.Automation.PSTraceSourceOptions
@@ -311,7 +312,7 @@ Accept wildcard characters: False
 
 デバッグ ストリーム内にコマンド トレースを返します。
 
-## 注
+## Notes
 
 - トレースは、開発者がプログラムをデバッグし、調整するために使用するメソッドです。 トレース時に、プログラムは、内部処理の各手順について詳細なメッセージを生成します。
 

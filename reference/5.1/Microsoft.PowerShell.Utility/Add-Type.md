@@ -1,23 +1,22 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/26/2019
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
-ms.openlocfilehash: af7cd937ccfc7c5f05fd0213764ed51a3ba9f2bb
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: e6fa1d63f2c748c590920db0cbfdf241e0646a73
+ms.sourcegitcommit: c91f79576bc54e162bcc7adf78026417b2776687
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93214160"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106274257"
 ---
 # Add-Type
 
 ## 概要
-PowerShell セッションに Microsoft .NET Framework クラスを追加します。
+PowerShell セッションに Microsoft .NET クラスを追加します。
 
 ## SYNTAX
 
@@ -197,8 +196,8 @@ $ShowWindowAsync::ShowWindowAsync((Get-Process -Id $Pid).MainWindowHandle, 4)
 
 変数は、 `$Signature` 関数の C# シグネチャを格納し `ShowWindowAsync` ます。 結果として得られるメソッドが PowerShell セッションで確実に表示されるようにするには、 `public` 標準署名にキーワードを追加します。 詳細については、「 [Showwindowasync 関数](/windows/win32/api/winuser/nf-winuser-showwindowasync)」を参照してください。
 
-この `$ShowWindowAsync` 変数は、PassThru パラメーターによって作成されたオブジェクトを格納し `Add-Type` **PassThru** ます。
-コマンドレットでは、 `Add-Type` `ShowWindowAsync` 静的メソッドとして PowerShell セッションに関数を追加します。 このコマンドでは、 **memberdefinition** パラメーターを使用して、変数に保存されているメソッド定義を指定して `$Signature` います。 このコマンドは、 **Name** および **Namespace** 　パラメーターを使用して、クラスの名前と名前空間を指定します。 **PassThru** パラメーターは、型を表すオブジェクトを生成します。
+この `$ShowWindowAsync` 変数は、PassThru パラメーターによって作成されたオブジェクトを格納し `Add-Type` ます。
+コマンドレットでは、 `Add-Type` `ShowWindowAsync` 静的メソッドとして PowerShell セッションに関数を追加します。 このコマンドでは、 **memberdefinition** パラメーターを使用して、変数に保存されているメソッド定義を指定して `$Signature` います。 このコマンドは、**Name** および **Namespace**　パラメーターを使用して、クラスの名前と名前空間を指定します。 **PassThru** パラメーターは、型を表すオブジェクトを生成します。
 
 `ShowWindowAsync`PowerShell コンソールを最小化して復元するためのコマンドでは、新しい静的メソッドが使用されます。 このメソッドは、ウィンドウハンドルと、ウィンドウの表示方法を指定する整数の2つのパラメーターを受け取ります。
 
@@ -497,7 +496,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-追加された型を表す **System.Runtime** 　オブジェクトを返します。 既定では、このコマンドレットは出力を生成しません。
+追加された型を表す **System.Runtime**　オブジェクトを返します。 既定では、このコマンドレットは出力を生成しません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -517,7 +516,7 @@ Accept wildcard characters: False
 
 ソースコードファイルを送信すると、は `Add-Type` ファイル内のコードをコンパイルし、その型のメモリ内アセンブリを作成します。 **Path** の値に指定されたファイル名拡張子によって、が使用するコンパイラが決まり `Add-Type` ます。
 
-アセンブリファイルを送信すると、は `Add-Type` アセンブリからの型を受け取ります。 メモリ内アセンブリまたはグローバル アセンブリ キャッシュを指定するには、 **AssemblyName** パラメーターを使用します。
+アセンブリファイルを送信すると、は `Add-Type` アセンブリからの型を受け取ります。 メモリ内アセンブリまたはグローバル アセンブリ キャッシュを指定するには、**AssemblyName** パラメーターを使用します。
 
 ```yaml
 Type: System.String[]
@@ -571,7 +570,7 @@ Accept wildcard characters: False
 
 クラスに必要な他の名前空間を指定します。 これは、C# のキーワードとよく似て `Using` います。
 
-既定では、は `Add-Type` **System** 名前空間を参照します。 **Memberdefinition** パラメーターが使用されている場合、は `Add-Type` 既定で **InteropServices** 名前空間も参照します。 既定の名前空間に加え、 **UsingNamespace** パラメーターを使用して追加された名前空間も参照されます。
+既定では、は `Add-Type` **System** 名前空間を参照します。 **Memberdefinition** パラメーターが使用されている場合、は `Add-Type` 既定で **InteropServices** 名前空間も参照します。 既定の名前空間に加え、**UsingNamespace** パラメーターを使用して追加された名前空間も参照されます。
 
 ```yaml
 Type: System.String[]

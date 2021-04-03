@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/09/2020
+ms.date: 04/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/trace-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Trace-Command
-ms.openlocfilehash: f3f9e47ac6d969dc08518bf97bb87699fb04ade8
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: b224d4f6eec3757192264a988a3fea9bebbc32a7
+ms.sourcegitcommit: 5b48fe7b2593581b7d4f7dd7c22206d8a45bb8af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210507"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106184394"
 ---
 # Trace-Command
 
-## 概要
+## 構文
 指定された式またはコマンドのトレースを構成し、開始します。
 
-## SYNTAX
+## 構文
 
 ### 式セット (既定値)
 
@@ -37,7 +37,8 @@ Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSo
  [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
-## Description
+## 説明
+
 `Trace-Command`コマンドレットは、指定された式またはコマンドのトレースを構成し、開始します。
 Set-TraceSource と同様に機能しますが、指定されたコマンドにのみ適用される点が異なります。
 
@@ -71,11 +72,11 @@ Trace-Command ParameterBinding {Get-Alias $Input} -PSHost -InputObject $A
 
 処理される式はです `Get-Alias $Input` 。ここで、 `$Input` 変数は **InputObject** パラメーターに関連付けられています。 **InputObject** パラメーターは、変数 `$A` を式に渡します。 実際には、トレース中に処理されるコマンドは `Get-Alias -InputObject $A" or "$A | Get-Alias` です。
 
-## PARAMETERS
+## パラメーター
 
 ### -ArgumentList
 
-トレースするコマンドのパラメーターとパラメーターの値を指定します。 **ArgumentList** のエイリアスは、 **Args** です。 この機能は、動的パラメーターをデバッグする場合に特に便利です。
+トレースするコマンドのパラメーターとパラメーターの値を指定します。 **ArgumentList** のエイリアスは、**Args** です。 この機能は、動的パラメーターをデバッグする場合に特に便利です。
 
 **ArgumentList** の動作の詳細については、「 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md#splatting-with-arrays)」を参照してください。
 
@@ -191,17 +192,17 @@ Accept wildcard characters: False
 
 出力の各トレースメッセージのプレフィックスにオプションのデータを指定します。 このパラメーターの有効値は、次のとおりです。
 
-- なし
-- LogicalOperationStack
-- DateTime
-- Timestamp
-- ProcessId
-- スレッド Id
-- 呼び出し履歴
+- `None`
+- `LogicalOperationStack`
+- `DateTime`
+- `Timestamp`
+- `ProcessId`
+- `ThreadId`
+- `Callstack`
 
-既定値は **None** です。
+`None` は既定値です。
 
-複数のオプションを指定するには、スペースなしで、コンマで区切り、"ProcessID,ThreadID" のように引用符で囲みます。
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として **ListenerOption** パラメーターに渡すことも、それらの値のコンマ区切りの文字列として渡すこともできます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 ```yaml
 Type: System.Diagnostics.TraceOptions
@@ -236,36 +237,36 @@ Accept wildcard characters: False
 
 トレース対象のイベントの種類を決定します。 このパラメーターの有効値は、次のとおりです。
 
-- なし
-- コンストラクター
-- Dispose
-- ファイナライザー
-- Method
-- プロパティ
-- デリゲート
-- イベント
-- 例外
-- ロック
-- エラー
-- エラー
-- 警告
-- "詳細"
-- WriteLine
-- Data
-- Scope
-- ExecutionFlow
-- Assert
-- All
+- `None`
+- `Constructor`
+- `Dispose`
+- `Finalizer`
+- `Method`
+- `Property`
+- `Delegates`
+- `Events`
+- `Exception`
+- `Lock`
+- `Error`
+- `Errors`
+- `Warning`
+- `Verbose`
+- `WriteLine`
+- `Data`
+- `Scope`
+- `ExecutionFlow`
+- `Assert`
+- `All`
 
-ALL が既定値です。
+`All` は既定値です。
 
 次の値はその他の値の組み合わせです。
 
-- ExecutionFlow: (コンストラクター、Dispose、ファイナライザー、メソッド、デリゲート、イベント、およびスコープ)
-- データ: (コンストラクター、Dispose、ファイナライザー、プロパティ、Verbose、および WriteLine)
-- エラー: (エラーと例外)。
+- `ExecutionFlow`: `Constructor`, `Dispose`, `Finalizer`, `Method`, `Delegates`, `Events`, `Scope`
+- `Data`: `Constructor`, `Dispose`, `Finalizer`, `Property`, `Verbose`, `WriteLine`
+- `Errors`: `Error`, `Exception`
 
-複数のオプションを指定するには、スペースなしで、コンマで区切り、"Constructor,Dispose" のように引用符で囲みます。
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として **オプション** パラメーターに渡すことも、その値のコンマ区切りの文字列として渡すこともできます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 ```yaml
 Type: System.Management.Automation.PSTraceSourceOptions
@@ -312,7 +313,7 @@ Accept wildcard characters: False
 
 デバッグ ストリーム内にコマンド トレースを返します。
 
-## 注
+## Notes
 
 - トレースは、開発者がプログラムをデバッグし、調整するために使用するメソッドです。 トレース時に、プログラムは、内部処理の各手順について詳細なメッセージを生成します。
 
@@ -326,7 +327,7 @@ Accept wildcard characters: False
 
 - CommandSet パラメーターセットを使用すると、PowerShell はパイプラインで処理されるのと同じようにコマンドを処理します。 たとえば、コマンドの検出は、受信した各オブジェクトごとに繰り返されません。
 
-- **Name** 、 **Expression** 、 **Option** 、および **Command** パラメーターの名前は省略可能です。 パラメーター名を省略した場合、 **名前** 、 **式** 、 **オプション** 、または **名前** 、 **コマンド** 、 **オプション** の順に名前のないパラメーター値が表示されます。 パラメーター名を指定する場合は、パラメーターの順序に決まりはありません。
+- **Name**、 **Expression**、 **Option**、および **Command** パラメーターの名前は省略可能です。 パラメーター名を省略した場合、 **名前**、 **式**、 **オプション** 、または **名前**、 **コマンド**、 **オプション** の順に名前のないパラメーター値が表示されます。 パラメーター名を指定する場合は、パラメーターの順序に決まりはありません。
 
 ## 関連リンク
 

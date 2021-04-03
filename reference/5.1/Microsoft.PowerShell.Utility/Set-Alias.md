@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 2/28/2019
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Alias
-ms.openlocfilehash: d7df44947717ee9a46ab665a60cf8a35259214e6
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 3c3e95058ff150666c9db9e84d9a6fce38fc74bb
+ms.sourcegitcommit: c91f79576bc54e162bcc7adf78026417b2776687
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93213715"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106274240"
 ---
 # Set-Alias
 
-## 概要
+## 構文
 現在の PowerShell セッションで、コマンドレットまたはその他のコマンドのエイリアスを作成または変更します。
 
-## SYNTAX
+## 構文
 
 ### 既定値 (既定値)
 
@@ -28,7 +28,7 @@ Set-Alias [-Name] <string> [-Value] <string> [-Description <string>] [-Option <S
  [-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
 コマンドレットは、コマンド `Set-Alias` レットまたはコマンド (関数、スクリプト、ファイル、その他の実行可能ファイルなど) のエイリアスを作成または変更します。 エイリアスは、コマンドレットまたはコマンドを参照する代替名です。
 たとえば、 `sal` はコマンドレットのエイリアスです `Set-Alias` 。 詳細については、「 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)」を参照してください。
@@ -136,18 +136,30 @@ Alias           np -> notepad.exe
 などのコマンドレットのエイリアスを作成でき `Set-Location` ます。 などのパラメーターと値を使用して、コマンドのエイリアスを作成することはできません `Set-Location -Path C:\Windows\System32` 。 コマンドのエイリアスを作成するには、コマンドを含む関数を作成し、その関数のエイリアスを作成します。 詳細については、「 [about_Functions](../Microsoft.PowerShell.Core/about/about_Functions.md)」を参照してください。
 
 ```
-PS> Function CD32 {Set-Location -Path C:\Windows\System32}
+Function CD32 {Set-Location -Path C:\Windows\System32}
 
-PS> Set-Alias -Name Go -Value CD32
+Set-Alias -Name Go -Value CD32
 ```
 
-という名前 `CD32` の関数が作成されます。 関数は、 `Set-Location` **Path** パラメーターを指定したコマンドレットを使用して、 **C:\Windows\System32** ディレクトリを指定します。
+という名前 `CD32` の関数が作成されます。 この関数では、コマンドレットと Path パラメーターを使用して、 `Set-Location` ディレクトリを指定し `C:\Windows\System32` ます。
 
 コマンドレットにより、 `Set-Alias` 現在の PowerShell セッションの関数のエイリアスが作成されます。 **Name** パラメーターは、エイリアスの名前を指定し `Go` ます。 **Value** パラメーターは、関数の名前を指定し `CD32` ます。
 
-エイリアスを実行するには、PowerShell コマンドラインで「」と入力し `Go` ます。 関数が実行され、 `CD32` ディレクトリ **C:\Windows\System32** に変更されます。
+エイリアスを実行するには、PowerShell コマンドラインで「」と入力し `Go` ます。 関数が実行され、 `CD32` ディレクトリが変更され `C:\Windows\System32` ます。
 
-## PARAMETERS
+### 例 6: 既存のエイリアスの更新オプション
+
+この例では、 **Option** パラメーターを使用して複数のオプションを割り当てる方法を示します。
+
+上の例を使用して、エイリアスをととして設定し `Go` `ReadOnly` `Private` ます。
+
+```powershell
+Set-Alias -Name Go -Option ReadOnly, Private
+```
+
+エイリアスは `Go` 既に存在している必要があります。 上記のコマンドを実行した後は、 **Force** パラメーターを使用せずにエイリアスを変更することはできず、現在のスコープでのみ使用できます。
+
+## パラメーター
 
 ### -Description
 
@@ -167,7 +179,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-**Force** パラメーターを使用して、 **オプション** パラメーターが **ReadOnly** に設定されているエイリアスを変更または削除します。
+**Force** パラメーターを使用して、**オプション** パラメーターが **ReadOnly** に設定されているエイリアスを変更または削除します。
 
 **Force** パラメーターは、 **Option** パラメーターを **Constant** に設定してエイリアスを変更または削除することはできません。
 
@@ -201,16 +213,18 @@ Accept wildcard characters: False
 
 ### -Option
 
-エイリアスの **オプション** プロパティの値を設定します。 **ReadOnly** や **Constant** などの値は、意図しない変更からエイリアスを保護します。 セッション内のすべてのエイリアスの **Option** プロパティを表示するには、「」と入力 `Get-Alias | Format-Table -Property Name, Options -Autosize` します。
+エイリアスの **オプション** プロパティの値を設定します。 `ReadOnly`やなどの値は、意図しない `Constant` 変更からエイリアスを保護します。 セッション内のすべてのエイリアスの **Option** プロパティを表示するには、「」と入力 `Get-Alias | Format-Table -Property Name, Options -Autosize` します。
 
 このパラメーターに指定できる値は次のとおりです。
 
-- **Allscope** エイリアスは、作成された新しいスコープにコピーされます。
-- **定数** 変更または削除することはできません。
-- **なし** オプションを設定せず、既定値です。
-- **プライベート** エイリアスは、現在のスコープでのみ使用できます。
-- **読み取り専用****Force** パラメーターを使用しない限り、変更または削除することはできません。
-- **未指定**
+- `AllScope` -作成された新しいスコープにエイリアスがコピーされます。
+- `Constant` -変更または削除することはできません。
+- `None` -オプションを設定せず、既定値です。
+- `Private` -エイリアスは、現在のスコープでのみ使用できます。
+- `ReadOnly` - **Force** パラメーターを使用しない限り、変更または削除することはできません。
+- `Unspecified`
+
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として **オプション** パラメーターに渡すことも、その値のコンマ区切りの文字列として渡すこともできます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 ```yaml
 Type: System.Management.Automation.ScopedItemOptions
@@ -249,7 +263,7 @@ Accept wildcard characters: False
 
 - グローバル
 - ローカル
-- Private
+- 非公開
 - 番号付きスコープ
 - スクリプト
 

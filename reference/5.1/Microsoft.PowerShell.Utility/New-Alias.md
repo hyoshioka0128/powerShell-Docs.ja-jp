@@ -3,41 +3,40 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Alias
-ms.openlocfilehash: 00ef887dc79e35a6dff299a37bfafa57aebc77db
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: ec442dd1e24774b21cf9e00f2e46226d0b714432
+ms.sourcegitcommit: c91f79576bc54e162bcc7adf78026417b2776687
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93213824"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106274223"
 ---
 # New-Alias
 
-## 概要
+## 構文
 新しいエイリアスを作成します。
 
-## SYNTAX
+## 構文
 
 ```
 New-Alias [-Name] <String> [-Value] <String> [-Description <String>] [-Option <ScopedItemOptions>] [-PassThru]
  [-Scope <String>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
-**新しい** エイリアスのコマンドレットは、現在の Windows PowerShell セッションで新しいエイリアスを作成します。
-**新しいエイリアス** を使用して作成されたエイリアスは、セッションを終了した後、または Windows PowerShell を閉じた後は保存されません。
-Export-Alias コマンドレットを使用して、エイリアス情報をファイルに保存できます。
-後で、 **インポートエイリアス** を使用して、保存されたエイリアス情報を取得できます。
+## 説明
+
+コマンドレットにより、 `New-Alias` 現在の Windows PowerShell セッションで新しいエイリアスが作成されます。 を使用して作成された別名 `New-Alias` は、セッションを終了した後、または Windows PowerShell を閉じた後は保存されません。
+コマンドレットを使用し `Export-Alias` て、エイリアス情報をファイルに保存できます。 後でを使用し `Import-Alias` て、保存されたエイリアス情報を取得できます。
 
 ## 例
 
 ### 例 1: コマンドレットのエイリアスを作成する
 
 ```
-PS C:\> New-Alias -Name "List" Get-ChildItem
+New-Alias -Name "List" Get-ChildItem
 ```
 
 このコマンドは、Get-ChildItem コマンドレットを表す、alias という名前のエイリアスを作成します。
@@ -45,20 +44,17 @@ PS C:\> New-Alias -Name "List" Get-ChildItem
 ### 例 2: コマンドレットの読み取り専用エイリアスを作成する
 
 ```
-PS C:\> New-Alias -Name "W" -Value Get-WmiObject -Description "quick wmi alias" -Option ReadOnly
-PS C:\> Get-Alias -Name "W" | Format-List *
+New-Alias -Name "C" -Value Get-ChildItem -Description "quick gci alias" -Option ReadOnly
+Get-Alias -Name "C" | Format-List *
 ```
 
-このコマンドは、Get-WmiObject コマンドレットを表す W という名前のエイリアスを作成します。
-エイリアスとして "クイック wmi エイリアス" という説明が作成され、読み取り専用になります。
-コマンドの最後の行は、Get-Alias を使用して新しいエイリアスを取得し、パイプを使用して Format-List に渡します。これによりすべての情報が表示されます。
+このコマンド `C` は、コマンドレットを表すという名前のエイリアスを作成し `Get-ChildItem` ます。 エイリアスとして "クイック wmi エイリアス" という説明が作成され、読み取り専用になります。 コマンドの最後の行では、を使用して新しいエイリアスを取得し、パイプを使用して Format-List にパイプを使用して `Get-Alias` 、すべての情報を表示します。
 
-## PARAMETERS
+## パラメーター
 
 ### -Description
-エイリアスの説明を指定します。
-任意の文字列を入力できます。
-説明にスペースが含まれる場合は、二重引用符で囲みます。
+
+エイリアスの説明を指定します。 任意の文字列を入力できます。 説明にスペースが含まれる場合は、二重引用符で囲みます。
 
 ```yaml
 Type: System.String
@@ -73,7 +69,8 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-という名前のエイリアスが既に存在する場合に、コマンドレットが Set-Alias のように動作することを示します。
+
+は `Set-Alias` 、という名前のエイリアスが既に存在する場合と同じように動作することを示します。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -88,8 +85,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-新しいエイリアスを指定します。
-エイリアス名には任意の英数字を使用できますが、最初の文字を数字にすることはできません。
+
+新しいエイリアスを指定します。 エイリアス名には任意の英数字を使用できますが、最初の文字を数字にすることはできません。
 
 ```yaml
 Type: System.String
@@ -104,15 +101,18 @@ Accept wildcard characters: False
 ```
 
 ### -Option
+
 エイリアスの **Options** プロパティの値を指定します。
 有効な値は次のとおりです。
 
-- None: 別名には制約がありません (既定値)
-- ReadOnly: エイリアスは削除できますが、 **Force** パラメーターを使用しない限り変更できません
-- 定数: エイリアスを削除または変更することはできません
-- プライベート: エイリアスは現在のスコープでのみ使用できます
-- AllScope: エイリアスは、作成された新しいスコープにコピーされます。
-- 未指定: オプションが指定されていません
+- `None`: 別名には制約がありません (既定値)
+- `ReadOnly`: エイリアスは削除できますが、 **Force** パラメーターを使用しない限り、変更することはできません。
+- `Constant`: エイリアスを削除または変更することはできません
+- `Private`: エイリアスは現在のスコープでのみ使用できます
+- `AllScope`: 作成された新しいスコープにエイリアスがコピーされます。
+- `Unspecified`: オプションが指定されていません
+
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として **オプション** パラメーターに渡すことも、その値のコンマ区切りの文字列として渡すこともできます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 セッション内のすべてのエイリアスの **Options** プロパティを表示するには、「」と入力 `Get-Alias | Format-Table -Property Name, Options -AutoSize` します。
 
@@ -130,8 +130,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-作業中の項目を表すオブジェクトを返します。
-既定では、このコマンドレットによる出力はありません。
+
+作業中の項目を表すオブジェクトを返します。 既定では、このコマンドレットによる出力はありません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,16 +146,15 @@ Accept wildcard characters: False
 ```
 
 ### -スコープ
-新しいエイリアスのスコープを指定します。
-このパラメーターの有効値は、次のとおりです。
 
-- グローバル
-- ローカル
-- スクリプト
-- 現在のスコープに対して相対的な数値 (0 ~ スコープの数。0は現在のスコープ、1はその親)。
+新しいエイリアスのスコープを指定します。 このパラメーターの有効値は、次のとおりです。
 
-既定値は Local です。
-詳細については、「about_Scopes」を参照してください。
+- `Global`
+- `Local`
+- `Script`
+- 現在のスコープに対して相対的な数値 (0 ~ スコープの数 `0` 。は現在のスコープで、 `1` はその親です)。
+
+`Local` は既定値です。 詳細については、「 [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md)」を参照してください。
 
 ```yaml
 Type: System.String
@@ -170,6 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
+
 エイリアスを作成するコマンドレットまたはコマンド要素の名前を指定します。
 
 ```yaml
@@ -185,6 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 コマンドレットの実行前に確認を求めるメッセージが表示されます。
 
 ```yaml
@@ -200,8 +201,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -216,24 +217,24 @@ Accept wildcard characters: False
 ```
 
 ### 共通パラメーター
+
 このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
 
 ## 入力
 
 ### なし
+
 パイプを使用してこのコマンドレットに入力を渡すことはできません。
 
 ## 出力
 
 ### None または system.servicemodel. エイリアス情報
-*Passthru* パラメーターを使用すると、新しいエイリアスを表す system.string **オブジェクトが****新しいエイリアス** によって生成されます。
-それ以外の場合、このコマンドレットによる出力はありません。
 
-## 注
+**Passthru** パラメーターを使用すると、に `New-Alias` よって、新しいエイリアスを表す system.string オブジェクトが生成さ **れます。** それ以外の場合、このコマンドレットによる出力はありません。
 
-* 新しいエイリアスを作成するには、Set-Alias または New-Alias を使用します。 エイリアスを変更するには、 **セットエイリアス** を使用します。 エイリアスを削除するには、Remove-Item を使用します。
+## Notes
 
-*
+- 新しい別名を作成するには、またはを使用し `Set-Alias` `New-Alias` ます。 エイリアスを変更するには、を使用 `Set-Alias` します。 別名を削除するには、を使用 `Remove-Item` します。
 
 ## 関連リンク
 

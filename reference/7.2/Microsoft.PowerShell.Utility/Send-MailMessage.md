@@ -2,25 +2,25 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/11/2020
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Send-MailMessage
-ms.openlocfilehash: 0a68c665e8a0b504cfef416134374c5598ba55a7
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: e1363b2f30420c130093fd92d4da2f7c8037d640
+ms.sourcegitcommit: c91f79576bc54e162bcc7adf78026417b2776687
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99599693"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106274327"
 ---
 # Send-MailMessage
 
-## 概要
+## 構文
 電子メールを送信します。
 
-## SYNTAX
+## 構文
 
-### すべて
+### All
 
 ```
 Send-MailMessage [-Attachments <String[]>] [-Bcc <String[]>] [[-Body] <String>] [-BodyAsHtml]
@@ -30,7 +30,7 @@ Send-MailMessage [-Attachments <String[]>] [-Bcc <String[]>] [[-Body] <String>] 
  [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
 `Send-MailMessage`コマンドレットは、PowerShell 内から電子メールメッセージを送信します。
 
@@ -79,7 +79,7 @@ Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'ITGroup <itdept@fabri
 
 **Credential** パラメーターは、メッセージの送信にドメイン管理者の資格情報を使用することを指定します。 **UseSsl** パラメーターは、Secure Socket LAYER (SSL) がセキュリティで保護された接続を作成することを指定します。
 
-## PARAMETERS
+## パラメーター
 
 ### -添付ファイル
 
@@ -198,6 +198,8 @@ Accept wildcard characters: False
 - `OnFailure`: 配信に失敗した場合に通知します。
 - `Delay`: 配信が遅延した場合に通知します。
 - `Never`: 通知しないでください。
+
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として **Deliverynotification** パラメーターに渡すか、それらの値のコンマ区切りの文字列として渡すことができます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 ```yaml
 Type: System.Net.Mail.DeliveryNotificationOptions
@@ -394,7 +396,7 @@ Accept wildcard characters: False
 
 このコマンドレットは出力を生成しません。
 
-## 注
+## Notes
 
 ## 関連リンク
 
