@@ -3,12 +3,12 @@ title: 配列について知りたかったことのすべて
 description: 配列は、ほとんどのプログラミング言語の基本的な言語機能の 1 つです。
 ms.date: 10/08/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: b26aa11aadbeea1984b2754cfcad061c7fa3ff1e
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: a6c3aea82982feafc47b4aa718981857595d5fc2
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "91852563"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072427"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>配列について知りたかったことのすべて
 
@@ -1047,7 +1047,7 @@ TypeName: System.String
 ...
 ```
 
-こうした配列のラップ解除を回避するには、`Write-Object -NoEnumerate` を使用します。
+こうした配列のラップ解除を回避するには、`Write-Output -NoEnumerate` を使用します。
 
 ```powershell
 PS> Write-Output -NoEnumerate $data | Get-Member
