@@ -5,6 +5,8 @@
   items:
     - name: PowerShell とは
       href: overview.md
+    - name: PowerShell コマンドとは何ですか。
+      href: powershell-commands.md
     - name: PowerShell のサポート ライフサイクル
       href: powershell-support-lifecycle.md
 - name: インストール
