@@ -2,26 +2,26 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/23/2019
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: 334746589ed991ea817929eb31100f92c2dfda1f
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: cbc31f317876869658d813b0c0c566c8963b590d
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99600389"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555195"
 ---
 # Export-PSSession
 
-## 概要
+## 構文
 
 別のセッションからコマンドをエクスポートし、PowerShell モジュールに保存します。
 
-## SYNTAX
+## Syntax
 
-### すべて
+### All
 
 ```
 Export-PSSession [-OutputModule] <String> [-Force] [-Encoding <Encoding>]
@@ -31,7 +31,7 @@ Export-PSSession [-OutputModule] <String> [-Force] [-Encoding <Encoding>]
  [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
 コマンド `Export-PSSession` レットは、ローカルコンピューターまたはリモートコンピューター上の別の powershell セッション (PSSession) からコマンドレット、関数、エイリアス、およびその他のコマンドの種類を取得し、powershell モジュールに保存します。 モジュールのコマンドを現在のセッションに追加するには、コマンドレットを使用し `Import-Module` ます。
 
@@ -122,7 +122,7 @@ Import-Module Server01
 
 コマンドレットでは、 `New-PSSession` Server01 コンピューターに接続する新しい PSSession を作成します。 **Sessionoption** パラメーターは、に格納されているオブジェクトを使用し `$Options` ます。 `Import-Module`コマンドレットは、Server01 モジュールからコマンドをインポートします。 モジュール内のコマンドは、Server01 コンピューター上の PSSession で実行されます。
 
-## PARAMETERS
+## パラメーター
 
 ### -AllowClobber
 
@@ -204,15 +204,17 @@ Accept wildcard characters: True
 
 このパラメーターに指定できる値は次のとおりです。
 
-- エイリアス. 現在のセッションのすべての PowerShell エイリアス。
-- すべて。 すべてのコマンドの型。 これは、と同じです `Get-Command -Name *` 。
-- アプリケーション をクリックします。 Path 環境変数 () に一覧表示されているパス内の PowerShell ファイル以外のすべてのファイル ( `$env:path` .txt、.exe、.dll ファイルなど)。
-- コマンドレット. 現在のセッションのコマンドレット。 コマンドレットが既定値です。
-- 構成。 PowerShell 構成。 詳細については、「 [about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md)」を参照してください。
-- ExternalScript。 Path 環境変数 () に示されているパス内のすべての ps1 ファイル。 `$env:path`
-- フィルターと関数。 すべての PowerShell 関数。
-- スクリプティング。 現在のセッションのスクリプト ブロック。
-- 稟議. PowerShell ワークフロー。 詳細については、「 [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows)」を参照してください。
+- `Alias`: 現在のセッションのすべての PowerShell エイリアス。
+- `All`: すべてのコマンドの種類。 これは、と同じです `Get-Command -Name *` 。
+- `Application`: Path 環境変数 () に一覧表示されているパス内の PowerShell ファイル以外のすべてのファイル ( `$env:path` .txt、.exe、.dll ファイルなど)。
+- `Cmdlet`: 現在のセッションのコマンドレット。 コマンドレットが既定値です。
+- `Configuration`: PowerShell の構成。 詳細については、「 [about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md)」を参照してください。
+- `ExternalScript`: Path 環境変数 () に記載されているパス内のすべての ps1 ファイル。 `$env:path`
+- `Filter` および `Function` : すべての PowerShell 関数。
+- `Script` 現在のセッションのスクリプトブロック。
+- `Workflow` PowerShell ワークフロー。 詳細については、「 [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows)」を参照してください。
+
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として、またはその値のコンマ区切りの文字列として、 **CommandType** パラメーターに渡すことができます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 ```yaml
 Type: System.Management.Automation.CommandTypes

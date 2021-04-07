@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-PSSession
-ms.openlocfilehash: 1a87783f9d12d852d3a6809e9457a55ad6e7be50
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 8fb4a07ff9b52d9968a4afea64e4c71b11551634
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99602177"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555727"
 ---
 # Import-PSSession
 
-## 概要
+## 構文
 別のセッションから現在のセッションにコマンドをインポートします。
 
-## SYNTAX
+## 構文
 
 ```
 Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <String[]>] [-AllowClobber]
@@ -27,7 +27,7 @@ Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <Stri
  [-Certificate <X509Certificate2>] [-Session] <PSSession> [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
 コマンドレットは、コマンド `Import-PSSession` レット、関数、エイリアスなどのコマンドを、ローカルコンピューターまたはリモートコンピューター上の PSSession から現在のセッションにインポートします。 コマンド `Get-Command` レットが PSSession で検索できる任意のコマンドをインポートできます。
 
@@ -50,8 +50,8 @@ Windows PowerShell 3.0 以降では、コマンドレットを使用して、 `I
 ### 例 1: PSSession からすべてのコマンドをインポートする
 
 ```
-PS C:\> $S = New-PSSession -ComputerName Server01
-PS C:\> Import-PSSession -Session $S
+$S = New-PSSession -ComputerName Server01
+Import-PSSession -Session $S
 ```
 
 このコマンドは、Server01 コンピューターの PSSession から現在のセッションに、現在のセッションのコマンドと同じ名前のコマンドを除くすべてのコマンドをインポートします。
@@ -61,10 +61,10 @@ PS C:\> Import-PSSession -Session $S
 ### 例 2: 特定の文字列で終わるコマンドをインポートする
 
 ```
-PS C:\> $S = New-PSSession https://ps.testlabs.com/powershell
-PS C:\> Import-PSSession -Session $S -CommandName *-test -FormatTypeName *
-PS C:\> New-Test -Name Test1
-PS C:\> Get-Test test1 | Run-Test
+$S = New-PSSession https://ps.testlabs.com/powershell
+Import-PSSession -Session $S -CommandName *-test -FormatTypeName *
+New-Test -Name Test1
+Get-Test test1 | Run-Test
 ```
 
 これらのコマンドは、PSSession からローカル セッションに名前が "-test" で終わるコマンドをインポートします。その後、インポートしたコマンドレットを使用する方法も示します。
@@ -78,11 +78,11 @@ PS C:\> Get-Test test1 | Run-Test
 ### 例 3: PSSession からコマンドレットをインポートする
 
 ```
-PS C:\> $S1 = New-PSSession -ComputerName s1
-PS C:\> $S2 = New-PSSession -ComputerName s2
-PS C:\> Import-PSSession -Session s1 -Type cmdlet -Name New-Test, Get-Test -FormatTypeName *
-PS C:\> Import-PSSession -Session s2 -Type Cmdlet -Name Set-Test -FormatTypeName *
-PS C:\> New-Test Test1 | Set-Test -RunType Full
+$S1 = New-PSSession -ComputerName s1
+$S2 = New-PSSession -ComputerName s2
+Import-PSSession -Session s1 -Type cmdlet -Name New-Test, Get-Test -FormatTypeName *
+Import-PSSession -Session s2 -Type Cmdlet -Name Set-Test -FormatTypeName *
+New-Test Test1 | Set-Test -RunType Full
 ```
 
 この例では、ローカルのコマンドレットを使用するのと同じように、インポートされたコマンドレットを使用できることを示します。
@@ -94,10 +94,10 @@ PS C:\> New-Test Test1 | Set-Test -RunType Full
 ### 例 4: インポートされたコマンドをバックグラウンドジョブとして実行する
 
 ```
-PS C:\> $S = New-PSSession -ComputerName Server01
-PS C:\> Import-PSSession -Session $S -CommandName *-test* -FormatTypeName *
-PS C:\> $batch = New-Test -Name Batch -AsJob
-PS C:\> Receive-Job $batch
+$S = New-PSSession -ComputerName Server01
+Import-PSSession -Session $S -CommandName *-test* -FormatTypeName *
+$batch = New-Test -Name Batch -AsJob
+Receive-Job $batch
 ```
 
 この例では、インポートしたコマンドをバックグラウンド ジョブとして実行する方法を示します。
@@ -115,9 +115,9 @@ PS C:\> Receive-Job $batch
 ### 例 5: Windows PowerShell モジュールからコマンドレットと関数をインポートする
 
 ```
-PS C:\> $S = New-PSSession -ComputerName Server01
-PS C:\> Invoke-Command -Session $S {Import-Module TestManagement}
-PS C:\> Import-PSSession -Session $S -Module TestManagement
+$S = New-PSSession -ComputerName Server01
+Invoke-Command -Session $S {Import-Module TestManagement}
+Import-PSSession -Session $S -Module TestManagement
 ```
 
 この例では、リモート コンピューターの Windows PowerShell モジュールから現在のセッションにコマンドレットと関数をインポートする方法を示します。
@@ -235,7 +235,7 @@ Function        Suspend-BitsTransfer
 
 コマンドは、 `Get-Command` "" に相当し `Get-Command $M.Name` ます。
 
-## PARAMETERS
+## パラメーター
 
 ### -AllowClobber
 
@@ -319,13 +319,15 @@ Accept wildcard characters: False
 
 コマンドオブジェクトの種類を指定します。 既定値は Cmdlet です。 **CommandType** またはそのエイリアスの **Type** を使用します。 このパラメーターの有効値は、次のとおりです。
 
-- エイリアス. リモート セッションの Windows PowerShell エイリアス。
-- すべて。 リモート セッションのコマンドレットと関数。
-- アプリケーション をクリックします。 リモートセッションの Path 環境変数 () に一覧表示されているパス内のファイル Windows-PowerShell 以外のすべてのファイル ( `$env:path` .txt、.exe、.dll ファイルなど)。
-- コマンドレット. リモート セッションのコマンドレット。 "Cmdlet" が既定値です。
-- ExternalScript。 リモートセッションの Path 環境変数 () に一覧表示されているパス内の ps1 ファイル。 `$env:path`
-- フィルターと関数。 リモート セッションの Windows PowerShell 関数。
-- スクリプティング。 リモート セッションのスクリプト ブロック。
+- `Alias`: リモートセッションの Windows PowerShell エイリアス。
+- `All`: リモートセッションのコマンドレットと関数。
+- `Application`: リモートセッションの Path 環境変数 () に一覧表示されているパス内の Windows-PowerShell ファイル以外のすべてのファイル ( `$env:path` .txt、.exe、.dll ファイルなど)。
+- `Cmdlet`: リモートセッションのコマンドレット。 "Cmdlet" が既定値です。
+- `ExternalScript`: リモートセッションの Path 環境変数 () に一覧表示されているパス内の ps1 ファイル。 `$env:path`
+- `Filter` および `Function` : リモートセッションの Windows PowerShell 関数。
+- `Script`: リモートセッションのスクリプトブロック。
+
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として、またはその値のコンマ区切りの文字列として、 **CommandType** パラメーターに渡すことができます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 ```yaml
 Type: System.Management.Automation.CommandTypes

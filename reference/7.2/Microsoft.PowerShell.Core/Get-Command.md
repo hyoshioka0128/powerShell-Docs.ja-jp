@@ -2,23 +2,23 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/20/2020
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
-ms.openlocfilehash: 1d54082ee313c0e8d4ee7911f89da150aeba9d55
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 092b7bff345340a8e2d30136517537c375074df1
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99601802"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555459"
 ---
 # Get-Command
 
-## 概要
+## 構文
 すべてのコマンドを取得します。
 
-## SYNTAX
+## Syntax
 
 ### 設定します (既定)。
 
@@ -39,7 +39,7 @@ Get-Command [[-Name] <String[]>] [-Module <String[]>]
  [-UseAbbreviationExpansion] [<CommonParameters>]
 ```
 
-## Description
+## [説明]
 
 コマンドレットは、コマンド `Get-Command` レット、エイリアス、関数、フィルター、スクリプト、アプリケーションなど、コンピューターにインストールされているすべてのコマンドを取得します。 `Get-Command` 他のセッションからインポートされた PowerShell モジュールとコマンドからコマンドを取得します。 現在のセッションにインポートされているコマンドのみを取得するには、**ListImported** パラメーターを使用します。
 
@@ -116,7 +116,10 @@ Get-Command  -Name Get-Childitem -Args Cert: -Syntax
 function Get-DynamicParameters
 {
     param ($Cmdlet, $PSDrive)
-    (Get-Command -Name $Cmdlet -ArgumentList $PSDrive).ParameterSets | ForEach-Object {$_.Parameters} | Where-Object { $_.IsDynamic } | Select-Object -Property Name -Unique
+    (Get-Command -Name $Cmdlet -ArgumentList $PSDrive).ParameterSets | 
+      ForEach-Object {$_.Parameters} | 
+        Where-Object { $_.IsDynamic } | 
+          Select-Object -Property Name -Unique
 }
 Get-DynamicParameters -Cmdlet Get-ChildItem -PSDrive Cert:
 ```
@@ -156,7 +159,7 @@ Get-Command -ParameterName *Auth* -ParameterType AuthenticationMechanism
 この例では、 `Get-Command` コマンドレットをエイリアスと共に使用する方法を示します。
 
 ```powershell
-Get-Command Name dir
+Get-Command -Name dir
 ```
 
 ```Output
@@ -272,7 +275,7 @@ Application     getconf                                            0.0.0.0    /u
 Application     command                                            0.0.0.0    /usr/bin/command
 ```
 
-## PARAMETERS
+## パラメーター
 
 ### -All
 
@@ -323,13 +326,15 @@ Accept wildcard characters: False
 
 このパラメーターの有効値は、次のとおりです。
 
-- エイリアス. すべての PowerShell コマンドのエイリアスを取得します。 詳細については、「 [about_Aliases](About/about_Aliases.md)」を参照してください。
-- すべて。 すべてのコマンドの種類を取得します。 このパラメーター値は、に相当し `Get-Command *` ます。
-- アプリケーション をクリックします。 .Txt、.exe、.dll ファイルなど、 **Path** 環境変数 ($env:p a) に一覧表示されているパス内の PowerShell 以外のファイルを取得します。 **Path** 環境変数の詳細については、「about_Environment_Variables」を参照してください。
-- コマンドレット. すべてのコマンドレットを取得します。
-- ExternalScript。 **Path** 環境変数 ($env:path) に列挙されるパス内のすべての .ps1 ファイルを取得します。
-- フィルターと関数。 すべての PowerShell advanced および simple 関数とフィルターを取得します。
-- スクリプティング。 すべてのスクリプト ブロックを取得します。 PowerShell スクリプト (ps1 ファイル) を取得するには、ExternalScript 値を使用します。
+- `Alias`: すべての PowerShell コマンドのエイリアスを取得します。 詳細については、「 [about_Aliases](About/about_Aliases.md)」を参照してください。
+- `All`: すべてのコマンドの種類を取得します。 このパラメーター値は、に相当し `Get-Command *` ます。
+- `Application`: **Path** 環境変数 () に一覧表示されているパス ( `$env:path` .txt、.exe、.dll ファイルを含む) 内の PowerShell 以外のファイルを取得します。 **Path** 環境変数の詳細については、「[about_Environment_Variables](About/about_Environment_Variables.md)」を参照してください。
+- `Cmdlet`: すべてのコマンドレットを取得します。
+- `ExternalScript`: **Path** 環境変数 () に記載されているパス内のすべての ps1 ファイルを取得し `$env:path` ます。
+- `Filter` および `Function` : PowerShell のすべての拡張機能と単純な関数とフィルターを取得します。
+- `Script`: すべてのスクリプトブロックを取得します。 PowerShell スクリプト (ps1 ファイル) を取得するには、値を使用し `ExternalScript` ます。
+
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として、またはその値のコンマ区切りの文字列として、 **CommandType** パラメーターに渡すことができます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -618,8 +623,8 @@ Accept wildcard characters: True
 
 ## 注
 
-* セッションで同じ名前を持つ複数のコマンドを使用できる場合は、 `Get-Command` コマンド名を入力すると実行されるコマンドが返されます。 同じ名前を持つコマンドを実行順序で表示するには、 **All** パラメーターを使用します。 詳細については、「[about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)」(コマンドの優先順位について) を参照してください。
-* モジュールが自動的にインポートされる場合、結果はコマンドレットを使用した場合と同じになり `Import-Module` ます。 モジュールは、コマンド、型、および書式設定ファイルを追加し、セッションでスクリプトを実行できます。
+- セッションで同じ名前を持つ複数のコマンドを使用できる場合は、 `Get-Command` コマンド名を入力すると実行されるコマンドが返されます。 同じ名前を持つコマンドを実行順序で表示するには、 **All** パラメーターを使用します。 詳細については、「[about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)」(コマンドの優先順位について) を参照してください。
+- モジュールが自動的にインポートされる場合、結果はコマンドレットを使用した場合と同じになり `Import-Module` ます。 モジュールは、コマンド、型、および書式設定ファイルを追加し、セッションでスクリプトを実行できます。
   モジュールの自動インポートを有効化、無効化、および構成するには、ユーザー設定変数を使用し `$PSModuleAutoLoadingPreference` ます。 詳細については、「 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)」を参照してください。
 
 ## 関連リンク
@@ -635,4 +640,3 @@ Accept wildcard characters: True
 [Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
 [about_Command_Precedence](About/about_Command_Precedence.md)
-

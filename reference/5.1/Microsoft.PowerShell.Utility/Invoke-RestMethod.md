@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/13/2018
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
-ms.openlocfilehash: c89f7351e9c874cea2cc0cd5e0912e3ca0d8b0bf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 916c221a4fb0886494a4632e38f25a639d5d414e
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93213843"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555509"
 ---
 # Invoke-RestMethod
 
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 
 ### -DisableKeepAlive
 
-HTTP ヘッダーの **KeepAlive** 値を False に設定します。 既定では、 **KeepAlive** は True です。
+HTTP ヘッダーの **KeepAlive** 値を False に設定します。 既定では、**KeepAlive** は True です。
 **KeepAlive** は、後続の要求を容易にするために、サーバーへの永続的な接続を確立します。
 
 ```yaml
@@ -265,7 +265,7 @@ Accept wildcard characters: False
 
 Web 要求のヘッダーを指定します。 ハッシュ テーブルまたは辞書を入力します。
 
-UserAgent ヘッダーを設定するには、 **UserAgent** パラメーターを使用します。 このパラメーターを使用して UserAgent または Cookie のヘッダーを指定することはできません。
+UserAgent ヘッダーを設定するには、**UserAgent** パラメーターを使用します。 このパラメーターを使用して UserAgent または Cookie のヘッダーを指定することはできません。
 
 ```yaml
 Type: System.Collections.IDictionary
@@ -317,16 +317,16 @@ Accept wildcard characters: False
 
 Web 要求に使用するメソッドを指定します。 このパラメーターの有効値は、次のとおりです。
 
-- Default
-- 削除
-- 取得
-- Head
-- Merge
-- オプション
-- 修正プログラム
-- 投稿
-- Put
-- Trace
+- `Default`
+- `Delete`
+- `Get`
+- `Head`
+- `Merge`
+- `Options`
+- `Patch`
+- `Post`
+- `Put`
+- `Trace`
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebRequestMethod
@@ -345,7 +345,7 @@ Accept wildcard characters: False
 
 指定した出力ファイルに応答本文を保存します。 パスとファイル名を入力します。 パスを省略した場合、既定値は現在のディレクトリです。
 
-既定では、は `Invoke-RestMethod` パイプラインに結果を返します。 結果をファイルとパイプラインに送信するには、 **Passthru** パラメーターを使用します。
+既定では、は `Invoke-RestMethod` パイプラインに結果を返します。 結果をファイルとパイプラインに送信するには、**Passthru** パラメーターを使用します。
 
 ```yaml
 Type: System.String
@@ -395,7 +395,7 @@ Accept wildcard characters: False
 
 **Proxy** パラメーターに指定したプロキシ サーバーを使用するアクセス許可を持つユーザー アカウントを指定します。 既定値は現在のユーザーです。
 
-「User01」や「Domain01\User01」のようなユーザー名を入力するか、  コマンドレットで生成されるような `Get-Credential` オブジェクトを入力します。
+「User01」や「Domain01\User01」のようなユーザー名を入力するか、 コマンドレットで生成されるような `Get-Credential` オブジェクトを入力します。
 
 このパラメーターは、 **プロキシ** パラメーターがコマンドでも使用されている場合にのみ有効です。 **ProxyCredential** パラメーターと **ProxyUseDefaultCredentials** パラメーターを同じコマンドで使用することはできません。
 
@@ -413,7 +413,7 @@ Accept wildcard characters: False
 
 ### -ProxyUseDefaultCredentials
 
-現在のユーザーの資格情報を使用して、 **Proxy** パラメーターに指定したプロキシ サーバーにアクセスします。
+現在のユーザーの資格情報を使用して、**Proxy** パラメーターに指定したプロキシ サーバーにアクセスします。
 
 このパラメーターは、 **プロキシ** パラメーターがコマンドでも使用されている場合にのみ有効です。 **ProxyCredential** パラメーターと **ProxyUseDefaultCredentials** パラメーターを同じコマンドで使用することはできません。
 
@@ -437,7 +437,7 @@ Web 要求セッションを作成して、指定した変数の値に保存し�
 
 リモート セッションとは異なり、Web 要求セッションは永続的な接続ではありません。 Web 要求セッションは、Cookie、資格情報、リダイレクトの最大値、ユーザー エージェント文字列などの、接続と要求に関する情報を含むオブジェクトです。 Web 要求セッションを使用して、Web 要求の間で状態とデータを共有することができます。
 
-後続の Web 要求で Web 要求セッションを使用するには、 **WebSession** パラメーターの値にセッション変数を指定します。 Windows PowerShell は、新しい接続を確立するときに、Web 要求セッション オブジェクトのデータを使用します。 Web 要求セッションの値をオーバーライドするには、 **UserAgent** 、 **Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。
+後続の Web 要求で Web 要求セッションを使用するには、**WebSession** パラメーターの値にセッション変数を指定します。 Windows PowerShell は、新しい接続を確立するときに、Web 要求セッション オブジェクトのデータを使用します。 Web 要求セッションの値をオーバーライドするには、**UserAgent**、**Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。
 
 **Sessionvariable** と **websession** パラメーターを同じコマンドで使用することはできません。
 
@@ -475,11 +475,11 @@ Accept wildcard characters: False
 
 転送エンコード HTTP 応答ヘッダーの値を指定します。 このパラメーターの有効値は、次のとおりです。
 
-- まとめ
-- 圧縮
-- Deflate
-- GZip
-- ID
+- `Chunked`
+- `Compress`
+- `Deflate`
+- `GZip`
+- `Identity`
 
 ```yaml
 Type: System.String
@@ -498,7 +498,7 @@ Accept wildcard characters: False
 
 Web 要求の送信先の Uniform Resource Identifier (URI) を指定します。 このパラメーターは、HTTP、HTTPS、FTP、FILE の値をサポートします。
 
-このパラメーターは必須です。 パラメーター名 ( **Uri** ) は省略可能です。
+このパラメーターは必須です。 パラメーター名 (**Uri**) は省略可能です。
 
 ```yaml
 Type: System.Uri
@@ -568,7 +568,7 @@ Accept wildcard characters: False
 
 Web 要求セッションを指定します。 ドル記号 () を含む変数名を入力し `$` ます。
 
-Web 要求セッションの値をオーバーライドするには、 **UserAgent** 、 **Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。
+Web 要求セッションの値をオーバーライドするには、**UserAgent**、**Credential** などのコマンドレット パラメーターを使用します。 パラメーターの値は、Web 要求セッションの値よりも優先されます。
 
 リモート セッションとは異なり、Web 要求セッションは永続的な接続ではありません。 Web 要求セッションは、Cookie、資格情報、リダイレクトの最大値、ユーザー エージェント文字列などの、接続と要求に関する情報を含むオブジェクトです。 Web 要求セッションを使用して、Web 要求の間で状態とデータを共有することができます。
 
@@ -608,7 +608,7 @@ Accept wildcard characters: False
 
 要求が JSON 文字列を返す場合、は `Invoke-RestMethod` 文字列を表す PSObject を返します。
 
-## メモ
+## 注
 
 ## 関連リンク
 

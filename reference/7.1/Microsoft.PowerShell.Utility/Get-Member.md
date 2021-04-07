@@ -3,30 +3,30 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/06/2020
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-member?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Member
-ms.openlocfilehash: 833be15e4018a0c25b0f604b5c84ab077c584cae
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: c54b1ad15453e5e90d7b2dcb78c6dd86158212bc
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93213083"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555748"
 ---
 # Get-Member
 
-## 概要
+## 構文
 オブジェクトのプロパティとメソッドを取得します。
 
-## SYNTAX
+## 構文
 
 ```
 Get-Member [-InputObject <PSObject>] [[-Name] <String[]>] [-MemberType <PSMemberTypes>]
  [-View <PSMemberViewTypes>] [-Static] [-Force] [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
 `Get-Member`コマンドレットは、オブジェクトのメンバー (プロパティとメソッド) を取得します。
 
@@ -90,7 +90,7 @@ ToString                  ScriptMethod  System.Object ToString();
 
 ### 例 2: サービスオブジェクトのメンバーを取得する
 
-この例では、コマンドレットによって取得されたサービスオブジェクトのすべてのメンバー (プロパティとメソッド) を取得し `Get-Service` ます。これには、 **psbase** 、 **PSObject** 、 **get_** および **set_** メソッドなどの組み込みメンバーが含まれます。
+この例では、コマンドレットによって取得されたサービスオブジェクトのすべてのメンバー (プロパティとメソッド) を取得し `Get-Service` ます。これには、 **psbase**、 **PSObject**、 **get_** および **set_** メソッドなどの組み込みメンバーが含まれます。
 
 ```powershell
 Get-Service | Get-Member -Force
@@ -253,18 +253,18 @@ LastWriteTimeUtc
 Attributes
 ```
 
-## PARAMETERS
+## パラメーター
 
 ### -Force
 
 組み込みメンバーと、コンパイラによって生成された **get_** および **set_** メソッドを表示に追加します。
 **Force** パラメーターを使用した場合に追加されるプロパティを次に示します。
 
-- **Psbase** : 拡張機能または適合しない .net オブジェクトの元のプロパティ。 これらは、オブジェクトクラスに対して定義されているプロパティです。
-- **Psadapted** 。 PowerShell 拡張型システムで定義されているプロパティとメソッド。
-- **PSExtended** 。 `Types.ps1xml`ファイルまたはコマンドレットを使用して追加されたプロパティとメソッド `Add-Member` 。
-- **PSObject** 。 ベースオブジェクトを PowerShell **PSObject** オブジェクトに変換するアダプター。
-- **PSTypeNames** 。 オブジェクト特定性の順に記述するオブジェクト型の一覧。 オブジェクトの書式を設定するときに、powershell は `Format.ps1xml` powershell インストールディレクトリ () 内のファイル内の型を検索 `$PSHOME` します。 検出した最初の型の書式設定定義を使用します。
+- `PSBase`: 拡張機能または適合しない .NET オブジェクトの元のプロパティ。 これらは、オブジェクトクラスに対して定義されているプロパティです。
+- `PSAdapted`: PowerShell 拡張型システムで定義されているプロパティとメソッド。
+- `PSExtended`: `Types.ps1xml` ファイルまたはコマンドレットを使用して追加されたプロパティとメソッド `Add-Member` 。
+- `PSObject`: ベースオブジェクトを PowerShell **PSObject** オブジェクトに変換するアダプター。
+- `PSTypeNames`: 特異性の順にオブジェクトを記述するオブジェクトの種類の一覧。 オブジェクトの書式を設定するときに、powershell は `Format.ps1xml` powershell インストールディレクトリ () 内のファイル内の型を検索 `$PSHOME` します。 検出した最初の型の書式設定定義を使用します。
 
 既定では、は、 `Get-Member` **ベース** と **適合** を除くすべてのビューでこれらのプロパティを取得しますが、表示しません。
 
@@ -303,32 +303,32 @@ Accept wildcard characters: False
 
 ### -MemberType
 
-このコマンドレットが取得するメンバーの種類を指定します。 既定値は **[すべて]** です。
+このコマンドレットが取得するメンバーの種類を指定します。 既定では、 `All`です。
 
 このパラメーターの有効値は、次のとおりです。
 
-- AliasProperty
-- CodeProperty
-- プロパティ
-- NoteProperty
-- ScriptProperty
-- Properties
-- PropertySet
-- Method
-- CodeMethod
-- ScriptMethod
-- メソッド
-- ParameterizedProperty
-- セット
-- event
-- 動的
-- All
+- `AliasProperty`
+- `CodeProperty`
+- `Property`
+- `NoteProperty`
+- `ScriptProperty`
+- `Properties`
+- `PropertySet`
+- `Method`
+- `CodeMethod`
+- `ScriptMethod`
+- `Methods`
+- `ParameterizedProperty`
+- `MemberSet`
+- `Event`
+- `Dynamic`
+- `All`
+
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として **MemberType** パラメーターに渡すことも、それらの値のコンマ区切りの文字列として渡すこともできます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 これらの値の詳細については、「 [PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes)」を参照してください。
 
-すべてのオブジェクトにすべての型のメンバーがあるわけではありません。 オブジェクトに含まれていないメンバーの種類を指定すると、PowerShell は null 値を返します。
-
-すべての拡張メンバーなど、関連する型のメンバーを取得するには、 **View** パラメーターを使用します。 **MemberType** パラメーターを **Static** または **View** パラメーターと共に使用すると、は `Get-Member` 両方のセットに属するメンバーを取得します。
+すべてのオブジェクトにすべての型のメンバーがあるわけではありません。 オブジェクトに含まれていないメンバーの種類を指定すると、PowerShell は null 値を返します。 すべての拡張メンバーなど、関連する型のメンバーを取得するには、**View** パラメーターを使用します。 **MemberType** パラメーターを **Static** または **View** パラメーターと共に使用すると、は `Get-Member` 両方のセットに属するメンバーを取得します。
 
 ```yaml
 Type: System.Management.Automation.PSMemberTypes
@@ -347,7 +347,7 @@ Accept wildcard characters: False
 
 オブジェクトの 1 つまたは複数のプロパティまたはメソッドの名前を指定します。 `Get-Member` 指定されたプロパティおよびメソッドのみを取得します。
 
-**Name** パラメーターを **MemberType** 、 **View** 、または **Static** パラメーターと共に使用すると、 `Get-Member` すべてのパラメーターの条件を満たすメンバーのみが取得されます。
+**Name** パラメーターを **MemberType**、 **View**、または **Static** パラメーターと共に使用すると、 `Get-Member` すべてのパラメーターの条件を満たすメンバーのみが取得されます。
 
 静的メンバーを名前で取得するには、 **static** パラメーターを **name** パラメーターと共に使用します。
 
@@ -384,7 +384,7 @@ Accept wildcard characters: False
 
 ### -ビュー
 
-このコマンドレットが特定の型のプロパティとメソッドだけを取得することを指定します。 1 つまたは複数の値を指定します。 既定値は、[ **拡張** **] になっています** 。
+このコマンドレットが特定の型のプロパティとメソッドだけを取得することを指定します。 1 つまたは複数の値を指定します。 既定値は、[**拡張** **] になっています**。
 
 このパラメーターの有効値は、次のとおりです。
 
@@ -437,4 +437,3 @@ Accept wildcard characters: False
 ## 関連リンク
 
 [Add-Member](Add-Member.md)
-

@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/26/2021
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: f3545065d4879830a5051ef687f210c7fbd1251e
-ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
+ms.openlocfilehash: 4aa3b889ed00c6b0442a1191f055e1228f252631
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98860663"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555527"
 ---
 # Invoke-WebRequest
 
-## 概要
+## 構文
 インターネット上の Web ページからコンテンツを取得します。
 
-## SYNTAX
+## 構文
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>] [-SessionVariable <String>]
@@ -29,7 +29,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
 `Invoke-WebRequest`コマンドレットは、HTTP、HTTPS、FTP、およびファイル要求を web ページまたは web サービスに送信します。
 さらに、応答を解析し、フォーム、リンク、画像、およびその他の重要な HTML 要素のコレクションを返します。
@@ -37,8 +37,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
 このコマンドレットは、Windows PowerShell 3.0 で導入されました。
 
 > [!NOTE]
-> 既定では、プロパティを設定するためにページを解析するときに、web ページ内のスクリプトコードが実行される場合があり `ParsedHtml` ます。
-> `-UseBasicParsing`これを抑制するには、スイッチを使用します。
+> 既定では、プロパティを設定するためにページを解析するときに、web ページ内のスクリプトコードが実行される場合があり `ParsedHtml` ます。 `-UseBasicParsing`これを抑制するには、スイッチを使用します。
 
 ## 例
 
@@ -138,7 +137,7 @@ $StatusCode
 
 終了エラーは、 `catch` **例外** オブジェクトから **StatusCode** を取得するブロックによってキャッチされます。
 
-## PARAMETERS
+## パラメーター
 
 ### -本文
 
@@ -151,7 +150,7 @@ $StatusCode
 入力が GET 要求で、本文が **IDictionary** (通常はハッシュテーブル) の場合、本文はクエリパラメーターとして URI に追加されます。 他の GET 要求の場合、本文は標準形式の要求本文の値として設定され `name=value` ます。
 
 本文がフォームである場合、または呼び出しの出力である場合 `Invoke-WebRequest` 、PowerShell は要求の内容をフォームフィールドに設定します。
-以下に例を示します。
+次に例を示します。
 
 `$r = Invoke-WebRequest https://website.com/login.aspx`
 `$r.Forms\[0\].Name = "MyName"`
@@ -323,16 +322,16 @@ Accept wildcard characters: False
 
 Web 要求に使用するメソッドを指定します。 このパラメーターの有効値は、次のとおりです。
 
-- Default
-- 削除
-- 取得
-- Head
-- Merge
-- オプション
-- 修正プログラム
-- 投稿
-- Put
-- Trace
+- `Default`
+- `Delete`
+- `Get`
+- `Head`
+- `Merge`
+- `Options`
+- `Patch`
+- `Post`
+- `Put`
+- `Trace`
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebRequestMethod
@@ -484,11 +483,11 @@ Accept wildcard characters: False
 
 転送エンコード HTTP 応答ヘッダーの値を指定します。 このパラメーターの有効値は、次のとおりです。
 
-- まとめ
-- 圧縮
-- Deflate
-- GZip
-- ID
+- `Chunked`
+- `Compress`
+- `Deflate`
+- `GZip`
+- `Identity`
 
 ```yaml
 Type: System.String
@@ -539,7 +538,7 @@ Accept wildcard characters: False
 
 ### -UseDefaultCredentials
 
-Cmdet が、web 要求を送信するために現在のユーザーの資格情報を使用することを示します。
+コマンドレットが、web 要求を送信するために現在のユーザーの資格情報を使用することを示します。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

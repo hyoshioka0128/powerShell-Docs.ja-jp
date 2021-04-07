@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/26/2021
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: 036f5aef42b9413747f4e738bf748fda8bb2d2d2
-ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
+ms.openlocfilehash: 1c178c9a7683b9630cabf6165fae0341385d67a6
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98860788"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555765"
 ---
 # Invoke-WebRequest
 
-## 概要
+## 構文
 インターネット上の web ページからコンテンツを取得します。
 
-## SYNTAX
+## Syntax
 
 ### StandardMethod (既定値)
 
@@ -82,9 +82,9 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
-## Description
+## [説明]
 
-`Invoke-WebRequest`コマンドレットは、HTTP 要求と HTTPS 要求を web ページまたは web サービスに送信します。 応答を解析し、リンク、画像、およびその他の重要な HTML 要素のコレクションを返します。
+`Invoke-WebRequest`コマンドレットは、HTTP 要求と HTTPS 要求を web ページまたは web サービスに送信します。 これは、応答を解析し、リンク、画像、およびその他の重要な HTML 要素のコレクションを返します。
 
 このコマンドレットは、PowerShell 3.0 で導入されました。
 
@@ -243,7 +243,7 @@ $StatusCode
 
 終了エラーは、 `catch` **例外** オブジェクトから **StatusCode** を取得するブロックによってキャッチされます。
 
-## PARAMETERS
+## パラメーター
 
 ### -AllowUnencryptedAuthentication
 
@@ -273,10 +273,10 @@ Accept wildcard characters: False
 
 使用可能な認証オプション:
 
-- **None**: **認証** が指定されていない場合の既定のオプションです。明示的な認証は使用されません。
-- **基本**: **資格情報** が必要です。 資格情報は、RFC 7617 の基本認証ヘッダーでという形式で送信され `base64(user:password)` ます。
-- **ベアラー**: **トークン** が必要です。 指定された `Authorization: Bearer` トークンを使用して RFC 6750 ヘッダーを送信します。 これは **OAuth** のエイリアスです
-- **OAuth**: **トークン** が必要です。 指定された `Authorization: Bearer` トークンを使用して RFC 6750 ヘッダーを送信します。 これは **ベアラー** のエイリアスです
+- `None`: これは、 **認証** が指定されていない場合の既定のオプションです。明示的な認証は使用されません。
+- `Basic`: **資格情報** が必要です。 資格情報は、RFC 7617 の基本認証ヘッダーでという形式で送信され `base64(user:password)` ます。
+- `Bearer`: **トークン** が必要です。 指定された `Authorization: Bearer` トークンを使用して RFC 6750 ヘッダーを送信します。 これは **OAuth** のエイリアスです
+- `OAuth`: **トークン** が必要です。 指定された `Authorization: Bearer` トークンを使用して RFC 6750 ヘッダーを送信します。 これは **ベアラー** のエイリアスです
 
 **認証** `Authorization` を指定すると、**ヘッダー** に指定されたヘッダーまたは **web セッション** に含まれるヘッダーが上書きされます。
 
@@ -555,16 +555,16 @@ Accept wildcard characters: False
 
 Web 要求に使用するメソッドを指定します。 このパラメーターの有効値は、次のとおりです。
 
-- Default
-- 削除
-- 取得
-- Head
-- Merge
-- オプション
-- 修正プログラム
-- 投稿
-- Put
-- Trace
+- `Default`
+- `Delete`
+- `Get`
+- `Head`
+- `Merge`
+- `Options`
+- `Patch`
+- `Post`
+- `Put`
+- `Trace`
 
 **Custommethod** パラメーターは、上に一覧表示されていない要求メソッドに使用できます。
 
@@ -846,7 +846,7 @@ Accept wildcard characters: False
 
 Web 要求に対して許可されている SSL/TLS プロトコルを設定します。 既定では、システムでサポートされているすべての SSL/TLS プロトコルが許可されます。 **Sslprotocol** では、コンプライアンスのために特定のプロトコルを制限できます。
 
-**Sslprotocol** では **websslprotocol** フラグ列挙型が使用されます。 フラグ表記を使用して複数のプロトコルを指定したり、複数の **Websslprotocol** オプションを **bor** と組み合わせたりすることはできますが、複数のプロトコルを指定することは、すべてのプラットフォームでサポートされているわけではありません。
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として **Sslprotocol** パラメーターに渡すか、それらの値のコンマ区切りの文字列として渡すことができます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。 すべてのプラットフォームで複数のオプションを定義することはできません。
 
 > [!NOTE]
 > Windows 以外のプラットフォームで `Tls` は、 `Tls12` オプションとしてまたはを指定することはできません。 のサポート `Tls13` は、すべてのオペレーティングシステムで使用できるわけではなく、オペレーティングシステムごとに検証する必要があります。
@@ -1059,7 +1059,7 @@ PowerShell 6.0.0 以降で `Invoke-WebRequest` は、基本的な解析のみが
 
 Windows および Unix ベースのプラットフォームでの初期化に使用される環境変数 `DefaultProxy` は次のとおりです。
 
-- ` HTTP_PROXY`: HTTP 要求で使用されるプロキシサーバーのホスト名または IP アドレス。
+- `HTTP_PROXY`: HTTP 要求で使用されるプロキシサーバーのホスト名または IP アドレス。
 - `HTTPS_PROXY`: HTTPS 要求で使用されるプロキシサーバーのホスト名または IP アドレス。
 - `ALL_PROXY`: HTTP および HTTPS 要求で使用されるプロキシサーバーのホスト名または IP アドレス `HTTP_PROXY` (またはが定義されて `HTTPS_PROXY` いない場合)。
 - `NO_PROXY`: プロキシから除外する必要があるホスト名のコンマ区切りのリスト。
