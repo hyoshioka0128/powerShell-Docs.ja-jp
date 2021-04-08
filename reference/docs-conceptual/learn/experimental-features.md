@@ -128,7 +128,7 @@ UnderlineOff     Property   string UnderlineOff {get;}
 - `string ToString()` メソッドは同じままで、文字列のプレーンテキスト バージョンを返します。
 - `Ansi` パラメーターが true の場合、`string ToString(bool Ansi)` メソッドは生の ANSI 埋め込み文字列を返します。 それ以外の場合は、ANSI エスケープ シーケンスが削除されたプレーンテキスト バージョンが返されます。
 
-`FormatHyperlink(string text, uri link)` は、ハイパーリンクを装飾するために使用される ANSI エスケープ シーケンスを含む文字列を返します。 [Windows ターミナル](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)などの一部のターミナル ホストは、このマークアップをサポートしていて、これにより、レンダリングされたテキストがターミナルでクリック可能になります。
+`FormatHyperlink(string text, uri link)` は、ハイパーリンクを装飾するために使用される ANSI エスケープ シーケンスを含む文字列を返します。 [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)などの一部のターミナル ホストは、このマークアップをサポートしていて、これにより、レンダリングされたテキストがターミナルでクリック可能になります。
 
 ## <a name="psansiprogress"></a>PSAnsiProgress
 
