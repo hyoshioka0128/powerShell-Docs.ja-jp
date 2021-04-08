@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/06/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Variable
-ms.openlocfilehash: 876129fc8df9a78df257bf95220fc6587e68b9a2
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: 7335511f3e95d603261a021dab1df1b92e605d8e
+ms.sourcegitcommit: 241071803915ab7d544576b5652ac23349a86369
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239843"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107027160"
 ---
 # Set-Variable
 
-## 概要
+## 構文
 変数の値を設定します。 要求された名前の変数が存在しない場合は、変数を作成します。
 
-## SYNTAX
+## 構文
 
 ```
 Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Exclude <String[]>]
@@ -27,7 +27,7 @@ Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Excl
  [-PassThru] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
 `Set-Variable`コマンドレットは、指定された変数に値を割り当てるか、現在の値を変更します。 変数が存在しない場合は、変数を作成します。
 
@@ -59,7 +59,7 @@ Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope glob
 
 このコマンドは、コマンドレットを使用して `Set-Variable` 変数を作成します。 **PassThru** パラメーターを使用して新しい変数を表すオブジェクトを作成し、パイプライン演算子 () を使用して `|` オブジェクトを `Format-List` コマンドレットに渡します。 この例では、の **Property** パラメーターを `Format-List` all () と共に使用して `*` 、新しく作成された変数のすべてのプロパティを表示します。
 
-値は、 `(Get-Process)` 変数に格納される前に実行されるように、かっこで囲まれています。 それ以外の場合、変数には " **Get Process** " という単語が含まれます。
+値は、 `(Get-Process)` 変数に格納される前に実行されるように、かっこで囲まれています。 それ以外の場合、変数には "**Get Process**" という単語が含まれます。
 
 ### 例 3: パブリック変数とプライベート変数を理解する
 
@@ -99,7 +99,7 @@ PS C:\> .\use-counter.ps1
 
 このコマンドは、変数の可視性をプライベートに変更する方法を示しています。 この変数は、必要なアクセス許可を使用すればスクリプトによる読み取りや変更が可能ですが、ユーザーには表示されません。
 
-## PARAMETERS
+## パラメーター
 
 ### -Description
 
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 
 ### -除外
 
-このコマンドレットによって操作から除外される項目の配列を指定します。 このパラメーターの値は、 **Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。
+このコマンドレットによって操作から除外される項目の配列を指定します。 このパラメーターの値は、**Path** パラメーターを修飾します。 パス要素またはパターン (など) を入力し `*.txt` ます。
 ワイルドカードを使用できます。
 
 ```yaml
@@ -190,11 +190,13 @@ Accept wildcard characters: False
 
 有効な値は次のとおりです。
 
-- `None`: オプションを設定しません。 ("None" は、既定値です)。
+- `None`: オプションを設定しません。 ( `None` は既定値です)。
 - `ReadOnly`: 削除できます。 Force パラメーターを使用する場合を除き、を変更することはできません。
 - `Constant`: 削除または変更できません。 `Constant` 変数を作成する場合にのみ有効です。 既存の変数のオプションをに変更することはできません `Constant` 。
 - `Private`: 変数は、現在のスコープでのみ使用できます。
 - `AllScope`: 変数は、作成された新しいスコープにコピーされます。
+
+これらの値はフラグベースの列挙体として定義されます。 このパラメーターを使用すると、複数の値を組み合わせて複数のフラグを設定できます。 値は、値の配列として **オプション** パラメーターに渡すことも、その値のコンマ区切りの文字列として渡すこともできます。 コマンドレットでは、バイナリまたは演算を使用して値を結合します。 配列として値を渡すのが最も簡単なオプションであり、値に対してタブ補完を使用することもできます。
 
 ```yaml
 Type: System.Management.Automation.ScopedItemOptions
@@ -229,13 +231,13 @@ Accept wildcard characters: False
 
 変数のスコープを指定します。このパラメーターに指定できる値は次のとおりです。
 
-- グローバル
-- ローカル
-- スクリプト
-- Private
+- `Global`
+- `Local`
+- `Script`
+- `Private`
 - 現在のスコープに対して相対的な数値 (0 ~ スコープの数。0は現在のスコープ、1はその親)。
 
-既定値は Local です。
+`Local` は既定値です。
 
 詳細については、「 [about_Scopes](../Microsoft.PowerShell.Core/About/about_scopes.md)」を参照してください。
 
@@ -273,8 +275,8 @@ Accept wildcard characters: False
 
 有効な値は次のとおりです。
 
-- Public: 変数が表示されます。 ("Public" は既定値です)。
-- Private: 変数は表示されません。
+- `Public`: 変数が表示されます。 ( `Public` は既定値です)。
+- `Private`: 変数は表示されません。
 
 変数がプライベートである場合は、変数の一覧に表示されません。たとえば、変数がによって返され `Get-Variable` たり、 **変数:** ドライブに表示されたりすることはありません。 プライベート変数の値を読み取りまたは変更するコマンドは、エラーを返します。 ただし、コマンドが、変数の定義元のセッションで記述されている場合は、プライベート変数を使用するコマンドを実行できます。
 
@@ -340,7 +342,7 @@ Accept wildcard characters: False
 **PassThru** パラメーターを使用すると、に `Set-Variable` よって、新しい変数または変更された変数を表す system.string オブジェクトが生成さ **れます。**
 それ以外の場合、このコマンドレットによる出力はありません。
 
-## 注
+## メモ
 
 ## 関連リンク
 
