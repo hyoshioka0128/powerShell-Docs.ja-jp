@@ -6,12 +6,12 @@ ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: 4aa3b889ed00c6b0442a1191f055e1228f252631
-ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
+ms.openlocfilehash: 516e73b36668bcb1606df77b0c6f63c3d477ac7c
+ms.sourcegitcommit: 241071803915ab7d544576b5652ac23349a86369
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/07/2021
-ms.locfileid: "106555527"
+ms.locfileid: "107027211"
 ---
 # Invoke-WebRequest
 
@@ -556,7 +556,7 @@ Accept wildcard characters: False
 
 Web 要求のユーザー エージェント文字列を指定します。 既定のユーザーエージェントは、 `Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US) WindowsPowerShell/3.0` オペレーティングシステムとプラットフォームによって微妙な違いがあるに似ています。
 
-ほとんどのインターネットブラウザーで使用される標準のユーザーエージェント文字列を使用して web サイトをテストするには、Chrome、FireFox、InternetExplorer、Opera、Safari などの [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) クラスのプロパティを使用します。 たとえば、次のコマンドは、Internet Explorer のユーザーエージェント文字列を使用します。
+ほとんどのインターネットブラウザーで使用される標準のユーザーエージェント文字列を使用して web サイトをテストするには、Chrome、FireFox、InternetExplorer、Opera、Safari などの [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) クラスのプロパティを使用します。 たとえば、次のコマンドは、Internet Explorer のユーザーエージェント文字列を使用します。 `Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
 
 ```yaml
 Type: System.String
@@ -608,7 +608,7 @@ Accept wildcard characters: False
 
 ### Microsoft.PowerShell.Commands.HtmlWebResponseObject
 
-## 注
+## メモ
 
 ## 関連リンク
 
