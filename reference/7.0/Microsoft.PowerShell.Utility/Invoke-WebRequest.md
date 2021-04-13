@@ -6,19 +6,19 @@ ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: bf5fb5587e4a0f1686c87e9aa6b0cfb62697a70d
-ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
+ms.openlocfilehash: 7baa84d062e9a25d59d0353f175e108dd0bd769e
+ms.sourcegitcommit: 241071803915ab7d544576b5652ac23349a86369
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/07/2021
-ms.locfileid: "106555238"
+ms.locfileid: "107027245"
 ---
 # Invoke-WebRequest
 
 ## 構文
 インターネット上の web ページからコンテンツを取得します。
 
-## Syntax
+## 構文
 
 ### StandardMethod (既定値)
 
@@ -82,7 +82,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
-## [説明]
+## 説明
 
 `Invoke-WebRequest`コマンドレットは、HTTP 要求と HTTPS 要求を web ページまたは web サービスに送信します。 これは、応答を解析し、リンク、画像、およびその他の重要な HTML 要素のコレクションを返します。
 
@@ -90,7 +90,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
 
 PowerShell 7.0 以降では、は `Invoke-WebRequest` 環境変数によって定義されたプロキシ構成をサポートしています。 この記事の「 [メモ](#notes) 」セクションを参照してください。
 
-## 例
+## 使用例
 
 ### 例 1: web 要求を送信する
 
@@ -986,11 +986,7 @@ Web 要求のユーザー エージェント文字列を指定します。
 
 ほとんどのインターネットブラウザーで使用される標準のユーザーエージェント文字列を使用して web サイトをテストするには、Chrome、FireFox、InternetExplorer、Opera、Safari などの [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) クラスのプロパティを使用します。
 
-たとえば、次のコマンドは、Internet Explorer のユーザーエージェント文字列を使用します。
-
-```powershell
-Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
-```
+たとえば、次のコマンドは、Internet Explorer のユーザーエージェント文字列を使用します。 `Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
 
 ```yaml
 Type: System.String
@@ -1042,7 +1038,7 @@ Accept wildcard characters: False
 
 ### Microsoft. PowerShell. BasicHtmlWebResponseObject
 
-## 注
+## メモ
 
 PowerShell 6.0.0 以降で `Invoke-WebRequest` は、基本的な解析のみがサポートされます。
 

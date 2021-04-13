@@ -39,7 +39,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
 > [!NOTE]
 > 既定では、プロパティを設定するためにページを解析するときに、web ページ内のスクリプトコードが実行される場合があり `ParsedHtml` ます。 `-UseBasicParsing`これを抑制するには、スイッチを使用します。
 
-## 例
+## 使用例
 
 ### 例 1: web 要求を送信する
 

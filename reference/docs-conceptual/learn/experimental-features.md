@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: PowerShell の試験的機能の使用
 description: 現在使用できる試験的機能とその使用方法を示します。
-ms.openlocfilehash: f97cea1dff4030da22be1efbe3cd5cbb7a9f3527
-ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
+ms.openlocfilehash: 828a962ca46e5563874ff1c941c46c8a0624f3d8
+ms.sourcegitcommit: f6cc3752463b254f6ba7fc14c1e4532ad33f06bb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101685277"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107216896"
 ---
 # <a name="using-experimental-features-in-powershell"></a>PowerShell の試験的機能の使用
 
@@ -108,7 +108,7 @@ UnderlineOff     Property   string UnderlineOff {get;}
 
 基本メンバーは、名前にマップされた ANSI エスケープ シーケンスの文字列を返します。 値は、カスタマイズできるように設定できます。
 
-詳細については、「[about_Automatic_Variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)」を参照してください
+詳細については、「[about_Automatic_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)」を参照してください
 
 > [!NOTE]
 > C# の開発者は、シングルトンとして `PSStyle` にアクセスできます。 このようにして使用します。

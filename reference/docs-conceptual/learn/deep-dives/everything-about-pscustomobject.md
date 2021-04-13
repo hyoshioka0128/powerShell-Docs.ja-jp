@@ -3,12 +3,12 @@ title: PSCustomObject について知りたかったことのすべて
 description: PSCustomObject は、構造化データを作成するためのシンプルな方法です。
 ms.date: 10/05/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 8086541bf93b4d3f878c9a3f7ca4300dc452a80b
-ms.sourcegitcommit: 08c63095f54916013634d6703f2523779815f4b6
+ms.openlocfilehash: 43712532662ddc87205b01b15cc610cce890f2e2
+ms.sourcegitcommit: f6cc3752463b254f6ba7fc14c1e4532ad33f06bb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99424471"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107216881"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>PSCustomObject について知りたかったことのすべて
 
@@ -350,7 +350,7 @@ function Get-MyObject
 [about_Functions_OutputTypeAttribute]: /powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute
 [ファイルの読み取りと書き込みを行うさまざまな方法]: https://powershellexplained.com/2017-03-18-Powershell-reading-and-saving-data-to-files
 [/u/markekraus による投稿]: https://www.reddit.com/r/PowerShell/comments/590awc/is_it_possible_to_initialize_a_pscustoobject_with/
-[Adam Bertram]: http://www.adamtheautomator.com/building-custom-object-types-PowerShell-pstypename/
+[Adam Bertram]: http://www.adamtheautomator.com/
 [Mike Shepard]: https://powershellstation.com/2016/05/22/custom-objects-and-pstypename/
 [psunplugged]: https://www.youtube.com/watch?v=Ab46gHXNm8Q
 [Update-TypeData]: /powershell/module/microsoft.powershell.utility/update-typedata

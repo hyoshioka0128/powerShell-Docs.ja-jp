@@ -30,7 +30,7 @@ Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Excl
 
 `Set-Variable`コマンドレットは、指定された変数に値を割り当てるか、現在の値を変更します。 変数が存在しない場合は、変数を作成します。
 
-## 例
+## 使用例
 
 ### 例 1: 変数を設定し、その値を取得する
 

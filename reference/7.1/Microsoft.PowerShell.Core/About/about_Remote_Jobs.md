@@ -6,12 +6,12 @@ ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_jobs?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Remote_Jobs
-ms.openlocfilehash: 470fecd5d8eb0ef567d5d68d6a0fa940b6c819db
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: b0f2a078abb758ead68fd0d4c0b9be8389868dba
+ms.sourcegitcommit: f6cc3752463b254f6ba7fc14c1e4532ad33f06bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524758"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107216869"
 ---
 # <a name="about-remote-jobs"></a>リモートジョブについて
 
@@ -24,7 +24,7 @@ PowerShell は、ジョブを使用してコマンドとスクリプトを同時
 
 - `RemoteJob` -コマンドとスクリプトはリモートセッションで実行されます。
 - `BackgroundJob` -コマンドとスクリプトは、ローカルコンピューター上で個別のプロセスで実行されます。 詳細については、「[about_Jobs](about_Jobs.md)」を参照してください。
-- `PSTaskJob` または `ThreadJob` -コマンドとスクリプトは、ローカルコンピューター上の同じプロセス内の別のスレッドで実行されます。 詳細については、「 [about_Thread_Jobs](/powershell/module/ThreadJob/about_Thread_Jobs)」を参照してください。
+- `PSTaskJob` または `ThreadJob` -コマンドとスクリプトは、ローカルコンピューター上の同じプロセス内の別のスレッドで実行されます。 詳細については、「 [about_Thread_Jobs](about_Thread_Jobs.md)」を参照してください。
 
 別のコンピューターまたは別のプロセスでスクリプトをリモートで実行すると、優れた分離が実現します。 リモートジョブで発生したエラーは、他の実行中のジョブ、またはジョブを開始した親セッションには影響しません。 ただし、リモート処理層では、オブジェクトのシリアル化などのオーバーヘッドが発生します。 すべてのオブジェクトは、親セッションとリモート (ジョブ) セッションの間で渡されるときにシリアル化および逆シリアル化されます。 大きな複雑なデータオブジェクトのシリアル化は、大量のコンピューティングリソースとメモリリソースを消費し、ネットワーク経由で大量のデータを転送することがあります。
 
@@ -278,7 +278,7 @@ Output 11
 この例では、ジョブは引き続き親 PowerShell セッションにアタッチされます。
 ただし、親セッションは、が実行された元の PowerShell セッションではありません `Invoke-Command` 。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 - [about_Jobs](about_Jobs.md)
 - [about_Job_Details](about_Job_Details.md)

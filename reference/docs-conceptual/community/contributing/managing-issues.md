@@ -3,12 +3,12 @@ title: イシューを管理する方法
 description: この記事では、PowerShell-Docs チームがイシューを管理する方法について説明します。
 ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 72267137a2657f51e5f616113adf92d80647acad
-ms.sourcegitcommit: 61765d08321623743dc5db5367160f6982fe7857
+ms.openlocfilehash: c6cb38bc37260b14e2a7c728879e2fa2a036133f
+ms.sourcegitcommit: f6cc3752463b254f6ba7fc14c1e4532ad33f06bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "99602165"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107216915"
 ---
 # <a name="how-we-manage-issues"></a>イシューを管理する方法
 
@@ -32,12 +32,12 @@ ms.locfileid: "99602165"
 
 #### <a name="label-types"></a>ラベルの種類
 
-|   Type   | 説明                                                         |
+|   型   | 説明                                                         |
 | -------- | ------------------------------------------------------------------- |
 | 領域     | イシューを議論する、PowerShell またはドキュメントの部分を示すために使用します。<br>機能の所有者が機能に関するイシューを見つけるのに役立ちます。 |
 | 問題    | 問題の種類を示します。                                         |
-| 優先度 | 問題の優先度を示します。 値の範囲 0 (高)-4 (低)  |
-| Status   | 作業項目の状態または作業項目が閉じられた理由を示します。          |
+| Priority | 問題の優先度を示します。 値の範囲 0 (高)-4 (低)  |
+| 状態   | 作業項目の状態または作業項目が閉じられた理由を示します。          |
 | タグ      | 追加の分類のためにに使用されるラベル                        |
 | 待機中  | 他のイベントまたは他のイベントで待機していることを示します。         |
 
@@ -69,7 +69,6 @@ PowerShell docs チームメンバーは、問題を毎日確認し、新しい�
   | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
   | dsc      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
   | ギャラリー  | [https://github.com/powershell/powershellgallery/issues/new](https://github.com/powershell/powershellgallery/issues/new)     |
-  | jea      | [https://github.com/powershell/jea/issues/new](https://github.com/powershell/jea/issues/new)                                 |
   | wmf      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
 
 ### <a name="support-requests"></a>サポート要求

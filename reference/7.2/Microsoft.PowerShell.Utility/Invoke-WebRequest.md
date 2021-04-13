@@ -90,7 +90,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
 
 PowerShell 7.0 以降では、は `Invoke-WebRequest` 環境変数によって定義されたプロキシ構成をサポートしています。 この記事の「 [メモ](#notes) 」セクションを参照してください。
 
-## 例
+## 使用例
 
 ### 例 1: web 要求を送信する
 
