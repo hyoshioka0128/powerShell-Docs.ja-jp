@@ -1,16 +1,16 @@
 ---
 description: PowerShell の動作をカスタマイズする変数。
 Locale: en-US
-ms.date: 04/22/2020
+ms.date: 04/12/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Preference_Variables
-ms.openlocfilehash: d8eadf88d486de4758b56738089f27e8adc3bc91
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: ffd640f7eac8b27cabce345f11da728945043e46
+ms.sourcegitcommit: 74270273e9097352dab174c08123b82063225e2f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99600089"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107297199"
 ---
 # <a name="about-preference-variables"></a>ユーザー設定変数について
 
@@ -53,7 +53,7 @@ PowerShell には、その動作をカスタマイズできるようにする一
 | `$Transcript`                    | (なし)                    |
 | `$VerbosePreference`             | SilentlyContinue          |
 | `$WarningPreference`             | Continue                  |
-| `$WhatIfPreference`              | False                     |
+| `$WhatIfPreference`              | ×                     |
 
 PowerShell には、ユーザー設定を格納する次の環境変数が含まれています。 これらの環境変数の詳細については、「 [about_Environment_Variables](about_Environment_Variables.md)」を参照してください。
 
@@ -387,7 +387,7 @@ PowerShell でのエラーメッセージの表示形式を決定します。
 
 有効な値は次のとおりです。
 
-- **ConciseView**: (既定値) 簡潔なエラーメッセージと、高度なモジュールビルダーのリファクタリングされたビューを提供します。 エラーがコマンドラインからのものである場合は、単一行のエラーメッセージです。 それ以外の場合は、エラーを含む複数行のエラーメッセージと、その行のどこに発生しているかを示すエラーへのポインターを受け取ります。 ターミナルで仮想端末がサポートされている場合は、ANSI カラーコードを使用してカラーアクセントが提供されます。 アクセントの色はで変更でき `$Host.PrivateData.ErrorAccentColor` ます。 `Get-Error`内部例外を含む完全修飾エラーの包括的な詳細ビューを使用するには、コマンドレットを使用します。
+- **ConciseView**: (既定値) 簡潔なエラーメッセージと、高度なモジュールビルダーのリファクタリングされたビューを提供します。 PowerShell 7.2 の場合、エラーがコマンドラインまたはスクリプトモジュールからのものである場合、出力は単一行のエラーメッセージになります。 それ以外の場合は、エラーを含む複数行のエラーメッセージと、その行のどこに発生しているかを示すエラーへのポインターを受け取ります。 ターミナルで仮想端末がサポートされている場合は、ANSI カラーコードを使用してカラーアクセントが提供されます。 アクセントの色はで変更でき `$Host.PrivateData.ErrorAccentColor` ます。 `Get-Error`内部例外を含む完全修飾エラーの包括的な詳細ビューを使用するには、コマンドレットを使用します。
 
   PowerShell 7 で **ConciseView** が追加されました。
 
