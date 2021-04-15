@@ -6,12 +6,12 @@ ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Remote に関するページ
-ms.openlocfilehash: d88521eeb2a5a4cd1f7d9e6303b4814b5a1c0bb6
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: ad7ccd24c6e9642283e4ea9d1fb04bac40a6b11b
+ms.sourcegitcommit: 2b1059dd18ae4ec4f350479185c156748649b4ab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93222000"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107390116"
 ---
 # <a name="about-remote"></a>リモートの概要
 
@@ -162,7 +162,7 @@ Invoke-Command -ComputerName S1, S2, S3, localhost -ScriptBlock {Get-Culture}
 Invoke-Command -ComputerName S1, S2 -FilePath C:\Test\Sample.ps1
 ```
 
-スクリプトの結果がローカルコンピューターに返されます。 ファイルをコピーする必要はありません。
+スクリプトの結果がローカル コンピューターに返されます。 ファイルをコピーする必要はありません。
 
 ## <a name="how-to-stop-a-remote-command"></a>リモートコマンドを停止する方法
 
@@ -176,7 +176,7 @@ Invoke-Command -ComputerName S1, S2 -FilePath C:\Test\Sample.ps1
 
 - リモート処理のしくみ、リモートデータの管理方法、特別な構成、セキュリティの問題、およびその他のよく寄せられる質問については、「 [about_Remote_FAQ](about_Remote_FAQ.md)」を参照してください。
 
-- リモート処理エラーの解決については、「about_Remote_Troubleshooting」を参照してください。
+- リモート処理エラーの解決については、「 [about_Remote_Troubleshooting](about_Remote_Troubleshooting.md)」を参照してください。
 
 - PSSessions と永続的な接続の詳細については、「 [about_PSSessions](about_PSSessions.md)」を参照してください。
 
