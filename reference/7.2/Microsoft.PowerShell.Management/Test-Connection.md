@@ -6,12 +6,12 @@ ms.date: 12/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection
-ms.openlocfilehash: af8a953536bb9683ba737522ad738348c5c695e2
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: f859ed0fd704ccdaf2561db9c952cbada88f18d8
+ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99599537"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107543747"
 ---
 # Test-Connection
 
@@ -377,8 +377,8 @@ Accept wildcard characters: False
 
 ping の送信元コンピューターの名前を指定します。 コンピューター名のコンマ区切りのリストを入力します。 既定値はローカル コンピューターです。
 
-**注:** このパラメーターは、PowerShell バージョン6以降では機能しません。
-このパラメーターを指定しても、コマンドには影響しません。
+> [!NOTE]
+> このパラメーターは、PowerShell バージョン6以降ではサポートされていません。 このパラメーターを指定すると、エラーが発生します。
 
 ```yaml
 Type: System.String

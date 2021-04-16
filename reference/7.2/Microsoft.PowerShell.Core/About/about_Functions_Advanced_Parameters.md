@@ -1,16 +1,16 @@
 ---
 description: 高度な関数にパラメーターを追加する方法について説明します。
 Locale: en-US
-ms.date: 10/27/2020
+ms.date: 04/14/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
-ms.openlocfilehash: da21f6fb7d19fa2ffcd9cd6c5eea217792937ae4
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 00fcf9d07ab77ce2df6c0b8ff6c73fb87393f9b2
+ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99599288"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107543806"
 ---
 # <a name="about-functions-advanced-parameters"></a>関数の詳細パラメーターの概要
 
@@ -612,6 +612,9 @@ Param(
 )
 ```
 
+> [!NOTE]
+> `IValidateSetValuesGenerator`クラスは PowerShell 6.0 で導入されました。
+
 ### <a name="validatenotnull-validation-attribute"></a>ValidateNotNull 検証属性
 
 **Validatenotnull** 属性は、パラメーター値をにすることができないことを指定し `$null` ます。 パラメーター値がの場合、PowerShell ではエラーが生成され `$null` ます。
@@ -882,7 +885,7 @@ function Test-ArgumentCompleter {
 }
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
 

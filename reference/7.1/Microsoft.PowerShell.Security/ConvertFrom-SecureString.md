@@ -7,12 +7,12 @@ ms.date: 07/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-SecureString
-ms.openlocfilehash: ed9ef1102c1e34670b3cb5664a227f86124812a0
-ms.sourcegitcommit: b7ff031a12afd04910aeb98345ebee92f5845b0c
+ms.openlocfilehash: d1d85df9d1620bb55a7ef80394dc0f84bf99926d
+ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "93219000"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107543820"
 ---
 # ConvertFrom-SecureString
 
@@ -41,7 +41,7 @@ ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>] [<Common
 
 ## Description
 
-**SecureString** コマンドレットは、セキュリティで保護された文字列 ( **SecureString** ) を暗号化された標準文字列 ( **system.string** ) に変換します。 セキュリティで保護された文字列とは異なり、暗号化された標準文字列は、ファイルに保存して後で使用することができます。 暗号化された標準文字列は、コマンドレットを使用して、セキュリティで保護された文字列形式に変換でき `ConvertTo-SecureString` ます。
+**SecureString** コマンドレットは、セキュリティで保護された文字列 (**SecureString**) を暗号化された標準文字列 (**system.string**) に変換します。 セキュリティで保護された文字列とは異なり、暗号化された標準文字列は、ファイルに保存して後で使用することができます。 暗号化された標準文字列は、コマンドレットを使用して、セキュリティで保護された文字列形式に変換でき `ConvertTo-SecureString` ます。
 
 **Key** パラメーターまたは **SecureKey** パラメーターで暗号化キーを指定すると、高度暗号化標準 (AES) という暗号化アルゴリズムが使用されます。 指定するキーの長さは、AES 暗号化アルゴリズムによってサポートされている 128、192、または 256 ビットにする必要があります。 キーを指定しない場合には、Windows データ保護 API (DPAPI) が使用されて標準文字列の表現が暗号化されます。
 
@@ -109,7 +109,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -キー
+### -Key
 
 暗号化キーを、バイト配列として指定します。
 

@@ -6,12 +6,12 @@ ms.date: 07/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-SecureString
-ms.openlocfilehash: 9dcc79755854cc7b9f1928cfbc5d602632eca3cc
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: ba360e133800ae0e569643c12b1254a53aaac6ff
+ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99602610"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107543743"
 ---
 # ConvertFrom-SecureString
 

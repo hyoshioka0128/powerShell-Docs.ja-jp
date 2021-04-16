@@ -7,19 +7,19 @@ ms.date: 03/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: 7da05aed73fdb52132404bc08f0fd39fafbfc4ca
-ms.sourcegitcommit: ca5a89977913bad9efec6bcc23a792d113ec0396
+ms.openlocfilehash: e1680e5ad182051bce217efd6f1eb48d44798146
+ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105631053"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107543839"
 ---
 # ForEach-Object
 
-## 概要
+## 構文
 入力オブジェクトのコレクション内の各項目に対して操作を実行します。
 
-## 構文
+## Syntax
 
 ### ScriptBlockSet (既定)
 
@@ -42,7 +42,7 @@ ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit
 [-UseNewRunspace] [-TimeoutSeconds <int>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## 説明
+## Description
 
 `ForEach-Object`コマンドレットは、入力オブジェクトのコレクション内の各項目に対して操作を実行します。 入力オブジェクトは、コマンドレットにパイプすることも、 **InputObject** パラメーターを使用して指定することもできます。
 
@@ -609,7 +609,7 @@ Accept wildcard characters: False
 
 このパラメーターは、PowerShell 7.1 で導入されました。
 
-```yml
+```yaml
 Type: SwitchParameter
 Parameter Sets: ParallelParameterSet
 Aliases:
@@ -687,7 +687,7 @@ Accept wildcard characters: False
 
 このコマンドレットは、入力によって決定されたオブジェクトを返します。
 
-## Notes
+## メモ
 
 - `ForEach-Object`コマンドレットは **foreach** ステートメントとよく似ていますが、入力を **foreach** ステートメントにパイプすることはできません。 **Foreach** ステートメントの詳細については、「 [about_Foreach](./About/about_Foreach.md)」を参照してください。
 

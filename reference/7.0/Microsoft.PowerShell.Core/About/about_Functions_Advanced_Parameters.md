@@ -2,16 +2,16 @@
 description: 高度な関数にパラメーターを追加する方法について説明します。
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 10/27/2020
+ms.date: 04/14/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
-ms.openlocfilehash: 1668a4e4e2bd2e1491cc2b7d324be5f4062303e2
-ms.sourcegitcommit: 3b1779890f828130a9d73aebf17ebffae511728f
+ms.openlocfilehash: 3843240ac3243a83ca6623be39d694612106e463
+ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "93225259"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107543963"
 ---
 # <a name="about-functions-advanced-parameters"></a>関数の詳細パラメーターの概要
 
@@ -191,7 +191,7 @@ Param(
 
 引数が `Position` 指定されていない場合、パラメーター名またはパラメーター名の別名または省略形は、パラメーターがコマンドで使用されるたびに、パラメーター値の前に配置する必要があります。
 
-既定では、すべての関数のパラメーターは位置指定です。 PowerShell では、パラメーターが関数内で宣言されている順序で、パラメーターに位置番号が割り当てられます。 この機能を無効にするには、[ `PositionalBinding` 属性] の **CmdletBinding** 引数の値をに設定 `$False` します。 引数は、 `Position` 属性の引数の値よりも優先され `PositionalBinding` ます。 **CmdletBinding** 詳細については、「about_Functions_CmdletBindingAttribute」を参照してください `PositionalBinding` 。 [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
+既定では、すべての関数のパラメーターは位置指定です。 PowerShell では、パラメーターが関数内で宣言されている順序で、パラメーターに位置番号が割り当てられます。 この機能を無効にするには、[ `PositionalBinding` 属性] の引数の値をに設定 `$False` します。 引数は、 `Position` 属性の引数の値よりも優先され `PositionalBinding` ます。  詳細については、「about_Functions_CmdletBindingAttribute」を参照してください `PositionalBinding` 。 [](about_Functions_CmdletBindingAttribute.md)
 
 引数の値 `Position` は整数として指定されます。 Position 値 **0** はコマンド内の最初の位置を表し、position 値 **1** はコマンドの2番目の位置を表します。
 
@@ -613,6 +613,9 @@ Param(
 )
 ```
 
+> [!NOTE]
+> `IValidateSetValuesGenerator`クラスは PowerShell 6.0 で導入されました。
+
 ### <a name="validatenotnull-validation-attribute"></a>ValidateNotNull 検証属性
 
 **Validatenotnull** 属性は、パラメーター値をにすることができないことを指定し `$null` ます。 パラメーター値がの場合、PowerShell ではエラーが生成され `$null` ます。
@@ -731,9 +734,9 @@ True
 
 [ステートメント] ボックスの一覧で、ステートメントを使用して、 `If` 関数でパラメーターを使用できる条件を指定します。
 
-コマンドレットを使用して、 `New-Object` パラメーターを表す system.string オブジェクトを作成し、その名前を **System.Management.Automation.RuntimeDefinedParameter** 指定します。
+コマンドレットを使用して、 `New-Object` パラメーターを表す system.string オブジェクトを作成し、その名前を指定します。
 
-コマンドを使用し `New-Object` て、パラメーターの **System.Management.Automation.ParameterAttribute** 属性を表すための system.object オブジェクトを作成できます。たとえば、 **必須** 、 **位置** 、 **valuefrompipeline** 、パラメーターセットなどです。
+コマンドを使用し `New-Object` て、パラメーターの属性を表すための system.object オブジェクトを作成できます。たとえば、**必須**、**位置**、 **valuefrompipeline** 、パラメーターセットなどです。
 
 次の例では、 **Name** と **Path** という名前の標準パラメーターと、 **sjc-dp1** という名前の省略可能な動的パラメーターを使用したサンプル関数を示します。 **Sjc-dp1** パラメーターはパラメーターセットにあり、 `PSet1` の型を持ち `Int32` ます。
 **Sjc-dp1** パラメーターは、 `Get-Sample` **Path** パラメーターの値がで始まっている場合にのみ、関数で使用でき `HKLM:` ます。これは、レジストリドライブで使用されていることを示し `HKEY_LOCAL_MACHINE` ます。
@@ -842,7 +845,7 @@ Param(
 **ArgumentCompleter** スクリプトブロックは `ForEach-Object` 、、 `Where-Object` 、またはその他の適切なメソッドなどのパイプラインを使用して値のロールアウトを解除する必要があります。
 値の配列を返すと、PowerShell は配列全体を **1 つ** のタブ補完値として扱います。
 
-次の例では、 **値** パラメーターにタブ補完機能を追加します。 **Value** パラメーターのみを指定した場合は、 **値** に対して使用可能なすべての値 (引数) が表示されます。 **Type** パラメーターが指定されている場合、 **Value** パラメーターにはその型の有効な値のみが表示されます。
+次の例では、 **値** パラメーターにタブ補完機能を追加します。 **Value** パラメーターのみを指定した場合は、**値** に対して使用可能なすべての値 (引数) が表示されます。 **Type** パラメーターが指定されている場合、 **Value** パラメーターにはその型の有効な値のみが表示されます。
 
 さらに、演算子は、 `-like` ユーザーが次のコマンドを入力して <kbd>タブ</kbd> 補完を使用する場合に、 **Apple** のみが返されるようにします。
 
@@ -883,7 +886,7 @@ function Test-ArgumentCompleter {
 }
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
 
