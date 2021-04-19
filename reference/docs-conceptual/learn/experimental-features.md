@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: PowerShell の試験的機能の使用
 description: 現在使用できる試験的機能とその使用方法を示します。
-ms.openlocfilehash: 828a962ca46e5563874ff1c941c46c8a0624f3d8
-ms.sourcegitcommit: f6cc3752463b254f6ba7fc14c1e4532ad33f06bb
+ms.openlocfilehash: 76646a05fbdba27358fa3c8dcbeb90445bb7e675
+ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107216896"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107543974"
 ---
 # <a name="using-experimental-features-in-powershell"></a>PowerShell の試験的機能の使用
 
@@ -138,6 +138,9 @@ UnderlineOff     Property   string UnderlineOff {get;}
 - `$PSStyle.Progress.MaxWidth` - ビューの最大幅を設定します。 `0` に設定するとコンソールの幅になります。
   既定値は `120` です
 - `$PSStyle.Progress.View` - 値 `Minimal` と `Classic` を持つ列挙型。 `Classic` は変更なしの既存の表示です。 `Minimal` は単一行の最小表示です。 `Minimal` が既定値です。
+
+> [!NOTE]
+> ホストで仮想ターミナルがサポートされていない場合、`$PSStyle.Progress.View` は自動的に `Classic` に設定されます。
 
 次の例では、表示スタイルを最小の進行状況バーに更新します。
 
