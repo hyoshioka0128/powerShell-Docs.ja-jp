@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: PowerShell の試験的機能の使用
 description: 現在使用できる試験的機能とその使用方法を示します。
-ms.openlocfilehash: 76646a05fbdba27358fa3c8dcbeb90445bb7e675
-ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
+ms.openlocfilehash: ffd1eeed22d304d6fc78694f9493c1c6753c5ba1
+ms.sourcegitcommit: 6b027eda9aac73c22fe97679271cf533d6388a14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107543974"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107583855"
 ---
 # <a name="using-experimental-features-in-powershell"></a>PowerShell の試験的機能の使用
 
@@ -129,6 +129,16 @@ UnderlineOff     Property   string UnderlineOff {get;}
 - `Ansi` パラメーターが true の場合、`string ToString(bool Ansi)` メソッドは生の ANSI 埋め込み文字列を返します。 それ以外の場合は、ANSI エスケープ シーケンスが削除されたプレーンテキスト バージョンが返されます。
 
 `FormatHyperlink(string text, uri link)` は、ハイパーリンクを装飾するために使用される ANSI エスケープ シーケンスを含む文字列を返します。 [Windows ターミナル](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)などの一部のターミナル ホストは、このマークアップをサポートしていて、これにより、レンダリングされたテキストがターミナルでクリック可能になります。
+
+ANSI エスケープ シーケンスのサポートは、**TERM** または **NO_COLOR** 環境変数を使用して無効にすることができます。
+
+`$env:TERM` の次の値は、動作を次のように変更します。
+
+- `dumb` - set `$Host.UI.SupportsVirtualTerminal = $false`
+- `xterm-mono` - set `$PSStyle.OutputRendering = PlainText`
+- `xtermm` - set `$PSStyle.OutputRendering = PlainText`
+
+`$env:NO_COLOR` が存在する場合は、`$PSStyle.OutputRendering = PlainText` を設定します。 詳細については、「[https://no-color.org/](https://no-color.org/)」を参照してください。
 
 ## <a name="psansiprogress"></a>PSAnsiProgress
 
