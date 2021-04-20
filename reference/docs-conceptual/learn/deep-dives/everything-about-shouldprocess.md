@@ -3,12 +3,12 @@ title: ShouldProcess について知りたかったことのすべて
 description: ShouldProcess は、見過ごされることがよくある重要な機能です。 WhatIf と Confirm パラメーターを使用すると、関数に簡単に追加できます。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 4f11ad84f5c89423fe56cfe438ed3cb1587ce59e
-ms.sourcegitcommit: be1df0bf757d734975a9aa021727608a396059ee
+ms.openlocfilehash: 8d0d7dfe15f1ced2343212cddea7ae84a11eed62
+ms.sourcegitcommit: 2ad76cd528338f8c2cc10a84c5c56c0e25b93436
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96616048"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729974"
 ---
 # <a name="everything-you-wanted-to-know-about-shouldprocess"></a>ShouldProcess について知りたかったことのすべて
 
@@ -29,6 +29,14 @@ PowerShell 関数には、ユーザーとの対話方法を大幅に向上させ
 コマンドで `-WhatIf` パラメーターがサポートされている場合、コマンドがどのように実行されるかを、実際の変更を行わずに確認できます。 特に破壊的な操作を行う前には、この方法でコマンドの影響をテストすることをお勧めします。
 
 ```powershell
+PS C:\temp> Get-ChildItem
+    Directory: C:\temp
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         4/19/2021   8:59 AM              0 importantfile.txt
+-a----         4/19/2021   8:58 AM              0 myfile1.txt
+-a----         4/19/2021   8:59 AM              0 myfile2.txt
+
 PS C:\temp> Remove-Item -Path .\myfile1.txt -WhatIf
 What if: Performing the operation "Remove File" on target "C:\Temp\myfile1.txt".
 ```

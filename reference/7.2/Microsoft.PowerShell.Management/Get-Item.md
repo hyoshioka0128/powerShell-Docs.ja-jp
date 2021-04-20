@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/18/2020
+ms.date: 04/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 67d9f351b8ef4936dcb4e9cff6583da0f464bc12
-ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
+ms.openlocfilehash: 8949f4fed84272b8748f11e312d01134ad630489
+ms.sourcegitcommit: 2ad76cd528338f8c2cc10a84c5c56c0e25b93436
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "99601806"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729851"
 ---
 # Get-Item
 
@@ -84,7 +84,7 @@ d----         7/26/2006   9:26 AM            Recs
 この例では、ドライブの現在のディレクトリを取得し `C:` ます。 ここで取得するオブジェクトは、ディレクトリのみを表します。その内容は表しません。
 
 ```powershell
-Get-Item C:\
+Get-Item C:
 ```
 
 ### 例 4: 指定したドライブの項目を取得する
@@ -347,4 +347,3 @@ Accept wildcard characters: True
 [Get-PSProvider](Get-PSProvider.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

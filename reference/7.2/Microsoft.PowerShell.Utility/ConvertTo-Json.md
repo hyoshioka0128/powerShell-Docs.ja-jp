@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
-ms.openlocfilehash: d598fe2b1aefdae046b0f1a0893bf4fc407fa7a7
-ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
+ms.openlocfilehash: 863f8196efc84e46f6b50db270189b1dbc610230
+ms.sourcegitcommit: 2ad76cd528338f8c2cc10a84c5c56c0e25b93436
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "99600594"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729868"
 ---
 # ConvertTo-Json
 
@@ -34,7 +34,7 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
 
 多くの Web サイトが、サーバーと Web ベースのアプリ間の通信のために、XML ではなく JSON を使用してデータをシリアル化しています。
 
-PowerShell 7.2 では、 `ConvertTo-Json` 入力オブジェクトの深さがコマンドに指定された深さを超えた場合に、によって警告が出力されます。 これにより、オブジェクトを変換するときに不要なデータ損失を防ぐことができます。
+PowerShell 7.1 では、 `ConvertTo-Json` 入力オブジェクトの深さがコマンドに指定された深さを超えた場合に、によって警告が出力されます。 これにより、オブジェクトを変換するときに不要なデータ損失を防ぐことができます。
 
 このコマンドレットは、Windows PowerShell 3.0 で導入されました。
 
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 
 ### -深さ
 
-JSON 表現に含める子オブジェクトのレベルを指定します。 既定値は 2 です。 PowerShell 7.2 では、 `ConvertTo-Json` 入力オブジェクトのレベル数がこの数値を超えた場合に、によって警告が出力されます。
+JSON 表現に含める子オブジェクトのレベルを指定します。 値には、からまでの任意の数を指定でき `0` `[Int]::MaxValue` ます。 既定値は `2` です。 `ConvertTo-Json` 入力オブジェクトのレベル数がこの数値を超えた場合に警告を生成します。
 
 ```yaml
 Type: System.Int32

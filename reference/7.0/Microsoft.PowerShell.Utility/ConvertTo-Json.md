@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
-ms.openlocfilehash: bd68ee4175a5e5a3e3e544e745113255a6f7a865
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: f9c441249c2c096158dd2ffc4dc2bd65d6ecff6f
+ms.sourcegitcommit: 2ad76cd528338f8c2cc10a84c5c56c0e25b93436
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210096"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729897"
 ---
 # ConvertTo-Json
 
@@ -200,7 +199,7 @@ Accept wildcard characters: False
 
 ### -深さ
 
-JSON 表現に含める子オブジェクトのレベルを指定します。 既定値は 2 です。
+JSON 表現に含める子オブジェクトのレベルを指定します。 値には、からまでの任意の数を指定でき `1` `[Int]::MaxValue` ます。 既定値は `2` です。 `ConvertTo-Json` 入力オブジェクトのレベル数がこの数値を超えた場合に警告を生成します。
 
 ```yaml
 Type: System.Int32

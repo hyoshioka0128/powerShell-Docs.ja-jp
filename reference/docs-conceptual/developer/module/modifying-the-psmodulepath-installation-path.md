@@ -1,14 +1,14 @@
 ---
-ms.date: 03/12/2021
+ms.date: 04/19/2021
 ms.topic: reference
 title: PSModulePath インストール パスを変更する
 description: PSModulePath インストール パスを変更する
-ms.openlocfilehash: 1bea1e8ed20f55352cc9b4270e95cf7f0f7e2faa
-ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
+ms.openlocfilehash: 9ea72d9d9188876e5d9503f50a00332410e1ef90
+ms.sourcegitcommit: 2ad76cd528338f8c2cc10a84c5c56c0e25b93436
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103412894"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729745"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>PSModulePath インストール パスを変更する
 
@@ -39,20 +39,28 @@ PowerShell を起動すると、 `PSModulePath` はシステム環境変数と�
 
 - 永続変数をレジストリに追加するには、 `PSModulePath` [ **システムのプロパティ** ] ダイアログボックスの [環境変数エディター] を使用して、という名前の新しいユーザー環境変数を作成します。
 
-- スクリプトを使用して永続変数を追加する[には、](/dotnet/api/system.environment) [SetEnvironmentVariable](/dotnet/api/system.environment.setenvironmentvariable)クラスの .net メソッドを使用します。 たとえば、次のスクリプトは、 `C:\Program Files\Fabrikam\Module` コンピューターの環境変数の値にパスを追加し `PSModulePath` ます。 ユーザー環境変数にパスを追加するには、 `PSModulePath` ターゲットを "user" に設定します。
+- スクリプトを使用して永続変数を追加するには、 [SetEnvironmentVariable](/dotnet/api/system.environment.setenvironmentvariable) [クラスの](/dotnet/api/system.environment) .net メソッドを使用します。 たとえば、次のスクリプトは、 `C:\Program Files\Fabrikam\Module` コンピューターの環境変数の値にパスを追加し `PSModulePath` ます。 ユーザー環境変数にパスを追加するには、 `PSModulePath` ターゲットを "user" に設定します。
 
   ```powershell
   $CurrentValue = [Environment]::GetEnvironmentVariable("PSModulePath", "Machine")
   [Environment]::SetEnvironmentVariable("PSModulePath", $CurrentValue + [System.IO.Path]::PathSeparator + "C:\Program Files\Fabrikam\Modules", "Machine")
-
   ```
 
 構成ファイルで値を設定することもでき `PSModulePath` `powershell.config.json` ます。 詳細については、「 [about_PowerShell_Config](/powershell/module/microsoft.powershell.core/about/about_powershell_config#psmodulepath)」を参照してください。
 
 ## <a name="to-remove-locations-from-the-psmodulepath"></a>PSModulePath から場所を削除するには
 
-同様の方法を使用して、変数からパスを削除できます。たとえば、次のようにします。 `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"`
-は、現在のセッションから **C:\ モジュールパス** パスを削除します。
+同様の方法を使用して、変数からパスを削除できます。 次の例では、 `C:\ModulePath` 現在のセッションからパスを削除します。
+
+```powershell
+$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"`
+```
+
+すべての PowerShell セッションでこの変更を永続化するには、前に説明したように .NET メソッドを使用します。
+
+```powershell
+[Environment]::SetEnvironmentVariable("PSModulePath", $env:PSModulePath, "Machine")
+```
 
 ## <a name="see-also"></a>参照
 
