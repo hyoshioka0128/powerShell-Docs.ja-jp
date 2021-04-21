@@ -2,12 +2,12 @@
 title: PowerShell 7.0 の新機能
 description: PowerShell 7.0 でリリースされた新機能と変更
 ms.date: 03/04/2020
-ms.openlocfilehash: 3a5a1aaa0bd9dd1e0df7d6f5e6021678ed21dce4
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.openlocfilehash: c858cf46d264ec1c29625eb08e30f71336f4e736
+ms.sourcegitcommit: 2ad76cd528338f8c2cc10a84c5c56c0e25b93436
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93355274"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729955"
 ---
 # <a name="whats-new-in-powershell-70"></a>PowerShell 7.0 の新機能
 
@@ -124,13 +124,13 @@ PowerShell の三項演算子は、C# 三項演算子構文に基づく類似の
 $message = (Test-Path $path) ? "Path exists" : "Path not found"
 ```
 
-この例では、パスが存在すると、 **Path exists** が表示されます。 パスが存在しない場合は、 **Path not found** が表示されます。
+この例では、パスが存在すると、**Path exists** が表示されます。 パスが存在しない場合は、**Path not found** が表示されます。
 
 詳細については、「[About If](/powershell/module/microsoft.powershell.core/about/about_if)」を参照してください。
 
 ## <a name="pipeline-chain-operators"></a>パイプライン チェーン演算子
 
-PowerShell 7 では、`&&` 演算子と `||` 演算子が実装され、条件に応じてパイプラインがチェーンされます。 これらの演算子は、PowerShell では "パイプライン チェーン演算子" として知られ、 **Bash** 、 **Zsh** などのシェルにある AND リストと OR リスト、および Windows コマンド シェル ( **cmd.exe** ) の条件付き処理シンボルと似ています。
+PowerShell 7 では、`&&` 演算子と `||` 演算子が実装され、条件に応じてパイプラインがチェーンされます。 これらの演算子は、PowerShell では "パイプライン チェーン演算子" として知られ、**Bash**、**Zsh** などのシェルにある AND リストと OR リスト、および Windows コマンド シェル (**cmd.exe**) の条件付き処理シンボルと似ています。
 
 `&&` 演算子では、左側のパイプラインが成功した場合に、右側のパイプラインが実行されます。 反対に、`||` 演算子では、左側のパイプラインが失敗した場合に、右側のパイプラインが実行されます。
 
@@ -305,7 +305,7 @@ $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 $Error | Get-Error
 ```
 
-`Get-Error` コマンドレットでは、 **最新** のパラメーターがサポートされているため、現在のセッションから表示するエラーの数を指定できます。
+`Get-Error` コマンドレットでは、**最新** のパラメーターがサポートされているため、現在のセッションから表示するエラーの数を指定できます。
 
 ```powershell
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
@@ -357,7 +357,7 @@ $Env:POWERSHELL_UPDATECHECK = 'Default'
 
 このコマンドレットは、構成ドキュメントを作成せずに、DSC リソースを直接呼び出します。 このコマンドレットを使用すると、構成管理製品で DSC リソースを使って Windows または Linux を管理できます。 DSC エンジンの実行中、デバッグが有効になっている場合は、このコマンドレットでリソースのデバッグを有効にすることもできます。
 
-このコマンドは、 **WindowsProcess** という名前のリソースの **Set** メソッドを呼び出し、指定された Windows プロセスを開始するために必須の **Path** プロパティと **Arguments** プロパティを指定します。
+このコマンドは、**WindowsProcess** という名前のリソースの **Set** メソッドを呼び出し、指定された Windows プロセスを開始するために必須の **Path** プロパティと **Arguments** プロパティを指定します。
 
 ```powershell
 Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
