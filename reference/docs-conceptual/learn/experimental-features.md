@@ -1,13 +1,13 @@
 ---
-ms.date: 12/14/2020
+ms.date: 04/19/2021
 title: PowerShell の試験的機能の使用
 description: 現在使用できる試験的機能とその使用方法を示します。
-ms.openlocfilehash: ffd1eeed22d304d6fc78694f9493c1c6753c5ba1
-ms.sourcegitcommit: 6b027eda9aac73c22fe97679271cf533d6388a14
+ms.openlocfilehash: a91dd633f2f61d53a78ec02df0515dd72f282f04
+ms.sourcegitcommit: 2ad76cd528338f8c2cc10a84c5c56c0e25b93436
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2021
-ms.locfileid: "107583855"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729890"
 ---
 # <a name="using-experimental-features-in-powershell"></a>PowerShell の試験的機能の使用
 
@@ -40,6 +40,7 @@ PowerShell の試験的機能のサポートは、試験的機能を PowerShell 
 | PSSubsystemPluginModel                                     |         |         | &check; | &check; |
 | PSAnsiProgress                                             |         |         |         | &check; |
 | PSAnsiRendering                                            |         |         |         | &check; |
+| PSNativeCommandArgumentPassing                             |         |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -332,3 +333,82 @@ drwxr-xr-x jimtru    staff         11/8/2019 10:37         896 tools
 現時点では、**CommandPredictor** サブシステムのみがサポートされています。 このサブシステムは、カスタム予測プラグインを提供するために、PSReadLine モジュールと共に使用されます。 今後、**Job**、**CommandCompleter**、**Remoting** などのコンポーネントは、`System.Management.Automation.dll` 外のサブシステム アセンブリに分割される可能性があります。
 
 この試験的機能には、新しいコマンドレット [Get-PSSubsystem](xref:Microsoft.PowerShell.Core.Get-PSSubsystem) が含まれています。 このコマンドレットは、機能が有効になっている場合にのみ使用できます。 このコマンドレットを使用すると、システムで使用可能なサブシステムに関する情報が返されます。
+
+## <a name="psnativecommandargumentpassing"></a>PSNativeCommandArgumentPassing
+
+この実験的な機能が有効になっていると、PowerShell は、ネイティブの実行可能ファイルを呼び出すときに、文字列を再構築する現在の機構ではなく、`StartProcessInfo` オブジェクトの `ArgumentList` プロパティを使用します。
+
+この機能によって、実行時に動作を選択できる新しい自動変数 `$PSNativeCommandArgumentPassing` が追加されます。 有効な値は、`Legacy` および `Standard` です。 `Legacy` は過去の動作です。 実験的な機能が有効になっている場合の既定値は、新しい `Standard` 動作です。
+
+> [!CAUTION]
+> 新しい動作は、現在の動作からの **破壊的変更** です。 これにより、ネイティブ アプリケーションを呼び出す際のさまざまな問題に対処するスクリプトと自動化が中断される可能性があります。 歴史的に、引用符をエスケープする必要があり、ネイティブ アプリケーションに空の引数を指定することはできません。
+
+この変更によって利用可能になった新しい動作は次のとおりです。
+
+- リテラルまたは展開可能な文字列に引用符が埋め込まれ、その引用符が保持されるようになりました。
+
+  ```powershell
+  PS > $a = 'a" "b'
+  PS > $PSNativeCommandArgumentPassing = "Legacy"
+  PS > testexe -echoargs $a 'a" "b' a" "b
+  Arg 0 is <a b>
+  Arg 1 is <a b>
+  Arg 2 is <a b>
+  PS > $PSNativeCommandArgumentPassing = "Standard"
+  PS > testexe -echoargs $a 'a" "b' a" "b
+  Arg 0 is <a" "b>
+  Arg 1 is <a" "b>
+  Arg 2 is <a b>
+  ```
+
+- 空の文字列が引数として保持されるようになりました。
+
+  ```powershell
+  PS>  $PSNativeCommandArgumentPassing = "Legacy"
+  PS> testexe -echoargs '' a b ''
+  Arg 0 is <a>
+  Arg 1 is <b>
+  PS> $PSNativeCommandArgumentPassing = "Standard"
+  PS> testexe -echoargs '' a b ''
+  Arg 0 is <>
+  Arg 1 is <a>
+  Arg 2 is <b>
+  Arg 3 is <>
+  ```
+
+新しい動作では、次のような呼び出しは変更されません。
+
+```powershell
+PS> $PSNativeCommandArgumentPassing = "Legacy"
+PS> testexe -echoargs -k com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect
+Arg 0 is <-k>
+Arg 1 is <com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect>
+PS> $PSNativeCommandArgumentPassing = "Standard"
+PS> testexe -echoargs -k com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect
+Arg 0 is <-k>
+Arg 1 is <com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect>
+```
+
+また、パラメーター トレースが提供され、`Trace-Command` によりデバッグに役立つ情報が提供されるようになりました。
+
+```powershell
+PS> $PSNativeCommandArgumentPassing = "Legacy"
+PS> trace-command -PSHOST -Name ParameterBinding { testexe -echoargs $a 'a" "b' a" "b }
+DEBUG: 2021-02-01 17:19:53.6438 ParameterBinding Information: 0 : BIND NAMED native application line args [/Users/james/src/github/forks/jameswtruher/PowerShell-1/test/tools/TestExe/bin/testexe]
+DEBUG: 2021-02-01 17:19:53.6440 ParameterBinding Information: 0 :     BIND argument [-echoargs a" "b a" "b "a b"]
+DEBUG: 2021-02-01 17:19:53.6522 ParameterBinding Information: 0 : CALLING BeginProcessing
+Arg 0 is <a b>
+Arg 1 is <a b>
+Arg 2 is <a b>
+PS> $PSNativeCommandArgumentPassing = "Standard"
+PS> trace-command -PSHOST -Name ParameterBinding { testexe -echoargs $a 'a" "b' a" "b }
+DEBUG: 2021-02-01 17:20:01.9829 ParameterBinding Information: 0 : BIND NAMED native application line args [/Users/james/src/github/forks/jameswtruher/PowerShell-1/test/tools/TestExe/bin/testexe]
+DEBUG: 2021-02-01 17:20:01.9829 ParameterBinding Information: 0 :     BIND cmd line arg [-echoargs] to position [0]
+DEBUG: 2021-02-01 17:20:01.9830 ParameterBinding Information: 0 :     BIND cmd line arg [a" "b] to position [1]
+DEBUG: 2021-02-01 17:20:01.9830 ParameterBinding Information: 0 :     BIND cmd line arg [a" "b] to position [2]
+DEBUG: 2021-02-01 17:20:01.9831 ParameterBinding Information: 0 :     BIND cmd line arg [a b] to position [3]
+DEBUG: 2021-02-01 17:20:01.9908 ParameterBinding Information: 0 : CALLING BeginProcessing
+Arg 0 is <a" "b>
+Arg 1 is <a" "b>
+Arg 2 is <a b>
+```
