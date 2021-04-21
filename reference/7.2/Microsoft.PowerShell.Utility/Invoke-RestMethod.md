@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/05/2021
+ms.date: 04/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
-ms.openlocfilehash: 2dde1afca4241519f8ccd317d32660f789faf802
-ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
+ms.openlocfilehash: 4b8f28113352df5fa44f3bcd2b7869c46986015a
+ms.sourcegitcommit: b10731301412afd4111743b85da95e8c25583533
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106555606"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107756224"
 ---
 # Invoke-RestMethod
 
 ## 構文
 RESTful Web サービスに HTTP または HTTPS 要求を送信します。
 
-## Syntax
+## 構文
 
 ### StandardMethod (既定値)
 
@@ -86,11 +86,14 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
-## [説明]
+## 説明
 
 コマンドレットは、高度 `Invoke-RestMethod` に構造化されたデータを返す HTTP 要求と HTTPS 要求を、表現された状態転送 (REST) web サービスに送信します。
 
-PowerShell は、データ型に基づいて応答を書式設定します。 RSS フィードまたは ATOM フィードの場合、PowerShell は Item または Entry XML ノードを返します。 JavaScript Object Notation (JSON) または XML の場合、PowerShell はコンテンツをオブジェクトに変換または逆シリアル化します。
+PowerShell は、データ型に基づいて応答を書式設定します。 RSS フィードまたは ATOM フィードの場合、PowerShell は Item または Entry XML ノードを返します。 JavaScript Object Notation (JSON) または XML の場合、PowerShell はコンテンツをオブジェクトに変換または逆シリアル化し `[PSCustomObject]` ます。
+
+> [!NOTE]
+> REST エンドポイントが複数のオブジェクトを返すと、オブジェクトは配列として受信されます。 からの出力を別の `Invoke-RestMethod` コマンドにパイプすると、1つのオブジェクトとして送信され `[Object[]]` ます。 この配列の内容は、パイプラインの次のコマンドに対して列挙されません。
 
 このコマンドレットは、Windows PowerShell 3.0 で導入されました。
 
@@ -188,6 +191,30 @@ $headers = @{
     'token' = 'TokenValue'
 }
 Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
+```
+
+### 例 6: パイプラインで返された項目を列挙する
+
+GitHub は、複数のオブジェクトを配列として返します。 出力を別のコマンドにパイプすると、1つのオブジェクトとして送信され `[Object[]]` ます。
+
+オブジェクトをパイプラインに列挙するには、をパイプ処理して、 `Write-Output` コマンドレットをかっこで囲みます。 次の例では、GitHub によって返されるオブジェクトの数をカウントします。 は、パイプラインに列挙されたオブジェクトの数をカウントします。
+
+```powershell
+$uri = 'https://api.github.com/repos/microsoftdocs/powershell-docs/issues'
+$x = 0
+Invoke-RestMethod -Uri $uri | ForEach-Object { $x++ }
+$x
+1
+
+$x = 0
+(Invoke-RestMethod -Uri $uri) | ForEach-Object { $x++ }
+$x
+30
+
+$x = 0
+Invoke-RestMethod -Uri $uri | Write-Output | ForEach-Object { $x++ }
+$x
+30
 ```
 
 ## パラメーター
@@ -1076,7 +1103,7 @@ Accept wildcard characters: False
 
 要求が JSON 文字列を返す場合、は `Invoke-RestMethod` 文字列を表す **PSObject** を返します。
 
-## 注
+## Notes
 
 一部の機能は、一部のプラットフォームでは使用できない場合があります。
 

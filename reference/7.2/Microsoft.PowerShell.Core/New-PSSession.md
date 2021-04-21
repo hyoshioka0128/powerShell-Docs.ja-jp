@@ -6,19 +6,19 @@ ms.date: 12/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
-ms.openlocfilehash: 4b40d765002791f45f093c7912b8f9ba58248da9
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 1af271c164b4478bf57132046affb4276e541108
+ms.sourcegitcommit: b10731301412afd4111743b85da95e8c25583533
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99599320"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107756309"
 ---
 # New-PSSession
 
-## 概要
+## 構文
 ローカル コンピューターまたはリモート コンピューターへの永続的な接続を作成します。
 
-## SYNTAX
+## 構文
 
 ### ComputerName (既定値)
 
@@ -52,7 +52,7 @@ New-PSSession -Credential <PSCredential> [-Name <String[]>] [-ConfigurationName 
  -VMName <String[]> [-ThrottleLimit <Int32>] [<CommonParameters>]
 ```
 
-### セッション
+### Session
 
 ```
 New-PSSession [[-Session] <PSSession[]>] [-Name <String[]>] [-EnableNetworkAccess]
@@ -75,8 +75,8 @@ New-PSSession [-Name <String[]>] [-UseWindowsPowerShell] [<CommonParameters>]
 ### SSHHost
 
 ```
-New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserName <String>]
- [-KeyFilePath <String>] [-SSHTransport] [-Subsystem <String>] [<CommonParameters>]
+New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserName <String>] [-KeyFilePath <String>]
+[-SSHTransport] [-Subsystem <String>] [-ConnectingTimeout <int>] [<CommonParameters>]
 ```
 
 ### SSHHostHashParam
@@ -85,7 +85,7 @@ New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserNa
 New-PSSession [-Name <String[]>] -SSHConnection <Hashtable[]> [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
 コマンドレットでは、 `New-PSSession` ローカルコンピューターまたはリモートコンピューターに PowerShell セッション (**PSSession**) を作成します。 **PSSession** を作成すると、PowerShell によって、リモートコンピューターへの永続的な接続が確立されます。
 
@@ -247,7 +247,7 @@ New-PSSession -SSHConnection $sshConnections
 
 この例では、Secure Shell (SSH) と **SSHConnection** パラメーターセットを使用して複数のセッションを作成する方法を示します。 **SSHConnection** パラメーターは、各セッションの接続情報を含むハッシュテーブルの配列を受け取ります。 この例では、ターゲットのリモートコンピューターで、キーベースのユーザー認証をサポートするように SSH が構成されている必要があることに注意してください。
 
-## PARAMETERS
+## パラメーター
 
 ### -AllowRedirection
 
@@ -387,6 +387,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -ConnectingTimeout
+
+最初の SSH 接続が完了するまでの許容時間をミリ秒単位で指定します。 指定した時間内に接続が完了しなかった場合は、エラーが返されます。
+
+このパラメーターは、PowerShell 7.2 で導入されました。
+
+```yaml
+Type: System.Int32
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: unlimited
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ConnectionUri
 
 セッションの接続エンドポイントを定義する URI を指定します。 URI は完全修飾名にする必要があります。 この文字列の形式は次のとおりです。
@@ -466,7 +484,7 @@ Accept wildcard characters: False
 
 また、 **認証** パラメーターの CredSSP 値を使用して、ループバックセッションでリモートアクセスを有効にすることもできます。これにより、セッションの資格情報が他のコンピューターに委任されます。
 
-悪意のあるアクセスからコンピューターを保護するために、 **EnableNetworkAccess** パラメーターを使用して作成された、対話型トークンを持つ切断されたループバックセッションは、セッションが作成されたコンピューターからのみ再接続することができます。 CredSSP 認証を使用するセッションが切断された場合には、他のコンピューターから再接続することができます。 詳細については、「`Disconnect-PSSession`」を参照してください。
+悪意のあるアクセスからコンピューターを保護するために、 **EnableNetworkAccess** パラメーターを使用して作成された、対話型トークンを持つ切断されたループバックセッションは、セッションが作成されたコンピューターからのみ再接続することができます。 CredSSP 認証を使用するセッションが切断された場合には、他のコンピューターから再接続することができます。 詳細については、 `Disconnect-PSSession` を参照してください。
 
 このパラメーターは、PowerShell 3.0 で導入されました。
 
@@ -812,7 +830,7 @@ Accept wildcard characters: False
 
 ### システム管理. 実行空間
 
-## 注
+## Notes
 
 - このコマンドレットは、PowerShell リモート処理インフラストラクチャを使用します。 このコマンドレットを使用するには、ローカルコンピューターとリモートコンピューターを PowerShell リモート処理用に構成する必要があります。 詳細については、「[about_Remote_Requirements](About/about_Remote_Requirements.md)」を参照してください。
 - ローカルコンピューター上に **PSSession** を作成するには、[管理者として実行] オプションを使用して PowerShell を起動します。
@@ -837,4 +855,3 @@ Accept wildcard characters: False
 [Receive-PSSession](Receive-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
-

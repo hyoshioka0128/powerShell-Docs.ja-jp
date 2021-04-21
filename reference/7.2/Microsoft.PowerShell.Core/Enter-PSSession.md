@@ -6,19 +6,19 @@ ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
-ms.openlocfilehash: 9c08e78d840815a396b55eb26bf8e21d73cb81aa
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 0fac823666277621c3bed0f961ae2ce22d8d8408
+ms.sourcegitcommit: b10731301412afd4111743b85da95e8c25583533
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99601005"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107756241"
 ---
 # Enter-PSSession
 
-## 概要
+## 構文
 リモート コンピューターとの対話型セッションを開始します。
 
-## SYNTAX
+## 構文
 
 ### ComputerName (既定値)
 
@@ -33,10 +33,10 @@ Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [[-Credential] <
 
 ```
 Enter-PSSession [-HostName] <String> [-Port <Int32>] [-UserName <String>] [-KeyFilePath <String>]
- [-SSHTransport] [<CommonParameters>]
+ [-SSHTransport] [-ConnectingTimeout <int>] [<CommonParameters>]
 ```
 
-### セッション
+### Session
 
 ```
 Enter-PSSession [[-Session] <PSSession>] [<CommonParameters>]
@@ -88,7 +88,7 @@ Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdm
  [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
 `Enter-PSSession`コマンドレットは、1台のリモートコンピューターで対話型セッションを開始します。
 セッション中、入力したコマンドはリモートコンピューター上で直接入力した場合と同じように、リモートコンピューター上で実行されます。 一度に 1 つのみの対話型セッションを確立できます。
@@ -184,7 +184,7 @@ PS> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\user
 
 この例では、SSH を使用して対話型セッションを開始する方法を示します。 **Port** パラメーターを使用して、使用するポートを指定し、 **keyfilepath** パラメーターを使用して、リモートコンピューター上でユーザーを認証するために使用する RSA キーを指定します。
 
-## PARAMETERS
+## パラメーター
 
 ### -AllowRedirection
 
@@ -322,6 +322,24 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ConnectingTimeout
+
+最初の SSH 接続が完了するまでの許容時間をミリ秒単位で指定します。 指定した時間内に接続が完了しなかった場合は、エラーが返されます。
+
+このパラメーターは、PowerShell 7.2 で導入されました。
+
+```yaml
+Type: System.Int32
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: unlimited
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -737,7 +755,7 @@ Accept wildcard characters: False
 
 このコマンドレットは出力を返しません。
 
-## 注
+## Notes
 
 リモート コンピューターに接続するには、リモート コンピューターの Administrators グループのメンバーであることが必要です。 ローカルコンピューターで対話型セッションを開始するには、[ **管理者として実行** ] オプションを使用して PowerShell を起動する必要があります。
 

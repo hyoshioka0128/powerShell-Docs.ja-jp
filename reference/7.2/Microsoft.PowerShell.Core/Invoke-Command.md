@@ -6,19 +6,19 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
-ms.openlocfilehash: d8f0a8a56792a39371a307166788f047fec99a9a
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: bd34c20843720b5900e3a6d594939934624d1b13
+ms.sourcegitcommit: b10731301412afd4111743b85da95e8c25583533
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99599528"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107756326"
 ---
 # Invoke-Command
 
-## 概要
+## 構文
 ローカル コンピューターおよびリモート コンピューター上でコマンドを実行します。
 
-## SYNTAX
+## 構文
 
 ### InProcess (既定)
 
@@ -35,7 +35,7 @@ Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-Hi
  [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-### セッション
+### Session
 
 ```
 Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
@@ -125,7 +125,7 @@ Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-Thrott
 Invoke-Command [-Port <Int32>] [-AsJob] [-HideComputerName] [-JobName <String>]
  [-ScriptBlock] <ScriptBlock> -HostName <String[]> [-UserName <String>] [-KeyFilePath <String>]
  [-SSHTransport] [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
- [-Subsystem <String>] [<CommonParameters>]
+ [-Subsystem <String>] [-ConnectingTimeout <int>] [<CommonParameters>]
 ```
 
 ### ContainerId
@@ -167,7 +167,7 @@ Invoke-Command [-AsJob] [-HideComputerName] -FilePath <String> -SSHConnection <H
  [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-## Description
+## 説明
 
 コマンド `Invoke-Command` レットは、ローカルコンピューターまたはリモートコンピューターでコマンドを実行し、エラーを含め、コマンドからのすべての出力を返します。 1つの `Invoke-Command` コマンドを使用すると、複数のコンピューターでコマンドを実行できます。
 
@@ -571,7 +571,7 @@ $sshConnections =
 $results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
 ```
 
-## PARAMETERS
+## パラメーター
 
 ### -AllowRedirection
 
@@ -762,6 +762,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -ConnectingTimeout
+
+最初の SSH 接続が完了するまでの許容時間をミリ秒単位で指定します。 指定した時間内に接続が完了しなかった場合は、エラーが返されます。
+
+このパラメーターは、PowerShell 7.2 で導入されました。
+
+```yaml
+Type: System.Int32
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: unlimited
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ConnectionUri
 
 セッションの接続エンドポイントを定義する Uniform Resource Identifier (URI) を指定します。
@@ -844,7 +862,7 @@ Accept wildcard characters: False
 
 **認証** パラメーターの **CredSSP** 値を使用して、ループバックセッションでリモートアクセスを許可できます。これにより、セッションの資格情報が他のコンピューターに委任されます。
 
-悪意のあるアクセスからコンピューターを保護するために、 **EnableNetworkAccess** を使用して作成された対話型トークンを持つ切断されたループバックセッションは、セッションが作成されたコンピューターからのみ再接続することができます。 CredSSP 認証を使用するセッションが切断された場合には、他のコンピューターから再接続することができます。 詳細については、「`Disconnect-PSSession`」を参照してください。
+悪意のあるアクセスからコンピューターを保護するために、 **EnableNetworkAccess** を使用して作成された対話型トークンを持つ切断されたループバックセッションは、セッションが作成されたコンピューターからのみ再接続することができます。 CredSSP 認証を使用するセッションが切断された場合には、他のコンピューターから再接続することができます。 詳細については、 `Disconnect-PSSession` を参照してください。
 
 このパラメーターは、PowerShell 3.0 で導入されました。
 
@@ -1335,7 +1353,7 @@ Accept wildcard characters: False
 
 **AsJob** パラメーターを使用した場合、このコマンドレットはジョブオブジェクトを返します。 **Indisconnectedsession** パラメーターを指定すると、は `Invoke-Command` **PSSession** オブジェクトを返します。 それ以外の場合は、呼び出されたコマンドの出力を返します。これは **ScriptBlock** パラメーターの値です。
 
-## 注
+## Notes
 
 Windows Vista 以降のバージョンの Windows オペレーティングシステムでは、の **ComputerName** パラメーターを使用して `Invoke-Command` ローカルコンピューターでコマンドを実行するには、[ **管理者として実行** ] オプションを使用して PowerShell を実行する必要があります。
 
@@ -1381,4 +1399,3 @@ Windows Vista 以降のバージョンの Windows オペレーティングシス
 [Remove-PSSession](Remove-PSSession.md)
 
 [WSMan プロバイダー](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
-
