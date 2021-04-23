@@ -2,16 +2,16 @@
 description: PowerShell でサポートされている演算子について説明します。
 keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 11/09/2020
+ms.date: 04/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: b783d2cb76fe8a0a66ec77b67ef915f3b78def04
-ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
+ms.openlocfilehash: fecf8808bb1b92a61359d327b5f87d045f913c09
+ms.sourcegitcommit: 96efcc9613740449940b371b34c3baafb675b1ed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94483003"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107907369"
 ---
 # <a name="about-operators"></a>演算子について
 
@@ -77,7 +77,9 @@ PowerShell では、値の操作に役立ついくつかの種類の演算子が
 
 ### <a name="unary-operators"></a>単項演算子
 
-単項演算子を使用して、変数またはオブジェクトのプロパティをインクリメントまたはデクリメントし、整数を正または負の数値に設定します。 たとえば、変数をからにインクリメントするには `$a` `9` `10` 、「」と入力し `$a++` ます。
+単項 `++`  演算子と演算子を使用して、 `--` 値を加算またはデクリメントし、を `-` 否定します。 たとえば、変数をからにインクリメントするには `$a` `9` `10` 、「」と入力し `$a++` ます。
+
+詳細については、「 [about_Arithmetic_Operators](about_Arithmetic_Operators.md)」を参照してください。
 
 ### <a name="special-operators"></a>特別な演算子
 
