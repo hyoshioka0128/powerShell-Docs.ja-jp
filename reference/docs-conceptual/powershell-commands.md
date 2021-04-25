@@ -1,21 +1,21 @@
 ---
 title: PowerShell コマンドとは
-description: PowerShell を使用すると、システムで使用できる任意のコマンドを実行できます。また、コマンドレットと呼ばれる PowerShell 固有のコマンドがあります。
+description: PowerShell のコマンドは、cmdlets と呼ばれます (「コマンドレット」と発音されます)
 ms.date: 03/31/2021
-ms.openlocfilehash: b6e54349ec15df3327c1f0525dce1a30ad35a6ac
-ms.sourcegitcommit: eeedd4472b6cc6158494296c355579791e688baa
+ms.openlocfilehash: 3980ed53f0e0c6f86a5ebab7b6ca64aeee6b173e
+ms.sourcegitcommit: d63769de0e59d117d90171799bda6544bf2f2f0b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106104014"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107855568"
 ---
-# <a name="powershell-commands"></a>PowerShell コマンド
+# <a name="what-is-a-powershell-command-cmdlet"></a>PowerShell コマンド (コマンドレット) とは
 
-PowerShell を使用すると、cmdlet (コマンドレットと発音します) と呼ばれる PowerShell 固有のコマンドを含め、システムで使用できる任意のコマンドを実行できます。
+PowerShell のコマンドは、cmdlets と呼ばれます (「コマンドレット」と発音されます)。 PowerShell では、コマンドレットに加えて、ご利用のシステム上で使用可能な任意のコマンドも実行できます。
 
 ## <a name="what-is-a-cmdlet"></a>コマンドレットとは
 
-コマンドレットは、PowerShell のパイプライン セマンティクスに参加する 1 つのコマンドであり、通常は .NET オブジェクトが返されます。 コマンドレットはネイティブの PowerShell コマンドであり、スタンドアロンの実行可能ファイルではありません。 コマンドレットは、必要に応じて読み込むことができる PowerShell モジュールにまとめられています。 コマンドレットは、任意のコンパイルされた .NET 言語または PowerShell スクリプト言語自体で記述できます。
+コマンドレットはネイティブの PowerShell コマンドであり、スタンドアロンの実行可能ファイルではありません。 コマンドレットは、必要に応じて読み込むことができる PowerShell モジュールにまとめられています。 コマンドレットは、任意のコンパイルされた .NET 言語または PowerShell スクリプト言語自体で記述できます。
 
 ## <a name="cmdlet-names"></a>コマンドレット名
 
