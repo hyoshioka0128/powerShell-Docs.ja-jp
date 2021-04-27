@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 06/09/2017
+ms.date: 04/26/2021
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-packageprovider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-PackageProvider
-ms.openlocfilehash: f9cf0854ed8e2dc4725ce8592a9b9cf86063beb5
-ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
+ms.openlocfilehash: baf8036b437c1d1ce42206da09c2c112581ef207
+ms.sourcegitcommit: 1e1535cb22d16de06f80beafe77a37a7c77de6d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94890064"
+ms.lasthandoff: 04/27/2021
+ms.locfileid: "108025603"
 ---
 # Install-PackageProvider
 
@@ -49,7 +48,7 @@ Install-PackageProvider [-Scope <String>] [-InputObject] <SoftwareIdentity[]> [-
 最初に実行するには、PackageManagement が NuGet パッケージプロバイダーをダウンロードするためにインターネット接続を必要とします。 ただし、コンピューターがインターネットに接続されておらず、NuGet または PowerShellGet プロバイダーを使用する必要がある場合は、それらを別のコンピューターにダウンロードして、対象のコンピューターにコピーすることができます。 これを行うには、次の手順を使用します。
 
 1. を実行し `Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force` て、インターネットに接続されたコンピューターからプロバイダーをインストールします。
-1. インストール後、またはにインストールされているプロバイダーを見つけることができ `$env:ProgramFiles\PackageManagement\ReferenceAssemblies\<ProviderName>\<ProviderVersion>` `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\<ProviderName>\<ProviderVersion>` ます。
+1. インストール後、またはにインストールされているプロバイダーを見つけることができ `$env:ProgramFiles\PackageManagement\ProviderAssemblies\<ProviderName>\<ProviderVersion>` `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\<ProviderName>\<ProviderVersion>` ます。
 1. `<ProviderName>`フォルダー (この場合は NuGet フォルダー) を、ターゲットコンピューター上の対応する場所に配置します。 ターゲットコンピューターが Nano server の場合は、 `Install-PackageProvider` Nano server からを実行して、正しい NuGet バイナリをダウンロードする必要があります。
 1. PowerShell を再起動して、パッケージプロバイダーを自動読み込みします。 または、を実行して、 `Get-PackageProvider -ListAvailable` コンピューターで使用可能なすべてのパッケージプロバイダーを一覧表示します。
    次に、を使用して `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` 、プロバイダーを現在の Windows PowerShell セッションにインポートします。
@@ -356,11 +355,11 @@ Accept wildcard characters: False
 ## 注
 
 > [!IMPORTANT]
-> 2020年4月の時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン1.0 と1.1 がサポートされなくなりました。 TLS 1.2 以降を使用していない場合は、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、TLS 1.2 を使用していることを確認します。
+> 2020 年 4 月時点で、PowerShell ギャラリーでは、トランスポート層セキュリティ (TLS) バージョン 1.0 および 1.1 がサポートされなくなります。 TLS 1.2 以降を使用していない場合、PowerShell ギャラリーにアクセスしようとするとエラーが発生します。 次のコマンドを使用して、確実に TLS 1.2 を使用するようにします。
 >
 > `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
 >
-> 詳細については、PowerShell ブログの [お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) を参照してください。
+> 詳細については、PowerShell ブログの[お知らせ](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/)を参照してください。
 
 ## 関連リンク
 
