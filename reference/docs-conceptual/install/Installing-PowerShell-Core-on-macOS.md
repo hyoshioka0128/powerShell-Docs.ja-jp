@@ -1,13 +1,13 @@
 ---
 title: macOS への PowerShell のインストール
 description: macOS への PowerShell のインストールに関する情報
-ms.date: 03/15/2021
-ms.openlocfilehash: e69a757e761039799fe399c0e59c31c800a5094a
-ms.sourcegitcommit: 080c8b05a1242348c365fe1684457e873325f11e
+ms.date: 04/26/2021
+ms.openlocfilehash: ea878dad1ce4d2ab2b48a34b5f89ba8ebb7c82c3
+ms.sourcegitcommit: 1e1535cb22d16de06f80beafe77a37a7c77de6d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103483457"
+ms.lasthandoff: 04/27/2021
+ms.locfileid: "108025618"
 ---
 # <a name="installing-powershell-on-macos"></a>macOS への PowerShell のインストール
 
@@ -22,7 +22,7 @@ PowerShell 7.0 以降には macOS 10.13 以降が必要です。 すべてのパ
 
 macOS に PowerShell をインストールするには、いくつかの方法があります。 以下のいずれかの方法を選択します。
 
-- Homebrew を使用してインストールする。 Homebrew は、macOS 用の推奨されるパッケージ マネージャーです。
+- [Homebrew][brew] を使用してインストールする。 Homebrew は、macOS 用の推奨されるパッケージ マネージャーです。
 - [直接ダウンロード](#installation-via-direct-download)を使用して PowerShell をインストールする。
 - [バイナリ アーカイブ](#binary-archives)からインストールする。
 
@@ -31,6 +31,10 @@ PowerShell をインストールした後、[OpenSSL](#installing-dependencies) 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1013-or-higher"></a>macOS 10.13 以降で Homebrew を使用した最新の安定版リリースのインストール
 
 `brew` コマンドが見つからない場合、[指示][brew]に従い、Homebrew をインストールする必要があります。
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 これで PowerShell をインストールできます。
 
@@ -194,7 +198,7 @@ PowerShell リモート処理および CIM 操作の場合は OpenSSL が必要�
 Homebrew を使って PowerShell をインストールした場合は、次のコマンドを使ってアンインストールします。
 
 ```sh
-brew cask uninstall powershell
+brew --cask uninstall powershell
 ```
 
 直接ダウンロードで PowerShell をインストールした場合、手動で PowerShell を削除する必要があります。
@@ -234,7 +238,7 @@ Microsoft は、このドキュメントでインストール方法をサポー�
 - [Homebrew Github リポジトリ][GitHub]
 - [Homebrew-Cask][cask]
 
-[brew]: http://brew.sh/
+[brew]: https://docs.brew.sh/Installation
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
