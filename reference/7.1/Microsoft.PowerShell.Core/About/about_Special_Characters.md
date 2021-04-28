@@ -172,7 +172,7 @@ Windows コンソールホストアプリケーションは ( `` `v `` ) を特�
 There is a vertical tab♂between the words.
 ```
 
-[Windows ターミナル](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)は、垂直タブ文字をキャリッジリターンとラインフィードとしてレンダリングします。 出力の残りの部分は、次の行の先頭に印刷されます。
+[Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)は、垂直タブ文字をキャリッジリターンとラインフィードとしてレンダリングします。 出力の残りの部分は、次の行の先頭に印刷されます。
 
 ```Output
 There is a vertical tab
