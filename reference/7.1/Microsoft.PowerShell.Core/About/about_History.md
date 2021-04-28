@@ -27,7 +27,7 @@ PowerShell には、組み込み履歴と **Psreadline** モジュールによ�
 ## <a name="using-the-psreadline-history"></a>PSReadLine 履歴の使用
 
 PSReadLine 履歴は、すべての PowerShell セッションで使用されているコマンドを追跡します。
-履歴は、ホストごとに中央のファイルに書き込まれます。 その履歴ファイルはすべてのセッションで使用でき、過去のすべての履歴が含まれています。 セッションが終了しても、履歴は削除されません。 また、この履歴をコマンドレットで管理することはできません `*-History` 。 詳細については、「 [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)」を参照してください。
+履歴は、ホストごとに中央のファイルに書き込まれます。 その履歴ファイルはすべてのセッションで使用でき、過去のすべての履歴が含まれています。 セッションが終了しても、履歴は削除されません。 また、この履歴をコマンドレットで管理することはできません `*-History` 。 詳細については、「[about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)」を参照してください。
 
 ## <a name="using-the-built-in-session-history"></a>組み込みのセッション履歴を使用する
 
@@ -57,8 +57,8 @@ PowerShell コンソールでは、次のショートカットを使用してコ
 - <kbd>#</kbd>`<string>`</kbd><kbd>[] タブ</kbd> -の履歴を検索 `*<string>*` し、最新の一致を返します。 <kbd>Tab</kbd>キーを繰り返し押すと、履歴内の一致する項目が順番に表示されます。
 
 > [!NOTE]
-> これらのキーバインドは、コンソールホストアプリケーションによって実装されます。 Visual Studio Code や Windows ターミナルなどの他のアプリケーションでは、異なるキーバインドを持つことができます。 バインドは、PSReadLine モジュールでオーバーライドできます。 PSReadLine は、PowerShell セッションを開始すると自動的に読み込まれます。
-> PSReadLine が読み込まれている場合、 <kbd>F7</kbd> と <kbd>F9</kbd> はどの関数にもバインドされていません。 PSReadLine では、同等の機能は提供されません。 詳細については、「 [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)」を参照してください。
+> これらのキーバインドは、コンソールホストアプリケーションによって実装されます。 Visual Studio Code や Windows Terminal などの他のアプリケーションでは、異なるキーバインドを持つことができます。 バインドは、PSReadLine モジュールでオーバーライドできます。 PSReadLine は、PowerShell セッションを開始すると自動的に読み込まれます。
+> PSReadLine が読み込まれている場合、 <kbd>F7</kbd> と <kbd>F9</kbd> はどの関数にもバインドされていません。 PSReadLine では、同等の機能は提供されません。 詳細については、「[about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)」を参照してください。
 
 ### <a name="maximumhistorycount"></a>Maximumhistorycount ユーザー
 
@@ -75,7 +75,7 @@ $MaximumHistoryCount = 100
 
 すべての PowerShell セッションの新しい変数値を保存するには、割り当てステートメントを PowerShell プロファイルに追加します。 プロファイルの詳細については、「[about_Profiles](about_Profiles.md)」を参照してください。
 
-ユーザー設定変数の詳細については `$MaximumHistoryCount` 、「 [about_Preference_Variables](about_Preference_Variables.md)」を参照してください。
+ユーザー設定変数の詳細については `$MaximumHistoryCount` 、「[about_Preference_Variables](about_Preference_Variables.md)」を参照してください。
 
 ### <a name="order-of-commands-in-the-history"></a>履歴内のコマンドの順序
 
