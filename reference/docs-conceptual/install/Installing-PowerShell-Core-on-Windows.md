@@ -1,13 +1,13 @@
 ---
 title: Windows への PowerShell のインストール
 description: Windows への PowerShell のインストールに関する情報
-ms.date: 03/30/2021
-ms.openlocfilehash: 7e21a34ea4dd74d2d8a9108393009c9c2660dff9
-ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
+ms.date: 04/27/2021
+ms.openlocfilehash: 24f5687411004ebc6f84a76493ded46b7b30b0d2
+ms.sourcegitcommit: afbcc8675107ad9ec6afff91ef4a42b2953121cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106072716"
+ms.lasthandoff: 04/28/2021
+ms.locfileid: "108121647"
 ---
 # <a name="installing-powershell-on-windows"></a>Windows への PowerShell のインストール
 
@@ -213,13 +213,12 @@ dotnet tool install --global PowerShell
 
 dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE\.dotnet\tools` が追加されます。 ただし、現在実行中のシェルには更新された `$env:PATH` が設定されていません。 新しいシェルからは、「`pwsh`」と入力すると PowerShell を起動できます。
 
-## <a name="install-powershell-via-winget"></a>Winget を使用して PowerShell をインストールする
+## <a name="install-powershell-via-the-windows-package-manager"></a>Windows パッケージ マネージャーを使用して PowerShell をインストールする
 
 開発者は、`winget` コマンドライン ツールを使用して、Windows 10 コンピューター上のアプリケーションの検出、インストール、アップグレード、削除、および構成を行うことができます。 このツールは、Windows パッケージ マネージャー サービスに対するクライアント インターフェイスです。
 
 > [!NOTE]
-> `winget` ツールは現在プレビュー段階です。 現時点では、計画されたすべての機能を使用できるわけではありません。
-> 運用環境の展開シナリオでは、この方法を使用しないでください。 システム要件とインストール手順の一覧については、[winget] に関するドキュメントを参照してください。
+> Windows パッケージ マネージャーと `winget` ツールはパブリック プレビュー段階であり、一般公開されるまでに大幅に変更される可能性があります。 システム要件の一覧とインストール手順については、[ドキュメント][winget]を参照してください。
 
 次のコマンドを使用すると、公開済みの `winget` パッケージを使用して PowerShell をインストールできます。
 
@@ -234,7 +233,7 @@ dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE
    ---------------------------------------------------------------------------
    PowerShell                Microsoft.PowerShell              7.1.3
    PowerShell Preview (MSIX) Microsoft.PowerShell-Preview-MSIX 7.0.2
-   PowerShell-Preview        Microsoft.PowerShell-Preview      7.2.0-preview.3
+   PowerShell-Preview        Microsoft.PowerShell-Preview      7.2.0-preview.5
    ```
 
 1. `--exact` パラメーターを使用して、いずれかのバージョンの PowerShell をインストールします

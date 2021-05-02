@@ -1,16 +1,16 @@
 ---
 description: FileSystem (ファイル システム)
 Locale: en-US
-ms.date: 11/13/2020
+ms.date: 04/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem プロバイダー
-ms.openlocfilehash: cfe074475cc1304243dfd4b2245e4eec44c25244
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 14e565c3c71d7ffe967510b7ac0b83d8a6b54452
+ms.sourcegitcommit: 67baae728108af25b8421a7ac9bd1250494534f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99599529"
+ms.lasthandoff: 04/30/2021
+ms.locfileid: "108284721"
 ---
 # <a name="filesystem-provider"></a>FileSystem プロバイダー
 
@@ -20,7 +20,7 @@ FileSystem (ファイル システム)
 
 ## <a name="drives"></a>ドライブ
 
-`C:`, `D:` ...
+`C:`, `D:`, `Temp:` ...
 
 ## <a name="capabilities"></a>機能
 
@@ -36,10 +36,7 @@ PowerShell **FileSystem** プロバイダーを使用すると、powershell で�
 
 **ファイルシステム** ドライブは、コンピューター上のディレクトリとファイルを含む階層型の名前空間です。 **ファイルシステム** ドライブには、論理ドライブまたは物理ドライブ、ディレクトリ、またはマップされたネットワーク共有を指定できます。
 
-という名前のドライブが `TEMP:` ユーザーの一時ディレクトリパスにマップされます。
-
->[!NOTE]
-> TEMP: ドライブの内容は、PowerShell によって自動的に削除されることはなく、管理するユーザーまたはオペレーティングシステムによって行われます。 この機能は、PowerShell バージョン7.0 の試験的な機能から移行されました。
+PowerShell バージョン7.0 以降では、というドライブ `TEMP:` がユーザーの一時ディレクトリパスにマップされます。 PowerShell では、.NET [GetTempPath ()](/dotnet/api/system.io.path.gettemppath) メソッドを使用して、一時フォルダーの場所を決定します。 Windows では、場所はと同じ `$env:TEMP` です。 Windows 以外のシステムでは、場所はと同じ `$env:TMPDIR` か、 `/tmp` 環境変数が定義されていない場合はです。
 
 **FileSystem** プロバイダーは、この記事で説明されている次のコマンドレットをサポートしています。
 
@@ -371,8 +368,7 @@ Get-ChildItem -Attributes Compressed,Encrypted
 このパラメーターを使用し、大きなファイルを小さなファイルに分割します。「End of Example」のようなファイル区切り記号を区切り文字として指定します。 区切り文字は予約されています (破棄されません)。各ファイル セクションの最後の項目になります。
 
 > [!NOTE]
-> 現在、パラメーターの値が空の文字列の場合、 `-Delimiter` [Get](xref:Microsoft.PowerShell.Management.Get-Content) は何も返しません。
-> これは既知の問題です。 ファイル全体を 1 つの区切りのない文字列として返すように [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) に強制するには、ファイルに存在しない値を入力します。
+> 現在、パラメーターの値が空の文字列の場合、 `-Delimiter` [Get](xref:Microsoft.PowerShell.Management.Get-Content) は何も返しません。 これは既知の問題です。 ファイル全体を 1 つの区切りのない文字列として返すように [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) に強制するには、ファイルに存在しない値を入力します。
 
 #### <a name="cmdlets-supported"></a>サポートされているコマンドレット
 
@@ -404,11 +400,11 @@ Get-ChildItem -Attributes Compressed,Encrypted
 - **[非表示]**
 - **標準**
 - **NotContentIndexed**
-- **なっ**
+- **オフライン**
 - **ReadOnly**
 - **ReparsePoint**
 - **Sparc ファイル**
-- **システム**
+- **System**
 - **一時**
 
 これらの属性の詳細については、「 [Fileattributes](/dotnet/api/system.io.fileattributes) 列挙型」を参照してください。
@@ -493,7 +489,7 @@ Get-ChildItem -Attributes Compressed,Encrypted
 
 #### <a name="cmdlets-supported"></a>サポートされているコマンドレット
 
-- [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path)
+- [テストパス](xref:Microsoft.PowerShell.Management.Test-Path)
 
 ### <a name="olderthan-systemdatetime"></a>OlderThan \<System.DateTime\>
 
@@ -503,7 +499,7 @@ Get-ChildItem -Attributes Compressed,Encrypted
 
 #### <a name="cmdlets-supported"></a>サポートされているコマンドレット
 
-- [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path)
+- [テストパス](xref:Microsoft.PowerShell.Management.Test-Path)
 
 ### <a name="stream-systemstring"></a>Stream \<System.String\>
 

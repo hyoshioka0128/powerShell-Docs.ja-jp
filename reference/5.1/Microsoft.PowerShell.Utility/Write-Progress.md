@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/14/2020
+ms.date: 04/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
-ms.openlocfilehash: 5a0c197387f67dae1830b6d9ebd4145e96383b39
-ms.sourcegitcommit: 16883bb67e34b3915798070f60f974bf85160bd3
+ms.openlocfilehash: 4f74f53bf23ff200a352e9b4d915b9adb00695ca
+ms.sourcegitcommit: 894068dd8b760650b6175b5dbb22d0d996289e48
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93224307"
+ms.lasthandoff: 05/01/2021
+ms.locfileid: "108335025"
 ---
 # Write-Progress
 
@@ -38,7 +37,8 @@ Write-Progress [-Activity] <String> [[-Status] <String>] [[-Id] <Int32>] [-Perce
 ```powershell
 for ($i = 1; $i -le 100; $i++ )
 {
-    Write-Progress -Activity "Search in Progress" -Status "$i% Complete:" -PercentComplete $i;
+    Write-Progress -Activity "Search in Progress" -Status "$i% Complete:" -PercentComplete $i
+    Start-Sleep -Milliseconds 250
 }
 ```
 
@@ -315,7 +315,7 @@ Accept wildcard characters: False
 
 [Write-Debug](Write-Debug.md)
 
-[書き込み-エラー](Write-Error.md)
+[Write-Error](Write-Error.md)
 
 [Write-Host](Write-Host.md)
 

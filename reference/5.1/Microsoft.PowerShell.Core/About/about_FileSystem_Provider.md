@@ -1,17 +1,16 @@
 ---
 description: FileSystem (ファイル システム)
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 10/18/2018
+ms.date: 04/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem プロバイダー
-ms.openlocfilehash: 204a90dc346e6d4ff483777b9adf7a70017ef093
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 5e409c7568e8ec53b28e17471a6fdf12c84e730c
+ms.sourcegitcommit: 67baae728108af25b8421a7ac9bd1250494534f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94386914"
+ms.lasthandoff: 04/30/2021
+ms.locfileid: "108284704"
 ---
 # <a name="filesystem-provider"></a>FileSystem プロバイダー
 
@@ -21,7 +20,7 @@ FileSystem (ファイル システム)
 
 ## <a name="drives"></a>ドライブ
 
-`C:`, `D:` ...
+`C:`, `D:`, `Temp:` ...
 
 ## <a name="capabilities"></a>機能
 
@@ -35,7 +34,7 @@ FileSystem (ファイル システム)
 
 PowerShell **FileSystem** プロバイダーを使用すると、powershell でファイルとディレクトリを取得、追加、変更、消去、削除できます。
 
-**ファイルシステム** ドライブは、コンピューター上のディレクトリとファイルを含む階層型の名前空間です。 **ファイルシステム** ドライブには、論理的または phのドライブ、ディレクトリ、またはマップされたネットワーク共有を指定できます。
+**ファイルシステム** ドライブは、コンピューター上のディレクトリとファイルを含む階層型の名前空間です。 **ファイルシステム** ドライブには、論理ドライブまたは物理ドライブ、ディレクトリ、またはマップされたネットワーク共有を指定できます。
 
 **FileSystem** プロバイダーは、この記事で説明されている次のコマンドレットをサポートしています。
 
@@ -60,11 +59,11 @@ PowerShell **FileSystem** プロバイダーを使用すると、powershell で�
 
 ## <a name="types-exposed-by-this-provider"></a>このプロバイダーによって公開される型
 
-ファイルは、 [system.servicemodel クラスのインスタンスです。](/dotnet/api/system.io.fileinfo)  ディレクトリは、 [DirectoryInfo](/dotnet/api/system.io.directoryinfo) クラスのインスタンスです。
+ファイルは、 [system.servicemodel クラスのインスタンスです。](/dotnet/api/system.io.fileinfo) ディレクトリは、 [DirectoryInfo](/dotnet/api/system.io.directoryinfo) クラスのインスタンスです。
 
 ## <a name="navigating-the-filesystem-drives"></a>ファイルシステムドライブの移動
 
-**FileSystem** プロバイダーは、コンピューター上のすべての論理ドライブを PowerShell ドライブとしてマップすることによって、そのデータストアを公開します。 **ファイルシステム** ドライブを操作するには、ドライブ名の後にコロン () を uing ドライブに場所を移動し `:` ます。
+**FileSystem** プロバイダーは、コンピューター上のすべての論理ドライブを PowerShell ドライブとしてマップすることによって、そのデータストアを公開します。 **ファイルシステム** ドライブを操作するには、ドライブ名の後にコロン () を使用して、場所をドライブに変更し `:` ます。
 
 ```powershell
 Set-Location C:
@@ -242,7 +241,7 @@ New-Item -Path c:\logfiles -Name log2.txt -Type file -Value "test log"
 
 ## <a name="renaming-files-and-directories"></a>ファイルとディレクトリの名前の変更
 
-### <a name="rename-a-file"></a>ファイル名を変更する
+### <a name="rename-a-file"></a>ファイルの名前の変更
 
 このコマンドにより `a.txt` 、ディレクトリ内のファイルの名前が次のように変更され `C:\a` `b.txt` ます。
 
@@ -335,18 +334,18 @@ Get-ChildItem -Attributes Compressed,Encrypted
 
 ファイル エンコードを指定します。 既定値は ASCII です。
 
-- **Ascii** : ascii (7 ビット) 文字セットのエンコーディングを使用します。
-- **BigEndianUnicode** : ビッグエンディアンのバイト順を使用して utf-16 形式でエンコードします。
-- **String** : 文字列のエンコーディングの種類を使用します。
-- **Unicode** : リトルエンディアンのバイト順を使用して utf-16 形式でエンコードします。
-- **UTF7** : utf-7 形式でエンコードします。
-- **UTF8** : utf-8 形式でエンコードします。
-- **UTF8BOM** : バイト順マーク (BOM) を使用して utf-8 形式でエンコードします。
-- **UF8NOBOM** : バイト順マーク (BOM) を使用せずに utf-8 形式でエンコードします。
-- **UTF32** :32 utf-8 形式でエンコードします。
+- **Ascii**: ascii (7 ビット) 文字セットのエンコーディングを使用します。
+- **BigEndianUnicode**: ビッグエンディアンのバイト順を使用して utf-16 形式でエンコードします。
+- **String**: 文字列のエンコーディングの種類を使用します。
+- **Unicode**: リトルエンディアンのバイト順を使用して utf-16 形式でエンコードします。
+- **UTF7**: utf-7 形式でエンコードします。
+- **UTF8**: utf-8 形式でエンコードします。
+- **UTF8BOM**: バイト順マーク (BOM) を使用して utf-8 形式でエンコードします。
+- **UF8NOBOM**: バイト順マーク (BOM) を使用せずに utf-8 形式でエンコードします。
+- **UTF32**:32 utf-8 形式でエンコードします。
 - **既定** 値は、インストールされている既定のコードページでエンコードされます。
-- **OEM** : MS-DOS およびコンソールプログラムの既定のエンコードを使用します。
-- **不明** : エンコードの種類が不明または無効です。 データはバイナリとして処理できます。
+- **OEM**: MS-DOS およびコンソールプログラムの既定のエンコードを使用します。
+- **不明**: エンコードの種類が不明または無効です。 データはバイナリとして処理できます。
 
 #### <a name="cmdlets-supported"></a>サポートされているコマンドレット
 
@@ -367,8 +366,7 @@ Get-ChildItem -Attributes Compressed,Encrypted
 このパラメーターを使用し、大きなファイルを小さなファイルに分割します。「End of Example」のようなファイル区切り記号を区切り文字として指定します。 区切り文字は予約されています (破棄されません)。各ファイル セクションの最後の項目になります。
 
 > [!NOTE]
-> 現在、パラメーターの値が空の文字列の場合、 `-Delimiter` [Get](xref:Microsoft.PowerShell.Management.Get-Content) は何も返しません。
-> これは既知の問題です。 ファイル全体を 1 つの区切りのない文字列として返すように [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) に強制するには、ファイルに存在しない値を入力します。
+> 現在、パラメーターの値が空の文字列の場合、 `-Delimiter` [Get](xref:Microsoft.PowerShell.Management.Get-Content) は何も返しません。 これは既知の問題です。 ファイル全体を 1 つの区切りのない文字列として返すように [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) に強制するには、ファイルに存在しない値を入力します。
 
 #### <a name="cmdlets-supported"></a>サポートされているコマンドレット
 
@@ -400,11 +398,11 @@ Get-ChildItem -Attributes Compressed,Encrypted
 - **[非表示]**
 - **標準**
 - **NotContentIndexed**
-- **なっ**
+- **オフライン**
 - **ReadOnly**
 - **ReparsePoint**
 - **Sparc ファイル**
-- **システム**
+- **System**
 - **一時**
 
 これらの属性の詳細については、「 [Fileattributes](/dotnet/api/system.io.fileattributes) 列挙型」を参照してください。
@@ -483,23 +481,23 @@ Get-ChildItem -Attributes Compressed,Encrypted
 
 ### <a name="newerthan-systemdatetime"></a>NewerThan \<System.DateTime\>
 
-`$True` `LastWriteTime` ファイルの値が指定した日付よりも大きい場合に、を返します。 それ以外の場合は、 `$False`を返します。
+`$True` `LastWriteTime` ファイルの値が指定した日付よりも大きい場合に、を返します。 それ以外の場合は `$False`を返します。
 
 [Datetime](/dotnet/api/system.datetime)オブジェクトを入力します。たとえば、 [Get Date](xref:Microsoft.PowerShell.Utility.Get-Date)コマンドレットが返す値や、 [datetime](/dotnet/api/system.datetime)オブジェクトに変換できる文字列 (など) を入力し `"August 10, 2011 2:00 PM"` ます。
 
 #### <a name="cmdlets-supported"></a>サポートされているコマンドレット
 
-- [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path)
+- [テストパス](xref:Microsoft.PowerShell.Management.Test-Path)
 
 ### <a name="olderthan-systemdatetime"></a>OlderThan \<System.DateTime\>
 
-`$True` `LastWriteTime` ファイルの値が指定した日付よりも小さい場合に、を返します。 それ以外の場合は、 `$False`を返します。
+`$True` `LastWriteTime` ファイルの値が指定した日付よりも小さい場合に、を返します。 それ以外の場合は `$False`を返します。
 
 [Datetime](/dotnet/api/system.datetime)オブジェクトを入力します。たとえば、 [Get Date](xref:Microsoft.PowerShell.Utility.Get-Date)コマンドレットが返す値や、 [datetime](/dotnet/api/system.datetime)オブジェクトに変換できる文字列 (など) を入力し `"August 10, 2011 2:00 PM"` ます。
 
 #### <a name="cmdlets-supported"></a>サポートされているコマンドレット
 
-- [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path)
+- [テストパス](xref:Microsoft.PowerShell.Management.Test-Path)
 
 ### <a name="stream-systemstring"></a>Stream \<System.String\>
 

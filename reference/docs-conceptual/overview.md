@@ -3,12 +3,12 @@ ms.date: 03/22/2021
 keywords: powershell,コマンドレット
 title: PowerShell とは
 description: この記事では、PowerShell のスクリプト環境とその機能の概要について説明します。
-ms.openlocfilehash: 3e1c2cae4b8d6507057ee8136265710a8dfe74f3
-ms.sourcegitcommit: 719debaed3cc32ba463b1d4cc56a491d8ecbce26
+ms.openlocfilehash: ae2a5e311992e98045841a3992810e55390519ad
+ms.sourcegitcommit: afbcc8675107ad9ec6afff91ef4a42b2953121cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "105029691"
+ms.lasthandoff: 04/28/2021
+ms.locfileid: "108121628"
 ---
 # <a name="what-is-powershell"></a>PowerShell とは
 

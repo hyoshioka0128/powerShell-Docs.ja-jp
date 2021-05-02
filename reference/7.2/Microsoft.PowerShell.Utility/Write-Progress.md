@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/14/2020
+ms.date: 04/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
-ms.openlocfilehash: 2e2bd5474198745d72ad2b87c3c305695a198f22
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: d8994d355e825d33cbbdce41771691f2a51d0e84
+ms.sourcegitcommit: 894068dd8b760650b6175b5dbb22d0d996289e48
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99601000"
+ms.lasthandoff: 05/01/2021
+ms.locfileid: "108335042"
 ---
 # Write-Progress
 
@@ -37,7 +37,8 @@ Write-Progress [-Activity] <String> [[-Status] <String>] [[-Id] <Int32>] [-Perce
 ```powershell
 for ($i = 1; $i -le 100; $i++ )
 {
-    Write-Progress -Activity "Search in Progress" -Status "$i% Complete:" -PercentComplete $i;
+    Write-Progress -Activity "Search in Progress" -Status "$i% Complete:" -PercentComplete $i
+    Start-Sleep -Milliseconds 250
 }
 ```
 
